@@ -1,0 +1,7 @@
+MIDlet-Version: 1.0.0
+MIDlet-Vendor: Midlet Suite Vendor
+MIDlet-Jar-URL: holaMundo2.jar
+MicroEdition-Configuration: CLDC-1.1
+MIDlet-1: MiMidlet2,,prueba2.MiMidlet2
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Name: holaMundo2 Midlet Suite
