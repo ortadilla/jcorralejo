@@ -1,0 +1,10 @@
+MIDlet-1: Ejemplo2,,apiAltoNivel.Ejemplo2
+MIDlet-2: Ejemplo3,,apiAltoNivel.Ejemplo3
+MIDlet-3: Ejemplo4,,apiAltoNivel.Ejemplo4
+MIDlet-Jar-Size: 5911
+MIDlet-Jar-URL: apiAltoNivel.jar
+MIDlet-Name: apiAltoNivel Midlet Suite
+MIDlet-Vendor: Midlet Suite Vendor
+MIDlet-Version: 1.0.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.0
