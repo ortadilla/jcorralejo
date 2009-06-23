@@ -38,8 +38,7 @@ public class MIDLetPersistencia1 extends MIDlet implements CommandListener {
 		display = Display.getDisplay(this);
 
 		formHome = new Form("LISTA DBs");
-		//Añadir al formHome el lista de RecordStore
-		actualizarListadoRS();
+		actualizarListadoRS(false, formHome);
 		commandCrear = new Command("Crear RS", Command.ITEM, 1);
 		commandSeleccionar = new Command("Seleccionar", Command.ITEM, 2);
 		formHome.addCommand(commandCrear);
@@ -70,31 +69,56 @@ public class MIDLetPersistencia1 extends MIDlet implements CommandListener {
 		formRegistro.setCommandListener(this);
 	}
 	
-	private void actualizarListadoRS(){
+	private void actualizarListadoRS(boolean limpiarFormulario, Form formulario){
+		if(limpiarFormulario)
+			formulario.deleteAll();
 		//Creamos el listado y le anadimos las opciones
 		ChoiceGroup listaRS = new ChoiceGroup("Lista DBs",List.EXCLUSIVE);
 		String[] rs = RecordStore.listRecordStores();
 		if(rs!=null)
 			for(int i=0; i<rs.length;i++)
 				listaRS.append(rs[i],null);
-		formHome.append(listaRS);
+		formulario.append(listaRS);
 	}
 	
-	private void actualizarListadoRegistrosRG(String nombreRS){
+	private void actualizarListadoRegistrosRG(boolean limpiarFormulario, 
+											  Form formulario, 
+											  String nombreRS, 
+											  String dato){
+		if(limpiarFormulario)
+			formulario.deleteAll();
+		
 		ChoiceGroup listaRegistros = new ChoiceGroup("Lista Registros",List.EXCLUSIVE);
 		try {
 			RecordStore rs = RecordStore.openRecordStore(nombreRS, false);//Se supone que ya está creado
-			RecordEnumeration re = rs.enumerateRecords(null, null, false);
-			System.out.println("Hay " + re.numRecords()+ " en el RecordStore");
-			while(re.hasNextElement()) {
-				byte tmp[] = re.nextRecord() ;
-				System.out.println(tmp[0] + " " + tmp[1]) ;
-				listaRegistros.append(String.valueOf(tmp[0]),null);
+			
+			if(dato!=null)
+				rs.addRecord(dato.getBytes(),0, dato.length());
+
+			//TODO: Mecanismo de conversión de byte[] a Object y viceversa
+//			RecordEnumeration re = rs.enumerateRecords(null, null, false);
+//			System.out.println("Hay " + re.numRecords()+ " en el RecordStore");
+//			while(re.hasNextElement()) {
+//				byte tmp[] = re.nextRecord() ;
+//				new String(tmp, 0, tmp.length);
+//				listaRegistros.append(String.valueOf(tmp[0]),null);
+//			}
+			
+			byte[] recData = new byte[5]; 
+			int len;
+			for (int i = 1; i <= rs.getNumRecords(); i++)      
+			{
+				if (rs.getRecordSize(i) > recData.length)
+					recData = new byte[rs.getRecordSize(i)];
+
+				len = rs.getRecord(i, recData, 0);
+				listaRegistros.append(new String(recData, 0, len), null);
 			}
+
 		} catch (RecordStoreException e) {
 		} 
 
-		formHomeRegistro.append(listaRegistros);
+		formulario.append(listaRegistros);
 	}
 
 	protected void destroyApp(boolean arg0) throws MIDletStateChangeException {
@@ -112,13 +136,13 @@ public class MIDLetPersistencia1 extends MIDlet implements CommandListener {
 
 	public void commandAction(Command arg0, Displayable arg1) {
 		if(arg0.equals(commandCrear) && arg1.equals(formHome)){
-				//Vamos al form para crear el RS
-				display.setCurrent(formCrearRegistroDB);
-				formCrearRegistroDB.deleteAll();
+			//Vamos al form para crear el RS
+			display.setCurrent(formCrearRegistroDB);
+			formCrearRegistroDB.deleteAll();
 
-				//Creamos el TextField
-				TextField textField = new TextField("Nombre RS", null, 10, TextField.ANY);
-				formCrearRegistroDB.append(textField);
+			//Creamos el TextField
+			TextField textField = new TextField("Nombre RS", null, 10, TextField.ANY);
+			formCrearRegistroDB.append(textField);
 		}
 		else if(arg0.equals(commandCancelar) && arg1.equals(formCrearRegistroDB)){
 			display.setCurrent(formHome);
@@ -130,10 +154,8 @@ public class MIDLetPersistencia1 extends MIDlet implements CommandListener {
 			if(nombre!=null && !nombre.equals("")){
 				openRecStore(nombre);
 				display.setCurrent(formHome);
-				formHome.deleteAll();
-				actualizarListadoRS();
+				actualizarListadoRS(true, formHome);
 			}else{
-				//TODO: Nombre erróneo
 				Alert alerta = new Alert("ERROR",
 									 	 "El nombre del RS es obligatorio",
 									 	 null, 
@@ -147,8 +169,8 @@ public class MIDLetPersistencia1 extends MIDlet implements CommandListener {
 			String nombreRS = listaRS.getString(listaRS.getSelectedIndex());
 			
 			display.setCurrent(formHomeRegistro);
-			formCrearRegistroDB.setTitle(nombreRS);
-			actualizarListadoRegistrosRG(nombreRS);
+			formHomeRegistro.setTitle(nombreRS);
+			actualizarListadoRegistrosRG(false, formHomeRegistro, nombreRS, null);
 		}
 		else if (arg0.equals(commandCrearReg) && arg1.equals(formHomeRegistro)){
 			//Vamos al form para crear el RS
@@ -159,17 +181,49 @@ public class MIDLetPersistencia1 extends MIDlet implements CommandListener {
 			TextField textField = new TextField("Dato", null, 10, TextField.ANY);
 			formRegistro.append(textField);
 		}
-		else if(arg0.equals(commandCancelar) && arg1.equals(formHomeRegistro)){
+		else if (arg0.equals(commandEditarReg) && arg1.equals(formHomeRegistro)){
+			//Vamos al form para crear el RS
+			display.setCurrent(formRegistro);
+			formRegistro.deleteAll();
+
+			//Obtenemos el valor actual
+			ChoiceGroup listaRS = (ChoiceGroup)formHomeRegistro.get(0); 
+			int indexReg = listaRS.getSelectedIndex();
+			String nombreReg = formHomeRegistro.getTitle();
+			RecordStore rs;
+			String valorActual = "";
+			try {
+				rs = RecordStore.openRecordStore(nombreReg, false);
+				byte[] recData = new byte[5]; 
+				int len;
+				if (rs.getRecordSize(indexReg) > recData.length)
+						recData = new byte[rs.getRecordSize(indexReg)];
+
+					len = rs.getRecord(indexReg, recData, 0);
+					valorActual = new String(recData, 0, len);
+				
+			} catch (RecordStoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			//Creamos el TextField
+			TextField textField = new TextField("Dato", valorActual, 10, TextField.ANY);
+			formRegistro.append(textField);
+		}
+		else if(arg0.equals(commandMenu) && arg1.equals(formHomeRegistro)){
+			display.setCurrent(formHome);
+		}
+		else if(arg0.equals(commandCancelar) && arg1.equals(formRegistro)){
 			display.setCurrent(formHomeRegistro);
 		}
-		else if(arg0.equals(commandConfirmar) && arg1.equals(formHomeRegistro)){
+		else if(arg0.equals(commandConfirmar) && arg1.equals(formRegistro)){
 			//Obtenemos el texto del input
-			TextField textField = (TextField)formHomeRegistro.get(0);
+			TextField textField = (TextField)formRegistro.get(0);
 			String dato = textField.getString();
 			if(dato!=null && !dato.equals("")){
 				display.setCurrent(formHomeRegistro);
-				formHomeRegistro.deleteAll();
-				actualizarListadoRegistrosRG(formCrearRegistroDB.getTitle());
+				actualizarListadoRegistrosRG(true, formHomeRegistro, formHomeRegistro.getTitle(), dato);
 			}else{
 				//Dato erróneo
 				Alert alerta = new Alert("ERROR",
