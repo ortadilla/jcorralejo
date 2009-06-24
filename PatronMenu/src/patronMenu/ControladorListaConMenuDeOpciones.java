@@ -51,7 +51,7 @@ public class ControladorListaConMenuDeOpciones implements CommandListener
     	OpcionDeMenu item = (OpcionDeMenu) list.opcionesDeListaModelo.listaDeopciones.elementAt( i );
     	
     	if(item.opcionAnterior!=null && item.opcionAnterior.opcionAnterior!=null)
-    		list.pintaOpcionesDeMenu( (OpcionDeMenu) item.opcionAnterior.opcionAnterior.opcionAnterior);
+    		list.pintaOpcionesDeMenu( (OpcionDeMenu) item.opcionAnterior.opcionAnterior);
     }
   }
 }
