@@ -1,6 +1,7 @@
 package patronMenu;
 
 import javax.microedition.lcdui.*;
+
 import java.util.*;
 
 /**
@@ -11,8 +12,6 @@ import java.util.*;
  */
 public class ControladorListaConMenuDeOpciones implements CommandListener
 {
-
-
 
 
   public void commandAction(Command command, Displayable displayable)
@@ -41,6 +40,18 @@ public class ControladorListaConMenuDeOpciones implements CommandListener
       {
         list.getDisplay().setCurrent( (Displayable) opcionSeleccionada );
       }
+    }
+    
+    else if (displayable instanceof ListaConMenuDeOpciones 
+    	 && ((ListaConMenuDeOpciones)displayable).commandAtras.equals(command)){
+    	System.out.println("Pulsado botón atrás...");
+
+    	ListaConMenuDeOpciones list = (ListaConMenuDeOpciones) displayable;
+    	int i = list.getSelectedIndex();
+    	OpcionDeMenu item = (OpcionDeMenu) list.opcionesDeListaModelo.listaDeopciones.elementAt( i );
+    	
+    	if(item.opcionAnterior!=null && item.opcionAnterior.opcionAnterior!=null)
+    		list.pintaOpcionesDeMenu( (OpcionDeMenu) item.opcionAnterior.opcionAnterior.opcionAnterior);
     }
   }
 }

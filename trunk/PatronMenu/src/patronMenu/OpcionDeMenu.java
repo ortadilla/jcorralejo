@@ -13,21 +13,24 @@ public class OpcionDeMenu {
 	Hashtable navegacionMap = new Hashtable();
 
 	public String text; // menu label or title
+	public OpcionDeMenu opcionAnterior;
 
 	public OpcionDeMenu(String s) {
 		text = s;
 	}
 
 	public void addOpcion(OpcionDeMenu child,
-			OpcionDeMenu next_container) {
+						  OpcionDeMenu next_container) {
 		listaDeopciones.addElement(child);
 		navegacionMap.put(child, next_container);
+		child.opcionAnterior = this;
+		next_container.opcionAnterior = child;
 	}
 
 	public void addOpcion(OpcionDeMenu child, Displayable display) {
 		listaDeopciones.addElement(child);
 		navegacionMap.put(child, display);
-
+		child.opcionAnterior = this;
 	}
 
 }

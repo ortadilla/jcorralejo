@@ -9,15 +9,19 @@ import javax.microedition.lcdui.*;
 public class ListaConMenuDeOpciones extends List
 {
   Display display = null; // Display instance of current midlet
+  Command commandAtras; //Comando para volver
+  OpcionDeMenu opcionesDeListaModelo;
+	
 
   public ListaConMenuDeOpciones( Display d )
   {
     super("Untitled", List.IMPLICIT);
     this.display = d;
     addCommand( List.SELECT_COMMAND );
+    commandAtras = new Command("Volver", Command.ITEM, 1);
+    addCommand(commandAtras);
   }
 
-  OpcionDeMenu opcionesDeListaModelo;
   public void pintaOpcionesDeMenu( OpcionDeMenu opcionesDeMenu )
   {
     deleteAll();
