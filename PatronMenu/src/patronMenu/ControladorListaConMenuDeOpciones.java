@@ -47,11 +47,9 @@ public class ControladorListaConMenuDeOpciones implements CommandListener
     	System.out.println("Pulsado botón atrás...");
 
     	ListaConMenuDeOpciones list = (ListaConMenuDeOpciones) displayable;
-    	int i = list.getSelectedIndex();
-    	OpcionDeMenu item = (OpcionDeMenu) list.opcionesDeListaModelo.listaDeopciones.elementAt( i );
-    	
-    	if(item.opcionAnterior!=null && item.opcionAnterior.opcionAnterior!=null)
-    		list.pintaOpcionesDeMenu( (OpcionDeMenu) item.opcionAnterior.opcionAnterior);
+    	OpcionDeMenu opcionAnterior= list.opcionesDeListaModelo.opcionAnterior;
+    	if(opcionAnterior!=null)
+    		list.pintaOpcionesDeMenu(opcionAnterior);
     }
   }
 }
