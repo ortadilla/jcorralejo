@@ -23,8 +23,9 @@ public class OpcionDeMenu {
 						  OpcionDeMenu next_container) {
 		listaDeopciones.addElement(child);
 		navegacionMap.put(child, next_container);
-		child.opcionAnterior = this;
-		next_container.opcionAnterior = child;
+//		child.opcionAnterior = this;
+//		next_container.opcionAnterior = child;
+		next_container.opcionAnterior = this;
 	}
 
 	public void addOpcion(OpcionDeMenu child, Displayable display) {
