@@ -77,7 +77,7 @@ public class AlarmaMidlet extends MIDlet implements CommandListener {
 
 			//Obtenemos el tiempo de la alarma
 			String segundos = tiempo.getString();
-			if(segundos==null || segundos.equals("") && Integer.parseInt(segundos)<=0){
+			if(segundos==null || segundos.equals("") || Integer.parseInt(segundos)<=0){
 				//Error: No se ha introducido nada o es negativo
 				System.out.println("Tiempo incorrecto");
 				error = true;
