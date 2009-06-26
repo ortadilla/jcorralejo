@@ -34,7 +34,7 @@ public class AlarmaMidlet extends MIDlet implements CommandListener {
 		tiempo = new TextField("Tiempo:","",2,TextField.NUMERIC);
 		formAlarma.append(tiempo);
 
-		guardar = new Command("Salir",Command.OK, 1);
+		guardar = new Command("Aceptar",Command.OK, 1);
 		formAlarma.addCommand(guardar);
 		formAlarma.setCommandListener(this);
 		
