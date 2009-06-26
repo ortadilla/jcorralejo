@@ -1,8 +1,0 @@
-MIDlet-1: AlarmaMidlet,,pruebas.AlarmaMidlet
-MIDlet-Jar-Size: 1799
-MIDlet-Jar-URL: PushMedia.jar
-MIDlet-Name: PushMedia Midlet Suite
-MIDlet-Vendor: Midlet Suite Vendor
-MIDlet-Version: 1.0.0
-MicroEdition-Configuration: CLDC-1.1
-MicroEdition-Profile: MIDP-2.0
