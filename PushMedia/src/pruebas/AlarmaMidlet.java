@@ -3,7 +3,6 @@ package pruebas;
 import java.io.InputStream;
 import java.util.Date;
 
-import javax.microedition.io.ConnectionNotFoundException;
 import javax.microedition.io.PushRegistry;
 import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.CommandListener;
@@ -11,7 +10,6 @@ import javax.microedition.lcdui.Display;
 import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Form;
 import javax.microedition.lcdui.StringItem;
-import javax.microedition.lcdui.TextBox;
 import javax.microedition.lcdui.TextField;
 import javax.microedition.media.Manager;
 import javax.microedition.media.Player;
@@ -26,7 +24,9 @@ public class AlarmaMidlet extends MIDlet implements CommandListener {
 	private Form formSonido;
 	private TextField sonido;
 	private TextField tiempo;
-	private Command guardar;
+	//No puede funcionar un atributo del propio Midlet, ya que para que salte 
+	//la alarma hay que detener el Midlet...
+	private Command guardar; 
 	
 	private String cancion;
 
