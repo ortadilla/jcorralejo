@@ -93,7 +93,7 @@ public class AlarmaMidlet extends MIDlet implements CommandListener {
 					PushRegistry.registerAlarm(fullClassName, nextAlarmTime);
 					formAlarma.deleteAll();
 					formAlarma.append(new StringItem("Estado","La alarma ha sido establecida correctamente." +
-															  "Sonará dentro de "+nextAlarmTime+" segundos"));
+															  "Sonará dentro de "+segundos+" segundos"));
 				} catch (Exception e) {
 					System.out.println("Error al establecer la alarma");
 				}
