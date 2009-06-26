@@ -92,9 +92,8 @@ public class AlarmaMidlet extends MIDlet implements CommandListener {
 					long nextAlarmTime = (new Date().getTime() + Integer.parseInt(segundos)*1000);
 					PushRegistry.registerAlarm(fullClassName, nextAlarmTime);
 					formAlarma.deleteAll();
-					formAlarma.append(new StringItem("Estado",
-							"La alarma ha sido establecida correctamente."
-							+ "Cierre la aplicación y se autoactivará en 30 segundos"));
+					formAlarma.append(new StringItem("Estado","La alarma ha sido establecida correctamente." +
+															  "Sonará dentro de "+nextAlarmTime+" segundos"));
 				} catch (Exception e) {
 					System.out.println("Error al establecer la alarma");
 				}
