@@ -1,5 +1,6 @@
 package pruebas;
 
+import java.io.InputStream;
 import java.util.Date;
 
 import javax.microedition.io.ConnectionNotFoundException;
@@ -12,6 +13,8 @@ import javax.microedition.lcdui.Form;
 import javax.microedition.lcdui.StringItem;
 import javax.microedition.lcdui.TextBox;
 import javax.microedition.lcdui.TextField;
+import javax.microedition.media.Manager;
+import javax.microedition.media.Player;
 import javax.microedition.midlet.MIDlet;
 import javax.microedition.midlet.MIDletStateChangeException;
 
@@ -23,7 +26,9 @@ public class AlarmaMidlet extends MIDlet implements CommandListener {
 	private Form formSonido;
 	private TextField sonido;
 	private TextField tiempo;
-	private Command guardar; 
+	private Command guardar;
+	
+	private String cancion;
 
 	public AlarmaMidlet() {
 		display=Display.getDisplay(this);
@@ -37,7 +42,7 @@ public class AlarmaMidlet extends MIDlet implements CommandListener {
 		guardar = new Command("Aceptar",Command.OK, 1);
 		formAlarma.addCommand(guardar);
 		formAlarma.setCommandListener(this);
-		
+
 		formSonido = new Form("¡¡Alarma sonando!!");
 	}
 
@@ -49,15 +54,23 @@ public class AlarmaMidlet extends MIDlet implements CommandListener {
 
 	protected void startApp() throws MIDletStateChangeException {
 		// Obtenemos la lista de conexiones del MIDlet
-	    String[] connections = javax.microedition.io.PushRegistry.listConnections(true);
-	    
-	    if ((connections == null) || (connections.length == 0)){
-	        // El MIDlet ha sido iniciado por el usuario a través del interfaz gráfico del terminal
-	    	display.setCurrent(formAlarma);
-	    } else {
-	        // El MIDlet ha sido iniciado por una conexión entrante o una alarma.
-	    	display.setCurrent(formSonido);
-	    }
+		String[] connections = javax.microedition.io.PushRegistry.listConnections(true);
+
+		if ((connections == null) || (connections.length == 0)){
+			// El MIDlet ha sido iniciado por el usuario a través del interfaz gráfico del terminal
+			display.setCurrent(formAlarma);
+		} else {
+			// El MIDlet ha sido iniciado por una conexión entrante o una alarma.
+			display.setCurrent(formSonido);
+
+			try {
+				InputStream is = getClass().getResourceAsStream(cancion);
+				Player player = Manager.createPlayer(is, "audio/X-wav");
+				player.start();
+			} 
+			catch(Exception e) {
+			} 
+		}
 	}
 
 	public void commandAction(Command arg0, Displayable arg1) {
@@ -87,13 +100,13 @@ public class AlarmaMidlet extends MIDlet implements CommandListener {
 				return;//TODO: Añadir Alarm con aviso
 			else{
 				try {
-
+					this.cancion = cancion; 
 					String fullClassName = this.getClass().getName();
 					long nextAlarmTime = (new Date().getTime() + Integer.parseInt(segundos)*1000);
 					PushRegistry.registerAlarm(fullClassName, nextAlarmTime);
 					formAlarma.deleteAll();
 					formAlarma.append(new StringItem("Estado","La alarma ha sido establecida correctamente." +
-															  "Sonará dentro de "+segundos+" segundos"));
+							"Sonará dentro de "+segundos+" segundos"));
 				} catch (Exception e) {
 					System.out.println("Error al establecer la alarma");
 				}
