@@ -1,0 +1,10 @@
+<jboss-web>
+   	<resource-ref>
+		<res-ref-name>jdbc/hibernateDatasource</res-ref-name>
+		<jndi-name>java:/jdbc/hibernateDatasource</jndi-name>
+	</resource-ref>
+   	<!-- <resource-ref>
+		<res-ref-name>jdbc/trewaDatasource</res-ref-name>
+		<jndi-name>java:/jdbc/trewaDatasource</jndi-name>
+	</resource-ref>-->
+</jboss-web>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config 
+PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+                            "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<faces-config>
+
+  <!-- Generales -->
+  <navigation-rule>
+    <navigation-case><from-outcome>principalCat</from-outcome><to-view-id>/catalogo/menu.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>definirArticuloCatalogo</from-outcome><to-view-id>/catalogo/definirArticuloCatalogo.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>consultarArticulo</from-outcome><to-view-id>/catalogo/consultarArticulo.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>consultarArticuloPorCentro</from-outcome><to-view-id>/catalogo/consultarArticuloPorCentro.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>gestionClasificaciones</from-outcome><to-view-id>/catalogo/gestionClasificaciones.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>gestionarAlmacenes</from-outcome><to-view-id>/catalogo/gestionAlmacenes.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>mostrarAsociarFotosArticulo</from-outcome><to-view-id>/catalogo/mostrarAsociarFotosArticulo.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>mostrarFotosArticulo</from-outcome><to-view-id>/catalogo/mostrarFotosArticulo.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>seleccionarAtributos</from-outcome><to-view-id>/catalogo/seleccionarAtributos.jsp</to-view-id></navigation-case>
+	<navigation-case><from-outcome>editarArticulo</from-outcome><to-view-id>/catalogo/editarArticulo.jsp</to-view-id></navigation-case>
+	<navigation-case><from-outcome>eliminarClasificaciones</from-outcome><to-view-id>/catalogo/eliminarClasificaciones.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>dialog:seleccionarClasificacionesPorDefecto</from-outcome><to-view-id>/catalogo/seleccionClasificacionesPorDefecto.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>dialog:gestionClasificacionesAlternativa</from-outcome><to-view-id>/catalogo/gestionClasificacionesAlternativa.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>gestionClasificacionesAlternativa</from-outcome><to-view-id>/catalogo/gestionClasificacionesAlternativa.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>cargaCertificaciones</from-outcome><to-view-id>/catalogo/cargaCertificaciones.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>certificacionHologacion</from-outcome><to-view-id>/catalogo/certificacionHomologacion.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>crearXMLArticulos</from-outcome><to-view-id>/catalogo/crearXmlArticulos.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>seleccionOrganoGestorDescargaArticulos</from-outcome><to-view-id>/catalogo/seleccionOrganoGestorDescargaArticulos.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>dialog:homogeneizarAtributos</from-outcome><to-view-id>/catalogo/homogeneizarAtributos.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>liberarCodigos</from-outcome><to-view-id>/catalogo/liberarCodigos.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>dialog:diccionarioDinamico</from-outcome><to-view-id>/catalogo/seleccionarValoresDiccioValDinamico.jsp</to-view-id></navigation-case>
+	<!--<navigation-case><from-outcome>dialog:atributoFechaCarga</from-outcome><to-view-id>/catalogo/seleccionarValorAtributoFechaCarga.jsp</to-view-id></navigation-case>-->
+	<navigation-case><from-outcome>dialog:avisoLegal</from-outcome><to-view-id>/catalogo/avisoLegal.jsp</to-view-id></navigation-case>
+	<navigation-case><from-outcome>mostrarIndiceCatalogo</from-outcome><to-view-id>/catalogo/mostrarIndiceCatalogo.jsp</to-view-id></navigation-case>
+	<navigation-case><from-outcome>concursosFicticios</from-outcome><to-view-id>/catalogo/concursosFicticios.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>dialog:confirmarRecuperarArticulo</from-outcome><to-view-id>/catalogo/consultarRecuperarArticulo.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>editarAtributoArticulo</from-outcome><to-view-id>/catalogo/editarAtributoArticulo.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>dialog:confirmarLiberacionCodigos</from-outcome><to-view-id>/catalogo/confirmarLiberacionCodigos.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>modificarClasificacionUniversal</from-outcome><to-view-id>/catalogo/modificarClasificacionUniversal.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>dialog:mostrarHistoricoArticulos</from-outcome><to-view-id>/catalogo/historicoArticulos.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>confirmarSolicitarArticuloParalelo</from-outcome><to-view-id>/catalogo/confirmarSolicitarArticuloParalelo.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>dialog:confirmarSolicitarArticuloParalelo</from-outcome><to-view-id>/catalogo/confirmarSolicitarArticuloParalelo.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>dialog:editarMededidaConservacionTipoGestion</from-outcome><to-view-id>/catalogo/editarMedidaConservacionTipoGestion.jsp</to-view-id></navigation-case>    
+  </navigation-rule>
+
+  <!-- Consulta de Productos -->
+  <navigation-rule>
+    <from-view-id>/catalogo/mantProducto.jsp</from-view-id>
+    <navigation-case><from-outcome>gestion</from-outcome><to-view-id>/catalogo/gestionProducto.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>dialog:confirmar</from-outcome><to-view-id>/catalogo/mensConfirmacion.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>dialog:detallesAlertaSanitaria</from-outcome><to-view-id>/catalogo/detallesAlertaSanitaria.jsp</to-view-id></navigation-case>
+  </navigation-rule>
+
+  <!-- Edición de Productos -->
+  <navigation-rule>
+    <from-view-id>/catalogo/gestionProducto.jsp</from-view-id>
+    <navigation-case><from-outcome>atras</from-outcome><to-view-id>/catalogo/mantProducto.jsp</to-view-id></navigation-case>
+  </navigation-rule>  
+  
+  <navigation-rule>
+    <from-view-id>/catalogo/consultarArticulo.jsp</from-view-id>
+  <navigation-case><from-outcome>dialog:motivoRechazoSolicitud</from-outcome><to-view-id>/organizacion/rechazoSolicitudMovimiento.jsp</to-view-id></navigation-case>
+  </navigation-rule>
+  
+  
+ 
+  
+</faces-config>

@@ -1,0 +1,464 @@
+package dondeando.bean;
+
+import static org.jboss.seam.ScopeType.CONVERSATION;
+import static utilidades.jsf.ConstantesArgumentosNavegacion.OPERACION_CREAR_USUARIO;
+import static utilidades.jsf.ConstantesArgumentosNavegacion.OPERACION_DETALLES_USUARIO;
+import static utilidades.jsf.ConstantesArgumentosNavegacion.OPERACION_EDITAR_USUARIO;
+import static utilidades.jsf.ConstantesReglasNavegacion.CAMBIAR_FOTO_USUARIO;
+import static utilidades.jsf.ConstantesReglasNavegacion.CREAR_USUARIO;
+import static utilidades.jsf.ConstantesReglasNavegacion.MENU_PRINCIPAL;
+import static utilidades.jsf.ConstantesReglasNavegacion.MODIFICAR_PASSWORD;
+import static utilidades.varios.NombresBean.CABECERA_PAGINA_BEAN;
+import static utilidades.varios.NombresBean.CREAR_USUARIO_BEAN;
+import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
+import static utilidades.varios.NombresBean.MENSAJES_CORE;
+import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
+import static utilidades.varios.NombresBean.SERVICIO_IMAGEN;
+import static utilidades.varios.NombresBean.SERVICIO_TIPO_USUARIO;
+import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
+import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.faces.event.ValueChangeEvent;
+import javax.faces.model.SelectItem;
+
+import org.apache.myfaces.trinidad.model.UploadedFile;
+import org.apache.myfaces.trinidad.validator.RegExpValidator;
+import org.jboss.seam.ScopeType;
+import org.jboss.seam.annotations.In;
+import org.jboss.seam.annotations.Name;
+import org.jboss.seam.annotations.Out;
+import org.jboss.seam.annotations.Scope;
+
+import utilidades.componentes.CabeceraPaginasBean;
+import utilidades.jsf.ConstantesReglasNavegacion;
+import utilidades.jsf.UtilJsfContext;
+import utilidades.varios.MapaArgumentos;
+import utilidades.varios.MensajesCore;
+import utilidades.varios.NombresBean;
+import utilidades.varios.ProtocoloEdicion;
+import utilidades.varios.SelectItemBuilder;
+import dondeando.modelo.entidades.Imagen;
+import dondeando.modelo.entidades.TipoUsuario;
+import dondeando.modelo.entidades.Usuario;
+import dondeando.modelo.servicio.ServicioImagen;
+import dondeando.modelo.servicio.ServicioTipoUsuario;
+import dondeando.modelo.servicio.ServicioUsuario;
+
+@Scope(ScopeType.APPLICATION) //TODO
+@Name(CREAR_USUARIO_BEAN)
+public class CrearUsuarioBean {
+	
+	private String login;
+	private String password;
+	private String password2;
+	private String nombre;
+	private String apellidos;
+	private String direccion; //TODO: Pendiente de GoogleMaps
+	private String email;
+	private TipoUsuario tipoUsuario;
+	
+	private SelectItem[] selectTipoUsuario;
+	private boolean deshabilitarTipoUsuario;
+	private boolean detalles;
+	private boolean mostrarPass;
+	private RegExpValidator validatorEmail;
+	private String operacion;
+	private String tituloPagina;
+	private String urlImagenUsuario;
+
+	private Usuario usuarioEdicion;
+	private boolean reentrando;
+	private UploadedFile imagenUsuario;
+	
+	//Utilidades
+    @In(value=MAPA_ARGUMENTOS, required=false)
+    @Out(value=MAPA_ARGUMENTOS, required=false)
+	private MapaArgumentos mapaArgumentos;
+    
+    @In(value=CABECERA_PAGINA_BEAN, create=true)
+    private CabeceraPaginasBean cabeceraPaginasBean;
+	
+	private ProtocoloEdicion protocoloEdicion;
+	
+	//Servicios
+	@In(value=SERVICIO_TIPO_USUARIO, create=true)
+	private ServicioTipoUsuario servicioTipoUsuario;
+
+	@In(value=SERVICIO_IMAGEN, create=true)
+	private ServicioImagen servicioImagen;
+	
+	@In(value=SERVICIO_USUARIO, create=true)
+	private ServicioUsuario servicioUsuario;
+	
+	@In(value=MENSAJES_CORE, create=true)
+	private MensajesCore mensajesCore;
+	
+	@In(value=UTIL_JSF_CONTEXT, create=true)
+	private UtilJsfContext utilJsfContext;
+	
+
+	public void cargarArgumentosDeEntrada(){
+		//Bug Trinidad 1.0.10
+		inicializarValidador();
+		
+		//limpiamos el formulario, por si se quedaron datos obsoletos, pero sólo en el caso
+		//de que hayamos entrado desde fuera
+		if(!reentrando){
+			limpiarFormulario(false);
+		}else
+			reentrando = false;
+		
+		if(mapaArgumentos!=null && mapaArgumentos.contieneProtocoloEdicion())
+			protocoloEdicion = mapaArgumentos.getProtocoloEdicion();
+		
+		if(protocoloEdicion!=null){
+			operacion = protocoloEdicion.getOperacion();
+			
+			//Comprobamos si estamos editando un usuario ya existente
+			if(protocoloEdicion.getObjeto()!=null){
+				usuarioEdicion = (Usuario)protocoloEdicion.getObjeto();
+				login = usuarioEdicion.getLogin();
+				password = null;
+				password2 = null;
+				nombre = usuarioEdicion.getNombre();
+				apellidos = usuarioEdicion.getApellidos();
+				direccion = usuarioEdicion.getDireccion();
+				email = usuarioEdicion.getEmail();
+				tipoUsuario = usuarioEdicion.getTipoUsuario();
+				
+				urlImagenUsuario = servicioImagen.calcularUrlImagenUsuario(usuarioEdicion);
+			}
+		}
+
+		//Configuramos la página dependiente de la operación
+		if(OPERACION_CREAR_USUARIO.equals(operacion)){
+			tipoUsuario = servicioTipoUsuario.devolverTipoUsuarioRegistrado();
+			mostrarPass = true;
+			detalles = false;
+			tituloPagina = mensajesCore.obtenerTexto("REGISTRAR_USUARIO");
+		}
+		else if(OPERACION_DETALLES_USUARIO.equals(operacion)){
+			detalles = true;
+			mostrarPass = false;
+			tituloPagina = mensajesCore.obtenerTexto("DATOS_USUARIO");
+		}
+		else if(OPERACION_EDITAR_USUARIO.equals(operacion)){
+			detalles = false;
+			mostrarPass = false;
+			tituloPagina = mensajesCore.obtenerTexto("MODIFICAR_USUARIO");
+		}
+		
+		//Al crear un usuario nuevo desde el registro siempre será uno normal
+		//y no se podrá modificar
+		deshabilitarTipoUsuario = true;
+		selectTipoUsuario = SelectItemBuilder.creaSelectItems(servicioTipoUsuario.devolverTodosTipoUsuarioMenosAnonimo(), 
+															  null, 
+															  TipoUsuario.ATRIBUTO_DESCRIPCION);
+	}
+	
+	
+	/**
+	 * Configura el validador para el email. necesario por un bug en la versión 1.0.10 de Trinidad
+	 */
+	private void inicializarValidador(){
+		if(validatorEmail==null){
+			validatorEmail = new RegExpValidator();
+			validatorEmail.setPattern("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*\\.(\\w{2}|(com|net|org|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum))$");
+			validatorEmail.setMessageDetailNoMatch(mensajesCore.obtenerTexto("ERROR_PATRON_EMAIL"));
+		}
+	}
+
+	
+	/**
+	 * Limpia el formulario de registro
+	 * @param soloElementosPagina Indica si sólo se limpian los elementos que se pintan en la página.
+	 * Si es false se resetean todas las propiedades internas
+	 */
+	private void limpiarFormulario(boolean soloElementosPagina){
+		login = null;
+		password = null;
+		password2 = null;
+		nombre = null;
+		apellidos = null;
+		direccion = null;
+		tipoUsuario = null;
+		email = null;
+		
+		if(!soloElementosPagina){
+			operacion = null;
+			usuarioEdicion = null;
+			mostrarPass = true;
+			detalles = true;
+		}
+	}
+	
+	/**
+	 * Ejecutado al pulsar el botón aceptar, intenta guardar el usuario indicado
+	 * por los datos introducidos en pantalla
+	 * @return	Outcome de navegación
+	 */
+	public String aceptar(){
+		String outcome = "";
+		
+		List<String> errores = comprobarAgregarEditarUsuario();
+		if(errores.isEmpty()){
+			if(OPERACION_CREAR_USUARIO.equals(operacion)){
+				servicioUsuario.crearUsuario(login, password, nombre, apellidos, direccion, email, tipoUsuario);
+				utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("USUARIO_CORRECTO"));
+			}else if (OPERACION_EDITAR_USUARIO.equals(operacion) && usuarioEdicion!=null){
+				servicioUsuario.editarUsuario(usuarioEdicion,login, password, nombre, apellidos, direccion, email, tipoUsuario);
+				utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("USUARIO_ACTUALIZADO"));
+			}
+			outcome = protocoloEdicion!=null ? protocoloEdicion.getOutcomeVuelta() 
+											 : ConstantesReglasNavegacion.MENU_PRINCIPAL;
+		}else{
+			utilJsfContext.insertaMensajesAdvertencia(errores);
+			reentrando = true;
+		}
+		
+		return outcome;
+	}
+	
+	/**
+	 * Comprueba si se puede agregar el usuario con los datos indicados en la pantalla
+	 * @return Lista de errores encontrados
+	 */
+	private List<String> comprobarAgregarEditarUsuario(){
+		List<String> errores = new ArrayList<String>();
+		
+		//Campos obligatorios
+		if(login==null || "".equals(login)
+		|| mostrarPass && (password==null || "".equals(password))
+		|| mostrarPass && (password2==null || "".equals(password2))
+		|| nombre==null || "".equals(nombre)
+		|| email==null || "".equals(email)
+		|| tipoUsuario==null || "".equals(tipoUsuario))
+			errores.add(mensajesCore.obtenerTexto("CAMPOS_OBLIGATORIOS_AGREGAR_USUARIO"));
+		
+		//Contraseñas correctas
+		if(password!=null && password2!=null && !password.equals(password2))
+			errores.add(mensajesCore.obtenerTexto("PASSWORDS_INCORRECTOS"));
+		
+		//El usuario no debe existir
+		if(login!=null){
+			Usuario usuarioLogin = servicioUsuario.encontrarUsuarioPorLogin(login);
+			if(usuarioLogin!=null && (usuarioEdicion==null || !usuarioEdicion.equals(usuarioLogin)))
+				errores.add(mensajesCore.obtenerTexto("USUARIO_YA_EXISTE"));
+		}
+
+		return errores;
+	}
+	
+	
+	public String cancelar(){
+		
+		String outcome = "";
+		
+		if(OPERACION_CREAR_USUARIO.equals(operacion)){
+			limpiarFormulario(false);
+			outcome = protocoloEdicion!=null ? protocoloEdicion.getOutcomeVuelta() : ""; 
+		}
+		else if(OPERACION_EDITAR_USUARIO.equals(operacion)){
+			protocoloEdicion.setOperacion(OPERACION_DETALLES_USUARIO);
+		}
+		
+		return outcome;
+	}
+
+	
+	public void modificar(){
+		protocoloEdicion.setOperacion(OPERACION_EDITAR_USUARIO);
+	}
+	
+	public String modificarContr(){
+		
+		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+		mapaArgumentos.limpiaMapa();
+		ProtocoloEdicion protocolo = new ProtocoloEdicion(usuarioEdicion,CREAR_USUARIO, null);
+		mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+		
+		return MODIFICAR_PASSWORD;
+	}
+	
+	public String eliminar(){
+		if(usuarioEdicion!=null){
+			servicioUsuario.desactivarUsuario(usuarioEdicion);
+			cabeceraPaginasBean.logout();
+			utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("USUARIO_ELIMINADO"));
+		}
+		return MENU_PRINCIPAL;
+	}
+	
+	public String cambiarImagen(){
+		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+		mapaArgumentos.limpiaMapa();
+		ProtocoloEdicion protocolo = new ProtocoloEdicion(usuarioEdicion,CREAR_USUARIO, null);
+		mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+		
+		return CAMBIAR_FOTO_USUARIO;
+	}
+	
+	/**
+	 * Método que recoge el UploadedFile introducido por el usuario 
+	 * para subir una foto nueva
+	 * @param valueChangeEvent
+	 */
+	public void cambiarImagen(ValueChangeEvent valueChangeEvent){
+		if(valueChangeEvent.getNewValue()!=null){
+			UploadedFile uploadedFile = (UploadedFile) valueChangeEvent.getNewValue();
+
+			if(uploadedFile!=null && uploadedFile.getLength()>0){
+				Long uploadedFileSize = uploadedFile.getLength();
+				String uploadedFileType = uploadedFile.getContentType();
+				String nombre = uploadedFile.getFilename();    
+				InputStream inputStream = null;
+
+				try {
+					inputStream = uploadedFile.getInputStream();
+//					File ficheroTemporal = servicioImagen.devuelveFicheroTemporal(inputStream);
+//					FileInputStream fileInput = servicioImagen.devuelveFileInputStream(ficheroTemporal);
+					List<String> errores = servicioImagen.comprobarAgregarImagen(uploadedFileType, uploadedFileSize,uploadedFile.getInputStream());
+					if(errores!=null && errores.isEmpty()){
+						//Guardamos la imagen en el servidor
+						Imagen imagen = servicioImagen.guardarImagen(nombre, uploadedFile.getInputStream(), false);
+						//TODO: Asociar al usuario y eliminar imagen anterior
+					}else
+						utilJsfContext.insertaMensajesAdvertencia(errores);
+					
+				} catch (IOException e) {
+					utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("ERROR_GUARDAR_FOTO"+e.getMessage()));
+				}
+
+			}else
+				utilJsfContext.insertaMensajeAdvertencia(mensajesCore.obtenerTexto("ERROR_FOTO_NO_SELECCIONADA"));
+		}
+	}
+	
+	public void continuar(){
+		if(imagenUsuario!=null){
+			
+		}
+	}
+	
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getPassword2() {
+		return password2;
+	}
+	public void setPassword2(String password2) {
+		this.password2 = password2;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getApellidos() {
+		return apellidos;
+	}
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+	public SelectItem[] getSelectTipoUsuario() {
+		return selectTipoUsuario;
+	}
+	public void setSelectTipoUsuario(SelectItem[] selectTipoUsuario) {
+		this.selectTipoUsuario = selectTipoUsuario;
+	}
+	public boolean isDeshabilitarTipoUsuario() {
+		return deshabilitarTipoUsuario;
+	}
+	public void setDeshabilitarTipoUsuario(boolean deshabilitarTipoUsuario) {
+		this.deshabilitarTipoUsuario = deshabilitarTipoUsuario;
+	}
+	public RegExpValidator getValidatorEmail() {
+		return validatorEmail;
+	}
+	public void setValidatorEmail(RegExpValidator validatorEmail) {
+		this.validatorEmail = validatorEmail;
+	}
+
+	public MapaArgumentos getMapaArgumentos() {
+		return mapaArgumentos;
+	}
+
+	public void setMapaArgumentos(MapaArgumentos mapaArgumentos) {
+		this.mapaArgumentos = mapaArgumentos;
+	}
+
+	public boolean isMostrarPass() {
+		return mostrarPass;
+	}
+
+	public void setMostrarPass(boolean mostrarPass) {
+		this.mostrarPass = mostrarPass;
+	}
+
+	public boolean isDetalles() {
+		return detalles;
+	}
+
+	public void setDetalles(boolean detalles) {
+		this.detalles = detalles;
+	}
+
+	public String getTituloPagina() {
+		return tituloPagina;
+	}
+
+	public void setTituloPagina(String tituloPagina) {
+		this.tituloPagina = tituloPagina;
+	}
+
+	public UploadedFile getImagenUsuario() {
+		return imagenUsuario;
+	}
+
+	public void setImagenUsuario(UploadedFile imagenUsuario) {
+		this.imagenUsuario = imagenUsuario;
+	}
+
+	public String getUrlImagenUsuario() {
+		return urlImagenUsuario;
+	}
+
+	public void setUrlImagenUsuario(String urlImagenUsuario) {
+		this.urlImagenUsuario = urlImagenUsuario;
+	}
+}

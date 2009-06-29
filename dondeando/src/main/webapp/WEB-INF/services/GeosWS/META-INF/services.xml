@@ -1,0 +1,20 @@
+<serviceGroup>
+	<service name="GeosWS" targetNamespace="http://geos.hp.com/ws/">
+		<description>Servicio web para la recepción de mensajes EDI en GEOS</description>
+
+		<schema schemaNamespace="http://geos.hp.com/ws/" />
+
+		<messageReceivers>
+			<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out" class="com.hp.geos.pedidos.ws.implementacion.GeosWSMessageReceiverInOut" />
+		</messageReceivers>
+
+		<parameter locked="false" name="ServiceClass">com.hp.geos.pedidos.ws.implementacion.GeosWSSkeleton</parameter>
+
+		<parameter name="enableMTOM" locked="false">false</parameter>
+
+		<operation name="importarInformacionEDI" mep="http://www.w3.org/2004/08/wsdl/in-out">
+			<actionMapping>importarInformacionEDI</actionMapping>
+			<outputActionMapping>//schemas.xmlsoap.org/wsdl/GeosServicePortType/GeosServiceResponse</outputActionMapping>
+		</operation>
+	</service>	
+</serviceGroup>

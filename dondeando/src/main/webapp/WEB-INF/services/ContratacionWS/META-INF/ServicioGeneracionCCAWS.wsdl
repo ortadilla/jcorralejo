@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:axis2="http://geos.hp.com/ws/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://geos.hp.com/ws/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://geos.hp.com/ws/">
+    <wsdl:types>
+        <xs:schema xmlns:xsd="http://geos.hp.com/ws/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://geos.hp.com/ws/xsd">
+    <xs:element name="nuevoCCAResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+    </wsdl:types>
+    <wsdl:message name="nuevoCCARequest"/>
+    <wsdl:message name="nuevoCCAResponse">
+        <wsdl:part name="parameters" element="ns0:nuevoCCAResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ServicioGeneracionCCAPortType">
+        <wsdl:operation name="nuevoCCA">
+            <wsdl:input message="axis2:nuevoCCARequest" wsaw:Action="urn:nuevoCCA"/>
+            <wsdl:output message="axis2:nuevoCCAResponse" wsaw:Action="urn:nuevoCCAResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ServicioGeneracionCCAWSSOAP11Binding" type="axis2:ServicioGeneracionCCAPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="nuevoCCA">
+            <soap:operation soapAction="urn:nuevoCCA" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ServicioGeneracionCCAWSSOAP12Binding" type="axis2:ServicioGeneracionCCAPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="nuevoCCA">
+            <soap12:operation soapAction="urn:nuevoCCA" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ServicioGeneracionCCAWS">
+        <wsdl:port name="ServicioGeneracionCCAWSSOAP11port_http" binding="axis2:ServicioGeneracionCCAWSSOAP11Binding">
+            <soap:address location="http://localhost:8080/axis2/services/ServicioGeneracionCCAWS"/>
+        </wsdl:port>
+        <wsdl:port name="ServicioGeneracionCCAWSSOAP12port_http" binding="axis2:ServicioGeneracionCCAWSSOAP12Binding">
+            <soap12:address location="http://localhost:8080/axis2/services/ServicioGeneracionCCAWS"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

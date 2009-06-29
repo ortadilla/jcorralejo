@@ -1,0 +1,1636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:" SHAPE="576,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::0" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:listaElementosSeleccionables::#contratacion#listaElementosSeleccionables.jsp"
+    NAME="output" PATH="/contratacion/listaElementosSeleccionables.jsp"
+    TARGET="rules:#contratacion#listaElementosSeleccionables.jsp"
+    TITLE="dialog:listaElementosSeleccionables" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::1" SHAPE="32,4417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::1" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="errorConfiguracion::#contratacion#error#muestraErroresConfiguracion.jsp"
+    NAME="output"
+    PATH="/contratacion/error/muestraErroresConfiguracion.jsp"
+    TARGET="rules:#contratacion#error#muestraErroresConfiguracion.jsp"
+    TITLE="errorConfiguracion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::2" SHAPE="32,4529,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::2" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="errorBloqueoEdicion::#contratacion#error#muestraErrorBloqueo.jsp"
+    NAME="output" PATH="/contratacion/error/muestraErrorBloqueo.jsp"
+    TARGET="rules:#contratacion#error#muestraErrorBloqueo.jsp"
+    TITLE="errorBloqueoEdicion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::3" SHAPE="32,4641,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::3" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cerrarPantalla::#contratacion#cerrar.jsp"
+    NAME="output" PATH="/contratacion/cerrar.jsp"
+    TARGET="rules:#contratacion#cerrar.jsp" TITLE="cerrarPantalla" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::4" SHAPE="32,4753,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::4" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:cambiarMomentosElementoConfigurable::#contratacion#gestion#cambiarMomentosElementoConfigurable.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/cambiarMomentosElementoConfigurable.jsp"
+    TARGET="rules:#contratacion#gestion#cambiarMomentosElementoConfigurable.jsp"
+    TITLE="dialog:cambiarMomentosElementoConfigurable" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::5" SHAPE="32,4865,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::5" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:gestionConsultasConfigurables::#contratacion#gestion#gestionConsultasConfigurables.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionConsultasConfigurables.jsp"
+    TARGET="rules:#contratacion#gestion#gestionConsultasConfigurables.jsp"
+    TITLE="dialog:gestionConsultasConfigurables" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#cambiarMomentosElementoConfigurable.jsp"
+  PATH="/contratacion/gestion/cambiarMomentosElementoConfigurable.jsp"
+  SHAPE="256,4769,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#cambiarMomentosElementoConfigurable.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/cambiarMomentosElementoConfigurable.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="entrar::#contratacion#gestion#agregarElementoConfigurablePorMomento.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/agregarElementoConfigurablePorMomento.jsp"
+    TARGET="rules:#contratacion#gestion#agregarElementoConfigurablePorMomento.jsp"
+    TITLE="entrar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#agregarElementoConfigurablePorMomento.jsp"
+  PATH="/contratacion/gestion/agregarElementoConfigurablePorMomento.jsp"
+  SHAPE="464,4753,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#agregarElementoConfigurablePorMomento.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/agregarElementoConfigurablePorMomento.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="volver::#contratacion#gestion#cambiarMomentosElementoConfigurable.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/cambiarMomentosElementoConfigurable.jsp"
+    TARGET="rules:#contratacion#gestion#cambiarMomentosElementoConfigurable.jsp"
+    TITLE="volver" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::6" SHAPE="32,4977,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::6" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:inputTextDialogo::#contratacion#inputEnPopUp#inputTextDialogo.jsp"
+    NAME="output" PATH="/contratacion/inputEnPopUp/inputTextDialogo.jsp"
+    TARGET="rules:#contratacion#inputEnPopUp#inputTextDialogo.jsp"
+    TITLE="dialog:inputTextDialogo" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::7" SHAPE="32,5089,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::7" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:verHistoricoCamposCuadroResumen::#contratacion#historico#historicoValorCamposCuadroResumen.jsp"
+    NAME="output"
+    PATH="/contratacion/historico/historicoValorCamposCuadroResumen.jsp"
+    TARGET="rules:#contratacion#historico#historicoValorCamposCuadroResumen.jsp"
+    TITLE="dialog:verHistoricoCamposCuadroResumen" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#modificar#modificarVersionModeloPliego.jsp"
+  PATH="/contratacion/modificar/modificarVersionModeloPliego.jsp"
+  SHAPE="304,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#modificar#modificarVersionModeloPliego.jsp:0"
+   NAME="item"
+   PATH="/contratacion/modificar/modificarVersionModeloPliego.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionPagina::#contratacion#gestion#gestionPaginas.jsp"
+    NAME="output" PATH="/contratacion/gestion/gestionPaginas.jsp"
+    TARGET="rules:#contratacion#gestion#gestionPaginas.jsp"
+    TITLE="gestionPagina" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionBloque::#contratacion#gestion#gestionBloqueCampo.jsp"
+    NAME="output1" PATH="/contratacion/gestion/gestionBloqueCampo.jsp"
+    TARGET="rules:#contratacion#gestion#gestionBloqueCampo.jsp"
+    TITLE="gestionBloque" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionBloqueIncluirCampo::#contratacion#gestion#gestionBloqueIncluirCampo.jsp"
+    NAME="output2"
+    PATH="/contratacion/gestion/gestionBloqueIncluirCampo.jsp"
+    TARGET="rules:#contratacion#gestion#gestionBloqueIncluirCampo.jsp"
+    TITLE="gestionBloqueIncluirCampo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionCampo::#contratacion#gestion#gestionCampo.jsp"
+    NAME="output3" PATH="/contratacion/gestion/gestionCampo.jsp"
+    TARGET="rules:#contratacion#gestion#gestionCampo.jsp"
+    TITLE="gestionCampo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionReglaValidacion::#contratacion#gestion#gestionReglaValidacion.jsp"
+    NAME="output4"
+    PATH="/contratacion/gestion/gestionReglaValidacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionReglaValidacion.jsp"
+    TITLE="gestionReglaValidacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionDocumentacion::#contratacion#gestion#gestionDocumentacion.jsp"
+    NAME="output5" PATH="/contratacion/gestion/gestionDocumentacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionDocumentacion.jsp"
+    TITLE="gestionDocumentacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaModelosPliego.jsp"
+    NAME="output6"
+    PATH="/contratacion/consulta/consultaModelosPliego.jsp"
+    TARGET="rules:#contratacion#consulta#consultaModelosPliego.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:gestionRangoAnexo::#contratacion#gestion#gestionRangoAnexo.jsp"
+    NAME="output7" PATH="/contratacion/gestion/gestionRangoAnexo.jsp"
+    TARGET="rules:#contratacion#gestion#gestionRangoAnexo.jsp"
+    TITLE="dialog:gestionRangoAnexo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:gestionFicherosEstados::#contratacion#gestion#gestionFicherosEstados.jsp"
+    NAME="output8"
+    PATH="/contratacion/gestion/gestionFicherosEstados.jsp"
+    TARGET="rules:#contratacion#gestion#gestionFicherosEstados.jsp"
+    TITLE="dialog:gestionFicherosEstados" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM
+   ID="rules:#contratacion#modificar#modificarVersionModeloPliego.jsp:1"
+   NAME="item1"
+   PATH="/contratacion/modificar/modificarVersionModeloPliego.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:cambiarEstadosCampoEditable::#contratacion#listaElementosSeleccionables.jsp"
+    NAME="output" PATH="/contratacion/listaElementosSeleccionables.jsp"
+    TARGET="rules:#contratacion#listaElementosSeleccionables.jsp"
+    TITLE="dialog:cambiarEstadosCampoEditable" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::8" SHAPE="32,5201,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::8" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="noConversacion::#contratacion#error#noConversacion.jsp"
+    NAME="output" PATH="/contratacion/error/noConversacion.jsp"
+    TARGET="rules:#contratacion#error#noConversacion.jsp"
+    TITLE="noConversacion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::9" SHAPE="32,2289,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::9" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="principalContratacion::#contratacion#menu.jsp" NAME="output"
+    PATH="/contratacion/menu.jsp" TARGET="rules:#contratacion#menu.jsp"
+    TITLE="principalContratacion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::10" SHAPE="32,1969,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::10" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="principalAdmin::#contratacion#admin.jsp"
+    NAME="output" PATH="/contratacion/admin.jsp"
+    TARGET="rules:#contratacion#admin.jsp" TITLE="principalAdmin" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#cargaNecesidadesContratacion.jsp"
+  PATH="/contratacion/cargaNecesidadesContratacion.jsp"
+  SHAPE="576,4081,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#cargaNecesidadesContratacion.jsp:0"
+   NAME="item" PATH="/contratacion/cargaNecesidadesContratacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancelar::#contratacion#menu.jsp"
+    NAME="output" PATH="/contratacion/menu.jsp"
+    TARGET="rules:#contratacion#menu.jsp" TITLE="cancelar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaNecesidades.jsp"
+  PATH="/contratacion/consulta/consultaNecesidades.jsp"
+  SHAPE="848,1457,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaNecesidades.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaNecesidades.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionNecesidad.jsp"
+    NAME="output" PATH="/contratacion/gestion/gestionNecesidad.jsp"
+    TARGET="rules:#contratacion#gestion#gestionNecesidad.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionCabeceraExpedienteContratacion::#contratacion#gestion#gestionCabeceraExpedienteContratacion.jsp"
+    NAME="output1"
+    PATH="/contratacion/gestion/gestionCabeceraExpedienteContratacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionCabeceraExpedienteContratacion.jsp"
+    TITLE="gestionCabeceraExpedienteContratacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:introducirDatosAgrupacion::#contratacion#introducirDatosAgrupacion.jsp"
+    NAME="output2" PATH="/contratacion/introducirDatosAgrupacion.jsp"
+    TARGET="rules:#contratacion#introducirDatosAgrupacion.jsp"
+    TITLE="dialog:introducirDatosAgrupacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:introducirDatosEnvioPdc::#contratacion#introducirDatosEnvioPdc.jsp"
+    NAME="output3" PATH="/contratacion/introducirDatosEnvioPdc.jsp"
+    TARGET="rules:#contratacion#introducirDatosEnvioPdc.jsp"
+    TITLE="dialog:introducirDatosEnvioPdc" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="tramitarNecesidadesEnGrupo::#contratacion#tramitarNecesidadesEnGrupo.jsp"
+    NAME="output4" PATH="/contratacion/tramitarNecesidadesEnGrupo.jsp"
+    TARGET="rules:#contratacion#tramitarNecesidadesEnGrupo.jsp"
+    TITLE="tramitarNecesidadesEnGrupo" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::11" SHAPE="304,2417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::11" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="altaNecesidad::#contratacion#gestion#gestionNecesidad.jsp"
+    NAME="output" PATH="/contratacion/gestion/gestionNecesidad.jsp"
+    TARGET="rules:#contratacion#gestion#gestionNecesidad.jsp"
+    TITLE="altaNecesidad" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#tramitarNecesidadesEnGrupo.jsp"
+  PATH="/contratacion/tramitarNecesidadesEnGrupo.jsp"
+  SHAPE="1120,1441,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#tramitarNecesidadesEnGrupo.jsp:0" NAME="item"
+   PATH="/contratacion/tramitarNecesidadesEnGrupo.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="volver::#contratacion#consulta#consultaNecesidades.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaNecesidades.jsp"
+    TARGET="rules:#contratacion#consulta#consultaNecesidades.jsp"
+    TITLE="volver" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#gestion#gestionCentro.jsp"
+  PATH="/contratacion/gestion/gestionCentro.jsp" SHAPE="848,1697,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#gestion#gestionCentro.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionCentro.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaCentro.jsp" NAME="output"
+    PATH="/contratacion/consulta/consultaCentro.jsp"
+    TARGET="rules:#contratacion#consulta#consultaCentro.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionOrganoContratacion.jsp"
+  PATH="/contratacion/gestion/gestionOrganoContratacion.jsp"
+  SHAPE="848,1841,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionOrganoContratacion.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionOrganoContratacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaOrganoContratacion.jsp"
+    NAME="output"
+    PATH="/contratacion/consulta/consultaOrganoContratacion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaOrganoContratacion.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaOrganoContratacion.jsp"
+  PATH="/contratacion/consulta/consultaOrganoContratacion.jsp"
+  SHAPE="576,1825,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaOrganoContratacion.jsp:0"
+   NAME="item"
+   PATH="/contratacion/consulta/consultaOrganoContratacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionOrganoContratacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionOrganoContratacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionOrganoContratacion.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#consulta#consultaCentro.jsp"
+  PATH="/contratacion/consulta/consultaCentro.jsp" SHAPE="576,1681,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#consulta#consultaCentro.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaCentro.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionCentro.jsp" NAME="output"
+    PATH="/contratacion/gestion/gestionCentro.jsp"
+    TARGET="rules:#contratacion#gestion#gestionCentro.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#gestion#gestionCampo.jsp"
+  PATH="/contratacion/gestion/gestionCampo.jsp" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#gestion#gestionCampo.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionCampo.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    NAME="output"
+    PATH="/contratacion/modificar/modificarVersionModeloPliego.jsp"
+    TARGET="rules:#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#gestion#gestionAmbito.jsp"
+  PATH="/contratacion/gestion/gestionAmbito.jsp" SHAPE="848,2305,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#gestion#gestionAmbito.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionAmbito.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaAmbitos.jsp" NAME="output"
+    PATH="/contratacion/consulta/consultaAmbitos.jsp"
+    TARGET="rules:#contratacion#consulta#consultaAmbitos.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#consulta#consultaAmbitos.jsp"
+  PATH="/contratacion/consulta/consultaAmbitos.jsp" SHAPE="576,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#consulta#consultaAmbitos.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaAmbitos.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionAmbito.jsp" NAME="output"
+    PATH="/contratacion/gestion/gestionAmbito.jsp"
+    TARGET="rules:#contratacion#gestion#gestionAmbito.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:cambiarEstadosAsociadosAmbito::#contratacion#listaElementosSeleccionables.jsp"
+    NAME="output1" PATH="/contratacion/listaElementosSeleccionables.jsp"
+    TARGET="rules:#contratacion#listaElementosSeleccionables.jsp"
+    TITLE="dialog:cambiarEstadosAsociadosAmbito" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#gestion#gestionPaginas.jsp"
+  PATH="/contratacion/gestion/gestionPaginas.jsp" SHAPE="32,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#gestion#gestionPaginas.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionPaginas.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    NAME="output"
+    PATH="/contratacion/modificar/modificarVersionModeloPliego.jsp"
+    TARGET="rules:#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionDocumentacion.jsp"
+  PATH="/contratacion/gestion/gestionDocumentacion.jsp"
+  SHAPE="32,1265,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionDocumentacion.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionDocumentacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    NAME="output"
+    PATH="/contratacion/modificar/modificarVersionModeloPliego.jsp"
+    TARGET="rules:#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#configuraConsultaExpedientes.jsp"
+  PATH="/contratacion/configuraConsultaExpedientes.jsp"
+  SHAPE="848,433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#configuraConsultaExpedientes.jsp:0"
+   NAME="item" PATH="/contratacion/configuraConsultaExpedientes.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="consulta::#contratacion#consulta#consultaExpedientes.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaExpedientes.jsp"
+    TARGET="rules:#contratacion#consulta#consultaExpedientes.jsp"
+    TITLE="consulta" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#consultaExpedientes.jsp"
+  PATH="/contratacion/consultaExpedientes.jsp" SHAPE="848,1281,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#consultaExpedientes.jsp:0"
+   NAME="item" PATH="/contratacion/consultaExpedientes.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="consulta::#contratacion#consulta#consultaExpedientes.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaExpedientes.jsp"
+    TARGET="rules:#contratacion#consulta#consultaExpedientes.jsp"
+    TITLE="consulta" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionCondicionFlujo.jsp"
+  PATH="/contratacion/gestion/gestionCondicionFlujo.jsp"
+  SHAPE="32,2113,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionCondicionFlujo.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionCondicionFlujo.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaCondicionesFlujo.jsp"
+    NAME="output"
+    PATH="/contratacion/consulta/consultaCondicionesFlujo.jsp"
+    TARGET="rules:#contratacion#consulta#consultaCondicionesFlujo.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:excluirOcurrenciasTramite::#contratacion#ocurrenciaDeTramite.jsp"
+    NAME="output1" PATH="/contratacion/ocurrenciaDeTramite.jsp"
+    TARGET="rules:#contratacion#ocurrenciaDeTramite.jsp"
+    TITLE="dialog:excluirOcurrenciasTramite" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:excluirOcurrenciasTransicion::#contratacion#ocurrenciaDeTransicion.jsp"
+    NAME="output2" PATH="/contratacion/ocurrenciaDeTransicion.jsp"
+    TARGET="rules:#contratacion#ocurrenciaDeTransicion.jsp"
+    TITLE="dialog:excluirOcurrenciasTransicion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaCondicionesFlujo.jsp"
+  PATH="/contratacion/consulta/consultaCondicionesFlujo.jsp"
+  SHAPE="304,1985,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaCondicionesFlujo.jsp:0"
+   NAME="item"
+   PATH="/contratacion/consulta/consultaCondicionesFlujo.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionCondicionFlujo.jsp"
+    NAME="output" PATH="/contratacion/gestion/gestionCondicionFlujo.jsp"
+    TARGET="rules:#contratacion#gestion#gestionCondicionFlujo.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaCondicionesFlujo.jsp:1"
+   NAME="item1"
+   PATH="/contratacion/consulta/consultaCondicionesFlujo.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="consultaTransiciones::#contratacion#consulta#consultaTransiciones.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaTransiciones.jsp"
+    TARGET="rules:#contratacion#consulta#consultaTransiciones.jsp"
+    TITLE="consultaTransiciones" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#gestion#gestionNecesidad.jsp"
+  PATH="/contratacion/gestion/gestionNecesidad.jsp" SHAPE="576,2113,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#gestion#gestionNecesidad.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionNecesidad.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaNecesidades.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaNecesidades.jsp"
+    TARGET="rules:#contratacion#consulta#consultaNecesidades.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="tramitarNecesidadesEnGrupo::#contratacion#tramitarNecesidadesEnGrupo.jsp"
+    NAME="output1" PATH="/contratacion/tramitarNecesidadesEnGrupo.jsp"
+    TARGET="rules:#contratacion#tramitarNecesidadesEnGrupo.jsp"
+    TITLE="tramitarNecesidadesEnGrupo" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#catalogo#consultarArticulo.jsp"
+  PATH="/catalogo/consultarArticulo.jsp" SHAPE="304,1281,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#catalogo#consultarArticulo.jsp:0" NAME="item"
+   PATH="/catalogo/consultarArticulo.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="volverConsultaNecesidad::#contratacion#consulta#consultaNecesidades.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaNecesidades.jsp"
+    TARGET="rules:#contratacion#consulta#consultaNecesidades.jsp"
+    TITLE="volverConsultaNecesidad" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#catalogo#consultarArticulo.jsp:1"
+   NAME="item1" PATH="/catalogo/consultarArticulo.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="volverGestionNecesidad::#contratacion#gestion#gestionNecesidad.jsp"
+    NAME="output" PATH="/contratacion/gestion/gestionNecesidad.jsp"
+    TARGET="rules:#contratacion#gestion#gestionNecesidad.jsp"
+    TITLE="volverGestionNecesidad" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#catalogo#consultarArticulo.jsp:2"
+   NAME="item2" PATH="/catalogo/consultarArticulo.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="volverConsultaExpedientes::#contratacion#consulta#consultaExpedientes.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaExpedientes.jsp"
+    TARGET="rules:#contratacion#consulta#consultaExpedientes.jsp"
+    TITLE="volverConsultaExpedientes" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#gestion#gestionBloqueCampo.jsp"
+  PATH="/contratacion/gestion/gestionBloqueCampo.jsp"
+  SHAPE="32,1441,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionBloqueCampo.jsp:0" NAME="item"
+   PATH="/contratacion/gestion/gestionBloqueCampo.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    NAME="output"
+    PATH="/contratacion/modificar/modificarVersionModeloPliego.jsp"
+    TARGET="rules:#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionBloqueIncluirCampo.jsp"
+  PATH="/contratacion/gestion/gestionBloqueIncluirCampo.jsp"
+  SHAPE="32,1681,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionBloqueIncluirCampo.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionBloqueIncluirCampo.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    NAME="output"
+    PATH="/contratacion/modificar/modificarVersionModeloPliego.jsp"
+    TARGET="rules:#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaTransiciones.jsp"
+  PATH="/contratacion/consulta/consultaTransiciones.jsp"
+  SHAPE="576,1969,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaTransiciones.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaTransiciones.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="condicionesFlujo::#contratacion#consulta#consultaCondicionesFlujo.jsp"
+    NAME="output"
+    PATH="/contratacion/consulta/consultaCondicionesFlujo.jsp"
+    TARGET="rules:#contratacion#consulta#consultaCondicionesFlujo.jsp"
+    TITLE="condicionesFlujo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionCondicionesFlujoNoParametrizables.jsp"
+    NAME="output1"
+    PATH="/contratacion/gestion/gestionCondicionesFlujoNoParametrizables.jsp"
+    TARGET="rules:#contratacion#gestion#gestionCondicionesFlujoNoParametrizables.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionCondicionesFlujoNoParametrizables.jsp"
+  PATH="/contratacion/gestion/gestionCondicionesFlujoNoParametrizables.jsp"
+  SHAPE="848,1985,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionCondicionesFlujoNoParametrizables.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionCondicionesFlujoNoParametrizables.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaTransiciones.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaTransiciones.jsp"
+    TARGET="rules:#contratacion#consulta#consultaTransiciones.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionClasificacionArticuloTipoNecesidad.jsp"
+  PATH="/contratacion/gestion/gestionClasificacionArticuloTipoNecesidad.jsp"
+  SHAPE="576,1265,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionClasificacionArticuloTipoNecesidad.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionClasificacionArticuloTipoNecesidad.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="atras::#contratacion#admin.jsp"
+    NAME="output" PATH="/contratacion/admin.jsp"
+    TARGET="rules:#contratacion#admin.jsp" TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionClasificacionArticuloDiasExposicionNecesidades.jsp"
+  PATH="/contratacion/gestion/gestionClasificacionArticuloDiasExposicionNecesidades.jsp"
+  SHAPE="576,1441,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionClasificacionArticuloDiasExposicionNecesidades.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionClasificacionArticuloDiasExposicionNecesidades.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="atras::#contratacion#admin.jsp"
+    NAME="output" PATH="/contratacion/admin.jsp"
+    TARGET="rules:#contratacion#admin.jsp" TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#admin.jsp"
+  PATH="/contratacion/admin.jsp" SHAPE="304,433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#admin.jsp:0" NAME="item"
+   PATH="/contratacion/admin.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="consultaCentro::#contratacion#consulta#consultaCentro.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaCentro.jsp"
+    TARGET="rules:#contratacion#consulta#consultaCentro.jsp"
+    TITLE="consultaCentro" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consultaOrganoContratacion::#contratacion#consulta#consultaOrganoContratacion.jsp"
+    NAME="output1"
+    PATH="/contratacion/consulta/consultaOrganoContratacion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaOrganoContratacion.jsp"
+    TITLE="consultaOrganoContratacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="agregarCentro::#contratacion#gestion#gestionCentro.jsp"
+    NAME="output2" PATH="/contratacion/gestion/gestionCentro.jsp"
+    TARGET="rules:#contratacion#gestion#gestionCentro.jsp"
+    TITLE="agregarCentro" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consultaTransiciones::#contratacion#consulta#consultaTransiciones.jsp"
+    NAME="output3"
+    PATH="/contratacion/consulta/consultaTransiciones.jsp"
+    TARGET="rules:#contratacion#consulta#consultaTransiciones.jsp"
+    TITLE="consultaTransiciones" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consultaExpedientes::#contratacion#consulta#consultaExpedientes.jsp"
+    NAME="output4" PATH="/contratacion/consulta/consultaExpedientes.jsp"
+    TARGET="rules:#contratacion#consulta#consultaExpedientes.jsp"
+    TITLE="consultaExpedientes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="adminPlazosBloqueo::#contratacion#modificar#modificarPlazosBloqueo.jsp"
+    NAME="output5"
+    PATH="/contratacion/modificar/modificarPlazosBloqueo.jsp"
+    TARGET="rules:#contratacion#modificar#modificarPlazosBloqueo.jsp"
+    TITLE="adminPlazosBloqueo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionModelosPliego::#contratacion#consulta#consultaModelosPliego.jsp"
+    NAME="output6"
+    PATH="/contratacion/consulta/consultaModelosPliego.jsp"
+    TARGET="rules:#contratacion#consulta#consultaModelosPliego.jsp"
+    TITLE="gestionModelosPliego" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionUsuariosWF::#contratacion#consulta#consultaUsuariosWF.jsp"
+    NAME="output7" PATH="/contratacion/consulta/consultaUsuariosWF.jsp"
+    TARGET="rules:#contratacion#consulta#consultaUsuariosWF.jsp"
+    TITLE="gestionUsuariosWF" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionSolicitudesDocumentoContable::#contratacion#consulta#consultaSolicitudesDocumentoContable.jsp"
+    NAME="output8"
+    PATH="/contratacion/consulta/consultaSolicitudesDocumentoContable.jsp"
+    TARGET="rules:#contratacion#consulta#consultaSolicitudesDocumentoContable.jsp"
+    TITLE="gestionSolicitudesDocumentoContable" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionSeccion::#contratacion#consulta#consultaSeccion.jsp"
+    NAME="output9" PATH="/contratacion/consulta/consultaSeccion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaSeccion.jsp"
+    TITLE="gestionSeccion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionTipoFichero::#contratacion#consulta#consultaTipoFichero.jsp"
+    NAME="output10"
+    PATH="/contratacion/consulta/consultaTipoFichero.jsp"
+    TARGET="rules:#contratacion#consulta#consultaTipoFichero.jsp"
+    TITLE="gestionTipoFichero" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionAmbitos::#contratacion#consulta#consultaAmbitos.jsp"
+    NAME="output11" PATH="/contratacion/consulta/consultaAmbitos.jsp"
+    TARGET="rules:#contratacion#consulta#consultaAmbitos.jsp"
+    TITLE="gestionAmbitos" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionClasificacionSeleccionable::#contratacion#gestion#gestionClasificacionSeleccionable.jsp"
+    NAME="output12"
+    PATH="/contratacion/gestion/gestionClasificacionSeleccionable.jsp"
+    TARGET="rules:#contratacion#gestion#gestionClasificacionSeleccionable.jsp"
+    TITLE="gestionClasificacionSeleccionable" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionTipoContratoArticulo::#contratacion#consulta#consultaClasificacionArticuloTipoContrato.jsp"
+    NAME="output13"
+    PATH="/contratacion/consulta/consultaClasificacionArticuloTipoContrato.jsp"
+    TARGET="rules:#contratacion#consulta#consultaClasificacionArticuloTipoContrato.jsp"
+    TITLE="gestionTipoContratoArticulo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionClasificacionTipoNecesidad::#contratacion#gestion#gestionClasificacionArticuloTipoNecesidad.jsp"
+    NAME="output14"
+    PATH="/contratacion/gestion/gestionClasificacionArticuloTipoNecesidad.jsp"
+    TARGET="rules:#contratacion#gestion#gestionClasificacionArticuloTipoNecesidad.jsp"
+    TITLE="gestionClasificacionTipoNecesidad" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionClasificacionDiasExposicionNecesidades::#contratacion#gestion#gestionClasificacionArticuloDiasExposicionNecesidades.jsp"
+    NAME="output15"
+    PATH="/contratacion/gestion/gestionClasificacionArticuloDiasExposicionNecesidades.jsp"
+    TARGET="rules:#contratacion#gestion#gestionClasificacionArticuloDiasExposicionNecesidades.jsp"
+    TITLE="gestionClasificacionDiasExposicionNecesidades" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consultaInformeSituacion::#contratacion#consulta#consultaInformeSituacion.jsp"
+    NAME="output16"
+    PATH="/contratacion/consulta/consultaInformeSituacion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaInformeSituacion.jsp"
+    TITLE="consultaInformeSituacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="elementosConfigurablesPorMomento::#contratacion#consulta#consultaElementosConfigurablesPorMomento.jsp"
+    NAME="output17"
+    PATH="/contratacion/consulta/consultaElementosConfigurablesPorMomento.jsp"
+    TARGET="rules:#contratacion#consulta#consultaElementosConfigurablesPorMomento.jsp"
+    TITLE="elementosConfigurablesPorMomento" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionBloqueMenuRol::#contratacion#consulta#consultaBloqueMenuRol.jsp"
+    NAME="output18"
+    PATH="/contratacion/consulta/consultaBloqueMenuRol.jsp"
+    TARGET="rules:#contratacion#consulta#consultaBloqueMenuRol.jsp"
+    TITLE="gestionBloqueMenuRol" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consultasConfiguradas::#contratacion#consulta#consultasConfiguradas.jsp"
+    NAME="output19"
+    PATH="/contratacion/consulta/consultasConfiguradas.jsp"
+    TARGET="rules:#contratacion#consulta#consultasConfiguradas.jsp"
+    TITLE="consultasConfiguradas" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionTipoContrato::#contratacion#consulta#consultaTipoContrato.jsp"
+    NAME="output20"
+    PATH="/contratacion/consulta/consultaTipoContrato.jsp"
+    TARGET="rules:#contratacion#consulta#consultaTipoContrato.jsp"
+    TITLE="gestionTipoContrato" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionProcedimientoContratacion::#contratacion#consulta#consultaProcedimientoContratacion.jsp"
+    NAME="output21"
+    PATH="/contratacion/consulta/consultaProcedimientoContratacion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaProcedimientoContratacion.jsp"
+    TITLE="gestionProcedimientoContratacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionFormaAdjudicacion::#contratacion#consulta#consultaFormaAdjudicacion.jsp"
+    NAME="output22"
+    PATH="/contratacion/consulta/consultaFormaAdjudicacion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaFormaAdjudicacion.jsp"
+    TITLE="gestionFormaAdjudicacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionProcedimientoComplementarioSeleccion::#contratacion#consulta#consultaProcedimientoComplementarioSeleccion.jsp"
+    NAME="output23"
+    PATH="/contratacion/consulta/consultaProcedimientoComplementarioSeleccion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaProcedimientoComplementarioSeleccion.jsp"
+    TITLE="gestionProcedimientoComplementarioSeleccion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaTipoContrato.jsp"
+  PATH="/contratacion/consulta/consultaTipoContrato.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaTipoContrato.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaTipoContrato.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionTipoContrato.jsp"
+    NAME="output" PATH="/contratacion/gestion/gestionTipoContrato.jsp"
+    TARGET="rules:#contratacion#gestion#gestionTipoContrato.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaProcedimientoContratacion.jsp"
+  PATH="/contratacion/consulta/consultaProcedimientoContratacion.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaProcedimientoContratacion.jsp:0"
+   NAME="item"
+   PATH="/contratacion/consulta/consultaProcedimientoContratacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionProcedimientoContratacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionProcedimientoContratacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionProcedimientoContratacion.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaFormaAdjudicacion.jsp"
+  PATH="/contratacion/consulta/consultaFormaAdjudicacion.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaFormaAdjudicacion.jsp:0"
+   NAME="item"
+   PATH="/contratacion/consulta/consultaFormaAdjudicacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionFormaAdjudicacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionFormaAdjudicacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionFormaAdjudicacion.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaProcedimientoComplementarioSeleccion.jsp"
+  PATH="/contratacion/consulta/consultaProcedimientoComplementarioSeleccion.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaProcedimientoComplementarioSeleccion.jsp:0"
+   NAME="item"
+   PATH="/contratacion/consulta/consultaProcedimientoComplementarioSeleccion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionProcedimientoComplementarioSeleccion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionProcedimientoComplementarioSeleccion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionProcedimientoComplementarioSeleccion.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionTipoContrato.jsp"
+  PATH="/contratacion/gestion/gestionTipoContrato.jsp"
+  SHAPE="848,3441,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionTipoContrato.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionTipoContrato.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaTipoContrato.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaTipoContrato.jsp"
+    TARGET="rules:#contratacion#consulta#consultaTipoContrato.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionProcedimientoContratacion.jsp"
+  PATH="/contratacion/gestion/gestionProcedimientoContratacion.jsp"
+  SHAPE="848,3553,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionProcedimientoContratacion.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionProcedimientoContratacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaProcedimientoContratacion.jsp"
+    NAME="output"
+    PATH="/contratacion/consulta/consultaProcedimientoContratacion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaProcedimientoContratacion.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionFormaAdjudicacion.jsp"
+  PATH="/contratacion/gestion/gestionFormaAdjudicacion.jsp"
+  SHAPE="848,3665,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionFormaAdjudicacion.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionFormaAdjudicacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaFormaAdjudicacion.jsp"
+    NAME="output"
+    PATH="/contratacion/consulta/consultaFormaAdjudicacion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaFormaAdjudicacion.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionProcedimientoComplementarioSeleccion.jsp"
+  PATH="/contratacion/gestion/gestionProcedimientoComplementarioSeleccion.jsp"
+  SHAPE="848,3809,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionProcedimientoComplementarioSeleccion.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionProcedimientoComplementarioSeleccion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaProcedimientoComplementarioSeleccion.jsp"
+    NAME="output"
+    PATH="/contratacion/consulta/consultaProcedimientoComplementarioSeleccion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaProcedimientoComplementarioSeleccion.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaBloqueMenuRol.jsp"
+  PATH="/contratacion/consulta/consultaBloqueMenuRol.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaBloqueMenuRol.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaBloqueMenuRol.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionBloqueMenuRol.jsp"
+    NAME="output" PATH="/contratacion/gestion/gestionBloqueMenuRol.jsp"
+    TARGET="rules:#contratacion#gestion#gestionBloqueMenuRol.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionBloqueMenuRol.jsp"
+  PATH="/contratacion/gestion/gestionBloqueMenuRol.jsp"
+  SHAPE="848,3329,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionBloqueMenuRol.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionBloqueMenuRol.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaBloqueMenuRol.jsp"
+    NAME="output"
+    PATH="/contratacion/consulta/consultaBloqueMenuRol.jsp"
+    TARGET="rules:#contratacion#consulta#consultaBloqueMenuRol.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#menu.jsp"
+  PATH="/contratacion/menu.jsp" SHAPE="304,1457,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#menu.jsp:0" NAME="item"
+   PATH="/contratacion/menu.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="consultaExpedientes::#contratacion#consulta#consultaExpedientes.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaExpedientes.jsp"
+    TARGET="rules:#contratacion#consulta#consultaExpedientes.jsp"
+    TITLE="consultaExpedientes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cargaNecesidadesContratacion::#contratacion#cargaNecesidadesContratacion.jsp"
+    NAME="output1" PATH="/contratacion/cargaNecesidadesContratacion.jsp"
+    TARGET="rules:#contratacion#cargaNecesidadesContratacion.jsp"
+    TITLE="cargaNecesidadesContratacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="agendaUsuario::#contratacion#agendaUsuario.jsp" NAME="output2"
+    PATH="/contratacion/agendaUsuario.jsp"
+    TARGET="rules:#contratacion#agendaUsuario.jsp" TITLE="agendaUsuario" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::12" SHAPE="576,2289,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::12" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="consultaNecesidades::#contratacion#consulta#consultaNecesidades.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaNecesidades.jsp"
+    TARGET="rules:#contratacion#consulta#consultaNecesidades.jsp"
+    TITLE="consultaNecesidades" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionCabeceraExpedienteContratacion.jsp"
+  PATH="/contratacion/gestion/gestionCabeceraExpedienteContratacion.jsp"
+  SHAPE="576,2401,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionCabeceraExpedienteContratacion.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionCabeceraExpedienteContratacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="consultarNecesidades::#contratacion#consulta#consultaNecesidades.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaNecesidades.jsp"
+    TARGET="rules:#contratacion#consulta#consultaNecesidades.jsp"
+    TITLE="consultarNecesidades" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionExpedienteContratacion::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output1"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="gestionExpedienteContratacion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaLogExpediente.jsp"
+  PATH="/contratacion/consulta/consultaLogExpediente.jsp"
+  SHAPE="576,2961,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaLogExpediente.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaLogExpediente.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::13" SHAPE="304,3153,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::13" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionNecesidadesExpediente::#contratacion#gestion#gestionNecesidadesExpediente.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionNecesidadesExpediente.jsp"
+    TARGET="rules:#contratacion#gestion#gestionNecesidadesExpediente.jsp"
+    TITLE="gestionNecesidadesExpediente" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+  PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+  SHAPE="848,2417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:editorDatosPublicacion::#contratacion#gestion#editorDatosPublicacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/editorDatosPublicacion.jsp"
+    TARGET="rules:#contratacion#gestion#editorDatosPublicacion.jsp"
+    TITLE="dialog:editorDatosPublicacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:aprobacionEIncidencias::#contratacion#gestion#aprobacionEIncidencias.jsp"
+    NAME="output1"
+    PATH="/contratacion/gestion/aprobacionEIncidencias.jsp"
+    TARGET="rules:#contratacion#gestion#aprobacionEIncidencias.jsp"
+    TITLE="dialog:aprobacionEIncidencias" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consultaLogExpediente::#contratacion#consulta#consultaLogExpediente.jsp"
+    NAME="output2"
+    PATH="/contratacion/consulta/consultaLogExpediente.jsp"
+    TARGET="rules:#contratacion#consulta#consultaLogExpediente.jsp"
+    TITLE="consultaLogExpediente" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="editarCuadroResumenValidacion::#contratacion#editorCuadroResumenValidacion.jsp"
+    NAME="output3"
+    PATH="/contratacion/editorCuadroResumenValidacion.jsp"
+    TARGET="rules:#contratacion#editorCuadroResumenValidacion.jsp"
+    TITLE="editarCuadroResumenValidacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="editarDatosAnuncioValidacion::#contratacion#editorValidacionDatosAnuncio.jsp"
+    NAME="output4" PATH="/contratacion/editorValidacionDatosAnuncio.jsp"
+    TARGET="rules:#contratacion#editorValidacionDatosAnuncio.jsp"
+    TITLE="editarDatosAnuncioValidacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consultaExpedientes::#contratacion#consulta#consultaExpedientes.jsp"
+    NAME="output5" PATH="/contratacion/consulta/consultaExpedientes.jsp"
+    TARGET="rules:#contratacion#consulta#consultaExpedientes.jsp"
+    TITLE="consultaExpedientes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionSolicitudesDocumentoContable::#contratacion#consulta#consultaSolicitudesDocumentoContable.jsp"
+    NAME="output6"
+    PATH="/contratacion/consulta/consultaSolicitudesDocumentoContable.jsp"
+    TARGET="rules:#contratacion#consulta#consultaSolicitudesDocumentoContable.jsp"
+    TITLE="gestionSolicitudesDocumentoContable" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaExpedientes.jsp"
+    NAME="output7" PATH="/contratacion/consulta/consultaExpedientes.jsp"
+    TARGET="rules:#contratacion#consulta#consultaExpedientes.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:gestionSubidaArchivo::#contratacion#gestion#gestionSubidaArchivo.jsp"
+    NAME="output8" PATH="/contratacion/gestion/gestionSubidaArchivo.jsp"
+    TARGET="rules:#contratacion#gestion#gestionSubidaArchivo.jsp"
+    TITLE="dialog:gestionSubidaArchivo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:consultarDocumentacionAsociada::#contratacion#consulta#consultaDocumentacion.jsp"
+    NAME="output9"
+    PATH="/contratacion/consulta/consultaDocumentacion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaDocumentacion.jsp"
+    TITLE="dialog:consultarDocumentacionAsociada" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:gestionSubidaArchivoDOCE::#contratacion#gestion#gestionSubidaArchivoDOCE.jsp"
+    NAME="output10"
+    PATH="/contratacion/gestion/gestionSubidaArchivoDOCE.jsp"
+    TARGET="rules:#contratacion#gestion#gestionSubidaArchivoDOCE.jsp"
+    TITLE="dialog:gestionSubidaArchivoDOCE" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:solicitarNuevoCCA::#contratacion#inputEnPopUp#solicitarMotivo.jsp"
+    NAME="output11"
+    PATH="/contratacion/inputEnPopUp/solicitarMotivo.jsp"
+    TARGET="rules:#contratacion#inputEnPopUp#solicitarMotivo.jsp"
+    TITLE="dialog:solicitarNuevoCCA" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:solicitarQuitarDocumentoContable::#contratacion#inputEnPopUp#solicitarMotivo.jsp"
+    NAME="output12"
+    PATH="/contratacion/inputEnPopUp/solicitarMotivo.jsp"
+    TARGET="rules:#contratacion#inputEnPopUp#solicitarMotivo.jsp"
+    TITLE="dialog:solicitarQuitarDocumentoContable" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:solicitarAgregarDocumentoContable::#contratacion#inputEnPopUp#solicitarMotivoCantidad.jsp"
+    NAME="output13"
+    PATH="/contratacion/inputEnPopUp/solicitarMotivoCantidad.jsp"
+    TARGET="rules:#contratacion#inputEnPopUp#solicitarMotivoCantidad.jsp"
+    TITLE="dialog:solicitarAgregarDocumentoContable" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:historicoCampos::#contratacion#historico#historicoValorCampos.jsp"
+    NAME="output14"
+    PATH="/contratacion/historico/historicoValorCampos.jsp"
+    TARGET="rules:#contratacion#historico#historicoValorCampos.jsp"
+    TITLE="dialog:historicoCampos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::14" SHAPE="304,3441,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::14" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="editarDatosAnuncio::#contratacion#editorDatosAnuncio.jsp"
+    NAME="output" PATH="/contratacion/editorDatosAnuncio.jsp"
+    TARGET="rules:#contratacion#editorDatosAnuncio.jsp"
+    TITLE="editarDatosAnuncio" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::15" SHAPE="304,3329,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::15" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="editarCuadroResumen::#contratacion#editorCuadroResumen.jsp"
+    NAME="output" PATH="/contratacion/editorCuadroResumen.jsp"
+    TARGET="rules:#contratacion#editorCuadroResumen.jsp"
+    TITLE="editarCuadroResumen" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaExpedientes.jsp"
+  PATH="/contratacion/consulta/consultaExpedientes.jsp"
+  SHAPE="1120,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaExpedientes.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaExpedientes.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionProrrogas::#contratacion#consulta#consultaProrrogas.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaProrrogas.jsp"
+    TARGET="rules:#contratacion#consulta#consultaProrrogas.jsp"
+    TITLE="gestionProrrogas" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionExpedienteLicitacion::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output1"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="gestionExpedienteLicitacion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::16" SHAPE="32,2961,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::16" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="historial::#contratacion#consulta#consultaHistorial.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaHistorial.jsp"
+    TARGET="rules:#contratacion#consulta#consultaHistorial.jsp"
+    TITLE="historial" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#consulta#consultaHistorial.jsp"
+  PATH="/contratacion/consulta/consultaHistorial.jsp"
+  SHAPE="304,2977,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaHistorial.jsp:0" NAME="item"
+   PATH="/contratacion/consulta/consultaHistorial.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionExpedienteLicitacion::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="gestionExpedienteLicitacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionExpedienteAdjudicacion::#adjudicacion#gestion#gestionExpedienteAdjudicacion.jsp"
+    NAME="output1"
+    PATH="/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp"
+    TARGET="rules:#adjudicacion#gestion#gestionExpedienteAdjudicacion.jsp"
+    TITLE="gestionExpedienteAdjudicacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionNecesidadesExpediente::#contratacion#gestion#gestionNecesidadesExpediente.jsp"
+    NAME="output2"
+    PATH="/contratacion/gestion/gestionNecesidadesExpediente.jsp"
+    TARGET="rules:#contratacion#gestion#gestionNecesidadesExpediente.jsp"
+    TITLE="gestionNecesidadesExpediente" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#consulta#consultaProrrogas.jsp"
+  PATH="/contratacion/consulta/consultaProrrogas.jsp"
+  SHAPE="1344,433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaProrrogas.jsp:0" NAME="item"
+   PATH="/contratacion/consulta/consultaProrrogas.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionProrroga.jsp"
+    NAME="output" PATH="/contratacion/gestion/gestionProrroga.jsp"
+    TARGET="rules:#contratacion#gestion#gestionProrroga.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaExpedientes.jsp"
+    NAME="output1" PATH="/contratacion/consulta/consultaExpedientes.jsp"
+    TARGET="rules:#contratacion#consulta#consultaExpedientes.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#gestion#gestionProrroga.jsp"
+  PATH="/contratacion/gestion/gestionProrroga.jsp" SHAPE="1568,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#gestion#gestionProrroga.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionProrroga.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaProrrogas.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaProrrogas.jsp"
+    TARGET="rules:#contratacion#consulta#consultaProrrogas.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#agendaUsuario.jsp"
+  PATH="/contratacion/agendaUsuario.jsp" SHAPE="848,2129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#agendaUsuario.jsp:0" NAME="item"
+   PATH="/contratacion/agendaUsuario.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="consultaExpedientes::#contratacion#consulta#consultaExpedientes.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaExpedientes.jsp"
+    TARGET="rules:#contratacion#consulta#consultaExpedientes.jsp"
+    TITLE="consultaExpedientes" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#editorCuadroResumen.jsp"
+  PATH="/contratacion/editorCuadroResumen.jsp" SHAPE="576,3313,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#editorCuadroResumen.jsp:0"
+   NAME="item" PATH="/contratacion/editorCuadroResumen.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionExpedienteLicitacion::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="gestionExpedienteLicitacion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#editorDatosAnuncio.jsp"
+  PATH="/contratacion/editorDatosAnuncio.jsp" SHAPE="576,3425,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#editorDatosAnuncio.jsp:0"
+   NAME="item" PATH="/contratacion/editorDatosAnuncio.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionExpedienteLicitacion::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="gestionExpedienteLicitacion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#editorValidacionDatosAnuncio.jsp"
+  PATH="/contratacion/editorValidacionDatosAnuncio.jsp"
+  SHAPE="576,3537,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#editorValidacionDatosAnuncio.jsp:0"
+   NAME="item" PATH="/contratacion/editorValidacionDatosAnuncio.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionExpedienteLicitacion::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="gestionExpedienteLicitacion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#editorCuadroResumenValidacion.jsp"
+  PATH="/contratacion/editorCuadroResumenValidacion.jsp"
+  SHAPE="576,3649,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#editorCuadroResumenValidacion.jsp:0"
+   NAME="item" PATH="/contratacion/editorCuadroResumenValidacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionExpedienteLicitacion::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="gestionExpedienteLicitacion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaClasificacionArticuloTipoContrato.jsp"
+  PATH="/contratacion/consulta/consultaClasificacionArticuloTipoContrato.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaClasificacionArticuloTipoContrato.jsp:0"
+   NAME="item"
+   PATH="/contratacion/consulta/consultaClasificacionArticuloTipoContrato.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionClasificacionArticuloTipoContrato.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionClasificacionArticuloTipoContrato.jsp"
+    TARGET="rules:#contratacion#gestion#gestionClasificacionArticuloTipoContrato.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionClasificacionArticuloTipoContrato.jsp"
+  PATH="/contratacion/gestion/gestionClasificacionArticuloTipoContrato.jsp"
+  SHAPE="848,3153,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionClasificacionArticuloTipoContrato.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionClasificacionArticuloTipoContrato.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaClasificacionArticuloTipoContrato.jsp"
+    NAME="output"
+    PATH="/contratacion/consulta/consultaClasificacionArticuloTipoContrato.jsp"
+    TARGET="rules:#contratacion#consulta#consultaClasificacionArticuloTipoContrato.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionReglaValidacion.jsp"
+  PATH="/contratacion/gestion/gestionReglaValidacion.jsp"
+  SHAPE="32,1825,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionReglaValidacion.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionReglaValidacion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    NAME="output"
+    PATH="/contratacion/modificar/modificarVersionModeloPliego.jsp"
+    TARGET="rules:#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaModelosPliego.jsp"
+  PATH="/contratacion/consulta/consultaModelosPliego.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaModelosPliego.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaModelosPliego.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="modificarEstructura::#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    NAME="output"
+    PATH="/contratacion/modificar/modificarVersionModeloPliego.jsp"
+    TARGET="rules:#contratacion#modificar#modificarVersionModeloPliego.jsp"
+    TITLE="modificarEstructura" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionModeloPliego.jsp"
+    NAME="output1" PATH="/contratacion/gestion/gestionModeloPliego.jsp"
+    TARGET="rules:#contratacion#gestion#gestionModeloPliego.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionVersionModeloPliego::#contratacion#gestion#gestionVersionModeloPliego.jsp"
+    NAME="output2"
+    PATH="/contratacion/gestion/gestionVersionModeloPliego.jsp"
+    TARGET="rules:#contratacion#gestion#gestionVersionModeloPliego.jsp"
+    TITLE="gestionVersionModeloPliego" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::17" SHAPE="32,3537,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::17" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="verEsquemaVersionModeloPliego::#contratacion#verEsquemaCuadroResumen.jsp"
+    NAME="output" PATH="/contratacion/verEsquemaCuadroResumen.jsp"
+    TARGET="rules:#contratacion#verEsquemaCuadroResumen.jsp"
+    TITLE="verEsquemaVersionModeloPliego" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#verEsquemaCuadroResumen.jsp"
+  PATH="/contratacion/verEsquemaCuadroResumen.jsp" SHAPE="304,3553,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#verEsquemaCuadroResumen.jsp:0"
+   NAME="item" PATH="/contratacion/verEsquemaCuadroResumen.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="volver::#contratacion#consulta#consultaModelosPliego.jsp"
+    NAME="output"
+    PATH="/contratacion/consulta/consultaModelosPliego.jsp"
+    TARGET="rules:#contratacion#consulta#consultaModelosPliego.jsp"
+    TITLE="volver" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionVersionModeloPliego.jsp"
+  PATH="/contratacion/gestion/gestionVersionModeloPliego.jsp"
+  SHAPE="304,3665,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionVersionModeloPliego.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionVersionModeloPliego.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaModelosPliego.jsp"
+    NAME="output"
+    PATH="/contratacion/consulta/consultaModelosPliego.jsp"
+    TARGET="rules:#contratacion#consulta#consultaModelosPliego.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cancelar::#contratacion#consulta#consultaModelosPliego.jsp"
+    NAME="output1"
+    PATH="/contratacion/consulta/consultaModelosPliego.jsp"
+    TARGET="rules:#contratacion#consulta#consultaModelosPliego.jsp"
+    TITLE="cancelar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionModeloPliego.jsp"
+  PATH="/contratacion/gestion/gestionModeloPliego.jsp"
+  SHAPE="304,3809,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionModeloPliego.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionModeloPliego.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaModelosPliego.jsp"
+    NAME="output"
+    PATH="/contratacion/consulta/consultaModelosPliego.jsp"
+    TARGET="rules:#contratacion#consulta#consultaModelosPliego.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cancelar::#contratacion#consulta#consultaModelosPliego.jsp"
+    NAME="output1"
+    PATH="/contratacion/consulta/consultaModelosPliego.jsp"
+    TARGET="rules:#contratacion#consulta#consultaModelosPliego.jsp"
+    TITLE="cancelar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#consulta#consultaSeccion.jsp"
+  PATH="/contratacion/consulta/consultaSeccion.jsp" SHAPE="576,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#consulta#consultaSeccion.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaSeccion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionSeccion.jsp" NAME="output"
+    PATH="/contratacion/gestion/gestionSeccion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionSeccion.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#gestion#gestionSeccion.jsp"
+  PATH="/contratacion/gestion/gestionSeccion.jsp" SHAPE="304,1697,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#gestion#gestionSeccion.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionSeccion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaSeccion.jsp" NAME="output"
+    PATH="/contratacion/consulta/consultaSeccion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaSeccion.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cancelar::#contratacion#consulta#consultaSeccion.jsp"
+    NAME="output1" PATH="/contratacion/consulta/consultaSeccion.jsp"
+    TARGET="rules:#contratacion#consulta#consultaSeccion.jsp"
+    TITLE="cancelar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaTipoFichero.jsp"
+  PATH="/contratacion/consulta/consultaTipoFichero.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaTipoFichero.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaTipoFichero.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionTipoFichero.jsp"
+    NAME="output" PATH="/contratacion/gestion/gestionTipoFichero.jsp"
+    TARGET="rules:#contratacion#gestion#gestionTipoFichero.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#gestion#gestionTipoFichero.jsp"
+  PATH="/contratacion/gestion/gestionTipoFichero.jsp"
+  SHAPE="304,1841,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionTipoFichero.jsp:0" NAME="item"
+   PATH="/contratacion/gestion/gestionTipoFichero.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaTipoFichero.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaTipoFichero.jsp"
+    TARGET="rules:#contratacion#consulta#consultaTipoFichero.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cancelar::#contratacion#consulta#consultaTipoFichero.jsp"
+    NAME="output1" PATH="/contratacion/consulta/consultaTipoFichero.jsp"
+    TARGET="rules:#contratacion#consulta#consultaTipoFichero.jsp"
+    TITLE="cancelar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionSubidaArchivo.jsp"
+  PATH="/contratacion/gestion/gestionSubidaArchivo.jsp"
+  SHAPE="576,3793,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionSubidaArchivo.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionSubidaArchivo.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cancelar::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output1"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="cancelar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaUsuariosWF.jsp"
+  PATH="/contratacion/consulta/consultaUsuariosWF.jsp"
+  SHAPE="576,4305,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaUsuariosWF.jsp:0"
+   NAME="item" PATH="/contratacion/consulta/consultaUsuariosWF.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestion::#contratacion#gestion#gestionUsuariosWF.jsp"
+    NAME="output" PATH="/contratacion/gestion/gestionUsuariosWF.jsp"
+    TARGET="rules:#contratacion#gestion#gestionUsuariosWF.jsp"
+    TITLE="gestion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#contratacion#gestion#gestionUsuariosWF.jsp"
+  PATH="/contratacion/gestion/gestionUsuariosWF.jsp"
+  SHAPE="848,4321,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#contratacion#gestion#gestionUsuariosWF.jsp:0"
+   NAME="item" PATH="/contratacion/gestion/gestionUsuariosWF.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="atras::#contratacion#consulta#consultaUsuariosWF.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaUsuariosWF.jsp"
+    TARGET="rules:#contratacion#consulta#consultaUsuariosWF.jsp"
+    TITLE="atras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pedidos#prioridadOfertas.jsp"
+  PATH="/pedidos/prioridadOfertas.jsp" SHAPE="32,5313,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pedidos#prioridadOfertas.jsp:0" NAME="item"
+   PATH="/pedidos/prioridadOfertas.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="::#contratacion#configuraConsultaPriorizacionOfertas.jsp"
+    NAME="output"
+    PATH="/contratacion/configuraConsultaPriorizacionOfertas.jsp"
+    TARGET="rules:#contratacion#configuraConsultaPriorizacionOfertas.jsp"
+    TITLE="[any]" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionNecesidadesExpediente.jsp"
+  PATH="/contratacion/gestion/gestionNecesidadesExpediente.jsp"
+  SHAPE="576,3137,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#gestion#gestionNecesidadesExpediente.jsp:0"
+   NAME="item"
+   PATH="/contratacion/gestion/gestionNecesidadesExpediente.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="consultarNecesidades::#contratacion#consulta#consultaNecesidades.jsp"
+    NAME="output" PATH="/contratacion/consulta/consultaNecesidades.jsp"
+    TARGET="rules:#contratacion#consulta#consultaNecesidades.jsp"
+    TITLE="consultarNecesidades" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="atrasLicitacion::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output1"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="atrasLicitacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="atrasAdjudicacion::#adjudicacion#gestion#gestionExpedienteAdjudicacion.jsp"
+    NAME="output2"
+    PATH="/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp"
+    TARGET="rules:#adjudicacion#gestion#gestionExpedienteAdjudicacion.jsp"
+    TITLE="atrasAdjudicacion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaSolicitudesDocumentoContable.jsp"
+  PATH="/contratacion/consulta/consultaSolicitudesDocumentoContable.jsp"
+  SHAPE="576,3937,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#contratacion#consulta#consultaSolicitudesDocumentoContable.jsp:0"
+   NAME="item"
+   PATH="/contratacion/consulta/consultaSolicitudesDocumentoContable.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionExpedienteLicitacion::#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    NAME="output"
+    PATH="/contratacion/gestion/gestionExpedienteLicitacion.jsp"
+    TARGET="rules:#contratacion#gestion#gestionExpedienteLicitacion.jsp"
+    TITLE="gestionExpedienteLicitacion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dialog:rechazarSolicitud::#contratacion#inputEnPopUp#solicitarMotivo.jsp"
+    NAME="output1" PATH="/contratacion/inputEnPopUp/solicitarMotivo.jsp"
+    TARGET="rules:#contratacion#inputEnPopUp#solicitarMotivo.jsp"
+    TITLE="dialog:rechazarSolicitud" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionSubidaArchivoDOCE.jsp"
+  PATH="/contratacion/gestion/gestionSubidaArchivoDOCE.jsp"
+  SHAPE="1120,3137,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#contratacion#ocurrenciaDeTransicion.jsp"
+  PATH="/contratacion/ocurrenciaDeTransicion.jsp" SHAPE="304,2305,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionClasificacionSeleccionable.jsp"
+  PATH="/contratacion/gestion/gestionClasificacionSeleccionable.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#aprobacionEIncidencias.jsp"
+  PATH="/contratacion/gestion/aprobacionEIncidencias.jsp"
+  SHAPE="1120,2961,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#configuraConsultaPriorizacionOfertas.jsp"
+  PATH="/contratacion/configuraConsultaPriorizacionOfertas.jsp"
+  SHAPE="240,5329,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#inputEnPopUp#inputTextDialogo.jsp"
+  PATH="/contratacion/inputEnPopUp/inputTextDialogo.jsp"
+  SHAPE="240,4993,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#contratacion#introducirDatosAgrupacion.jsp"
+  PATH="/contratacion/introducirDatosAgrupacion.jsp"
+  SHAPE="1120,1681,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#contratacion#error#muestraErrorBloqueo.jsp"
+  PATH="/contratacion/error/muestraErrorBloqueo.jsp"
+  SHAPE="240,4545,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaInformeSituacion.jsp"
+  PATH="/contratacion/consulta/consultaInformeSituacion.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#historico#historicoValorCamposCuadroResumen.jsp"
+  PATH="/contratacion/historico/historicoValorCamposCuadroResumen.jsp"
+  SHAPE="240,5105,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#error#muestraErroresConfiguracion.jsp"
+  PATH="/contratacion/error/muestraErroresConfiguracion.jsp"
+  SHAPE="240,4433,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionFicherosEstados.jsp"
+  PATH="/contratacion/gestion/gestionFicherosEstados.jsp"
+  SHAPE="576,17,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultasConfiguradas.jsp"
+  PATH="/contratacion/consulta/consultasConfiguradas.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#contratacion#ocurrenciaDeTramite.jsp"
+  PATH="/contratacion/ocurrenciaDeTramite.jsp" SHAPE="304,2129,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#gestionConsultasConfigurables.jsp"
+  PATH="/contratacion/gestion/gestionConsultasConfigurables.jsp"
+  SHAPE="240,4881,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#gestion#editorDatosPublicacion.jsp"
+  PATH="/contratacion/gestion/editorDatosPublicacion.jsp"
+  SHAPE="1120,2401,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#contratacion#introducirDatosEnvioPdc.jsp"
+  PATH="/contratacion/introducirDatosEnvioPdc.jsp" SHAPE="1120,1265,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#contratacion#cerrar.jsp"
+  PATH="/contratacion/cerrar.jsp" SHAPE="240,4657,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#contratacion#error#noConversacion.jsp"
+  PATH="/contratacion/error/noConversacion.jsp" SHAPE="240,5217,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#modificar#modificarPlazosBloqueo.jsp"
+  PATH="/contratacion/modificar/modificarPlazosBloqueo.jsp"
+  SHAPE="576,4193,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#contratacion#gestion#gestionRangoAnexo.jsp"
+  PATH="/contratacion/gestion/gestionRangoAnexo.jsp" SHAPE="576,17,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaDocumentacion.jsp"
+  PATH="/contratacion/consulta/consultaDocumentacion.jsp"
+  SHAPE="1120,2289,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#historico#historicoValorCampos.jsp"
+  PATH="/contratacion/historico/historicoValorCampos.jsp"
+  SHAPE="1120,3313,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#adjudicacion#gestion#gestionExpedienteAdjudicacion.jsp"
+  PATH="/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp"
+  SHAPE="848,2977,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#inputEnPopUp#solicitarMotivoCantidad.jsp"
+  PATH="/contratacion/inputEnPopUp/solicitarMotivoCantidad.jsp"
+  SHAPE="1120,2113,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#consulta#consultaElementosConfigurablesPorMomento.jsp"
+  PATH="/contratacion/consulta/consultaElementosConfigurablesPorMomento.jsp"
+  SHAPE="576,417,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#inputEnPopUp#solicitarMotivo.jsp"
+  PATH="/contratacion/inputEnPopUp/solicitarMotivo.jsp"
+  SHAPE="1120,3937,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#contratacion#listaElementosSeleccionables.jsp"
+  PATH="/contratacion/listaElementosSeleccionables.jsp"
+  SHAPE="848,33,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

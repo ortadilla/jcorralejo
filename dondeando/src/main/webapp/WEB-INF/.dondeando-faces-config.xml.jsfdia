@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::0" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="menuPrincial::#dondeando#menuPrincipal.jsp"
+    NAME="output" PATH="/dondeando/menuPrincipal.jsp"
+    TARGET="rules:#dondeando#menuPrincipal.jsp" TITLE="menuPrincial" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="login::#dondeando#Login.jsp" NAME="output1"
+    PATH="/dondeando/Login.jsp" TARGET="rules:#dondeando#Login.jsp"
+    TITLE="login" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="crearUsuario::#dondeando#crearUsuario.jsp"
+    NAME="output2" PATH="/dondeando/crearUsuario.jsp"
+    TARGET="rules:#dondeando#crearUsuario.jsp" TITLE="crearUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="modificarPassword::#dondeando#modificarPassword.jsp"
+    NAME="output3" PATH="/dondeando/modificarPassword.jsp"
+    TARGET="rules:#dondeando#modificarPassword.jsp"
+    TITLE="modificarPassword" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#dondeando#menuPrincipal.jsp"
+  PATH="/dondeando/menuPrincipal.jsp" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dondeando#Login.jsp"
+  PATH="/dondeando/Login.jsp" SHAPE="256,177,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dondeando#crearUsuario.jsp"
+  PATH="/dondeando/crearUsuario.jsp" SHAPE="272,321,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dondeando#modificarPassword.jsp"
+  PATH="/dondeando/modificarPassword.jsp" SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

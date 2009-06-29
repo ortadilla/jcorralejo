@@ -1,0 +1,18 @@
+<serviceGroup>
+	<service name="ServicioGeneracionCCAWS" targetNamespace="http://geos.hp.com/ws/">
+		<description>Servicio web para la generacion de CCCa's</description>
+
+		<schema schemaNamespace="http://geos.hp.com/ws/" />
+
+        <messageReceiver 
+            mep="http://www.w3.org/2004/08/wsdl/in-out"
+    		class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+
+		<parameter locked="false" name="ServiceClass">com.hp.geos.publiline.modelo.webService.implementacion.ServicioGeneracionCCAImpl</parameter>
+
+		<parameter name="enableMTOM" locked="false">false</parameter>
+
+		<operation name="nuevoCCA" mep="http://www.w3.org/2004/08/wsdl/in-out" />
+	</service>	
+</serviceGroup>
+

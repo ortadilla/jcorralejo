@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config 
+PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+                            "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<faces-config>
+
+  <!-- Generales -->
+  <navigation-rule>
+ 	<navigation-case><from-outcome>principalOrg</from-outcome><to-view-id>/organizacion/menu.jsp</to-view-id></navigation-case>
+ 	<navigation-case><from-outcome>login</from-outcome><to-view-id>/organizacion/Login.jsp</to-view-id></navigation-case>
+	<navigation-case><from-outcome>dialog:cambiarCentro</from-outcome><to-view-id>/organizacion/seleccionarCentro.jsp</to-view-id></navigation-case>
+  	<navigation-case><from-outcome>guardarBusqueda</from-outcome><to-view-id>/organizacion/guardarBusqueda.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>cargarBusqueda</from-outcome><to-view-id>/organizacion/cargarBusqueda.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>gestionEquipamiento</from-outcome><to-view-id>/organizacion/gestionEquipamiento.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>gestionMediosOperacion</from-outcome><to-view-id>/organizacion/gestionMediosOperacion.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>gestionUbicaciones</from-outcome><to-view-id>/organizacion/gestionUbicaciones.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>gestionConservacionEspecial</from-outcome><to-view-id>/organizacion/gestionConservacionEspecial.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>gestionLectoras</from-outcome><to-view-id>/organizacion/gestionLectoras.jsp</to-view-id></navigation-case>    
+    <navigation-case><from-outcome>resumenSolicitudes</from-outcome><to-view-id>/organizacion/resumenSolicitudes.jsp</to-view-id></navigation-case>    
+   	<navigation-case><from-outcome>dialog:confirm</from-outcome><to-view-id>/organizacion/confirmar.jsp</to-view-id></navigation-case>
+   	<navigation-case><from-outcome>confirm</from-outcome><to-view-id>/organizacion/confirmar.jsp</to-view-id></navigation-case>
+  	<navigation-case><from-outcome>edicionEquipamientoSoporte</from-outcome><to-view-id>/organizacion/editarEquipamientoSoporte.jsp</to-view-id></navigation-case>
+	<navigation-case><from-outcome>gestionPermisosPerfil</from-outcome><to-view-id>/organizacion/gestionPermisosPerfil.jsp</to-view-id></navigation-case>    	  
+	<navigation-case><from-outcome>permisoPerfil</from-outcome><to-view-id>/organizacion/permisoPerfil.jsp</to-view-id></navigation-case>    	  	  
+	<navigation-case><from-outcome>marcoSiglo</from-outcome><to-view-id>/organizacion/marcoSiglo.jsp</to-view-id></navigation-case>    	  	  
+	<navigation-case><from-outcome>dialog:fechaBajaPersona</from-outcome><to-view-id>/organizacion/fechaBajaPersona.jsp</to-view-id></navigation-case>    
+	<navigation-case><from-outcome>dialog:mostrarDocumentacion</from-outcome><to-view-id>/organizacion/documentacionPerfil.jsp</to-view-id></navigation-case>    
+	<navigation-case><from-outcome>dialog:detallesEquipamiento</from-outcome><to-view-id>/organizacion/detallesEquipamiento.jsp</to-view-id></navigation-case>    
+  </navigation-rule> 
+  
+
+  
+</faces-config>

@@ -1,0 +1,28 @@
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+        <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+
+        <property name="connection.url">jdbc:oracle:thin:@hcis:1521:hcissop</property>
+        <property name="connection.username">gea_hp9</property>
+        <property name="connection.password">gea_hp9</property>
+
+<!--
+        <property name="connection.url">jdbc:oracle:thin:@hojiblanca:1522:ORCL</property>
+        <property name="connection.username">SIGLO_TRUNK</property>
+        <property name="connection.password">SIGLO_TRUNK</property>
+-->
+
+		<property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+
+		<property name="show_sql">true</property>
+
+<!--
+		<mapping resource="com/hp/geos/core/conf/mapping/Usuario.hbm.xml" />
+-->
+	</session-factory>
+</hibernate-configuration>

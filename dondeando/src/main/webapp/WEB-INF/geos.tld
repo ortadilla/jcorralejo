@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+	                    "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>geos</short-name>
+    <uri>http://www.hp-cda.com/adf/faces</uri>
+    <display-name>Extensión ADF para GEOS</display-name>
+	<tag>
+		<name>cabeceraPagina</name>
+		<tag-class>utilidades.componentes.CabeceraPaginaTag</tag-class>
+        <description>Crea la cabecera principal de GEOS extendiendo "panelForm" de ADF</description>
+        <attribute>
+            <name>botonMenu</name>
+            <required>false</required>
+            <description>(true|false) Si debe aparecer o no el botón de acceso al menú y la miga de pan. Por defecto TRUE.</description>
+        </attribute>
+		<attribute>
+			<name>agregarCapaEspera</name>
+			<required>false</required>
+			<description>(true|false) Si debe añadirse la capa de espera a las acciones del usuario. Por defecto TRUE.</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>botonesGuardarBusqueda</name>
+		<tag-class>com.hp.geos.organizacion.vista.componentes.BotonesGuardarBusquedaTag</tag-class>
+		<description>Crea los botones para guardar y cargar búsquedas almacenadas en la base de datos.</description>
+		<attribute>
+			<name>mostrarBotonGuardar</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>(true|false) Si debe aparecer el botón de guardar búsqueda o no.</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>geosCommandButton</name>
+		<tag-class>com.hp.geos.organizacion.vista.componentes.GeosCommandButtonTag</tag-class>
+		<description>
+			Botón específico de la aplicación que lleva incluida la llamada a la función de la librería de javascript para bloquear la pantalla.
+		</description>
+		<attribute>
+			<name>text</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>partialTriggers</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>action</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>actionListener</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>blocking</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>useWindow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>binding</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>partialSubmit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>windowHeight</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute><attribute>
+			<name>windowWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>inmediate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>returnListener</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>accessKey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>shortDesc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		
+		<attribute>
+			<name>inlineStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>launchListener</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+		
+	</tag>
+</taglib>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns="http://jboss.com/products/seam/components"
+            xmlns:security="http://jboss.com/products/seam/security"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation=
+                "http://jboss.com/products/seam/security http://jboss.com/products/seam/security-1.2.xsd
+                 http://jboss.com/products/seam/components http://jboss.com/products/seam/components-1.2.xsd">
+
+<!--  <security:identity authenticate-method="#{organizacion_servicioAutenticacion.autenticar}"/>-->
+
+  <component name="org.jboss.seam.core.init">
+    <property name="myFacesLifecycleBug">false</property>
+    <property name="debug">true</property>
+  </component>
+
+  <!-- 120 second conversation timeout -->
+  <component name="org.jboss.seam.core.manager">
+    <property name="conversationTimeout">3000000</property>
+  </component>
+
+  <!-- Se crea el componente a partir del modulo más alto -->
+  <component name="acreditacionHibernate" class="utilidades.hibernate.implementacion.GeosHibernateAplicacionCore">
+    <property name="sessionFactoryName">java:/database</property>
+    <property name="connectionDatasource">java:comp/env/jdbc/hibernateDatasource</property>
+  </component>
+	
+  <component name="database" class="org.jboss.seam.core.ManagedHibernateSession">
+    <property name="sessionFactoryJndiName">java:/database</property>
+  </component>
+  
+  <component name="databaseEscritura" class="org.jboss.seam.core.ManagedHibernateSession">
+    <property name="sessionFactoryJndiName">java:/database</property>
+  </component>
+</components>
