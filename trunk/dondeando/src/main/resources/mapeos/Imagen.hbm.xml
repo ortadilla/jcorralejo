@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="dondeando.modelo.entidades.implementacion">
+ <class name="ImagenImpl" table="imagen">
+  <id name="id">
+   <generator class="increment"/>
+  </id>
+  <version generated="never" name="version" type="integer"/>
+  
+  <property column="nombre" name="nombre"/>
+  <property column="path" name="path"/>
+  <property column="contenido" name="contenido" type="binary"/>
+ </class>
+</hibernate-mapping>

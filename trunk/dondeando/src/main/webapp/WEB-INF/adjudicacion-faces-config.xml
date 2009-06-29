@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config 
+PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+                            "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<faces-config>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestionExpedienteAdjudicacion</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp</to-view-id>
+		</navigation-case>		
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaExpedientes.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestionExpedienteAdjudicacion</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:CorregirDatosAdjudicacionExpediente</from-outcome>
+			<to-view-id>/adjudicacion/corregirDatosEconomicosAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/adjudicacion/corregirDatosEconomicosAdjudicacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>corregir</from-outcome>
+			<to-view-id>/adjudicacion/datosEconomicosAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>consultaExpedientes</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaExpedientes.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionExpedienteLicitacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</to-view-id>
+		</navigation-case>		
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaExpedientes.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>adjudicacionNecesidades</from-outcome>
+			<to-view-id>/adjudicacion/adjudicacionNecesidades.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:cargaMasiva</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionCargaMasiva.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>proveedoresAdjudicacion</from-outcome>
+			<to-view-id>/adjudicacion/adjudicacionProveedores.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>bonificaciones</from-outcome>
+			<to-view-id>/adjudicacion/necesidadesBonificadas.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:datosEconomicosAdjudicacion</from-outcome>
+			<to-view-id>/adjudicacion/datosEconomicosAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cargaMasivaDatosAdjudicacion</from-outcome>
+			<to-view-id>/adjudicacion/gestion/cargaMasivaDatosAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	
+	<navigation-rule>
+		<from-view-id>/adjudicacion/necesidadesBonificadas.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:datosEconomicosAdjudicacion</from-outcome>
+			<to-view-id>/adjudicacion/bonificacionNecesidad.jsp</to-view-id>
+		</navigation-case>		
+	</navigation-rule>
+
+	
+	
+	<navigation-rule>
+		<from-view-id>/adjudicacion/adjudicacionNecesidades.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/adjudicacion/adjudicacionProveedores.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+		
+	<navigation-rule>
+		<from-view-id>/adjudicacion/consulta/consultaTiposBonificacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionTipoBonificacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/adjudicacion/gestion/gestionTipoBonificacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/adjudicacion/consulta/consultaTiposBonificacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+		
+	<navigation-rule>
+		<from-view-id>/adjudicacion/bonificacionNecesidad.jsp</from-view-id>		
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionBonificacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+		
+	<navigation-rule>
+		<from-view-id>/adjudicacion/bonificacionNecesidad.jsp</from-view-id>		
+		<navigation-case>
+			<from-outcome>volver</from-outcome>
+			<to-view-id>/adjudicacion/necesidadesBonificadas.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>		
+		
+	<navigation-rule>
+		<from-view-id>/adjudicacion/datosEconomicosAdjudicacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionBonificacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/adjudicacion/gestion/cargaMasivaDatosAdjudicacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>cancelar</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- meter aqui todas las opciones de MENU ADMINISTRACION -->
+	<navigation-rule>
+		<from-view-id>/contratacion/admin.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestionTiposBonificacion</from-outcome>
+			<to-view-id>/adjudicacion/consulta/consultaTiposBonificacion.jsp</to-view-id>
+		</navigation-case>		
+	</navigation-rule>	
+			
+		
+			
+</faces-config>

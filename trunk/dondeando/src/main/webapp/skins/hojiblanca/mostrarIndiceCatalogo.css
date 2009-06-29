@@ -1,0 +1,50 @@
+a.IndiceCatalogoGrupo, a:link.IndiceCatalogoGrupo,  a:active.IndiceCatalogoGrupo,  a:visited.IndiceCatalogoGrupo {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+a.IndiceCatalogoSubGrupo, a:link.IndiceCatalogoSubGrupo, a:active.IndiceCatalogoSubGrupo, a:visited.IndiceCatalogoSubGrupo {
+	text-decoration: underline;
+}
+
+a.IndiceCatalogoColorRojo, a:link.IndiceCatalogoColorRojo, a:active.IndiceCatalogoColorRojo, a:visited.IndiceCatalogoColorRojo {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+a.IndiceCatalogoColorVerde, a:link.IndiceCatalogoColorVerde, a:active.IndiceCatalogoColorVerde, a:visited.IndiceCatalogoColorVerde {
+	color: #00BB00;
+	text-decoration: none;
+}
+
+a.IndiceCatalogoColorAzul, a:link.IndiceCatalogoColorAzul, a:active.IndiceCatalogoColorAzul, a:visited.IndiceCatalogoColorAzul {
+	color: #0000FF;
+	text-decoration: none;
+}
+
+a.IndiceCatalogoColorNegro, a:link.IndiceCatalogoColorNegro, a:active.IndiceCatalogoColorNegro, a:visited.IndiceCatalogoColorNegro {
+	color: #000000;
+	text-decoration: none;
+}
+
+.IndiceCatalogoGrupo{
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.IndiceCatalogoSubGrupo{
+	text-decoration: underline;
+}
+
+.IndiceCatalogoColorRojo{
+	color: #FF0000;
+}
+
+.IndiceCatalogoColorVerde{
+	color: #00BB00;
+}
+
+.IndiceCatalogoColorAzul{
+	color: #0000FF;
+}
+

@@ -1,0 +1,1101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config
+PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+                            "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<faces-config>
+
+	<!-- Reglas de Navegación -->
+
+	<navigation-rule>
+			<navigation-case>
+				<from-outcome>
+					dialog:listaElementosSeleccionables
+				</from-outcome>
+				<to-view-id>
+					/contratacion/listaElementosSeleccionables.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+			<navigation-case>
+				<from-outcome>
+					errorConfiguracion
+				</from-outcome>
+				<to-view-id>
+					/contratacion/error/muestraErroresConfiguracion.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+			<navigation-case>
+				<from-outcome>
+					errorBloqueoEdicion
+				</from-outcome>
+				<to-view-id>
+					/contratacion/error/muestraErrorBloqueo.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+			<navigation-case>
+				<from-outcome>cerrarPantalla</from-outcome>
+				<to-view-id>/contratacion/cerrar.jsp</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>dialog:cambiarMomentosElementoConfigurable</from-outcome>
+			<to-view-id>/contratacion/gestion/cambiarMomentosElementoConfigurable.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>dialog:gestionConsultasConfigurables</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionConsultasConfigurables.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/cambiarMomentosElementoConfigurable.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>entrar</from-outcome>
+			<to-view-id>/contratacion/gestion/agregarElementoConfigurablePorMomento.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/agregarElementoConfigurablePorMomento.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>volver</from-outcome>
+			<to-view-id>/contratacion/gestion/cambiarMomentosElementoConfigurable.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>dialog:inputTextDialogo</from-outcome>
+			<to-view-id>/contratacion/inputEnPopUp/inputTextDialogo.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>dialog:verHistoricoCamposCuadroResumen</from-outcome>
+			<to-view-id>/contratacion/historico/historicoValorCamposCuadroResumen.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/modificar/modificarVersionModeloPliego.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestionPagina</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionPaginas.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionBloque</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionBloqueCampo.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionBloqueIncluirCampo</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionBloqueIncluirCampo.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionCampo</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionCampo.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionReglaValidacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionReglaValidacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionDocumentacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionDocumentacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaModelosPliego.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:gestionRangoAnexo</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionRangoAnexo.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:gestionFicherosEstados</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionFicherosEstados.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>noConversacion</from-outcome>
+			<to-view-id>/contratacion/error/noConversacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>principalContratacion</from-outcome>
+			<to-view-id>/contratacion/menu.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>principalAdmin</from-outcome>
+			<to-view-id>/contratacion/admin.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/cargaNecesidadesContratacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>cancelar</from-outcome>
+			<to-view-id>/contratacion/menu.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaNecesidades.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionNecesidad.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionCabeceraExpedienteContratacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionCabeceraExpedienteContratacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:introducirDatosAgrupacion</from-outcome>
+			<to-view-id>/contratacion/introducirDatosAgrupacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:introducirDatosEnvioPdc</from-outcome>
+			<to-view-id>/contratacion/introducirDatosEnvioPdc.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>tramitarNecesidadesEnGrupo</from-outcome>
+			<to-view-id>/contratacion/tramitarNecesidadesEnGrupo.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>altaNecesidad</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionNecesidad.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/tramitarNecesidadesEnGrupo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>volver</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaNecesidades.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionCentro.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaCentro.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionOrganoContratacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaOrganoContratacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaOrganoContratacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionOrganoContratacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaCentro.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionCentro.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionCampo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/modificar/modificarVersionModeloPliego.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionAmbito.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaAmbitos.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaAmbitos.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionAmbito.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:cambiarEstadosAsociadosAmbito</from-outcome>
+			<to-view-id>/contratacion/listaElementosSeleccionables.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionPaginas.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/modificar/modificarVersionModeloPliego.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionDocumentacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/modificar/modificarVersionModeloPliego.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/configuraConsultaExpedientes.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>consulta</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaExpedientes.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consultaExpedientes.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>consulta</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaExpedientes.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionCondicionFlujo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaCondicionesFlujo.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:excluirOcurrenciasTramite</from-outcome>
+			<to-view-id>/contratacion/ocurrenciaDeTramite.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:excluirOcurrenciasTransicion</from-outcome>
+			<to-view-id>/contratacion/ocurrenciaDeTransicion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaCondicionesFlujo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionCondicionFlujo.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionNecesidad.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaNecesidades.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>tramitarNecesidadesEnGrupo</from-outcome>
+				<to-view-id>/contratacion/tramitarNecesidadesEnGrupo.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/catalogo/consultarArticulo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>volverConsultaNecesidad</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaNecesidades.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/catalogo/consultarArticulo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>volverGestionNecesidad</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionNecesidad.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/catalogo/consultarArticulo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>volverConsultaExpedientes</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaExpedientes.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionBloqueCampo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/modificar/modificarVersionModeloPliego.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionBloqueIncluirCampo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/modificar/modificarVersionModeloPliego.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaTransiciones.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>condicionesFlujo</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaCondicionesFlujo.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionCondicionesFlujoNoParametrizables.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionCondicionesFlujoNoParametrizables.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaTransiciones.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaCondicionesFlujo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>consultaTransiciones</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaTransiciones.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionClasificacionArticuloTipoNecesidad.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/admin.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionClasificacionArticuloDiasExposicionNecesidades.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/admin.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- meter aqui todas las opciones de MENU ADMINISTRACION (que no sean de adjudicacion) -->
+	<navigation-rule>
+		<from-view-id>/contratacion/admin.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>consultaCentro</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaCentro.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaOrganoContratacion</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaOrganoContratacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>agregarCentro</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionCentro.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaTransiciones</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaTransiciones.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaExpedientes</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaExpedientes.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>adminPlazosBloqueo</from-outcome>
+			<to-view-id>/contratacion/modificar/modificarPlazosBloqueo.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionModelosPliego</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaModelosPliego.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionUsuariosWF</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaUsuariosWF.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionSolicitudesDocumentoContable</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaSolicitudesDocumentoContable.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionSeccion</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaSeccion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionTipoFichero</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaTipoFichero.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionAmbitos</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaAmbitos.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionClasificacionSeleccionable</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionClasificacionSeleccionable.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionTipoContratoArticulo</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaClasificacionArticuloTipoContrato.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionClasificacionTipoNecesidad</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionClasificacionArticuloTipoNecesidad.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionClasificacionDiasExposicionNecesidades</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionClasificacionArticuloDiasExposicionNecesidades.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaInformeSituacion</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaInformeSituacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>elementosConfigurablesPorMomento</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaElementosConfigurablesPorMomento.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionBloqueMenuRol</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaBloqueMenuRol.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultasConfiguradas</from-outcome>
+			<to-view-id>/contratacion/consulta/consultasConfiguradas.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>gestionTipoContrato</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaTipoContrato.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionProcedimientoContratacion</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaProcedimientoContratacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionFormaAdjudicacion</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaFormaAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionProcedimientoComplementarioSeleccion</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaProcedimientoComplementarioSeleccion.jsp</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaTipoContrato.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionTipoContrato.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaProcedimientoContratacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionProcedimientoContratacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaFormaAdjudicacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionFormaAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaProcedimientoComplementarioSeleccion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionProcedimientoComplementarioSeleccion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionTipoContrato.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaTipoContrato.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionProcedimientoContratacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaProcedimientoContratacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionFormaAdjudicacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaFormaAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionProcedimientoComplementarioSeleccion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaProcedimientoComplementarioSeleccion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaBloqueMenuRol.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionBloqueMenuRol.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionBloqueMenuRol.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaBloqueMenuRol.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- meter aqui todas las opciones de MENU PRINCIPAL -->
+	<navigation-rule>
+		<from-view-id>/contratacion/menu.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>consultaExpedientes</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaExpedientes.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cargaNecesidadesContratacion</from-outcome>
+			<to-view-id>/contratacion/cargaNecesidadesContratacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>agendaUsuario</from-outcome>
+			<to-view-id>/contratacion/agendaUsuario.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>consultaNecesidades</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaNecesidades.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Meter aquí las del mantenimiento de expedientes de contratación -->
+	<navigation-rule>
+		<from-view-id>
+			/contratacion/gestion/gestionCabeceraExpedienteContratacion.jsp
+		</from-view-id>
+		<navigation-case>
+			<from-outcome>consultarNecesidades</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaNecesidades.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionExpedienteContratacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaLogExpediente.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>gestionNecesidadesExpediente</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionNecesidadesExpediente.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>dialog:editorDatosPublicacion</from-outcome>
+			<to-view-id>/contratacion/gestion/editorDatosPublicacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:aprobacionEIncidencias</from-outcome>
+			<to-view-id>/contratacion/gestion/aprobacionEIncidencias.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaLogExpediente</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaLogExpediente.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>editarCuadroResumenValidacion</from-outcome>
+			<to-view-id>/contratacion/editorCuadroResumenValidacion.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>editarDatosAnuncioValidacion</from-outcome>
+			<to-view-id>/contratacion/editorValidacionDatosAnuncio.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaExpedientes</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaExpedientes.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionSolicitudesDocumentoContable</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaSolicitudesDocumentoContable.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaExpedientes.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:gestionSubidaArchivo</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionSubidaArchivo.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:consultarDocumentacionAsociada</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaDocumentacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:gestionSubidaArchivoDOCE</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionSubidaArchivoDOCE.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:solicitarNuevoCCA</from-outcome>
+			<to-view-id>/contratacion/inputEnPopUp/solicitarMotivo.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:solicitarQuitarDocumentoContable</from-outcome>
+			<to-view-id>/contratacion/inputEnPopUp/solicitarMotivo.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:solicitarAgregarDocumentoContable</from-outcome>
+			<to-view-id>/contratacion/inputEnPopUp/solicitarMotivoCantidad.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:historicoCampos</from-outcome>
+			<to-view-id>/contratacion/historico/historicoValorCampos.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>editarDatosAnuncio</from-outcome>
+			<to-view-id>/contratacion/editorDatosAnuncio.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+	
+		<navigation-case>
+			<from-outcome>editarCuadroResumen</from-outcome>
+			<to-view-id>/contratacion/editorCuadroResumen.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaExpedientes.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestionProrrogas</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaProrrogas.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionExpedienteLicitacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</to-view-id>
+		</navigation-case>
+
+
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>historial</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaHistorial.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaHistorial.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestionExpedienteLicitacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionExpedienteAdjudicacion</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>gestionNecesidadesExpediente</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionNecesidadesExpediente.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- meter aqui todas las opciones de mantenimiento  de prorrogas -->
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaProrrogas.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionProrroga.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaExpedientes.jsp</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionProrroga.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaProrrogas.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/contratacion/agendaUsuario.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>consultaExpedientes</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaExpedientes.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/contratacion/editorCuadroResumen.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestionExpedienteLicitacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/editorDatosAnuncio.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestionExpedienteLicitacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/editorValidacionDatosAnuncio.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestionExpedienteLicitacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/editorCuadroResumenValidacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestionExpedienteLicitacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaClasificacionArticuloTipoContrato.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionClasificacionArticuloTipoContrato.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionClasificacionArticuloTipoContrato.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaClasificacionArticuloTipoContrato.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionReglaValidacion.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/modificar/modificarVersionModeloPliego.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/modificar/modificarVersionModeloPliego.jsp</from-view-id>
+			<navigation-case>
+				<from-outcome>
+					dialog:cambiarEstadosCampoEditable
+				</from-outcome>
+				<to-view-id>
+					/contratacion/listaElementosSeleccionables.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaModelosPliego.jsp</from-view-id>
+
+			<navigation-case>
+				<from-outcome>
+					modificarEstructura
+				</from-outcome>
+				<to-view-id>
+					/contratacion/modificar/modificarVersionModeloPliego.jsp
+				</to-view-id>
+			</navigation-case>
+
+			<navigation-case>
+				<from-outcome>
+					gestion
+				</from-outcome>
+				<to-view-id>
+					/contratacion/gestion/gestionModeloPliego.jsp
+				</to-view-id>
+			</navigation-case>
+			
+			<navigation-case>
+				<from-outcome>
+					gestionVersionModeloPliego
+				</from-outcome>
+				<to-view-id>
+					/contratacion/gestion/gestionVersionModeloPliego.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<navigation-case>
+				<from-outcome>
+					verEsquemaVersionModeloPliego
+				</from-outcome>
+				<to-view-id>
+					/contratacion/verEsquemaCuadroResumen.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/verEsquemaCuadroResumen.jsp</from-view-id>
+			<navigation-case>
+				<from-outcome>
+					volver
+				</from-outcome>
+				<to-view-id>
+					/contratacion/consulta/consultaModelosPliego.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionVersionModeloPliego.jsp</from-view-id>
+			<navigation-case>
+				<from-outcome>
+					atras
+				</from-outcome>
+				<to-view-id>
+					/contratacion/consulta/consultaModelosPliego.jsp
+				</to-view-id>
+			</navigation-case>
+						<navigation-case>
+				<from-outcome>
+					cancelar
+				</from-outcome>
+				<to-view-id>
+					/contratacion/consulta/consultaModelosPliego.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionModeloPliego.jsp</from-view-id>
+			<navigation-case>
+				<from-outcome>
+					atras
+				</from-outcome>
+				<to-view-id>
+					/contratacion/consulta/consultaModelosPliego.jsp
+				</to-view-id>
+			</navigation-case>
+						<navigation-case>
+				<from-outcome>
+					cancelar
+				</from-outcome>
+				<to-view-id>
+					/contratacion/consulta/consultaModelosPliego.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+	<!-- Mantenimiento de tipos de documentos -->
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaSeccion.jsp</from-view-id>
+			<navigation-case>
+				<from-outcome>
+					gestion
+				</from-outcome>
+				<to-view-id>
+					/contratacion/gestion/gestionSeccion.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+		<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionSeccion.jsp</from-view-id>
+			<navigation-case>
+				<from-outcome>
+					atras
+				</from-outcome>
+				<to-view-id>
+					/contratacion/consulta/consultaSeccion.jsp
+				</to-view-id>
+			</navigation-case>
+						<navigation-case>
+				<from-outcome>
+					cancelar
+				</from-outcome>
+				<to-view-id>
+					/contratacion/consulta/consultaSeccion.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+		<!-- Mantenimiento de tipos de ficheros -->
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaTipoFichero.jsp</from-view-id>
+			<navigation-case>
+				<from-outcome>
+					gestion
+				</from-outcome>
+				<to-view-id>
+					/contratacion/gestion/gestionTipoFichero.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+		<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionTipoFichero.jsp</from-view-id>
+			<navigation-case>
+				<from-outcome>
+					atras
+				</from-outcome>
+				<to-view-id>
+					/contratacion/consulta/consultaTipoFichero.jsp
+				</to-view-id>
+			</navigation-case>
+						<navigation-case>
+				<from-outcome>
+					cancelar
+				</from-outcome>
+				<to-view-id>
+					/contratacion/consulta/consultaTipoFichero.jsp
+				</to-view-id>
+			</navigation-case>
+	</navigation-rule>
+
+
+	<!--  GESTIÓN DE FICHEROS -->
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionSubidaArchivo.jsp</from-view-id>
+			<navigation-case>
+				<from-outcome>
+					atras
+				</from-outcome>
+				<to-view-id>
+					/contratacion/gestion/gestionExpedienteLicitacion.jsp
+				</to-view-id>
+			</navigation-case>
+			<navigation-case>
+			<from-outcome>
+					cancelar
+			</from-outcome>
+			<to-view-id>
+					/contratacion/gestion/gestionExpedienteLicitacion.jsp
+			</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaUsuariosWF.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionUsuariosWF.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionUsuariosWF.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>atras</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaUsuariosWF.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/pedidos/prioridadOfertas.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome></from-outcome>
+			<to-view-id>/contratacion/configuraConsultaPriorizacionOfertas.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/gestion/gestionNecesidadesExpediente.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>consultarNecesidades</from-outcome>
+			<to-view-id>/contratacion/consulta/consultaNecesidades.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>atrasLicitacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>atrasAdjudicacion</from-outcome>
+			<to-view-id>/adjudicacion/gestion/gestionExpedienteAdjudicacion.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/contratacion/consulta/consultaSolicitudesDocumentoContable.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>gestionExpedienteLicitacion</from-outcome>
+			<to-view-id>/contratacion/gestion/gestionExpedienteLicitacion.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dialog:rechazarSolicitud</from-outcome>
+			<to-view-id>/contratacion/inputEnPopUp/solicitarMotivo.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

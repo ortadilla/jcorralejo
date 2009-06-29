@@ -1,0 +1,23 @@
+<pages>
+<!-- 
+	<page view-id="/dondeando/menuPrincipal.jsp">
+		<end-conversation />
+	</page>
+ -->
+	<!-- Entradas para Dondeando -->
+	<page view-id="/dondeando/crearUsuario.jsp"	action="#{crearUsuarioBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/dondeando/modificarPassword.jsp"	action="#{modificarContrasenaBean.cargarArgumentosDeEntrada}" />
+
+	<!-- Tratamiento de excepciones -->
+	<exception class="org.hibernate.UnresolvableObjectException">
+		<redirect view-id="/errorConcurrenciaBorrado.jsp" />
+	</exception>
+	<exception class="org.hibernate.StaleObjectStateException">
+		<redirect view-id="/errorConcurrenciaEdicion.jsp" />
+	</exception>
+	<!-- para cualquier otra excepción -->
+	<exception class="java.lang.Throwable">
+		<redirect view-id="/debug.jsp" />
+	</exception>
+
+</pages>

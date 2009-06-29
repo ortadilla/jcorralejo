@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+	                    "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>ctr</short-name>
+    <uri>http://contratacion/faces</uri>
+    <display-name>Extensiones JSF para el módulo de contratación</display-name>
+	<tag>
+		<name>conversorBigDecimal</name>
+		<tag-class>com.hp.geos.publiline.vista.tag.ConversorBigDecimalTag</tag-class>
+		<description>Conversor que permite convertir un número a BigDecimal limitando el número de decimales</description>
+		<attribute>
+			<name>numeroDecimales</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>			
+		</attribute>
+		
+		
+		
+		
+	</tag>
+	<tag>
+		<name>conversorMonedaBigDecimalSalida</name>
+		<tag-class>com.hp.geos.publiline.vista.tag.ConversorMonedaBigDecimalSalidaTag</tag-class>
+		<description>Conversor que permite mostrar un numero bigDecimal como moneda</description>
+		<attribute>
+			<name>numeroDecimales</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>			
+		</attribute>
+		<attribute>
+			<name>muestraMoneda</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>			
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>selectorArticulo</name>
+		<tag-class>com.hp.geos.publiline.vista.tag.SelectorArticuloTag</tag-class>
+        <description>Combinación de componentes para selccionar un articulo. Input donde se puede indicar directamente el código,
+        	lupa para navegar a la busqueda de artículos, visualización del codigoClasificacion y la descripcion del artículo.
+        	Nota: es totalmente necesario anotar en el pages.xml, cada pagina que selecciona articulos</description>
+        <attribute>
+            <name>idCampoCodigo</name>
+            <required>true</required>
+            <description>Identificador del Input del codigo del articulo, necesario para los parcialTriggers</description>
+        </attribute>
+        <attribute>
+            <name>disabled</name>
+            <required>true</required>
+            <description>Cuando el input y la lupa deben estar desabilitados</description>
+        </attribute>
+        <attribute>
+            <name>labelStyle</name>
+            <required>false</required>
+            <description>Estilo para etiqueta de articulo. Por ejemplo el width</description>
+        </attribute>
+        <attribute>
+            <name>articulo</name>
+            <required>true</required>
+            <description>Expresion que representa donde esta el objeto Articulo que queremos representar/seleccionar</description>
+        </attribute>
+        <attribute>
+            <name>cambiaArticuloListener</name>
+            <required>false</required>
+            <description>Expresion en la que se indica un metodo que se ejecutara al cambiar el articulo. El metodo debe ser void y tener como argumento Articulo</description>
+        </attribute>
+        <attribute>
+            <name>outcomeVuelta</name>
+            <required>false</required>
+            <description>Expresion en la que se indica el outcome de vuelta tras seleccionar al artículo en la consulta</description>
+        </attribute>
+         <attribute>
+            <name>mantenerBusqueda</name>
+            <required>false</required>
+            <description>determina si al navegar a la busqueda de articulos hay que mantener el nivelValor del articulo para encontrar los articulos de la misma familia. (defult=false)</description>
+        </attribute>
+	</tag>
+
+	
+</taglib>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config 
+PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+                            "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<faces-config>
+
+    <!-- Phase listener needed for all Seam applications -->
+    <lifecycle>
+        <phase-listener>org.jboss.seam.jsf.SeamExtendedManagedPersistencePhaseListener</phase-listener>
+    </lifecycle>
+	
+	<application>		
+        <default-render-kit-id>
+			org.apache.myfaces.trinidad.core
+		</default-render-kit-id>		
+        <locale-config>
+            <default-locale>es</default-locale>
+            <supported-locale>en</supported-locale>
+            <supported-locale>es</supported-locale>
+        </locale-config>
+
+        <message-bundle id="mensajesCore">mensajesCore</message-bundle>
+    </application>
+	
+	 <render-kit>
+		<render-kit-id>
+      		org.apache.myfaces.trinidad.core.desktop
+		</render-kit-id>
+
+		<render-kit-class>
+		  org.apache.myfaces.trinidadinternal.renderkit.core.desktop.DesktopRenderKit
+		</render-kit-class>
+		<!-- <renderer>
+			  <component-family>
+				org.apache.myfaces.trinidad.SelectMany
+			  </component-family>
+			  <renderer-type>
+				org.apache.myfaces.trinidad.Listbox
+			  </renderer-type>
+			  <renderer-class>
+				com.hp.geos.core.vista.renderer.GeosSelectManyListboxRenderer
+			  </renderer-class>
+	    </renderer>-->
+		<!-- <renderer>
+			<component-family>
+				org.apache.myfaces.trinidad.Panel
+			</component-family>
+            <renderer-type>
+				org.apache.myfaces.trinidad.Box
+			</renderer-type>
+            <renderer-class>
+				com.hp.geos.core.vista.renderer.GeosPanelBoxRenderer
+   		    </renderer-class>
+		</renderer>
+		<renderer>
+			<component-family>
+				org.apache.myfaces.trinidad.Input
+			</component-family>
+            <renderer-type>
+				org.apache.myfaces.trinidad.Text
+			</renderer-type>
+            <renderer-class>
+				com.hp.geos.core.vista.renderer.GeosInputTextRenderer
+   		    </renderer-class>
+		</renderer>
+		<renderer>
+			<component-family>
+				org.apache.myfaces.trinidad.Input
+			</component-family>
+            <renderer-type>
+				org.apache.myfaces.trinidad.Text
+			</renderer-type>
+            <renderer-class>
+				com.hp.geos.core.vista.renderer.GeosInputTextRenderer
+   		    </renderer-class>
+		</renderer>
+		
+		<renderer>
+			<component-family>
+				org.apache.myfaces.trinidad.Choose
+			</component-family>
+            <renderer-type>
+				org.apache.myfaces.trinidad.Date
+			</renderer-type>
+            <renderer-class>
+				com.hp.geos.core.vista.renderer.GeosChooseDateRenderer
+   		    </renderer-class>
+		</renderer>-->
+	</render-kit>
+	
+  <!-- GENERALES -->
+  <navigation-rule>
+    <navigation-case><from-outcome>busquedaGenerica</from-outcome><to-view-id>/core/MtoGenerico.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>edicionGenerica</from-outcome><to-view-id>/core/MtoGenericoEditar.jsp</to-view-id></navigation-case>
+	<navigation-case><from-outcome>dialog:motivoRechazoSolicitud</from-outcome><to-view-id>/organizacion/rechazoSolicitudMovimiento.jsp</to-view-id></navigation-case>
+	<navigation-case><from-outcome>compararEntidades</from-outcome><to-view-id>/core/MtoGenericoComparar.jsp</to-view-id></navigation-case>
+	
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/core/MtoGenerico.jsp</from-view-id>
+    <!-- PopUp para copiar un catálogo-->
+    <navigation-case><from-outcome>dialog:seleccionaCentroConsumo</from-outcome><to-view-id>/catalogo/seleccionaCentroConsumoCopiaCatalogo.jsp</to-view-id></navigation-case>
+  	<!-- PopUp para añadir o modificar el atributo tipo de gestión logística-->
+	<navigation-case><from-outcome>dialog:tipoGestionLogistica</from-outcome><to-view-id>/catalogo/tipoGestionLogistica.jsp</to-view-id></navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/core/MtoGenericoEditar.jsp</from-view-id>
+    <navigation-case><from-outcome>dialog:motivoRechazoSolicitud</from-outcome><to-view-id>/organizacion/rechazoSolicitudMovimiento.jsp</to-view-id></navigation-case>
+  </navigation-rule>
+</faces-config>

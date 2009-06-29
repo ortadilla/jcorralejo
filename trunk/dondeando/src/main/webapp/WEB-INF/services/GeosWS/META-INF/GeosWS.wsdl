@@ -1,0 +1,79 @@
+<wsdl:definitions xmlns:tns="http://geos.hp.com/ws/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://geos.hp.com/ws/">
+	
+	<wsdl:types>
+		<xsd:schema xmlns="http://schemas.xmlsoap.org/wsdl/"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://geos.hp.com/ws/">
+			
+			<xsd:complexType name="XMLOperation">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="operation" type="xsd:string" />
+					<xsd:element minOccurs="0" name="xml" type="xsd:base64Binary" />
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:element name="GeosServiceRequest" type="tns:XMLOperation" />
+			<xsd:element name="GeosServiceResponse" type="xsd:int" />
+		</xsd:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="GeosServiceRequest">
+		<wsdl:part name="xmlOperation" element="tns:GeosServiceRequest" />
+	</wsdl:message>
+	
+	<wsdl:message name="GeosServiceResponse">
+		<wsdl:part name="code" element="tns:GeosServiceResponse" />
+	</wsdl:message>
+	
+	<wsdl:portType name="GeosServicePortType">
+		<wsdl:operation name="importarInformacionEDI">
+			<wsdl:input message="tns:GeosServiceRequest" wsaw:Action="importarInformacionEDI" />
+			<wsdl:output message="tns:GeosServiceResponse" wsaw:Action="http://schemas.xmlsoap.org/wsdl/GeosServicePortType/GeosServiceResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="GeosServiceSOAP11Binding" type="tns:GeosServicePortType">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="importarInformacionEDI">
+			<soap:operation soapAction="importarInformacionEDI" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:binding name="GeosServiceSOAP12Binding" type="tns:GeosServicePortType">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="importarInformacionEDI">
+			<soap12:operation soapAction="importarInformacionEDI" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:service name="GeosWS">
+		<wsdl:port name="GeosWSSOAP11port_http" binding="tns:GeosServiceSOAP11Binding">
+			<soap:address location="http://localhost:8080/geos/services/GeosWS" />
+		</wsdl:port>
+		<wsdl:port name="GeosWSSOAP12port_http" binding="tns:GeosServiceSOAP12Binding">
+			<soap12:address location="http://localhost:8080/geos/services/GeosWS" />
+		</wsdl:port>
+	</wsdl:service>
+	
+</wsdl:definitions>

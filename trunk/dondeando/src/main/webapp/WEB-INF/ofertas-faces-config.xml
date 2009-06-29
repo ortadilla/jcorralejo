@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config 
+PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+                            "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<faces-config>
+
+	<navigation-rule>
+		<navigation-case><from-outcome>bloqueoMasivoOfertas</from-outcome><to-view-id>/ofertas/bloqueoMasivoOfertas.jsp</to-view-id></navigation-case>
+		<navigation-case><from-outcome>crearBloqueoMasivoOfertas</from-outcome><to-view-id>/ofertas/crearBloqueoMasivoOfertas.jsp</to-view-id></navigation-case>
+    	<navigation-case><from-outcome>dialog:copiarAtributosBloque</from-outcome><to-view-id>/ofertas/copiarAtributosBloque.jsp</to-view-id></navigation-case>
+    	<navigation-case><from-outcome>dialog:notificarNoConformidad</from-outcome><to-view-id>/ofertas/notificarNoConformidad.jsp</to-view-id></navigation-case>
+    	<navigation-case><from-outcome>dialog:detallesPonderacionProducto</from-outcome><to-view-id>/ofertas/detallesPonderacionProductoOferta.jsp</to-view-id></navigation-case>
+		<navigation-case><from-outcome>dialog:resumenBloqueoMasivoOfertas</from-outcome><to-view-id>/ofertas/resumenBloqueoMasivoOfertas.jsp</to-view-id></navigation-case>
+		<navigation-case><from-outcome>dialog:mostrarHistoricoOfertas</from-outcome><to-view-id>/ofertas/historicoOfertas.jsp</to-view-id></navigation-case>
+		<navigation-case><from-outcome>dialog:aceptacionProductosSimilares</from-outcome><to-view-id>/ofertas/aceptacionProductosSimilares.jsp</to-view-id></navigation-case>
+		<navigation-case><from-outcome>dialog:modificarDenominacionComercial</from-outcome><to-view-id>/ofertas/modificarDenominacionComercial.jsp</to-view-id></navigation-case>
+	</navigation-rule>
+  
+</faces-config>

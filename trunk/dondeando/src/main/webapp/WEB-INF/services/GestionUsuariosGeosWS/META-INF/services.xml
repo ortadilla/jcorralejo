@@ -1,0 +1,38 @@
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: #axisVersion# #today# -->
+<serviceGroup>
+<service name="GestionUsuariosGeosWS">
+<messageReceivers>
+<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out" class="com.hp.geos.organizacion.ws.implementacion.GestionUsuariosGeosWSMessageReceiverInOut"/>
+</messageReceivers>
+<parameter locked="false" name="ServiceClass">com.hp.geos.organizacion.ws.implementacion.GestionUsuariosGeosWSSkeleton</parameter>
+<operation name="bajaUsuario" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>bajaUsuario</actionMapping>
+<outputActionMapping>http://geos.hp.com/organizacion/ws/GestionUsuariosGeosWS/bajaUsuarioResponse</outputActionMapping>
+</operation>
+<operation name="obtenerTodosLosPerfilesTrewa" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>urn:obtenerTodosLosPerfilesTrewa</actionMapping>
+<outputActionMapping>http://geos.hp.com/organizacion/ws/GestionUsuariosGeosWS/obtenerTodosLosPerfilesTrewaResponse</outputActionMapping>
+</operation>
+<operation name="modificacionDatosUsuario" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>modificacionDatosUsuario</actionMapping>
+<outputActionMapping>http://geos.hp.com/organizacion/ws/GestionUsuariosGeosWS/modificacionDatosUsuarioResponse</outputActionMapping>
+</operation>
+<operation name="obtenerTodosLosOrganosGestores" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>urn:obtenerTodosLosOrganosGestores</actionMapping>
+<outputActionMapping>http://geos.hp.com/organizacion/ws/GestionUsuariosGeosWS/obtenerTodosLosOrganosGestoresResponse</outputActionMapping>
+</operation>
+<operation name="obtenerTodosLosPerfiles" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>obtenerTodosLosPerfiles</actionMapping>
+<outputActionMapping>http://geos.hp.com/organizacion/ws/GestionUsuariosGeosWS/obtenerTodosLosPerfilesResponse</outputActionMapping>
+</operation>
+<operation name="obtenerDatosUsuario" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>obtenerDatosUsuario</actionMapping>
+<outputActionMapping>http://geos.hp.com/organizacion/ws/GestionUsuariosGeosWS/obtenerDatosUsuarioResponse</outputActionMapping>
+</operation>
+<operation name="altaUsuario" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>altaUsuario</actionMapping>
+<outputActionMapping>http://geos.hp.com/organizacion/ws/GestionUsuariosGeosWS/altaUsuarioResponse</outputActionMapping>
+</operation>
+</service>
+</serviceGroup>

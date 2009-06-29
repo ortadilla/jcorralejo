@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://geos.hp.com/organizacion/ws/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="GestionUsuariosGeosWS"
+	targetNamespace="http://geos.hp.com/organizacion/ws/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/">
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://geos.hp.com/organizacion/ws/"
+			attributeFormDefault="qualified" elementFormDefault="qualified">
+			<xsd:complexType name="DatosUsuario">
+				<xsd:annotation>
+					<xsd:documentation>
+						Tipo Complejo para almacenar los datos del
+						usuario que se intercambiarán con el cliente.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="perfiles" type="tns:GeosPerfil"
+						minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>
+								Array de perfiles asociados a un
+								usuario.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="login" type="xsd:string"
+						minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Nombre de usuario para hacer inicio de
+								sesión. Debe ser un identificador único.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="password" type="xsd:string"
+						minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Password del usuario a almacenar en la
+								base de datos de SIGLO.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="tipoIdentificador"
+						type="xsd:string" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Campo que almacena qué tipo de
+								identificador es el que se pasa como
+								valor en el campo identificador. En
+								estos momentos permite sólo dos valores:
+								DNI y NIF.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="identificador" type="xsd:string"
+						minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Valor del identificador del usuario para
+								buscar en la tabla de personas de SIGLO.
+								Será del tipo indicado en
+								'tipoIdentificador'. En estos momentos
+								sólo se permiten como tipos DNI y NIF.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="email" type="xsd:string"
+						minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Almacenará el email del usuario.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="telefono" type="xsd:string"
+						minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Almacenará el teléfono del usuario.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="areaFuncional" type="xsd:string"
+						minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Área funcional del usuario.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="codusuario" type="xsd:string"
+						minOccurs="0" maxOccurs="1" nillable="true">
+						<xsd:annotation>
+							<xsd:documentation>
+								Codigo de usuario para relacionar el
+								usuario siglo con el usuario de la
+								intranet
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="organoGestorActivo"
+						type="xsd:integer" minOccurs="0" maxOccurs="1" nillable="true">
+						<xsd:annotation>
+							<xsd:documentation>
+								Organo Gestor activo por defecto para
+								este usuario
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="empresa" type="xsd:integer"
+						minOccurs="0" maxOccurs="1" nillable="true">
+						<xsd:annotation>
+							<xsd:documentation>
+								Si el usuario es un usuario externo,
+								aquí debería indicarse el id de la
+								empresa a la que pertenece.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="organosGestores"
+						type="tns:OrganoGestor" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>
+								Conjunto de Órganos Gestores asociados
+								al usuario.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="perfilesTrewa" type="tns:GeosPerfilTrewa" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="GeosPerfil">
+				<xsd:sequence>
+					<xsd:element name="identificador" type="xsd:int"
+						minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Identificador numérico del perfil en
+								SIGLO.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="descripcion" type="xsd:string"
+						minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Descripción del perfil.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="padre" type="xsd:integer" nillable="true"
+						minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Identificador del padre del perfil para
+								poder crear una estructura jerárquica.
+								Si es un perfil de primer nivel, su
+								valor es NULL.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:complexType name="OrganoGestor">
+				<xsd:sequence>
+					<xsd:element name="identificador" type="xsd:int"
+						minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>
+								Clave primaria del Órgano Gestor en la
+								base de datos de SIGLO.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="nombre" type="xsd:string" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>
+								Nombre del Órgano Gestor.
+							</xsd:documentation>
+						</xsd:annotation></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:complexType name="GeosPerfilTrewa">
+				<xsd:sequence>
+					<xsd:element name="codigo" type="xsd:string"
+						minOccurs="0" maxOccurs="1">
+					</xsd:element>
+					<xsd:element name="nombre" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:element name="altaUsuario">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="datosUsuario"
+							type="tns:DatosUsuario" minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="altaUsuarioResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="respuesta" type="xsd:int"
+							minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="bajaUsuario">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="login" type="xsd:string"
+							minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="bajaUsuarioResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="respuesta" type="xsd:int"
+							minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="modificacionDatosUsuario">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="datosUsuarioModificar"
+							type="tns:DatosUsuario" minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="modificacionDatosUsuarioResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="respuesta" type="xsd:int"
+							minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="obtenerDatosUsuario">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="login" type="xsd:string"
+							minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="obtenerDatosUsuarioResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="datosUsuarioEncontrado"
+							type="tns:DatosUsuario" minOccurs="0" maxOccurs="1">
+						</xsd:element>
+						<xsd:element name="respuesta"
+							type="xsd:int" minOccurs="0" maxOccurs="1">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="obtenerTodosLosPerfiles">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="sinvalor" type="xsd:string"
+							nillable="true" minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="obtenerTodosLosPerfilesResponse">
+				<xsd:annotation>
+					<xsd:documentation>
+						Devuelve todos los perfiles activos de SIGLO.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="perfiles"
+							type="tns:GeosPerfil" maxOccurs="unbounded" minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>					
+			<xsd:element name="obtenerTodosLosPerfilesTrewa">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="sinvalor" type="xsd:string" nillable="true" minOccurs="0"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="obtenerTodosLosPerfilesTrewaResponse">
+				<xsd:complexType>
+					<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="perfilesTrewa" type="tns:GeosPerfilTrewa" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="obtenerTodosLosOrganosGestores">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="sinvalor" type="xsd:string" nillable="true" minOccurs="0"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="obtenerTodosLosOrganosGestoresResponse">
+				<xsd:complexType>
+					<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="organosGestores" type="tns:OrganoGestor" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="altaUsuarioRequest">
+		<wsdl:part name="datosUsuario" element="tns:altaUsuario"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="altaUsuarioResponse">
+		<wsdl:part element="tns:altaUsuarioResponse" name="codigo">
+			<wsdl:documentation>
+				Código de retorno de la operación.
+			</wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="bajaUsuarioRequest">
+		<wsdl:part name="login" element="tns:bajaUsuario"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="bajaUsuarioResponse">
+		<wsdl:part name="codigo" element="tns:bajaUsuarioResponse">
+			<wsdl:documentation>
+				Código de retorno de la operación.
+			</wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="modificacionDatosUsuarioRequest">
+		<wsdl:part name="datosUsurioModificar"
+			element="tns:modificacionDatosUsuario">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="modificacionDatosUsuarioResponse">
+		<wsdl:part name="codigo"
+			element="tns:modificacionDatosUsuarioResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="obtenerDatosUsuarioRequest">
+		<wsdl:part name="usuario" element="tns:obtenerDatosUsuario"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="obtenerDatosUsuarioResponse">
+		<wsdl:part name="datosUsuario"
+			element="tns:obtenerDatosUsuarioResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="obtenerTodosLosPerfilesRequest">
+		<wsdl:part name="void" element="tns:obtenerTodosLosPerfiles"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="obtenerTodosLosPerfilesResponse">
+		<wsdl:part name="perfiles"
+			element="tns:obtenerTodosLosPerfilesResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="obtenerTodosLosPerfilesTrewaRequest">
+		<wsdl:part name="void" element="tns:obtenerTodosLosPerfilesTrewa"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="obtenerTodosLosPerfilesTrewaResponse">
+		<wsdl:part name="perfilesTrewa" element="tns:obtenerTodosLosPerfilesTrewaResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="obtenerTodosLosOrganosGestoresRequest">
+		<wsdl:part name="void" element="tns:obtenerTodosLosOrganosGestores"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="obtenerTodosLosOrganosGestoresResponse">
+		<wsdl:part name="organosGestores" element="tns:obtenerTodosLosOrganosGestoresResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="GestionUsuariosGeosWS">
+		<wsdl:operation name="altaUsuario">
+			<wsdl:input message="tns:altaUsuarioRequest" />
+			<wsdl:output message="tns:altaUsuarioResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="bajaUsuario">
+			<wsdl:input message="tns:bajaUsuarioRequest"></wsdl:input>
+			<wsdl:output message="tns:bajaUsuarioResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="modificacionDatosUsuario">
+			<wsdl:input message="tns:modificacionDatosUsuarioRequest"></wsdl:input>
+			<wsdl:output
+				message="tns:modificacionDatosUsuarioResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerDatosUsuario">
+			<wsdl:input message="tns:obtenerDatosUsuarioRequest"></wsdl:input>
+			<wsdl:output message="tns:obtenerDatosUsuarioResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTodosLosPerfiles">
+			<wsdl:input message="tns:obtenerTodosLosPerfilesRequest"></wsdl:input>
+			<wsdl:output
+				message="tns:obtenerTodosLosPerfilesResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTodosLosPerfilesTrewa">
+			<wsdl:input message="tns:obtenerTodosLosPerfilesTrewaRequest"></wsdl:input>
+			<wsdl:output message="tns:obtenerTodosLosPerfilesTrewaResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTodosLosOrganosGestores">
+			<wsdl:input message="tns:obtenerTodosLosOrganosGestoresRequest"></wsdl:input>
+			<wsdl:output message="tns:obtenerTodosLosOrganosGestoresResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="GestionUsuariosGeosWSSOAP"
+		type="tns:GestionUsuariosGeosWS">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="altaUsuario">
+			<soap:operation soapAction="altaUsuario" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="bajaUsuario">
+			<soap:operation soapAction="bajaUsuario" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="modificacionDatosUsuario">
+			<soap:operation soapAction="modificacionDatosUsuario" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerDatosUsuario">
+			<soap:operation soapAction="obtenerDatosUsuario" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTodosLosPerfiles">
+			<soap:operation soapAction="obtenerTodosLosPerfiles" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTodosLosPerfilesTrewa">
+			<soap:operation soapAction="obtenerTodosLosPerfilesTrewa" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTodosLosOrganosGestores">
+			<soap:operation soapAction="obtenerTodosLosOrganosGestores" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="GestionUsuariosGeosWS">
+		<wsdl:port binding="tns:GestionUsuariosGeosWSSOAP"
+			name="GestionUsuariosGeosWSSOAP">
+			<soap:address
+				location="http://localhost:8080/geos/services/GestionUsuariosGeosWS" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

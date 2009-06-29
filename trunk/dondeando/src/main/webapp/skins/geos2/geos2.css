@@ -1,0 +1,997 @@
+
+/** Change the colors to geos **/
+
+/** All these styles/icons/properties are overrides of the simple skin */
+
+/** :alias means that this class or icon is not used directly. It is included
+in other component's style selectors or other component's icons. It is 
+meant to be a fast way to change styles. The alternative is to style each 
+component. **/
+
+/* Custom alias class for hovering over menuTabs and menuBars */
+/* put the extension :alias so it won't get written out to the final css file,
+   cuz I know it won't be used directly. Instead it will be included in
+   other style definions using the -ora-rule-ref property. */
+.MyLinkHoverColor:alias { color:rgb(151,215,110); text-decoration: underline;}
+.MyLinkActiveColor:alias { color:rgb(204,255,153); text-decoration:none;}
+
+.LinkEnabledFondoClaro:alias { color:white; text-decoration: none;}
+
+/**
+.AFDarkForeground color fuente por defecto
+**/
+.AFDarkForeground:alias {color:rgb(34,91,46);}
+.AFDarkBackground:alias {background-color:rgb(247,255,242);}
+/** In the base styles, AFDarkBorder uses the background-color of 
+    AFDarkBackground for its border color, so no need to set it directly. */
+.AFDarkBorder:alias{
+    color: rgb(193,212,180);
+}
+.AFDefaultFont:alias{
+	font-family:Verdana, Arial, Sans-Serif; 
+	font-size: 10pt;
+}
+
+.AFMediumFont:alias{
+	font-family:Verdana, Arial, Sans-Serif; 
+	font-size: 11pt;
+	font-weight: bold;
+}
+.AFLargeFont:alias{
+	font-family:Verdana, Arial, Sans-Serif; 
+	font-size: 13pt;
+	font-weight: bold;
+}
+
+.AFVeryLargeFont:alias{
+	font-family:Verdana, Arial, Sans-Serif; 
+	font-size: 15pt;
+	font-weight: bold;
+}
+
+/* a dark blue color */
+.AFLinkForeground:alias {color:rgb#666666; }
+.AFActiveLinkForeground:alias {color:#666666;}
+.AFVisitedLinkForeground:alias {color:#666666; }
+.AFDisabledLinkForeground:alias {color:#999999; }
+/** Section where to add styles/selectors used in the ADF Faces Skin Sample  **/
+/** =======================================================================  **/
+
+
+
+ /** Shuttle icons selectOne, selectMany, and selectOrder shuttles**/
+.AFShuttleMoveIcon:alias {content:url(/skins/geos2/skin_images/move.png); width: 16px; height: 16px;}
+.AFShuttleMoveAllIcon:alias {content:url(/skins/geos2/skin_images/moveAll.png); width: 16px; height: 16px;}
+.AFShuttleRemoveIcon:alias {content:url(/skins/geos2/skin_images/remove.png); width: 16px; height: 16px;}
+.AFShuttleRemoveAllIcon:alias {content:url(/skins/geos2/skin_images/removeAll.png); width: 16px; height: 16px;}
+
+
+/** af:panelForm **/
+af|panelForm::body{
+
+}
+
+af|outputText{
+    font-size: 10pt;
+}
+
+/** Select input & buttons **/
+
+.AFFieldText{
+    background-color: #f7fff2;
+    font-size: 10pt;
+    border: #1a4f25 1px solid;
+
+}
+
+.AFLabelText{
+/**    background-color: #f7fff2; */
+    font-size: 10pt;
+}
+ /** selectInputDate launch icon **/
+
+af|selectInputDate::launch-icon {
+  content:url(/skins/geos2/skin_images/timedate_ena.png);
+}
+af|selectInputDate::launch-icon:rtl {
+  content:url(/skins/geos2/skin_images/timedate_ena.png);
+}
+
+
+/** Icons unique to the selectOrderShuttle for re-ordering user selections **/
+af|selectOrderShuttle::reorder-top-icon {
+content:url(/skins/geos2/skin_images/reordertop_enabled.png);
+width: 16px;
+height: 16px;
+}
+af|selectOrderShuttle::reorder-up-icon {
+content:url(/skins/geos2/skin_images/reorderup_enabled.png);
+width: 16px;
+height: 16px;
+}
+af|selectOrderShuttle::reorder-down-icon {
+content:url(/skins/geos2/skin_images/reorderdown_enabled.png);
+width: 16px;
+height: 16px;
+}
+af|selectOrderShuttle::reorder-bottom-icon {
+content:url(/skins/geos2/skin_images/reorderbottom_enabled.png);
+width: 16px;
+height: 16px;}
+
+/** =================================================================  **/
+
+/** BUTTON STYLES. Notice the right to left icons are specified with the
+:rtl pseudo-class. If :rtl icons are not specified, we default to non-:rtl icons. **/
+
+/** use this to color the button background and text **/
+.AFButtonServerText:alias {background-color: #FDFDFA; color:#000000;
+	font-family:Verdana, Arial, Sans-Serif; 
+	font-size: 11px;
+	font-weight: bold;
+	}
+	
+.claseBotonTabla {
+	background-color: #EDEDED; 
+}
+
+.claseBotonColeccionBlanco {
+	background-color: white;
+}
+
+.panelFondoBotonesTabla {
+	background: white; 
+	padding: 5px; 
+	border: solid 1px #EDEDED;
+}
+
+.panelFondoBotonesColecciones {
+	background: #EDEDED; 
+	padding: 5px;
+}
+
+/* antialias the text for our disabled buttons */
+.AFButtonServerTextDisabled:alias {background-color:#F0F0F0; color:gray;-ora-text-antialias:true
+	font-family:Verdana, Arial, Sans-Serif; 
+	font-size: 11px;
+	font-weight: bold;
+	}
+
+/* Button start icons (left and right) depending on language settings */
+.AFButtonStartIcon:alias {content:url(/skins/geos2/skin_images/btns.png); width:9px; height:16px}
+.AFButtonStartIcon:alias:rtl {content:url(/skins/geos2/skin_images/btne.png); width:9px; height:16px}
+
+/* Button end icons (left and right) depending on language settings */
+.AFButtonEndIcon:alias {content:url(/skins/geos2/skin_images/btne.png); width:9px; height:16px}
+.AFButtonEndIcon:alias:rtl {content:url(/skins/geos2/skin_images/btns.png); width:9px; height:16px}
+
+/* Button top background icons (left and right) depending on language settings */
+.AFButtonTopBackgroundIcon:alias {content:url(/skins/geos2/skin_images/btntb.png); width:1px; height:2px}
+.AFButtonTopBackgroundIcon:alias:rtl {content:url(/skins/geos2/skin_images/btntb.png); width:1px; height:2px}
+
+/* Button bottom background icons (left and right) depending on language settings */
+.AFButtonBottomBackgroundIcon:alias {content:url(/skins/geos2/skin_images/btnbb.png); width:1px; height:2px}
+.AFButtonBottomBackgroundIcon:alias:rtl {content:url(/skins/geos2/skin_images/btnbb.png); width:1px; height:2px}
+
+/* Button icons for disabled buttons (left and right) depending on language settings */
+.AFButtonDisabledStartIcon:alias {content:url(/skins/geos2/skin_images/btnds.gif); width:7px; height:18px}
+.AFButtonDisabledStartIcon:alias:rtl {content:url(/skins/geos2/skin_images/btnde.gif); width:7px; height:18px}
+.AFButtonDisabledEndIcon:alias {content:url(/skins/geos2/skin_images/btnde.gif); width:7px; height:18px}
+.AFButtonDisabledEndIcon:alias:rtl {content:url(/skins/geos2/skin_images/btnds.gif); width:7px; height:18px}
+
+.AFButtonDisabledTopBackgroundIcon:alias {content:url(/skins/geos2/skin_images/btndtb.gif); width:1px; height:2px}
+.AFButtonDisabledBottomBackgroundIcon:alias {content:url(/skins/geos2/skin_images/btndbb.gif); width:1px; height:2px}
+
+/* The af:body component styles */
+/** Changing here has an impact on the body element in the page, 
+    which can be used for things like background color on the page. **/
+    /** #0B4A87; **/
+af|body
+{
+	background-color:#efefcc; 
+}
+
+/** showOneTab **/
+/** ---------- **/
+/** .AFShowOneTab:alias is included in af|showOneTab::orientation-top and 
+    af|showOneTab::orientation-bottom which are the styles on the table. **/
+.AFShowOneTab:alias {
+  background-color:#f7fff2; 
+  text-align:center;
+}
+/** make the top tab bar have a solid border underneath **/
+af|showOneTab::orientation-top
+{
+  border: 1px solid #c1d4b4 ;
+}
+/** make the bottom tab bar have a solid border on top **/
+af|showOneTab::orientation-bottom
+{
+  border: 1px solid #c1d4b4 ;
+}
+
+af|showOneTab::separator {
+  margin-width:4px;
+  border-top: #BB95BB; solid 4pt ;
+  border-bottom: #BB95BB; solid 4pt ;
+  background-color: #000000;
+  PADDING-LEFT: 1px;}
+
+af|showOneTab::tab {
+	font-weight:bold;
+	padding:2px 8px;
+	color:#b8ceb9;
+	background-color:#1a4f25;
+}
+
+af|showOneTab::tab-selected {
+
+	color:#1a4f25;
+	background-color:#b8ceb9;
+}  
+
+af|showOneTab::tab-link {
+	color: #b8ceb9;
+	text-decoration: none; 
+}
+
+
+
+/* put some space in the
+first cell */
+af|showOneTab::cell-start {
+  background-color:transparent; 
+  padding-left:0px
+}
+/** put some space between the tabs and the body */
+af|showOneTab::body
+{
+	background-color: #FFFFFF;
+	padding-left: 0px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/** menuTabs **/
+/** -------- **/
+/** You can create borders, and have image-free tabs, or you can use the
+    icon keys (e.g., af|menuTabs::selected-start-icon)to create tabs with
+    rounded borders. The icons are used below,
+    but you can comment them out if you want. */
+/** this isn't needed when we are using icons for the tabs(but the padding helps!)
+.AFTabBarItem:alias
+{
+  border-style:solid; 
+  border-color:#5D025E;
+  border-width: 3px 2px 0px 2px;
+  padding:2px 6px;
+  background-color: Purple;
+}
+**/
+.AFTabBarItem:alias
+{
+	line-height:100%;
+	font-weight: bold;
+	font-size: 10px;
+	text-decoration: none;
+}
+/* Remove the text decoration from all tabBar links  */
+.AFTabBarLink:alias
+{
+  text-decoration:none;
+}
+af|menuTabs{
+  
+}
+/* Make the selected tab bold */
+af|menuTabs::selected-link
+{
+  color: #225b2e;
+  text-decoration: underline;
+}
+af|menuTabs::enabled-link
+{
+	color: #e1ecda;
+}
+af|menuTabs::selected-link:hover
+{
+  color: #003300;
+  text-decoration: underline;
+}
+
+af|menuTabs::enabled-link:hover
+{
+	color: #ffffff;
+	text-decoration:underline;
+}
+
+/** menuTabs that use icons are define like the following */
+af|menuTabs::enabled-start-icon
+{
+  content:url(/skins/geos2/skin_images/menuTabsEnabledStart.png); 
+}
+af|menuTabs::enabled-start-icon:rtl
+{
+  content:url(/skins/geos2/skin_images/menuTabsEnabledEnd.png); 
+}
+af|menuTabs::enabled-end-icon
+{
+  content:url(/skins/geos2/skin_images/menuTabsEnabledEnd.png);
+}
+af|menuTabs::enabled-end-icon:rtl
+{
+  content:url(/skins/geos2/skin_images/menuTabsEnabledStart.png);
+}
+af|menuTabs::enabled-join-icon
+{
+  content:url(/skins/geos2/skin_images/menuTabsEnabledJoin.png); 
+}
+af|menuTabs::enabled-background-icon
+{
+  content:url(/skins/geos2/skin_images/menuTabsEnabledBackground.png); 
+}
+af|menuTabs::selected-enabled-join-icon
+{
+  content:url(/skins/geos2/skin_images/menuTabsSelectedEnabledJoin.png); 
+}
+af|menuTabs::selected-enabled-join-icon:rtl
+{
+  content:url(/skins/geos2/skin_images/menuTabsEnabledSelectedJoin.png); 
+}
+af|menuTabs::enabled-selected-join-icon
+{
+  content:url(/skins/geos2/skin_images/menuTabsEnabledSelectedJoin.png); 
+}
+af|menuTabs::enabled-selected-join-icon:rtl
+{
+  content:url(/skins/geos2/skin_images/menuTabsSelectedEnabledJoin.png); 
+}
+af|menuTabs::selected-start-icon
+{
+  content:url(/skins/geos2/skin_images/menuTabsSelectedStart.png); 
+}
+af|menuTabs::selected-start-icon:rtl
+{
+  content:url(/skins/geos2/skin_images/menuTabsSelectedEnd.png); 
+}
+af|menuTabs::selected-end-icon
+{
+  content:url(/skins/geos2/skin_images/menuTabsSelectedEnd.png); 
+}
+af|menuTabs::selected-end-icon:rtl
+{
+  content:url(/skins/geos2/skin_images/menuTabsSelectedStart.png); 
+}
+/**
+af|menuTabs::selected-join-icon
+{
+  content:url(/skins/geos2/skin_images/menuTabsSelectedJoin.png); 
+}
+**/
+af|menuTabs::selected-background-icon
+{
+  content:url(/skins/geos2/skin_images/menuTabsSelectedBackground.png);
+}
+
+
+
+
+
+/** menuBar **/
+/** ------- **/
+.AFMenuBarItem:alias{
+    white-space: normal; /** "normal" para que haga wrap del texto. Si no, poner "nowrap" */
+    font-size: 9px;
+}
+af|menuBar                         {height: 20px;}
+af|menuBar::enabled-link           {text-decoration: none;}
+af|menuBar::enabled-link:hover     {text-decoration: underline;}
+af|menuBar::selected-link          {text-decoration: none;}
+af|menuBar::selected-link:hover    {text-decoration: underline;}
+af|menuBar::background-icon        {content:url(/skins/geos2/skin_images/menuBarBackground.png);}
+af|menuBar::leading-separator-icon {content:url(/imagenes/dcha3.png);}
+af|menuBar::separator-icon         {content:url(/imagenes/dcha3.png);}
+
+/** menuList **/
+af|menuList{
+    color:#003366;
+}
+
+af|menuList::selected{
+    /* background-color: rgb(247,255,242); */
+    text-decoration: underline;
+}
+
+
+/** menuButtons **/
+/** ----------- **/
+.AFMenuButtons:alias
+{
+  padding:0px 2px 2px 4px;
+}
+
+
+
+
+
+/** panelSideBar **/
+/*  ------------   */
+
+af|panelSideBar::body
+{
+    background-color: #effaf2;
+    padding: 2px 2px 8px 2px;
+}
+
+af|panelSideBar::top-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelSideBarTopStart.png);       
+}
+
+af|panelSideBar::top-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelSideBarTopEnd.png);            
+}
+
+af|panelSideBar::bottom-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelSideBarBottomStart.png);            
+}
+
+af|panelSideBar::bottom-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelSideBarBottomEnd.png);            
+}
+
+af|panelSideBar::top-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelSideBarTopBackground.png);            
+}
+
+af|panelSideBar::bottom-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelSideBarBottomBackground.png);            
+}
+
+af|panelSideBar::start-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelSideBarStartBackground.png);            
+}
+
+af|panelSideBar::end-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelSideBarEndBackground.png);            
+}
+
+
+/** panelBox **/
+/*  ------------   */
+
+/** generic background for light panelBox's or shuttles **/
+.AFBoxBackground:alias {background-color:#FFFFFF;}
+
+/** when the panelBox is dark, this is the background color */
+.AFPanelBoxDarkBackground:alias {background-color:green;}
+.AFMediumAccentBackground:alias {background-color: white;}
+
+.AFPanelBoxBody:alias
+{
+  background-color: white;
+  padding-top: 10px;
+}
+
+af|panelBox::dark{
+	background-color: #c1d4b4;
+}
+
+
+
+af|panelBox::header
+{
+  color: #383B3F;
+  font-weight: bold;
+  font-size:11pt;
+}
+
+af|panelBox::body
+{
+  padding-top: 2px;
+}
+
+
+
+/** Light color **/
+af|panelBox::light-header-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderStartLight.png);   
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::light-header-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderEndLight.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::light-header-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderBackgroundLight.png);    
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::light-bottom-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomStartLight.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::light-bottom-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomEndLight.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::light-bottom-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomBackgroundLight.png);        
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::light-top-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopStartLight.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::light-top-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopEndLight.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::light-top-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopBackgroundLight.png);    
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::light-start-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxStartBackgroundLight.png);    
+  width:11px;
+  height:1px;
+}
+
+af|panelBox::light-end-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxEndBackgroundLight.png);
+  width:11px;
+  height:1px;
+}
+
+
+/** Medium color **/
+af|panelBox::medium-header-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderStartMedium.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::medium-header-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderEndMedium.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::medium-header-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderBackgroundMedium.png);    
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::medium-bottom-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomStartMedium.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::medium-bottom-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomEndMedium.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::medium-bottom-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomBackgroundMedium.png);        
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::medium-top-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopStartMedium.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::medium-top-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopEndMedium.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::medium-top-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopBackgroundMedium.png);    
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::medium-start-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxStartBackgroundMedium.png);    
+  width:11px;
+  height:1px;
+}
+
+af|panelBox::medium-end-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxEndBackgroundMedium.png);        
+  width:11px;
+  height:1px;
+}
+
+
+/** Dark color **/
+af|panelBox::dark-header-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderStartDark.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::dark-header-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderEndDark.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::dark-header-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderBackgroundDark.png);    
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::dark-bottom-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomStartDark.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::dark-bottom-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomEndDark.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::dark-bottom-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomBackgroundDark.png);        
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::dark-top-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopStartDark.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::dark-top-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopEndDark.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::dark-top-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopBackgroundDark.png);    
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::dark-start-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxStartBackgroundDark.png);    
+  width:11px;
+  height:1px;
+}
+
+af|panelBox::dark-end-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxEndBackgroundDark.png);        
+  width:11px;
+  height:1px;
+}
+
+
+/** Transparent color **/
+af|panelBox::transparent-header-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderStartTrans.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::transparent-header-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderEndTrans.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::transparent-header-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxHeaderBackgroundTrans.png);    
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::transparent-bottom-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomStartTrans.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::transparent-bottom-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomEndTrans.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::transparent-bottom-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxBottomBackgroundTrans.png);        
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::transparent-top-start-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopStartTrans.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::transparent-top-end-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopEndTrans.png);    
+  width:11px;
+  height:20px;
+}
+
+af|panelBox::transparent-top-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxTopBackgroundTrans.png);    
+  width:1px;
+  height:20px;
+}
+
+af|panelBox::transparent-start-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxStartBackgroundTrans.png);    
+  width:11px;
+  height:1px;
+}
+
+af|panelBox::transparent-end-background-icon
+{
+  content:url(/skins/geos2/skin_images/panelBoxEndBackgroundTrans.png);        
+  width:11px;
+  height:1px;
+}
+
+
+/** panelHeader **/
+/** ----------- **/
+af|panelHeader
+{
+  -ora-rule-ref:selector(".AFDarkAccentBorder:alias");
+   border-width:0px 0px 1px 0px;
+   border-style:solid;
+   vertical-align:bottom;
+   margin-bottom:3px;
+   padding:0px 3px;
+   font-weight:bold;
+   font-size:12pt;
+}
+
+af|panelHeader::level-one
+{
+    color: #0B3D73;
+    font-weight: bold;
+}
+
+
+/** selectBooleanCheckbox **/
+/** ---------------------  **/
+af|selectBooleanCheckbox::read-only-unchecked-icon
+{
+  content:url(/skins/geos2/skin_images/checkrn.gif);
+}
+af|selectBooleanCheckbox::read-only-checked-icon
+{
+  content:url(/skins/geos2/skin_images/checkrc.gif);
+}
+
+af|selectBooleanCheckbox::disabled-only-unchecked-icon
+{
+  content:url(/skins/geos2/skin_images/checkdn.gif);
+}
+af|selectBooleanCheckbox::disabled-only-checked-icon
+{
+  content:url(/skins/geos2/skin_images/checkdc.gif);
+}
+
+/* use special properties to change the ui **/
+/* don't show the last item in menuPath (the default is to show it)*/
+af|menuPath {-ora-show-last-item:false}
+
+/** if, for some reason, you don't want an icon to show up, you
+    can hide it like this (this will be more useful when skins can
+    extends other skins besides simple)
+
+af|menuPath::separator-icon {content:inhibit}
+*/
+.AFPathSeparatorIcon:alias{
+  content:url(/skins/geos2/skin_images/tableNext.png);
+  vertical-align:bottom;
+}
+
+/** Table Settings **/
+.AFTableCellDataText:alias
+{
+ padding: 2pt;
+}
+
+.AFTableCellDataBackgroundColor:alias
+{
+  background-color: #f7fff2;
+}
+
+.AFTableCellDataBandedBackgroundColor:alias
+{
+  background-color: #e1ecda;
+}
+
+.AFTableCellDataBorderColor:alias
+{
+  border-color: #b2bbc5;
+}
+
+
+af|table::control-bar-top
+{
+
+ padding: 5pt  ;
+  background-color: rgb(247,255,242);
+}
+af|table::control-bar-top:link
+{
+
+}
+af|table::sub-control-bar
+{
+
+}
+
+af|table::sub-control-bar:link
+{
+
+}
+
+af|table::control-bar-bottom
+{
+  
+}
+
+
+/** These are the styles on the actual navigation bar for a table **/
+af|selectRangeChoiceBar::prev-icon
+{
+  content: url(/skins/geos2/skin_images/tablePrev.png);
+}
+
+af|selectRangeChoiceBar::next-icon
+{
+  content: url(/skins/geos2/skin_images/tableNext.png);
+}
+
+af|selectRangeChoiceBar::prev-disabled-icon
+{
+  content: url(/skins/geos2/skin_images/tablePrevDisabled.png);
+}
+
+af|selectRangeChoiceBar::next-disabled-icon
+{
+  content: url(/skins/geos2/skin_images/tableNextDisabled.png);
+}
+
+/** Column Settings **/
+af|column::header-text
+{
+  background-color: #c1d4b4;
+  color: #383B3F;
+
+
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+
+af|column::header-number
+{
+  background-color: #E9E7D0;
+}
+
+af|column::sortable-header-text
+{
+  background-color: #E9E7D0;
+}
+
+/** Column Settings - adding an icon to the sortable column**/
+af|column::sort-ascend-icon
+{
+  content: url(/skins/geos2/skin_images/sort_asc_n.png);
+}
+
+af|column::sort-descend-icon
+{
+  content: url(/skins/geos2/skin_images/sort_des_n.png); 
+}
+
+/** panelGrid's body area **/
+/** ----------------------- **/
+af|panelGrid::body
+{
+  vertical-align: top;
+}
+
+#_pprBlockingDiv 
+{
+	background: #000000;
+}
+
+.estiloImagenLogin {
+	height: 118px;
+}
+
+img {
+	border: none;
+}

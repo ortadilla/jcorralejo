@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>geos.desktop</id>
+    <family>geos</family>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>/skins/geos/geos.css</style-sheet-name>
+    <bundle-name>
+      bundle
+    </bundle-name>
+  </skin>
+  <skin>
+    <id>geos2.desktop</id>
+    <family>geos2</family>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>/skins/geos2/geos2.css</style-sheet-name>
+    <bundle-name>
+      bundle
+    </bundle-name>
+  </skin>  	
+	<skin>
+    <id>hojiblanca.desktop</id>
+    <family>hojiblanca</family>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>/skins/hojiblanca/hojiblanca.css</style-sheet-name>
+    <bundle-name>
+      bundle
+    </bundle-name>
+  </skin>  	
+</skins>

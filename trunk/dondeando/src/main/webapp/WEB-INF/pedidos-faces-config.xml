@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config 
+PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+                            "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<faces-config>
+
+  <!-- Generales -->
+  <navigation-rule>
+    <navigation-case><from-outcome>principalPed</from-outcome><to-view-id>/pedidos/menu.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>configuracionColoresPedidos</from-outcome><to-view-id>/pedidos/configuracionColoresPedidos.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>mantenimientoParametros</from-outcome><to-view-id>/pedidos/mantenimientoParametros.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>agruparPedidos</from-outcome><to-view-id>/pedidos/agruparPedidos.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>prioridadOfertas</from-outcome><to-view-id>/pedidos/prioridadOfertas.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>mostrarFotosOferta</from-outcome><to-view-id>/pedidos/mostrarFotosOferta.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>registrar_EntradaMaterial</from-outcome><to-view-id>/pedidos/registrarEntradasMaterial.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>mantenimiento_Pedido</from-outcome><to-view-id>/pedidos/consultarPedidos.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>consultarNecesidadesCompra</from-outcome><to-view-id>/pedidos/consultarNecesidadesCompra.jsp</to-view-id></navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/pedidos/mantenimientoParametros.jsp</from-view-id>
+    <navigation-case><from-outcome>dialog:configuracionColoresPedidos</from-outcome><to-view-id>/pedidos/configuracionColoresPedidos.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>dialog:agruparPedidos</from-outcome><to-view-id>/pedidos/agruparPedidos.jsp</to-view-id></navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/pedidos/consultarNecesidadesCompra.jsp</from-view-id>
+    <navigation-case><from-outcome>dialog:arbolCentroConsumo</from-outcome><to-view-id>/pedidos/arbolCentroConsumo.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>edicion_solicitud_propuesta</from-outcome><to-view-id>/pedidos/edicionSolicitudLinea.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>dialog:observacionesConsulta</from-outcome><to-view-id>/pedidos/observacionesConsulta.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>dialog:resumenPedido</from-outcome><to-view-id>/pedidos/resumenPedidos.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>dialog:resumenPropuesta</from-outcome><to-view-id>/pedidos/resumenPropuesta.jsp</to-view-id></navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/pedidos/consultarPedidos.jsp</from-view-id>
+    <navigation-case><from-outcome>dialog:observacionesPedidos</from-outcome><to-view-id>/pedidos/observacionesPedidos.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>dialog:consultarTotalesPedidos</from-outcome><to-view-id>/pedidos/consultarTotalesPedidos.jsp</to-view-id></navigation-case>
+    <navigation-case><from-outcome>dialog:validarPedidos</from-outcome><to-view-id>/pedidos/validarPedidos.jsp</to-view-id></navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/pedidos/prioridadOfertas.jsp</from-view-id>
+    <navigation-case><from-outcome>dialog:prioridadMotivoCambioOferta</from-outcome>   <to-view-id>/pedidos/prioridadMotivoCambioOferta.jsp</to-view-id></navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/pedidos/registrarEntradasMaterial.jsp</from-view-id>
+	<navigation-case><from-outcome>dialog:registrarIncidencias</from-outcome><to-view-id>/pedidos/registrarIncidencia.jsp</to-view-id></navigation-case>
+  </navigation-rule>
+    
+  <navigation-rule>
+  	<navigation-case><from-outcome>dialog:confirmacion</from-outcome><to-view-id>/pedidos/confirmacion.jsp</to-view-id></navigation-case>
+  </navigation-rule> 
+    
+  <navigation-rule>
+  	<from-view-id>/pedidos/validarPedidos.jsp</from-view-id>
+    <navigation-case><from-outcome>dialog:observacionesPedidos</from-outcome><to-view-id>/pedidos/observacionesPedidos.jsp</to-view-id></navigation-case>
+  </navigation-rule>
+</faces-config>

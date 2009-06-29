@@ -1,0 +1,94 @@
+		/*Links cabecera*/
+		.linksCabecera{
+			display:none;
+		}
+		
+		/*Imágenes de la cabecera*/
+		.imagenCabeceraPagina{
+			display:none;
+		}
+					
+		/*Imagen de la Lupa*/
+		.imagenLupa{
+			display:none;
+		}
+		
+		/*Imagen de la goma*/
+		.imagenGoma{
+			display:none;
+		}
+		
+		/*Imégenes de la cabecera*/
+		.imagenLogo{
+			display:none;
+		}
+		
+		
+		/*todos los botones*/
+		button{
+			display:none;
+		}
+		
+		textarea{
+			border: 1px solid #CCCCCC !important;
+			width: 100% !important;
+			height: 100% !important;
+			display: block !important;
+		}
+		
+		/*los calendarios*/
+		td.AFContentCell a img{
+			display:none;
+		} 
+			
+		/*miga de pan*/	
+		.af_navigationPane_bar{
+			display:none;
+		}
+		
+		/*miga de pan*/
+		.af_navigationPane_bar-content{
+			display:none;
+		}
+		
+		/*miga de pan*/
+		div.x3x{
+			display:none;
+		}
+		
+		
+		.af_goButton{
+			display:none;
+		}
+				
+		span.AFLabelText{
+			display:none;
+		}
+		
+		.af_messages_body{
+			display:none;
+		}
+		
+		div.p_OraFooter{
+			display:none;
+		}
+		
+		.p_OraContentFooterRule{
+			display:none;
+		}
+		
+		/*tabla seleccionar todo y no seleccionar nada de la tabla de resultados*/
+		table.af_table_sub-control-bar {
+			display:none;
+		}
+		/*seleccionar todo y no seleccionar nada de la tabla de resultados*/
+		a.xaq{
+			display:none;
+		}
+		
+		/*línea pie de página*/
+		hr.xab{
+			display:none;
+		}
+		
+	

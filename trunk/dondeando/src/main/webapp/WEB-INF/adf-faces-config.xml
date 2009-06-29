@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<adf-faces-config xmlns="http://xmlns.oracle.com/adf/view/faces/config">
+
+  <skin-family>geos2</skin-family>
+  <accessibility-mode>inaccessible</accessibility-mode>
+  <debug-output>false</debug-output> <!-- HTML legible. ¡¡FALSE para producción!! -->
+</adf-faces-config>
