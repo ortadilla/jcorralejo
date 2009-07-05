@@ -21,6 +21,10 @@
     PATH="/dondeando/gestionUsuarios.jsp"
     TARGET="rules:#dondeando#gestionUsuarios.jsp"
     TITLE="gestionUsuarios" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionLocales::#dondeando#gestionLocales.jsp" NAME="output5"
+    PATH="/dondeando/gestionLocales.jsp"
+    TARGET="rules:#dondeando#gestionLocales.jsp" TITLE="gestionLocales" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#dondeando#menuPrincipal.jsp"
@@ -33,4 +37,6 @@
   PATH="/dondeando/modificarPassword.jsp" SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#dondeando#gestionUsuarios.jsp"
   PATH="/dondeando/gestionUsuarios.jsp" SHAPE="304,497,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dondeando#gestionLocales.jsp"
+  PATH="/dondeando/gestionLocales.jsp" SHAPE="304,529,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

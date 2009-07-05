@@ -24,13 +24,18 @@
 			<tr:form>
 				<tr:panelHorizontalLayout halign="center">
 					<tr:spacer width="10" />
+					<tr:outputText value="Futuro menú principal"/>
+				</tr:panelHorizontalLayout>
+
+				<tr:panelHorizontalLayout halign="center">
 					<tr:panelBox>
-						<tr:outputText value="Futuro menú principal" />
 						<tr:spacer height="20"/>				
 						<tr:commandButton text="#{resCore['GESTION_USUARIOS']}" id="gestionUsuarios"
 							action="#{menuPrincipalBean.gestionUsuarios}" />
+						<tr:spacer height="20"/>				
+						<tr:commandButton text="#{resCore['GESTION_LOCALES']}" id="gestionLocales"
+							action="#{menuPrincipalBean.gestionLocales}" />
 					</tr:panelBox>
-					
 					<tr:spacer width="10" />
 				</tr:panelHorizontalLayout>
 				<tr:messages />

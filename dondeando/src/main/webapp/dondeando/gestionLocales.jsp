@@ -23,36 +23,36 @@
 			<geos:cabeceraPagina />
 			<tr:form>
 				<tr:messages />
-				<tr:panelHeader text="#{resCore['GESTION_USUARIOS']}" />
-
+				<tr:panelHeader text="#{resCore['GESTION_LOCALES']}" />
+<!-- 
 				<tr:showDetailHeader text="#{resCore['CRITERIOS_BUSQUEDA']}"
-					disclosed="#{gestionUsuariosBean.desplegado}" id="showDetail"
+					disclosed="#{gestionLocalesBean.desplegado}" id="showDetail"
 					partialTriggers="showDetail"
 					binding="#{gestionUsuariosBinding.busqueda}">
 					<tr:panelBox inlineStyle="width:100%;" background="medium" partialTriggers="btnLimpiar">
 						<tr:panelHorizontalLayout halign="center">
 						<trh:tableLayout cellSpacing="5" cellPadding="0">
 							<trh:rowLayout>
-								<tr:outputText value="#{resCore['USUARIO']}"
+								<tr:outputText value="#{resCore['NOMBRE']}"
 									inlineStyle="font-weight: bolder;" />
-								<tr:inputText columns="20" partialTriggers=":::btnLimpiar"
-									value="#{gestionUsuariosBean.criterioUsuario}"
-									id="criterioUsuario" simple="true" maximumLength="20" />
+								<tr:inputText columns="40" partialTriggers=":::btnLimpiar"
+									value="#{gestionLocalesBean.criterioNombre}"
+									id="criterioNombre" simple="true" />
 							</trh:rowLayout>
 							<trh:rowLayout>
 								<tr:outputText value="#{resCore['ACTIVO']}"
 									inlineStyle="font-weight: bolder;" />
-								<tr:selectBooleanCheckbox value="#{gestionUsuariosBean.criterioActivo}" />
+								<tr:selectBooleanCheckbox value="#{gestionLocalesBean.criterioActivo}" />
 							</trh:rowLayout>
 						</trh:tableLayout>
 						</tr:panelHorizontalLayout>
 						<tr:spacer width="20" height="20" />
 						<tr:panelHorizontalLayout halign="center">
 							<tr:commandButton text="#{resCore['BUSCAR']}" id="btnBuscar"
-								action="#{gestionUsuariosBean.buscar}" />
+								action="#{gestionLocalesBean.buscar}" />
 							<tr:spacer width="20" height="10" />
 							<tr:commandButton text="#{resCore['LIMPIAR']}" id="btnLimpiar"
-								immediate="true" action="#{gestionUsuariosBean.limpiar}" />
+								immediate="true" action="#{gestionLocalesBean.limpiar}" />
 						</tr:panelHorizontalLayout>
 					</tr:panelBox>
 				</tr:showDetailHeader>
@@ -63,22 +63,22 @@
 					<tr:panelGroupLayout>
 						<tr:panelButtonBar>
 							<tr:commandButton text="#{resCore['DETALLES_USUARIO']}"
-								id="btnDetalles" action="#{gestionUsuariosBean.detalles}" />
+								id="btnDetalles" action="#{gestionLocalesBean.detalles}" />
 							<tr:commandButton text="#{resCore['MODIFICAR_USUARIO']}"
-								id="btnModificar" action="#{gestionUsuariosBean.modificar}" />
+								id="btnModificar" action="#{gestionLocalesBean.modificar}" />
 							<tr:commandButton text="#{resCore['ELIMINAR_USUARIO']}"
-								id="btnEliminar" action="#{gestionUsuariosBean.eliminar}" 
+								id="btnEliminar" action="#{gestionLocalesBean.eliminar}" 
 								onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_USUARIO']}')"/>
 							<tr:commandButton text="#{resCore['RECUPERAR_USUARIO']}"
-								id="btnRecuperar" action="#{gestionUsuariosBean.recuperar}"/>
+								id="btnRecuperar" action="#{gestionLocalesBean.recuperar}"/>
 						</tr:panelButtonBar>
 					</tr:panelGroupLayout>
 					<tr:spacer height="10"/>
 					<tr:table var="var" first="0"
 						emptyText="#{resCore['NO_ELEMENTOS']}" rows="20" width="100%"
-						value="#{gestionUsuariosBean.listaUsuarios}"
+						value="#{gestionLocalesBean.listaUsuarios}"
 						rowBandingInterval="1" columnBandingInterval="0"
-						selectedRowKeys="#{gestionUsuariosBean.estadoDeSeleccionTabla}"
+						selectedRowKeys="#{gestionLocalesBean.estadoDeSeleccionTabla}"
 						rowSelection="multiple" id="listaUsuarios">
 						<tr:column sortable="true" headerText="#{resCore['USUARIO']}">
 							<tr:outputText value="#{var.login}" />
@@ -98,7 +98,7 @@
 						</tr:column>
 					</tr:table>
 				</tr:panelBox>
-
+ -->
 			</tr:form>
 		</trh:body>
 		</trh:html>
