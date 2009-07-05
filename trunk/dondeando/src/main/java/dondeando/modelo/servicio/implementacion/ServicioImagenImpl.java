@@ -2,11 +2,11 @@ package dondeando.modelo.servicio.implementacion;
 
 import static utilidades.varios.NombresBean.IMAGEN_DAO;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
+import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_IMAGEN;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedOutputStream;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,7 +15,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,18 +27,18 @@ import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 
+import utilidades.busquedas.consultas.Criterio;
 import utilidades.varios.MensajesCore;
-import utilidades.varios.NombresBean;
-
 import dondeando.modelo.dao.ImagenDAO;
 import dondeando.modelo.dao.excepciones.DAOExcepcion;
 import dondeando.modelo.entidades.Imagen;
 import dondeando.modelo.entidades.Parametros;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.ImagenImpl;
+import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioImagen;
 
-@Scope(ScopeType.APPLICATION)
+@Scope(ScopeType.CONVERSATION)
 @Name(SERVICIO_IMAGEN)
 public class ServicioImagenImpl implements ServicioImagen{
 
@@ -51,6 +50,9 @@ public class ServicioImagenImpl implements ServicioImagen{
 	@In(value=IMAGEN_DAO, create=true)
 	private ImagenDAO imagenDAO;
 
+	@In(value=SERVICIO_CRITERIOS, create=true)
+	private ServicioCriterios servicioCriterios;
+	
 	/*
 	 * (non-Javadoc)
 	 * @see dondeando.modelo.servicio.ServicioImagen#devuelveFicheroTemporal(java.io.InputStream)
@@ -190,8 +192,7 @@ public class ServicioImagenImpl implements ServicioImagen{
 
 
 				imagenCreada = new ImagenImpl();    
-				imagenCreada.setNombre(nombre);
-				imagenCreada.setPath(destino.getAbsolutePath());
+				imagenCreada.setNombre(destino.getName());
 				
 				if(guardarEnBD){
 					//Si lo indican, la guardamos en BD
@@ -225,47 +226,28 @@ public class ServicioImagenImpl implements ServicioImagen{
 	 */
 	public String calcularUrlImagenUsuario(Usuario usuario){
 		String url = "";
-
-		Imagen imagen; //TODO: Foto del usuario
-		try {
-			imagen = imagenDAO.encontrarPorId(2);
-		} catch (DAOExcepcion e1) {
-			log.debug("No se ha podido calcular la URL de la imagen del Usuario "+usuario.getNombreCompleto());
-			return url;
-		}
-		try {
-			/*
-			url = imagen.getPath();
-			
-			if(url==null || "".equals(url)){
-				File directorio=null;
-				directorio = new File(Parametros.PARAMETRO_DIRECTORIO_GUARDAR_IMAGENES);
-				if(!directorio.exists()){
-					directorio.mkdirs();
-				}
-				//Creamos el archivo temporal en el directorio que nos dice el parámetro
-				File temp = File.createTempFile(Imagen.IMAGEN_TEMPORAL, ".jpg",directorio);
-	
-				// Borramos cuando pare el servidor de aplicaciones
-				temp.deleteOnExit();
-	
-				byte[] arrayBytes = imagen.getContenido();
-				ByteArrayInputStream in= new ByteArrayInputStream(arrayBytes);
-				FileOutputStream fos = new FileOutputStream(temp);
-				BufferedOutputStream bos = new BufferedOutputStream(fos);
-				Integer data=null;
-				while((data=in.read()) != -1)
-					bos.write(data);
-	
-				in.close();
-				bos.flush();
-				bos.close();
-	*/
-				url = Parametros.PARAMETRO_URL_IMAGENES + imagen.getNombre();
-//			}
-		} catch (Exception e) {
-			log.debug("No se ha podido calcular la URL de la imagen del Usuario "+usuario.getNombreCompleto());
-		}
+		if(usuario.getAvatar()!=null)
+			url = Parametros.PARAMETRO_URL_IMAGENES + usuario.getAvatar().getNombre();
 		return url;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioImagen#calcularUrlImagenUsuarioNuevo()
+	 */
+	public String calcularUrlImagenUsuarioNuevo() {
+		return Parametros.PARAMETRO_URL_IMAGENES+ Parametros.PARAMETRO_NOMBRE_IMAGENEN_USUARIO_GENERICO;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioImagen#encontrarImagenUsuarioGenerico()
+	 */
+	public Imagen encontrarImagenUsuarioGenerico() {
+		Criterio criterioNombre = servicioCriterios.construyeCriterio(Imagen.ATRIBUTO_NOMBRE, 
+																	  Criterio.IGUAL, 
+																	  Parametros.PARAMETRO_NOMBRE_IMAGENEN_USUARIO_GENERICO); 
+		List<Imagen> imagen = imagenDAO.encontrarPorCondicion(criterioNombre);
+		return !imagen.isEmpty() ? imagen.get(0) : null;
 	}
 }

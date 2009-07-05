@@ -22,5 +22,8 @@
   <many-to-one
    class="dondeando.modelo.entidades.implementacion.TipoUsuarioImpl"
    column="tipo" name="tipoUsuario"/>
+  <many-to-one
+   class="dondeando.modelo.entidades.implementacion.ImagenImpl"
+   column="avatar" name="avatar"/>
  </class>
 </hibernate-mapping>

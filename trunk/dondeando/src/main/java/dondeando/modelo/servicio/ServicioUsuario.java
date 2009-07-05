@@ -1,5 +1,8 @@
 package dondeando.modelo.servicio;
 
+import java.util.List;
+
+import dondeando.modelo.entidades.Imagen;
 import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
 
@@ -45,10 +48,12 @@ public interface ServicioUsuario {
 	 * @param direccion Dirección del usuario
 	 * @param email Email del usuario
 	 * @param tipoUsuario Tipo de usuario
+	 * @param imagen Imagen del avatar del usuario
 	 * @return usuario creado
 	 */
 	public Usuario crearUsuario(String login, String password, String nombre, 
-								String apellidos, String direccion, String email, TipoUsuario tipoUsuario);
+								String apellidos, String direccion, String email, 
+								TipoUsuario tipoUsuario, Imagen imagen);
     
 	/**
 	 * Edita el usuario con los datos indicados
@@ -60,9 +65,12 @@ public interface ServicioUsuario {
 	 * @param direccion Dirección del usuario
 	 * @param email Email del usuario
 	 * @param tipoUsuario Tipo de usuario
+	 * @param imagen Imagen del avatar del usuario
 	 */
 	public void editarUsuario(Usuario usuario, String login, String password, String nombre, 
-							  String apellidos, String direccion, String email, TipoUsuario tipoUsuario);
+							  String apellidos, String direccion, String email, 
+							  TipoUsuario tipoUsuario,
+							  Imagen imagen);
 	
 	/**
 	 * Modifica el password del Usuario indicado
@@ -76,4 +84,24 @@ public interface ServicioUsuario {
 	 * @param usuario	Usuario a desactivar
 	 */
 	public void desactivarUsuario(Usuario usuario);
+	
+	/**
+	 * Descarta el usuario indicado de la sessión de Hibernate
+	 * @param usuario
+	 */
+	public void descartarUsuario(Usuario usuario);
+	
+	/**
+	 * Devuelve todos los usuarios del sistema
+	 * @return Lista de todos los usuarios del sistema
+	 */
+	public List<Usuario> encontrarTodosUsuarios();
+	
+	/**
+	 * Busca los usuarios con el login y el campo activo indicado 
+	 * @param usuario	Login por el que buscar usuarios. Puede ser null
+	 * @param activo	Indica si los usuarios estarán activos o no
+	 * @return	Lista de usuarios encontrados
+	 */
+	public List<Usuario> encontrarUsuariosPorLoginYActivo(String usuario, boolean activo);
 }

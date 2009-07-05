@@ -7,7 +7,6 @@ public class ImagenImpl implements Imagen{
 	private Integer id;
 	private Integer version;
 	private String nombre;
-	private String path;
 	private byte[] contenido;
 	
 	
@@ -56,12 +55,6 @@ public class ImagenImpl implements Imagen{
 	}
 	public void setContenido(byte[] contenido) {
 		this.contenido = contenido;
-	}
-	public String getPath() {
-		return path;
-	}
-	public void setPath(String path) {
-		this.path = path;
 	}
 	
 	

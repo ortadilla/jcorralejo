@@ -1,0 +1,8 @@
+· ¿Cómo ordenar las columna de una tabla, si ya tiene el sortable=true?
+· Validator en TableLayout --> Mensajes erróneos
+· PartialTrigger en el botón limpiar del Registro de Usuarios --> No se actualizan los criterios
+· Criterios de Gestión de Usuario en una tabla
+· Al ir a la edición de un usuario --> 
+	a) No poder modificar la contraseña
+	b) Sólo poder modificar el tipo de Usuario
+	c) Botón volver --> Mirar bien qué hacer con este botón (indicarlo en el protocolo) 

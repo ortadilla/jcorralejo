@@ -43,10 +43,10 @@ public class CabeceraPaginasBean {
     @In(value=SERVICIO_USUARIO, create=true)
     private ServicioUsuario servicioUsuario;
     
-//    @Create
-//    @Begin(join=true)
-//    public void inicializar(){     
-//    }
+    @Create
+    @Begin(join=true)
+    public void inicializar(){     
+    }
     
     public String getNombreUsuario() {
         String nombre = null; 
@@ -80,7 +80,7 @@ public class CabeceraPaginasBean {
 			mapaArgumentos = new MapaArgumentos();
 		mapaArgumentos.limpiaMapa();
 		
-		ProtocoloEdicion protocolo = new ProtocoloEdicion(null, MENU_PRINCIPAL, OPERACION_CREAR_USUARIO);
+		ProtocoloEdicion protocolo = new ProtocoloEdicion(null, null, OPERACION_CREAR_USUARIO);
 		mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
 		
 		return CREAR_USUARIO;
@@ -96,7 +96,7 @@ public class CabeceraPaginasBean {
 		mapaArgumentos.limpiaMapa();
 
 		ProtocoloEdicion protocolo = new ProtocoloEdicion(servicioUsuario.devolverUsuarioActivo(), 
-														  MENU_PRINCIPAL,
+														  null,
 														  OPERACION_DETALLES_USUARIO);
 		mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
 

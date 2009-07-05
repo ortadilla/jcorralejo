@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dondeando.modelo.entidades.Parametros;
+
 /**
  * Servlet que sirve para servir al usuario ficheros. 
  * La clase que lo use ha de subir a la sesion hhtp el fichero en una variable llamada
@@ -48,7 +50,7 @@ public class ServletRedireccionFicheros extends HttpServlet{
 			OutputStream out = response.getOutputStream( );
 			
 			byte[ ] buf = new byte[4 * 1024]; // 4K buffer
-			in = new BufferedInputStream(new FileInputStream(dirTemporal + nombreFichero));
+			in = new BufferedInputStream(new FileInputStream(Parametros.PARAMETRO_DIRECTORIO_GUARDAR_IMAGENES + nombreFichero));
 			int bytesRead;
 
 			while ((bytesRead = in.read(buf)) != -1) {

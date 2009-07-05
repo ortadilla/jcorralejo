@@ -6,7 +6,9 @@ import java.util.Date;
 public interface Usuario {
 	
 	public static String USUARIO_ANONIMO = "anonimo";
+	
 	public static final String ATRIBUTO_LOGIN = "login";
+	public static final String ATRIBUTO_ACTIVO = "activo";
 	
 	public Integer getId();
 	public void setId(Integer id);
@@ -46,6 +48,9 @@ public interface Usuario {
 	
 	public Usuario getUsuarioModificacion();
 	public void setUsuarioModificacion(Usuario usuarioModificacion);
+	
+	public Imagen getAvatar();
+	public void setAvatar(Imagen imagen);
 	
 	public String getNombreCompleto();
 }
