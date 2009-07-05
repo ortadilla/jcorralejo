@@ -1,13 +1,15 @@
 package dondeando.modelo.entidades.implementacion;
 
-import dondeando.modelo.entidades.Servicio;
+import dondeando.modelo.entidades.Imagen;
+import dondeando.modelo.entidades.Local;
 
-public class ServicioImpl implements Servicio{
-
+public class ImagenLocalImpl {
+	
 	private Integer id;
 	private Integer version;
 	private String descripcion;
-	private String codigo;
+	private Local local;
+	private Imagen imagen;
 	
 	@Override
 	public int hashCode() {
@@ -20,9 +22,9 @@ public class ServicioImpl implements Servicio{
 	public boolean equals(Object obj) {
 		if (this == obj) return true;
 		if (obj == null) return false;
-		if (!(obj instanceof ServicioImpl))
+		if (!(obj instanceof ImagenLocalImpl))
 			return false;
-		final ServicioImpl other = (ServicioImpl) obj;
+		final ImagenLocalImpl other = (ImagenLocalImpl) obj;
 		if (id == null) {
 			if (other.getId() != null)
 				return false;
@@ -48,10 +50,17 @@ public class ServicioImpl implements Servicio{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public String getCodigo() {
-		return codigo;
+	public Local getLocal() {
+		return local;
 	}
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+	public void setLocal(Local local) {
+		this.local = local;
 	}
+	public Imagen getImagen() {
+		return imagen;
+	}
+	public void setImagen(Imagen imagen) {
+		this.imagen = imagen;
+	}
+	
 }

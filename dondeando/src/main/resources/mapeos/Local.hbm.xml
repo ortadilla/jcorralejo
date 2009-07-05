@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+	package="dondeando.modelo.entidades.implementacion">
+	<class name="LocalImpl" table="local">
+
+		<id name="id" unsaved-value="null">
+			<generator class="increment" />
+		</id>
+		<version name="version" />
+		
+		<property name="nombre" column="nombre" />
+		<property name="descripcion" column="descripcion" />
+		<property name="direccion" column="direccion" />
+		<property name="telefono" column="telefono" />
+		<property name="web" column="web" />
+		<property name="email" column="email" />
+		<property name="horario" column="horario" />
+		<property name="precioMedio" column="precioMedio" />
+		<property name="valoracion" column="valoracion" />
+		<property name="otraInformacion" column="otraInformacion" />
+		
+		<many-to-one
+			class="dondeando.modelo.entidades.implementacion.TipoLocalImpl"
+			column="tipoLocal" name="tipoLocal" />
+
+		<set name="servicios" table="serviciosLocal">
+			<key column="local" />
+			<many-to-many column="servicio"
+				class="ServicioImpl" />
+		</set>
+	</class>
+</hibernate-mapping>
