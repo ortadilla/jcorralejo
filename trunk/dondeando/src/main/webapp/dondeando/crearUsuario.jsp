@@ -86,11 +86,10 @@
 								</tr:inputText>
 							</trh:cellFormat>
 					 	</trh:rowLayout>
-					 	<trh:rowLayout>
+					 	<trh:rowLayout rendered="#{crearUsuarioBean.mostrarTipoUsuario}">
 						 	<tr:outputText value="#{resCore['TIPO_USUARIO']} *" inlineStyle="font-weight: bolder;"/>
 					 		<trh:cellFormat columnSpan="2">
-								<tr:selectOneChoice value = "#{crearUsuarioBean.tipoUsuario}" 
-									disabled="#{crearUsuarioBean.deshabilitarTipoUsuario}">
+								<tr:selectOneChoice value = "#{crearUsuarioBean.tipoUsuario}" disabled="#{crearUsuarioBean.detalles}">
 									<f:selectItems id="selectTipoUsuario" 
 										value="#{crearUsuarioBean.selectTipoUsuario}"/>
 								</tr:selectOneChoice>
