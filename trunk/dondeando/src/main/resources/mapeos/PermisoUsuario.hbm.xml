@@ -2,17 +2,18 @@
 <!DOCTYPE hibernate-mapping PUBLIC
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="dondeando.modelo.entidades.implementacion">
-  <class name="PermisoUsuarioImpl" table="permisousuario">
+<hibernate-mapping
+	package="dondeando.modelo.entidades.implementacion">
+	<class name="PermisoUsuarioImpl" table="permisousuario">
 
-   <id name="id">
-   	<generator class="increment" />
-   </id>
-   <version generated="never" name="version" type="integer" />
-   <property column="permiso" name="permiso" />
-   <many-to-one
-   	class="dondeando.modelo.entidades.implementacion.TipoUsuarioImpl"
-   	column="tipo" name="tipoUsuario" />
+		<id name="id">
+			<generator class="increment" />
+		</id>
+		<version generated="never" name="version" type="integer" />
+		<property column="permiso" name="permiso" />
+		<many-to-one
+			class="dondeando.modelo.entidades.implementacion.TipoUsuarioImpl"
+			column="tipoUsuario" name="tipoUsuario" />
 
-  </class>
+	</class>
 </hibernate-mapping>

@@ -4,7 +4,6 @@ import static utilidades.jsf.ConstantesArgumentosNavegacion.OPERACION_DETALLES_U
 import static utilidades.jsf.ConstantesArgumentosNavegacion.OPERACION_EDITAR_USUARIO;
 import static utilidades.jsf.ConstantesReglasNavegacion.CREAR_USUARIO;
 import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_USUARIOS;
-import static utilidades.jsf.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static utilidades.varios.NombresBean.GESTION_USUARIOS_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
@@ -24,22 +23,24 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
-import utilidades.jsf.ConstantesArgumentosNavegacion;
-import utilidades.jsf.ConstantesReglasNavegacion;
 import utilidades.jsf.UtilJsfContext;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
 import utilidades.varios.NombresBean;
 import utilidades.varios.ProtocoloEdicion;
-
-import binding.GestionUsuariosBinding;
-
+import dondeando.binding.GestionUsuariosBinding;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(GESTION_USUARIOS_BEAN)
 public class GestionUsuariosBean {
+	
+	//Constantes
+	private static final String ACCION_DETALLES_USUARIO = "_detallesUsuario_";
+	private static final String ACCION_MODIFICAR_USUARIO = "_modificarUsuario_";
+	private static final String ACCION_ELIMINAR_USUARIO = "_eliminarUsuario_";
+	private static final String ACCION_RECUPERAR_USUARIO = "_recuperarUsuario_";
 	
 	//Atributos
 	private List<Usuario> listaUsuarios;
@@ -78,7 +79,7 @@ public class GestionUsuariosBean {
 	 * @return Regla de navegación a la pantalla del usuario
 	 */
 	public String detalles(){
-		return navegarAUsuario(false);
+		return realizarOperacion(ACCION_DETALLES_USUARIO);
 	}
 	
 	/**
@@ -86,36 +87,73 @@ public class GestionUsuariosBean {
 	 * @return Regla de navegación a la pantalla del usuario
 	 */
 	public String modificar(){
-		return navegarAUsuario(true);
+		return realizarOperacion(ACCION_MODIFICAR_USUARIO);
 	}
 	
 	/**
-	 * Prepara los parámetros para navegar a la pantalla del usuario seleccionado
+	 * Realiza la operación concreta sobre el usuario seleccionado, que puede ser eliminar,
+	 * ver detalles y modificar
 	 * @param edicion Indica si se navega para editar el usuario, o para ver los detalles
-	 * @return	Regla de navegación a la pantalla del usuario
+	 * @return	Regla de navegación necesaria para realizar la acción
 	 */
-	private String navegarAUsuario(boolean edicion){
+	private String realizarOperacion(String operacion){
 		String outcome = "";
+		boolean operacionRealizada = false;
 		if(estadoDeSeleccionTabla.size()==1){
-			if(mapaArgumentos==null)
-				mapaArgumentos = new MapaArgumentos();
-			mapaArgumentos.limpiaMapa();
-	
+			
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
-			ProtocoloEdicion protocolo = new ProtocoloEdicion(listaUsuarios.get(seleccion),
-															  GESTION_USUARIOS,
-															  edicion ? OPERACION_EDITAR_USUARIO : OPERACION_DETALLES_USUARIO);
-			mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
-	
-			outcome = CREAR_USUARIO;
+			Usuario usuario = listaUsuarios.get(seleccion);
+			if(ACCION_MODIFICAR_USUARIO.equals(operacion) || ACCION_DETALLES_USUARIO.equals(operacion)){
+				if(mapaArgumentos==null)
+					mapaArgumentos = new MapaArgumentos();
+				mapaArgumentos.limpiaMapa();
+				
+				ProtocoloEdicion protocolo = new ProtocoloEdicion(usuario,
+																  GESTION_USUARIOS,
+																  ACCION_MODIFICAR_USUARIO.equals(operacion) 
+																? OPERACION_EDITAR_USUARIO : OPERACION_DETALLES_USUARIO);
+				mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+		
+				outcome = CREAR_USUARIO;
+				operacionRealizada = true;
+			
+			}else if(ACCION_ELIMINAR_USUARIO.equals(operacion)){
+				
+				if(usuario!=null && usuario.isActivo()){
+					servicioUsuario.desactivarUsuario(usuario);
+					servicioUsuario.descartarUsuario(usuario);
+					utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("USUARIO_ELIMINADO"));
+					operacionRealizada = true;
+				}else
+					utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_ELIMINAR_USUARIO_ELIMINADO"));
+
+			}else if(ACCION_RECUPERAR_USUARIO.equals(operacion)){
+
+				if(usuario!=null && !usuario.isActivo()){
+					servicioUsuario.activarUsuario(usuario);
+					utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("USUARIO_RECUPERADO"));
+					operacionRealizada = true;
+				}else
+					utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_RECUPERAR_USUARIO_ACTIVO"));
+			}
 		}else
 			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
+		
+		if(operacionRealizada)
+			estadoDeSeleccionTabla.clear();
 		
 		return outcome;
 	}
 	
+	/**
+	 * Elimina el usuario seleccionado
+	 */
 	public void eliminar(){
-		
+		realizarOperacion(ACCION_ELIMINAR_USUARIO);
+	}
+	
+	public void recuperar(){
+		realizarOperacion(ACCION_RECUPERAR_USUARIO);
 	}
 	
 	/**

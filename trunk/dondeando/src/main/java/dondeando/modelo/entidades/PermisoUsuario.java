@@ -4,6 +4,10 @@ import dondeando.modelo.entidades.TipoUsuario;
 
 public interface PermisoUsuario {
 	
+	//Constantes
+	public static final String ATRIBUTO_PERMISO = "permiso";
+	public static final String ATRIBUTO_TIPO_USUARIO = "tipoUsuario";
+	
 	public Integer getId();
 	public void setId(Integer id);
 	

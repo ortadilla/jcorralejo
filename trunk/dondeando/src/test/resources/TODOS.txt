@@ -1,4 +1,8 @@
-· ¿Cómo ordenar las columna de una tabla, si ya tiene el sortable=true?
-· Validator en TableLayout --> Mensajes erróneos
+· ¿Cómo ordenar las columna de una tabla, si ya tiene el sortable=true? (gestionarUsuarios)
+· Validator en TableLayout --> Mensajes erróneos (crearusuario)
 · PartialTrigger en el botón limpiar del Registro de Usuarios --> No se actualizan los criterios
-· Criterios de Gestión de Usuario en una tabla
+· Login --> Excepcion --> Pide otra vez el login cuando está todavía conectado el usuario
+	Puede que sea por tema de conversacion del CabeceraPaginaBean --> ServicioUsuario es diferente siempre
+· Al agregar/editar usuario y subir avatar, no se actualiza la imagen --> ¿botón subir?
+· Añadir el número de elementos en cada tabla
+

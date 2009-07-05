@@ -1,4 +1,4 @@
-package binding;
+package dondeando.binding;
 
 import org.apache.myfaces.trinidad.component.core.layout.CoreShowDetailHeader;
 import org.jboss.seam.ScopeType;

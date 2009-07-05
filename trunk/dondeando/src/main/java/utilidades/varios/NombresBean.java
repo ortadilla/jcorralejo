@@ -8,14 +8,16 @@ public class NombresBean {
     
 
 	/**Servicios*/
+	public static final String SERVICIO_CRITERIOS     = "servicioCriterios";
 	public static final String SERVICIO_IMAGEN = "servicioImagen";
-    public static final String SERVICIO_TIPO_USUARIO = "servicioTipoUsuario";
+    public static final String SERVICIO_PERMISO_USUARIO = "servicioPermisoUsuario";
     public static final String SERVICIO_USUARIO = "servicioUsuario";
-    public static final String SERVICIO_CRITERIOS     = "servicioCriterios";
+    public static final String SERVICIO_TIPO_USUARIO = "servicioTipoUsuario";
     
     /**Beans */    
     public static final String CABECERA_PAGINA_BEAN = "cabeceraPaginaBean"; 
     public static final String CREAR_USUARIO_BEAN = "crearUsuarioBean"; 
+    public static final String GESTION_LOCALES_BEAN = "gestionLocalesBean"; 
     public static final String GESTION_USUARIOS_BEAN = "gestionUsuariosBean"; 
     public static final String LOGIN_BEAN = "loginBean"; 
     public static final String MENU_PRINCIPAL_BEAN = "menuPrincipalBean"; 
@@ -23,11 +25,15 @@ public class NombresBean {
     public static final String PRUEBA_BD = "pruebaBD"; 
     
     /**Binding*/
+    public static final String GESTION_LOCALES_BINDING = "gestionLocalesBinding"; 
     public static final String GESTION_USUARIOS_BINDING = "gestionUsuariosBinding"; 
     
     /**DAOs */
     public static final String IMAGEN_DAO = "imagenDAO"; 
     public static final String PRUEBA_DAO = "pruebaDAO"; 
+    public static final String PERMISO_USUARIO_DAO = "permisoUsuarioDAO"; 
+    public static final String SERVICIO_DAO = "servicioDAO"; 
+    public static final String TIPO_LOCAL_DAO = "tipoLocalDAO"; 
     public static final String TIPO_USUARIO_DAO = "tipoUsuarioDAO"; 
     public static final String USUARIO_DAO = "usuarioDAO"; 
     

@@ -12,6 +12,7 @@ import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
 import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
 import static utilidades.varios.NombresBean.SERVICIO_IMAGEN;
+import static utilidades.varios.NombresBean.SERVICIO_PERMISO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
@@ -39,12 +40,14 @@ import utilidades.jsf.ConstantesReglasNavegacion;
 import utilidades.jsf.UtilJsfContext;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
+import utilidades.varios.Permisos;
 import utilidades.varios.ProtocoloEdicion;
 import utilidades.varios.SelectItemBuilder;
 import dondeando.modelo.entidades.Imagen;
 import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.servicio.ServicioImagen;
+import dondeando.modelo.servicio.ServicioPermisoUsuario;
 import dondeando.modelo.servicio.ServicioTipoUsuario;
 import dondeando.modelo.servicio.ServicioUsuario;
 
@@ -62,7 +65,7 @@ public class CrearUsuarioBean {
 	private TipoUsuario tipoUsuario;
 	
 	private SelectItem[] selectTipoUsuario;
-	private boolean deshabilitarTipoUsuario;
+	private boolean mostrarTipoUsuario;
 	private boolean detalles;
 	/** Indica si se puede modificar los datos del usuario */
 	private boolean modificarUsuario;
@@ -88,6 +91,12 @@ public class CrearUsuarioBean {
     
     @In(value=CABECERA_PAGINA_BEAN, create=true)
     private CabeceraPaginasBean cabeceraPaginasBean;
+    
+	@In(value=UTIL_JSF_CONTEXT, create=true)
+	private UtilJsfContext utilJsfContext;
+	
+	@In(value=MENSAJES_CORE, create=true)
+	private MensajesCore mensajesCore;
 	
 	private ProtocoloEdicion protocoloEdicion;
 	
@@ -101,11 +110,8 @@ public class CrearUsuarioBean {
 	@In(value=SERVICIO_USUARIO, create=true)
 	private ServicioUsuario servicioUsuario;
 	
-	@In(value=MENSAJES_CORE, create=true)
-	private MensajesCore mensajesCore;
-	
-	@In(value=UTIL_JSF_CONTEXT, create=true)
-	private UtilJsfContext utilJsfContext;
+	@In(value=SERVICIO_PERMISO_USUARIO, create=true)
+	private ServicioPermisoUsuario servicioPermisoUsuario;
 	
 	@Create
 	@Begin(join=true)
@@ -158,6 +164,7 @@ public class CrearUsuarioBean {
 			modificarUsuario = false;
 			eliminarUsuario = false;
 			tituloPagina = mensajesCore.obtenerTexto("REGISTRAR_USUARIO");
+			mostrarTipoUsuario = false;
 		}
 		else if(OPERACION_DETALLES_USUARIO.equals(operacion)){
 			detalles = true;
@@ -166,6 +173,7 @@ public class CrearUsuarioBean {
 			modificarPass = usuarioActivo.equals(usuarioEdicion);
 			modificarUsuario = usuarioActivo.equals(usuarioEdicion);
 			eliminarUsuario = usuarioActivo.equals(usuarioEdicion);
+			mostrarTipoUsuario = true;
 		}
 		else if(OPERACION_EDITAR_USUARIO.equals(operacion)){
 			detalles = false;
@@ -174,11 +182,11 @@ public class CrearUsuarioBean {
 			modificarPass = usuarioActivo.equals(usuarioEdicion);
 			modificarUsuario = false;
 			eliminarUsuario = true;
+			mostrarTipoUsuario = servicioPermisoUsuario.hayPermiso(Permisos.ASIGNAR_TIPO_USUARIO);
 		}
 		
 		//Al crear un usuario nuevo desde el registro siempre será uno normal
 		//y no se podrá modificar
-		deshabilitarTipoUsuario = true; //TODO: Debe depender de un permiso
 		selectTipoUsuario = SelectItemBuilder.creaSelectItems(servicioTipoUsuario.devolverTodosTipoUsuarioMenosAnonimo(), 
 															  null, 
 															  TipoUsuario.ATRIBUTO_DESCRIPCION);
@@ -266,8 +274,8 @@ public class CrearUsuarioBean {
 				servicioUsuario.editarUsuario(usuarioEdicion,login, password, nombre, apellidos, direccion, email, tipoUsuario, imagenUsuario);
 				utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("USUARIO_ACTUALIZADO"));
 			}
-			outcome = protocoloEdicion!=null ? protocoloEdicion.getOutcomeVuelta() 
-											 : ConstantesReglasNavegacion.MENU_PRINCIPAL;
+			outcome = protocoloEdicion!=null && protocoloEdicion.getOutcomeVuelta()!=null ? protocoloEdicion.getOutcomeVuelta() 
+											 											  : ConstantesReglasNavegacion.MENU_PRINCIPAL;
 		}else{
 			utilJsfContext.insertaMensajesAdvertencia(errores);
 			reentrando = true;
@@ -347,42 +355,6 @@ public class CrearUsuarioBean {
 		return MENU_PRINCIPAL;
 	}
 	
-	/**
-	 * Método que recoge el UploadedFile introducido por el usuario 
-	 * para subir una foto nueva
-	 * @param valueChangeEvent
-	 */
-	public void cambiarImagen(ValueChangeEvent valueChangeEvent){
-		if(valueChangeEvent.getNewValue()!=null){
-			UploadedFile uploadedFile = (UploadedFile) valueChangeEvent.getNewValue();
-
-			if(uploadedFile!=null && uploadedFile.getLength()>0){
-				Long uploadedFileSize = uploadedFile.getLength();
-				String uploadedFileType = uploadedFile.getContentType();
-				String nombre = uploadedFile.getFilename();    
-				InputStream inputStream = null;
-
-				try {
-					inputStream = uploadedFile.getInputStream();
-//					File ficheroTemporal = servicioImagen.devuelveFicheroTemporal(inputStream);
-//					FileInputStream fileInput = servicioImagen.devuelveFileInputStream(ficheroTemporal);
-					List<String> errores = servicioImagen.comprobarAgregarImagen(uploadedFileType, uploadedFileSize,uploadedFile.getInputStream());
-					if(errores!=null && errores.isEmpty()){
-						//Guardamos la imagen en el servidor
-						Imagen imagen = servicioImagen.guardarImagen(nombre, uploadedFile.getInputStream(), false);
-						//TODO: Asociar al usuario y eliminar imagen anterior
-					}else
-						utilJsfContext.insertaMensajesAdvertencia(errores);
-					
-				} catch (IOException e) {
-					utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("ERROR_GUARDAR_FOTO"+e.getMessage()));
-				}
-
-			}else
-				utilJsfContext.insertaMensajeAdvertencia(mensajesCore.obtenerTexto("ERROR_FOTO_NO_SELECCIONADA"));
-		}
-	}
-	
 	public String getLogin() {
 		return login;
 	}
@@ -436,12 +408,6 @@ public class CrearUsuarioBean {
 	}
 	public void setSelectTipoUsuario(SelectItem[] selectTipoUsuario) {
 		this.selectTipoUsuario = selectTipoUsuario;
-	}
-	public boolean isDeshabilitarTipoUsuario() {
-		return deshabilitarTipoUsuario;
-	}
-	public void setDeshabilitarTipoUsuario(boolean deshabilitarTipoUsuario) {
-		this.deshabilitarTipoUsuario = deshabilitarTipoUsuario;
 	}
 	public RegExpValidator getValidatorEmail() {
 		return validatorEmail;
@@ -528,5 +494,13 @@ public class CrearUsuarioBean {
 
 	public void setMostrarVolver(boolean mostrarVolver) {
 		this.mostrarVolver = mostrarVolver;
+	}
+
+	public boolean isMostrarTipoUsuario() {
+		return mostrarTipoUsuario;
+	}
+
+	public void setMostrarTipoUsuario(boolean mostrarTipoUsuario) {
+		this.mostrarTipoUsuario = mostrarTipoUsuario;
 	}
 }

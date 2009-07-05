@@ -14,11 +14,7 @@
   <property column="direccion" name="direccion"/>
   <property column="email" name="email"/>
   <property column="karma" name="karma"/>
-  <property column="fechaModif" name="fechaModificacion" type="timestamp"/>
   <property column="activo" name="activo" type="true_false"/>
-  <many-to-one
-   class="dondeando.modelo.entidades.implementacion.UsuarioImpl"
-   column="usuarioModif" name="usuarioModificacion"/>
   <many-to-one
    class="dondeando.modelo.entidades.implementacion.TipoUsuarioImpl"
    column="tipo" name="tipoUsuario"/>

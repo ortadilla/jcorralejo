@@ -1,7 +1,6 @@
 package dondeando.modelo.entidades.implementacion;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 import dondeando.modelo.entidades.Imagen;
 import dondeando.modelo.entidades.TipoUsuario;
@@ -20,8 +19,6 @@ public class UsuarioImpl implements Usuario{
 	private String email;
 	private BigDecimal karma;
 	private TipoUsuario tipoUsuario;
-	private Date fechaModificacion;
-	private Usuario usuarioModificacion;
 	private Imagen avatar;
 	
 	@Override
@@ -120,18 +117,6 @@ public class UsuarioImpl implements Usuario{
 	}
 	public void setTipoUsuario(TipoUsuario tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
-	}
-	public Date getFechaModificacion() {
-		return fechaModificacion;
-	}
-	public void setFechaModificacion(Date fechaModificacion) {
-		this.fechaModificacion = fechaModificacion;
-	}
-	public Usuario getUsuarioModificacion() {
-		return usuarioModificacion;
-	}
-	public void setUsuarioModificacion(Usuario usuarioModificacion) {
-		this.usuarioModificacion = usuarioModificacion;
 	}
 	public Imagen getAvatar() {
 		return avatar;
