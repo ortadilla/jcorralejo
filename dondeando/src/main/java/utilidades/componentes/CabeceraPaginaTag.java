@@ -3,6 +3,7 @@ package utilidades.componentes;
 import static dondeando.bean.MenuPrincipalBean.JSF_MENU_PRINCIPAL;
 import static utilidades.varios.NombresBean.CABECERA_PAGINA_BEAN;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
+import static utilidades.varios.NombresBean.SERVICIO_IMAGEN;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 
 import java.io.IOException;
@@ -27,6 +28,8 @@ import org.apache.myfaces.trinidadinternal.taglib.html.HtmlTableLayoutTag;
 import org.jboss.seam.Component;
 
 import utilidades.varios.MensajesCore;
+import utilidades.varios.NombresBean;
+import dondeando.modelo.servicio.ServicioImagen;
 import dondeando.modelo.servicio.ServicioUsuario;
 
 public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
@@ -42,6 +45,7 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     
     private MensajesCore mensajesCore;
     private ServicioUsuario servicioUsuario;
+    private ServicioImagen servicioImagen;
 
     public CabeceraPaginaTag() {
         super();
@@ -57,6 +61,7 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     	//cada vez que se crear el Tag, que es siempre que se pinta la página
     	//y así se obtienen las propiedades cacheadas
     	servicioUsuario = (ServicioUsuario)Component.getInstance(SERVICIO_USUARIO);
+    	servicioImagen = (ServicioImagen)Component.getInstance(SERVICIO_IMAGEN);
 
     	HtmlTableLayoutTag tablaPadre = crearTabla(this);
     	HtmlRowLayoutTag filasPadre = null;          
@@ -111,8 +116,8 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     	}
     	else{
     		//TODO: Imagen usuario
-    		crearImagen("/imagenes/usuario.gif", null, mensajesCore.obtenerTexto("USUARIO"), null, celda); 
-//    		crearOutput(" #{"+CABECERA_PAGINA_BEAN+"."+PROPIEDAD_NOMBRE_USUARIO+"} ", null, celda, true);
+//    		crearImagen("/imagenes/usuario.gif", null, mensajesCore.obtenerTexto("USUARIO"), null, celda); 
+    		crearImagen(servicioImagen.calcularUrlImagenUsuario(servicioUsuario.devolverUsuarioActivo()), "35", mensajesCore.obtenerTexto("USUARIO"), null, celda); 
     		link = crearCommandLink(" #{"+CABECERA_PAGINA_BEAN+"."+PROPIEDAD_NOMBRE_USUARIO+"} ",
     				"#{"+CABECERA_PAGINA_BEAN+"."+METODO_EDITAR_USUARIO+"}", null, null,false, false, null, celda, false);
     		fin(link);

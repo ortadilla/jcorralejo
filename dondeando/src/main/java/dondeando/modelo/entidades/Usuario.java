@@ -1,7 +1,6 @@
 package dondeando.modelo.entidades;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 public interface Usuario {
 	
@@ -42,12 +41,6 @@ public interface Usuario {
 	
 	public TipoUsuario getTipoUsuario();
 	public void setTipoUsuario(TipoUsuario tipoUsuario);
-	
-	public Date getFechaModificacion();
-	public void setFechaModificacion(Date fechaMoficacion);
-	
-	public Usuario getUsuarioModificacion();
-	public void setUsuarioModificacion(Usuario usuarioModificacion);
 	
 	public Imagen getAvatar();
 	public void setAvatar(Imagen imagen);

@@ -1,6 +1,7 @@
 package dondeando.bean;
 
 import static org.jboss.seam.ScopeType.CONVERSATION;
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_LOCALES;
 import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_USUARIOS;
 import static utilidades.varios.NombresBean.MENU_PRINCIPAL_BEAN;
 
@@ -22,6 +23,10 @@ public class MenuPrincipalBean {
 	
 	public String gestionUsuarios(){
 		return GESTION_USUARIOS;
+	}
+	
+	public String gestionLocales(){
+		return GESTION_LOCALES;
 	}
 
 }

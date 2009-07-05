@@ -86,6 +86,12 @@ public interface ServicioUsuario {
 	public void desactivarUsuario(Usuario usuario);
 	
 	/**
+	 * Activa el usuario indicado
+	 * @param usuario	Usuario a activa
+	 */
+	public void activarUsuario(Usuario usuario);
+	
+	/**
 	 * Descarta el usuario indicado de la sessión de Hibernate
 	 * @param usuario
 	 */

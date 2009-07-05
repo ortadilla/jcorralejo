@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+	package="dondeando.modelo.entidades.implementacion">
+	<class name="ServicioImpl" table="servicio">
+
+		<id name="id" unsaved-value="null">
+			<generator class="increment" />
+		</id>
+		<version name="version" />
+		
+		<property name="descripcion" column="descripcion" />
+		<property name="codigo" column="codigo" />
+
+	</class>
+</hibernate-mapping>

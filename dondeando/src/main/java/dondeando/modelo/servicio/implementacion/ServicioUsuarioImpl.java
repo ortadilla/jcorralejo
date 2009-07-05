@@ -213,8 +213,6 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     	usuario.setTipoUsuario(tipoUsuario);
     	usuario.setActivo(true); //Si ponemos confirmación por email, sería false
     	usuario.setKarma(new BigDecimal(5)); //Pendiente de ver su cálculo
-    	usuario.setFechaModificacion(new Date());
-    	usuario.setUsuarioModificacion(usuario);
     	usuario.setAvatar(imagen);
     }
     
@@ -251,6 +249,19 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
 		} catch (DAOExcepcion e) {
 			log.debug("Error al actualizar los datos del usuario "+e);
 		}
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioUsuario#activarUsuario(dondeando.modelo.entidades.Usuario)
+     */
+    public void activarUsuario(Usuario usuario) {
+    	usuario.setActivo(true);
+    	try {
+    		usuarioDAO.flush();
+    	} catch (DAOExcepcion e) {
+    		log.debug("Error al actualizar los datos del usuario "+e);
+    	}
     }
     
     /*
