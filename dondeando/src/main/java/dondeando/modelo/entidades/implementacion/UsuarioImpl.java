@@ -3,6 +3,7 @@ package dondeando.modelo.entidades.implementacion;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import dondeando.modelo.entidades.Imagen;
 import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
 
@@ -21,6 +22,7 @@ public class UsuarioImpl implements Usuario{
 	private TipoUsuario tipoUsuario;
 	private Date fechaModificacion;
 	private Usuario usuarioModificacion;
+	private Imagen avatar;
 	
 	@Override
 	public int hashCode() {
@@ -130,6 +132,12 @@ public class UsuarioImpl implements Usuario{
 	}
 	public void setUsuarioModificacion(Usuario usuarioModificacion) {
 		this.usuarioModificacion = usuarioModificacion;
+	}
+	public Imagen getAvatar() {
+		return avatar;
+	}
+	public void setAvatar(Imagen avatar) {
+		this.avatar = avatar;
 	}
 	
 }

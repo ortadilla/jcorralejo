@@ -8,6 +8,8 @@ import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
 import org.jboss.seam.ScopeType;
+import org.jboss.seam.annotations.Begin;
+import org.jboss.seam.annotations.Create;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
@@ -21,7 +23,7 @@ import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
 import utilidades.varios.ProtocoloEdicion;
 
-@Scope(ScopeType.APPLICATION)
+@Scope(ScopeType.CONVERSATION)
 @Name(MODIFICAR_CONTRASENA_BEAN)
 public class ModificarContrasenaBean {
 	
@@ -44,6 +46,11 @@ public class ModificarContrasenaBean {
 	private UtilJsfContext utilJsfContext;
     
     private ProtocoloEdicion protocoloEdicion;
+    
+    @Create
+	@Begin(join=true)
+	public void inicializar(){
+	}
     
     public void cargarArgumentosDeEntrada(){
     	if(mapaArgumentos!=null && mapaArgumentos.contieneProtocoloEdicion())

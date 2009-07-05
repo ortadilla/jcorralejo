@@ -1,7 +1,6 @@
 package dondeando.modelo.servicio.implementacion;
 
 
-import static org.jboss.seam.ScopeType.CONVERSATION;
 import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.USUARIO_DAO;
@@ -19,16 +18,18 @@ import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 
+import utilidades.busquedas.consultas.Condicion;
 import utilidades.busquedas.consultas.Criterio;
 import dondeando.modelo.dao.UsuarioDAO;
 import dondeando.modelo.dao.excepciones.DAOExcepcion;
+import dondeando.modelo.entidades.Imagen;
 import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.UsuarioImpl;
 import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioUsuario;
 
-@Scope(ScopeType.APPLICATION)
+@Scope(ScopeType.CONVERSATION)
 @Name(SERVICIO_USUARIO)
 public class ServicioUsuarioImpl implements ServicioUsuario {
 
@@ -164,9 +165,10 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
      * @see dondeando.modelo.servicio.ServicioUsuario#crearUsuario(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, dondeando.modelo.entidades.TipoUsuario)
      */
     public Usuario crearUsuario(String login, String password, String nombre, 
-    							String apellidos, String direccion, String email, TipoUsuario tipoUsuario){
+    							String apellidos, String direccion, String email, 
+    							TipoUsuario tipoUsuario, Imagen imagen){
     	Usuario usuario = new UsuarioImpl();
-    	setearDatosUsuario(usuario, login, password, nombre, apellidos, direccion, email, tipoUsuario);
+    	setearDatosUsuario(usuario, login, password, nombre, apellidos, direccion, email, tipoUsuario, imagen);
     	usuarioDAO.hacerPersistente(usuario);
     	
     	return usuario;
@@ -177,8 +179,9 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
      * @see dondeando.modelo.servicio.ServicioUsuario#editarUsuario(dondeando.modelo.entidades.Usuario, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, dondeando.modelo.entidades.TipoUsuario)
      */
     public void editarUsuario(Usuario usuario, String login, String password, String nombre, 
-    						  String apellidos, String direccion, String email,	TipoUsuario tipoUsuario) {
-    	setearDatosUsuario(usuario, login, password, nombre, apellidos, direccion, email, tipoUsuario);
+    						  String apellidos, String direccion, String email,	
+    						  TipoUsuario tipoUsuario, Imagen imagen) {
+    	setearDatosUsuario(usuario, login, password, nombre, apellidos, direccion, email, tipoUsuario, imagen);
     	try {
 			usuarioDAO.flush();
 		} catch (DAOExcepcion e) {
@@ -198,7 +201,8 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
 	 * @param tipoUsuario Tipo de usuario
      */
     private void setearDatosUsuario(Usuario usuario, String login, String password, String nombre, 
-									String apellidos, String direccion, String email, TipoUsuario tipoUsuario){
+									String apellidos, String direccion, String email, 
+									TipoUsuario tipoUsuario, Imagen imagen){
     	usuario.setLogin(login);
     	if(password!=null)
     		usuario.setPassword(encriptar(password));
@@ -211,6 +215,7 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     	usuario.setKarma(new BigDecimal(5)); //Pendiente de ver su cálculo
     	usuario.setFechaModificacion(new Date());
     	usuario.setUsuarioModificacion(usuario);
+    	usuario.setAvatar(imagen);
     }
     
     /*
@@ -246,6 +251,34 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
 		} catch (DAOExcepcion e) {
 			log.debug("Error al actualizar los datos del usuario "+e);
 		}
+    }
+    
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioUsuario#descartarUsuario(dondeando.modelo.entidades.Usuario)
+     */
+    public void descartarUsuario(Usuario usuario) {
+    	usuarioDAO.descartar(usuario);
+    }
+    
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioUsuario#encontrarTodosUsuarios()
+     */
+    public List<Usuario> encontrarTodosUsuarios() {
+    	return usuarioDAO.encontrarTodos();
+    }
+    
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioUsuario#encontrarUsuariosPorLoginYActivo(java.lang.String, boolean)
+     */
+    public List<Usuario> encontrarUsuariosPorLoginYActivo(String usuario, boolean activo) {
+    	Condicion condicion = servicioCriterios.creaCondicion();
+    	if(usuario!=null && !"".equals(usuario))
+    		condicion.agregar(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_LOGIN, Criterio.IGUAL, usuario));
+    	condicion.agregar(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_ACTIVO, Criterio.IGUAL, activo));
+    	return usuarioDAO.encontrarPorCondicion(condicion.getCriterios());
     }
     
     public static void main(String[] args){

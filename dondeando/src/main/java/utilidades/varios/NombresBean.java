@@ -16,10 +16,14 @@ public class NombresBean {
     /**Beans */    
     public static final String CABECERA_PAGINA_BEAN = "cabeceraPaginaBean"; 
     public static final String CREAR_USUARIO_BEAN = "crearUsuarioBean"; 
+    public static final String GESTION_USUARIOS_BEAN = "gestionUsuariosBean"; 
     public static final String LOGIN_BEAN = "loginBean"; 
     public static final String MENU_PRINCIPAL_BEAN = "menuPrincipalBean"; 
     public static final String MODIFICAR_CONTRASENA_BEAN = "modificarContrasenaBean"; 
     public static final String PRUEBA_BD = "pruebaBD"; 
+    
+    /**Binding*/
+    public static final String GESTION_USUARIOS_BINDING = "gestionUsuariosBinding"; 
     
     /**DAOs */
     public static final String IMAGEN_DAO = "imagenDAO"; 

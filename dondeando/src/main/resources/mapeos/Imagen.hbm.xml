@@ -9,7 +9,6 @@
   <version generated="never" name="version" type="integer"/>
   
   <property column="nombre" name="nombre"/>
-  <property column="path" name="path"/>
   <property column="contenido" name="contenido" type="binary"/>
  </class>
 </hibernate-mapping>

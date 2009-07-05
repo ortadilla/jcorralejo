@@ -13,6 +13,11 @@ public interface Parametros {
 	/**
 	 * Indica la URL donde encontrar las imágenes
 	 */
-	public static String PARAMETRO_URL_IMAGENES = "http://localhost:8080/ficheros/";
+	public static String PARAMETRO_URL_IMAGENES = "http://localhost:8080/dondeando/ficheros/";
+
+	/**
+	 * Indica el nombre de la imágen del usuario genérico
+	 */
+	public static String PARAMETRO_NOMBRE_IMAGENEN_USUARIO_GENERICO = "usuarioGenerico.jpg";
 	
 }

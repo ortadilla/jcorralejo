@@ -50,4 +50,16 @@ public interface ServicioImagen {
 	 * @return	URL de la imagen del usuario
 	 */
 	public String calcularUrlImagenUsuario(Usuario usuario);
+	
+	/**
+	 * Calcula la URL de la imagen para un usuario nuevo
+	 * @return	URL de la imagen del usuario nuevo
+	 */
+	public String calcularUrlImagenUsuarioNuevo();
+	
+	/**
+	 * Busca la imagen por defecto de los Usuarios
+	 * @return
+	 */
+	public Imagen encontrarImagenUsuarioGenerico();
 }
