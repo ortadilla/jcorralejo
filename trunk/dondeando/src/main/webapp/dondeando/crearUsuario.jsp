@@ -22,75 +22,89 @@
 		<trh:body initialFocusId="nombre">
 			
 			<geos:cabeceraPagina />
-			
+
 			<tr:form defaultCommand="btnAceptar" id="formCrearUsuario" usesUpload="true">
 			<tr:panelPage>
 					<f:facet name="messages">
 						<tr:messages />
 					</f:facet>
+					<tr:panelHeader	text="#{crearUsuarioBean.tituloPagina}" />
 					<tr:panelHorizontalLayout halign="center">
 					<tr:spacer width="10" />
-					<tr:panelBox text="#{crearUsuarioBean.tituloPagina}">
+					<tr:panelBox text="#{resCore['DATOS_USUARIO']}">
 						<tr:spacer height="20" />
-						
-						<tr:panelFormLayout inlineStyle="border-style: solid; border-width: 1px;" 
-						partialTriggers="btnModificar :btnCancelar">
-						<tr:spacer height="20" />
-							<tr:panelLabelAndMessage label="#{resCore['USUARIO']} *">
-								<tr:inputText columns="20" value="#{crearUsuarioBean.login}" id="login" simple="true"
-									maximumLength="20" required="true" disabled="#{crearUsuarioBean.detalles}"/>
-							</tr:panelLabelAndMessage>
-							<tr:spacer width="10" height="10" />
-							<tr:panelLabelAndMessage label="#{resCore['CONTRASENA']} *" rendered="#{crearUsuarioBean.mostrarPass}">
-								<tr:inputText columns="20" value="#{crearUsuarioBean.password}" id="pass" simple="true"
+					  <trh:tableLayout inlineStyle="border-style: solid; border-width: 1px;" 
+					 	cellSpacing="5" cellPadding="0">
+					 	<trh:rowLayout>
+						 	<tr:outputText value="#{resCore['USUARIO']} *" inlineStyle="font-weight: bolder;"/>
+							<tr:inputText columns="20" value="#{crearUsuarioBean.login}" id="login" simple="true"
+								maximumLength="20" required="true" disabled="#{crearUsuarioBean.detalles}"/>
+							<trh:cellFormat rowSpan="3">
+								<tr:image source="#{crearUsuarioBean.urlImagenUsuario}"
+										inlineStyle="height: 70px;border-style: solid; border-width: 1px;" />
+							</trh:cellFormat>
+					 	</trh:rowLayout>
+					 	<trh:rowLayout rendered="#{crearUsuarioBean.mostrarPass}">
+						 	<tr:outputText value="#{resCore['CONTRASENA']} *"  inlineStyle="font-weight: bolder;"/>
+							<tr:inputText columns="20" value="#{crearUsuarioBean.password}" id="pass" simple="true"
+								maximumLength="20" secret="true" required="true"/>
+					 	</trh:rowLayout>
+					 	<trh:rowLayout rendered="#{crearUsuarioBean.mostrarPass}">
+						 	<tr:outputText value="#{resCore['REPETIR_CONTRASENA']} *"  inlineStyle="font-weight: bolder;"/>
+							<tr:inputText columns="20" value="#{crearUsuarioBean.password2}" id="pass2" simple="true"
 									maximumLength="20" secret="true" required="true"/>
-							</tr:panelLabelAndMessage>
-							<tr:spacer width="10" height="10" />
-							<tr:panelLabelAndMessage label="#{resCore['REPETIR_CONTRASENA']} *" rendered="#{crearUsuarioBean.mostrarPass}">
-								<tr:inputText columns="20" value="#{crearUsuarioBean.password2}" id="pass2" simple="true"
-									maximumLength="20" secret="true" required="true"/>
-							</tr:panelLabelAndMessage>
-							
-							
-							<tr:spacer width="10" height="30" />
-							
-							<tr:panelLabelAndMessage label="#{resCore['NOMBRE']} *">
+					 	</trh:rowLayout>
+					 	<trh:rowLayout />
+					 	<trh:rowLayout />
+					 	<trh:rowLayout>
+						 	<tr:outputText value="#{resCore['NOMBRE']} *" inlineStyle="font-weight: bolder;"/>
+						 	<trh:cellFormat columnSpan="2">
 								<tr:inputText columns="30" value="#{crearUsuarioBean.nombre}" id="nombre" simple="true"
-									maximumLength="50" required="true" disabled="#{crearUsuarioBean.detalles}"/>
-							</tr:panelLabelAndMessage>
-							<tr:spacer width="10" height="10" />
-							<tr:panelLabelAndMessage label="#{resCore['APELLIDOS']}  ">
+										maximumLength="50" required="true" disabled="#{crearUsuarioBean.detalles}"/>
+							</trh:cellFormat>
+					 	</trh:rowLayout>
+					 	<trh:rowLayout>
+						 	<tr:outputText value="#{resCore['APELLIDOS']}" inlineStyle="font-weight: bolder;"/>
+					 		<trh:cellFormat columnSpan="2">
 								<tr:inputText columns="60" value="#{crearUsuarioBean.apellidos}" id="apellidos" simple="true"
-								disabled="#{crearUsuarioBean.detalles}"/>
-							</tr:panelLabelAndMessage>
-							<tr:spacer width="10" height="10" />
-							<tr:panelLabelAndMessage label="#{resCore['DIRECCION']}  ">
+									disabled="#{crearUsuarioBean.detalles}"/>
+							</trh:cellFormat>
+					 	</trh:rowLayout>
+					 	<trh:rowLayout>
+						 	<tr:outputText value="#{resCore['DIRECCION']}" inlineStyle="font-weight: bolder;"/>
+					 		<trh:cellFormat columnSpan="2">
 								<tr:inputText columns="80" value="#{crearUsuarioBean.direccion}" id="direccion" simple="true"
 								disabled="#{crearUsuarioBean.detalles}"/>
-							</tr:panelLabelAndMessage>
-							<tr:spacer width="10" height="10" />
-							<tr:panelLabelAndMessage label="#{resCore['EMAIL']} *">
+							</trh:cellFormat>
+					 	</trh:rowLayout>
+					 	<trh:rowLayout>
+						 	<tr:outputText value="#{resCore['EMAIL']} *" inlineStyle="font-weight: bolder;"/>
+					 		<trh:cellFormat columnSpan="2">
 								<tr:inputText columns="80" value="#{crearUsuarioBean.email}" id="email" simple="true"
 									required="true" styleClass="form" disabled="#{crearUsuarioBean.detalles}">
-									<!-- Bug TRINIDAD-1339 para Trinidad 1.0.10 -->
-<!--									<tr:validateRegExp pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*\.(\w{3-4})$"-->
-<!--										messageDetailNoMatch="#{resCore['ERROR_PATRON_EMAIL']}" />-->
 									<tr:validator binding="#{crearUsuarioBean.validatorEmail}"/>
 								</tr:inputText>
-							</tr:panelLabelAndMessage>
-							<tr:spacer width="10" height="10" />
-							<tr:panelLabelAndMessage label="#{resCore['TIPO_USUARIO']} *">
+							</trh:cellFormat>
+					 	</trh:rowLayout>
+					 	<trh:rowLayout>
+						 	<tr:outputText value="#{resCore['TIPO_USUARIO']} *" inlineStyle="font-weight: bolder;"/>
+					 		<trh:cellFormat columnSpan="2">
 								<tr:selectOneChoice value = "#{crearUsuarioBean.tipoUsuario}" 
 									disabled="#{crearUsuarioBean.deshabilitarTipoUsuario}">
 									<f:selectItems id="selectTipoUsuario" 
 										value="#{crearUsuarioBean.selectTipoUsuario}"/>
 								</tr:selectOneChoice>
-							</tr:panelLabelAndMessage>
-						<tr:spacer width="20" height="20" />
-							
-						</tr:panelFormLayout>
-						
-						
+							</trh:cellFormat>
+					 	</trh:rowLayout>
+					 	<trh:rowLayout rendered="#{!crearUsuarioBean.detalles}">
+						 	<tr:outputText value="#{resCore['AVATAR']}" inlineStyle="font-weight: bolder;"/>
+					 		<trh:cellFormat columnSpan="2">
+					 			<tr:inputFile value="#{crearUsuarioBean.fileAvatar}" />	
+							</trh:cellFormat>
+					 	</trh:rowLayout>
+					 </trh:tableLayout>
+					 
+					 	
 						<tr:spacer width="20" height="20" />
 						<tr:panelHorizontalLayout halign="center" rendered="#{!crearUsuarioBean.detalles}">
 							<tr:commandButton text="#{resCore['ACEPTAR']}" id="btnAceptar"
@@ -99,30 +113,24 @@
 							<tr:commandButton text="#{resCore['CANCELAR']}" id="btnCancelar" immediate="true"
 								action="#{crearUsuarioBean.cancelar}" />
 						</tr:panelHorizontalLayout>
-						
-						<tr:panelHorizontalLayout halign="center" rendered="#{crearUsuarioBean.detalles}">
+						<tr:spacer width="20" height="20" />
+						<tr:panelHorizontalLayout halign="center">
 							<tr:commandButton text="#{resCore['MODIFICAR_USUARIO']}" id="btnModificar"
-								action="#{crearUsuarioBean.modificar}" />
+								action="#{crearUsuarioBean.modificar}" rendered="#{crearUsuarioBean.modificarUsuario}"/>
 							<tr:spacer width="20" height="10" />
 							<tr:commandButton text="#{resCore['MODIFICAR_PASS']}" id="btnModContr"
-								action="#{crearUsuarioBean.modificarContr}" />
+								action="#{crearUsuarioBean.modificarContr}" rendered="#{crearUsuarioBean.modificarPass}"/>
 							<tr:spacer width="20" height="10" />
 							<tr:commandButton text="#{resCore['ELIMINAR_USUARIO']}" id="btnEliminar"
-								action="#{crearUsuarioBean.eliminar}" 
+								action="#{crearUsuarioBean.eliminar}" rendered="#{crearUsuarioBean.eliminarUsuario}"
 								onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_USUARIO']}')"/>
-							</tr:panelHorizontalLayout>
-
-							<tr:panelGroupLayout>
-								<tr:spacer width="20" height="10" />
-								<tr:inputFile label="#{resCore['MODIFICAR_IMAGEN_USUARIO']}"
-									value="#{crearUsuarioBean.imagenUsuario}"
-									valueChangeListener="#{crearUsuarioBean.cambiarImagen}"
-									columns="1" />
-								<tr:commandButton text="Continuar"
-									action="#{crearUsuarioBean.continuar}" />
-							</tr:panelGroupLayout>
-								<tr:image source="#{crearUsuarioBean.urlImagenUsuario}"
-									inlineStyle="height: 300px;"/>
+						</tr:panelHorizontalLayout>
+						<tr:spacer width="20" height="10" />
+						<tr:panelHorizontalLayout halign="center">
+						<tr:commandButton text="#{resCore['VOLVER']}" id="btnVolver"
+							rendered="#{crearUsuarioBean.mostrarVolver}"	
+							action="#{crearUsuarioBean.volver}" immediate="true" />
+						</tr:panelHorizontalLayout>
 
 						</tr:panelBox>
 				</tr:panelHorizontalLayout>

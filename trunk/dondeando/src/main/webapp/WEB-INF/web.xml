@@ -262,7 +262,6 @@
 		<servlet-class>
 			utilidades.jsf.ServletRedireccionFicheros
 		</servlet-class>
-		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<!-- servlet>
 		<servlet-name>GeosWSServlet</servlet-name>

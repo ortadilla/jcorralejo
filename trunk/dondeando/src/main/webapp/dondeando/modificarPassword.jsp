@@ -28,9 +28,10 @@
 					<f:facet name="messages">
 						<tr:messages />
 					</f:facet>
+					<tr:panelHeader	text="#{resCore['MODIFICAR_PASS']}" />
 					<tr:panelHorizontalLayout halign="center">
 					<tr:spacer width="10" />
-					<tr:panelBox text="#{resCore['MODIFICAR_PASS']}">
+					<tr:panelBox>
 						<tr:spacer height="20" />
 						
 						<tr:outputText value="#{resCore['ADVERTENCIA_MODIFICAR_PASS']}"
