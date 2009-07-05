@@ -19,5 +19,5 @@ public class GestionLocalesBinding {
 
 	public void setBusqueda(CoreShowDetailHeader busqueda) {
 		this.busqueda = busqueda;
-	}
+	} 
 }
