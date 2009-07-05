@@ -32,7 +32,6 @@ public class UsuarioImpl implements Usuario{
 	public boolean equals(Object obj) {
 		if (this == obj) return true;
 		if (obj == null) return false;
-//		if (getClass() != obj.getClass()) return false;
 		if ( !(obj instanceof UsuarioImpl) ) return false;
 		
 		final UsuarioImpl other = (UsuarioImpl) obj;

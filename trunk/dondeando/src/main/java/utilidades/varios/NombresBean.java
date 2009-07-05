@@ -30,6 +30,8 @@ public class NombresBean {
     
     /**DAOs */
     public static final String IMAGEN_DAO = "imagenDAO"; 
+    public static final String IMAGEN_LOCAL_DAO = "imagenLocalDAO"; 
+    public static final String LOCAL_DAO = "localDAO"; 
     public static final String PRUEBA_DAO = "pruebaDAO"; 
     public static final String PERMISO_USUARIO_DAO = "permisoUsuarioDAO"; 
     public static final String SERVICIO_DAO = "servicioDAO"; 
