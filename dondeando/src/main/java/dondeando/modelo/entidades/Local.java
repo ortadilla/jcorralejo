@@ -47,5 +47,8 @@ public interface Local {
 	public Set<Servicio> getServicios();
 	public void setServicios(Set<Servicio> servicios);
 	
+	public Set<Imagen> getImagenes();
+	public void setImagenes(Set<Imagen> imagenes);
+	
 	
 }
