@@ -103,6 +103,10 @@ public class CabeceraPaginasBean {
 		return CREAR_USUARIO;
 	}
 	
+	public String irAlMenu(){
+		return MENU_PRINCIPAL;
+	}
+	
 	public MapaArgumentos getMapaArgumentos() {
 		return mapaArgumentos;
 	}

@@ -28,7 +28,6 @@ import org.apache.myfaces.trinidadinternal.taglib.html.HtmlTableLayoutTag;
 import org.jboss.seam.Component;
 
 import utilidades.varios.MensajesCore;
-import utilidades.varios.NombresBean;
 import dondeando.modelo.servicio.ServicioImagen;
 import dondeando.modelo.servicio.ServicioUsuario;
 
@@ -36,6 +35,7 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
 
     protected static final String METODO_LOGOUT                = "logout";
     protected static final String METODO_LOGIN_USUARIO         = "loginUsuario";
+    protected static final String METODO_IR_MENU         	   = "irAlMenu";
     protected static final String METODO_REGISTRAR_USUARIO     = "registrarUsuario";
     protected static final String METODO_EDITAR_USUARIO        = "editarUsuario";
     protected static final String PROPIEDAD_NOMBRE_USUARIO     = "nombreUsuario";
@@ -137,9 +137,16 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     		//celda = crearCelda(null, "1%", null, null, "background-image: url(../skins/geos2/skin_images/menuBarBackground.png);", fila);
     		celda = crearCelda(null, "1%", null, null, null, fila);
     		crearBotonMenu(celda);
+    		
+    		link = crearCommandLink("Tira pal menú",
+    				"#{"+CABECERA_PAGINA_BEAN+"."+METODO_IR_MENU+"}", null, null,false, false, null, celda, false);
+    		fin(link);
+    		
     		fin(celda);
     		fin(fila);
     		fin(tabla);
+    		
+    		
     	}
     	fin(filasPadre);
     	fin(tablaPadre);

@@ -3,6 +3,7 @@ package dondeando.modelo.entidades.implementacion;
 import java.math.BigDecimal;
 import java.util.Set;
 
+import dondeando.modelo.entidades.Imagen;
 import dondeando.modelo.entidades.Local;
 import dondeando.modelo.entidades.Servicio;
 import dondeando.modelo.entidades.TipoLocal;
@@ -23,6 +24,7 @@ public class LocalImpl implements Local{
 	private BigDecimal valoracion;
 	private String otraInformacion;
 	private Set<Servicio> servicios;
+	private Set<Imagen> imagenes;
 	
 	@Override
 	public int hashCode() {
@@ -128,6 +130,12 @@ public class LocalImpl implements Local{
 	}
 	public void setServicios(Set<Servicio> servicios) {
 		this.servicios = servicios;
+	}
+	public Set<Imagen> getImagenes() {
+		return imagenes;
+	}
+	public void setImagenes(Set<Imagen> imagenes) {
+		this.imagenes = imagenes;
 	}
 	
 	

@@ -32,5 +32,11 @@
 			<many-to-many column="servicio"
 				class="ServicioImpl" />
 		</set>
+		
+		<set name="imagenes" inverse="true" cascade="all-delete-orphan">
+			<key column="local" />
+			<one-to-many
+				class="ImagenLocalImpl" />
+		</set>
 	</class>
 </hibernate-mapping>

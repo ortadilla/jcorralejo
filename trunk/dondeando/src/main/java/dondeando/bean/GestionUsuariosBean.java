@@ -165,10 +165,11 @@ public class GestionUsuariosBean {
 		binding.getBusqueda().setDisclosed(desplegado);
 	}
 	
+	/**
+	 * Limpia los criterios de búsqueda
+	 */
 	public void limpiar(){
-		criterioActivo = true;
-		criterioUsuario = null;
-		binding.getBusqueda().getChildren();
+		binding.getBusqueda().getChildren().clear();
 	}
 
 	public List<Usuario> getListaUsuarios() {
