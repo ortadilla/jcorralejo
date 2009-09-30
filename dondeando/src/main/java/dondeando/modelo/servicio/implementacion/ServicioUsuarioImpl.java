@@ -1,6 +1,7 @@
 package dondeando.modelo.servicio.implementacion;
 
 
+import static dondeando.modelo.entidades.Usuario.USUARIO_ANONIMO;
 import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.USUARIO_DAO;
@@ -8,6 +9,7 @@ import static utilidades.varios.NombresBean.USUARIO_DAO;
 import java.math.BigDecimal;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -157,7 +159,7 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
      * @return El usuario anónimo
      */
     private Usuario devolverUsuarioAnonimo(){
-    	return encontrarUsuarioPorLogin(Usuario.USUARIO_ANONIMO);
+    	return encontrarUsuarioPorLogin(USUARIO_ANONIMO);
     }
     
     /*
@@ -284,12 +286,15 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
      * (non-Javadoc)
      * @see dondeando.modelo.servicio.ServicioUsuario#encontrarUsuariosPorLoginYActivo(java.lang.String, boolean)
      */
-    public List<Usuario> encontrarUsuariosPorLoginYActivo(String usuario, boolean activo) {
-    	Condicion condicion = servicioCriterios.creaCondicion();
+    public List<Usuario> encontrarUsuariosPorLoginYActivo(String usuario, Boolean activo) {
+    	List<Criterio> criterios = new ArrayList<Criterio>();
     	if(usuario!=null && !"".equals(usuario))
-    		condicion.agregar(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_LOGIN, Criterio.IGUAL, usuario));
-    	condicion.agregar(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_ACTIVO, Criterio.IGUAL, activo));
-    	return usuarioDAO.encontrarPorCondicion(condicion.getCriterios());
+    		criterios.add(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_LOGIN, Criterio.IGUAL, usuario));
+    	if(activo!=null)
+    		criterios.add(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_ACTIVO, Criterio.IGUAL, activo));
+    	//Eliminamos el usuario anónimo
+    	criterios.add(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_LOGIN, Criterio.DISTINTO, USUARIO_ANONIMO));
+    	return usuarioDAO.encontrarPorCondicion(criterios);
     }
     
     public static void main(String[] args){

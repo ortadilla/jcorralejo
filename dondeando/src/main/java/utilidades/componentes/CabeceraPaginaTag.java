@@ -37,7 +37,7 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     protected static final String METODO_LOGIN_USUARIO         = "loginUsuario";
     protected static final String METODO_IR_MENU         	   = "irAlMenu";
     protected static final String METODO_REGISTRAR_USUARIO     = "registrarUsuario";
-    protected static final String METODO_EDITAR_USUARIO        = "editarUsuario";
+    protected static final String METODO_DETALLES_USUARIO      = "detallesUsuario";
     protected static final String PROPIEDAD_NOMBRE_USUARIO     = "nombreUsuario";
     
     private String botonMenu; //atributo del Tag
@@ -119,7 +119,7 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
 //    		crearImagen("/imagenes/usuario.gif", null, mensajesCore.obtenerTexto("USUARIO"), null, celda); 
     		crearImagen(servicioImagen.calcularUrlImagenUsuario(servicioUsuario.devolverUsuarioActivo()), "35", mensajesCore.obtenerTexto("USUARIO"), null, celda); 
     		link = crearCommandLink(" #{"+CABECERA_PAGINA_BEAN+"."+PROPIEDAD_NOMBRE_USUARIO+"} ",
-    				"#{"+CABECERA_PAGINA_BEAN+"."+METODO_EDITAR_USUARIO+"}", null, null,false, false, null, celda, false);
+    				"#{"+CABECERA_PAGINA_BEAN+"."+METODO_DETALLES_USUARIO+"}", null, null,false, false, null, celda, false);
     		fin(link);
     		crearEspacio("5", "5", celda);
     		link = crearCommandLink(mensajesCore.obtenerTexto("SALIR"),

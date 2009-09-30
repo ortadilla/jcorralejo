@@ -195,5 +195,21 @@ public class HerramientasList {
                 lNulos.add(lista.remove(i));
         return lNulos;
     }
+    
 
+    /**
+     * Devuelve una lista de Entidades con los valores Sí y No
+     * @param hueco Si se debe añadir un hueco a la lista
+     * @return Lista con los valores Sí y No
+     */
+    public static List<EntidadConCodigo> devolverValoresSiNo(boolean hueco){
+    	List<EntidadConCodigo> res = new ArrayList<EntidadConCodigo>();
+    	res.add(new EntidadConCodigo(1,"Sí", Boolean.TRUE));
+    	res.add(new EntidadConCodigo(2,"No", Boolean.FALSE));
+    	if(hueco)
+    		res.add(new EntidadConCodigo(3,"", null));
+    	return res;
+    }
+    
+    
 }

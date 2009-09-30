@@ -64,8 +64,10 @@ public class ModificarContrasenaBean {
 	public String aceptar(){
 		String outcome = "";
 		
+		if(password==null || "".equals(password) || password2==null || "".equals(password2))
+			utilJsfContext.insertaMensajeAdvertencia(mensajesCore.obtenerTexto("PASSWORD_OBLIGATORIOS"));
 		//Contraseñas correctas
-		if(password!=null && password2!=null && !password.equals(password2))
+		else if(password!=null && password2!=null && !password.equals(password2))
 			utilJsfContext.insertaMensajeAdvertencia(mensajesCore.obtenerTexto("PASSWORDS_INCORRECTOS"));
 		else{
 			servicioUsuario.modificarPasswordUsuario((Usuario)protocoloEdicion.getObjeto(), password);

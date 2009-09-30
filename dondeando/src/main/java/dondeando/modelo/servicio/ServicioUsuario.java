@@ -102,12 +102,12 @@ public interface ServicioUsuario {
 	 * @return Lista de todos los usuarios del sistema
 	 */
 	public List<Usuario> encontrarTodosUsuarios();
-	
+
 	/**
 	 * Busca los usuarios con el login y el campo activo indicado 
 	 * @param usuario	Login por el que buscar usuarios. Puede ser null
-	 * @param activo	Indica si los usuarios estarán activos o no
+	 * @param activo	Indica si los usuarios estarán activos o no. Puede ser null
 	 * @return	Lista de usuarios encontrados
 	 */
-	public List<Usuario> encontrarUsuariosPorLoginYActivo(String usuario, boolean activo);
+	public List<Usuario> encontrarUsuariosPorLoginYActivo(String usuario, Boolean activo);
 }

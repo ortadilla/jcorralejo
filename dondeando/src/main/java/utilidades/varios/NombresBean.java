@@ -16,7 +16,8 @@ public class NombresBean {
     
     /**Beans */    
     public static final String CABECERA_PAGINA_BEAN = "cabeceraPaginaBean"; 
-    public static final String CREAR_USUARIO_BEAN = "crearUsuarioBean"; 
+    public static final String DETALLES_USUARIO_BEAN = "detallesUsuarioBean"; 
+    public static final String EDITAR_USUARIO_BEAN = "editarUsuarioBean"; 
     public static final String GESTION_LOCALES_BEAN = "gestionLocalesBean"; 
     public static final String GESTION_USUARIOS_BEAN = "gestionUsuariosBean"; 
     public static final String LOGIN_BEAN = "loginBean"; 
