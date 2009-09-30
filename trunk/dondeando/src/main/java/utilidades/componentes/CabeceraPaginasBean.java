@@ -1,8 +1,7 @@
 package utilidades.componentes;
 
-import static utilidades.jsf.ConstantesArgumentosNavegacion.OPERACION_CREAR_USUARIO;
-import static utilidades.jsf.ConstantesArgumentosNavegacion.OPERACION_DETALLES_USUARIO;
-import static utilidades.jsf.ConstantesReglasNavegacion.CREAR_USUARIO;
+import static utilidades.jsf.ConstantesReglasNavegacion.DETALLES_USUARIO;
+import static utilidades.jsf.ConstantesReglasNavegacion.EDITAR_USUARIO;
 import static utilidades.jsf.ConstantesReglasNavegacion.LOGIN;
 import static utilidades.jsf.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static utilidades.varios.NombresBean.CABECERA_PAGINA_BEAN;
@@ -22,10 +21,8 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
-import utilidades.jsf.ConstantesArgumentosNavegacion;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.ProtocoloEdicion;
-
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.servicio.ServicioUsuario;
 
@@ -76,31 +73,30 @@ public class CabeceraPaginasBean {
 	 * @return Outcome del registro de usuarios
 	 */
 	public String registrarUsuario(){
-		if(mapaArgumentos==null)
-			mapaArgumentos = new MapaArgumentos();
+		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 		mapaArgumentos.limpiaMapa();
-		
-		ProtocoloEdicion protocolo = new ProtocoloEdicion(null, null, OPERACION_CREAR_USUARIO);
+		ProtocoloEdicion protocolo = new ProtocoloEdicion(null, 
+														  MENU_PRINCIPAL,
+														  null);
 		mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
-		
-		return CREAR_USUARIO;
+		return EDITAR_USUARIO;
 	}
 
 	/**
 	 * Configura el mapaArgumento para navegar a la edición del usuario activo
 	 * @return Outcome del registro de usuarios
 	 */
-	public String editarUsuario(){
+	public String detallesUsuario(){
 		if(mapaArgumentos==null)
 			mapaArgumentos = new MapaArgumentos();
 		mapaArgumentos.limpiaMapa();
 
 		ProtocoloEdicion protocolo = new ProtocoloEdicion(servicioUsuario.devolverUsuarioActivo(), 
-														  null,
-														  OPERACION_DETALLES_USUARIO);
+														  MENU_PRINCIPAL,
+														  null);
 		mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
 
-		return CREAR_USUARIO;
+		return DETALLES_USUARIO;
 	}
 	
 	public String irAlMenu(){

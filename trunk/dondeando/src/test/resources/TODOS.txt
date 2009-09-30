@@ -1,8 +1,6 @@
 · Loguearse e ir al Menu --> se pierde el usuario activo --> servicioUsuario es diferente 
   --> Todos los componentes son nuevos: Pasa con el botón, no con un link
   
-· Validator en TableLayout --> Mensajes erróneos (crearusuario)
-· Modificar usuario --> Cambiar algo --> Cancelar --> Se quedan los cambios!!
 · Añadir el número de elementos en cada tabla --> Mirar en el trabajo
 · ¿Cómo ordenar las columna de una tabla, si ya tiene el sortable=true? (gestionarUsuarios)
   ¿será necesario un SortbleModel? Mirar ConsultarArticuloBean en el trabajo
@@ -11,6 +9,7 @@
 · Permisos para los botones del menú principal
 · Login --> Excepcion --> Pide otra vez el login cuando está todavía conectado el usuario
 	Puede que sea por tema de conversacion del CabeceraPaginaBean --> ServicioUsuario es diferente siempre
+	O porque no encuentra el Bean de las excepciones -> Meter el bean
 
 · Los problemas con el autocommit (flush necesario) puede que sean por las fases de Seam donde se hacen
   los commit 1-5 o 6

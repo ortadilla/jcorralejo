@@ -1,8 +1,7 @@
 package dondeando.bean;
 
-import static utilidades.jsf.ConstantesArgumentosNavegacion.OPERACION_DETALLES_USUARIO;
-import static utilidades.jsf.ConstantesArgumentosNavegacion.OPERACION_EDITAR_USUARIO;
-import static utilidades.jsf.ConstantesReglasNavegacion.CREAR_USUARIO;
+import static utilidades.jsf.ConstantesReglasNavegacion.DETALLES_USUARIO;
+import static utilidades.jsf.ConstantesReglasNavegacion.EDITAR_USUARIO;
 import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_USUARIOS;
 import static utilidades.varios.NombresBean.GESTION_USUARIOS_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
@@ -11,7 +10,10 @@ import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
+import java.util.Arrays;
 import java.util.List;
+
+import javax.faces.model.SelectItem;
 
 import org.apache.myfaces.trinidad.model.RowKeySet;
 import org.apache.myfaces.trinidad.model.RowKeySetImpl;
@@ -24,11 +26,15 @@ import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
 import utilidades.jsf.UtilJsfContext;
+import utilidades.varios.EntidadConCodigo;
+import utilidades.varios.HerramientasList;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
 import utilidades.varios.NombresBean;
 import utilidades.varios.ProtocoloEdicion;
+import utilidades.varios.SelectItemBuilder;
 import dondeando.binding.GestionUsuariosBinding;
+import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.servicio.ServicioUsuario;
 
@@ -48,6 +54,8 @@ public class GestionUsuariosBean {
 	private boolean desplegado;
 	private String criterioUsuario;
 	private boolean criterioActivo = true;
+	
+	private SelectItem[] selectSiNo;
 
 	//Servicios
 	@In(value=SERVICIO_USUARIO, create=true)
@@ -70,24 +78,15 @@ public class GestionUsuariosBean {
 	@Create
 	@Begin(join=true)
 	public void inicializar(){
+		inicializarSelectSiNo();
 		desplegado = false;
-		listaUsuarios = servicioUsuario.encontrarTodosUsuarios();
+		buscar();
 	}
 	
-	/**
-	 * Navega a los detalles del usuario seleccionado
-	 * @return Regla de navegación a la pantalla del usuario
-	 */
-	public String detalles(){
-		return realizarOperacion(ACCION_DETALLES_USUARIO);
-	}
-	
-	/**
-	 * Navega para editar el usuario seleccionado
-	 * @return Regla de navegación a la pantalla del usuario
-	 */
-	public String modificar(){
-		return realizarOperacion(ACCION_MODIFICAR_USUARIO);
+	private void inicializarSelectSiNo(){
+		selectSiNo = SelectItemBuilder.creaSelectItems(HerramientasList.devolverValoresSiNo(true), 
+				   									   EntidadConCodigo.ATRIBUTO_VALOR, 
+				   									   EntidadConCodigo.ATRIBUTO_ETIQUETA);
 	}
 	
 	/**
@@ -104,17 +103,13 @@ public class GestionUsuariosBean {
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
 			Usuario usuario = listaUsuarios.get(seleccion);
 			if(ACCION_MODIFICAR_USUARIO.equals(operacion) || ACCION_DETALLES_USUARIO.equals(operacion)){
-				if(mapaArgumentos==null)
-					mapaArgumentos = new MapaArgumentos();
-				mapaArgumentos.limpiaMapa();
 				
-				ProtocoloEdicion protocolo = new ProtocoloEdicion(usuario,
-																  GESTION_USUARIOS,
-																  ACCION_MODIFICAR_USUARIO.equals(operacion) 
-																? OPERACION_EDITAR_USUARIO : OPERACION_DETALLES_USUARIO);
+				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+				mapaArgumentos.limpiaMapa();
+				ProtocoloEdicion protocolo = new ProtocoloEdicion(usuario,GESTION_USUARIOS ,null);
 				mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
 		
-				outcome = CREAR_USUARIO;
+				outcome = ACCION_MODIFICAR_USUARIO.equals(operacion) ? EDITAR_USUARIO : DETALLES_USUARIO;
 				operacionRealizada = true;
 			
 			}else if(ACCION_ELIMINAR_USUARIO.equals(operacion)){
@@ -136,6 +131,7 @@ public class GestionUsuariosBean {
 				}else
 					utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_RECUPERAR_USUARIO_ACTIVO"));
 			}
+			
 		}else
 			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
 		
@@ -146,12 +142,31 @@ public class GestionUsuariosBean {
 	}
 	
 	/**
+	 * Navega a los detalles del usuario seleccionado
+	 * @return Regla de navegación a la pantalla del usuario
+	 */
+	public String detalles(){
+		return realizarOperacion(ACCION_DETALLES_USUARIO);
+	}
+	
+	/**
+	 * Navega para editar el usuario seleccionado
+	 * @return Regla de navegación a la pantalla del usuario
+	 */
+	public String modificar(){
+		return realizarOperacion(ACCION_MODIFICAR_USUARIO);
+	}
+	
+	/**
 	 * Elimina el usuario seleccionado
 	 */
 	public void eliminar(){
 		realizarOperacion(ACCION_ELIMINAR_USUARIO);
 	}
 	
+	/**
+	 * Recupera el usuario seleccionado
+	 */
 	public void recuperar(){
 		realizarOperacion(ACCION_RECUPERAR_USUARIO);
 	}
@@ -210,6 +225,14 @@ public class GestionUsuariosBean {
 
 	public void setCriterioActivo(boolean criterioActivo) {
 		this.criterioActivo = criterioActivo;
+	}
+
+	public SelectItem[] getSelectSiNo() {
+		return selectSiNo;
+	}
+
+	public void setSelectSiNo(SelectItem[] selectSiNo) {
+		this.selectSiNo = selectSiNo;
 	}
 	
 }

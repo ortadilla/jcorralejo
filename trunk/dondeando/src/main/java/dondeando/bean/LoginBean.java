@@ -1,13 +1,9 @@
 package dondeando.bean;
 
 import static org.jboss.seam.ScopeType.CONVERSATION;
-import static utilidades.jsf.ConstantesReglasNavegacion.CREAR_USUARIO;
-import static utilidades.jsf.ConstantesReglasNavegacion.LOGIN;
-import static utilidades.jsf.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static utilidades.varios.NombresBean.LOGIN_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
-import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
@@ -18,10 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jboss.seam.Seam;
 import org.jboss.seam.annotations.Begin;
 import org.jboss.seam.annotations.Create;
-import org.jboss.seam.annotations.End;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
@@ -31,7 +25,6 @@ import seam.Redirect;
 import utilidades.jsf.UtilJsfContext;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
-import utilidades.varios.ProtocoloEdicion;
 import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(CONVERSATION)
