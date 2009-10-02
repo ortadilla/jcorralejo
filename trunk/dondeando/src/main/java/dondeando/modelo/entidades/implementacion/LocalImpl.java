@@ -14,7 +14,6 @@ public class LocalImpl implements Local{
 	private Integer version;
 	private String descripcion;
 	private String nombre;
-	private TipoLocal tipoLocal;
 	private String direccion;
 	private String telefono;
 	private String web;
@@ -23,6 +22,7 @@ public class LocalImpl implements Local{
 	private String precioMedio;
 	private BigDecimal valoracion;
 	private String otraInformacion;
+	private Set<TipoLocal> tiposLocal;
 	private Set<Servicio> servicios;
 	private Set<Imagen> imagenes;
 	
@@ -70,12 +70,6 @@ public class LocalImpl implements Local{
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	public TipoLocal getTipoLocal() {
-		return tipoLocal;
-	}
-	public void setTipoLocal(TipoLocal tipoLocal) {
-		this.tipoLocal = tipoLocal;
 	}
 	public String getDireccion() {
 		return direccion;
@@ -136,6 +130,12 @@ public class LocalImpl implements Local{
 	}
 	public void setImagenes(Set<Imagen> imagenes) {
 		this.imagenes = imagenes;
+	}
+	public Set<TipoLocal> getTiposLocal() {
+		return tiposLocal;
+	}
+	public void setTiposLocal(Set<TipoLocal> tiposLocal) {
+		this.tiposLocal = tiposLocal;
 	}
 	
 	
