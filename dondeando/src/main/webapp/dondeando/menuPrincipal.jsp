@@ -23,17 +23,16 @@
 		<geos:cabeceraPagina />
 			<tr:form>
 				<tr:panelHorizontalLayout halign="center">
-					<tr:spacer width="10" />
-					<tr:outputText value="Futuro menú principal"/>
-				</tr:panelHorizontalLayout>
-
-				<tr:panelHorizontalLayout halign="center">
-					<tr:panelBox>
+					<tr:panelBox inlineStyle="width: 100%;">
+						<tr:spacer height="20"/>				
+						<tr:outputText value="Futuro menú principal"/>
 						<tr:spacer height="20"/>				
 						<tr:commandButton text="#{resCore['GESTION_USUARIOS']}" id="gestionUsuarios"
+							rendered="#{menuPrincipalBean.mostrarGestionUsuarios}"
 							action="#{menuPrincipalBean.gestionUsuarios}" />
 						<tr:spacer height="20"/>				
 						<tr:commandButton text="#{resCore['GESTION_LOCALES']}" id="gestionLocales"
+							rendered="#{menuPrincipalBean.mostrarGestionLocales}"
 							action="#{menuPrincipalBean.gestionLocales}" />
 					</tr:panelBox>
 					<tr:spacer width="10" />
