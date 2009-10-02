@@ -281,17 +281,19 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     public List<Usuario> encontrarTodosUsuarios() {
     	return usuarioDAO.encontrarTodos();
     }
-    
+
     /*
      * (non-Javadoc)
-     * @see dondeando.modelo.servicio.ServicioUsuario#encontrarUsuariosPorLoginYActivo(java.lang.String, boolean)
+     * @see dondeando.modelo.servicio.ServicioUsuario#encontrarUsuariosPorLoginTipoYActivo(java.lang.String, dondeando.modelo.entidades.TipoUsuario, java.lang.Boolean)
      */
-    public List<Usuario> encontrarUsuariosPorLoginYActivo(String usuario, Boolean activo) {
+    public List<Usuario> encontrarUsuariosPorLoginTipoYActivo(String usuario, TipoUsuario tipoUsuario, Boolean activo) {
     	List<Criterio> criterios = new ArrayList<Criterio>();
     	if(usuario!=null && !"".equals(usuario))
     		criterios.add(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_LOGIN, Criterio.IGUAL, usuario));
     	if(activo!=null)
     		criterios.add(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_ACTIVO, Criterio.IGUAL, activo));
+    	if(tipoUsuario!=null)
+    		criterios.add(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_TIPO_USUARIO, Criterio.IGUAL, tipoUsuario));
     	//Eliminamos el usuario anónimo
     	criterios.add(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_LOGIN, Criterio.DISTINTO, USUARIO_ANONIMO));
     	return usuarioDAO.encontrarPorCondicion(criterios);
