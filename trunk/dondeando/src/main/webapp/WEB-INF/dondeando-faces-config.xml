@@ -7,7 +7,8 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
 	<navigation-rule>
         <navigation-case><from-outcome>menuPrincial</from-outcome><to-view-id>/dondeando/menuPrincipal.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>login</from-outcome><to-view-id>/dondeando/Login.jsp</to-view-id></navigation-case>
-        <navigation-case><from-outcome>crearUsuario</from-outcome><to-view-id>/dondeando/crearUsuario.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>editarUsuario</from-outcome><to-view-id>/dondeando/editarUsuario.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>detallesUsuario</from-outcome><to-view-id>/dondeando/detallesUsuario.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>modificarPassword</from-outcome><to-view-id>/dondeando/modificarPassword.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionUsuarios</from-outcome><to-view-id>/dondeando/gestionUsuarios.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionLocales</from-outcome><to-view-id>/dondeando/gestionLocales.jsp</to-view-id></navigation-case>

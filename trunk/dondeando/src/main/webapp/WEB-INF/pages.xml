@@ -5,7 +5,8 @@
 	</page>
  -->
 	<!-- Entradas para Dondeando -->
-	<page view-id="/dondeando/crearUsuario.jsp"	action="#{crearUsuarioBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/dondeando/editarUsuario.jsp"		action="#{editarUsuarioBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/dondeando/detallesUsuario.jsp"		action="#{detallesUsuarioBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/modificarPassword.jsp"	action="#{modificarContrasenaBean.cargarArgumentosDeEntrada}" />
 
 	<!-- Tratamiento de excepciones -->

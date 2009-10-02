@@ -35,19 +35,19 @@
 						<tr:spacer height="20" />
 						
 						<tr:outputText value="#{resCore['ADVERTENCIA_MODIFICAR_PASS']}"
-						inlineStyle="width: 100%; background-color: #9b0000; font-weight: bolder; font-size: 140%; color: white; text-align: center;"/>
+						inlineStyle="width: 100%; background-color: #9b0000; font-weight: bolder; font-size: 120%; color: white; text-align: center;"/>
 						
 						<tr:spacer height="20" />
 						<tr:panelHorizontalLayout halign="center">
 						<tr:panelFormLayout>
 							<tr:panelLabelAndMessage label="#{resCore['CONTRASENA']} *">
-								<tr:inputText columns="20" value="#{modificarContrasenaBean.password}" id="pass" simple="true"
-									maximumLength="20" secret="true" required="true"/>
+								<tr:inputText columns="20" value="#{modificarContrasenaBean.password}" id="pass" 
+									maximumLength="20" secret="true"/>
 							</tr:panelLabelAndMessage>
 							<tr:spacer width="10" height="10" />
 							<tr:panelLabelAndMessage label="#{resCore['REPETIR_CONTRASENA']} *">
-								<tr:inputText columns="20" value="#{modificarContrasenaBean.password2}" id="pass2" simple="true"
-									maximumLength="20" secret="true" required="true"/>
+								<tr:inputText columns="20" value="#{modificarContrasenaBean.password2}" id="pass2"
+									maximumLength="20" secret="true"/>
 							</tr:panelLabelAndMessage>
 						</tr:panelFormLayout>
 						</tr:panelHorizontalLayout>
