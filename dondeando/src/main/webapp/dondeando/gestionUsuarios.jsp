@@ -29,22 +29,39 @@
 					disclosed="#{gestionUsuariosBean.desplegado}" id="showDetail"
 					partialTriggers="showDetail"
 					binding="#{gestionUsuariosBinding.busqueda}">
-					<tr:panelBox inlineStyle="width:100%;" background="medium" partialTriggers="btnLimpiar">
+					<tr:panelBox inlineStyle="width:100%;" background="medium"
+						partialTriggers="btnLimpiar">
 						<tr:panelHorizontalLayout halign="center">
-						<trh:tableLayout cellSpacing="5" cellPadding="0">
-							<trh:rowLayout>
-								<tr:outputText value="#{resCore['USUARIO']}"
-									inlineStyle="font-weight: bolder;" />
-								<tr:inputText columns="20" partialTriggers=":::btnLimpiar"
-									value="#{gestionUsuariosBean.criterioUsuario}"
-									id="criterioUsuario" simple="true" maximumLength="20" />
-							</trh:rowLayout>
-							<trh:rowLayout>
-								<tr:outputText value="#{resCore['ACTIVO']}"
-									inlineStyle="font-weight: bolder;" />
-								<tr:selectBooleanCheckbox value="#{gestionUsuariosBean.criterioActivo}" />
-							</trh:rowLayout>
-						</trh:tableLayout>
+							<trh:tableLayout cellSpacing="5" cellPadding="0">
+								<trh:rowLayout>
+									<tr:outputText value="#{resCore['USUARIO']}"
+										inlineStyle="font-weight: bolder;" />
+									<tr:inputText columns="20" partialTriggers=":::btnLimpiar"
+										value="#{gestionUsuariosBean.criterioUsuario}"
+										id="criterioUsuario" maximumLength="20" />
+								</trh:rowLayout>
+								<trh:rowLayout>
+									<tr:outputText value="#{resCore['TIPO_USUARIO']}"
+										inlineStyle="font-weight: bolder;" />
+									<trh:cellFormat>
+										<tr:selectOneChoice value="#{gestionUsuariosBean.criterioTipoUsuario}">
+											<f:selectItems id="selectTipoUsuario"
+												value="#{gestionUsuariosBean.selectTipoUsuario}" />
+										</tr:selectOneChoice>
+									</trh:cellFormat>
+								</trh:rowLayout>
+
+								<trh:rowLayout>
+									<tr:outputText value="#{resCore['ACTIVO']}"
+										inlineStyle="font-weight: bolder;" />
+									<!--								<tr:selectBooleanCheckbox value="#{gestionUsuariosBean.criterioActivo}" />-->
+									<tr:selectOneChoice
+										value="#{gestionUsuariosBean.criterioActivo}">
+										<f:selectItems id="selectSiNo"
+											value="#{gestionUsuariosBean.selectSiNo}" />
+									</tr:selectOneChoice>
+								</trh:rowLayout>
+							</trh:tableLayout>
 						</tr:panelHorizontalLayout>
 						<tr:spacer width="20" height="20" />
 						<tr:panelHorizontalLayout halign="center">
@@ -67,19 +84,19 @@
 							<tr:commandButton text="#{resCore['MODIFICAR_USUARIO']}"
 								id="btnModificar" action="#{gestionUsuariosBean.modificar}" />
 							<tr:commandButton text="#{resCore['ELIMINAR_USUARIO']}"
-								id="btnEliminar" action="#{gestionUsuariosBean.eliminar}" 
-								onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_USUARIO']}')"/>
+								id="btnEliminar" action="#{gestionUsuariosBean.eliminar}"
+								onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_USUARIO']}')" />
 							<tr:commandButton text="#{resCore['RECUPERAR_USUARIO']}"
-								id="btnRecuperar" action="#{gestionUsuariosBean.recuperar}"/>
+								id="btnRecuperar" action="#{gestionUsuariosBean.recuperar}" />
 						</tr:panelButtonBar>
 					</tr:panelGroupLayout>
-					<tr:spacer height="10"/>
+					<tr:spacer height="10" />
 					<tr:table var="var" first="0"
 						emptyText="#{resCore['NO_ELEMENTOS']}" rows="20" width="100%"
 						value="#{gestionUsuariosBean.listaUsuarios}"
 						rowBandingInterval="1" columnBandingInterval="0"
 						selectedRowKeys="#{gestionUsuariosBean.estadoDeSeleccionTabla}"
-						rowSelection="multiple" id="listaUsuarios">
+						rowSelection="single" id="listaUsuarios">
 						<tr:column sortable="true" headerText="#{resCore['USUARIO']}">
 							<tr:outputText value="#{var.login}" />
 						</tr:column>
@@ -94,7 +111,9 @@
 							<tr:outputText value="#{var.tipoUsuario.descripcion}" />
 						</tr:column>
 						<tr:column sortable="false" headerText="#{resCore['ACTIVO']}">
-							<tr:image source="#{var.activo ? '/imagenes/checkbox_verde_si.png':'/imagenes/checkbox_verde_no.png'}"/>
+							<tr:image
+								source="#{var.activo ? '/imagenes/dondeando/check.png':'/imagenes/dondeando/cruz.png'}"
+								inlineStyle="height: 20px;" />
 						</tr:column>
 					</tr:table>
 				</tr:panelBox>

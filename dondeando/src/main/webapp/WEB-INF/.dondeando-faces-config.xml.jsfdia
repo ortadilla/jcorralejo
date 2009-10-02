@@ -8,14 +8,14 @@
    <PROCESS-ITEM-OUTPUT ID="login::#dondeando#Login.jsp" NAME="output1"
     PATH="/dondeando/Login.jsp" TARGET="rules:#dondeando#Login.jsp"
     TITLE="login" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="crearUsuario::#dondeando#crearUsuario.jsp"
-    NAME="output2" PATH="/dondeando/crearUsuario.jsp"
-    TARGET="rules:#dondeando#crearUsuario.jsp" TITLE="crearUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editarUsuario::#dondeando#editarUsuario.jsp"
+    NAME="output2" PATH="/dondeando/editarUsuario.jsp"
+    TARGET="rules:#dondeando#editarUsuario.jsp" TITLE="editarUsuario" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
-    ID="modificarPassword::#dondeando#modificarPassword.jsp"
-    NAME="output3" PATH="/dondeando/modificarPassword.jsp"
-    TARGET="rules:#dondeando#modificarPassword.jsp"
-    TITLE="modificarPassword" model-entity="JSFProcessItemOutput"/>
+    ID="detallesUsuario::#dondeando#detallesUsuario.jsp" NAME="output3"
+    PATH="/dondeando/detallesUsuario.jsp"
+    TARGET="rules:#dondeando#detallesUsuario.jsp"
+    TITLE="detallesUsuario" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
     ID="gestionUsuarios::#dondeando#gestionUsuarios.jsp" NAME="output4"
     PATH="/dondeando/gestionUsuarios.jsp"
@@ -31,12 +31,14 @@
   PATH="/dondeando/menuPrincipal.jsp" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#dondeando#Login.jsp"
   PATH="/dondeando/Login.jsp" SHAPE="256,177,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#dondeando#crearUsuario.jsp"
-  PATH="/dondeando/crearUsuario.jsp" SHAPE="272,321,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#dondeando#modificarPassword.jsp"
   PATH="/dondeando/modificarPassword.jsp" SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#dondeando#gestionUsuarios.jsp"
   PATH="/dondeando/gestionUsuarios.jsp" SHAPE="304,497,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#dondeando#gestionLocales.jsp"
   PATH="/dondeando/gestionLocales.jsp" SHAPE="304,529,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dondeando#editarUsuario.jsp"
+  PATH="/dondeando/editarUsuario.jsp" SHAPE="304,417,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dondeando#detallesUsuario.jsp"
+  PATH="/dondeando/detallesUsuario.jsp" SHAPE="304,417,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>
