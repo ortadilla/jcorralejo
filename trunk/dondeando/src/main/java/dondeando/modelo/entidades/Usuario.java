@@ -8,6 +8,7 @@ public interface Usuario {
 	
 	public static final String ATRIBUTO_LOGIN = "login";
 	public static final String ATRIBUTO_ACTIVO = "activo";
+	public static final String ATRIBUTO_TIPO_USUARIO = "tipoUsuario";
 	
 	public Integer getId();
 	public void setId(Integer id);

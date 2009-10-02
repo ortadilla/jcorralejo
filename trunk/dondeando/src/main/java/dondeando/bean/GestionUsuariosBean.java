@@ -7,10 +7,10 @@ import static utilidades.varios.NombresBean.GESTION_USUARIOS_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
 import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
+import static utilidades.varios.NombresBean.SERVICIO_TIPO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.faces.model.SelectItem;
@@ -26,8 +26,6 @@ import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
 import utilidades.jsf.UtilJsfContext;
-import utilidades.varios.EntidadConCodigo;
-import utilidades.varios.HerramientasList;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
 import utilidades.varios.NombresBean;
@@ -36,6 +34,7 @@ import utilidades.varios.SelectItemBuilder;
 import dondeando.binding.GestionUsuariosBinding;
 import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
+import dondeando.modelo.servicio.ServicioTipoUsuario;
 import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
@@ -53,13 +52,18 @@ public class GestionUsuariosBean {
 	private RowKeySet estadoDeSeleccionTabla = new RowKeySetImpl();
 	private boolean desplegado;
 	private String criterioUsuario;
-	private boolean criterioActivo = true;
+	private TipoUsuario criterioTipoUsuario;
+	private Boolean criterioActivo = Boolean.TRUE;
 	
 	private SelectItem[] selectSiNo;
+	private SelectItem[] selectTipoUsuario;
 
 	//Servicios
 	@In(value=SERVICIO_USUARIO, create=true)
 	private ServicioUsuario servicioUsuario;
+	
+	@In(value=SERVICIO_TIPO_USUARIO, create=true)
+	private ServicioTipoUsuario servicioTipoUsuario;
 
 	//Utilidades
 	@In(value=NombresBean.GESTION_USUARIOS_BINDING, create=true)
@@ -78,15 +82,13 @@ public class GestionUsuariosBean {
 	@Create
 	@Begin(join=true)
 	public void inicializar(){
-		inicializarSelectSiNo();
+		selectSiNo = SelectItemBuilder.creaSelectItemsSiNo();
+		selectTipoUsuario = SelectItemBuilder.creaSelectItems(servicioTipoUsuario.devolverTodosTipoUsuarioMenosAnonimo(), 
+				  											  null, 
+				  											  TipoUsuario.ATRIBUTO_DESCRIPCION,
+				  											  true);
 		desplegado = false;
 		buscar();
-	}
-	
-	private void inicializarSelectSiNo(){
-		selectSiNo = SelectItemBuilder.creaSelectItems(HerramientasList.devolverValoresSiNo(true), 
-				   									   EntidadConCodigo.ATRIBUTO_VALOR, 
-				   									   EntidadConCodigo.ATRIBUTO_ETIQUETA);
 	}
 	
 	/**
@@ -175,7 +177,7 @@ public class GestionUsuariosBean {
 	 * Busca los usuarios que coincidan con los criterios indicados en pantalla
 	 */
 	public void buscar(){
-		listaUsuarios = servicioUsuario.encontrarUsuariosPorLoginYActivo(criterioUsuario, criterioActivo);
+		listaUsuarios = servicioUsuario.encontrarUsuariosPorLoginTipoYActivo(criterioUsuario, criterioTipoUsuario, criterioActivo);
 		desplegado = false;
 		binding.getBusqueda().setDisclosed(desplegado);
 	}
@@ -185,6 +187,7 @@ public class GestionUsuariosBean {
 	 */
 	public void limpiar(){
 		binding.getBusqueda().getChildren().clear();
+		criterioActivo = null;
 	}
 
 	public List<Usuario> getListaUsuarios() {
@@ -219,20 +222,36 @@ public class GestionUsuariosBean {
 		this.criterioUsuario = criterioUsuario;
 	}
 
-	public boolean isCriterioActivo() {
-		return criterioActivo;
-	}
-
-	public void setCriterioActivo(boolean criterioActivo) {
-		this.criterioActivo = criterioActivo;
-	}
-
 	public SelectItem[] getSelectSiNo() {
 		return selectSiNo;
 	}
 
 	public void setSelectSiNo(SelectItem[] selectSiNo) {
 		this.selectSiNo = selectSiNo;
+	}
+
+	public Boolean getCriterioActivo() {
+		return criterioActivo;
+	}
+
+	public void setCriterioActivo(Boolean criterioActivo) {
+		this.criterioActivo = criterioActivo;
+	}
+
+	public TipoUsuario getCriterioTipoUsuario() {
+		return criterioTipoUsuario;
+	}
+
+	public void setCriterioTipoUsuario(TipoUsuario criterioTipoUsuario) {
+		this.criterioTipoUsuario = criterioTipoUsuario;
+	}
+
+	public SelectItem[] getSelectTipoUsuario() {
+		return selectTipoUsuario;
+	}
+
+	public void setSelectTipoUsuario(SelectItem[] selectTipoUsuario) {
+		this.selectTipoUsuario = selectTipoUsuario;
 	}
 	
 }
