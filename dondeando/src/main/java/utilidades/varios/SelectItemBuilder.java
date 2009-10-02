@@ -1,6 +1,8 @@
 package utilidades.varios;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.faces.model.SelectItem;
 
@@ -107,8 +109,6 @@ public class SelectItemBuilder {
 	}
 	
 	
-	
-
 	/**
 	 * Devuelve el valor de una propiedad
 	 * @param objeto
@@ -125,6 +125,27 @@ public class SelectItemBuilder {
         }
 	}
 	
+	/**
+	 * Devuelve un selectItem con los valores Vacio, Si y No
+	 */
+	public static SelectItem[] creaSelectItemsSiNo(){
+		return creaSelectItems(devolverValoresSiNo(), 
+						       EntidadConCodigo.ATRIBUTO_VALOR, 
+						       EntidadConCodigo.ATRIBUTO_ETIQUETA,
+						       true);
+	}
+	
+    /**
+     * Devuelve una lista de Entidades con los valores Sí y No
+     * @param hueco Si se debe añadir un hueco a la lista
+     * @return Lista con los valores Sí y No
+     */
+    private static List<EntidadConCodigo> devolverValoresSiNo(){
+    	List<EntidadConCodigo> res = new ArrayList<EntidadConCodigo>();
+    	res.add(new EntidadConCodigo(1,"Sí", Boolean.TRUE));
+    	res.add(new EntidadConCodigo(2,"No", Boolean.FALSE));
+    	return res;
+    }
 	
 	
 }
