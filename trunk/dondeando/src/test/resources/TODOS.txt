@@ -1,6 +1,7 @@
 · Loguearse e ir al Menu --> se pierde el usuario activo --> servicioUsuario es diferente 
   --> Todos los componentes son nuevos: Pasa con el botón, no con un link
-  
+
+· Añadir criterio TipoUsuario en la Gestión de Usuarios
 · Añadir el número de elementos en cada tabla --> Mirar en el trabajo
 · ¿Cómo ordenar las columna de una tabla, si ya tiene el sortable=true? (gestionarUsuarios)
   ¿será necesario un SortbleModel? Mirar ConsultarArticuloBean en el trabajo
