@@ -1,13 +1,18 @@
 · Loguearse e ir al Menu --> se pierde el usuario activo --> servicioUsuario es diferente 
   --> Todos los componentes son nuevos: Pasa con el botón, no con un link
 
-· Añadir criterio TipoUsuario en la Gestión de Usuarios
+· Criterios para bucsar locales:
+	a) Por nombre y tipo de local 
+	b) Por cercanía (radio) a un punto
+	c) Por rango de precios
+	d) Por rango de puntuaciones
+	
 · Añadir el número de elementos en cada tabla --> Mirar en el trabajo
 · ¿Cómo ordenar las columna de una tabla, si ya tiene el sortable=true? (gestionarUsuarios)
   ¿será necesario un SortbleModel? Mirar ConsultarArticuloBean en el trabajo
 · Al subir una imagen poner algún botón "Subir"-"Borrar"
 · Modificar estilos de los componentes de trinidad --> trinidad-skin.xml y/o trinidad-config.xml
-· Permisos para los botones del menú principal
+· Comentarios en Interfaces y Clases
 · Login --> Excepcion --> Pide otra vez el login cuando está todavía conectado el usuario
 	Puede que sea por tema de conversacion del CabeceraPaginaBean --> ServicioUsuario es diferente siempre
 	O porque no encuentra el Bean de las excepciones -> Meter el bean

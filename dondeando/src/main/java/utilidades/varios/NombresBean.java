@@ -12,6 +12,7 @@ public class NombresBean {
 	public static final String SERVICIO_IMAGEN = "servicioImagen";
     public static final String SERVICIO_PERMISO_USUARIO = "servicioPermisoUsuario";
     public static final String SERVICIO_USUARIO = "servicioUsuario";
+    public static final String SERVICIO_TIPO_LOCAL = "servicioTipoLocal";
     public static final String SERVICIO_TIPO_USUARIO = "servicioTipoUsuario";
     
     /**Beans */    

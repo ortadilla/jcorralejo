@@ -17,8 +17,8 @@ public interface Local {
 	public String getNombre();
 	public void setNombre(String nombre);
 	
-	public TipoLocal getTipoLocal();
-	public void setTipoLocal(TipoLocal tipoLocal);
+	public Set<TipoLocal> getTiposLocal();
+	public void setTiposLocal(Set<TipoLocal> tiposLocal);
 	
 	public String getDireccion();
 	public void setDireccion(String direccion);

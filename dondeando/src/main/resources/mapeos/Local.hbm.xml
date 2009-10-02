@@ -23,14 +23,16 @@
 		<property name="valoracion" column="valoracion" />
 		<property name="otraInformacion" column="otraInformacion" />
 		
-		<many-to-one
-			class="dondeando.modelo.entidades.implementacion.TipoLocalImpl"
-			column="tipoLocal" name="tipoLocal" />
-
 		<set name="servicios" table="serviciosLocal">
 			<key column="local" />
 			<many-to-many column="servicio"
 				class="ServicioImpl" />
+		</set>
+		
+		<set name="tiposLocal" table="TipoLocalLocal">
+			<key column="local" />
+			<many-to-many column="tipoLocal"
+				class="TipoLocalImpl" />
 		</set>
 		
 		<set name="imagenes" inverse="true" cascade="all-delete-orphan">
