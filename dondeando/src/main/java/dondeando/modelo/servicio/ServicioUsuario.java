@@ -104,10 +104,11 @@ public interface ServicioUsuario {
 	public List<Usuario> encontrarTodosUsuarios();
 
 	/**
-	 * Busca los usuarios con el login y el campo activo indicado 
+	 * Busca los usuarios con el login,el tipo y el campo activo indicado 
 	 * @param usuario	Login por el que buscar usuarios. Puede ser null
+	 * @param tipoUsuario Tipo de usuario por el que buscar usuario. Puede ser null
 	 * @param activo	Indica si los usuarios estarán activos o no. Puede ser null
 	 * @return	Lista de usuarios encontrados
 	 */
-	public List<Usuario> encontrarUsuariosPorLoginYActivo(String usuario, Boolean activo);
+	public List<Usuario> encontrarUsuariosPorLoginTipoYActivo(String usuario, TipoUsuario tipoUsuario, Boolean activo);
 }
