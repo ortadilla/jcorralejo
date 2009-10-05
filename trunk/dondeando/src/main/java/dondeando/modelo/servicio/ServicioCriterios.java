@@ -5,10 +5,6 @@ import utilidades.busquedas.consultas.Condicion;
 import utilidades.busquedas.consultas.Criterio;
 import utilidades.varios.Fecha;
 
-/**
- * @author agomez
- */
-
 public interface ServicioCriterios {
 
 	Criterio construyeCriterio(String atributo, int comparador, Object valor);

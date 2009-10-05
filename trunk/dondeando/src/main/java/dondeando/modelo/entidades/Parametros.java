@@ -20,4 +20,9 @@ public interface Parametros {
 	 */
 	public static String PARAMETRO_NOMBRE_IMAGENEN_USUARIO_GENERICO = "usuarioGenerico.jpg";
 	
+	/**
+	 * Indica el la base de la URL para buscar una dirección en GoogleMaps
+	 */
+	public static String PARAMETRO_BASE_URL_IR_MAPA = "http://maps.google.es/maps?f=q&hl=es&geocode=&q=";
+	
 }

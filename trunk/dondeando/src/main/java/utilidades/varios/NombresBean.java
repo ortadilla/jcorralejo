@@ -10,7 +10,9 @@ public class NombresBean {
 	/**Servicios*/
 	public static final String SERVICIO_CRITERIOS     = "servicioCriterios";
 	public static final String SERVICIO_IMAGEN = "servicioImagen";
+	public static final String SERVICIO_LOCAL = "servicioLocal";
     public static final String SERVICIO_PERMISO_USUARIO = "servicioPermisoUsuario";
+    public static final String SERVICIO_PROVINCIA = "servicioProvincia";
     public static final String SERVICIO_USUARIO = "servicioUsuario";
     public static final String SERVICIO_TIPO_LOCAL = "servicioTipoLocal";
     public static final String SERVICIO_TIPO_USUARIO = "servicioTipoUsuario";
@@ -31,14 +33,17 @@ public class NombresBean {
     public static final String GESTION_USUARIOS_BINDING = "gestionUsuariosBinding"; 
     
     /**DAOs */
+    public static final String DIRECCION_DAO = "direccionDAO"; 
     public static final String IMAGEN_DAO = "imagenDAO"; 
     public static final String IMAGEN_LOCAL_DAO = "imagenLocalDAO"; 
     public static final String LOCAL_DAO = "localDAO"; 
+    public static final String PROVINCIA_DAO = "provinciaDAO"; 
     public static final String PRUEBA_DAO = "pruebaDAO"; 
     public static final String PERMISO_USUARIO_DAO = "permisoUsuarioDAO"; 
     public static final String SERVICIO_DAO = "servicioDAO"; 
     public static final String TIPO_LOCAL_DAO = "tipoLocalDAO"; 
     public static final String TIPO_USUARIO_DAO = "tipoUsuarioDAO"; 
+    public static final String TIPO_VIA_DAO = "tipoViaDAO"; 
     public static final String USUARIO_DAO = "usuarioDAO"; 
     
 
@@ -58,6 +63,7 @@ public class NombresBean {
     public static final String PROTOCOLO_EDICION = "protocoloEdicion"; 
     public static final String PROTOCOLO_BUSQUEDA = "protocoloBusqueda"; 
     public static final String PROTOCOLO_RESULTADO = "protocoloResultado"; 
+    public static final String USUARIO_LOGUEADO = "usuarioLogueado"; 
     
     
 

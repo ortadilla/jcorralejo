@@ -1,10 +1,7 @@
 package dondeando.modelo.entidades;
 
-public interface TipoLocal {
-	
-	public static String ATRIBUTO_DESCRIPCION = "descripcion";
-	public static String ATRIBUTO_ID = "id";
-	
+public interface TipoVia {
+
 	public Integer getId();
 	public void setId(Integer id);
 	
@@ -13,5 +10,5 @@ public interface TipoLocal {
 	
 	public String getDescripcion();
 	public void setDescripcion(String descripcion);
-
+	
 }

@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 import java.util.Set;
 
 public interface Local {
+	
+	public static final String ATRIBUTO_NOMBRE = "nombre";
+	public static final String ATRIBUTO_TIPOS_LOCAL = "tiposLocal";
+	public static final String ATRIBUTO_PRECIO_MEDIO = "precioMedio";
+	public static final String ATRIBUTO_DIRECCION = "direccion";
 
 	public Integer getId();
 	public void setId(Integer id);
@@ -20,8 +25,8 @@ public interface Local {
 	public Set<TipoLocal> getTiposLocal();
 	public void setTiposLocal(Set<TipoLocal> tiposLocal);
 	
-	public String getDireccion();
-	public void setDireccion(String direccion);
+	public Direccion getDireccion();
+	public void setDireccion(Direccion direccion);
 	
 	public String getTelefono();
 	public void setTelefono(String telefono);
@@ -35,8 +40,8 @@ public interface Local {
 	public String getHorario();
 	public void setHorario(String horario);
 	
-	public String getPrecioMedio();
-	public void setPrecioMedio(String precioMedio);
+	public BigDecimal getPrecioMedio();
+	public void setPrecioMedio(BigDecimal precioMedio);
 	
 	public BigDecimal getValoracion();
 	public void setValoracion(BigDecimal valoracion);
