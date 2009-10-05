@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="dondeando.modelo.entidades.implementacion">
+	<class name="DireccionImpl" table="direccion">
+		<id name="id">
+			<generator class="increment" />
+		</id>
+		<version generated="never" name="version" type="integer" />
+		<many-to-one
+			class="dondeando.modelo.entidades.implementacion.ProvinciaImpl"
+			column="provincia" name="provincia" />
+		<many-to-one
+			class="dondeando.modelo.entidades.implementacion.TipoViaImpl"
+			column="tipoVia" name="tipoVia" />
+		<property column="nombreVia" name="nombreVia" />
+		<property column="numero" name="numero" />
+		<property column="codigoPostal" name="codigoPostal" />
+		<property column="localidad" name="localidad" />
+	</class>
+</hibernate-mapping>

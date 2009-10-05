@@ -14,7 +14,6 @@
 		
 		<property name="nombre" column="nombre" />
 		<property name="descripcion" column="descripcion" />
-		<property name="direccion" column="direccion" />
 		<property name="telefono" column="telefono" />
 		<property name="web" column="web" />
 		<property name="email" column="email" />
@@ -23,6 +22,10 @@
 		<property name="valoracion" column="valoracion" />
 		<property name="otraInformacion" column="otraInformacion" />
 		
+		  <many-to-one
+   			class="dondeando.modelo.entidades.implementacion.DireccionImpl"
+   			column="direccion" name="direccion"/>
+   
 		<set name="servicios" table="serviciosLocal">
 			<key column="local" />
 			<many-to-many column="servicio"
