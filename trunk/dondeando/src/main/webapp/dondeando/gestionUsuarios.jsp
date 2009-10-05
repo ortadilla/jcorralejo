@@ -112,6 +112,7 @@
 						</tr:column>
 						<tr:column sortable="false" headerText="#{resCore['ACTIVO']}">
 							<tr:image
+								shortDesc="#{var.activo ? resCore['SI'] : resCore['NO']}"
 								source="#{var.activo ? '/imagenes/dondeando/check.png':'/imagenes/dondeando/cruz.png'}"
 								inlineStyle="height: 20px;" />
 						</tr:column>
