@@ -1,21 +1,18 @@
-· Loguearse e ir al Menu --> se pierde el usuario activo --> servicioUsuario es diferente 
-  --> Todos los componentes son nuevos: Pasa con el botón, no con un link
-
-· Criterios para bucsar locales:
-	a) Por nombre y tipo de local 
-	b) Por cercanía (radio) a un punto
-	c) Por rango de precios
-	d) Por rango de puntuaciones
-	
-· Añadir el número de elementos en cada tabla --> Mirar en el trabajo
-· ¿Cómo ordenar las columna de una tabla, si ya tiene el sortable=true? (gestionarUsuarios)
-  ¿será necesario un SortbleModel? Mirar ConsultarArticuloBean en el trabajo
-· Al subir una imagen poner algún botón "Subir"-"Borrar"
+· Añadir campo "activo" a los locales
+· goLing que abra un popup 
+· Antes de añadir comprobar si existe otro local "parecido"
+· Mirar en el trabajo las many-to-many si tienen pk
+· Rendered Botones GestionLocales dependiendo de los permisos
+· ¿Cómo ordenar una tabla? ¿sortable=true? (gestionarUsuarios)
+· Número de elementos de una tabla
 · Modificar estilos de los componentes de trinidad --> trinidad-skin.xml y/o trinidad-config.xml
+· Teclas de acceso en cada botón
+· Texto alternativo y tooltip en las imágenes
 · Comentarios en Interfaces y Clases
+· Eliminar todos los @author
 · Login --> Excepcion --> Pide otra vez el login cuando está todavía conectado el usuario
 	Puede que sea por tema de conversacion del CabeceraPaginaBean --> ServicioUsuario es diferente siempre
 	O porque no encuentra el Bean de las excepciones -> Meter el bean
-
+	
 · Los problemas con el autocommit (flush necesario) puede que sean por las fases de Seam donde se hacen
   los commit 1-5 o 6
