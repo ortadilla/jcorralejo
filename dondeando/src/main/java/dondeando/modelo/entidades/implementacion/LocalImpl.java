@@ -3,6 +3,7 @@ package dondeando.modelo.entidades.implementacion;
 import java.math.BigDecimal;
 import java.util.Set;
 
+import dondeando.modelo.entidades.Direccion;
 import dondeando.modelo.entidades.Imagen;
 import dondeando.modelo.entidades.Local;
 import dondeando.modelo.entidades.Servicio;
@@ -14,17 +15,23 @@ public class LocalImpl implements Local{
 	private Integer version;
 	private String descripcion;
 	private String nombre;
-	private String direccion;
+	private Direccion direccion;
 	private String telefono;
 	private String web;
 	private String email;
 	private String horario;
-	private String precioMedio;
+	private BigDecimal precioMedio;
 	private BigDecimal valoracion;
 	private String otraInformacion;
 	private Set<TipoLocal> tiposLocal;
 	private Set<Servicio> servicios;
 	private Set<Imagen> imagenes;
+	
+	private String cadenaTiposLocal;
+	private String imagenPrecio;
+	private String shortDescPrecio;
+	private String urlVerMapa;
+	private String direccionHumana;
 	
 	@Override
 	public int hashCode() {
@@ -47,6 +54,7 @@ public class LocalImpl implements Local{
 			return false;
 		return true;
 	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -71,10 +79,10 @@ public class LocalImpl implements Local{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getDireccion() {
+	public Direccion getDireccion() {
 		return direccion;
 	}
-	public void setDireccion(String direccion) {
+	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
 	public String getTelefono() {
@@ -101,10 +109,10 @@ public class LocalImpl implements Local{
 	public void setHorario(String horario) {
 		this.horario = horario;
 	}
-	public String getPrecioMedio() {
+	public BigDecimal getPrecioMedio() {
 		return precioMedio;
 	}
-	public void setPrecioMedio(String precioMedio) {
+	public void setPrecioMedio(BigDecimal precioMedio) {
 		this.precioMedio = precioMedio;
 	}
 	public BigDecimal getValoracion() {
@@ -136,6 +144,36 @@ public class LocalImpl implements Local{
 	}
 	public void setTiposLocal(Set<TipoLocal> tiposLocal) {
 		this.tiposLocal = tiposLocal;
+	}
+	public String getCadenaTiposLocal() {
+		return cadenaTiposLocal;
+	}
+	public void setCadenaTiposLocal(String cadenaTiposLocal) {
+		this.cadenaTiposLocal = cadenaTiposLocal;
+	}
+	public String getImagenPrecio() {
+		return imagenPrecio;
+	}
+	public void setImagenPrecio(String imagenPrecio) {
+		this.imagenPrecio = imagenPrecio;
+	}
+	public String getShortDescPrecio() {
+		return shortDescPrecio;
+	}
+	public void setShortDescPrecio(String shortDescPrecio) {
+		this.shortDescPrecio = shortDescPrecio;
+	}
+	public String getUrlVerMapa() {
+		return urlVerMapa;
+	}
+	public void setUrlVerMapa(String urlVerMapa) {
+		this.urlVerMapa = urlVerMapa;
+	}
+	public String getDireccionHumana() {
+		return direccionHumana;
+	}
+	public void setDireccionHumana(String direccionHumana) {
+		this.direccionHumana = direccionHumana;
 	}
 	
 	

@@ -1,6 +1,5 @@
 package dondeando.bean;
 
-import static utilidades.jsf.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static utilidades.varios.NombresBean.EDITAR_USUARIO_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;

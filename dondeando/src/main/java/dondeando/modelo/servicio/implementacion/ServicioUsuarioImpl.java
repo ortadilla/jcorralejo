@@ -2,15 +2,16 @@ package dondeando.modelo.servicio.implementacion;
 
 
 import static dondeando.modelo.entidades.Usuario.USUARIO_ANONIMO;
+import static org.jboss.seam.ScopeType.SESSION;
 import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.USUARIO_DAO;
+import static utilidades.varios.NombresBean.USUARIO_LOGUEADO;
 
 import java.math.BigDecimal;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -18,10 +19,11 @@ import org.apache.commons.logging.LogFactory;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
+import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
-import utilidades.busquedas.consultas.Condicion;
 import utilidades.busquedas.consultas.Criterio;
+import utilidades.varios.NombresBean;
 import dondeando.modelo.dao.UsuarioDAO;
 import dondeando.modelo.dao.excepciones.DAOExcepcion;
 import dondeando.modelo.entidades.Imagen;
@@ -43,6 +45,8 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     
     private Log log = LogFactory.getLog(ServicioUsuarioImpl.class);
     
+    @In(value=USUARIO_LOGUEADO, required=false, scope=SESSION)
+    @Out(value=USUARIO_LOGUEADO, required=false, scope=SESSION)
     private Integer usuarioLogueado;
     
     
