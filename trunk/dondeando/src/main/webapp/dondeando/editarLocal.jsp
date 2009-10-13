@@ -23,8 +23,7 @@
 
 			<geos:cabeceraPagina />
 
-			<tr:form defaultCommand="btnAceptar" id="formCrearUsuario"
-				usesUpload="true">
+			<tr:form defaultCommand="btnAceptar" id="formCrearLocal" usesUpload="true">
 				<tr:panelPage>
 					<f:facet name="messages">
 						<tr:messages />
@@ -40,30 +39,40 @@
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['NOMBRE']} *"
 										inlineStyle="font-weight: bolder;" />
-									<tr:inputText columns="50" value="#{editarLocalBean.nombre}"
-										id="login" maximumLength="50"/>
-									<trh:cellFormat rowSpan="3">
-										<tr:image source="#{editarLocalBean.urlImagenPrincipal}"
-											shortDesc="#{editarLocalBean.nombre}"
-											inlineStyle="height: 100px;border-style: solid; border-width: 1px;" />
+									<trh:cellFormat columnSpan="4">
+										<tr:inputText columns="106" value="#{editarLocalBean.nombre}"
+											id="login" maximumLength="100" />
+									</trh:cellFormat>
+									<!--									<tr:image source="#{editarLocalBean.urlImagenPrincipal}"-->
+									<!--										shortc="#{editarLocalBean.nombre}"-->
+									<!--										inlineStyle="height: 100px;border-style: solid; border-width: 1px;" />-->
+								</trh:rowLayout>
+								<trh:rowLayout>
+									<tr:outputText value="#{resCore['DESCRIPCION']}"
+										inlineStyle="font-weight: bolder;" />
+									<trh:cellFormat columnSpan="4">
+										<tr:inputText columns="103" rows="5"
+											value="#{editarLocalBean.descripcion}" id="descripcion"
+											maximumLength="2000" />
 									</trh:cellFormat>
 								</trh:rowLayout>
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['PROVINCIA']} *"
 										inlineStyle="font-weight: bolder;" />
-									<trh:cellFormat>
+									<trh:cellFormat columnSpan="0">
 										<tr:selectOneChoice value="#{editarLocalBean.provincia}">
 											<f:selectItems id="selectProvincia"
 												value="#{editarLocalBean.selectProvincia}" />
 										</tr:selectOneChoice>
 									</trh:cellFormat>
-								</trh:rowLayout>
-								<trh:rowLayout>
+									<tr:spacer />
 									<tr:outputText value="#{resCore['LOCALIDAD']} *"
 										inlineStyle="font-weight: bolder;" />
-									<tr:inputText columns="50"
-										value="#{editarLocalBean.localidad}" id="localidad" 
-										maximumLength="50" />
+									<trh:cellFormat columnSpan="0">
+										<tr:inputText columns="50"
+											value="#{editarLocalBean.localidad}" id="localidad"
+											maximumLength="50" />
+									</trh:cellFormat>
 								</trh:rowLayout>
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['TIPO_VIA']} *"
@@ -74,85 +83,98 @@
 												value="#{editarLocalBean.selectTipoVia}" />
 										</tr:selectOneChoice>
 									</trh:cellFormat>
-								</trh:rowLayout>
-								<trh:rowLayout>
+									<tr:spacer />
 									<tr:outputText value="#{resCore['NOMBRE_VIA']} *"
 										inlineStyle="font-weight: bolder;" />
-									<tr:inputText columns="50"
-										value="#{editarLocalBean.nombreVia}" id="nombreVia" 
-										maximumLength="50"/>
+									<trh:cellFormat columnSpan="0">
+										<tr:inputText columns="50"
+											value="#{editarLocalBean.nombreVia}" id="nombreVia"
+											maximumLength="50" />
+									</trh:cellFormat>
 								</trh:rowLayout>
 								<trh:rowLayout>
-									<tr:outputText value="#{resCore['NUMERO']} *"
+									<tr:outputText value="#{resCore['NUMERO']}"
 										inlineStyle="font-weight: bolder;" />
-									<tr:inputText columns="3"
-										value="#{editarLocalBean.numero}" id="numero" 
-										maximumLength="3"/>
-								</trh:rowLayout>
-								<trh:rowLayout>
+									<tr:inputText columns="3" value="#{editarLocalBean.numero}"
+										id="numero" maximumLength="3" />
+									<tr:spacer />
 									<tr:outputText value="#{resCore['CODIGO_POSTAL']} *"
 										inlineStyle="font-weight: bolder;" />
 									<tr:inputText columns="5"
-										value="#{editarLocalBean.codigoPostal}" id="codigoPostal" 
-										maximumLength="5"/>
+										value="#{editarLocalBean.codigoPostal}" id="codigoPostal"
+										maximumLength="5" />
 								</trh:rowLayout>
 								<trh:rowLayout>
-									<tr:outputText value="#{resCore['TIPO_LOCAL']}"
+									<tr:outputText value="#{resCore['TIPO_LOCAL']} *"
 										inlineStyle="font-weight: bolder;" />
-									<trh:cellFormat>
-										<tr:selectManyListbox value="#{gestionLocalesBean.tiposLocal}">
+									<trh:cellFormat columnSpan="0">
+										<tr:selectManyListbox value="#{editarLocalBean.tiposLocal}">
 											<f:selectItems id="selectTiposLocal"
-												value="#{gestionLocalesBean.selectTiposLocal}" />
+												value="#{editarLocalBean.selectTiposLocal}" />
+										</tr:selectManyListbox>
+									</trh:cellFormat>
+									<tr:spacer/>
+									<tr:outputText value="#{resCore['SERVICIOS_DISPONIBLES']}"
+										inlineStyle="font-weight: bolder;" />
+									<trh:cellFormat columnSpan="2">
+										<tr:selectManyListbox value="#{editarLocalBean.servicios}">
+											<f:selectItems id="selectPrecio"
+												value="#{editarLocalBean.selectServicios}" />
 										</tr:selectManyListbox>
 									</trh:cellFormat>
 								</trh:rowLayout>
 								<trh:rowLayout>
-									<tr:outputText value="#{resCore['DESCRIPCION']}"
+									<tr:outputText value="#{resCore['PRECIO_MEDIO']} *"
 										inlineStyle="font-weight: bolder;" />
-									<tr:inputText columns="100" rows="10"
-										value="#{editarLocalBean.descripcion}" id="descripcion" 
-										maximumLength="2000"/>
+									<tr:inputText columns="5"
+										value="#{editarLocalBean.precioMedio}" id="precio" />
 								</trh:rowLayout>
+
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['TELEFONO']}"
 										inlineStyle="font-weight: bolder;" />
-									<tr:inputText columns="9"
-										value="#{editarLocalBean.telefono}" id="telefono" 
-										maximumLength="9"/>
-								</trh:rowLayout>
-								<trh:rowLayout>
+									<tr:inputText columns="10" value="#{editarLocalBean.telefono}"
+										id="telefono" maximumLength="9" />
+									<tr:spacer />
 									<tr:outputText value="#{resCore['EMAIL']}"
 										inlineStyle="font-weight: bolder;" />
-									<tr:inputText columns="100"
-										value="#{editarLocalBean.email}" id="email" 
-										maximumLength="100"/>
+									<trh:cellFormat columnSpan="0">
+										<tr:inputText columns="50" value="#{editarLocalBean.email}"
+											id="email" maximumLength="100">
+											<tr:validator binding="#{editarLocalBean.validatorEmail}" />
+										</tr:inputText>
+									</trh:cellFormat>
 								</trh:rowLayout>
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['HORARIO']}"
 										inlineStyle="font-weight: bolder;" />
-									<tr:inputText columns="100" rows="2"
-										value="#{editarLocalBean.horario}" id="horario" 
-										maximumLength="200"/>
-								</trh:rowLayout>
-								<trh:rowLayout>
-									<tr:outputText value="#{resCore['PRECIO_MEDIO']}"
-										inlineStyle="font-weight: bolder;" />
-									<trh:cellFormat>
-										<tr:selectOneChoice value="#{editarLocalBean.precioMedio}">
-											<f:selectItems id="selectPrecio"
-												value="#{editarLocalBean.selectPrecio}" />
-										</tr:selectOneChoice>
+									<trh:cellFormat columnSpan="5">
+										<tr:inputText columns="103" rows="2"
+											value="#{editarLocalBean.horario}" id="horario"
+											maximumLength="200" />
 									</trh:cellFormat>
 								</trh:rowLayout>
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['OTRA_INFORMACION']}"
 										inlineStyle="font-weight: bolder;" />
-									<tr:inputText columns="100" rows="10"
-										value="#{editarLocalBean.otraInformacion}" id="otraInformacion" 
-										maximumLength="2000"/>
+									<trh:cellFormat columnSpan="5">
+										<tr:inputText columns="103" rows="5"
+											value="#{editarLocalBean.otraInformacion}"
+											id="otraInformacion" maximumLength="2000" />
+									</trh:cellFormat>
 								</trh:rowLayout>
-								
-								<trh:rowLayout/> <!-- Dejar estos huecos para que quepa bien la imagen -->
+
+								<trh:rowLayout />
+								<trh:rowLayout>
+									<trh:cellFormat columnSpan="5">
+										<tr:panelHorizontalLayout halign="center">
+											<tr:commandButton text="#{resCore['IMAGENES']}"
+												id="btnImagenes" action="#{editarLocalBean.irImagenes}" />
+										</tr:panelHorizontalLayout>
+									</trh:cellFormat>
+								</trh:rowLayout>
+								<trh:rowLayout />
+								<!-- Dejar estos huecos para que quepa bien la imagen -->
 								<!-- FALTAN LAS FOTOS -->
 							</trh:tableLayout>
 
@@ -162,10 +184,8 @@
 									action="#{editarLocalBean.aceptar}" />
 								<tr:spacer width="20" height="10" />
 								<tr:commandButton text="#{resCore['CANCELAR']}" id="btnCancelar"
-									immediate="true"
-									action="#{editarLocalBean.cancelar}" />
+									immediate="true" action="#{editarLocalBean.cancelar}" />
 							</tr:panelHorizontalLayout>
-							<tr:spacer width="20" height="20" />
 
 						</tr:panelBox>
 					</tr:panelHorizontalLayout>

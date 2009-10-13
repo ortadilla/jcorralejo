@@ -11,20 +11,32 @@
    <PROCESS-ITEM-OUTPUT ID="editarUsuario::#dondeando#editarUsuario.jsp"
     NAME="output2" PATH="/dondeando/editarUsuario.jsp"
     TARGET="rules:#dondeando#editarUsuario.jsp" TITLE="editarUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editarLocal::#dondeando#editarLocal.jsp"
+    NAME="output3" PATH="/dondeando/editarLocal.jsp"
+    TARGET="rules:#dondeando#editarLocal.jsp" TITLE="editarLocal" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
-    ID="detallesUsuario::#dondeando#detallesUsuario.jsp" NAME="output3"
+    ID="detallesUsuario::#dondeando#detallesUsuario.jsp" NAME="output4"
     PATH="/dondeando/detallesUsuario.jsp"
     TARGET="rules:#dondeando#detallesUsuario.jsp"
     TITLE="detallesUsuario" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
-    ID="gestionUsuarios::#dondeando#gestionUsuarios.jsp" NAME="output4"
+    ID="modificarPassword::#dondeando#modificarPassword.jsp"
+    NAME="output5" PATH="/dondeando/modificarPassword.jsp"
+    TARGET="rules:#dondeando#modificarPassword.jsp"
+    TITLE="modificarPassword" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionUsuarios::#dondeando#gestionUsuarios.jsp" NAME="output6"
     PATH="/dondeando/gestionUsuarios.jsp"
     TARGET="rules:#dondeando#gestionUsuarios.jsp"
     TITLE="gestionUsuarios" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="imagenesLocal::#dondeando#imagenesLocal.jsp"
+    NAME="output7" PATH="/dondeando/imagenesLocal.jsp"
+    TARGET="rules:#dondeando#imagenesLocal.jsp" TITLE="imagenesLocal" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
-    ID="gestionLocales::#dondeando#gestionLocales.jsp" NAME="output5"
-    PATH="/dondeando/gestionLocales.jsp"
-    TARGET="rules:#dondeando#gestionLocales.jsp" TITLE="gestionLocales" model-entity="JSFProcessItemOutput"/>
+    ID="dialog:aniadirImagen::#dondeando#aniadirImagen.jsp"
+    NAME="output8" PATH="/dondeando/aniadirImagen.jsp"
+    TARGET="rules:#dondeando#aniadirImagen.jsp"
+    TITLE="dialog:aniadirImagen" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#dondeando#menuPrincipal.jsp"
@@ -41,4 +53,10 @@
   PATH="/dondeando/editarUsuario.jsp" SHAPE="304,417,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#dondeando#detallesUsuario.jsp"
   PATH="/dondeando/detallesUsuario.jsp" SHAPE="304,417,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dondeando#editarLocal.jsp"
+  PATH="/dondeando/editarLocal.jsp" SHAPE="304,417,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dondeando#imagenesLocal.jsp"
+  PATH="/dondeando/imagenesLocal.jsp" SHAPE="304,481,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dondeando#aniadirImagen.jsp"
+  PATH="/dondeando/aniadirImagen.jsp" SHAPE="304,513,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>
