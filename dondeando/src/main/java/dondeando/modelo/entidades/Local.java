@@ -9,6 +9,7 @@ public interface Local {
 	public static final String ATRIBUTO_TIPOS_LOCAL = "tiposLocal";
 	public static final String ATRIBUTO_PRECIO_MEDIO = "precioMedio";
 	public static final String ATRIBUTO_DIRECCION = "direccion";
+	public static final String ATRIBUTO_ACTIVO = "activo";
 
 	public Integer getId();
 	public void setId(Integer id);
@@ -46,14 +47,17 @@ public interface Local {
 	public BigDecimal getValoracion();
 	public void setValoracion(BigDecimal valoracion);
 	
+	public boolean isActivo();
+	public void setActivo(boolean activo);
+	
 	public String getOtraInformacion();
 	public void setOtraInformacion(String otraInformacion);
 	
 	public Set<Servicio> getServicios();
 	public void setServicios(Set<Servicio> servicios);
 	
-	public Set<Imagen> getImagenes();
-	public void setImagenes(Set<Imagen> imagenes);
+	public Set<ImagenLocal> getImagenes();
+	public void setImagenes(Set<ImagenLocal> imagenes);
 	
 	
 }

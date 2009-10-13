@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Set;
 
 import dondeando.modelo.entidades.Direccion;
-import dondeando.modelo.entidades.Imagen;
+import dondeando.modelo.entidades.ImagenLocal;
 import dondeando.modelo.entidades.Local;
 import dondeando.modelo.entidades.Servicio;
 import dondeando.modelo.entidades.TipoLocal;
@@ -25,7 +25,8 @@ public class LocalImpl implements Local{
 	private String otraInformacion;
 	private Set<TipoLocal> tiposLocal;
 	private Set<Servicio> servicios;
-	private Set<Imagen> imagenes;
+	private Set<ImagenLocal> imagenes;
+	private boolean activo;
 	
 	private String cadenaTiposLocal;
 	private String imagenPrecio;
@@ -133,10 +134,10 @@ public class LocalImpl implements Local{
 	public void setServicios(Set<Servicio> servicios) {
 		this.servicios = servicios;
 	}
-	public Set<Imagen> getImagenes() {
+	public Set<ImagenLocal> getImagenes() {
 		return imagenes;
 	}
-	public void setImagenes(Set<Imagen> imagenes) {
+	public void setImagenes(Set<ImagenLocal> imagenes) {
 		this.imagenes = imagenes;
 	}
 	public Set<TipoLocal> getTiposLocal() {
@@ -174,6 +175,12 @@ public class LocalImpl implements Local{
 	}
 	public void setDireccionHumana(String direccionHumana) {
 		this.direccionHumana = direccionHumana;
+	}
+	public boolean isActivo() {
+		return activo;
+	}
+	public void setActivo(boolean activo) {
+		this.activo = activo;
 	}
 	
 	

@@ -3,6 +3,7 @@ package dondeando.modelo.entidades;
 public interface Direccion {
 	
 	public static final String ATRIBUTO_PROVINCIA = "provincia";
+	public static final String ATRIBUTO_LOCALIDAD = "localidad";
 	
 	public Integer getId();
 	public void setId(Integer id);

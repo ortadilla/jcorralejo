@@ -1,17 +1,19 @@
 package dondeando.bean;
 
-import static dondeando.modelo.servicio.ServicioLocal.RANGO_PRECIO_10_30;
-import static dondeando.modelo.servicio.ServicioLocal.RANGO_PRECIO_30_50;
-import static dondeando.modelo.servicio.ServicioLocal.RANGO_PRECIO_MAYOR_50;
-import static dondeando.modelo.servicio.ServicioLocal.RANGO_PRECIO_MENOR_10;
+import static utilidades.jsf.ConstantesReglasNavegacion.DETALLES_LOCAL;
+import static utilidades.jsf.ConstantesReglasNavegacion.EDITAR_LOCAL;
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_LOCALES;
 import static utilidades.varios.NombresBean.GESTION_LOCALES_BEAN;
 import static utilidades.varios.NombresBean.GESTION_LOCALES_BINDING;
+import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
+import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
 import static utilidades.varios.NombresBean.SERVICIO_LOCAL;
+import static utilidades.varios.NombresBean.SERVICIO_PERMISO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_PROVINCIA;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_LOCAL;
+import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.model.SelectItem;
@@ -23,23 +25,36 @@ import org.jboss.seam.annotations.Begin;
 import org.jboss.seam.annotations.Create;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
+import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
+import utilidades.jsf.UtilJsfContext;
 import utilidades.varios.EntidadConCodigo;
 import utilidades.varios.HerramientasList;
+import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
+import utilidades.varios.Permisos;
+import utilidades.varios.ProtocoloEdicion;
 import utilidades.varios.SelectItemBuilder;
 import dondeando.binding.GestionLocalesBinding;
 import dondeando.modelo.entidades.Local;
 import dondeando.modelo.entidades.Provincia;
 import dondeando.modelo.entidades.TipoLocal;
 import dondeando.modelo.servicio.ServicioLocal;
+import dondeando.modelo.servicio.ServicioPermisoUsuario;
 import dondeando.modelo.servicio.ServicioProvincia;
 import dondeando.modelo.servicio.ServicioTipoLocal;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(GESTION_LOCALES_BEAN)
 public class GestionLocalesBean {
+	
+	//Constantes
+	private static final String ACCION_AGREGAR_LOCAL = "_agregarLocal_";
+	private static final String ACCION_DETALLES_LOCAL = "_detallesLocal_";
+	private static final String ACCION_MODIFICAR_LOCAL = "_modificarLocal_";
+	private static final String ACCION_ELIMINAR_LOCAL = "_eliminarLocal_";
+	private static final String ACCION_RECUPERAR_LOCAL = "_recuperarLocal_";
 	
 	//Atributos
 	private boolean desplegado;
@@ -51,6 +66,9 @@ public class GestionLocalesBean {
 	private SelectItem[] selectProvincia;
 	private String criterioPrecio;
 	private SelectItem[] selectPrecio;
+	private Boolean criterioActivo = Boolean.TRUE;
+	private boolean mostrarCriterioActivo = false;
+	private SelectItem[] selectSiNo;
 	
 	private RowKeySet estadoDeSeleccionTabla = new RowKeySetImpl();
 	
@@ -61,6 +79,13 @@ public class GestionLocalesBean {
 	@In(value=MENSAJES_CORE, create=true)
 	private MensajesCore mensajesCore;
 	
+	@In(value=UTIL_JSF_CONTEXT, create=true)
+	private UtilJsfContext utilJsfContext;
+	
+	@In(value=MAPA_ARGUMENTOS, required=false)
+	@Out(value=MAPA_ARGUMENTOS, required=false)
+	private MapaArgumentos mapaArgumentos;
+	
 	//Servicios
 	@In(value=SERVICIO_TIPO_LOCAL, create=true)
 	private ServicioTipoLocal servicioTipoLocal;
@@ -70,6 +95,10 @@ public class GestionLocalesBean {
 	
 	@In(value=SERVICIO_LOCAL, create=true)
 	private ServicioLocal servicioLocal;
+	
+	@In(value=SERVICIO_PERMISO_USUARIO, create=true)
+	private ServicioPermisoUsuario servicioPermisoUsuario;
+
 	
 	
 	
@@ -85,25 +114,13 @@ public class GestionLocalesBean {
 															null, 
 															Provincia.ATRIBUTO_NOMBRE,
 															true);
-		selectPrecio = SelectItemBuilder.creaSelectItems(obtenerRangosPrecio(), 
+		selectPrecio = SelectItemBuilder.creaSelectItems(servicioLocal.obtenerRangosPrecio(), 
 														 EntidadConCodigo.ATRIBUTO_VALOR, 
 														 EntidadConCodigo.ATRIBUTO_ETIQUETA,
 														 true);
-	}
-	
-	/**
-	 * Devuelve una lista con los rangos de precios en los que están clasificados
-	 * los Locales
-	 * @return Lista con los rangos de precios en los que están clasificados
-	 * los Locales
-	 */
-	private List<EntidadConCodigo> obtenerRangosPrecio(){
-		List<EntidadConCodigo> rangosPrecios = new ArrayList<EntidadConCodigo>();
-		rangosPrecios.add(new EntidadConCodigo(1, mensajesCore.obtenerTexto(RANGO_PRECIO_MENOR_10), RANGO_PRECIO_MENOR_10));
-		rangosPrecios.add(new EntidadConCodigo(2, mensajesCore.obtenerTexto(RANGO_PRECIO_10_30), RANGO_PRECIO_10_30));
-		rangosPrecios.add(new EntidadConCodigo(3, mensajesCore.obtenerTexto(RANGO_PRECIO_30_50), RANGO_PRECIO_30_50));
-		rangosPrecios.add(new EntidadConCodigo(4, mensajesCore.obtenerTexto(RANGO_PRECIO_MAYOR_50), RANGO_PRECIO_MAYOR_50));
-		return rangosPrecios;
+		selectSiNo = SelectItemBuilder.creaSelectItemsSiNo();
+		
+		mostrarCriterioActivo = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_LOCALES);
 	}
 	
 	/**
@@ -113,10 +130,13 @@ public class GestionLocalesBean {
 		listaLocales = servicioLocal.encontrarLocalesPorNombreTipoProvinciaYPrecio(criterioNombre, 
 																				   criterioTipoLocal, 
 																				   criterioProvincia,
-																				   criterioPrecio);
+																				   criterioPrecio,
+																				   criterioActivo);
 		servicioLocal.rellenarPropiedadesNoMapeadas(listaLocales);
 		desplegado = false;
 		binding.getBusqueda().setDisclosed(desplegado);
+		if(listaLocales!=null && listaLocales.size()==1)
+			estadoDeSeleccionTabla.add(0);
 	}
 	
 	/**
@@ -128,6 +148,7 @@ public class GestionLocalesBean {
 		criterioTipoLocal = null;
 		criterioPrecio = null;
 		criterioProvincia = null;
+		criterioActivo = null;
 	}
 	
 	/**
@@ -135,11 +156,15 @@ public class GestionLocalesBean {
 	 * @return Regla de navegación de la pantalla de edición de locales 
 	 */
 	public String agregar(){
-		return null;
+		return realizarOperacion(ACCION_AGREGAR_LOCAL);
 	}
 	
+	/**
+	 * Navega a la pantalla de detalles del local
+	 * @return Regla de navegación de la pantalla de detalles del local
+	 */
 	public String detalles(){
-		return null;
+		return realizarOperacion(ACCION_DETALLES_LOCAL);
 	}
 
 	/**
@@ -147,20 +172,95 @@ public class GestionLocalesBean {
 	 * @return Regla de navegación de la pantalla de edición de locales
 	 */
 	public String modificar(){
-		return null;
+		return realizarOperacion(ACCION_MODIFICAR_LOCAL);
 	}
 	
 	/**
 	 * Elimina el local seleccionado
 	 */
 	public void eliminar(){
+		realizarOperacion(ACCION_ELIMINAR_LOCAL);
 	}
 	
 	/**
 	 * Recupera el local seleccionado
 	 */
 	public void recuperar(){
+		realizarOperacion(ACCION_RECUPERAR_LOCAL);
 	}
+	
+	/**
+	 * Devuelve un mensaje con el número de elementos de la tabla de resultados
+	 * @return mensaje con el número de elementos de la tabla de resultados
+	 */
+	public String getNumeroElementosTabla(){
+		return mensajesCore.obtenerTexto("ELEMENTOS_ENCONTRADOS", listaLocales != null ? listaLocales.size() : "0");
+    }
+	
+	
+	/**
+	 * Realiza la operación concreta sobre el usuario seleccionado, que puede ser eliminar,
+	 * ver detalles y modificar
+	 * @param edicion Indica si se navega para editar el usuario, o para ver los detalles
+	 * @return	Regla de navegación necesaria para realizar la acción
+	 */
+	private String realizarOperacion(String operacion){
+		String outcome = "";
+		boolean operacionRealizada = false;
+		if(estadoDeSeleccionTabla.size()==1 || ACCION_AGREGAR_LOCAL.equals(operacion)){
+			
+			if(ACCION_AGREGAR_LOCAL.equals(operacion)){
+				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+				mapaArgumentos.limpiaMapa();
+				ProtocoloEdicion protocolo = new ProtocoloEdicion(null, GESTION_LOCALES,null);
+				mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+		
+				outcome = EDITAR_LOCAL;
+			}
+			else{
+				Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
+				Local local = listaLocales.get(seleccion);
+				if(ACCION_MODIFICAR_LOCAL.equals(operacion) || ACCION_DETALLES_LOCAL.equals(operacion)){
+					
+					if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+					mapaArgumentos.limpiaMapa();
+					ProtocoloEdicion protocolo = new ProtocoloEdicion(local,GESTION_LOCALES,null);
+					mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+			
+					outcome = ACCION_MODIFICAR_LOCAL.equals(operacion) ? EDITAR_LOCAL : DETALLES_LOCAL;
+					operacionRealizada = true;
+				
+				}else if(ACCION_ELIMINAR_LOCAL.equals(operacion)){
+					
+					if(local!=null && local.isActivo()){
+						servicioLocal.desactivarLocal(local);
+						servicioLocal.descartarLocal(local);
+						utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("LOCAL_ELIMINADO"));
+						operacionRealizada = true;
+					}else
+						utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_ELIMINAR_USUARIO_ELIMINADO"));
+	
+				}else if(ACCION_RECUPERAR_LOCAL.equals(operacion)){
+	
+					if(local!=null && !local.isActivo()){
+						servicioLocal.activarLocal(local);
+						utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("LOCAL_RECUPERADO"));
+						operacionRealizada = true;
+					}else
+						utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_RECUPERAR_LOCAL_ACTIVO"));
+				}
+			}
+			
+		}else
+			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
+		
+		if(operacionRealizada)
+			estadoDeSeleccionTabla.clear();
+		
+		return outcome;
+	}
+
+
 
 	public boolean isDesplegado() {
 		return desplegado;
@@ -247,6 +347,30 @@ public class GestionLocalesBean {
 
 	public void setEstadoDeSeleccionTabla(RowKeySet estadoDeSeleccionTabla) {
 		this.estadoDeSeleccionTabla = estadoDeSeleccionTabla;
+	}
+
+	public Boolean getCriterioActivo() {
+		return criterioActivo;
+	}
+
+	public void setCriterioActivo(Boolean criterioActivo) {
+		this.criterioActivo = criterioActivo;
+	}
+
+	public SelectItem[] getSelectSiNo() {
+		return selectSiNo;
+	}
+
+	public void setSelectSiNo(SelectItem[] selectSiNo) {
+		this.selectSiNo = selectSiNo;
+	}
+
+	public boolean isMostrarCriterioActivo() {
+		return mostrarCriterioActivo;
+	}
+
+	public void setMostrarCriterioActivo(boolean mostrarCriterioActivo) {
+		this.mostrarCriterioActivo = mostrarCriterioActivo;
 	}
 
 }

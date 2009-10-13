@@ -96,6 +96,10 @@ public class EditarUsuarioBean {
 	@Create
 	@Begin(join=true)
 	public void inicializar(){
+		selectTipoUsuario = SelectItemBuilder.creaSelectItems(servicioTipoUsuario.devolverTodosTipoUsuarioMenosAnonimo(), 
+															  null, 
+															  TipoUsuario.ATRIBUTO_DESCRIPCION);
+
 	}
 
 	public void cargarArgumentosDeEntrada(){
@@ -139,10 +143,6 @@ public class EditarUsuarioBean {
 			tituloPagina = mensajesCore.obtenerTexto("MODIFICAR_USUARIO");
 			mostrarTipoUsuario = servicioPermisoUsuario.hayPermiso(Permisos.ASIGNAR_TIPO_USUARIO);
 		}
-		
-		selectTipoUsuario = SelectItemBuilder.creaSelectItems(servicioTipoUsuario.devolverTodosTipoUsuarioMenosAnonimo(), 
-															  null, 
-															  TipoUsuario.ATRIBUTO_DESCRIPCION);
 	}
 	
 	
@@ -174,7 +174,7 @@ public class EditarUsuarioBean {
 			} catch (IOException e1) {
 				//Si no se puede obtener el inputStream, no comprobamos los errores de la imagen
 				//seleccionada, y le asociamos la de por defecto
-				utilJsfContext.insertaMensajeAdvertencia(mensajesCore.obtenerTexto("ERROR_GUARDAR_IMAGEN"));
+				utilJsfContext.insertaMensajeAdvertencia(mensajesCore.obtenerTexto("ERROR_GUARDAR_IMAGEN_USUARIO"));
 				fileAvatar = null;
 			}
 		
@@ -201,6 +201,9 @@ public class EditarUsuarioBean {
 		}else{
 			utilJsfContext.insertaMensajesAdvertencia(errores);
 		}
+		
+		if(!"".equals(outcome))
+			protocoloEdicion = null;
 		
 		return outcome;
 	}
@@ -237,9 +240,14 @@ public class EditarUsuarioBean {
 		return errores;
 	}
 	
-	
+	/**
+	 * Cancela la edición del usuario y vuelve a la pantalla anterior
+	 * @return Regla de navegación
+	 */
 	public String cancelar(){
-		return protocoloEdicion!=null ? protocoloEdicion.getOutcomeVuelta() : "";
+		String outcome = protocoloEdicion!=null ? protocoloEdicion.getOutcomeVuelta() : "";
+		protocoloEdicion = null; //para que al volver no se cargue nada
+		return outcome;
 	}
 
 	

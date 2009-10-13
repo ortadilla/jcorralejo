@@ -180,6 +180,8 @@ public class GestionUsuariosBean {
 		listaUsuarios = servicioUsuario.encontrarUsuariosPorLoginTipoYActivo(criterioUsuario, criterioTipoUsuario, criterioActivo);
 		desplegado = false;
 		binding.getBusqueda().setDisclosed(desplegado);
+		if(listaUsuarios!=null && listaUsuarios.size()==1)
+			estadoDeSeleccionTabla.add(0);
 	}
 	
 	/**
@@ -188,7 +190,16 @@ public class GestionUsuariosBean {
 	public void limpiar(){
 		binding.getBusqueda().getChildren().clear();
 		criterioActivo = null;
+		criterioTipoUsuario = null;
 	}
+	
+	/**
+	 * Devuelve un mensaje con el número de elementos de la tabla de resultados
+	 * @return mensaje con el número de elementos de la tabla de resultados
+	 */
+	public String getNumeroElementosTabla(){
+		return mensajesCore.obtenerTexto("ELEMENTOS_ENCONTRADOS", listaUsuarios != null ? listaUsuarios.size() : "0");
+    }
 
 	public List<Usuario> getListaUsuarios() {
 		return listaUsuarios;

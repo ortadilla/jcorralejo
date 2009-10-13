@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import dondeando.modelo.dao.excepciones.DAOExcepcion;
 import dondeando.modelo.entidades.Imagen;
 import dondeando.modelo.entidades.Usuario;
 
@@ -59,7 +60,26 @@ public interface ServicioImagen {
 	
 	/**
 	 * Busca la imagen por defecto de los Usuarios
-	 * @return
+	 * @return Devuelve la imagen del usuario genérico
 	 */
 	public Imagen encontrarImagenUsuarioGenerico();
+	
+	/**
+	 * Calcula la URL de la imagen indicada
+	 * @param imagen Imagen para calcular su URL
+	 * @return URL de la imagen
+	 */
+	public String calcularUrlImagen(Imagen imagen);
+	
+	/**
+	 * Elimina la imagen indicada
+	 * @param imagen Imagen a borrar
+	 */
+	public void hacerTransitoria(Imagen imagen);
+	
+	/**
+	 * Hace efectivas en la BD las operaciones pendientes 
+	 * @throws DAOExcepcion Si ocurre algún error SQL al realizar las operaciones.
+	 */
+	public void flush() throws DAOExcepcion;
 }
