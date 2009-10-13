@@ -21,7 +21,8 @@
 
 		<trh:body>
 			<geos:cabeceraPagina />
-			<tr:form>
+			<tr:form defaultCommand="btnBuscar">
+			<tr:panelPage>
 				<tr:messages />
 				<tr:panelHeader text="#{resCore['GESTION_USUARIOS']}" />
 
@@ -54,7 +55,6 @@
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['ACTIVO']}"
 										inlineStyle="font-weight: bolder;" />
-									<!--								<tr:selectBooleanCheckbox value="#{gestionUsuariosBean.criterioActivo}" />-->
 									<tr:selectOneChoice
 										value="#{gestionUsuariosBean.criterioActivo}">
 										<f:selectItems id="selectSiNo"
@@ -97,6 +97,13 @@
 						rowBandingInterval="1" columnBandingInterval="0"
 						selectedRowKeys="#{gestionUsuariosBean.estadoDeSeleccionTabla}"
 						rowSelection="single" id="listaUsuarios">
+						<f:facet name="actions">
+							<tr:panelHorizontalLayout inlineStyle="width: 350px">
+								<tr:outputText id="elementosEncontrados"
+									inlineStyle="font-weight: bold"
+									value="#{gestionUsuariosBean.numeroElementosTabla}" />
+							</tr:panelHorizontalLayout>
+						</f:facet>
 						<tr:column sortable="true" headerText="#{resCore['USUARIO']}">
 							<tr:outputText value="#{var.login}" />
 						</tr:column>
@@ -118,7 +125,7 @@
 						</tr:column>
 					</tr:table>
 				</tr:panelBox>
-
+			</tr:panelPage>
 			</tr:form>
 		</trh:body>
 		</trh:html>

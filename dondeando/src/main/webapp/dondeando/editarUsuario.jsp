@@ -127,7 +127,6 @@
 									immediate="true"
 									action="#{editarUsuarioBean.cancelar}" />
 							</tr:panelHorizontalLayout>
-							<tr:spacer width="20" height="20" />
 
 						</tr:panelBox>
 					</tr:panelHorizontalLayout>
