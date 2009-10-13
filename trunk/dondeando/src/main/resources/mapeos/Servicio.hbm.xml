@@ -13,7 +13,6 @@
 		<version name="version" />
 		
 		<property name="descripcion" column="descripcion" />
-		<property name="codigo" column="codigo" />
 
 	</class>
 </hibernate-mapping>
