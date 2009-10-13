@@ -9,20 +9,27 @@ public class NombresBean {
 
 	/**Servicios*/
 	public static final String SERVICIO_CRITERIOS     = "servicioCriterios";
+	public static final String SERVICIO_DIRECCION = "servicioDireccion";
 	public static final String SERVICIO_IMAGEN = "servicioImagen";
+	public static final String SERVICIO_IMAGEN_LOCAL = "servicioImagenLocal";
 	public static final String SERVICIO_LOCAL = "servicioLocal";
     public static final String SERVICIO_PERMISO_USUARIO = "servicioPermisoUsuario";
     public static final String SERVICIO_PROVINCIA = "servicioProvincia";
+    public static final String SERVICIO_SERVICIO = "servicioServicio";
     public static final String SERVICIO_USUARIO = "servicioUsuario";
     public static final String SERVICIO_TIPO_LOCAL = "servicioTipoLocal";
     public static final String SERVICIO_TIPO_USUARIO = "servicioTipoUsuario";
+    public static final String SERVICIO_TIPO_VIA = "servicioTipoVia";
     
     /**Beans */    
+    public static final String ANIADIR_IMAGEN_BEAN = "aniadirImagenBean"; 
     public static final String CABECERA_PAGINA_BEAN = "cabeceraPaginaBean"; 
     public static final String DETALLES_USUARIO_BEAN = "detallesUsuarioBean"; 
     public static final String EDITAR_USUARIO_BEAN = "editarUsuarioBean"; 
+    public static final String EDITAR_LOCAL_BEAN = "editarLocalBean"; 
     public static final String GESTION_LOCALES_BEAN = "gestionLocalesBean"; 
     public static final String GESTION_USUARIOS_BEAN = "gestionUsuariosBean"; 
+    public static final String IMAGENES_LOCAL_BEAN = "imagenesLocalBean"; 
     public static final String LOGIN_BEAN = "loginBean"; 
     public static final String MENU_PRINCIPAL_BEAN = "menuPrincipalBean"; 
     public static final String MODIFICAR_CONTRASENA_BEAN = "modificarContrasenaBean"; 

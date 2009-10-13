@@ -23,7 +23,6 @@ import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
 import utilidades.busquedas.consultas.Criterio;
-import utilidades.varios.NombresBean;
 import dondeando.modelo.dao.UsuarioDAO;
 import dondeando.modelo.dao.excepciones.DAOExcepcion;
 import dondeando.modelo.entidades.Imagen;
@@ -293,7 +292,7 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     public List<Usuario> encontrarUsuariosPorLoginTipoYActivo(String usuario, TipoUsuario tipoUsuario, Boolean activo) {
     	List<Criterio> criterios = new ArrayList<Criterio>();
     	if(usuario!=null && !"".equals(usuario))
-    		criterios.add(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_LOGIN, Criterio.IGUAL, usuario));
+    		criterios.add(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_LOGIN, Criterio.LIKE, usuario));
     	if(activo!=null)
     		criterios.add(servicioCriterios.construyeCriterio(Usuario.ATRIBUTO_ACTIVO, Criterio.IGUAL, activo));
     	if(tipoUsuario!=null)

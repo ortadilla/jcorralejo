@@ -10,8 +10,6 @@ import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
 import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
 import static utilidades.varios.NombresBean.SERVICIO_IMAGEN;
-import static utilidades.varios.NombresBean.SERVICIO_PERMISO_USUARIO;
-import static utilidades.varios.NombresBean.SERVICIO_TIPO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
@@ -33,8 +31,6 @@ import utilidades.varios.ProtocoloEdicion;
 import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.servicio.ServicioImagen;
-import dondeando.modelo.servicio.ServicioPermisoUsuario;
-import dondeando.modelo.servicio.ServicioTipoUsuario;
 import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
@@ -75,17 +71,11 @@ public class DetallesUsuarioBean {
 	private ProtocoloEdicion protocoloEdicion;
 	
 	//Servicios
-	@In(value=SERVICIO_TIPO_USUARIO, create=true)
-	private ServicioTipoUsuario servicioTipoUsuario;
-
 	@In(value=SERVICIO_IMAGEN, create=true)
 	private ServicioImagen servicioImagen;
 	
 	@In(value=SERVICIO_USUARIO, create=true)
 	private ServicioUsuario servicioUsuario;
-	
-	@In(value=SERVICIO_PERMISO_USUARIO, create=true)
-	private ServicioPermisoUsuario servicioPermisoUsuario;
 	
 	@Create
 	@Begin(join=true)

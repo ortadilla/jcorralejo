@@ -241,6 +241,14 @@ public class ServicioImagenImpl implements ServicioImagen{
 	
 	/*
 	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioImagen#calcularUrlImagen(dondeando.modelo.entidades.Imagen)
+	 */
+	public String calcularUrlImagen(Imagen imagen){
+		return Parametros.PARAMETRO_URL_IMAGENES+imagen.getNombre();
+	}
+	
+	/*
+	 * (non-Javadoc)
 	 * @see dondeando.modelo.servicio.ServicioImagen#encontrarImagenUsuarioGenerico()
 	 */
 	public Imagen encontrarImagenUsuarioGenerico() {
@@ -249,5 +257,21 @@ public class ServicioImagenImpl implements ServicioImagen{
 																	  Parametros.PARAMETRO_NOMBRE_IMAGENEN_USUARIO_GENERICO); 
 		List<Imagen> imagen = imagenDAO.encontrarPorCondicion(criterioNombre);
 		return !imagen.isEmpty() ? imagen.get(0) : null;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioImagen#hacerTransitoria(dondeando.modelo.entidades.Imagen)
+	 */
+	public void hacerTransitoria(Imagen imagen){
+		imagenDAO.hacerTransitorio(imagen);
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioImagen#flush()
+	 */
+	public void flush() throws DAOExcepcion{
+		imagenDAO.flush();
 	}
 }

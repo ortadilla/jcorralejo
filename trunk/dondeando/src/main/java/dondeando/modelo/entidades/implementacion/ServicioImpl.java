@@ -7,7 +7,6 @@ public class ServicioImpl implements Servicio{
 	private Integer id;
 	private Integer version;
 	private String descripcion;
-	private String codigo;
 	
 	@Override
 	public int hashCode() {
@@ -47,11 +46,5 @@ public class ServicioImpl implements Servicio{
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-	public String getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
 	}
 }

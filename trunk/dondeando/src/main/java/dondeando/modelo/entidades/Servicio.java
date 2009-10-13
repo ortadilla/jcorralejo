@@ -1,6 +1,8 @@
 package dondeando.modelo.entidades;
 
 public interface Servicio {
+	
+	public static String ATRIBUTO_DESCRIPCION = "descripcion";
 
 	public Integer getId();
 	public void setId(Integer id);
@@ -10,8 +12,5 @@ public interface Servicio {
 	
 	public String getDescripcion();
 	public void setDescripcion(String descripcion);
-	
-	public String getCodigo();
-	public void setCodigo(String codigo);
 	
 }

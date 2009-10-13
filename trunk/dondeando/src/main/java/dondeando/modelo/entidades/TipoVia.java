@@ -1,6 +1,9 @@
 package dondeando.modelo.entidades;
 
 public interface TipoVia {
+	
+	public static String ATRIBUTO_DESCRIPCION = "descripcion";
+	public static String ATRIBUTO_ID = "id";
 
 	public Integer getId();
 	public void setId(Integer id);

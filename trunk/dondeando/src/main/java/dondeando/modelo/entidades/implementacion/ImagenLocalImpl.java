@@ -1,9 +1,10 @@
 package dondeando.modelo.entidades.implementacion;
 
 import dondeando.modelo.entidades.Imagen;
+import dondeando.modelo.entidades.ImagenLocal;
 import dondeando.modelo.entidades.Local;
 
-public class ImagenLocalImpl {
+public class ImagenLocalImpl implements ImagenLocal{
 	
 	private Integer id;
 	private Integer version;
