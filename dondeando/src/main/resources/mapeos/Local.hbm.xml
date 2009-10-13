@@ -21,6 +21,7 @@
 		<property name="precioMedio" column="precioMedio" />
 		<property name="valoracion" column="valoracion" />
 		<property name="otraInformacion" column="otraInformacion" />
+		<property column="activo" name="activo" type="true_false"/>
 		
 		  <many-to-one
    			class="dondeando.modelo.entidades.implementacion.DireccionImpl"
