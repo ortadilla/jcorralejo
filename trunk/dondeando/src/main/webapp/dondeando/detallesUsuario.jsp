@@ -23,8 +23,7 @@
 
 			<geos:cabeceraPagina />
 
-			<tr:form defaultCommand="btnAceptar" id="formCrearUsuario"
-				usesUpload="true">
+			<tr:form defaultCommand="volver" id="formDetallesUsuario">
 				<tr:panelPage>
 					<f:facet name="messages">
 						<tr:messages />
@@ -103,6 +102,7 @@
 							<tr:spacer width="20" height="20" />
 							<tr:panelHorizontalLayout halign="center">
 								<tr:commandButton text="#{resCore['VOLVER']}"
+									id="volver"
 									action="#{detallesUsuarioBean.volver}" />
 							</tr:panelHorizontalLayout>
 							<tr:spacer width="20" height="20" />
