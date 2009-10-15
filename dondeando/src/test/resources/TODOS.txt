@@ -1,4 +1,6 @@
-· Se pierde el file al agregar una imagen si da un error
+· Se pierde el file al agregar una imagen si da un error:
+	Intentar guardar al ir a las imágenes, si hay algún error avisar "primero debe rellenar todos los campos..."
+	al volver, como si se estubiera editando
 · Al agregar un local aun no esta guardado --> Devolver la lista de imagenes para setearsela
 · Rendered Botones GestionLocales dependiendo de los permisos
 · ¿Cómo ordenar una tabla? ¿sortable=true? (gestionarUsuarios)
