@@ -3,6 +3,8 @@ package dondeando.modelo.servicio.implementacion;
 import static utilidades.varios.NombresBean.IMAGEN_LOCAL_DAO;
 import static utilidades.varios.NombresBean.SERVICIO_IMAGEN_LOCAL;
 
+import java.util.HashSet;
+
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
@@ -50,6 +52,8 @@ public class ServicioImagenLocalImpl implements ServicioImagenLocal{
     	imagenLocal.setLocal(local);
     	imagenLocal.setImagen(imagen);
     	imagenLocalDAO.hacerPersistente(imagenLocal);
+    	if(local.getImagenes()==null)
+    		local.setImagenes(new HashSet<ImagenLocal>());
     	local.getImagenes().add(imagenLocal);
     	
     	return imagenLocal;

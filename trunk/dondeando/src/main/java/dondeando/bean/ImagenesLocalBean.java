@@ -1,19 +1,21 @@
 package dondeando.bean;
 
+import static utilidades.jsf.ConstantesArgumentosNavegacion.CAMBIAR_CREAR_LOCAL_POR_EDITAR_LOCAL;
 import static utilidades.jsf.ConstantesArgumentosNavegacion.DESCRIPCION_DEVUELTA_ANIADIR_IMAGEN;
 import static utilidades.jsf.ConstantesArgumentosNavegacion.IMAGEN_DEVUELTA_ANIADIR_IMAGEN;
 import static utilidades.jsf.ConstantesArgumentosNavegacion.MOSTRAR_DESCRIPCION_ANIADIR_IMAGEN;
 import static utilidades.jsf.ConstantesArgumentosNavegacion.NOMBRE_IMAGEN_DEVUELTA_ANIADIR_IMAGEN;
 import static utilidades.jsf.ConstantesReglasNavegacion.ANIADIR_IMAGEN;
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_LOCALES;
 import static utilidades.varios.NombresBean.IMAGENES_LOCAL_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
+import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
 import static utilidades.varios.NombresBean.SERVICIO_IMAGEN;
 import static utilidades.varios.NombresBean.SERVICIO_IMAGEN_LOCAL;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,7 +95,8 @@ public class ImagenesLocalBean {
 			if(!ignorarCarga){
 				local = (Local)protocoloEdicion.getObjeto();
 				descripcionLocal = local.getNombre();
-				imagenesLocal.addAll(local.getImagenes());
+				if(local.getImagenes()!=null)
+					imagenesLocal.addAll(local.getImagenes());
 			}
 			
 			if(imagenesLocal==null || imagenesLocal.isEmpty()){
@@ -143,6 +146,10 @@ public class ImagenesLocalBean {
 	 * @return Regla de navegación
 	 */
 	public String volver(){
+		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+		mapaArgumentos.limpiaMapa();
+		mapaArgumentos.setArgumento(CAMBIAR_CREAR_LOCAL_POR_EDITAR_LOCAL, true);
+
 		String outcome = protocoloEdicion!=null ? protocoloEdicion.getOutcomeVuelta() : "";
 		limpiarFormulario();
 		return outcome;

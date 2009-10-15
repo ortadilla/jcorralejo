@@ -7,6 +7,9 @@ public class ConstantesArgumentosNavegacion {
 	public static final String DESCRIPCION_DEVUELTA_ANIADIR_IMAGEN = "descripcionDevuelta";
 	public static final String IMAGEN_DEVUELTA_ANIADIR_IMAGEN = "imagenDevuelta";
 	public static final String NOMBRE_IMAGEN_DEVUELTA_ANIADIR_IMAGEN = "nombreImagenDevuelta";
+	
+	//Para EditarLocaBean
+	public static final String CAMBIAR_CREAR_LOCAL_POR_EDITAR_LOCAL = "cambiarCrearLocalPorEditar";
 
 
 }

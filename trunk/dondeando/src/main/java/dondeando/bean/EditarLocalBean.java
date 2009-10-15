@@ -1,5 +1,6 @@
 package dondeando.bean;
 
+import static utilidades.jsf.ConstantesArgumentosNavegacion.CAMBIAR_CREAR_LOCAL_POR_EDITAR_LOCAL;
 import static utilidades.jsf.ConstantesReglasNavegacion.IMAGENES_LOCAL;
 import static utilidades.varios.NombresBean.EDITAR_LOCAL_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
@@ -12,7 +13,6 @@ import static utilidades.varios.NombresBean.SERVICIO_TIPO_LOCAL;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_VIA;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
-import java.awt.image.TileObserver;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +28,7 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
+import utilidades.jsf.ConstantesArgumentosNavegacion;
 import utilidades.jsf.ConstantesReglasNavegacion;
 import utilidades.jsf.UtilJsfContext;
 import utilidades.varios.HerramientasList;
@@ -199,8 +200,7 @@ public class EditarLocalBean {
 		|| tipoVia == null
 		|| codigoPostal==null
 		|| tiposLocal==null || tiposLocal.isEmpty()
-		|| precioMedio==null || "".equals(precioMedio)
-		|| email==null || "".equals(email))
+		|| precioMedio==null || "".equals(precioMedio))
 			errores.add(mensajesCore.obtenerTexto("CAMPOS_OBLIGATORIOS_EDITAR_LOCAL"));
 		
 		//No debe existir un local con el mismo nombre en esa localidad 
@@ -261,6 +261,11 @@ public class EditarLocalBean {
 		if(protocoloEdicion!=null){
 			//Configuramos la página dependiente de la operación
 			operacion = protocoloEdicion.getObjeto()!=null ? OPERACION_EDITAR_LOCAL : OPERACION_CREAR_LOCAL;
+			if(mapaArgumentos.contiene(CAMBIAR_CREAR_LOCAL_POR_EDITAR_LOCAL) 
+			&& OPERACION_CREAR_LOCAL.equals(operacion)){
+				operacion = OPERACION_EDITAR_LOCAL;
+				mapaArgumentos.borrar(CAMBIAR_CREAR_LOCAL_POR_EDITAR_LOCAL);
+			}
 			if(OPERACION_CREAR_LOCAL.equals(operacion)){
 				tituloPagina = mensajesCore.obtenerTexto("REGISTRAR_USUARIO");
 				urlImagenPrincipal = servicioImagen.calcularUrlImagenUsuarioNuevo();
@@ -301,13 +306,26 @@ public class EditarLocalBean {
 	 * @return Regla de navegación
 	 */
 	public String irImagenes(){
-		ProtocoloEdicion protocolo = new ProtocoloEdicion(localEdicion,
-														  ConstantesReglasNavegacion.EDITAR_LOCAL,
-														  ImagenesLocalBean.OPERACION_EDITAR_IMAGENES);
-		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
-		mapaArgumentos.limpiaMapa();
-		mapaArgumentos.setArgumento(NombresBean.PROTOCOLO_EDICION, protocolo);
-		return IMAGENES_LOCAL;
+		
+		String outcome = "";
+		List<String> errores = comprobarAgregarEditarLocal();
+		
+		if(errores.isEmpty()){
+			if(OPERACION_CREAR_LOCAL.equals(operacion)){
+				localEdicion = servicioLocal.crearLocal(nombre, provincia, localidad, tipoVia, tiposLocal, nombreVia, numero, codigoPostal, descripcion, telefono, email, horario, precioMedio, otraInformacion, servicios);
+				utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("LOCAL_CORRECTO"));
+			}
+			ProtocoloEdicion protocolo = new ProtocoloEdicion(localEdicion,
+															  ConstantesReglasNavegacion.EDITAR_LOCAL,
+															  ImagenesLocalBean.OPERACION_EDITAR_IMAGENES);
+			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+			mapaArgumentos.limpiaMapa();
+			mapaArgumentos.setArgumento(NombresBean.PROTOCOLO_EDICION, protocolo);
+			outcome = IMAGENES_LOCAL;
+		}else
+			utilJsfContext.insertaMensajesAdvertencia(errores);
+		
+		return outcome;
 	}
 
 	public String getNombre() {
