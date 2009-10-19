@@ -24,6 +24,8 @@ public  class GeosHibernateMapeosCore implements GeosHibernateMapeos{
         mapeos.add(path+"Provincia.hbm.xml");
         mapeos.add(path+"TipoVia.hbm.xml");
         mapeos.add(path+"Direccion.hbm.xml");
+        mapeos.add(path+"Foro.hbm.xml");
+        mapeos.add(path+"MensajeForo.hbm.xml");
         
         return mapeos;
     }

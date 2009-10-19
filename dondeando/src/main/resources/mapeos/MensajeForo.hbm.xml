@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+	package="dondeando.modelo.entidades.implementacion">
+	<class name="MensajeForoImpl" table="mensajeForo">
+
+		<id name="id" unsaved-value="null">
+			<generator class="increment" />
+		</id>
+		<version name="version" />
+		
+		<property name="titulo" column="titulo" />
+		<property name="mensaje" column="mensaje" />
+		<property name="fecha" column="fecha" />
+
+		<many-to-one
+			class="dondeando.modelo.entidades.implementacion.ForoImpl"
+			column="foro" name="foro" />
+
+		<many-to-one
+			class="dondeando.modelo.entidades.implementacion.UsuarioImpl"
+			column="autor" name="autor" />
+			
+		<many-to-one
+			class="dondeando.modelo.entidades.implementacion.MensajeForoImpl"
+			column="respondeA" name="respondeA" />			
+
+
+	</class>
+</hibernate-mapping>

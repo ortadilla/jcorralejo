@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+	package="dondeando.modelo.entidades.implementacion">
+	<class name="ForoImpl" table="foro">
+
+		<id name="id" unsaved-value="null">
+			<generator class="increment" />
+		</id>
+		<version name="version" />
+		
+		<property name="titulo" column="titulo" />
+		<property name="descripcion" column="descripcion" />
+		<property column="activo" name="activo" type="true_false"/>
+
+		<set name="moderadores" table="moderaForo">
+			<key column="foro" />
+			<many-to-many column="usuario" class="UsuarioImpl" />
+		</set>
+
+	</class>
+</hibernate-mapping>
