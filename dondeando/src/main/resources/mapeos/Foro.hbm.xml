@@ -20,6 +20,11 @@
 			<key column="foro" />
 			<many-to-many column="usuario" class="UsuarioImpl" />
 		</set>
+		
+		<set name="mensajes" table="mensajeForo">
+			<key column="foro" />
+			<many-to-many column="mensajes" class="MensajeForoImpl" />
+		</set>
 
 	</class>
 </hibernate-mapping>

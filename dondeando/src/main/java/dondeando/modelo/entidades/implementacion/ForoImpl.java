@@ -3,6 +3,7 @@ package dondeando.modelo.entidades.implementacion;
 import java.util.Set;
 
 import dondeando.modelo.entidades.Foro;
+import dondeando.modelo.entidades.MensajeForo;
 import dondeando.modelo.entidades.Usuario;
 
 public class ForoImpl implements Foro{
@@ -13,6 +14,11 @@ public class ForoImpl implements Foro{
 	private String titulo;
 	private boolean activo;
 	Set<Usuario> moderadores;
+	Set<MensajeForo> mensajes;
+	
+	private int numeroTemas;
+	private int numeroMensajes;
+	private String descripcionUltimoPost;
 	
 	@Override
 	public int hashCode() {
@@ -71,6 +77,30 @@ public class ForoImpl implements Foro{
 	}
 	public void setModeradores(Set<Usuario> moderadores) {
 		this.moderadores = moderadores;
+	}
+	public Set<MensajeForo> getMensajes() {
+		return mensajes;
+	}
+	public void setMensajes(Set<MensajeForo> mensajes) {
+		this.mensajes = mensajes;
+	}
+	public int getNumeroTemas() {
+		return numeroTemas;
+	}
+	public void setNumeroTemas(int numeroTemas) {
+		this.numeroTemas = numeroTemas;
+	}
+	public int getNumeroMensajes() {
+		return numeroMensajes;
+	}
+	public void setNumeroMensajes(int numeroMensajes) {
+		this.numeroMensajes = numeroMensajes;
+	}
+	public String getDescripcionUltimoPost() {
+		return descripcionUltimoPost;
+	}
+	public void setDescripcionUltimoPost(String descripcionUltimoPost) {
+		this.descripcionUltimoPost = descripcionUltimoPost;
 	}
 
 }

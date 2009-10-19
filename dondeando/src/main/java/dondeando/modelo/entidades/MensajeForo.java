@@ -5,6 +5,9 @@ import java.util.Date;
 
 public interface MensajeForo {
 
+	public static final String ATRIBUTO_FECHA = "fecha";
+	public static final String ATRIBUTO_RESPONDE_A = "respondeA";
+	
 	public Integer getId();
 	public void setId(Integer id);
 	
