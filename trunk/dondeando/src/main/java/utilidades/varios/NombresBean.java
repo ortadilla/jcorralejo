@@ -10,6 +10,7 @@ public class NombresBean {
 	/**Servicios*/
 	public static final String SERVICIO_CRITERIOS     = "servicioCriterios";
 	public static final String SERVICIO_DIRECCION = "servicioDireccion";
+	public static final String SERVICIO_FORO = "servicioForo";
 	public static final String SERVICIO_IMAGEN = "servicioImagen";
 	public static final String SERVICIO_IMAGEN_LOCAL = "servicioImagenLocal";
 	public static final String SERVICIO_LOCAL = "servicioLocal";
@@ -28,6 +29,7 @@ public class NombresBean {
     public static final String DETALLES_LOCAL_BEAN = "detallesLocalBean"; 
     public static final String EDITAR_USUARIO_BEAN = "editarUsuarioBean"; 
     public static final String EDITAR_LOCAL_BEAN = "editarLocalBean"; 
+    public static final String GESTION_FOROS_BEAN = "gestionForosBean"; 
     public static final String GESTION_LOCALES_BEAN = "gestionLocalesBean"; 
     public static final String GESTION_USUARIOS_BEAN = "gestionUsuariosBean"; 
     public static final String IMAGENES_LOCAL_BEAN = "imagenesLocalBean"; 
@@ -37,6 +39,7 @@ public class NombresBean {
     public static final String PRUEBA_BD = "pruebaBD"; 
     
     /**Binding*/
+    public static final String GESTION_FOROS_BINDING = "gestionForosBinding"; 
     public static final String GESTION_LOCALES_BINDING = "gestionLocalesBinding"; 
     public static final String GESTION_USUARIOS_BINDING = "gestionUsuariosBinding"; 
     

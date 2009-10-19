@@ -238,7 +238,7 @@ public class GestionLocalesBean {
 						utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("LOCAL_ELIMINADO"));
 						operacionRealizada = true;
 					}else
-						utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_ELIMINAR_USUARIO_ELIMINADO"));
+						utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_ELIMINAR_LOCAL_ELIMINADO"));
 	
 				}else if(ACCION_RECUPERAR_LOCAL.equals(operacion)){
 	

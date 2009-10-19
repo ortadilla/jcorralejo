@@ -5,6 +5,7 @@ import java.util.Set;
 public interface Foro {
 
 	public static final String ATRIBUTO_TITULO = "titulo";
+	public static final String ATRIBUTO_ACTIVO = "activo";
 
 	public Integer getId();
 	public void setId(Integer id);
@@ -23,5 +24,8 @@ public interface Foro {
 	
 	public Set<Usuario> getModeradores();
 	public void setModeradores(Set<Usuario> moderadores);
+	
+	public Set<MensajeForo> getMensajes();
+	public void setMensajes(Set<MensajeForo> mensajes);
 	
 }
