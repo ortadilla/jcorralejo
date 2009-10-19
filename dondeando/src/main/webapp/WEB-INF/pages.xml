@@ -8,6 +8,7 @@
 	<page view-id="/dondeando/editarUsuario.jsp"		action="#{editarUsuarioBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/editarLocal.jsp"			action="#{editarLocalBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/detallesUsuario.jsp"		action="#{detallesUsuarioBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/dondeando/detallesLocal.jsp"		action="#{detallesLocalBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/imagenesLocal.jsp"		action="#{imagenesLocalBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/modificarPassword.jsp"	action="#{modificarContrasenaBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/menuPrincipal.jsp"		action="#{menuPrincipalBean.cargarArgumentosDeEntrada}" />

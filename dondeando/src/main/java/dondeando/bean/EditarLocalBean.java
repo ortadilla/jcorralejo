@@ -28,7 +28,6 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
-import utilidades.jsf.ConstantesArgumentosNavegacion;
 import utilidades.jsf.ConstantesReglasNavegacion;
 import utilidades.jsf.UtilJsfContext;
 import utilidades.varios.HerramientasList;
@@ -261,7 +260,7 @@ public class EditarLocalBean {
 		if(protocoloEdicion!=null){
 			//Configuramos la página dependiente de la operación
 			operacion = protocoloEdicion.getObjeto()!=null ? OPERACION_EDITAR_LOCAL : OPERACION_CREAR_LOCAL;
-			if(mapaArgumentos.contiene(CAMBIAR_CREAR_LOCAL_POR_EDITAR_LOCAL) 
+			if(mapaArgumentos!=null && mapaArgumentos.contiene(CAMBIAR_CREAR_LOCAL_POR_EDITAR_LOCAL) 
 			&& OPERACION_CREAR_LOCAL.equals(operacion)){
 				operacion = OPERACION_EDITAR_LOCAL;
 				mapaArgumentos.borrar(CAMBIAR_CREAR_LOCAL_POR_EDITAR_LOCAL);

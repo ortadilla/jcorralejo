@@ -43,9 +43,6 @@
 										<tr:inputText columns="106" value="#{editarLocalBean.nombre}"
 											id="login" maximumLength="100" />
 									</trh:cellFormat>
-									<!--									<tr:image source="#{editarLocalBean.urlImagenPrincipal}"-->
-									<!--										shortc="#{editarLocalBean.nombre}"-->
-									<!--										inlineStyle="height: 100px;border-style: solid; border-width: 1px;" />-->
 								</trh:rowLayout>
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['DESCRIPCION']}"

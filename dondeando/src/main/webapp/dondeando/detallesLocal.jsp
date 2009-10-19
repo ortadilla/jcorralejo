@@ -35,7 +35,7 @@
 							<tr:spacer height="20" />
 							<trh:tableLayout
 								inlineStyle="border-style: solid; border-width: 1px;"
-								cellSpacing="5" cellPadding="0">
+								cellSpacing="10" cellPadding="0">
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['NOMBRE']}"
 										inlineStyle="font-weight: bolder;" />
@@ -54,7 +54,7 @@
 									<tr:outputText value="#{resCore['PROVINCIA']}"
 										inlineStyle="font-weight: bolder;" />
 									<trh:cellFormat columnSpan="0">
-										<tr:outputText value="#{detallesLocalBean.provincia}" id="provincia"/>
+										<tr:outputText value="#{detallesLocalBean.provincia.nombre}" id="provincia"/>
 									</trh:cellFormat>
 									<tr:spacer />
 									<tr:outputText value="#{resCore['LOCALIDAD']}"
@@ -67,7 +67,7 @@
 									<tr:outputText value="#{resCore['TIPO_VIA']}"
 										inlineStyle="font-weight: bolder;" />
 									<trh:cellFormat>
-										<tr:outputText	value="#{detallesLocalBean.tipoVia}" id="tipoVia"/>
+										<tr:outputText	value="#{detallesLocalBean.tipoVia.descripcion}" id="tipoVia"/>
 									</trh:cellFormat>
 									<tr:spacer />
 									<tr:outputText value="#{resCore['NOMBRE_VIA']}"
@@ -89,7 +89,7 @@
 									<tr:outputText value="#{resCore['TIPO_LOCAL']}"
 										inlineStyle="font-weight: bolder;" />
 									<trh:cellFormat columnSpan="0">
-										<tr:selectManyListbox value="#{detallesLocalBean.tiposLocal}">
+										<tr:selectManyListbox value="#{detallesLocalBean.tiposLocal}" disabled="true">
 											<f:selectItems id="selectTiposLocal"
 												value="#{detallesLocalBean.selectTiposLocal}" />
 										</tr:selectManyListbox>
@@ -98,8 +98,11 @@
 									<tr:outputText value="#{resCore['SERVICIOS_DISPONIBLES']}"
 										inlineStyle="font-weight: bolder;" />
 									<trh:cellFormat columnSpan="2">
-										<tr:selectManyListbox value="#{detallesLocalBean.servicios}">
-											<f:selectItems id="selectPrecio"
+										<tr:outputText value="#{resCore['NO_SERVICIOS_DISPONIBLES']}"
+											rendered="#{!detallesLocalBean.mostrarServicios}"/>
+										<tr:selectManyListbox value="#{detallesLocalBean.servicios}" disabled="true" 
+											rendered="#{detallesLocalBean.mostrarServicios}">
+											<f:selectItems id="selectServicios"
 												value="#{detallesLocalBean.selectServicios}" />
 										</tr:selectManyListbox>
 									</trh:cellFormat>
@@ -121,7 +124,6 @@
 									<trh:cellFormat columnSpan="0">
 										<tr:outputText value="#{detallesLocalBean.email}"
 											id="email" />
-										</tr:inputText>
 									</trh:cellFormat>
 								</trh:rowLayout>
 								<trh:rowLayout>
