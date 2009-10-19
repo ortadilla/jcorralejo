@@ -42,9 +42,11 @@ public class NombresBean {
     
     /**DAOs */
     public static final String DIRECCION_DAO = "direccionDAO"; 
+    public static final String FORO_DAO = "foroDAO"; 
     public static final String IMAGEN_DAO = "imagenDAO"; 
     public static final String IMAGEN_LOCAL_DAO = "imagenLocalDAO"; 
     public static final String LOCAL_DAO = "localDAO"; 
+    public static final String MENSAJE_FORO_DAO = "mensajeForoDAO"; 
     public static final String PROVINCIA_DAO = "provinciaDAO"; 
     public static final String PRUEBA_DAO = "pruebaDAO"; 
     public static final String PERMISO_USUARIO_DAO = "permisoUsuarioDAO"; 
