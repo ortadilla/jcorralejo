@@ -13,3 +13,8 @@
 	
 · Los problemas con el autocommit (flush necesario) puede que sean por las fases de Seam donde se hacen
   los commit 1-5 o 6
+
+  
+  ---
+  
+  

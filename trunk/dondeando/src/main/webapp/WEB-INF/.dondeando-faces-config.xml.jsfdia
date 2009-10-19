@@ -14,11 +14,9 @@
    <PROCESS-ITEM-OUTPUT ID="editarLocal::#dondeando#editarLocal.jsp"
     NAME="output3" PATH="/dondeando/editarLocal.jsp"
     TARGET="rules:#dondeando#editarLocal.jsp" TITLE="editarLocal" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT
-    ID="detallesUsuario::#dondeando#detallesUsuario.jsp" NAME="output4"
-    PATH="/dondeando/detallesUsuario.jsp"
-    TARGET="rules:#dondeando#detallesUsuario.jsp"
-    TITLE="detallesUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="detallesLocal::#dondeando#detallesLocal.jsp"
+    NAME="output4" PATH="/dondeando/detallesLocal.jsp"
+    TARGET="rules:#dondeando#detallesLocal.jsp" TITLE="detallesLocal" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
     ID="modificarPassword::#dondeando#modificarPassword.jsp"
     NAME="output5" PATH="/dondeando/modificarPassword.jsp"
@@ -29,14 +27,13 @@
     PATH="/dondeando/gestionUsuarios.jsp"
     TARGET="rules:#dondeando#gestionUsuarios.jsp"
     TITLE="gestionUsuarios" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="imagenesLocal::#dondeando#imagenesLocal.jsp"
-    NAME="output7" PATH="/dondeando/imagenesLocal.jsp"
-    TARGET="rules:#dondeando#imagenesLocal.jsp" TITLE="imagenesLocal" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
-    ID="dialog:aniadirImagen::#dondeando#aniadirImagen.jsp"
-    NAME="output8" PATH="/dondeando/aniadirImagen.jsp"
-    TARGET="rules:#dondeando#aniadirImagen.jsp"
-    TITLE="dialog:aniadirImagen" model-entity="JSFProcessItemOutput"/>
+    ID="gestionLocales::#dondeando#gestionLocales.jsp" NAME="output7"
+    PATH="/dondeando/gestionLocales.jsp"
+    TARGET="rules:#dondeando#gestionLocales.jsp" TITLE="gestionLocales" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="imagenesLocal::#dondeando#imagenesLocal.jsp"
+    NAME="output8" PATH="/dondeando/imagenesLocal.jsp"
+    TARGET="rules:#dondeando#imagenesLocal.jsp" TITLE="imagenesLocal" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#dondeando#menuPrincipal.jsp"
@@ -59,4 +56,6 @@
   PATH="/dondeando/imagenesLocal.jsp" SHAPE="304,481,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#dondeando#aniadirImagen.jsp"
   PATH="/dondeando/aniadirImagen.jsp" SHAPE="304,513,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dondeando#detallesLocal.jsp"
+  PATH="/dondeando/detallesLocal.jsp" SHAPE="304,513,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

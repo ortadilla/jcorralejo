@@ -25,6 +25,7 @@ public class NombresBean {
     public static final String ANIADIR_IMAGEN_BEAN = "aniadirImagenBean"; 
     public static final String CABECERA_PAGINA_BEAN = "cabeceraPaginaBean"; 
     public static final String DETALLES_USUARIO_BEAN = "detallesUsuarioBean"; 
+    public static final String DETALLES_LOCAL_BEAN = "detallesLocalBean"; 
     public static final String EDITAR_USUARIO_BEAN = "editarUsuarioBean"; 
     public static final String EDITAR_LOCAL_BEAN = "editarLocalBean"; 
     public static final String GESTION_LOCALES_BEAN = "gestionLocalesBean"; 

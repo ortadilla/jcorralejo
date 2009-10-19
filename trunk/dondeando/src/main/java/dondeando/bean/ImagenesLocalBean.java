@@ -6,11 +6,9 @@ import static utilidades.jsf.ConstantesArgumentosNavegacion.IMAGEN_DEVUELTA_ANIA
 import static utilidades.jsf.ConstantesArgumentosNavegacion.MOSTRAR_DESCRIPCION_ANIADIR_IMAGEN;
 import static utilidades.jsf.ConstantesArgumentosNavegacion.NOMBRE_IMAGEN_DEVUELTA_ANIADIR_IMAGEN;
 import static utilidades.jsf.ConstantesReglasNavegacion.ANIADIR_IMAGEN;
-import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_LOCALES;
 import static utilidades.varios.NombresBean.IMAGENES_LOCAL_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
-import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
 import static utilidades.varios.NombresBean.SERVICIO_IMAGEN;
 import static utilidades.varios.NombresBean.SERVICIO_IMAGEN_LOCAL;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
@@ -29,7 +27,6 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
-import utilidades.jsf.ConstantesArgumentosNavegacion;
 import utilidades.jsf.UtilJsfContext;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
@@ -224,6 +221,10 @@ public class ImagenesLocalBean {
 	@Begin(join=true)
 	public void inicializar(){
 		
+	}
+	
+	public boolean getMostrarAniadirYBorrar(){
+		return OPERACION_EDITAR_IMAGENES.equals(operacion);
 	}
 
 	public String getDescripcionLocal() {

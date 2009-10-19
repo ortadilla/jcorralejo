@@ -72,7 +72,7 @@
 							</tr:panelHorizontalLayout>
 
 							<tr:spacer width="10" height="10" />
-							<tr:panelHorizontalLayout halign="center">
+							<tr:panelHorizontalLayout halign="center" rendered="#{imagenesLocalBean.mostrarAniadirYBorrar}">
 								<tr:commandButton text="#{resCore['ANIADIR']}"
 									id="aniadir"
 									action="#{imagenesLocalBean.aniadir}" 
