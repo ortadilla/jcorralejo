@@ -1,22 +1,15 @@
 package dondeando.bean;
 
 import static utilidades.jsf.ConstantesReglasNavegacion.DETALLES_FORO;
-import static utilidades.jsf.ConstantesReglasNavegacion.DETALLES_LOCAL;
 import static utilidades.jsf.ConstantesReglasNavegacion.EDITAR_FORO;
-import static utilidades.jsf.ConstantesReglasNavegacion.EDITAR_LOCAL;
 import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_FOROS;
-import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_LOCALES;
 import static utilidades.varios.NombresBean.GESTION_FOROS_BEAN;
 import static utilidades.varios.NombresBean.GESTION_FOROS_BINDING;
-import static utilidades.varios.NombresBean.GESTION_LOCALES_BINDING;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
 import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
 import static utilidades.varios.NombresBean.SERVICIO_FORO;
-import static utilidades.varios.NombresBean.SERVICIO_LOCAL;
 import static utilidades.varios.NombresBean.SERVICIO_PERMISO_USUARIO;
-import static utilidades.varios.NombresBean.SERVICIO_PROVINCIA;
-import static utilidades.varios.NombresBean.SERVICIO_TIPO_LOCAL;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
 import java.util.List;
@@ -33,27 +26,16 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
-import utilidades.jsf.ConstantesReglasNavegacion;
 import utilidades.jsf.UtilJsfContext;
-import utilidades.varios.EntidadConCodigo;
-import utilidades.varios.HerramientasList;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
-import utilidades.varios.NombresBean;
 import utilidades.varios.Permisos;
 import utilidades.varios.ProtocoloEdicion;
 import utilidades.varios.SelectItemBuilder;
 import dondeando.binding.GestionForosBinding;
-import dondeando.binding.GestionLocalesBinding;
 import dondeando.modelo.entidades.Foro;
-import dondeando.modelo.entidades.Local;
-import dondeando.modelo.entidades.Provincia;
-import dondeando.modelo.entidades.TipoLocal;
 import dondeando.modelo.servicio.ServicioForo;
-import dondeando.modelo.servicio.ServicioLocal;
 import dondeando.modelo.servicio.ServicioPermisoUsuario;
-import dondeando.modelo.servicio.ServicioProvincia;
-import dondeando.modelo.servicio.ServicioTipoLocal;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(GESTION_FOROS_BEAN)
@@ -70,6 +52,7 @@ public class GestionForosBean {
 	private boolean desplegado;
 	private String criterioTitulo;
 	private Boolean criterioActivo = Boolean.TRUE;
+	private boolean mostrarCriterioActivo = false;
 	private SelectItem[] selectSiNo;
 	
 	private List<Foro> listaForos;
@@ -90,15 +73,6 @@ public class GestionForosBean {
 	private MapaArgumentos mapaArgumentos;
 	
 	//Servicios
-	@In(value=SERVICIO_TIPO_LOCAL, create=true)
-	private ServicioTipoLocal servicioTipoLocal;
-	
-	@In(value=SERVICIO_PROVINCIA, create=true)
-	private ServicioProvincia servicioProvincia;
-	
-	@In(value=SERVICIO_LOCAL, create=true)
-	private ServicioLocal servicioLocal;
-
 	@In(value=SERVICIO_FORO, create=true)
 	private ServicioForo servicioForo;
 	
@@ -113,6 +87,7 @@ public class GestionForosBean {
 	public void inicializar(){
 		desplegado = true;
 		selectSiNo = SelectItemBuilder.creaSelectItemsSiNo();
+		mostrarCriterioActivo = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_FOROS);
 	}
 	
 	/**
@@ -218,8 +193,8 @@ public class GestionForosBean {
 				}else if(ACCION_ELIMINAR_FORO.equals(operacion)){
 					
 					if(foro!=null && foro.isActivo()){
-						servicioForo.desactivarLocal(foro);
-						servicioForo.descartarLocal(foro);
+						servicioForo.desactivarForo(foro);
+						servicioForo.descartarForo(foro);
 						utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("FORO_ELIMINADO"));
 						operacionRealizada = true;
 					}else
@@ -228,7 +203,7 @@ public class GestionForosBean {
 				}else if(ACCION_RECUPERAR_FORO.equals(operacion)){
 	
 					if(foro!=null && !foro.isActivo()){
-						servicioForo.activarLocal(foro);
+						servicioForo.activarForo(foro);
 						utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("FORO_RECUPERADO"));
 						operacionRealizada = true;
 					}else
@@ -287,5 +262,22 @@ public class GestionForosBean {
 	public void setBinding(GestionForosBinding binding) {
 		this.binding = binding;
 	}
+
+	public List<Foro> getListaForos() {
+		return listaForos;
+	}
+
+	public void setListaForos(List<Foro> listaForos) {
+		this.listaForos = listaForos;
+	}
+
+	public boolean isMostrarCriterioActivo() {
+		return mostrarCriterioActivo;
+	}
+
+	public void setMostrarCriterioActivo(boolean mostrarCriterioActivo) {
+		this.mostrarCriterioActivo = mostrarCriterioActivo;
+	}
+
 
 }

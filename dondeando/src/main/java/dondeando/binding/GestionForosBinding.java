@@ -1,13 +1,13 @@
 package dondeando.binding;
 
+import static utilidades.varios.NombresBean.GESTION_FOROS_BINDING;
+
 import org.apache.myfaces.trinidad.component.core.layout.CoreShowDetailHeader;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 
-import utilidades.varios.NombresBean;
-
-@Name(NombresBean.GESTION_LOCALES_BINDING)
+@Name(GESTION_FOROS_BINDING)
 @Scope(ScopeType.EVENT)
 public class GestionForosBinding {
 

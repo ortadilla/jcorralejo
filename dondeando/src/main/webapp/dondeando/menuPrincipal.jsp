@@ -34,6 +34,11 @@
 						<tr:commandButton text="#{resCore['GESTION_LOCALES']}" id="gestionLocales"
 							rendered="#{menuPrincipalBean.mostrarGestionLocales}"
 							action="#{menuPrincipalBean.gestionLocales}" />
+						<tr:spacer height="20"/>				
+						<tr:commandButton text="#{resCore['GESTION_FOROS']}" id="gestionForos"
+							rendered="#{menuPrincipalBean.mostrarGestionForos}"
+							action="#{menuPrincipalBean.gestionForos}" />
+							
 					</tr:panelBox>
 					<tr:spacer width="10" />
 				</tr:panelHorizontalLayout>
