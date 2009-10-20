@@ -1,3 +1,4 @@
+· Añadir propiedades no mapeadas a la gestión de los foros
 · ¿Permitir editar locales a usuarios o sólo a los administradores?
 · Se pierde el file al agregar una imagen si da un error:
 · Rendered Botones GestionLocales dependiendo de los permisos

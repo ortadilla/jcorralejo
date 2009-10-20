@@ -21,9 +21,14 @@
 			<many-to-many column="usuario" class="UsuarioImpl" />
 		</set>
 		
-		<set name="mensajes" table="mensajeForo">
+		<!-- <set name="mensajes" table="mensajeForo">
 			<key column="foro" />
 			<many-to-many column="mensajes" class="MensajeForoImpl" />
+		</set> -->
+		
+		<set name="mensajes" inverse="true">
+   			 <key column="foro"/>
+		     <one-to-many class="MensajeForoImpl"/>
 		</set>
 
 	</class>

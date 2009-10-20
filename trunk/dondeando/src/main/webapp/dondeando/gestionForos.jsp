@@ -41,7 +41,7 @@
 										value="#{gestionForosBean.criterioTitulo}"
 										id="criterioUsuario" maximumLength="20" />
 								</trh:rowLayout>
-								<trh:rowLayout>
+								<trh:rowLayout rendered="#{gestionForosBean.mostrarCriterioActivo}">
 									<tr:outputText value="#{resCore['ACTIVO']}"
 										inlineStyle="font-weight: bolder;" />
 									<tr:selectOneChoice
@@ -68,6 +68,8 @@
 				<tr:panelBox inlineStyle="width:100%;" text="#{resCore['FOROS']}">
 					<tr:panelGroupLayout>
 						<tr:panelButtonBar>
+							<tr:commandButton text="#{resCore['AGREGAR_LOCAL']}"
+								id="btnAgregar" action="#{gestionForosBean.agregar}" />
 							<tr:commandButton text="#{resCore['DETALLES_FORO']}"
 								id="btnDetalles" action="#{gestionForosBean.detalles}" />
 							<tr:commandButton text="#{resCore['MODIFICAR_FORO']}"
@@ -97,10 +99,23 @@
 							<tr:outputText value="#{var.titulo}" />
 						</tr:column>
 						<tr:column sortable="true"
-							headerText="#{resCore['DESCRICPION']}">
+							headerText="#{resCore['DESCRIPCION']}">
 							<tr:outputText value="#{var.descripcion}" />
 						</tr:column>
-						<tr:column sortable="false" headerText="#{resCore['ACTIVO']}">
+						<tr:column sortable="true"
+							headerText="#{resCore['NUMERO_TEMAS']}">
+							<tr:outputText value="#{var.numeroTemas}" />
+						</tr:column>
+						<tr:column sortable="true"
+							headerText="#{resCore['NUMERO_MENSAJES']}">
+							<tr:outputText value="#{var.numeroMensajes}" />
+						</tr:column>
+						<tr:column sortable="true"
+							headerText="#{resCore['ULTIMO_POST']}">
+							<tr:outputText value="#{var.descripcionUltimoPost}" />
+						</tr:column>
+						<tr:column sortable="false" headerText="#{resCore['ACTIVO']}"
+							rendered="#{gestionForosBean.mostrarCriterioActivo}">
 							<tr:image
 								shortDesc="#{var.activo ? resCore['SI'] : resCore['NO']}"
 								source="#{var.activo ? '/imagenes/dondeando/check.png':'/imagenes/dondeando/cruz.png'}"

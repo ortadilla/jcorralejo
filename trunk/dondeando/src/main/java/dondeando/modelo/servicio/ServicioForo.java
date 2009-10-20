@@ -19,5 +19,24 @@ public interface ServicioForo {
 	 * @param listaForos Lista de foros a la que rellenar las propiedades no mapeadas
 	 */
 	public void rellenarPropiedadesNoMapeadas(List<Foro> listaForos);
+	
+	/**
+	 * Desactiva el foro indicado
+	 * @param foro	Foro a desactivar
+	 */
+	public void desactivarForo(Foro foro);
+	
+	/**
+	 * Descarta el foro indicado de la sessión de Hibernate
+	 * @param foro Foro a descartar
+	 */
+	public void descartarForo(Foro foro);
+	
+	/**
+	 * Activa el foro indicado
+	 * @param foro	Foro a activa
+	 */
+	public void activarForo(Foro foro);
+
 
 }
