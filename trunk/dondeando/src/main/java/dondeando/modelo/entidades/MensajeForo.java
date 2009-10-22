@@ -1,12 +1,14 @@
 package dondeando.modelo.entidades;
 
 import java.util.Date;
+import java.util.Set;
 
 
 public interface MensajeForo {
 
 	public static final String ATRIBUTO_FECHA = "fecha";
 	public static final String ATRIBUTO_RESPONDE_A = "respondeA";
+	public static final String ATRIBUTO_FORO = "foro";
 	
 	public Integer getId();
 	public void setId(Integer id);
@@ -31,5 +33,8 @@ public interface MensajeForo {
 	
 	public Foro getForo();
 	public void setForo(Foro foro);
+	
+	public Set<MensajeForo> getRespuestas();
+	public void setRespuestas(Set<MensajeForo> respuestas);
 	
 }

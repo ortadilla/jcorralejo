@@ -14,6 +14,7 @@ public class NombresBean {
 	public static final String SERVICIO_IMAGEN = "servicioImagen";
 	public static final String SERVICIO_IMAGEN_LOCAL = "servicioImagenLocal";
 	public static final String SERVICIO_LOCAL = "servicioLocal";
+	public static final String SERVICIO_MENSAJE_FORO = "servicioMensajeForo";
     public static final String SERVICIO_PERMISO_USUARIO = "servicioPermisoUsuario";
     public static final String SERVICIO_PROVINCIA = "servicioProvincia";
     public static final String SERVICIO_SERVICIO = "servicioServicio";
@@ -25,11 +26,15 @@ public class NombresBean {
     /**Beans */    
     public static final String ANIADIR_IMAGEN_BEAN = "aniadirImagenBean"; 
     public static final String CABECERA_PAGINA_BEAN = "cabeceraPaginaBean"; 
+    public static final String DETALLES_FORO_BEAN = "detallesForoBean"; 
     public static final String DETALLES_USUARIO_BEAN = "detallesUsuarioBean"; 
     public static final String DETALLES_LOCAL_BEAN = "detallesLocalBean"; 
+    public static final String EDITAR_FORO_BEAN = "editarForoBean"; 
+    public static final String EDITAR_MENSAJE_FORO_BEAN = "editarMensjeForoBean"; 
     public static final String EDITAR_USUARIO_BEAN = "editarUsuarioBean"; 
     public static final String EDITAR_LOCAL_BEAN = "editarLocalBean"; 
     public static final String GESTION_FOROS_BEAN = "gestionForosBean"; 
+    public static final String GESTION_TEMAS_FORO_BEAN = "gestionTemasForoBean"; 
     public static final String GESTION_LOCALES_BEAN = "gestionLocalesBean"; 
     public static final String GESTION_USUARIOS_BEAN = "gestionUsuariosBean"; 
     public static final String IMAGENES_LOCAL_BEAN = "imagenesLocalBean"; 

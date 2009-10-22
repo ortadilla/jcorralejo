@@ -222,7 +222,7 @@ public class EditarUsuarioBean {
 		|| nombre==null || "".equals(nombre)
 		|| email==null || "".equals(email)
 		|| tipoUsuario==null || "".equals(tipoUsuario))
-			errores.add(mensajesCore.obtenerTexto(EDITAR_USUARIO_BEAN.equals(operacion) 
+			errores.add(mensajesCore.obtenerTexto(OPERACION_EDITAR_USUARIO.equals(operacion) 
 												? "CAMPOS_OBLIGATORIOS_EDITAR_USUARIO" 
 												: "CAMPOS_OBLIGATORIOS_AGREGAR_USUARIO"));
 		

@@ -11,5 +11,7 @@ public class ConstantesArgumentosNavegacion {
 	//Para EditarLocaBean
 	public static final String CAMBIAR_CREAR_LOCAL_POR_EDITAR_LOCAL = "cambiarCrearLocalPorEditar";
 
+	//Para EditarMensajeBean
+	public static final String TEMA_DE_NUEVO_MENSAJE = "temaDeNuevoMensaje";
 
 }

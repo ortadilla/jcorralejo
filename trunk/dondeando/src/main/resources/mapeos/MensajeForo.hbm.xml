@@ -14,7 +14,7 @@
 		
 		<property name="titulo" column="titulo" />
 		<property name="mensaje" column="mensaje" />
-		<property name="fecha" column="fecha" />
+		<property name="fecha" column="fecha" type="timestamp"/>
 
 		<many-to-one
 			class="dondeando.modelo.entidades.implementacion.ForoImpl"
@@ -26,7 +26,12 @@
 			
 		<many-to-one
 			class="dondeando.modelo.entidades.implementacion.MensajeForoImpl"
-			column="respondeA" name="respondeA" />			
+			column="respondeA" name="respondeA" />		
+			
+		<set name="respuestas" inverse="true">
+   			 <key column="respondeA"/>
+		     <one-to-many class="MensajeForoImpl"/>
+		</set>	
 
 
 	</class>

@@ -1,3 +1,10 @@
+· Si edita un mensaje alguien que no es el autor --> Añadir alguna marca al mensaje
+· Al borrar un tema, si volvemos a la gestión de foros, no se actualiza
+· Añadir un link en "ultima respuesta" de la gestión de temas de foros que navegue a la última respuesta?
+· Añadir un botón a los temas en los detalles de un foro
+· Al escribir/editar un mensajes, que salgan en modo consulta todos los del mismo tema en orden inverso
+· ¿Botón mover tema?
+· Añadir la entidad Opinión --> Para cada local
 · Añadir propiedades no mapeadas a la gestión de los foros
 · ¿Permitir editar locales a usuarios o sólo a los administradores?
 · Se pierde el file al agregar una imagen si da un error:
