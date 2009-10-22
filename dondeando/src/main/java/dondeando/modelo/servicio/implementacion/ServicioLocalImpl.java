@@ -328,7 +328,7 @@ public class ServicioLocalImpl implements ServicioLocal{
 		local.setHorario(horario);
 		local.setPrecioMedio(precioMedio);
 		local.setOtraInformacion(otraInformacion);
-		local.setActivo(true);
+		local.setActivo(activo);
 		
 		if(local.getTiposLocal()==null) local.setTiposLocal(new HashSet<TipoLocal>());
 		local.getTiposLocal().clear();

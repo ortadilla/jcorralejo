@@ -60,8 +60,8 @@ public class ServicioForoImpl implements ServicioForo{
 	 */
 	public void rellenarPropiedadesNoMapeadas(List<Foro> listaForos) {
 		for(Foro foro : listaForos){
-			List<MensajeForo> mensajesOrdenados = HerramientasList.ordenar(new ArrayList<MensajeForo>(foro.getMensajes()), MensajeForo.ATRIBUTO_FECHA + " DESC");
-			if(!mensajesOrdenados.isEmpty()){
+			if(foro.getMensajes()!=null && !foro.getMensajes().isEmpty()){
+				List<MensajeForo> mensajesOrdenados = HerramientasList.ordenar(new ArrayList<MensajeForo>(foro.getMensajes()), MensajeForo.ATRIBUTO_FECHA + " DESC");
 				ForoImpl foroImpl = (ForoImpl)foro;
 				
 				MensajeForo ultimoMensaje = mensajesOrdenados.get(0);
@@ -104,6 +104,52 @@ public class ServicioForoImpl implements ServicioForo{
     	} catch (DAOExcepcion e) {
     		log.debug("Error al actualizar los datos del local "+e);
     	}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioForo#crearForo(java.lang.String, java.lang.String)
+	 */
+	public Foro crearForo(String titulo, String descripcion) {
+		Foro foro = new ForoImpl();
+		setearDatosForo(foro, titulo, descripcion, true);
+		foroDAO.hacerPersistente(foro);
+		return foro;
+	}
+
+	/**
+	 * Asigna los datos al foro indicado
+	 * @param foro Foro al que asignar los datos
+	 * @param titulo	Título para el foro
+	 * @param descripcion	Descripción para el foro
+	 * @param activo	Campo activo para el foro
+	 */
+	private void setearDatosForo(Foro foro, String titulo, String descripcion, boolean activo){
+		foro.setTitulo(titulo);
+		foro.setDescripcion(descripcion);
+		foro.setActivo(activo);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioForo#editarForo(dondeando.modelo.entidades.Foro, java.lang.String, java.lang.String)
+	 */
+	public void editarForo(Foro foro, String titulo, String descripcion) {
+		setearDatosForo(foro, titulo, descripcion, foro.isActivo());
+		try {
+			foroDAO.flush();
+		} catch (DAOExcepcion e) {
+			log.debug("Error al actualizar los datos del foro");
+		}
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioForo#encontrarForoPorTitulo(java.lang.String)
+	 */
+	public Foro encontrarForoPorTitulo(String titulo) {
+		List<Foro> foros = foroDAO.encontrarPorCondicion(servicioCriterios.construyeCriterio(Foro.ATRIBUTO_TITULO, Criterio.IGUAL, titulo));
+		return foros.isEmpty() ? null : foros.get(0);
 	}
 
 }

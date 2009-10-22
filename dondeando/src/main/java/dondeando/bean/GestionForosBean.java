@@ -3,6 +3,7 @@ package dondeando.bean;
 import static utilidades.jsf.ConstantesReglasNavegacion.DETALLES_FORO;
 import static utilidades.jsf.ConstantesReglasNavegacion.EDITAR_FORO;
 import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_FOROS;
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_TEMAS_FORO;
 import static utilidades.varios.NombresBean.GESTION_FOROS_BEAN;
 import static utilidades.varios.NombresBean.GESTION_FOROS_BINDING;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
@@ -47,6 +48,7 @@ public class GestionForosBean {
 	private static final String ACCION_MODIFICAR_FORO = "_modificarForo_";
 	private static final String ACCION_ELIMINAR_FORO = "_eliminarForo_";
 	private static final String ACCION_RECUPERAR_FORO = "_recuperarForo_";
+	private static final String ACCION_VER_TEMAS = "_verMensajes_";
 	
 	//Atributos
 	private boolean desplegado;
@@ -150,6 +152,13 @@ public class GestionForosBean {
 	}
 	
 	/**
+	 * Navega a la gestión de los temas del foro seleccionado
+	 */
+	public String verTemas(){
+		return realizarOperacion(ACCION_VER_TEMAS);
+	}
+	
+	/**
 	 * Devuelve un mensaje con el número de elementos de la tabla de resultados
 	 * @return mensaje con el número de elementos de la tabla de resultados
 	 */
@@ -208,6 +217,15 @@ public class GestionForosBean {
 						operacionRealizada = true;
 					}else
 						utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_RECUPERAR_FORO_ACTIVO"));
+					
+				}else if(ACCION_VER_TEMAS.equals(operacion)){
+					if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+					mapaArgumentos.limpiaMapa();
+					ProtocoloEdicion protocolo = new ProtocoloEdicion(foro, GESTION_FOROS, null);
+					mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+			
+					outcome = GESTION_TEMAS_FORO;
+					operacionRealizada = true;
 				}
 			}
 			

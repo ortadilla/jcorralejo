@@ -68,7 +68,9 @@
 				<tr:panelBox inlineStyle="width:100%;" text="#{resCore['FOROS']}">
 					<tr:panelGroupLayout>
 						<tr:panelButtonBar>
-							<tr:commandButton text="#{resCore['AGREGAR_LOCAL']}"
+							<tr:commandButton text="#{resCore['VER_TEMAS']}"
+								id="btnVerMensajes" action="#{gestionForosBean.verTemas}" />
+							<tr:commandButton text="#{resCore['AGREGAR_FORO']}"
 								id="btnAgregar" action="#{gestionForosBean.agregar}" />
 							<tr:commandButton text="#{resCore['DETALLES_FORO']}"
 								id="btnDetalles" action="#{gestionForosBean.detalles}" />

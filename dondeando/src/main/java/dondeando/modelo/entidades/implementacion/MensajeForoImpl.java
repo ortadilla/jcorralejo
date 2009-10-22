@@ -1,6 +1,7 @@
 package dondeando.modelo.entidades.implementacion;
 
 import java.util.Date;
+import java.util.Set;
 
 import dondeando.modelo.entidades.Foro;
 import dondeando.modelo.entidades.MensajeForo;
@@ -16,6 +17,12 @@ public class MensajeForoImpl implements MensajeForo {
 	private Date fecha;
 	private MensajeForo respondeA;
 	private Foro foro;
+	private Set<MensajeForo> respuestas;
+	
+	private String autorYFecha;
+	private int numeroRespuestas;
+	private Date fechaUltimaRespuesta;
+	private String autorYFechaUltimaRespuesta;
 	
 	@Override
 	public int hashCode() {
@@ -86,6 +93,36 @@ public class MensajeForoImpl implements MensajeForo {
 	}
 	public void setForo(Foro foro) {
 		this.foro = foro;
+	}
+	public String getAutorYFecha() {
+		return autorYFecha;
+	}
+	public void setAutorYFecha(String autorYFecha) {
+		this.autorYFecha = autorYFecha;
+	}
+	public Date getFechaUltimaRespuesta() {
+		return fechaUltimaRespuesta;
+	}
+	public void setFechaUltimaRespuesta(Date fechaUltimaRespuesta) {
+		this.fechaUltimaRespuesta = fechaUltimaRespuesta;
+	}
+	public String getAutorYFechaUltimaRespuesta() {
+		return autorYFechaUltimaRespuesta;
+	}
+	public void setAutorYFechaUltimaRespuesta(String autorYFechaUltimaRespuesta) {
+		this.autorYFechaUltimaRespuesta = autorYFechaUltimaRespuesta;
+	}
+	public Set<MensajeForo> getRespuestas() {
+		return respuestas;
+	}
+	public void setRespuestas(Set<MensajeForo> respuestas) {
+		this.respuestas = respuestas;
+	}
+	public int getNumeroRespuestas() {
+		return numeroRespuestas;
+	}
+	public void setNumeroRespuestas(int numeroRespuestas) {
+		this.numeroRespuestas = numeroRespuestas;
 	}
 	
 	
