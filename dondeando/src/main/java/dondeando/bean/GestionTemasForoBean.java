@@ -2,6 +2,7 @@ package dondeando.bean;
 
 import static utilidades.jsf.ConstantesArgumentosNavegacion.FORO_DE_NUEVO_MENSAJE;
 import static utilidades.jsf.ConstantesReglasNavegacion.EDITAR_MENSAJE_FORO;
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_MENSAJES_TEMA;
 import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_TEMAS_FORO;
 import static utilidades.varios.NombresBean.GESTION_TEMAS_FORO_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
@@ -44,6 +45,7 @@ public class GestionTemasForoBean {
 	//Constantes
 	private static final String ACCION_AGREGAR_TEMA = "_agregarTema_";
 	private static final String ACCION_ELIMINAR_TEMA = "_eliminarTema_";
+	private static final String ACCION_VER_MENSAJE = "_verMensaje_";
 	//TODO: ¿Añadir la acción "mover a otro Foro"?
 	
 	//Atributos
@@ -130,6 +132,15 @@ public class GestionTemasForoBean {
 	}
 	
 	/**
+	 * Navega a la pantalla de edición de mensajes para agregar uno nuevo tema
+	 * @return Regla de navegación de la pantalla de edición de mensajes
+	 */
+	public String verMensajes(){
+		return realizarOperacion(ACCION_VER_MENSAJE);
+	}
+	
+	
+	/**
 	 * Devuelve un mensaje con el número de elementos de la tabla de resultados
 	 * @return mensaje con el número de elementos de la tabla de resultados
 	 */
@@ -147,7 +158,9 @@ public class GestionTemasForoBean {
 	private String realizarOperacion(String operacion){
 		String outcome = "";
 		boolean operacionRealizada = false;
-		if(estadoDeSeleccionTabla.size()==1 || ACCION_AGREGAR_TEMA.equals(operacion)){
+		if(estadoDeSeleccionTabla.size()==1 
+		|| ACCION_AGREGAR_TEMA.equals(operacion)
+		|| ACCION_VER_MENSAJE.equals(operacion)){
 			
 			if(ACCION_AGREGAR_TEMA.equals(operacion)){
 				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
@@ -158,6 +171,16 @@ public class GestionTemasForoBean {
 		
 				outcome = EDITAR_MENSAJE_FORO;
 			}
+			
+			else if(ACCION_VER_MENSAJE.equals(operacion)){
+				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+				mapaArgumentos.limpiaMapa();
+				ProtocoloEdicion protocolo = new ProtocoloEdicion(null, GESTION_TEMAS_FORO, null);
+				mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+				
+				outcome = GESTION_MENSAJES_TEMA;
+			}
+			
 			else{
 				Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
 				MensajeForo tema = listaTemasForo.get(seleccion);

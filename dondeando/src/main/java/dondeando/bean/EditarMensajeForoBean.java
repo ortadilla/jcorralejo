@@ -1,11 +1,12 @@
 package dondeando.bean;
 
+import static utilidades.jsf.ConstantesArgumentosNavegacion.FORO_DE_NUEVO_MENSAJE;
 import static utilidades.jsf.ConstantesArgumentosNavegacion.TEMA_DE_NUEVO_MENSAJE;
 import static utilidades.varios.NombresBean.EDITAR_MENSAJE_FORO_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
-import static utilidades.varios.NombresBean.SERVICIO_FORO;
 import static utilidades.varios.NombresBean.SERVICIO_MENSAJE_FORO;
+import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
 import java.util.ArrayList;
@@ -19,17 +20,15 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
-import utilidades.jsf.ConstantesArgumentosNavegacion;
 import utilidades.jsf.ConstantesReglasNavegacion;
 import utilidades.jsf.UtilJsfContext;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
-import utilidades.varios.NombresBean;
 import utilidades.varios.ProtocoloEdicion;
 import dondeando.modelo.entidades.Foro;
 import dondeando.modelo.entidades.MensajeForo;
-import dondeando.modelo.servicio.ServicioForo;
 import dondeando.modelo.servicio.ServicioMensajeForo;
+import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(EDITAR_MENSAJE_FORO_BEAN)
@@ -44,6 +43,7 @@ public class EditarMensajeForoBean {
 	private String operacion;
 	private String tituloPagina;
 	private MensajeForo tema;
+	private Foro foro;
 
 	private MensajeForo mensajeForoEdicion;
 	
@@ -64,6 +64,9 @@ public class EditarMensajeForoBean {
 	@In(value=SERVICIO_MENSAJE_FORO, create=true)
 	private ServicioMensajeForo servicioMensajeForo;
 	
+	@In(value=SERVICIO_USUARIO, create=true)
+	private ServicioUsuario servicioUsuario;
+	
 	
 	@Create
 	@Begin(join=true)
@@ -79,6 +82,8 @@ public class EditarMensajeForoBean {
 			
 			if(mapaArgumentos.contiene(TEMA_DE_NUEVO_MENSAJE))
 				tema = (MensajeForo)mapaArgumentos.getArgumento(TEMA_DE_NUEVO_MENSAJE);
+			if(mapaArgumentos.contiene(FORO_DE_NUEVO_MENSAJE))
+				foro = (Foro)mapaArgumentos.getArgumento(FORO_DE_NUEVO_MENSAJE);
 			
 			//Configuramos la página dependiente de la operación
 			operacion = protocoloEdicion.getObjeto()!=null ? OPERACION_EDITAR_MENSAJE_FORO : OPERACION_CREAR_MENSAJE_FORO;
@@ -109,10 +114,10 @@ public class EditarMensajeForoBean {
 		if(errores.isEmpty()){
 				
 			if(OPERACION_CREAR_MENSAJE_FORO.equals(operacion)){
-				servicioMensajeForo.crearMensajeForo(tema.getForo(), asunto, mensaje);
+				servicioMensajeForo.crearMensajeForo(foro, tema, asunto, mensaje, servicioUsuario.devolverUsuarioActivo());
 				utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("MENSAJE_CORRECTO"));
 			}else if (OPERACION_EDITAR_MENSAJE_FORO.equals(operacion) && mensajeForoEdicion!=null){
-				servicioMensajeForo.editarMensajeForo(mensajeForoEdicion, asunto, mensaje);
+				servicioMensajeForo.editarMensajeForo(mensajeForoEdicion, foro, tema, asunto, mensaje, servicioUsuario.devolverUsuarioActivo());
 				utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("MENSAJE_ACTUALIZADO"));
 			}
 			outcome = protocoloEdicion!=null && protocoloEdicion.getOutcomeVuelta()!=null ? protocoloEdicion.getOutcomeVuelta() 
@@ -180,6 +185,22 @@ public class EditarMensajeForoBean {
 
 	public void setTituloPagina(String tituloPagina) {
 		this.tituloPagina = tituloPagina;
+	}
+
+	public String getAsunto() {
+		return asunto;
+	}
+
+	public void setAsunto(String asunto) {
+		this.asunto = asunto;
+	}
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
 	}
 
 }

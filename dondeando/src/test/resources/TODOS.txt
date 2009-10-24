@@ -1,14 +1,16 @@
 · Si edita un mensaje alguien que no es el autor --> Añadir alguna marca al mensaje
-· Al borrar un tema, si volvemos a la gestión de foros, no se actualiza
+· Al borrar/aniadir un tema, si volvemos a la gestión de foros, no se actualiza --> no tiene cargarArgumentosEntradas
 · Añadir un link en "ultima respuesta" de la gestión de temas de foros que navegue a la última respuesta?
+ --> navegaría al timeline del tema
 · Añadir un botón a los temas en los detalles de un foro
 · Al escribir/editar un mensajes, que salgan en modo consulta todos los del mismo tema en orden inverso
 · ¿Botón mover tema?
-· Añadir la entidad Opinión --> Para cada local
-· Añadir propiedades no mapeadas a la gestión de los foros
-· ¿Permitir editar locales a usuarios o sólo a los administradores?
+· ¿Permitir editar locales a los usuarios (con cierto karma) o sólo a los administradores?
+· Añadir la entidad Opinión --> Para cada local (¿se puede votar sin opinión y opinar sin votar?)
+· Añadir la entidad Encuesta
+· ¿Añadir las notificaciones?
 · Se pierde el file al agregar una imagen si da un error:
-· Rendered Botones GestionLocales dependiendo de los permisos
+· Rendered Botones GestionLocales dependiendo de los permisos (en general de todas las gestiones)
 · ¿Cómo ordenar una tabla? ¿sortable=true? (gestionarUsuarios)
 · Modificar estilos de los componentes de trinidad --> trinidad-skin.xml y/o trinidad-config.xml
 · Teclas de acceso en cada botón
@@ -23,6 +25,21 @@
   los commit 1-5 o 6
 
   
-  ---
-  
-  
+---
+
+Paradojas y contradiciones nacionales
+
+http://www.radiocable.com/aborto-y-galimatias.html
+A raiz de la revuelta que quieren formar con la reforma de la ley del aborto, Iñaki Gabilondo hacía 
+un pequeño análisis de la situación y repasaba la cantidad de contradicciones y paradojas que rodean
+este espinoso asunto:
+
+"Una niña debe usar sillita infantil homologada en el coche hasta los doce años. Al año siguiente, con trece, 
+puede consentir en relaciones sexuales. A los catorce ya podría casarse, aunque en la celebración de su boda 
+no podría beber bebidas alcohólicas. A esos mismos catorce años puede hacer testamento pero no se le permite 
+viajar como acompañante en una moto. A los famosos 16 años de la polémica, es mayor de edad sanitaria y puede, 
+por ejemplo, decidir un transplante, pero no puede hacerse un piercing o un tatuaje, ni puede abrir una cuenta 
+corriente, ni votar"
+
+El caso es que en España somo muy dados a este tipo de contradiciones y paradojas. Sin ir más lejos, los
+precursores de
