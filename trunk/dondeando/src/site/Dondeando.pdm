@@ -2750,7 +2750,7 @@ CARD 0 Arial,8,N</a:FontList>
 <a:CreationDate>1246813690</a:CreationDate>
 <a:ModificationDate>1246818948</a:ModificationDate>
 <a:CenterTextOffset>(-975, 75)</a:CenterTextOffset>
-<a:Rect>((-24844,35512), (-12394,45441))</a:Rect>
+<a:Rect>((-19004,35512), (-16513,45441))</a:Rect>
 <a:ListOfPoints>((-16513,35512),(-19004,45441))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615680</a:LineColor>
@@ -2770,7 +2770,7 @@ CARD 0 Arial,8,N</a:FontList>
 <o:ReferenceSymbol Id="o25">
 <a:CreationDate>1246813742</a:CreationDate>
 <a:ModificationDate>1246813742</a:ModificationDate>
-<a:Rect>((-23459,23608), (-12135,34573))</a:Rect>
+<a:Rect>((-18264,23608), (-17264,34573))</a:Rect>
 <a:ListOfPoints>((-17924,34573),(-17604,23608))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615680</a:LineColor>
@@ -2970,7 +2970,7 @@ CARD 0 Arial,8,N</a:FontList>
 <o:ReferenceSymbol Id="o53">
 <a:CreationDate>1255978473</a:CreationDate>
 <a:ModificationDate>1255978523</a:ModificationDate>
-<a:Rect>((-21394,-24518), (-12170,-16470))</a:Rect>
+<a:Rect>((-21393,-24518), (-12169,-16470))</a:Rect>
 <a:ListOfPoints>((-17257,-16470),(-16207,-24518))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615680</a:LineColor>
@@ -5168,10 +5168,10 @@ F	</a:ListOfValues>
 <a:Code>FECHA</a:Code>
 <a:CreationDate>1255978113</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
-<a:ModificationDate>1255978132</a:ModificationDate>
+<a:ModificationDate>1256385034</a:ModificationDate>
 <a:Modifier>Mastropiero</a:Modifier>
 <a:Comment>Fecha en la que publicó el mensaje</a:Comment>
-<a:DataType>date</a:DataType>
+<a:DataType>datetime</a:DataType>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o197">

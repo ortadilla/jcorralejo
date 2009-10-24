@@ -4,6 +4,7 @@ import java.util.List;
 
 import dondeando.modelo.entidades.Foro;
 import dondeando.modelo.entidades.MensajeForo;
+import dondeando.modelo.entidades.Usuario;
 
 public interface ServicioMensajeForo {
 	
@@ -28,15 +29,26 @@ public interface ServicioMensajeForo {
 	
 
 	/**
-	 * Crea un mensaje con los datos indicados
+	 * Crea un mensajeForo con los datos indicados
+	 * @param foro Foro del mensaje
 	 * @param tema	Tema del mensaje
 	 * @param asunto	Asunto del mensaje
 	 * @param mensaje	Mensaje en sí
-	 * @return Mensaje creado
+	 * @param autor	Autor del mensaje
+	 * @return	Mensaje creado
 	 */
-	public MensajeForo crearMensajeForo(MensajeForo tema, String asunto, String mensaje);
+	public MensajeForo crearMensajeForo(Foro foro, MensajeForo tema, String asunto, String mensaje, Usuario autor);
 
-	
+	/**
+	 * Actualiza el mensajeForo con los datos indicados
+	 * @param mensajeForo mensajeForo a actualizar
+	 * @param foro Foro del mensaje
+	 * @param tema	Tema del mensaje
+	 * @param asunto	Asunto del mensaje
+	 * @param mensaje	Mensaje en sí
+	 * @param autor	Autor del mensaje
+	 */
+	public void editarMensajeForo(MensajeForo mensajeForo, Foro foro, MensajeForo tema, String asunto, String mensaje, Usuario autor);
 
 
 }

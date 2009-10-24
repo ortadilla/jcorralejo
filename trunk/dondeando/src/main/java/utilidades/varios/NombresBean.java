@@ -30,10 +30,11 @@ public class NombresBean {
     public static final String DETALLES_USUARIO_BEAN = "detallesUsuarioBean"; 
     public static final String DETALLES_LOCAL_BEAN = "detallesLocalBean"; 
     public static final String EDITAR_FORO_BEAN = "editarForoBean"; 
-    public static final String EDITAR_MENSAJE_FORO_BEAN = "editarMensjeForoBean"; 
+    public static final String EDITAR_MENSAJE_FORO_BEAN = "editarMensajeForoBean"; 
     public static final String EDITAR_USUARIO_BEAN = "editarUsuarioBean"; 
     public static final String EDITAR_LOCAL_BEAN = "editarLocalBean"; 
     public static final String GESTION_FOROS_BEAN = "gestionForosBean"; 
+    public static final String GESTION_MENSAJES_TEMA_BEAN = "gestionMensajesTemaBean"; 
     public static final String GESTION_TEMAS_FORO_BEAN = "gestionTemasForoBean"; 
     public static final String GESTION_LOCALES_BEAN = "gestionLocalesBean"; 
     public static final String GESTION_USUARIOS_BEAN = "gestionUsuariosBean"; 

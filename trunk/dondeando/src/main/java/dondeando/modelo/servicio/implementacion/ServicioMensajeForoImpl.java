@@ -5,6 +5,7 @@ import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_MENSAJE_FORO;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -17,8 +18,10 @@ import org.jboss.seam.annotations.Scope;
 import utilidades.busquedas.consultas.Criterio;
 import utilidades.varios.HerramientasList;
 import dondeando.modelo.dao.MensajeForoDAO;
+import dondeando.modelo.dao.excepciones.DAOExcepcion;
 import dondeando.modelo.entidades.Foro;
 import dondeando.modelo.entidades.MensajeForo;
+import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.MensajeForoImpl;
 import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioMensajeForo;
@@ -58,8 +61,8 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
 				MensajeForoImpl mensajeForoImpl = (MensajeForoImpl)mensajeForo;
 				
 				mensajeForoImpl.setAutorYFecha(mensajeForo.getAutor().getLogin()+" ("+mensajeForo.getFecha()+")");
-				List<MensajeForo> respuestasOrdenadas = HerramientasList.ordenar(new ArrayList<MensajeForo>(mensajeForo.getRespuestas()), MensajeForo.ATRIBUTO_FECHA + " DESC");
-				if(!respuestasOrdenadas.isEmpty()){
+				if(mensajeForo.getRespuestas()!=null && !mensajeForo.getRespuestas().isEmpty()){
+					List<MensajeForo> respuestasOrdenadas = HerramientasList.ordenar(new ArrayList<MensajeForo>(mensajeForo.getRespuestas()), MensajeForo.ATRIBUTO_FECHA + " DESC");
 					MensajeForo ultimaRespuesta = respuestasOrdenadas.get(0);
 					mensajeForoImpl.setFechaUltimaRespuesta(ultimaRespuesta.getFecha());
 					mensajeForoImpl.setAutorYFechaUltimaRespuesta(ultimaRespuesta.getAutor().getLogin()+" ("+ultimaRespuesta.getFecha()+")");
@@ -81,5 +84,50 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
     		mensajeForoDAO.hacerTransitorio(tema);
     	}
     }
-    
+
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioMensajeForo#crearMensajeForo(dondeando.modelo.entidades.Foro, dondeando.modelo.entidades.MensajeForo, java.lang.String, java.lang.String, dondeando.modelo.entidades.Usuario)
+     */
+	public MensajeForo crearMensajeForo(Foro foro, MensajeForo tema, String asunto, String mensaje, Usuario autor) {
+		MensajeForo mensajeForo = new MensajeForoImpl();
+		setearDatosMensajeForo(foro, tema, mensajeForo, asunto, mensaje, autor, new Date());
+		mensajeForoDAO.hacerPersistente(mensajeForo);
+		return mensajeForo;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioMensajeForo#editarMensajeForo(dondeando.modelo.entidades.MensajeForo, dondeando.modelo.entidades.Foro, dondeando.modelo.entidades.MensajeForo, java.lang.String, java.lang.String, dondeando.modelo.entidades.Usuario)
+	 */
+	public void editarMensajeForo(MensajeForo mensajeForo, Foro foro,MensajeForo tema, String asunto, String mensaje, Usuario autor) {
+		setearDatosMensajeForo(foro, tema, mensajeForo, asunto, mensaje, autor, mensajeForo.getFecha()); 
+		try {
+			mensajeForoDAO.flush();
+		} catch (DAOExcepcion e) {
+			log.debug("Error al actualizar los datos del mensajeForo");
+		}
+
+	}
+
+	/**
+	 * Asigna los datos al mensajeForo indicado
+	 * @param foro Foro del mensaje
+	 * @param tema	Tema al que responde
+	 * @param mensajeForo	Mensaje al que asignar los datos
+	 * @param asunto	Asunto del mensaje
+	 * @param mensaje	Mensaje en sí
+	 * @param autor	Autor del mensaje
+	 * @param fecha	fecha de la creación del mensaje
+	 */
+	private void setearDatosMensajeForo(Foro foro, MensajeForo tema, MensajeForo mensajeForo, String asunto, String mensaje, Usuario autor, Date fecha){
+		mensajeForo.setForo(foro);
+		mensajeForo.setRespondeA(tema);
+		mensajeForo.setTitulo(asunto);
+		mensajeForo.setMensaje(mensaje);
+		mensajeForo.setAutor(autor);
+		mensajeForo.setFecha(fecha);
+	}
+
+
 }

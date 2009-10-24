@@ -90,6 +90,7 @@ public class GestionForosBean {
 		desplegado = true;
 		selectSiNo = SelectItemBuilder.creaSelectItemsSiNo();
 		mostrarCriterioActivo = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_FOROS);
+		buscar();
 	}
 	
 	/**

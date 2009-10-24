@@ -12,6 +12,7 @@ public class ConstantesReglasNavegacion {
 	public static final String DETALLES_FORO = "detallesForo";
 	public static final String DETALLES_LOCAL = "detallesLocal";
 	public static final String GESTION_TEMAS_FORO = "gestionTemasForo";
+	public static final String GESTION_MENSAJES_TEMA = "gestionMensajesTema";
 	public static final String GESTION_FOROS = "gestionForos";
 	public static final String GESTION_LOCALES = "gestionLocales";
 	public static final String GESTION_USUARIOS = "gestionUsuarios";

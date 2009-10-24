@@ -24,53 +24,46 @@
 			<tr:form defaultCommand="btnBuscar">
 			<tr:panelPage>
 				<tr:messages />
-				<tr:panelHeader text="#{gestionTemasForoBean.tituloPagina}" />
+				<tr:panelHeader text="#{gestionMensajesTemaBean.tituloPagina}" />
 
-				<tr:panelBox inlineStyle="width:100%;" text="#{resCore['TEMAS_FORO']}">
+				<tr:panelBox inlineStyle="width:100%;" text="#{resCore['MENSAJES_TEMA']}">
 					<tr:panelGroupLayout>
 						<tr:panelButtonBar>
-							<tr:commandButton text="#{resCore['VER_MENSAJES']}"
-								id="btnVerMensaje" action="#{gestionTemasForoBean.verMensajes}" />
-							<tr:commandButton text="#{resCore['AGREGAR_TEMA']}"
-								id="btnAgregar" action="#{gestionTemasForoBean.agregar}" />
-							<tr:commandButton text="#{resCore['ELIMINAR_TEMA']}"
-								id="btnEliminar" action="#{gestionTemasForoBean.eliminar}"
+							<tr:commandButton text="#{resCore['NUEVA_RESPUESTA']}"
+								id="btnAgregar" action="#{gestionMensajesTemaBean.agregar}" />
+							<tr:commandButton text="#{resCore['EDITAR_RESPUESTA']}"
+								id="btnEditar" action="#{gestionMensajesTemaBean.editar}" />
+							<tr:commandButton text="#{resCore['ELIMINAR_RESPUESTA']}"
+								id="btnEliminar" action="#{gestionMensajesTemaBean.eliminar}"
 								onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_TEMA']}')"
-								rendered="#{gestionTemasForoBean.mostrarEliminarTema}" />
+								rendered="#{gestionMensajesTemaBean.mostrarEliminarRespuesta}" />
 						</tr:panelButtonBar>
 					</tr:panelGroupLayout>
 					<tr:spacer height="10" />
 						<tr:table var="var" first="0"
 							emptyText="#{resCore['NO_ELEMENTOS']}" rows="20" width="100%"
-							value="#{gestionTemasForoBean.listaTemasForo}" rowBandingInterval="1"
+							value="#{gestionMensajesTemaBean.listaMensajesTema}" rowBandingInterval="1"
 							columnBandingInterval="0"
-							selectedRowKeys="#{gestionTemasForoBean.estadoDeSeleccionTabla}"
+							selectedRowKeys="#{gestionMensajesTemaBean.estadoDeSeleccionTabla}"
 							rowSelection="single" id="listaForos">
 							<f:facet name="actions">
 								<tr:panelHorizontalLayout inlineStyle="width: 350px">
 									<tr:outputText id="elementosEncontrados"
 										inlineStyle="font-weight: bold"
-										value="#{gestionTemasForoBean.numeroElementosTabla}" />
+										value="#{gestionMensajesTemaBean.numeroElementosTabla}" />
 								</tr:panelHorizontalLayout>
 							</f:facet>
-							<tr:column sortable="true" headerText="#{resCore['TEMA']}">
-								<tr:outputText value="#{var.titulo}" />
+							<tr:column sortable="true" headerText="#{resCore['MENSAJE']}">
+								<tr:outputText value="#{var.mensaje}" />
 							</tr:column>
 							<tr:column sortable="true" headerText="#{resCore['AUTOR']}">
 								<tr:outputText value="#{var.autorYFecha}" />
-							</tr:column>
-							<tr:column sortable="true" headerText="#{resCore['NUMERO_RESPUESTAS']}">
-								<tr:outputText value="#{var.numeroRespuestas}" />
-							</tr:column>
-							<tr:column sortable="true"
-								headerText="#{resCore['ULTIMA_RESPUESTA']}">
-								<tr:outputText value="#{var.autorYFechaUltimaRespuesta}" />
 							</tr:column>
 						</tr:table>
 						<tr:spacer width="20" height="20" />
 						<tr:panelHorizontalLayout halign="center">
 							<tr:commandButton text="#{resCore['VOLVER']}" id="btnVolver"
-								action="#{gestionTemasForoBean.volver}" />
+								action="#{gestionMensajesTemaBean.volver}" />
 						</tr:panelHorizontalLayout>
 					</tr:panelBox>
 			</tr:panelPage>
