@@ -6,6 +6,7 @@ import static utilidades.varios.NombresBean.SERVICIO_MENSAJE_FORO;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -56,18 +57,15 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
      */
     public void rellenarPropiedadesNoMapeadas(List<MensajeForo> listaMensajesForo) {
 		for(MensajeForo mensajeForo : listaMensajesForo){
-			//Si es un tema...
-			if(mensajeForo.getRespondeA()==null){
-				MensajeForoImpl mensajeForoImpl = (MensajeForoImpl)mensajeForo;
-				
-				mensajeForoImpl.setAutorYFecha(mensajeForo.getAutor().getLogin()+" ("+mensajeForo.getFecha()+")");
-				if(mensajeForo.getRespuestas()!=null && !mensajeForo.getRespuestas().isEmpty()){
-					List<MensajeForo> respuestasOrdenadas = HerramientasList.ordenar(new ArrayList<MensajeForo>(mensajeForo.getRespuestas()), MensajeForo.ATRIBUTO_FECHA + " DESC");
-					MensajeForo ultimaRespuesta = respuestasOrdenadas.get(0);
-					mensajeForoImpl.setFechaUltimaRespuesta(ultimaRespuesta.getFecha());
-					mensajeForoImpl.setAutorYFechaUltimaRespuesta(ultimaRespuesta.getAutor().getLogin()+" ("+ultimaRespuesta.getFecha()+")");
-					mensajeForoImpl.setNumeroRespuestas(respuestasOrdenadas.size());
-				}
+			MensajeForoImpl mensajeForoImpl = (MensajeForoImpl)mensajeForo;
+			
+			mensajeForoImpl.setAutorYFecha(mensajeForo.getAutor().getLogin()+" ("+mensajeForo.getFecha()+")");
+			if(mensajeForo.getRespuestas()!=null && !mensajeForo.getRespuestas().isEmpty()){
+				List<MensajeForo> respuestasOrdenadas = HerramientasList.ordenar(new ArrayList<MensajeForo>(mensajeForo.getRespuestas()), MensajeForo.ATRIBUTO_FECHA + " DESC");
+				MensajeForo ultimaRespuesta = respuestasOrdenadas.get(0);
+				mensajeForoImpl.setFechaUltimaRespuesta(ultimaRespuesta.getFecha());
+				mensajeForoImpl.setAutorYFechaUltimaRespuesta(ultimaRespuesta.getAutor().getLogin()+" ("+ultimaRespuesta.getFecha()+")");
+				mensajeForoImpl.setNumeroRespuestas(respuestasOrdenadas.size());
 			}
 		}
     }
@@ -84,6 +82,22 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
     		mensajeForoDAO.hacerTransitorio(tema);
     	}
     }
+    
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioMensajeForo#eliminarMensaje(dondeando.modelo.entidades.MensajeForo)
+     */
+    public void eliminarMensaje(MensajeForo mensaje) {
+    	if(mensaje!=null){
+    		if(mensaje.getRespondeA()==null)
+    			eliminarTema(mensaje);
+    		else{
+    			mensaje.getRespondeA().getRespuestas().remove(mensaje);
+    			mensaje.setRespondeA(null);
+    			mensajeForoDAO.hacerTransitorio(mensaje);
+    		}
+    	}
+    }
 
     /*
      * (non-Javadoc)
@@ -93,6 +107,13 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
 		MensajeForo mensajeForo = new MensajeForoImpl();
 		setearDatosMensajeForo(foro, tema, mensajeForo, asunto, mensaje, autor, new Date());
 		mensajeForoDAO.hacerPersistente(mensajeForo);
+		//Hay que setearle el tema después de hacerlo persistente (para que tenga id y se pueda borrar justo después)
+		if(tema!=null){
+			if(tema.getRespuestas()==null)
+				tema.setRespuestas(new HashSet<MensajeForo>());
+			if(!tema.getRespuestas().contains(mensajeForo))
+				tema.getRespuestas().add(mensajeForo);
+		}
 		return mensajeForo;
 	}
 	
@@ -100,8 +121,8 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
 	 * (non-Javadoc)
 	 * @see dondeando.modelo.servicio.ServicioMensajeForo#editarMensajeForo(dondeando.modelo.entidades.MensajeForo, dondeando.modelo.entidades.Foro, dondeando.modelo.entidades.MensajeForo, java.lang.String, java.lang.String, dondeando.modelo.entidades.Usuario)
 	 */
-	public void editarMensajeForo(MensajeForo mensajeForo, Foro foro,MensajeForo tema, String asunto, String mensaje, Usuario autor) {
-		setearDatosMensajeForo(foro, tema, mensajeForo, asunto, mensaje, autor, mensajeForo.getFecha()); 
+	public void editarMensajeForo(MensajeForo mensajeForo, String asunto, String mensaje, Usuario autor) {
+		setearDatosMensajeForo(mensajeForo.getForo(), mensajeForo.getRespondeA(), mensajeForo, asunto, mensaje, autor, mensajeForo.getFecha()); 
 		try {
 			mensajeForoDAO.flush();
 		} catch (DAOExcepcion e) {

@@ -12,6 +12,7 @@
 	<page view-id="/dondeando/detallesForo.jsp"			action="#{detallesForoBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/detallesUsuario.jsp"		action="#{detallesUsuarioBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/detallesLocal.jsp"		action="#{detallesLocalBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/dondeando/gestionMensajesTema.jsp"	action="#{gestionMensajesTemaBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/gestionTemasForo.jsp"		action="#{gestionTemasForoBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/imagenesLocal.jsp"		action="#{imagenesLocalBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/modificarPassword.jsp"	action="#{modificarContrasenaBean.cargarArgumentosDeEntrada}" />

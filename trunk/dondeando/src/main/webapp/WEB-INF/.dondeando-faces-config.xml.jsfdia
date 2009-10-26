@@ -22,14 +22,12 @@
    <PROCESS-ITEM-OUTPUT ID="editarLocal::#dondeando#editarLocal.jsp"
     NAME="output5" PATH="/dondeando/editarLocal.jsp"
     TARGET="rules:#dondeando#editarLocal.jsp" TITLE="editarLocal" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="detallesForo::#dondeando#detallesForo.jsp"
+    NAME="output6" PATH="/dondeando/detallesForo.jsp"
+    TARGET="rules:#dondeando#detallesForo.jsp" TITLE="detallesForo" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT ID="detallesLocal::#dondeando#detallesLocal.jsp"
-    NAME="output6" PATH="/dondeando/detallesLocal.jsp"
+    NAME="output7" PATH="/dondeando/detallesLocal.jsp"
     TARGET="rules:#dondeando#detallesLocal.jsp" TITLE="detallesLocal" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT
-    ID="detallesUsuario::#dondeando#detallesUsuario.jsp" NAME="output7"
-    PATH="/dondeando/detallesUsuario.jsp"
-    TARGET="rules:#dondeando#detallesUsuario.jsp"
-    TITLE="detallesUsuario" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
     ID="modificarPassword::#dondeando#modificarPassword.jsp"
     NAME="output8" PATH="/dondeando/modificarPassword.jsp"
@@ -39,22 +37,24 @@
     NAME="output9" PATH="/dondeando/gestionForos.jsp"
     TARGET="rules:#dondeando#gestionForos.jsp" TITLE="gestionForos" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
-    ID="gestionUsuarios::#dondeando#gestionUsuarios.jsp" NAME="output10"
+    ID="gestionTemasForo::#dondeando#gestionTemasForo.jsp"
+    NAME="output10" PATH="/dondeando/gestionTemasForo.jsp"
+    TARGET="rules:#dondeando#gestionTemasForo.jsp"
+    TITLE="gestionTemasForo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionMensajesTema::#dondeando#gestionMensajesTema.jsp"
+    NAME="output11" PATH="/dondeando/gestionMensajesTema.jsp"
+    TARGET="rules:#dondeando#gestionMensajesTema.jsp"
+    TITLE="gestionMensajesTema" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionUsuarios::#dondeando#gestionUsuarios.jsp" NAME="output12"
     PATH="/dondeando/gestionUsuarios.jsp"
     TARGET="rules:#dondeando#gestionUsuarios.jsp"
     TITLE="gestionUsuarios" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
-    ID="gestionLocales::#dondeando#gestionLocales.jsp" NAME="output11"
+    ID="gestionLocales::#dondeando#gestionLocales.jsp" NAME="output13"
     PATH="/dondeando/gestionLocales.jsp"
     TARGET="rules:#dondeando#gestionLocales.jsp" TITLE="gestionLocales" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="imagenesLocal::#dondeando#imagenesLocal.jsp"
-    NAME="output12" PATH="/dondeando/imagenesLocal.jsp"
-    TARGET="rules:#dondeando#imagenesLocal.jsp" TITLE="imagenesLocal" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT
-    ID="dialog:aniadirImagen::#dondeando#aniadirImagen.jsp"
-    NAME="output13" PATH="/dondeando/aniadirImagen.jsp"
-    TARGET="rules:#dondeando#aniadirImagen.jsp"
-    TITLE="dialog:aniadirImagen" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#dondeando#menuPrincipal.jsp"
@@ -89,4 +89,6 @@
   PATH="/dondeando/gestionTemasForo.jsp" SHAPE="304,609,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#dondeando#editarMensajeForo.jsp"
   PATH="/dondeando/editarMensajeForo.jsp" SHAPE="304,673,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dondeando#gestionMensajesTema.jsp"
+  PATH="/dondeando/gestionMensajesTema.jsp" SHAPE="304,673,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

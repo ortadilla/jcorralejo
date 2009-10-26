@@ -51,6 +51,10 @@
 							</trh:tableLayout>
 							<tr:spacer width="20" height="20" />
 							<tr:panelHorizontalLayout halign="center">
+								<tr:commandButton text="#{resCore['VER_TEMAS']}"
+									id="verTemas"
+									action="#{detallesForoBean.verTemas}" />
+								<tr:spacer width="20" height="20" />
 								<tr:commandButton text="#{resCore['VOLVER']}"
 									id="volver"
 									action="#{detallesForoBean.volver}" />

@@ -1,8 +1,11 @@
 package dondeando.bean;
 
+import static utilidades.jsf.ConstantesReglasNavegacion.DETALLES_FORO;
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_TEMAS_FORO;
 import static utilidades.jsf.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static utilidades.varios.NombresBean.DETALLES_FORO_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
+import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
 
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.Begin;
@@ -58,6 +61,19 @@ public class DetallesForoBean {
 	public String volver(){
 		return protocoloEdicion!=null ? protocoloEdicion.getOutcomeVuelta()
 									  : MENU_PRINCIPAL;
+	}
+	
+	/**
+	 * Navega a los temas de foro
+	 * @return Regla de navegación
+	 */
+	public String verTemas(){
+		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+		mapaArgumentos.limpiaMapa();
+		ProtocoloEdicion protocolo = new ProtocoloEdicion(foroEdicion, DETALLES_FORO, null);
+		mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+
+		return GESTION_TEMAS_FORO;
 	}
 	
 	public MapaArgumentos getMapaArgumentos() {

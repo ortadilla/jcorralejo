@@ -17,6 +17,7 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
         <navigation-case><from-outcome>modificarPassword</from-outcome><to-view-id>/dondeando/modificarPassword.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionForos</from-outcome><to-view-id>/dondeando/gestionForos.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionTemasForo</from-outcome><to-view-id>/dondeando/gestionTemasForo.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>gestionMensajesTema</from-outcome><to-view-id>/dondeando/gestionMensajesTema.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionUsuarios</from-outcome><to-view-id>/dondeando/gestionUsuarios.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionLocales</from-outcome><to-view-id>/dondeando/gestionLocales.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>imagenesLocal</from-outcome><to-view-id>/dondeando/imagenesLocal.jsp</to-view-id></navigation-case>
