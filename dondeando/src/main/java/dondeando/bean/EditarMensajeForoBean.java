@@ -22,6 +22,7 @@ import org.jboss.seam.annotations.Scope;
 
 import utilidades.jsf.ConstantesReglasNavegacion;
 import utilidades.jsf.UtilJsfContext;
+import utilidades.varios.HerramientasList;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
 import utilidades.varios.ProtocoloEdicion;
@@ -42,6 +43,7 @@ public class EditarMensajeForoBean {
 
 	private String operacion;
 	private String tituloPagina;
+	private List<MensajeForo> listaMensajesTema;
 	private MensajeForo tema;
 	private Foro foro;
 
@@ -80,8 +82,17 @@ public class EditarMensajeForoBean {
 		
 		if(protocoloEdicion!=null){
 			
-			if(mapaArgumentos.contiene(TEMA_DE_NUEVO_MENSAJE))
+			if(mapaArgumentos.contiene(TEMA_DE_NUEVO_MENSAJE)){
 				tema = (MensajeForo)mapaArgumentos.getArgumento(TEMA_DE_NUEVO_MENSAJE);
+				if(listaMensajesTema==null) listaMensajesTema = new ArrayList<MensajeForo>();
+				listaMensajesTema.clear();
+				if(tema.getRespuestas()!=null)
+					listaMensajesTema.addAll(tema.getRespuestas());
+				listaMensajesTema.add(tema);
+				HerramientasList.ordenar(listaMensajesTema, MensajeForo.ATRIBUTO_FECHA +" DESC");
+				servicioMensajeForo.rellenarPropiedadesNoMapeadas(listaMensajesTema);
+					
+			}
 			if(mapaArgumentos.contiene(FORO_DE_NUEVO_MENSAJE))
 				foro = (Foro)mapaArgumentos.getArgumento(FORO_DE_NUEVO_MENSAJE);
 			
@@ -90,6 +101,8 @@ public class EditarMensajeForoBean {
 
 			if(OPERACION_CREAR_MENSAJE_FORO.equals(operacion)){
 				tituloPagina = mensajesCore.obtenerTexto("REGISTRAR_MENSAJE");
+				if(tema!=null)
+					asunto = "RE: "+tema.getTitulo();
 			}
 			else if(OPERACION_EDITAR_MENSAJE_FORO.equals(operacion)){
 				mensajeForoEdicion = (MensajeForo)protocoloEdicion.getObjeto();
@@ -117,7 +130,7 @@ public class EditarMensajeForoBean {
 				servicioMensajeForo.crearMensajeForo(foro, tema, asunto, mensaje, servicioUsuario.devolverUsuarioActivo());
 				utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("MENSAJE_CORRECTO"));
 			}else if (OPERACION_EDITAR_MENSAJE_FORO.equals(operacion) && mensajeForoEdicion!=null){
-				servicioMensajeForo.editarMensajeForo(mensajeForoEdicion, foro, tema, asunto, mensaje, servicioUsuario.devolverUsuarioActivo());
+				servicioMensajeForo.editarMensajeForo(mensajeForoEdicion, asunto, mensaje, servicioUsuario.devolverUsuarioActivo());
 				utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("MENSAJE_ACTUALIZADO"));
 			}
 			outcome = protocoloEdicion!=null && protocoloEdicion.getOutcomeVuelta()!=null ? protocoloEdicion.getOutcomeVuelta() 
@@ -171,7 +184,17 @@ public class EditarMensajeForoBean {
 
 		mensaje = null;
 		tema = null;
+		listaMensajesTema = null;
 	}
+	
+	/**
+	 * Devuelve un mensaje con el número de elementos de la tabla de respuestas
+	 * @return mensaje con el número de elementos de la tabla de respuestas
+	 */
+	public String getNumeroElementosTabla(){
+		return mensajesCore.obtenerTexto("ELEMENTOS_ENCONTRADOS", listaMensajesTema != null ? listaMensajesTema.size() : "0");
+    }
+
 	
 	public MapaArgumentos getMapaArgumentos() {
 		return mapaArgumentos;
@@ -201,6 +224,14 @@ public class EditarMensajeForoBean {
 
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
+	}
+
+	public List<MensajeForo> getListaMensajesTema() {
+		return listaMensajesTema;
+	}
+
+	public void setListaMensajesTema(List<MensajeForo> listaMensajesTema) {
+		this.listaMensajesTema = listaMensajesTema;
 	}
 
 }

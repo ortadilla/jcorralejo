@@ -43,7 +43,7 @@
 						<tr:table var="var" first="0"
 							emptyText="#{resCore['NO_ELEMENTOS']}" rows="20" width="100%"
 							value="#{gestionMensajesTemaBean.listaMensajesTema}" rowBandingInterval="1"
-							columnBandingInterval="0"
+							columnBandingInterval="0" partialTriggers=":btnEliminar"
 							selectedRowKeys="#{gestionMensajesTemaBean.estadoDeSeleccionTabla}"
 							rowSelection="single" id="listaForos">
 							<f:facet name="actions">
@@ -53,7 +53,7 @@
 										value="#{gestionMensajesTemaBean.numeroElementosTabla}" />
 								</tr:panelHorizontalLayout>
 							</f:facet>
-							<tr:column sortable="true" headerText="#{resCore['MENSAJE']}">
+							<tr:column sortable="true" headerText="#{resCore['MENSAJE']}" width="80%">
 								<tr:outputText value="#{var.mensaje}" />
 							</tr:column>
 							<tr:column sortable="true" headerText="#{resCore['AUTOR']}">

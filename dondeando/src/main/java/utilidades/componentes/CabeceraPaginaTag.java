@@ -137,16 +137,9 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     		//celda = crearCelda(null, "1%", null, null, "background-image: url(../skins/geos2/skin_images/menuBarBackground.png);", fila);
     		celda = crearCelda(null, "1%", null, null, null, fila);
     		crearBotonMenu(celda);
-    		
-    		link = crearCommandLink("Tira pal menú",
-    				"#{"+CABECERA_PAGINA_BEAN+"."+METODO_IR_MENU+"}", null, null,false, false, null, celda, false);
-    		fin(link);
-    		
     		fin(celda);
     		fin(fila);
     		fin(tabla);
-    		
-    		
     	}
     	fin(filasPadre);
     	fin(tablaPadre);

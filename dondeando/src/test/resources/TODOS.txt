@@ -1,29 +1,31 @@
-· Si edita un mensaje alguien que no es el autor --> Añadir alguna marca al mensaje
-· Al borrar/aniadir un tema, si volvemos a la gestión de foros, no se actualiza --> no tiene cargarArgumentosEntradas
-· Añadir un link en "ultima respuesta" de la gestión de temas de foros que navegue a la última respuesta?
- --> navegaría al timeline del tema
-· Añadir un botón a los temas en los detalles de un foro
-· Al escribir/editar un mensajes, que salgan en modo consulta todos los del mismo tema en orden inverso
-· ¿Botón mover tema?
-· ¿Permitir editar locales a los usuarios (con cierto karma) o sólo a los administradores?
+· Seleccionar moderadores para un foro
 · Añadir la entidad Opinión --> Para cada local (¿se puede votar sin opinión y opinar sin votar?)
+· Añadir las Notificaciones (con email)
 · Añadir la entidad Encuesta
-· ¿Añadir las notificaciones?
-· Se pierde el file al agregar una imagen si da un error:
-· Rendered Botones GestionLocales dependiendo de los permisos (en general de todas las gestiones)
-· ¿Cómo ordenar una tabla? ¿sortable=true? (gestionarUsuarios)
-· Modificar estilos de los componentes de trinidad --> trinidad-skin.xml y/o trinidad-config.xml
+· ¿Permitir editar locales a los usuarios (con cierto karma) o sólo a los administradores?
+ --> Mejor meter un botón "Notificar modificación necesaria" --> Email + Notificación
+· Rendered de todas las opciones dependiendo de los permisos
+
+
+MEJORAS NECESARIAS:
+· javadoc de los cargarargumentosentrada
 · Teclas de acceso en cada botón
 · Texto alternativo y tooltip en las imágenes
 · Comentarios en Interfaces y Clases
 · Eliminar todos los @author
-· Login --> Excepcion --> Pide otra vez el login cuando está todavía conectado el usuario
-	Puede que sea por tema de conversacion del CabeceraPaginaBean --> ServicioUsuario es diferente siempre
-	O porque no encuentra el Bean de las excepciones -> Meter el bean
-	
+  
+MEJORAS DESEABLES:
+· Si edita un mensaje alguien que no es el autor --> Añadir alguna marca al mensaje
+· Al borrar/aniadir un tema, si volvemos a la gestión de foros, no se actualiza --> no tiene cargarArgumentosEntradas
+· Añadir un link en "ultima respuesta" de la gestión de temas de foros que navegue a la última respuesta?
+· ¿Botón mover tema?
+· Modificar estilos de los componentes de trinidad --> trinidad-skin.xml y/o trinidad-config.xml
+· Se pierde el file al agregar una imagen si da un error
+
+OTROS:
 · Los problemas con el autocommit (flush necesario) puede que sean por las fases de Seam donde se hacen
   los commit 1-5 o 6
-
+· ¿Cómo ordenar una tabla? ¿sortable=true? (gestionarUsuarios)
   
 ---
 

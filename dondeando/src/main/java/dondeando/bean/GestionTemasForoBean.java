@@ -45,7 +45,7 @@ public class GestionTemasForoBean {
 	//Constantes
 	private static final String ACCION_AGREGAR_TEMA = "_agregarTema_";
 	private static final String ACCION_ELIMINAR_TEMA = "_eliminarTema_";
-	private static final String ACCION_VER_MENSAJE = "_verMensaje_";
+	private static final String ACCION_VER_MENSAJES = "_verMensaje_";
 	//TODO: ¿Añadir la acción "mover a otro Foro"?
 	
 	//Atributos
@@ -136,7 +136,7 @@ public class GestionTemasForoBean {
 	 * @return Regla de navegación de la pantalla de edición de mensajes
 	 */
 	public String verMensajes(){
-		return realizarOperacion(ACCION_VER_MENSAJE);
+		return realizarOperacion(ACCION_VER_MENSAJES);
 	}
 	
 	
@@ -159,8 +159,7 @@ public class GestionTemasForoBean {
 		String outcome = "";
 		boolean operacionRealizada = false;
 		if(estadoDeSeleccionTabla.size()==1 
-		|| ACCION_AGREGAR_TEMA.equals(operacion)
-		|| ACCION_VER_MENSAJE.equals(operacion)){
+		|| ACCION_AGREGAR_TEMA.equals(operacion)){
 			
 			if(ACCION_AGREGAR_TEMA.equals(operacion)){
 				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
@@ -170,15 +169,6 @@ public class GestionTemasForoBean {
 				mapaArgumentos.setArgumento(FORO_DE_NUEVO_MENSAJE, foro);
 		
 				outcome = EDITAR_MENSAJE_FORO;
-			}
-			
-			else if(ACCION_VER_MENSAJE.equals(operacion)){
-				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
-				mapaArgumentos.limpiaMapa();
-				ProtocoloEdicion protocolo = new ProtocoloEdicion(null, GESTION_TEMAS_FORO, null);
-				mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
-				
-				outcome = GESTION_MENSAJES_TEMA;
 			}
 			
 			else{
@@ -193,6 +183,16 @@ public class GestionTemasForoBean {
 					}else
 						utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_ELIMINAR_FORO_ELIMINADO"));
 				}
+				
+				else if(ACCION_VER_MENSAJES.equals(operacion)){
+					if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+					mapaArgumentos.limpiaMapa();
+					ProtocoloEdicion protocolo = new ProtocoloEdicion(tema, GESTION_TEMAS_FORO, null);
+					mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+					
+					outcome = GESTION_MENSAJES_TEMA;
+				}
+
 			}
 			
 		}else

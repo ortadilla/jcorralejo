@@ -32,7 +32,7 @@
 					<tr:panelHeader text="#{editarMensajeForoBean.tituloPagina}" />
 					<tr:panelHorizontalLayout halign="center">
 						<tr:spacer width="10" />
-						<tr:panelBox text="#{resCore['DATOS_MENSAJE']}">
+						<tr:panelBox text="#{resCore['DATOS_MENSAJE']}" inlineStyle="width:100%;">
 							<tr:spacer height="20" />
 							<trh:tableLayout
 								inlineStyle="border-style: solid; border-width: 1px;"
@@ -40,16 +40,39 @@
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['ASUNTO']} *"
 										inlineStyle="font-weight: bolder;" />
-									<tr:inputText columns="53" value="#{editarMensajeForoBean.asunto}"
-										id="titulo" maximumLength="50"/>
+									<tr:inputText columns="53"
+										value="#{editarMensajeForoBean.asunto}" id="titulo"
+										maximumLength="50" />
 								</trh:rowLayout>
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['MENSAJE']} *"
 										inlineStyle="font-weight: bolder;" />
-									<tr:inputText columns="50" rows="5" value="#{editarMensajeForoBean.mensaje}"
-										id="descripcion"  maximumLength="2000" />
+									<tr:inputText columns="50" rows="5"
+										value="#{editarMensajeForoBean.mensaje}" id="descripcion"
+										maximumLength="2000" />
 								</trh:rowLayout>
 							</trh:tableLayout>
+							<tr:spacer width="20" height="20" />
+							<tr:table var="var" first="0"
+								emptyText="#{resCore['NO_ELEMENTOS']}" rows="20" width="100%"
+								value="#{editarMensajeForoBean.listaMensajesTema}"
+								rowBandingInterval="1" columnBandingInterval="0"
+								rowSelection="none" id="listaRespuestas">
+								<f:facet name="actions">
+									<tr:panelHorizontalLayout inlineStyle="width: 350px">
+										<tr:outputText id="elementosEncontrados"
+											inlineStyle="font-weight: bold"
+											value="#{resCore['ANTERIORES_RESPUESTAS']}" />
+									</tr:panelHorizontalLayout>
+								</f:facet>
+								<tr:column sortable="true" headerText="#{resCore['MENSAJE']}"
+									width="80%">
+									<tr:outputText value="#{var.mensaje}" />
+								</tr:column>
+								<tr:column sortable="true" headerText="#{resCore['AUTOR']}">
+									<tr:outputText value="#{var.autorYFecha}" />
+								</tr:column>
+							</tr:table>
 
 							<tr:spacer width="20" height="20" />
 							<tr:panelHorizontalLayout halign="center">
@@ -57,8 +80,7 @@
 									action="#{editarMensajeForoBean.aceptar}" />
 								<tr:spacer width="20" height="10" />
 								<tr:commandButton text="#{resCore['CANCELAR']}" id="btnCancelar"
-									immediate="true"
-									action="#{editarMensajeForoBean.cancelar}" />
+									immediate="true" action="#{editarMensajeForoBean.cancelar}" />
 							</tr:panelHorizontalLayout>
 
 						</tr:panelBox>

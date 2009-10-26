@@ -27,6 +27,12 @@ public interface ServicioMensajeForo {
 	 */
 	public void eliminarTema(MensajeForo tema);
 	
+	/**
+	 * Elimina de BD el mensaje indicado
+	 * @param mensaje Mensaje a eliminar
+	 */
+	public void eliminarMensaje(MensajeForo mensaje);
+	
 
 	/**
 	 * Crea un mensajeForo con los datos indicados
@@ -42,13 +48,11 @@ public interface ServicioMensajeForo {
 	/**
 	 * Actualiza el mensajeForo con los datos indicados
 	 * @param mensajeForo mensajeForo a actualizar
-	 * @param foro Foro del mensaje
-	 * @param tema	Tema del mensaje
 	 * @param asunto	Asunto del mensaje
 	 * @param mensaje	Mensaje en sí
 	 * @param autor	Autor del mensaje
 	 */
-	public void editarMensajeForo(MensajeForo mensajeForo, Foro foro, MensajeForo tema, String asunto, String mensaje, Usuario autor);
+	public void editarMensajeForo(MensajeForo mensajeForo, String asunto, String mensaje, Usuario autor);
 
 
 }
