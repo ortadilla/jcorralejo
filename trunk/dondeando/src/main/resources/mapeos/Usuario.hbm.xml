@@ -1,25 +1,31 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="dondeando.modelo.entidades.implementacion">
- <class name="UsuarioImpl" table="usuario">
-  <id name="id">
-   <generator class="increment"/>
-  </id>
-  <version generated="never" name="version" type="integer"/>
-  <property column="login"  name="login"/>
-  <property column="password"  name="password"/>
-  <property column="nombre" name="nombre"/>
-  <property column="apellidos" name="apellidos"/>
-  <property column="direccion" name="direccion"/>
-  <property column="email" name="email"/>
-  <property column="karma" name="karma"/>
-  <property column="activo" name="activo" type="true_false"/>
-  <many-to-one
-   class="dondeando.modelo.entidades.implementacion.TipoUsuarioImpl"
-   column="tipo" name="tipoUsuario"/>
-  <many-to-one
-   class="dondeando.modelo.entidades.implementacion.ImagenImpl"
-   column="avatar" name="avatar"/>
- </class>
+<hibernate-mapping
+	package="dondeando.modelo.entidades.implementacion">
+	<class name="UsuarioImpl" table="usuario">
+		<id name="id">
+			<generator class="increment" />
+		</id>
+		<version generated="never" name="version" type="integer" />
+		<property column="login" name="login" />
+		<property column="password" name="password" />
+		<property column="nombre" name="nombre" />
+		<property column="apellidos" name="apellidos" />
+		<property column="direccion" name="direccion" />
+		<property column="email" name="email" />
+		<property column="karma" name="karma" />
+		<property column="activo" name="activo" type="true_false" />
+		<many-to-one
+			class="dondeando.modelo.entidades.implementacion.TipoUsuarioImpl"
+			column="tipo" name="tipoUsuario" />
+		<many-to-one
+			class="dondeando.modelo.entidades.implementacion.ImagenImpl"
+			column="avatar" name="avatar" />
+		<set name="opiniones" inverse="true" cascade="all-delete-orphan">
+			<key column="usuario" />
+			<one-to-many class="OpinionImpl" />
+		</set>
+		
+	</class>
 </hibernate-mapping>

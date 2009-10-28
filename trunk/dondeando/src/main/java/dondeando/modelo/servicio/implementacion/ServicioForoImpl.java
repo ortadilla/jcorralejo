@@ -20,6 +20,7 @@ import dondeando.modelo.dao.ForoDAO;
 import dondeando.modelo.dao.excepciones.DAOExcepcion;
 import dondeando.modelo.entidades.Foro;
 import dondeando.modelo.entidades.MensajeForo;
+import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.ForoImpl;
 import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioForo;
@@ -150,6 +151,37 @@ public class ServicioForoImpl implements ServicioForo{
 	public Foro encontrarForoPorTitulo(String titulo) {
 		List<Foro> foros = foroDAO.encontrarPorCondicion(servicioCriterios.construyeCriterio(Foro.ATRIBUTO_TITULO, Criterio.IGUAL, titulo));
 		return foros.isEmpty() ? null : foros.get(0);
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioForo#aniadirModerador(dondeando.modelo.entidades.Foro, dondeando.modelo.entidades.Usuario)
+	 */
+	public void aniadirModerador(Foro foro, Usuario moderador) {
+		if(foro!=null && moderador!=null){
+			foro.getModeradores().add(moderador);
+			try {
+				foroDAO.flush();
+			} catch (DAOExcepcion e) {
+				log.debug("Error al añadir un moderador a un foro", e);
+			}
+		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioForo#eliminarModerador(dondeando.modelo.entidades.Foro, dondeando.modelo.entidades.Usuario)
+	 */
+	public void eliminarModerador(Foro foro, Usuario moderador) {
+		if(foro!=null && moderador!=null){
+			foro.getModeradores().remove(moderador);
+			try {
+				foroDAO.flush();
+			} catch (DAOExcepcion e) {
+				log.debug("Error al eliminar un moderador de un foro", e);
+			}
+		}
+		
 	}
 
 }

@@ -1,8 +1,10 @@
 package dondeando.modelo.entidades.implementacion;
 
 import java.math.BigDecimal;
+import java.util.Set;
 
 import dondeando.modelo.entidades.Imagen;
+import dondeando.modelo.entidades.Opinion;
 import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
 
@@ -20,6 +22,7 @@ public class UsuarioImpl implements Usuario{
 	private BigDecimal karma;
 	private TipoUsuario tipoUsuario;
 	private Imagen avatar;
+	private Set<Opinion> opiniones;
 	
 	@Override
 	public int hashCode() {
@@ -122,6 +125,12 @@ public class UsuarioImpl implements Usuario{
 	}
 	public void setAvatar(Imagen avatar) {
 		this.avatar = avatar;
+	}
+	public Set<Opinion> getOpiniones() {
+		return opiniones;
+	}
+	public void setOpiniones(Set<Opinion> opiniones) {
+		this.opiniones = opiniones;
 	}
 	
 }

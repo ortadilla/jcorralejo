@@ -3,6 +3,7 @@ package dondeando.modelo.servicio;
 import java.util.List;
 
 import dondeando.modelo.entidades.Foro;
+import dondeando.modelo.entidades.Usuario;
 
 public interface ServicioForo {
 	
@@ -60,5 +61,19 @@ public interface ServicioForo {
 	 * @return Foro encontrado
 	 */
 	public Foro encontrarForoPorTitulo(String titulo);
+	
+	/**
+	 * Añade el usuario como moderador del foro
+	 * @param foro Foro al que añadir el moderador
+	 * @param moderador Nuevo moderador del foro
+	 */
+	public void aniadirModerador(Foro foro, Usuario moderador);
 
+	/**
+	 * Elimina el usuario como moderador del foro
+	 * @param foro Foro del que eliminar el moderador
+	 * @param moderador Moderador a eliminar
+	 */
+	public void eliminarModerador(Foro foro, Usuario moderador);
+	
 }

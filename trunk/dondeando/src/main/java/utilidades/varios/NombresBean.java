@@ -15,6 +15,7 @@ public class NombresBean {
 	public static final String SERVICIO_IMAGEN_LOCAL = "servicioImagenLocal";
 	public static final String SERVICIO_LOCAL = "servicioLocal";
 	public static final String SERVICIO_MENSAJE_FORO = "servicioMensajeForo";
+	public static final String SERVICIO_OPINION = "servicioOpinion";
     public static final String SERVICIO_PERMISO_USUARIO = "servicioPermisoUsuario";
     public static final String SERVICIO_PROVINCIA = "servicioProvincia";
     public static final String SERVICIO_SERVICIO = "servicioServicio";
@@ -35,6 +36,8 @@ public class NombresBean {
     public static final String EDITAR_LOCAL_BEAN = "editarLocalBean"; 
     public static final String GESTION_FOROS_BEAN = "gestionForosBean"; 
     public static final String GESTION_MENSAJES_TEMA_BEAN = "gestionMensajesTemaBean"; 
+    public static final String GESTION_MODERADORES_FORO_BEAN = "gestionModeradoresForoBean"; 
+    public static final String GESTION_OPINION_LOCAL_BEAN = "gestionOpinionesLocalBean"; 
     public static final String GESTION_TEMAS_FORO_BEAN = "gestionTemasForoBean"; 
     public static final String GESTION_LOCALES_BEAN = "gestionLocalesBean"; 
     public static final String GESTION_USUARIOS_BEAN = "gestionUsuariosBean"; 
@@ -56,6 +59,7 @@ public class NombresBean {
     public static final String IMAGEN_LOCAL_DAO = "imagenLocalDAO"; 
     public static final String LOCAL_DAO = "localDAO"; 
     public static final String MENSAJE_FORO_DAO = "mensajeForoDAO"; 
+    public static final String OPINION_DAO = "opinionDAO"; 
     public static final String PROVINCIA_DAO = "provinciaDAO"; 
     public static final String PRUEBA_DAO = "pruebaDAO"; 
     public static final String PERMISO_USUARIO_DAO = "permisoUsuarioDAO"; 

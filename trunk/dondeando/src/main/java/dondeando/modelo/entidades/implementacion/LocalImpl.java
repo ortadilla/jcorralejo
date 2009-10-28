@@ -6,6 +6,7 @@ import java.util.Set;
 import dondeando.modelo.entidades.Direccion;
 import dondeando.modelo.entidades.ImagenLocal;
 import dondeando.modelo.entidades.Local;
+import dondeando.modelo.entidades.Opinion;
 import dondeando.modelo.entidades.Servicio;
 import dondeando.modelo.entidades.TipoLocal;
 
@@ -27,6 +28,7 @@ public class LocalImpl implements Local{
 	private Set<Servicio> servicios;
 	private Set<ImagenLocal> imagenes;
 	private boolean activo;
+	private Set<Opinion> opiniones;
 	
 	private String cadenaTiposLocal;
 	private String imagenPrecio;
@@ -181,6 +183,12 @@ public class LocalImpl implements Local{
 	}
 	public void setActivo(boolean activo) {
 		this.activo = activo;
+	}
+	public Set<Opinion> getOpiniones() {
+		return opiniones;
+	}
+	public void setOpiniones(Set<Opinion> opiniones) {
+		this.opiniones = opiniones;
 	}
 	
 	

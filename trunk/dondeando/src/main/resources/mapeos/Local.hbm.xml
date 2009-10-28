@@ -44,5 +44,10 @@
 			<one-to-many
 				class="ImagenLocalImpl" />
 		</set>
+		
+		<set name="opiniones" inverse="true" cascade="all-delete-orphan">
+			<key column="local" />
+			<one-to-many class="OpinionImpl" />
+		</set>
 	</class>
 </hibernate-mapping>

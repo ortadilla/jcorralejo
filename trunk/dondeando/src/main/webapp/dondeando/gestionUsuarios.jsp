@@ -124,7 +124,16 @@
 								inlineStyle="height: 20px;" />
 						</tr:column>
 					</tr:table>
-				</tr:panelBox>
+					<tr:spacer height="20" width="20"/>
+					<tr:panelHorizontalLayout halign="center" rendered="#{gestionUsuariosBean.buscando}">
+						<tr:commandButton text="#{resCore['ACEPTAR']}" id="btnAceptar"
+							action="#{gestionUsuariosBean.aceptar}" />
+						<tr:spacer width="20" height="10" />
+						<tr:commandButton text="#{resCore['CANCELAR']}" id="btnCancelar"
+							immediate="true" action="#{gestionUsuariosBean.cancelar}" />
+					</tr:panelHorizontalLayout>
+
+					</tr:panelBox>
 			</tr:panelPage>
 			</tr:form>
 		</trh:body>

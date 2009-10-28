@@ -14,5 +14,8 @@ public class ConstantesArgumentosNavegacion {
 	//Para EditarMensajeBean
 	public static final String TEMA_DE_NUEVO_MENSAJE = "temaDeNuevoMensaje";
 	public static final String FORO_DE_NUEVO_MENSAJE = "foroDeNuevoMensaje";
+	
+	//Para EditarOpinionBean
+	public static final String LOCAL_DE_NUEVA_OPINION = "localNuevaOpinion";
 
 }

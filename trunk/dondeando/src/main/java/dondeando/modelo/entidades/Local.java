@@ -59,5 +59,7 @@ public interface Local {
 	public Set<ImagenLocal> getImagenes();
 	public void setImagenes(Set<ImagenLocal> imagenes);
 	
+	public Set<Opinion> getOpiniones();
+	public void setOpiniones(Set<Opinion> opiniones);
 	
 }
