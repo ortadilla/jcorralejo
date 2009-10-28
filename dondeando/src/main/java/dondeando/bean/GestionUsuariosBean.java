@@ -7,6 +7,7 @@ import static utilidades.varios.NombresBean.GESTION_USUARIOS_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
 import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
+import static utilidades.varios.NombresBean.PROTOCOLO_RESULTADO;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
@@ -15,6 +16,7 @@ import java.util.List;
 
 import javax.faces.model.SelectItem;
 
+import org.apache.myfaces.trinidad.component.core.layout.CoreShowDetailHeader;
 import org.apache.myfaces.trinidad.model.RowKeySet;
 import org.apache.myfaces.trinidad.model.RowKeySetImpl;
 import org.jboss.seam.ScopeType;
@@ -29,6 +31,7 @@ import utilidades.jsf.UtilJsfContext;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
 import utilidades.varios.NombresBean;
+import utilidades.varios.ProtocoloBusqueda;
 import utilidades.varios.ProtocoloEdicion;
 import utilidades.varios.SelectItemBuilder;
 import dondeando.binding.GestionUsuariosBinding;
@@ -51,10 +54,12 @@ public class GestionUsuariosBean {
 	private List<Usuario> listaUsuarios;
 	private RowKeySet estadoDeSeleccionTabla = new RowKeySetImpl();
 	private boolean desplegado;
+	private boolean buscando;
 	private String criterioUsuario;
 	private TipoUsuario criterioTipoUsuario;
 	private Boolean criterioActivo = Boolean.TRUE;
 	
+	private ProtocoloBusqueda protocoloBusqueda;
 	private SelectItem[] selectSiNo;
 	private SelectItem[] selectTipoUsuario;
 
@@ -88,7 +93,19 @@ public class GestionUsuariosBean {
 				  											  TipoUsuario.ATRIBUTO_DESCRIPCION,
 				  											  true);
 		desplegado = false;
-		buscar();
+//		buscar();
+	}
+	
+	public void cargarArgumentosDeEntrada(){
+		//Cargar los datos y lanzar la búsqueda
+		if(mapaArgumentos!=null && mapaArgumentos.contieneProtocoloBusqueda())
+			protocoloBusqueda = mapaArgumentos.getProtocoloBusqueda();
+		
+		if(protocoloBusqueda!=null){
+			buscando = true;
+			if(protocoloBusqueda.isLanzaConsulta())
+				buscar();
+		}
 	}
 	
 	/**
@@ -179,6 +196,7 @@ public class GestionUsuariosBean {
 	public void buscar(){
 		listaUsuarios = servicioUsuario.encontrarUsuariosPorLoginTipoYActivo(criterioUsuario, criterioTipoUsuario, criterioActivo);
 		desplegado = false;
+		if(binding.getBusqueda()==null) binding.setBusqueda(new CoreShowDetailHeader());
 		binding.getBusqueda().setDisclosed(desplegado);
 		if(listaUsuarios!=null && listaUsuarios.size()==1)
 			estadoDeSeleccionTabla.add(0);
@@ -200,6 +218,41 @@ public class GestionUsuariosBean {
 	public String getNumeroElementosTabla(){
 		return mensajesCore.obtenerTexto("ELEMENTOS_ENCONTRADOS", listaUsuarios != null ? listaUsuarios.size() : "0");
     }
+	
+	/**
+	 * Cancela la selección de usuarios
+	 * @return Regla de navegación
+	 */
+	public String cancelar(){
+		String outcome = protocoloBusqueda!=null ? protocoloBusqueda.getOutcomeVuelta() : "";
+		protocoloBusqueda = null; //para que al volver no se cargue nada
+		estadoDeSeleccionTabla.clear();
+		buscando = false;
+		return outcome;
+	}
+	
+	/**
+	 * Devuelve el usuario seleccionado
+	 * @return Regla de navegación
+	 */
+	public String aceptar(){
+		String outcome = "";
+		if(estadoDeSeleccionTabla.size()==1){
+			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
+			Usuario usuario = listaUsuarios.get(seleccion);
+			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+			mapaArgumentos.limpiaMapa();
+			mapaArgumentos.setArgumento(PROTOCOLO_RESULTADO, usuario);
+			
+			outcome = protocoloBusqueda!=null ? protocoloBusqueda.getOutcomeVuelta() : "";
+			protocoloBusqueda = null; //para que al volver no se cargue nada
+			estadoDeSeleccionTabla.clear();
+			buscando = false;
+		}else
+			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
+			
+		return outcome;
+	}
 
 	public List<Usuario> getListaUsuarios() {
 		return listaUsuarios;
@@ -263,6 +316,14 @@ public class GestionUsuariosBean {
 
 	public void setSelectTipoUsuario(SelectItem[] selectTipoUsuario) {
 		this.selectTipoUsuario = selectTipoUsuario;
+	}
+
+	public boolean isBuscando() {
+		return buscando;
+	}
+
+	public void setBuscando(boolean buscando) {
+		this.buscando = buscando;
 	}
 	
 }

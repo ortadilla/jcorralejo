@@ -1,10 +1,12 @@
-· Seleccionar moderadores para un foro
-· Añadir la entidad Opinión --> Para cada local (¿se puede votar sin opinión y opinar sin votar?)
+· Añadir la entidad Opinión --> Para cada local
+· Mapeos: Usuario --> opiniones		Locales --> opiniones 
+· Añadir la entidad Votación --> Para cada local
 · Añadir las Notificaciones (con email)
 · Añadir la entidad Encuesta
 · ¿Permitir editar locales a los usuarios (con cierto karma) o sólo a los administradores?
  --> Mejor meter un botón "Notificar modificación necesaria" --> Email + Notificación
-· Rendered de todas las opciones dependiendo de los permisos
+· Rendered de TODOS LOS BOTONES dependiendo de los permisos
+· Menú principal
 
 
 MEJORAS NECESARIAS:

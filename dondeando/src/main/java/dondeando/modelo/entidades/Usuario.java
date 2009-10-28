@@ -1,6 +1,7 @@
 package dondeando.modelo.entidades;
 
 import java.math.BigDecimal;
+import java.util.Set;
 
 public interface Usuario {
 	
@@ -45,6 +46,9 @@ public interface Usuario {
 	
 	public Imagen getAvatar();
 	public void setAvatar(Imagen imagen);
+	
+	public Set<Opinion> getOpiniones();
+	public void setOpiniones(Set<Opinion> opiniones);
 	
 	public String getNombreCompleto();
 }

@@ -3,6 +3,7 @@ package dondeando.bean;
 import static utilidades.jsf.ConstantesReglasNavegacion.DETALLES_LOCAL;
 import static utilidades.jsf.ConstantesReglasNavegacion.EDITAR_LOCAL;
 import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_LOCALES;
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_OPINIONES_LOCAL;
 import static utilidades.varios.NombresBean.GESTION_LOCALES_BEAN;
 import static utilidades.varios.NombresBean.GESTION_LOCALES_BINDING;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
@@ -55,6 +56,7 @@ public class GestionLocalesBean {
 	private static final String ACCION_MODIFICAR_LOCAL = "_modificarLocal_";
 	private static final String ACCION_ELIMINAR_LOCAL = "_eliminarLocal_";
 	private static final String ACCION_RECUPERAR_LOCAL = "_recuperarLocal_";
+	private static final String ACCION_VER_OPNIONES = "_verLocales_";
 	
 	//Atributos
 	private boolean desplegado;
@@ -188,6 +190,13 @@ public class GestionLocalesBean {
 	public void recuperar(){
 		realizarOperacion(ACCION_RECUPERAR_LOCAL);
 	}
+
+	/**
+	 * Navega para ver las opiniones del local
+	 */
+	public String verOpiniones(){
+		return realizarOperacion(ACCION_VER_OPNIONES);
+	}
 	
 	/**
 	 * Devuelve un mensaje con el número de elementos de la tabla de resultados
@@ -248,6 +257,16 @@ public class GestionLocalesBean {
 						operacionRealizada = true;
 					}else
 						utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_RECUPERAR_LOCAL_ACTIVO"));
+					
+				}else if(ACCION_VER_OPNIONES.equals(operacion)){
+	
+					if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+					mapaArgumentos.limpiaMapa();
+					ProtocoloEdicion protocolo = new ProtocoloEdicion(local,GESTION_LOCALES,null);
+					mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+			
+					outcome = GESTION_OPINIONES_LOCAL;
+					operacionRealizada = true;
 				}
 			}
 			

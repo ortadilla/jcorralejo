@@ -116,6 +116,8 @@
 									onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_LOCAL']}')" />
 								<tr:commandButton text="#{resCore['RECUPERAR_LOCAL']}"
 									id="btnRecuperar" action="#{gestionLocalesBean.recuperar}" />
+								<tr:commandButton text="#{resCore['OPINIONES']}"
+									id="btnOpiniones" action="#{gestionLocalesBean.verOpiniones}" />
 							</tr:panelButtonBar>
 						</tr:panelGroupLayout>
 						<tr:spacer height="10" />

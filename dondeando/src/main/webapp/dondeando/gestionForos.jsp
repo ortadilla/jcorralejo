@@ -81,6 +81,8 @@
 								onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_FORO']}')" />
 							<tr:commandButton text="#{resCore['RECUPERAR_FORO']}"
 								id="btnRecuperar" action="#{gestionForosBean.recuperar}" />
+							<tr:commandButton text="#{resCore['MODERADORES']}"
+								id="btnModeradores" action="#{gestionForosBean.irModeradores}" />
 						</tr:panelButtonBar>
 					</tr:panelGroupLayout>
 					<tr:spacer height="10" />
