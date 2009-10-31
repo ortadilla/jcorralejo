@@ -5,6 +5,7 @@ import java.util.Set;
 
 import dondeando.modelo.entidades.Imagen;
 import dondeando.modelo.entidades.Opinion;
+import dondeando.modelo.entidades.Puntuacion;
 import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
 
@@ -23,6 +24,7 @@ public class UsuarioImpl implements Usuario{
 	private TipoUsuario tipoUsuario;
 	private Imagen avatar;
 	private Set<Opinion> opiniones;
+	private Set<Puntuacion> puntuaciones;
 	
 	@Override
 	public int hashCode() {
@@ -131,6 +133,12 @@ public class UsuarioImpl implements Usuario{
 	}
 	public void setOpiniones(Set<Opinion> opiniones) {
 		this.opiniones = opiniones;
+	}
+	public Set<Puntuacion> getPuntuaciones() {
+		return puntuaciones;
+	}
+	public void setPuntuaciones(Set<Puntuacion> puntuaciones) {
+		this.puntuaciones = puntuaciones;
 	}
 	
 }

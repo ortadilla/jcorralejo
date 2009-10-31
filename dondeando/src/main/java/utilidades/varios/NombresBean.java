@@ -18,6 +18,7 @@ public class NombresBean {
 	public static final String SERVICIO_OPINION = "servicioOpinion";
     public static final String SERVICIO_PERMISO_USUARIO = "servicioPermisoUsuario";
     public static final String SERVICIO_PROVINCIA = "servicioProvincia";
+    public static final String SERVICIO_PUNTUACION = "servicioPuntuacion";
     public static final String SERVICIO_SERVICIO = "servicioServicio";
     public static final String SERVICIO_USUARIO = "servicioUsuario";
     public static final String SERVICIO_TIPO_LOCAL = "servicioTipoLocal";
@@ -32,13 +33,16 @@ public class NombresBean {
     public static final String DETALLES_LOCAL_BEAN = "detallesLocalBean"; 
     public static final String EDITAR_FORO_BEAN = "editarForoBean"; 
     public static final String EDITAR_MENSAJE_FORO_BEAN = "editarMensajeForoBean"; 
+    public static final String EDITAR_OPINION_LOCAL_BEAN = "editarOpinionLocalBean"; 
     public static final String EDITAR_USUARIO_BEAN = "editarUsuarioBean"; 
+    public static final String EDITAR_PUNTUACION_LOCAL_BEAN = "editarPuntuacionLocalBean"; 
     public static final String EDITAR_LOCAL_BEAN = "editarLocalBean"; 
     public static final String GESTION_FOROS_BEAN = "gestionForosBean"; 
     public static final String GESTION_MENSAJES_TEMA_BEAN = "gestionMensajesTemaBean"; 
     public static final String GESTION_MODERADORES_FORO_BEAN = "gestionModeradoresForoBean"; 
     public static final String GESTION_OPINION_LOCAL_BEAN = "gestionOpinionesLocalBean"; 
     public static final String GESTION_TEMAS_FORO_BEAN = "gestionTemasForoBean"; 
+    public static final String GESTION_VALORACIONES_LOCAL_BEAN = "gestionValoracionesLocalBean"; 
     public static final String GESTION_LOCALES_BEAN = "gestionLocalesBean"; 
     public static final String GESTION_USUARIOS_BEAN = "gestionUsuariosBean"; 
     public static final String IMAGENES_LOCAL_BEAN = "imagenesLocalBean"; 
@@ -60,9 +64,10 @@ public class NombresBean {
     public static final String LOCAL_DAO = "localDAO"; 
     public static final String MENSAJE_FORO_DAO = "mensajeForoDAO"; 
     public static final String OPINION_DAO = "opinionDAO"; 
+    public static final String PERMISO_USUARIO_DAO = "permisoUsuarioDAO"; 
     public static final String PROVINCIA_DAO = "provinciaDAO"; 
     public static final String PRUEBA_DAO = "pruebaDAO"; 
-    public static final String PERMISO_USUARIO_DAO = "permisoUsuarioDAO"; 
+    public static final String PUNTUACION_DAO = "puntuacionDAO"; 
     public static final String SERVICIO_DAO = "servicioDAO"; 
     public static final String TIPO_LOCAL_DAO = "tipoLocalDAO"; 
     public static final String TIPO_USUARIO_DAO = "tipoUsuarioDAO"; 

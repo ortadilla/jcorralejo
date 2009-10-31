@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+	package="dondeando.modelo.entidades.implementacion">
+	<class name="PuntuacionImpl" table="puntuacion">
+
+		<id name="id" unsaved-value="null">
+			<generator class="increment" />
+		</id>
+		<version name="version" />
+		
+		<property name="fecha" column="fecha" type="timestamp"/>
+		<property name="comida" column="comida" />
+		<property name="servicio" column="servicio" />
+		<property name="ambiente" column="ambiente" />
+		<property name="calidadPrecio" column="calidadPrecio" />
+		<property name="loMejor" column="loMejor" />
+		<property name="loPeor" column="loPeor" />
+
+		<many-to-one
+			class="dondeando.modelo.entidades.implementacion.LocalImpl"
+			column="local" name="local" />
+
+		<many-to-one
+			class="dondeando.modelo.entidades.implementacion.UsuarioImpl"
+			column="usuario" name="usuario" />
+			
+	</class>
+</hibernate-mapping>

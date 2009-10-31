@@ -128,7 +128,6 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
 		} catch (DAOExcepcion e) {
 			log.debug("Error al actualizar los datos del mensajeForo");
 		}
-
 	}
 
 	/**

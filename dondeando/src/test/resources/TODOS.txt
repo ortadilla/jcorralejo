@@ -1,5 +1,3 @@
-· Añadir la entidad Opinión --> Para cada local
-· Mapeos: Usuario --> opiniones		Locales --> opiniones 
 · Añadir la entidad Votación --> Para cada local
 · Añadir las Notificaciones (con email)
 · Añadir la entidad Encuesta
@@ -17,6 +15,9 @@ MEJORAS NECESARIAS:
 · Eliminar todos los @author
   
 MEJORAS DESEABLES:
+· ¿Añadir una carta a los locales?
+· Añadir en algún sitio las opiniones de cada usuario (en sus detalles)
+· Añadir en algín sitio las puntuaciones de cada usuario (en sus detalles)
 · Si edita un mensaje alguien que no es el autor --> Añadir alguna marca al mensaje
 · Al borrar/aniadir un tema, si volvemos a la gestión de foros, no se actualiza --> no tiene cargarArgumentosEntradas
 · Añadir un link en "ultima respuesta" de la gestión de temas de foros que navegue a la última respuesta?
