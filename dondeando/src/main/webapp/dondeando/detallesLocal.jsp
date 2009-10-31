@@ -148,6 +148,12 @@
 										<tr:panelHorizontalLayout halign="center">
 											<tr:commandButton text="#{resCore['IMAGENES']}"
 												id="btnImagenes" action="#{detallesLocalBean.irImagenes}" />
+											<tr:spacer width="10" height="10" />
+											<tr:commandButton text="#{resCore['OPINIONES']}"
+												id="btnOpiniones" action="#{detallesLocalBean.irOpiniones}" />
+											<tr:spacer width="10" height="10" />
+											<tr:commandButton text="#{resCore['VALORACIONES']}"
+												id="btnValoraciones" action="#{detallesLocalBean.irValoraciones}" />
 										</tr:panelHorizontalLayout>
 									</trh:cellFormat>
 								</trh:rowLayout>

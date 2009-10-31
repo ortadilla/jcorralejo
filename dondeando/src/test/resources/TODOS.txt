@@ -1,9 +1,7 @@
-· Añadir la entidad Votación --> Para cada local
 · Añadir las Notificaciones (con email)
+· Actualizar votaciones y karma
 · Añadir la entidad Encuesta
-· ¿Permitir editar locales a los usuarios (con cierto karma) o sólo a los administradores?
- --> Mejor meter un botón "Notificar modificación necesaria" --> Email + Notificación
-· Rendered de TODOS LOS BOTONES dependiendo de los permisos
+· Rendered de TODOS LOS BOTONES dependiendo de los permisos y el karma
 · Menú principal
 
 
@@ -16,8 +14,6 @@ MEJORAS NECESARIAS:
   
 MEJORAS DESEABLES:
 · ¿Añadir una carta a los locales?
-· Añadir en algún sitio las opiniones de cada usuario (en sus detalles)
-· Añadir en algín sitio las puntuaciones de cada usuario (en sus detalles)
 · Si edita un mensaje alguien que no es el autor --> Añadir alguna marca al mensaje
 · Al borrar/aniadir un tema, si volvemos a la gestión de foros, no se actualiza --> no tiene cargarArgumentosEntradas
 · Añadir un link en "ultima respuesta" de la gestión de temas de foros que navegue a la última respuesta?
