@@ -26,6 +26,10 @@
 			<key column="usuario" />
 			<one-to-many class="OpinionImpl" />
 		</set>
+		<set name="puntuaciones" inverse="true" cascade="all-delete-orphan">
+			<key column="usuario" />
+			<one-to-many class="PuntuacionImpl" />
+		</set>
 		
 	</class>
 </hibernate-mapping>

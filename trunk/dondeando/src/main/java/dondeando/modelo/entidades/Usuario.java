@@ -50,5 +50,8 @@ public interface Usuario {
 	public Set<Opinion> getOpiniones();
 	public void setOpiniones(Set<Opinion> opiniones);
 	
+	public Set<Puntuacion> getPuntuaciones();
+	public void setPuntuaciones(Set<Puntuacion> puntuaciones);
+	
 	public String getNombreCompleto();
 }

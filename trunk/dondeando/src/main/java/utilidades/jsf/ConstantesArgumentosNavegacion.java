@@ -18,4 +18,7 @@ public class ConstantesArgumentosNavegacion {
 	//Para EditarOpinionBean
 	public static final String LOCAL_DE_NUEVA_OPINION = "localNuevaOpinion";
 
+	//Para EditarPuntuacionBean
+	public static final String LOCAL_DE_NUEVA_PUNTUACION = "localNuevaPuntuacion";
+	
 }

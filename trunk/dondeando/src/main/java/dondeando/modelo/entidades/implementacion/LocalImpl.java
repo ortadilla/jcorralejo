@@ -7,6 +7,7 @@ import dondeando.modelo.entidades.Direccion;
 import dondeando.modelo.entidades.ImagenLocal;
 import dondeando.modelo.entidades.Local;
 import dondeando.modelo.entidades.Opinion;
+import dondeando.modelo.entidades.Puntuacion;
 import dondeando.modelo.entidades.Servicio;
 import dondeando.modelo.entidades.TipoLocal;
 
@@ -29,6 +30,7 @@ public class LocalImpl implements Local{
 	private Set<ImagenLocal> imagenes;
 	private boolean activo;
 	private Set<Opinion> opiniones;
+	private Set<Puntuacion> puntuaciones;
 	
 	private String cadenaTiposLocal;
 	private String imagenPrecio;
@@ -189,6 +191,12 @@ public class LocalImpl implements Local{
 	}
 	public void setOpiniones(Set<Opinion> opiniones) {
 		this.opiniones = opiniones;
+	}
+	public Set<Puntuacion> getPuntuaciones() {
+		return puntuaciones;
+	}
+	public void setPuntuaciones(Set<Puntuacion> puntuaciones) {
+		this.puntuaciones = puntuaciones;
 	}
 	
 	

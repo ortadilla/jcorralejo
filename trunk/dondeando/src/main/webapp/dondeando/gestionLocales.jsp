@@ -118,6 +118,8 @@
 									id="btnRecuperar" action="#{gestionLocalesBean.recuperar}" />
 								<tr:commandButton text="#{resCore['OPINIONES']}"
 									id="btnOpiniones" action="#{gestionLocalesBean.verOpiniones}" />
+								<tr:commandButton text="#{resCore['VALORACIONES']}"
+									id="btnPuntuaciones" action="#{gestionLocalesBean.verValoraciones}" />
 							</tr:panelButtonBar>
 						</tr:panelGroupLayout>
 						<tr:spacer height="10" />

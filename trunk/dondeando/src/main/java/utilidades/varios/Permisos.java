@@ -8,5 +8,6 @@ public class Permisos {
 	public static final int GESTIONAR_FOROS =  3;
 	public static final int GESTIONAR_MENSAJES_FOROS =  4;
 	public static final int GESTIONAR_OPINIONES_LOCAL =  5;
+	public static final int GESTIONAR_PUNTUACIONES_LOCAL =  6;
 
 }

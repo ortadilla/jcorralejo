@@ -11,6 +11,8 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
         <navigation-case><from-outcome>editarUsuario</from-outcome><to-view-id>/dondeando/editarUsuario.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>editarMensajeForo</from-outcome><to-view-id>/dondeando/editarMensajeForo.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>editarLocal</from-outcome><to-view-id>/dondeando/editarLocal.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>editarOpinionLocal</from-outcome><to-view-id>/dondeando/editarOpinionLocal.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>editarPuntuacionLocal</from-outcome><to-view-id>/dondeando/editarPuntuacionLocal.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>detallesForo</from-outcome><to-view-id>/dondeando/detallesForo.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>detallesLocal</from-outcome><to-view-id>/dondeando/detallesLocal.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>detallesUsuario</from-outcome><to-view-id>/dondeando/detallesUsuario.jsp</to-view-id></navigation-case>
@@ -21,6 +23,7 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
         <navigation-case><from-outcome>gestionModeradoresForo</from-outcome><to-view-id>/dondeando/gestionModeradoresForo.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionOpinionesLocal</from-outcome><to-view-id>/dondeando/gestionOpinionesLocal.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionUsuarios</from-outcome><to-view-id>/dondeando/gestionUsuarios.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>gestionValoracionesLocal</from-outcome><to-view-id>/dondeando/gestionValoracionesLocal.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionLocales</from-outcome><to-view-id>/dondeando/gestionLocales.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>imagenesLocal</from-outcome><to-view-id>/dondeando/imagenesLocal.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>dialog:aniadirImagen</from-outcome><to-view-id>/dondeando/aniadirImagen.jsp</to-view-id></navigation-case>
