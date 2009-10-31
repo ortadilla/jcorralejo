@@ -1,5 +1,7 @@
 package dondeando.bean;
 
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_OPINIONES_LOCAL;
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_VALORACIONES_LOCAL;
 import static utilidades.jsf.ConstantesReglasNavegacion.IMAGENES_LOCAL;
 import static utilidades.varios.NombresBean.DETALLES_LOCAL_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
@@ -175,6 +177,38 @@ public class DetallesLocalBean {
 		return IMAGENES_LOCAL;
 	}
 
+	/**
+	 * Navega para ver las opiniones que se han vertido sobre el local
+	 * @return Regla de navegación
+	 */
+	public String irOpiniones(){
+		
+		ProtocoloEdicion protocolo = new ProtocoloEdicion(localEdicion,
+														  ConstantesReglasNavegacion.DETALLES_LOCAL,
+														  null);
+		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+		mapaArgumentos.limpiaMapa();
+		mapaArgumentos.setArgumento(NombresBean.PROTOCOLO_EDICION, protocolo);
+		
+		return GESTION_OPINIONES_LOCAL;
+	}
+	
+	/**
+	 * Navega para ver las valoraciones que se han hecho sobre el local
+	 * @return Regla de navegación
+	 */
+	public String irValoraciones(){
+		
+		ProtocoloEdicion protocolo = new ProtocoloEdicion(localEdicion,
+														  ConstantesReglasNavegacion.DETALLES_LOCAL,
+														  null);
+		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+		mapaArgumentos.limpiaMapa();
+		mapaArgumentos.setArgumento(NombresBean.PROTOCOLO_EDICION, protocolo);
+		
+		return GESTION_VALORACIONES_LOCAL;
+	}
+	
 	/**
 	 * indica si hay que mostrar el selectMany con los servicios del local
 	 * @return TRUE si hay que mostrarlo
