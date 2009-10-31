@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+	package="dondeando.modelo.entidades.implementacion">
+	<class name="InteresImpl" table="interes">
+
+		<id name="id" unsaved-value="null">
+			<generator class="increment" />
+		</id>
+		<version name="version" />
+
+		<property name="enviarEmail" column="enviarEmail"	type="true_false" />
+		<property name="objetoInteres" column="objInteres"	/>
+
+		<many-to-one class="dondeando.modelo.entidades.implementacion.UsuarioImpl"
+			column="usuario" name="usuario" />
+		<many-to-one class="dondeando.modelo.entidades.implementacion.TipoInteresImpl"
+			column="tipoInteres" name="tipoInteres" />
+
+	</class>
+</hibernate-mapping>

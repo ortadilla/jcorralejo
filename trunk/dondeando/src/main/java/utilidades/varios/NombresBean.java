@@ -61,14 +61,17 @@ public class NombresBean {
     public static final String FORO_DAO = "foroDAO"; 
     public static final String IMAGEN_DAO = "imagenDAO"; 
     public static final String IMAGEN_LOCAL_DAO = "imagenLocalDAO"; 
+    public static final String INTERES_DAO = "interesDAO"; 
     public static final String LOCAL_DAO = "localDAO"; 
     public static final String MENSAJE_FORO_DAO = "mensajeForoDAO"; 
+    public static final String NOTIFICACION_DAO = "notificacionDAO"; 
     public static final String OPINION_DAO = "opinionDAO"; 
     public static final String PERMISO_USUARIO_DAO = "permisoUsuarioDAO"; 
     public static final String PROVINCIA_DAO = "provinciaDAO"; 
     public static final String PRUEBA_DAO = "pruebaDAO"; 
     public static final String PUNTUACION_DAO = "puntuacionDAO"; 
     public static final String SERVICIO_DAO = "servicioDAO"; 
+    public static final String TIPO_INTERES_DAO = "tipoInteresDAO"; 
     public static final String TIPO_LOCAL_DAO = "tipoLocalDAO"; 
     public static final String TIPO_USUARIO_DAO = "tipoUsuarioDAO"; 
     public static final String TIPO_VIA_DAO = "tipoViaDAO"; 
