@@ -341,5 +341,15 @@ public class ServicioLocalImpl implements ServicioLocal{
 			local.getServicios().addAll(servicios);
 	}
 
-
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioLocal#encontrarLocalPorId(java.lang.Integer)
+	 */
+	public Local encontrarLocalPorId(Integer id) {
+		try {
+			return localDAO.encontrarPorId(id);
+		} catch (DAOExcepcion e) {
+			return  null;
+		}
+	}
 }

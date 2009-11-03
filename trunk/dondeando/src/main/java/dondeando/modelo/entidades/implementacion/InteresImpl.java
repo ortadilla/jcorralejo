@@ -13,6 +13,8 @@ public class InteresImpl implements Interes{
 	private Integer objetoInteres;
 	private boolean enviarEmail;
 	
+	private String descripcionObjeto;
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -70,6 +72,12 @@ public class InteresImpl implements Interes{
 	}
 	public void setEnviarEmail(boolean enviarEmail) {
 		this.enviarEmail = enviarEmail;
+	}
+	public String getDescripcionObjeto() {
+		return descripcionObjeto;
+	}
+	public void setDescripcionObjeto(String descripcionObjeto) {
+		this.descripcionObjeto = descripcionObjeto;
 	}
 	
 	

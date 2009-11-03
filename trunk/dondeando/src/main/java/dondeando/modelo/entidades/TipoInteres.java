@@ -2,6 +2,8 @@ package dondeando.modelo.entidades;
 
 public interface TipoInteres {
 	
+	public final static String ATRIBUTO_DESCRIPCION = "descripcion";
+	
 	public Integer getId();
 	public void setId(Integer id);
 	

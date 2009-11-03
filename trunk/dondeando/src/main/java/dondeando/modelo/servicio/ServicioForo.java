@@ -76,4 +76,17 @@ public interface ServicioForo {
 	 */
 	public void eliminarModerador(Foro foro, Usuario moderador);
 	
+	/**
+	 * Devuelve todos los Foros de la aplicación
+	 * @return Todos los Foros de la aplicación
+	 */
+	public List<Foro> encontrarTodos();
+	
+	/**
+	 * Busca el foro con el id indicado
+	 * @param id Id por el que buscar
+	 * @return
+	 */
+	public Foro encontrarForoPorId(Integer id);
+
 }

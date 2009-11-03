@@ -9,6 +9,8 @@ public class TipoInteresImpl implements TipoInteres{
 	private String descripcion;
 	private boolean necesitaObjeto;
 	
+	private String descripcionObjeto;
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -55,6 +57,12 @@ public class TipoInteresImpl implements TipoInteres{
 	}
 	public void setNecesitaObjeto(boolean necesitaObjeto) {
 		this.necesitaObjeto = necesitaObjeto;
+	}
+	public String getDescripcionObjeto() {
+		return descripcionObjeto;
+	}
+	public void setDescripcionObjeto(String descripcionObjeto) {
+		this.descripcionObjeto = descripcionObjeto;
 	}
 
 }
