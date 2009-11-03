@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Set;
 
 import dondeando.modelo.entidades.Imagen;
+import dondeando.modelo.entidades.Interes;
 import dondeando.modelo.entidades.Opinion;
 import dondeando.modelo.entidades.Puntuacion;
 import dondeando.modelo.entidades.TipoUsuario;
@@ -25,6 +26,7 @@ public class UsuarioImpl implements Usuario{
 	private Imagen avatar;
 	private Set<Opinion> opiniones;
 	private Set<Puntuacion> puntuaciones;
+	private Set<Interes> intereses;
 	
 	@Override
 	public int hashCode() {
@@ -139,6 +141,12 @@ public class UsuarioImpl implements Usuario{
 	}
 	public void setPuntuaciones(Set<Puntuacion> puntuaciones) {
 		this.puntuaciones = puntuaciones;
+	}
+	public Set<Interes> getIntereses() {
+		return intereses;
+	}
+	public void setIntereses(Set<Interes> intereses) {
+		this.intereses = intereses;
 	}
 	
 }

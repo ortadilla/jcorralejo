@@ -181,7 +181,25 @@ public class ServicioForoImpl implements ServicioForo{
 				log.debug("Error al eliminar un moderador de un foro", e);
 			}
 		}
-		
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioForo#encontrarTodos()
+	 */
+	public List<Foro> encontrarTodos() {
+		return foroDAO.encontrarTodos();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioForo#encontrarForoPorId(java.lang.Integer)
+	 */
+	public Foro encontrarForoPorId(Integer id) {
+		try {
+			return foroDAO.encontrarPorId(id);
+		} catch (DAOExcepcion e) {
+			return null;
+		}
+	}
 }

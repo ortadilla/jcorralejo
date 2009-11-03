@@ -113,6 +113,9 @@
 								<tr:commandButton text="#{resCore['MODIFICAR_PASS']}"
 									id="btnModContr" action="#{detallesUsuarioBean.modificarContr}"/>
 								<tr:spacer width="20" height="10" />
+								<tr:commandButton text="#{resCore['CONFIGURACION_NOTIFICACIONES']}"
+									id="btnConfInteres" action="#{detallesUsuarioBean.configurarNotificaciones}"/>
+								<tr:spacer width="20" height="10" />
 								<tr:commandButton text="#{resCore['ELIMINAR_USUARIO']}"
 									id="btnEliminar" action="#{detallesUsuarioBean.eliminar}"
 									onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_USUARIO']}')" />

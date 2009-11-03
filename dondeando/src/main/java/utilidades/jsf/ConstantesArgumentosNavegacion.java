@@ -20,5 +20,8 @@ public class ConstantesArgumentosNavegacion {
 
 	//Para EditarPuntuacionBean
 	public static final String LOCAL_DE_NUEVA_PUNTUACION = "localNuevaPuntuacion";
+
+	//Para EditarConfiguracionNotificacionesUsuarioBean
+	public static final String USUARIO_DE_CONFIGURACION_NOTIFICACIONES = "usuarioConfiguracionNotificaciones";
 	
 }

@@ -10,6 +10,7 @@ import static utilidades.varios.NombresBean.GESTION_LOCALES_BINDING;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
 import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
+import static utilidades.varios.NombresBean.PROTOCOLO_RESULTADO;
 import static utilidades.varios.NombresBean.SERVICIO_LOCAL;
 import static utilidades.varios.NombresBean.SERVICIO_PERMISO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_PROVINCIA;
@@ -36,6 +37,7 @@ import utilidades.varios.HerramientasList;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
 import utilidades.varios.Permisos;
+import utilidades.varios.ProtocoloBusqueda;
 import utilidades.varios.ProtocoloEdicion;
 import utilidades.varios.SelectItemBuilder;
 import dondeando.binding.GestionLocalesBinding;
@@ -74,7 +76,9 @@ public class GestionLocalesBean {
 	private boolean mostrarCriterioActivo = false;
 	private SelectItem[] selectSiNo;
 	
+	private boolean buscando;
 	private RowKeySet estadoDeSeleccionTabla = new RowKeySetImpl();
+	private ProtocoloBusqueda protocoloBusqueda;
 	
 	//Utilidades
 	@In(value=GESTION_LOCALES_BINDING, create=true)
@@ -125,6 +129,18 @@ public class GestionLocalesBean {
 		selectSiNo = SelectItemBuilder.creaSelectItemsSiNo();
 		
 		mostrarCriterioActivo = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_LOCALES);
+	}
+	
+	public void cargarArgumentosDeEntrada(){
+		//Cargar los datos y lanzar la búsqueda
+		if(mapaArgumentos!=null && mapaArgumentos.contieneProtocoloBusqueda())
+			protocoloBusqueda = mapaArgumentos.getProtocoloBusqueda();
+		
+		if(protocoloBusqueda!=null){
+			buscando = true;
+			if(protocoloBusqueda.isLanzaConsulta())
+				buscar();
+		}
 	}
 	
 	/**
@@ -298,7 +314,40 @@ public class GestionLocalesBean {
 		return outcome;
 	}
 
+	/**
+	 * Cancela la selección de locales
+	 * @return Regla de navegación
+	 */
+	public String cancelar(){
+		String outcome = protocoloBusqueda!=null ? protocoloBusqueda.getOutcomeVuelta() : "";
+		protocoloBusqueda = null; //para que al volver no se cargue nada
+		estadoDeSeleccionTabla.clear();
+		buscando = false;
+		return outcome;
+	}
 
+	/**
+	 * Devuelve el usuario seleccionado
+	 * @return Regla de navegación
+	 */
+	public String aceptar(){
+		String outcome = "";
+		if(estadoDeSeleccionTabla.size()==1){
+			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
+			Local local = listaLocales.get(seleccion);
+			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+			mapaArgumentos.limpiaMapa();
+			mapaArgumentos.setArgumento(PROTOCOLO_RESULTADO, local);
+			
+			outcome = protocoloBusqueda!=null ? protocoloBusqueda.getOutcomeVuelta() : "";
+			protocoloBusqueda = null; //para que al volver no se cargue nada
+			estadoDeSeleccionTabla.clear();
+			buscando = false;
+		}else
+			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
+			
+		return outcome;
+	}
 
 	public boolean isDesplegado() {
 		return desplegado;
@@ -409,6 +458,14 @@ public class GestionLocalesBean {
 
 	public void setMostrarCriterioActivo(boolean mostrarCriterioActivo) {
 		this.mostrarCriterioActivo = mostrarCriterioActivo;
+	}
+
+	public boolean isBuscando() {
+		return buscando;
+	}
+
+	public void setBuscando(boolean buscando) {
+		this.buscando = buscando;
 	}
 
 }

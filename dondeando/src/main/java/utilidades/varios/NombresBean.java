@@ -13,6 +13,7 @@ public class NombresBean {
 	public static final String SERVICIO_FORO = "servicioForo";
 	public static final String SERVICIO_IMAGEN = "servicioImagen";
 	public static final String SERVICIO_IMAGEN_LOCAL = "servicioImagenLocal";
+	public static final String SERVICIO_INTERES = "servicioInteres";
 	public static final String SERVICIO_LOCAL = "servicioLocal";
 	public static final String SERVICIO_MENSAJE_FORO = "servicioMensajeForo";
 	public static final String SERVICIO_OPINION = "servicioOpinion";
@@ -23,6 +24,7 @@ public class NombresBean {
     public static final String SERVICIO_USUARIO = "servicioUsuario";
     public static final String SERVICIO_TIPO_LOCAL = "servicioTipoLocal";
     public static final String SERVICIO_TIPO_USUARIO = "servicioTipoUsuario";
+    public static final String SERVICIO_TIPO_INTERES = "servicioTipoInteres";
     public static final String SERVICIO_TIPO_VIA = "servicioTipoVia";
     
     /**Beans */    
@@ -31,12 +33,14 @@ public class NombresBean {
     public static final String DETALLES_FORO_BEAN = "detallesForoBean"; 
     public static final String DETALLES_USUARIO_BEAN = "detallesUsuarioBean"; 
     public static final String DETALLES_LOCAL_BEAN = "detallesLocalBean"; 
+    public static final String EDITAR_CONFIGURACION_NOTIFICACIONES_BEAN = "editarConfiguracionNotificacionesBean"; 
     public static final String EDITAR_FORO_BEAN = "editarForoBean"; 
     public static final String EDITAR_MENSAJE_FORO_BEAN = "editarMensajeForoBean"; 
     public static final String EDITAR_OPINION_LOCAL_BEAN = "editarOpinionLocalBean"; 
     public static final String EDITAR_USUARIO_BEAN = "editarUsuarioBean"; 
     public static final String EDITAR_PUNTUACION_LOCAL_BEAN = "editarPuntuacionLocalBean"; 
     public static final String EDITAR_LOCAL_BEAN = "editarLocalBean"; 
+    public static final String GESTION_CONFIGURACION_NOTIFICACIONES_BEAN = "gestionConfiguracionNotificacionesUsuarioBean"; 
     public static final String GESTION_FOROS_BEAN = "gestionForosBean"; 
     public static final String GESTION_MENSAJES_TEMA_BEAN = "gestionMensajesTemaBean"; 
     public static final String GESTION_MODERADORES_FORO_BEAN = "gestionModeradoresForoBean"; 

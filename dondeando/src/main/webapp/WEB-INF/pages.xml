@@ -5,6 +5,7 @@
 	</page>
  -->
 	<!-- Entradas para Dondeando -->
+	<page view-id="/dondeando/editarConfiguracionNotificacionesUsuario.jsp"			action="#{editarConfiguracionNotificacionesBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/editarUsuario.jsp"			action="#{editarUsuarioBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/editarForo.jsp"				action="#{editarForoBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/editarLocal.jsp"				action="#{editarLocalBean.cargarArgumentosDeEntrada}" />
@@ -14,6 +15,8 @@
 	<page view-id="/dondeando/detallesForo.jsp"				action="#{detallesForoBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/detallesUsuario.jsp"			action="#{detallesUsuarioBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/detallesLocal.jsp"			action="#{detallesLocalBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/dondeando/gestionConfiguracionNotificacionesUsuario.jsp"	action="#{gestionConfiguracionNotificacionesUsuarioBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/dondeando/gestionLocales.jsp"			action="#{gestionLocalesBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/gestionMensajesTema.jsp"		action="#{gestionMensajesTemaBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/gestionModeradoresForo.jsp"	action="#{gestionModeradoresForoBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/gestionTemasForo.jsp"			action="#{gestionTemasForoBean.cargarArgumentosDeEntrada}" />

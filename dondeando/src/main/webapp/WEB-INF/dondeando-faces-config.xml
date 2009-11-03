@@ -7,6 +7,7 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
 	<navigation-rule>
         <navigation-case><from-outcome>menuPrincial</from-outcome><to-view-id>/dondeando/menuPrincipal.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>login</from-outcome><to-view-id>/dondeando/Login.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>editarConfiguracionNotificaciones</from-outcome><to-view-id>/dondeando/editarConfiguracionNotificacionesUsuario.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>editarForo</from-outcome><to-view-id>/dondeando/editarForo.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>editarUsuario</from-outcome><to-view-id>/dondeando/editarUsuario.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>editarMensajeForo</from-outcome><to-view-id>/dondeando/editarMensajeForo.jsp</to-view-id></navigation-case>
@@ -17,6 +18,7 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
         <navigation-case><from-outcome>detallesLocal</from-outcome><to-view-id>/dondeando/detallesLocal.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>detallesUsuario</from-outcome><to-view-id>/dondeando/detallesUsuario.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>modificarPassword</from-outcome><to-view-id>/dondeando/modificarPassword.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>gestionConfiguracionNotificacionesUsuarios</from-outcome><to-view-id>/dondeando/gestionConfiguracionNotificacionesUsuario.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionForos</from-outcome><to-view-id>/dondeando/gestionForos.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionTemasForo</from-outcome><to-view-id>/dondeando/gestionTemasForo.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionMensajesTema</from-outcome><to-view-id>/dondeando/gestionMensajesTema.jsp</to-view-id></navigation-case>

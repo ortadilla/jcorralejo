@@ -163,6 +163,16 @@
 									inlineStyle="height: 20px;" />
 							</tr:column>
 						</tr:table>
+
+						<tr:spacer height="20" width="20" />
+						<tr:panelHorizontalLayout halign="center"
+							rendered="#{gestionLocalesBean.buscando}">
+							<tr:commandButton text="#{resCore['ACEPTAR']}" id="btnAceptar"
+								action="#{gestionLocalesBean.aceptar}" />
+							<tr:spacer width="20" height="10" />
+							<tr:commandButton text="#{resCore['CANCELAR']}" id="btnCancelar"
+								immediate="true" action="#{gestionLocalesBean.cancelar}" />
+						</tr:panelHorizontalLayout>
 					</tr:panelBox>
 				</tr:panelPage>
 			</tr:form>

@@ -30,6 +30,10 @@
 			<key column="usuario" />
 			<one-to-many class="PuntuacionImpl" />
 		</set>
+		<set name="intereses" inverse="true" cascade="all-delete-orphan">
+			<key column="usuario" />
+			<one-to-many class="InteresImpl" />
+		</set>
 		
 	</class>
 </hibernate-mapping>

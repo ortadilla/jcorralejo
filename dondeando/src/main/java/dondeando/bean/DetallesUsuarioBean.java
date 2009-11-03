@@ -2,6 +2,7 @@ package dondeando.bean;
 
 import static utilidades.jsf.ConstantesReglasNavegacion.DETALLES_USUARIO;
 import static utilidades.jsf.ConstantesReglasNavegacion.EDITAR_USUARIO;
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_COFIGURACION_NOTIFICACIONES_USUARIO;
 import static utilidades.jsf.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static utilidades.jsf.ConstantesReglasNavegacion.MODIFICAR_PASSWORD;
 import static utilidades.varios.NombresBean.CABECERA_PAGINA_BEAN;
@@ -24,6 +25,7 @@ import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
 import utilidades.componentes.CabeceraPaginasBean;
+import utilidades.jsf.ConstantesReglasNavegacion;
 import utilidades.jsf.UtilJsfContext;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
@@ -144,6 +146,15 @@ public class DetallesUsuarioBean {
 			utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("USUARIO_ELIMINADO"));
 		}
 		return outcome;
+	}
+	
+	public String configurarNotificaciones(){
+		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+		mapaArgumentos.limpiaMapa();
+		ProtocoloEdicion protocolo = new ProtocoloEdicion(usuarioEdicion,DETALLES_USUARIO, null);
+		mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+
+		return GESTION_COFIGURACION_NOTIFICACIONES_USUARIO;
 	}
 	
 	public String getLogin() {

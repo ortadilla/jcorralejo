@@ -1,3 +1,4 @@
+· Comprobar uqe no exista ya el interés que se va a crear
 · Añadir las Notificaciones (con email)
 · Actualizar votaciones y karma
 · Añadir la entidad Encuesta

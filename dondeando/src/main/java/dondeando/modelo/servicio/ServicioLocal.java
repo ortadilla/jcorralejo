@@ -127,4 +127,11 @@ public interface ServicioLocal {
 						    String email, String horario, BigDecimal precioMedio, String otraInformacion,
 						    List<Servicio> servicios);
 
+	
+	/**
+	 * Busca el local con el id indicado
+	 * @param id Id por el que buscar
+	 * @return
+	 */
+	public Local encontrarLocalPorId(Integer id);
 }
