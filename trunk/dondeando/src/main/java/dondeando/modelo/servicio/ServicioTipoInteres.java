@@ -23,5 +23,12 @@ public interface ServicioTipoInteres {
 	 * @return	Todos los Tipos de Interes de la aplicación
 	 */
 	public List<TipoInteres> encontrarTodos();
+	
+	/**
+	 * Busca el TipoInteres con el id indicado
+	 * @param id Id por el que buscar
+	 * @return TipoInteres encontrado
+	 */
+	public TipoInteres encontrarTipoInteresPorId(Integer id);
 
 }

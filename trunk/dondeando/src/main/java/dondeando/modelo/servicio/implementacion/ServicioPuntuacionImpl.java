@@ -1,6 +1,7 @@
 package dondeando.modelo.servicio.implementacion;
 
 import static utilidades.varios.NombresBean.PUNTUACION_DAO;
+import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
 import static utilidades.varios.NombresBean.SERVICIO_PUNTUACION;
 
 import java.math.BigDecimal;
@@ -20,7 +21,9 @@ import dondeando.modelo.entidades.Local;
 import dondeando.modelo.entidades.Puntuacion;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.PuntuacionImpl;
+import dondeando.modelo.servicio.ServicioNotificacion;
 import dondeando.modelo.servicio.ServicioPuntuacion;
+import dondeando.modelo.servicio.ServicioTipoInteres;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(SERVICIO_PUNTUACION)
@@ -29,6 +32,9 @@ public class ServicioPuntuacionImpl implements ServicioPuntuacion{
 	//Utilidades
 	@In(value= PUNTUACION_DAO, create=true)
 	private PuntuacionDAO puntuacionDAO;
+	
+    @In(value=SERVICIO_NOTIFICACION, create=true)
+    private ServicioNotificacion servicioNotificacion;
 
 	private Log log = LogFactory.getLog(ServicioPuntuacionImpl.class);
 
@@ -78,6 +84,10 @@ public class ServicioPuntuacionImpl implements ServicioPuntuacion{
 			if(!usuario.getPuntuaciones().contains(puntuacion))
 				usuario.getPuntuaciones().add(puntuacion);
 		}
+		
+		//Enviamos las notificaciones
+		servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_VALORACION_LOCAL, local, puntuacion);
+		
 		return puntuacion;
 	}
 }

@@ -3,6 +3,7 @@ package dondeando.modelo.servicio.implementacion;
 import static utilidades.varios.NombresBean.FORO_DAO;
 import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_FORO;
+import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,8 @@ import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.ForoImpl;
 import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioForo;
+import dondeando.modelo.servicio.ServicioNotificacion;
+import dondeando.modelo.servicio.ServicioTipoInteres;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(SERVICIO_FORO)
@@ -39,6 +42,8 @@ public class ServicioForoImpl implements ServicioForo{
     @In(value=SERVICIO_CRITERIOS, create=true)
     private ServicioCriterios servicioCriterios;
 
+    @In(value=SERVICIO_NOTIFICACION, create=true)
+    private ServicioNotificacion servicioNotificacion;
     
     /*
      * (non-Javadoc)
@@ -115,6 +120,10 @@ public class ServicioForoImpl implements ServicioForo{
 		Foro foro = new ForoImpl();
 		setearDatosForo(foro, titulo, descripcion, true);
 		foroDAO.hacerPersistente(foro);
+		
+    	//Enviamos las notificaciones
+    	servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_NUEVO_FORO, null, foro);
+
 		return foro;
 	}
 

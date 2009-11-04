@@ -34,4 +34,21 @@ public interface ServicioInteres {
 	 * @param interes Interes a los que rellenar sus propiedades no mapeadas
 	 */
 	public void rellenarPropiedadesNoMapeadas(List<Interes> interes);
+	
+	/**
+	 * Busca el Interés para el usuario, tipo y objeto indicado
+	 * @param usuario Usuario para el que buscar el interés
+	 * @param tipoInteres Tipo de Interés por el que buscar
+	 * @param idObjeto Id del Objeto por el que buscar
+	 * @return Interés encontrado
+	 */
+	public Interes encontrarInteresPorUsuarioTipoYObjeto(Usuario usuario, TipoInteres tipoInteres, Integer idObjeto);
+	
+	/**
+	 * Busca el Interés para el tipo y objeto indicado
+	 * @param tipoInteres Tipo de Interés por el que buscar
+	 * @param idObjeto Id del Objeto por el que buscar
+	 * @return Interés encontrado
+	 */
+	public List<Interes> encontrarNotificacionesPorTipoYObjeto(TipoInteres tipoInteres, Integer idObjeto);
 }

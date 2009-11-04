@@ -185,6 +185,16 @@ public class EditarConfiguracionNotificacionesBean {
 			
 			if(enviarEmail==null)
 				errores.add(mensajesCore.obtenerTexto("EMAIL_OBLIGATORIO_TIPO_INTERES"));
+			
+			if(errores.isEmpty()){
+				Integer idObj = local!=null ? local.getId() 
+											: foro!=null ? foro.getId() 
+														 : provincia!=null ? provincia.getId() : null;
+																		
+				//Comprobamos que no exista ya el mismo interés para el usuario
+				if(servicioInteres.encontrarInteresPorUsuarioTipoYObjeto(usuario, tipoNotificacion, idObj)!=null)
+					errores.add(mensajesCore.obtenerTexto("YA_EXISTE_TIPO_INTERES"));
+			}
 		}
 		
 		return errores;

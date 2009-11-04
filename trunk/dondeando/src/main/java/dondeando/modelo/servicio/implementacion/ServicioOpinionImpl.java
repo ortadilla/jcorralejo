@@ -2,6 +2,7 @@ package dondeando.modelo.servicio.implementacion;
 
 import static utilidades.varios.NombresBean.OPINION_DAO;
 import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
+import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
 import static utilidades.varios.NombresBean.SERVICIO_OPINION;
 
 import java.util.Date;
@@ -22,7 +23,9 @@ import dondeando.modelo.entidades.Opinion;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.OpinionImpl;
 import dondeando.modelo.servicio.ServicioCriterios;
+import dondeando.modelo.servicio.ServicioNotificacion;
 import dondeando.modelo.servicio.ServicioOpinion;
+import dondeando.modelo.servicio.ServicioTipoInteres;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(SERVICIO_OPINION)
@@ -37,6 +40,9 @@ public class ServicioOpinionImpl implements ServicioOpinion{
 	//Servicios
     @In(value=SERVICIO_CRITERIOS, create=true)
     private ServicioCriterios servicioCriterios;
+    
+    @In(value=SERVICIO_NOTIFICACION, create=true)
+    private ServicioNotificacion servicioNotificacion;
 	
 	/*
 	 * (non-Javadoc)
@@ -86,6 +92,10 @@ public class ServicioOpinionImpl implements ServicioOpinion{
 			if(!usuario.getOpiniones().contains(opinion))
 				usuario.getOpiniones().add(opinion);
 		}
+		
+		//Enviamos las notificaciones
+		servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_OPINION_LOCAL, local, opinion);
+		
 		return opinion;
     }
     

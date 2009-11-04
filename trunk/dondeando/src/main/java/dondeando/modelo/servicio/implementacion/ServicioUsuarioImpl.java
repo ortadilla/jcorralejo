@@ -4,6 +4,7 @@ package dondeando.modelo.servicio.implementacion;
 import static dondeando.modelo.entidades.Usuario.USUARIO_ANONIMO;
 import static org.jboss.seam.ScopeType.SESSION;
 import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
+import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.USUARIO_DAO;
 import static utilidades.varios.NombresBean.USUARIO_LOGUEADO;
@@ -30,6 +31,8 @@ import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.UsuarioImpl;
 import dondeando.modelo.servicio.ServicioCriterios;
+import dondeando.modelo.servicio.ServicioNotificacion;
+import dondeando.modelo.servicio.ServicioTipoInteres;
 import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
@@ -39,6 +42,9 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     @In(value=SERVICIO_CRITERIOS, create=true)
     private ServicioCriterios servicioCriterios;
 	
+    @In(value=SERVICIO_NOTIFICACION, create=true)
+    private ServicioNotificacion servicioNotificacion;
+    
     @In(value=USUARIO_DAO, create=true) 
     private UsuarioDAO usuarioDAO;
     
@@ -175,6 +181,9 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     	Usuario usuario = new UsuarioImpl();
     	setearDatosUsuario(usuario, login, password, nombre, apellidos, direccion, email, tipoUsuario, imagen);
     	usuarioDAO.hacerPersistente(usuario);
+    	
+    	//Enviamos las notificaciones
+    	servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_NUEVO_USUARIO, null, usuario);
     	
     	return usuario;
     }
