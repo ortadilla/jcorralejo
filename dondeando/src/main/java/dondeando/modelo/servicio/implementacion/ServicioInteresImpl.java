@@ -1,11 +1,13 @@
 package dondeando.modelo.servicio.implementacion;
 
 import static utilidades.varios.NombresBean.INTERES_DAO;
+import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_FORO;
 import static utilidades.varios.NombresBean.SERVICIO_INTERES;
 import static utilidades.varios.NombresBean.SERVICIO_LOCAL;
 import static utilidades.varios.NombresBean.SERVICIO_PROVINCIA;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -16,6 +18,7 @@ import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 
+import utilidades.busquedas.consultas.Criterio;
 import dondeando.modelo.dao.InteresDAO;
 import dondeando.modelo.dao.excepciones.DAOExcepcion;
 import dondeando.modelo.entidades.Foro;
@@ -25,6 +28,7 @@ import dondeando.modelo.entidades.Provincia;
 import dondeando.modelo.entidades.TipoInteres;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.InteresImpl;
+import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioForo;
 import dondeando.modelo.servicio.ServicioInteres;
 import dondeando.modelo.servicio.ServicioLocal;
@@ -49,6 +53,9 @@ public class ServicioInteresImpl implements ServicioInteres{
 
 	@In(value=SERVICIO_FORO, create=true)
 	private ServicioForo servicioForo;
+	
+	@In(value=SERVICIO_CRITERIOS, create=true)
+	private ServicioCriterios servicioCriterios;
 	
 	/*
 	 * (non-Javadoc)
@@ -131,7 +138,41 @@ public class ServicioInteresImpl implements ServicioInteres{
 			}else 
 				((InteresImpl)interes).setDescripcionObjeto("== NINGUNO ==");
 		}
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioInteres#encontrarInteresPorUsuarioTipoYObjeto(dondeando.modelo.entidades.Usuario, dondeando.modelo.entidades.TipoInteres, java.lang.Integer)
+	 */
+	public Interes encontrarInteresPorUsuarioTipoYObjeto(Usuario usuario, TipoInteres tipoInteres, Integer idObjeto) {
 		
+		Interes interes = null;
+		if(usuario!=null && tipoInteres!=null){
+			Criterio criterioUsuario = servicioCriterios.construyeCriterio(Interes.ATRIBUTO_USUARIO, Criterio.IGUAL, usuario);
+			Criterio criterioTipo = servicioCriterios.construyeCriterio(Interes.ATRIBUTO_TIPO_INTERES, Criterio.IGUAL, tipoInteres);
+			Criterio criterioObjeto = servicioCriterios.construyeCriterio(Interes.ATRIBUTO_OBJETO_INTERES, Criterio.IGUAL, idObjeto);
+			List<Interes> intereses = interesDAO.encontrarPorCondicion(criterioUsuario, criterioTipo, criterioObjeto);
+			if(!intereses.isEmpty())
+				interes = intereses.get(0);
+		}
+		return interes;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioInteres#encontrarNotificacionesPorTipoYObjeto(dondeando.modelo.entidades.TipoInteres, dondeando.modelo.entidades.Interes)
+	 */
+	public List<Interes> encontrarNotificacionesPorTipoYObjeto(TipoInteres tipoInteres, Integer idObjeto){
+		
+		List<Interes> intereses = new ArrayList<Interes>();
+		
+		if(tipoInteres!=null){
+			Criterio criterioTipo = servicioCriterios.construyeCriterio(Interes.ATRIBUTO_TIPO_INTERES, Criterio.IGUAL, tipoInteres);
+			Criterio criterioObjeto = servicioCriterios.construyeCriterio(Interes.ATRIBUTO_OBJETO_INTERES, Criterio.IGUAL, idObjeto);
+			intereses = interesDAO.encontrarPorCondicion(criterioTipo, criterioObjeto);
+		}
+		
+		return intereses;
 	}
 
 }

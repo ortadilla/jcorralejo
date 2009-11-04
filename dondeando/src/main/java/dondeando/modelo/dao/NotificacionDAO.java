@@ -1,5 +1,7 @@
 package dondeando.modelo.dao;
 
-public interface NotificacionDAO {
+import dondeando.modelo.entidades.Notificacion;
+
+public interface NotificacionDAO extends DAOGenerico<Notificacion, Integer>{
 
 }

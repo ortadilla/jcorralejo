@@ -5,6 +5,7 @@ import static utilidades.varios.NombresBean.MENSAJES_CORE;
 import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_DIRECCION;
 import static utilidades.varios.NombresBean.SERVICIO_LOCAL;
+import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_LOCAL;
 
 import java.math.BigDecimal;
@@ -34,6 +35,8 @@ import dondeando.modelo.entidades.implementacion.LocalImpl;
 import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioDireccion;
 import dondeando.modelo.servicio.ServicioLocal;
+import dondeando.modelo.servicio.ServicioNotificacion;
+import dondeando.modelo.servicio.ServicioTipoInteres;
 import dondeando.modelo.servicio.ServicioTipoLocal;
 
 @Scope(ScopeType.CONVERSATION)
@@ -50,6 +53,9 @@ public class ServicioLocalImpl implements ServicioLocal{
     
     @In(value=SERVICIO_TIPO_LOCAL, create=true)
     private ServicioTipoLocal servicioTipoLocal;
+    
+    @In(value=SERVICIO_NOTIFICACION, create=true)
+    private ServicioNotificacion servicioNotificacion;
     
     @In(value=LOCAL_DAO, create=true)
     private LocalDAO localDAO;
@@ -266,6 +272,11 @@ public class ServicioLocalImpl implements ServicioLocal{
 						 numero, codigoPostal, descripcion, telefono, email, horario, precioMedio, 
 						 otraInformacion, servicios, true);
 		localDAO.hacerPersistente(local);
+		
+    	//Enviamos las notificaciones
+    	servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_NUEVO_LOCAL, null, local);
+    	servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_NUEVO_LOCAL_PROVINCIA, provincia, local);
+
 		return local;
 	}
 	
@@ -287,6 +298,10 @@ public class ServicioLocalImpl implements ServicioLocal{
 		} catch (DAOExcepcion e) {
 			log.debug("Error al actualizar los datos del local");
 		}
+		
+		//Enviamos las notificaciones
+		servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_MODIFICAR_LOCAL, local, local);
+		servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_MODIFICAR_LOCAL_PROVINCIA, provincia, local);
 	}
 	
 	/**

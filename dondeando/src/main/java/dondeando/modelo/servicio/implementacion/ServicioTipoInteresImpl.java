@@ -13,6 +13,7 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 
 import dondeando.modelo.dao.TipoInteresDAO;
+import dondeando.modelo.dao.excepciones.DAOExcepcion;
 import dondeando.modelo.entidades.TipoInteres;
 import dondeando.modelo.servicio.ServicioTipoInteres;
 
@@ -33,6 +34,19 @@ public class ServicioTipoInteresImpl implements ServicioTipoInteres{
 	 */
 	public List<TipoInteres> encontrarTodos() {
 		return tipoInteresDAO.encontrarTodos();
+	}
+	
+
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioTipoInteres#encontrarTipoInteresPorId(java.lang.Integer)
+	 */
+	public TipoInteres encontrarTipoInteresPorId(Integer id) {
+		try {
+			return tipoInteresDAO.encontrarPorId(id);
+		} catch (DAOExcepcion e) {
+			return null;
+		}
 	}
 
 }

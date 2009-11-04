@@ -3,6 +3,8 @@ package dondeando.modelo.entidades;
 public interface Interes {
 	
 	public final static String ATRIBUTO_TIPO_INTERES = "tipoInteres";
+	public final static String ATRIBUTO_USUARIO = "usuario";
+	public final static String ATRIBUTO_OBJETO_INTERES = "objetoInteres";
 
 	public Integer getId();
 	public void setId(Integer id);

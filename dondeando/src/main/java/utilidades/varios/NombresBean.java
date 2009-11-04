@@ -16,6 +16,7 @@ public class NombresBean {
 	public static final String SERVICIO_INTERES = "servicioInteres";
 	public static final String SERVICIO_LOCAL = "servicioLocal";
 	public static final String SERVICIO_MENSAJE_FORO = "servicioMensajeForo";
+	public static final String SERVICIO_NOTIFICACION = "servicioNotificacion";
 	public static final String SERVICIO_OPINION = "servicioOpinion";
     public static final String SERVICIO_PERMISO_USUARIO = "servicioPermisoUsuario";
     public static final String SERVICIO_PROVINCIA = "servicioProvincia";

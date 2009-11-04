@@ -3,6 +3,7 @@ package dondeando.modelo.servicio.implementacion;
 import static utilidades.varios.NombresBean.MENSAJE_FORO_DAO;
 import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_MENSAJE_FORO;
+import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,6 +27,8 @@ import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.MensajeForoImpl;
 import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioMensajeForo;
+import dondeando.modelo.servicio.ServicioNotificacion;
+import dondeando.modelo.servicio.ServicioTipoInteres;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(SERVICIO_MENSAJE_FORO)
@@ -41,6 +44,9 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
 	//Servicios
     @In(value=SERVICIO_CRITERIOS, create=true)
     private ServicioCriterios servicioCriterios;
+    
+    @In(value=SERVICIO_NOTIFICACION, create=true)
+    private ServicioNotificacion servicioNotificacion;
     
     /*
      * s(non-Javadoc)
@@ -114,6 +120,10 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
 			if(!tema.getRespuestas().contains(mensajeForo))
 				tema.getRespuestas().add(mensajeForo);
 		}
+		
+    	//Enviamos las notificaciones
+    	servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_NUEVO_TEMA_MENSAJE_FORO, foro, mensajeForo);
+		
 		return mensajeForo;
 	}
 	
