@@ -19,6 +19,7 @@ public class ConstantesReglasNavegacion {
 	public static final String GESTION_LOCALES = "gestionLocales";
 	public static final String GESTION_MENSAJES_TEMA = "gestionMensajesTema";
 	public static final String GESTION_MODERADORES_FORO = "gestionModeradoresForo";
+	public static final String GESTION_NOTIFICACIONES = "gestionNotificaciones";
 	public static final String GESTION_OPINIONES_LOCAL = "gestionOpinionesLocal";
 	public static final String GESTION_VALORACIONES_LOCAL = "gestionValoracionesLocal";
 	public static final String GESTION_TEMAS_FORO = "gestionTemasForo";

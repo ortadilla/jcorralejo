@@ -38,7 +38,9 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     protected static final String METODO_IR_MENU         	   = "irAlMenu";
     protected static final String METODO_REGISTRAR_USUARIO     = "registrarUsuario";
     protected static final String METODO_DETALLES_USUARIO      = "detallesUsuario";
+    protected static final String METODO_ACCION_NOTIFICACIONES = "accionNotificaciones";
     protected static final String PROPIEDAD_NOMBRE_USUARIO     = "nombreUsuario";
+    protected static final String PROPIEDAD_HAY_NOTIFICACIONES = "hayNotificacionesPendientes";
     
     private String botonMenu; //atributo del Tag
     private String agregarCapaEspera; //atributo del Tag
@@ -93,13 +95,6 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     	HtmlRowLayoutTag fila = crearFila(tabla);
 
     	celda = crearCelda("right", null, null, null, null, fila);
-//    	CoreCommandLinkTag link = crearCommandLink(null, 
-//    			"#{"+MENU_PRINCIPAL_BEAN+"."+METODO_ACCION_NOTIFICACIONES+"}", 
-//    			null, null, false, false,
-//    			"#{"+PAGINAS_BEAN+"."+PROPIEDAD_HAY_NOTIFICACIONES+"}", celda, false);
-//    	crearImagen("/imagenes/mensaje_blink.gif",null, 
-//    			mensajesCore.obtenerTexto("NOTIFICACIONES_PENDIENTES"), null, link);
-//    	fin(link);
     	CoreCommandLinkTag link = null;
 
     	if(servicioUsuario.isUsuarioActivoAnonimo()){
@@ -116,7 +111,13 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     	}
     	else{
     		//TODO: Imagen usuario
-//    		crearImagen("/imagenes/usuario.gif", null, mensajesCore.obtenerTexto("USUARIO"), null, celda); 
+//    		crearImagen("/imagenes/usuario.gif", null, mensajesCore.obtenerTexto("USUARIO"), null, celda);
+            link = crearCommandLink(null,"#{"+CABECERA_PAGINA_BEAN+"."+METODO_ACCION_NOTIFICACIONES+"}", null, null, false, false,
+                    				"#{"+CABECERA_PAGINA_BEAN+"."+PROPIEDAD_HAY_NOTIFICACIONES+"}", celda, false);
+            crearImagen("/imagenes/dondeando/notificacion.png","35", mensajesCore.obtenerTexto("NOTIFICACIONES_PENDIENTES"), null, link);
+            fin(link);
+    		
+            crearEspacio("5", "5", celda);
     		crearImagen(servicioImagen.calcularUrlImagenUsuario(servicioUsuario.devolverUsuarioActivo()), "35", mensajesCore.obtenerTexto("USUARIO"), null, celda); 
     		link = crearCommandLink(" #{"+CABECERA_PAGINA_BEAN+"."+PROPIEDAD_NOMBRE_USUARIO+"} ",
     				"#{"+CABECERA_PAGINA_BEAN+"."+METODO_DETALLES_USUARIO+"}", null, null,false, false, null, celda, false);

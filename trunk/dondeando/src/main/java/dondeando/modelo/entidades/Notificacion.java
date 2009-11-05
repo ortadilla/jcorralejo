@@ -1,6 +1,9 @@
 package dondeando.modelo.entidades;
 
 public interface Notificacion {
+	
+	public static final String ATRIBUTO_USUARIO = "usuario";
+		public static final String ATRIBUTO_LEIDA = "leida";
 
 	public Integer getId();
 	public void setId(Integer id);

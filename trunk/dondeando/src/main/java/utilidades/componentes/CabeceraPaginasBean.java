@@ -2,11 +2,13 @@ package utilidades.componentes;
 
 import static utilidades.jsf.ConstantesReglasNavegacion.DETALLES_USUARIO;
 import static utilidades.jsf.ConstantesReglasNavegacion.EDITAR_USUARIO;
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_NOTIFICACIONES;
 import static utilidades.jsf.ConstantesReglasNavegacion.LOGIN;
 import static utilidades.jsf.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static utilidades.varios.NombresBean.CABECERA_PAGINA_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
+import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 
 import org.apache.commons.logging.Log;
@@ -22,8 +24,12 @@ import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
 import utilidades.varios.MapaArgumentos;
+import utilidades.varios.NombresBean;
+import utilidades.varios.ProtocoloBusqueda;
 import utilidades.varios.ProtocoloEdicion;
+import dondeando.modelo.entidades.Notificacion;
 import dondeando.modelo.entidades.Usuario;
+import dondeando.modelo.servicio.ServicioNotificacion;
 import dondeando.modelo.servicio.ServicioUsuario;
 
 
@@ -39,6 +45,9 @@ public class CabeceraPaginasBean {
     
     @In(value=SERVICIO_USUARIO, create=true)
     private ServicioUsuario servicioUsuario;
+
+    @In(value=SERVICIO_NOTIFICACION, create=true)
+    private ServicioNotificacion servicioNotificacion;
     
     @Create
     @Begin(join=true)
@@ -102,7 +111,27 @@ public class CabeceraPaginasBean {
 	public String irAlMenu(){
 		return MENU_PRINCIPAL;
 	}
-	
+
+	/**
+	 * Configura el mapaArgumento para buscar las notificaciones pendientes del usuario
+	 * @return Regla de navegación
+	 */
+	public String accionNotificaciones(){
+		ProtocoloBusqueda protocolo = new ProtocoloBusqueda(null, true, MENU_PRINCIPAL);
+		protocolo.addParametro(Notificacion.ATRIBUTO_USUARIO, servicioUsuario.devolverUsuarioActivo());
+		protocolo.addParametro(Notificacion.ATRIBUTO_LEIDA, false);
+		mapaArgumentos = new MapaArgumentos(NombresBean.PROTOCOLO_BUSQUEDA, protocolo);
+		return GESTION_NOTIFICACIONES;
+	}
+
+	/**
+	 * Indica si el usuario tiene notificaciones pendientes
+	 * @return TRUE si el usuario tiene notificaciones pendientes
+	 */
+	public boolean isHayNotificacionesPendientes(){
+		return servicioNotificacion.hayNotificacionesPendientes();
+	}
+
 	public MapaArgumentos getMapaArgumentos() {
 		return mapaArgumentos;
 	}
