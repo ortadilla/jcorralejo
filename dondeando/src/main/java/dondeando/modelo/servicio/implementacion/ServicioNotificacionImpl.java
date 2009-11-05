@@ -2,9 +2,11 @@ package dondeando.modelo.servicio.implementacion;
 
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
 import static utilidades.varios.NombresBean.NOTIFICACION_DAO;
+import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_INTERES;
 import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_INTERES;
+import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 
 import java.util.List;
 
@@ -15,6 +17,7 @@ import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 
+import utilidades.busquedas.consultas.Criterio;
 import utilidades.varios.MensajesCore;
 import dondeando.modelo.dao.NotificacionDAO;
 import dondeando.modelo.entidades.Foro;
@@ -28,9 +31,11 @@ import dondeando.modelo.entidades.Puntuacion;
 import dondeando.modelo.entidades.TipoInteres;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.NotificacionImpl;
+import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioInteres;
 import dondeando.modelo.servicio.ServicioNotificacion;
 import dondeando.modelo.servicio.ServicioTipoInteres;
+import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(SERVICIO_NOTIFICACION)
@@ -47,6 +52,12 @@ public class ServicioNotificacionImpl implements ServicioNotificacion{
     
     @In(value=MENSAJES_CORE, create=true) 
     private MensajesCore mensajesCore;
+    
+    @In(value=SERVICIO_CRITERIOS, create=true) 
+    private ServicioCriterios servicioCriterios;
+    
+    @In(value=SERVICIO_USUARIO, create=true) 
+    private ServicioUsuario servicioUsuario;
     
     private Log log = LogFactory.getLog(ServicioNotificacionImpl.class);
     
@@ -141,4 +152,13 @@ public class ServicioNotificacionImpl implements ServicioNotificacion{
     }
     
 
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioNotificacion#hayNotificacionesPendientes()
+     */
+    public boolean hayNotificacionesPendientes(){
+		Criterio criterioUsuario = servicioCriterios.construyeCriterio(Notificacion.ATRIBUTO_USUARIO, Criterio.IGUAL, servicioUsuario.devolverUsuarioActivo()); 
+		Criterio criterioLeida = servicioCriterios.construyeCriterio(Notificacion.ATRIBUTO_LEIDA, Criterio.IGUAL, false); 
+		return !notificacionDAO.encontrarPorCondicion(criterioUsuario, criterioLeida).isEmpty();
+    }
 }
