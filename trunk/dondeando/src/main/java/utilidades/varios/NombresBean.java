@@ -45,6 +45,7 @@ public class NombresBean {
     public static final String GESTION_FOROS_BEAN = "gestionForosBean"; 
     public static final String GESTION_MENSAJES_TEMA_BEAN = "gestionMensajesTemaBean"; 
     public static final String GESTION_MODERADORES_FORO_BEAN = "gestionModeradoresForoBean"; 
+    public static final String GESTION_NOTIFICACIONES_BEAN = "gestionNotificacionesBean"; 
     public static final String GESTION_OPINION_LOCAL_BEAN = "gestionOpinionesLocalBean"; 
     public static final String GESTION_TEMAS_FORO_BEAN = "gestionTemasForoBean"; 
     public static final String GESTION_VALORACIONES_LOCAL_BEAN = "gestionValoracionesLocalBean"; 
@@ -59,6 +60,7 @@ public class NombresBean {
     /**Binding*/
     public static final String GESTION_FOROS_BINDING = "gestionForosBinding"; 
     public static final String GESTION_LOCALES_BINDING = "gestionLocalesBinding"; 
+    public static final String GESTION_NOTIFICACIONES_BINDING = "gestionNotificacionesBinding"; 
     public static final String GESTION_USUARIOS_BINDING = "gestionUsuariosBinding"; 
     
     /**DAOs */

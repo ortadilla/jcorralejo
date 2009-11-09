@@ -43,6 +43,8 @@ public class ProtocoloBusqueda {
      * @return El propio protocolo, para que sea fácil concatenarlos.
      */
     public ProtocoloBusqueda addParametro(String clave, Object valor){
+    	if(paramsBusqueda==null)
+    		paramsBusqueda = new HashMap<String, Object>();
         paramsBusqueda.put(clave, valor);
         return this;
     }

@@ -19,6 +19,7 @@
 	<page view-id="/dondeando/gestionLocales.jsp"			action="#{gestionLocalesBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/gestionMensajesTema.jsp"		action="#{gestionMensajesTemaBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/gestionModeradoresForo.jsp"	action="#{gestionModeradoresForoBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/dondeando/gestionNotificaciones.jsp"	action="#{gestionNotificacionesBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/gestionTemasForo.jsp"			action="#{gestionTemasForoBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/gestionOpinionesLocal.jsp"	action="#{gestionOpinionesLocalBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/dondeando/gestionUsuarios.jsp"			action="#{gestionUsuariosBean.cargarArgumentosDeEntrada}" />

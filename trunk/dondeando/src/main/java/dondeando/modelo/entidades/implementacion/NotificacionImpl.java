@@ -1,5 +1,7 @@
 package dondeando.modelo.entidades.implementacion;
 
+import java.util.Date;
+
 import dondeando.modelo.entidades.Notificacion;
 import dondeando.modelo.entidades.TipoInteres;
 import dondeando.modelo.entidades.Usuario;
@@ -12,6 +14,7 @@ public class NotificacionImpl implements Notificacion {
 	private TipoInteres tipoInteres;
 	private boolean leida;
 	private String mensaje;
+	private Date fecha;
 	
 	@Override
 	public int hashCode() {
@@ -70,6 +73,12 @@ public class NotificacionImpl implements Notificacion {
 	}
 	public void setLeida(boolean leida) {
 		this.leida = leida;
+	}
+	public Date getFecha() {
+		return fecha;
+	}
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
 }

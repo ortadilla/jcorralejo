@@ -23,6 +23,7 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
         <navigation-case><from-outcome>gestionTemasForo</from-outcome><to-view-id>/dondeando/gestionTemasForo.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionMensajesTema</from-outcome><to-view-id>/dondeando/gestionMensajesTema.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionModeradoresForo</from-outcome><to-view-id>/dondeando/gestionModeradoresForo.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>gestionNotificaciones</from-outcome><to-view-id>/dondeando/gestionNotificaciones.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionOpinionesLocal</from-outcome><to-view-id>/dondeando/gestionOpinionesLocal.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionUsuarios</from-outcome><to-view-id>/dondeando/gestionUsuarios.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionValoracionesLocal</from-outcome><to-view-id>/dondeando/gestionValoracionesLocal.jsp</to-view-id></navigation-case>
