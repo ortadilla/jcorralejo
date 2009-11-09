@@ -2750,7 +2750,7 @@ CARD 0 Arial,8,N</a:FontList>
 <a:CreationDate>1246813690</a:CreationDate>
 <a:ModificationDate>1246818948</a:ModificationDate>
 <a:CenterTextOffset>(-975, 75)</a:CenterTextOffset>
-<a:Rect>((-24844,35512), (-12394,45441))</a:Rect>
+<a:Rect>((-19004,35512), (-16513,45441))</a:Rect>
 <a:ListOfPoints>((-16513,35512),(-19004,45441))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615680</a:LineColor>
@@ -2770,7 +2770,7 @@ CARD 0 Arial,8,N</a:FontList>
 <o:ReferenceSymbol Id="o25">
 <a:CreationDate>1246813742</a:CreationDate>
 <a:ModificationDate>1246813742</a:ModificationDate>
-<a:Rect>((-23459,23608), (-12135,34573))</a:Rect>
+<a:Rect>((-18264,23608), (-17264,34573))</a:Rect>
 <a:ListOfPoints>((-17924,34573),(-17604,23608))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615680</a:LineColor>
@@ -2930,7 +2930,7 @@ CARD 0 Arial,8,N</a:FontList>
 <o:ReferenceSymbol Id="o48">
 <a:CreationDate>1255978270</a:CreationDate>
 <a:ModificationDate>1256754996</a:ModificationDate>
-<a:Rect>((-64582,-39488), (-49432,-31009))</a:Rect>
+<a:Rect>((-59107,-39488), (-49432,-31009))</a:Rect>
 <a:ListOfPoints>((-49432,-39215),(-50632,-31009),(-59107,-34834),(-56107,-36484),(-51757,-39488))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615680</a:LineColor>
@@ -2970,7 +2970,7 @@ CARD 0 Arial,8,N</a:FontList>
 <o:ReferenceSymbol Id="o53">
 <a:CreationDate>1255978473</a:CreationDate>
 <a:ModificationDate>1256754996</a:ModificationDate>
-<a:Rect>((-25443,-41318), (-16219,-33270))</a:Rect>
+<a:Rect>((-21307,-41318), (-20257,-33270))</a:Rect>
 <a:ListOfPoints>((-21307,-33270),(-20257,-41318))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615680</a:LineColor>
@@ -3090,8 +3090,8 @@ CARD 0 Arial,8,N</a:FontList>
 <o:ReferenceSymbol Id="o68">
 <a:CreationDate>1257007981</a:CreationDate>
 <a:ModificationDate>1257007981</a:ModificationDate>
-<a:Rect>((-43073,-22073), (-24446,-17723))</a:Rect>
-<a:ListOfPoints>((-43073,-22073),(-24446,-17723))</a:ListOfPoints>
+<a:Rect>((-43073,-22157), (-24446,-17723))</a:Rect>
+<a:ListOfPoints>((-43073,-22157),(-24446,-17723))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615680</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -3130,8 +3130,8 @@ CARD 0 Arial,8,N</a:FontList>
 <o:ReferenceSymbol Id="o74">
 <a:CreationDate>1257008048</a:CreationDate>
 <a:ModificationDate>1257008048</a:ModificationDate>
-<a:Rect>((-65996,-21968), (-47638,-17243))</a:Rect>
-<a:ListOfPoints>((-47638,-21968),(-65996,-17243))</a:ListOfPoints>
+<a:Rect>((-65996,-22039), (-47638,-17243))</a:Rect>
+<a:ListOfPoints>((-47638,-22039),(-65996,-17243))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615680</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -3612,7 +3612,7 @@ TableComment 0 Arial,8,N</a:FontList>
 <o:TableSymbol Id="o69">
 <a:CreationDate>1257007746</a:CreationDate>
 <a:ModificationDate>1257008048</a:ModificationDate>
-<a:Rect>((-52870,-25287), (-41026,-17521))</a:Rect>
+<a:Rect>((-52870,-25774), (-41026,-17034))</a:Rect>
 <a:LineColor>12615680</a:LineColor>
 <a:FillColor>16570034</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -6154,7 +6154,7 @@ F	</a:ListOfValues>
 <a:Code>NOTIFICACION</a:Code>
 <a:CreationDate>1257007746</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
-<a:ModificationDate>1257008082</a:ModificationDate>
+<a:ModificationDate>1257460857</a:ModificationDate>
 <a:Modifier>Mastropiero</a:Modifier>
 <a:Comment>Cada una de las notificaciones que reciben los usuario, atendiendo a los intereses de cada uno</a:Comment>
 <c:Columns>
@@ -6237,9 +6237,21 @@ F	</a:ListOfValues>
 <a:Length>1</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
+<o:Column Id="o278">
+<a:ObjectID>7482F443-8310-4E32-9EAC-B5BEFCE8CCD0</a:ObjectID>
+<a:Name>fecha</a:Name>
+<a:Code>FECHA</a:Code>
+<a:CreationDate>1257460857</a:CreationDate>
+<a:Creator>Mastropiero</a:Creator>
+<a:ModificationDate>1257460978</a:ModificationDate>
+<a:Modifier>Mastropiero</a:Modifier>
+<a:Comment>Fecha en la que se envía la notificación</a:Comment>
+<a:DataType>datetime</a:DataType>
+<a:Mandatory>1</a:Mandatory>
+</o:Column>
 </c:Columns>
 <c:Keys>
-<o:Key Id="o278">
+<o:Key Id="o279">
 <a:ObjectID>A59F27EB-F602-4F14-A128-DD7D3FCA75AA</a:ObjectID>
 <a:Name>Key_1</a:Name>
 <a:Code>KEY_1</a:Code>
@@ -6253,7 +6265,7 @@ F	</a:ListOfValues>
 </o:Key>
 </c:Keys>
 <c:Indexes>
-<o:Index Id="o279">
+<o:Index Id="o280">
 <a:ObjectID>BA0A4013-FD37-48CC-B0E3-4860BB0A4895</a:ObjectID>
 <a:Name>i_id</a:Name>
 <a:Code>I_ID</a:Code>
@@ -6263,7 +6275,7 @@ F	</a:ListOfValues>
 <a:Modifier>Mastropiero</a:Modifier>
 <a:Unique>1</a:Unique>
 <c:IndexColumns>
-<o:IndexColumn Id="o280">
+<o:IndexColumn Id="o281">
 <a:ObjectID>D105B04F-B303-4B50-9815-C474A16447A1</a:ObjectID>
 <a:CreationDate>1257007796</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6277,7 +6289,7 @@ F	</a:ListOfValues>
 </o:Index>
 </c:Indexes>
 <c:PrimaryKey>
-<o:Key Ref="o278"/>
+<o:Key Ref="o279"/>
 </c:PrimaryKey>
 </o:Table>
 </c:Tables>
@@ -6305,7 +6317,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o118"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o281">
+<o:ReferenceJoin Id="o282">
 <a:ObjectID>F427741B-264D-4E9C-BABD-EAA7E22B3A51</a:ObjectID>
 <a:CreationDate>1239553748</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6343,7 +6355,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o118"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o282">
+<o:ReferenceJoin Id="o283">
 <a:ObjectID>5F1A9B6E-123C-4350-83DE-4FF51A922E14</a:ObjectID>
 <a:CreationDate>1239554572</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6380,7 +6392,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o132"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o283">
+<o:ReferenceJoin Id="o284">
 <a:ObjectID>71428840-7060-402F-875C-D1C6AE100093</a:ObjectID>
 <a:CreationDate>1246704725</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6417,7 +6429,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o148"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o284">
+<o:ReferenceJoin Id="o285">
 <a:ObjectID>BD7749A4-46CF-4C74-89A6-4A35E999413D</a:ObjectID>
 <a:CreationDate>1246812956</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6454,7 +6466,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o132"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o285">
+<o:ReferenceJoin Id="o286">
 <a:ObjectID>202E62E5-BACB-4A68-AF85-D03FBD5FA642</a:ObjectID>
 <a:CreationDate>1246812984</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6491,7 +6503,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o170"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o286">
+<o:ReferenceJoin Id="o287">
 <a:ObjectID>A0E87705-3CB4-42AF-A91D-8BB60E6F3F19</a:ObjectID>
 <a:CreationDate>1246813690</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6528,7 +6540,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o148"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o287">
+<o:ReferenceJoin Id="o288">
 <a:ObjectID>B058E67C-6B95-4E3B-A2C4-B32B935E2BAE</a:ObjectID>
 <a:CreationDate>1246813742</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6565,7 +6577,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o148"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o288">
+<o:ReferenceJoin Id="o289">
 <a:ObjectID>584363F3-9CFF-4D1A-AD1B-46E91D6E5CEF</a:ObjectID>
 <a:CreationDate>1254509209</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6602,7 +6614,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o154"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o289">
+<o:ReferenceJoin Id="o290">
 <a:ObjectID>D62A96EF-88AF-4F77-96F2-168B81CDF8A3</a:ObjectID>
 <a:CreationDate>1254509265</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6639,7 +6651,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o193"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o290">
+<o:ReferenceJoin Id="o291">
 <a:ObjectID>8ED33F0C-5B6F-4D5F-8F60-6C62C42D6E80</a:ObjectID>
 <a:CreationDate>1254579974</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6676,7 +6688,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o205"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o291">
+<o:ReferenceJoin Id="o292">
 <a:ObjectID>21B39AFC-38C9-4ADF-9C04-D7457AB0CA80</a:ObjectID>
 <a:CreationDate>1254580342</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6713,7 +6725,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o199"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o292">
+<o:ReferenceJoin Id="o293">
 <a:ObjectID>08A5957E-1DBE-4691-A666-17833590E227</a:ObjectID>
 <a:CreationDate>1254580363</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6750,7 +6762,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o213"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o293">
+<o:ReferenceJoin Id="o294">
 <a:ObjectID>1A6A1BE5-98F7-4F40-8438-D895F86B25C6</a:ObjectID>
 <a:CreationDate>1255978196</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6787,7 +6799,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o109"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o294">
+<o:ReferenceJoin Id="o295">
 <a:ObjectID>CD86D1DD-E5C8-430B-B0CA-0316D53D5C74</a:ObjectID>
 <a:CreationDate>1255978222</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6824,7 +6836,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o224"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o295">
+<o:ReferenceJoin Id="o296">
 <a:ObjectID>3769D507-22E5-40E6-9202-A37BB760F993</a:ObjectID>
 <a:CreationDate>1255978270</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6861,7 +6873,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o109"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o296">
+<o:ReferenceJoin Id="o297">
 <a:ObjectID>FB1AEA5F-D2DA-4545-A614-53F486160752</a:ObjectID>
 <a:CreationDate>1255978444</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6898,7 +6910,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o213"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o297">
+<o:ReferenceJoin Id="o298">
 <a:ObjectID>937B5577-2BA5-489C-9DB6-D1F4FA545F1B</a:ObjectID>
 <a:CreationDate>1255978473</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6935,7 +6947,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o148"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o298">
+<o:ReferenceJoin Id="o299">
 <a:ObjectID>DFBD0B57-8B5B-4EDA-91CC-D2F577A698AA</a:ObjectID>
 <a:CreationDate>1256755443</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -6972,7 +6984,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o109"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o299">
+<o:ReferenceJoin Id="o300">
 <a:ObjectID>EF9EF1F8-9176-4B41-9B10-B62ADB9D82EF</a:ObjectID>
 <a:CreationDate>1256755471</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -7009,7 +7021,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o148"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o300">
+<o:ReferenceJoin Id="o301">
 <a:ObjectID>4349407E-00F8-4381-A68D-3F44D32EA934</a:ObjectID>
 <a:CreationDate>1256986910</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -7046,7 +7058,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o109"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o301">
+<o:ReferenceJoin Id="o302">
 <a:ObjectID>8B2E65E6-35EF-499F-83F8-C7A9E331200D</a:ObjectID>
 <a:CreationDate>1256986941</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -7083,7 +7095,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o109"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o302">
+<o:ReferenceJoin Id="o303">
 <a:ObjectID>9E9C31FE-0BC8-4F35-A917-79CB7D3D4E51</a:ObjectID>
 <a:CreationDate>1257007961</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -7120,7 +7132,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o109"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o303">
+<o:ReferenceJoin Id="o304">
 <a:ObjectID>2EABFC19-5FEF-4A27-AEC0-DB865AEEBE03</a:ObjectID>
 <a:CreationDate>1257007981</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -7157,7 +7169,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o269"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o304">
+<o:ReferenceJoin Id="o305">
 <a:ObjectID>6E586348-FF69-411D-A9ED-3749A02A19E8</a:ObjectID>
 <a:CreationDate>1257008016</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -7194,7 +7206,7 @@ F	</a:ListOfValues>
 <o:Key Ref="o269"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o305">
+<o:ReferenceJoin Id="o306">
 <a:ObjectID>4A7BCF41-CCC1-41CE-861C-F501C8BFFCAB</a:ObjectID>
 <a:CreationDate>1257008048</a:CreationDate>
 <a:Creator>Mastropiero</a:Creator>
@@ -7211,7 +7223,7 @@ F	</a:ListOfValues>
 </o:Reference>
 </c:References>
 <c:DefaultGroups>
-<o:Group Id="o306">
+<o:Group Id="o307">
 <a:ObjectID>1D450119-D2E5-4EBC-8212-462D03B9C426</a:ObjectID>
 <a:Name>PUBLIC</a:Name>
 <a:Code>PUBLIC</a:Code>
@@ -7222,7 +7234,7 @@ F	</a:ListOfValues>
 </o:Group>
 </c:DefaultGroups>
 <c:TargetModels>
-<o:TargetModel Id="o307">
+<o:TargetModel Id="o308">
 <a:ObjectID>66D67DDD-1E38-4FCA-9AA8-C0E8EBD95446</a:ObjectID>
 <a:Name>MySQL 5.0</a:Name>
 <a:Code>MYSQL50</a:Code>

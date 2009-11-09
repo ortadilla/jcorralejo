@@ -2,7 +2,6 @@
 · Añadir a las puntuaciones: el karma del usuario en el momento, la media calculada, 
 · Añadir las Notificaciones (con email)
 · Actualizar votaciones y karma
-· Añadir la entidad Encuesta
 · Rendered de TODOS LOS BOTONES dependiendo de los permisos y el karma
 · Menú principal
 
@@ -15,6 +14,7 @@ MEJORAS NECESARIAS:
 · Eliminar todos los @author
   
 MEJORAS DESEABLES:
+· Añadir la entidad Encuesta
 · ¿Añadir una carta a los locales?
 · Si edita un mensaje alguien que no es el autor --> Añadir alguna marca al mensaje
 · Al borrar/aniadir un tema, si volvemos a la gestión de foros, no se actualiza --> no tiene cargarArgumentosEntradas

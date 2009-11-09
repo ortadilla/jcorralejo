@@ -8,6 +8,7 @@ import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_INTERES;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -20,6 +21,7 @@ import org.jboss.seam.annotations.Scope;
 import utilidades.busquedas.consultas.Criterio;
 import utilidades.varios.MensajesCore;
 import dondeando.modelo.dao.NotificacionDAO;
+import dondeando.modelo.dao.excepciones.DAOExcepcion;
 import dondeando.modelo.entidades.Foro;
 import dondeando.modelo.entidades.Interes;
 import dondeando.modelo.entidades.Local;
@@ -81,6 +83,7 @@ public class ServicioNotificacionImpl implements ServicioNotificacion{
     			notificacion.setTipoInteres(tipoInteres);
     			notificacion.setUsuario(interes.getUsuario());
     			notificacion.setMensaje(obtenerMensajeNotificacion(idTipoInteres, objetoObjetivo, objetoMensaje));
+    			notificacion.setFecha(new Date());
     			
     			notificacionDAO.hacerPersistente(notificacion);
     			
@@ -157,8 +160,35 @@ public class ServicioNotificacionImpl implements ServicioNotificacion{
      * @see dondeando.modelo.servicio.ServicioNotificacion#hayNotificacionesPendientes()
      */
     public boolean hayNotificacionesPendientes(){
-		Criterio criterioUsuario = servicioCriterios.construyeCriterio(Notificacion.ATRIBUTO_USUARIO, Criterio.IGUAL, servicioUsuario.devolverUsuarioActivo()); 
-		Criterio criterioLeida = servicioCriterios.construyeCriterio(Notificacion.ATRIBUTO_LEIDA, Criterio.IGUAL, false); 
-		return !notificacionDAO.encontrarPorCondicion(criterioUsuario, criterioLeida).isEmpty();
+//		Criterio criterioUsuario = servicioCriterios.construyeCriterio(Notificacion.ATRIBUTO_USUARIO, Criterio.IGUAL, servicioUsuario.devolverUsuarioActivo()); 
+//		Criterio criterioLeida = servicioCriterios.construyeCriterio(Notificacion.ATRIBUTO_LEIDA, Criterio.IGUAL, false); 
+//		return !notificacionDAO.encontrarPorCondicion(criterioUsuario, criterioLeida).isEmpty();
+		return !encontrarNotificacionesPorUsuarioYEstado(servicioUsuario.devolverUsuarioActivo(), false).isEmpty();
+    }
+    
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioNotificacion#leer(dondeando.modelo.entidades.Notificacion)
+     */
+    public void leer(Notificacion notificacion){
+    	if(notificacion!=null){
+    		notificacion.setLeida(true);
+        	try {
+        		notificacionDAO.flush();
+        	} catch (DAOExcepcion e) {
+        		log.debug("Error al actualizar los datos de la notificación "+e);
+        	}
+    	}
+    }
+    
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioNotificacion#encontrarNotificacionesPorUsuarioYEstado(dondeando.modelo.entidades.Usuario, boolean)
+     */
+    public List<Notificacion> encontrarNotificacionesPorUsuarioYEstado(Usuario usuario, boolean leida){
+		Criterio criterioUsuario = servicioCriterios.construyeCriterio(Notificacion.ATRIBUTO_USUARIO, Criterio.IGUAL, usuario); 
+		Criterio criterioLeida = servicioCriterios.construyeCriterio(Notificacion.ATRIBUTO_LEIDA, Criterio.IGUAL, leida); 
+		return notificacionDAO.encontrarPorCondicion(criterioUsuario, criterioLeida);
+
     }
 }

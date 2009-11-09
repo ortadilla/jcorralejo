@@ -1,5 +1,7 @@
 package dondeando.modelo.entidades;
 
+import java.util.Date;
+
 public interface Notificacion {
 	
 	public static final String ATRIBUTO_USUARIO = "usuario";
@@ -22,4 +24,7 @@ public interface Notificacion {
 	
 	public String getMensaje();
 	public void setMensaje(String mensaje);
+	
+	public Date getFecha();
+	public void setFecha(Date fecha);
 }

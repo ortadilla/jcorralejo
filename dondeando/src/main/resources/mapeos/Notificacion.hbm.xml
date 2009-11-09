@@ -14,6 +14,7 @@
 
 		<property name="leida" column="leida"	type="true_false" />
 		<property name="mensaje" column="mensaje"	/>
+		<property name="fecha" column="fecha" type="timestamp"/>
 
 		<many-to-one class="dondeando.modelo.entidades.implementacion.UsuarioImpl"
 			column="usuario" name="usuario" />
