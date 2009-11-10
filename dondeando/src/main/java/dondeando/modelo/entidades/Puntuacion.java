@@ -41,6 +41,12 @@ public interface Puntuacion {
 	public String getLoPeor();
 	public void setLoPeor(String loPeor);
 	
+	public BigDecimal getKarmaUsuario();
+	public void setKarmaUsuario(BigDecimal karmaUsuario);
+	
+	public BigDecimal getMediaCalculada();
+	public void setMediaCalculada(BigDecimal mediaCalculada);
+	
 
 
 }

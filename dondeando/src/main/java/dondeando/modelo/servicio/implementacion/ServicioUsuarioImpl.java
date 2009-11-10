@@ -315,4 +315,61 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     	String clave =  encriptar("anonimo");
     	System.out.println(clave);
     }
+    
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioUsuario#actualizarKarma(java.lang.Integer, java.math.BigDecimal)
+     */
+    public void actualizarKarma(Integer operacion, BigDecimal actualizacionKarma){
+    	
+    	if(!isUsuarioActivoAnonimo()){
+    		Usuario usuarioActivo = devolverUsuarioActivo();
+    		BigDecimal karmaActual = usuarioActivo.getKarma();
+
+    		if(usuarioActivo!=null && karmaActual!=null){
+    			BigDecimal siete = new BigDecimal(7);
+    			BigDecimal tres = new BigDecimal(3);
+    			BigDecimal diez = new BigDecimal(10);
+    			BigDecimal incremento = BigDecimal.ZERO;
+    			if(OPERACION_AGREGAR_LOCAL.equals(operacion))
+    				incremento = new BigDecimal(0.25);
+    			else if(OPERACION_DETALLES_LOCAL.equals(operacion) && karmaActual.compareTo(siete)<0)
+    				incremento = new BigDecimal(0.01);
+    			else if(OPERACION_EDITAR_LOCAL.equals(operacion))
+    				incremento = new BigDecimal(0.1);
+    			else if(OPERACION_OPINIONAR_LOCAL.equals(operacion))
+    				incremento = new BigDecimal(0.1);
+    			else if(OPERACION_VALORAR_LOCAL.equals(operacion))
+    				incremento = actualizacionKarma; //Se debe calcular fuera
+    			else if(OPERACION_AGREGAR_TEMA_MENSAJE_FORO.equals(operacion) && karmaActual.compareTo(siete)<0)
+    				incremento = new BigDecimal(0.01);
+    			else if(OPERACION_RECIBIR_VOTO_POSITIVO_FORO.equals(operacion) && karmaActual.compareTo(siete)<0)
+    				incremento = new BigDecimal(0.01);
+    			else if(OPERACION_RECIBIR_VOTO_NEGATIVO_FORO.equals(operacion) && karmaActual.compareTo(tres)>0)
+    				incremento = new BigDecimal(-0.01);
+    			else if(OPERACION_RECIBIR_VOTO_POSITIVO_OPINION.equals(operacion) && karmaActual.compareTo(siete)<0)
+    				incremento = new BigDecimal(0.05);
+    			else if(OPERACION_RECIBIR_VOTO_NEGATIVO_OPINION.equals(operacion) && karmaActual.compareTo(tres)>0)
+    				incremento = new BigDecimal(-0.05);
+    			else if(OPERACION_MÁS_NOTIFICACIONES.equals(operacion))
+    				incremento = new BigDecimal(0.1);
+    			else if(OPERACION_MENOS_NOTIFICACIONES.equals(operacion))
+    				incremento = new BigDecimal(-0.1);
+    			else if(OPERACION_PARTICIPAR_ENCUESTA.equals(operacion))
+    				incremento = new BigDecimal(0.1);
+
+    			if(incremento.compareTo(diez)>0)
+    				incremento = diez;
+    			else if (incremento.compareTo(new BigDecimal(-10))<0)
+    				incremento = BigDecimal.ZERO;
+    			
+    			usuarioActivo.setKarma(karmaActual.add(incremento));
+    			try {
+    				usuarioDAO.flush();
+    			} catch (DAOExcepcion e) {
+    				log.debug("No se pudo actualizar el karma del usuario", e);
+    			}
+    		}
+    	}
+    }
 }

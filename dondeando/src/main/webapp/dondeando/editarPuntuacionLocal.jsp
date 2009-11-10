@@ -55,14 +55,14 @@
 									<tr:outputText value="#{resCore['SERVICIO']} *"
 										inlineStyle="font-weight: bolder;" />
 									<tr:inputText columns="5"
-										value="#{editarPuntuacionLocalBean.servicio}" id="ambiente"
+										value="#{editarPuntuacionLocalBean.servicio}" id="servicio"
 										maximumLength="2" />
 								</trh:rowLayout>
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['CALIDAD_PRECIO']} *"
 										inlineStyle="font-weight: bolder;" />
 									<tr:inputText columns="5"
-										value="#{editarPuntuacionLocalBean.calidadPrecio}" id="ambiente"
+										value="#{editarPuntuacionLocalBean.calidadPrecio}" id="calidadPrecio"
 										maximumLength="2" />
 								</trh:rowLayout>
 								<trh:rowLayout>

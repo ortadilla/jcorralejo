@@ -4,6 +4,7 @@ import static utilidades.varios.NombresBean.OPINION_DAO;
 import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
 import static utilidades.varios.NombresBean.SERVICIO_OPINION;
+import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -26,6 +27,7 @@ import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioNotificacion;
 import dondeando.modelo.servicio.ServicioOpinion;
 import dondeando.modelo.servicio.ServicioTipoInteres;
+import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(SERVICIO_OPINION)
@@ -43,6 +45,9 @@ public class ServicioOpinionImpl implements ServicioOpinion{
     
     @In(value=SERVICIO_NOTIFICACION, create=true)
     private ServicioNotificacion servicioNotificacion;
+    
+    @In(value=SERVICIO_USUARIO, create=true)
+    private ServicioUsuario servicioUsuario;
 	
 	/*
 	 * (non-Javadoc)
@@ -95,6 +100,9 @@ public class ServicioOpinionImpl implements ServicioOpinion{
 		
 		//Enviamos las notificaciones
 		servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_OPINION_LOCAL, local, opinion);
+		
+		//Actualizamos el karma del usuario
+    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_OPINIONAR_LOCAL, null);
 		
 		return opinion;
     }

@@ -7,6 +7,7 @@ import static utilidades.varios.NombresBean.SERVICIO_DIRECCION;
 import static utilidades.varios.NombresBean.SERVICIO_LOCAL;
 import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_LOCAL;
+import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ import org.jboss.seam.annotations.Scope;
 import utilidades.busquedas.consultas.Criterio;
 import utilidades.varios.EntidadConCodigo;
 import utilidades.varios.MensajesCore;
+import utilidades.varios.NombresBean;
 import dondeando.modelo.dao.LocalDAO;
 import dondeando.modelo.dao.excepciones.DAOExcepcion;
 import dondeando.modelo.entidades.Direccion;
@@ -31,6 +33,7 @@ import dondeando.modelo.entidades.Provincia;
 import dondeando.modelo.entidades.Servicio;
 import dondeando.modelo.entidades.TipoLocal;
 import dondeando.modelo.entidades.TipoVia;
+import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.entidades.implementacion.LocalImpl;
 import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioDireccion;
@@ -38,6 +41,7 @@ import dondeando.modelo.servicio.ServicioLocal;
 import dondeando.modelo.servicio.ServicioNotificacion;
 import dondeando.modelo.servicio.ServicioTipoInteres;
 import dondeando.modelo.servicio.ServicioTipoLocal;
+import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(SERVICIO_LOCAL)
@@ -56,6 +60,9 @@ public class ServicioLocalImpl implements ServicioLocal{
     
     @In(value=SERVICIO_NOTIFICACION, create=true)
     private ServicioNotificacion servicioNotificacion;
+    
+    @In(value=SERVICIO_USUARIO, create=true)
+    private ServicioUsuario servicioUsuario;
     
     @In(value=LOCAL_DAO, create=true)
     private LocalDAO localDAO;
@@ -276,7 +283,10 @@ public class ServicioLocalImpl implements ServicioLocal{
     	//Enviamos las notificaciones
     	servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_NUEVO_LOCAL, null, local);
     	servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_NUEVO_LOCAL_PROVINCIA, provincia, local);
-
+    	
+    	//Actualizamos el karma del usuario
+    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_AGREGAR_LOCAL, null);
+    	
 		return local;
 	}
 	
@@ -302,6 +312,9 @@ public class ServicioLocalImpl implements ServicioLocal{
 		//Enviamos las notificaciones
 		servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_MODIFICAR_LOCAL, local, local);
 		servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_MODIFICAR_LOCAL_PROVINCIA, provincia, local);
+		
+		//Actualizamos el karma del usuario
+    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_EDITAR_LOCAL, null);
 	}
 	
 	/**

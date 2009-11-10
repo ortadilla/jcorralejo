@@ -59,6 +59,9 @@
 							<tr:column sortable="true" headerText="#{resCore['CALIDAD_PRECIO']}">
 								<tr:outputText value="#{var.calidadPrecio}" />
 							</tr:column>
+							<tr:column sortable="true" headerText="#{resCore['VALORACION_MEDIA']}">
+								<tr:outputText value="#{var.mediaCalculada}" />
+							</tr:column>
 							<tr:column sortable="true" headerText="#{resCore['LO_MEJOR']}">
 								<tr:outputText value="#{var.loMejor}" />
 							</tr:column>
