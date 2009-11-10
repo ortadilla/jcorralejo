@@ -1,5 +1,6 @@
 package dondeando.modelo.servicio;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import dondeando.modelo.entidades.Imagen;
@@ -7,6 +8,20 @@ import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
 
 public interface ServicioUsuario {
+	
+	public static final Integer OPERACION_AGREGAR_LOCAL = 1;
+	public static final Integer OPERACION_EDITAR_LOCAL = 2;
+	public static final Integer OPERACION_DETALLES_LOCAL = 3;
+	public static final Integer OPERACION_OPINIONAR_LOCAL = 4;
+	public static final Integer OPERACION_VALORAR_LOCAL = 5;
+	public static final Integer OPERACION_AGREGAR_TEMA_MENSAJE_FORO = 6;
+	public static final Integer OPERACION_RECIBIR_VOTO_POSITIVO_FORO = 7;
+	public static final Integer OPERACION_RECIBIR_VOTO_NEGATIVO_FORO = 11;
+	public static final Integer OPERACION_RECIBIR_VOTO_POSITIVO_OPINION = 8;
+	public static final Integer OPERACION_RECIBIR_VOTO_NEGATIVO_OPINION = 12;
+	public static final Integer OPERACION_MÁS_NOTIFICACIONES = 9;
+	public static final Integer OPERACION_MENOS_NOTIFICACIONES = 13;
+	public static final Integer OPERACION_PARTICIPAR_ENCUESTA = 10;
 	
     /**
      * Indica si el usuario existe, está activo y tiene la password indicada y lo guarda en
@@ -111,4 +126,12 @@ public interface ServicioUsuario {
 	 * @return	Lista de usuarios encontrados
 	 */
 	public List<Usuario> encontrarUsuariosPorLoginTipoYActivo(String usuario, TipoUsuario tipoUsuario, Boolean activo);
+	
+	/**
+	 * Acualiza el karma del usuario activo, atendiendo a la operación al dato de actualización.
+	 * Si es null se auto-calcula
+	 * @param operacion Operación que modifica el karma
+	 * @param actualizacionKarma Incremento/Decrementl del karma es operaciones específicas
+	 */
+	public void actualizarKarma(Integer operacion, BigDecimal actualizacionKarma);
 }

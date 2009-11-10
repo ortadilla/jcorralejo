@@ -1,7 +1,4 @@
-· Añadir sobre al entrar --> link a la gestión de Notificaciones del Usuario
-· Añadir a las puntuaciones: el karma del usuario en el momento, la media calculada, 
-· Añadir las Notificaciones (con email)
-· Actualizar votaciones y karma
+· Puntuar mensajes foro y opiniones --> Actualizar karma
 · Rendered de TODOS LOS BOTONES dependiendo de los permisos y el karma
 · Menú principal
 

@@ -7,6 +7,7 @@ import static utilidades.varios.NombresBean.DETALLES_LOCAL_BEAN;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.SERVICIO_SERVICIO;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_LOCAL;
+import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ import dondeando.modelo.entidades.TipoLocal;
 import dondeando.modelo.entidades.TipoVia;
 import dondeando.modelo.servicio.ServicioServicio;
 import dondeando.modelo.servicio.ServicioTipoLocal;
+import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(DETALLES_LOCAL_BEAN)
@@ -78,6 +80,9 @@ public class DetallesLocalBean {
 	
 	@In(value=SERVICIO_SERVICIO, create=true)
 	private ServicioServicio servicioServicio;
+	
+	@In(value=SERVICIO_USUARIO, create=true)
+	private ServicioUsuario servicioUsuario;
 	
 	private ProtocoloEdicion protocoloEdicion;
 	
@@ -156,7 +161,7 @@ public class DetallesLocalBean {
 				selectServicios = SelectItemBuilder.creaSelectItems(HerramientasList.ordenar(new ArrayList<Servicio>(localEdicion.getServicios()),Servicio.ATRIBUTO_DESCRIPCION), 
 																	null, 
 																	Servicio.ATRIBUTO_DESCRIPCION);
-
+				
 			}
 		}
 	}

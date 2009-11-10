@@ -4,6 +4,7 @@ import static utilidades.varios.NombresBean.MENSAJE_FORO_DAO;
 import static utilidades.varios.NombresBean.SERVICIO_CRITERIOS;
 import static utilidades.varios.NombresBean.SERVICIO_MENSAJE_FORO;
 import static utilidades.varios.NombresBean.SERVICIO_NOTIFICACION;
+import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,6 +30,7 @@ import dondeando.modelo.servicio.ServicioCriterios;
 import dondeando.modelo.servicio.ServicioMensajeForo;
 import dondeando.modelo.servicio.ServicioNotificacion;
 import dondeando.modelo.servicio.ServicioTipoInteres;
+import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(SERVICIO_MENSAJE_FORO)
@@ -47,6 +49,9 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
     
     @In(value=SERVICIO_NOTIFICACION, create=true)
     private ServicioNotificacion servicioNotificacion;
+    
+    @In(value=SERVICIO_USUARIO, create=true)
+    private ServicioUsuario servicioUsuario;
     
     /*
      * s(non-Javadoc)
@@ -123,6 +128,9 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
 		
     	//Enviamos las notificaciones
     	servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_NUEVO_TEMA_MENSAJE_FORO, foro, mensajeForo);
+    	
+    	//Actualizamos el karma del usuario
+    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_AGREGAR_TEMA_MENSAJE_FORO, null);
 		
 		return mensajeForo;
 	}

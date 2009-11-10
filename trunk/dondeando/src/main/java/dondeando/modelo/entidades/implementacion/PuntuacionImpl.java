@@ -20,6 +20,8 @@ public class PuntuacionImpl implements Puntuacion{
 	private BigDecimal calidadPrecio;
 	private String loMejor;
 	private String loPeor;
+	private BigDecimal mediaCalculada;  
+	private BigDecimal karmaUsuario;  
 	
 	private String autorYFecha;
 
@@ -141,6 +143,22 @@ public class PuntuacionImpl implements Puntuacion{
 
 	public void setAutorYFecha(String autorYFecha) {
 		this.autorYFecha = autorYFecha;
+	}
+
+	public BigDecimal getMediaCalculada() {
+		return mediaCalculada;
+	}
+
+	public void setMediaCalculada(BigDecimal mediaCalculada) {
+		this.mediaCalculada = mediaCalculada;
+	}
+
+	public BigDecimal getKarmaUsuario() {
+		return karmaUsuario;
+	}
+
+	public void setKarmaUsuario(BigDecimal karmaUsuario) {
+		this.karmaUsuario = karmaUsuario;
 	}
 
 }

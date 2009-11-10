@@ -15,6 +15,7 @@ import static utilidades.varios.NombresBean.SERVICIO_LOCAL;
 import static utilidades.varios.NombresBean.SERVICIO_PERMISO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_PROVINCIA;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_LOCAL;
+import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
 import java.util.List;
@@ -48,6 +49,7 @@ import dondeando.modelo.servicio.ServicioLocal;
 import dondeando.modelo.servicio.ServicioPermisoUsuario;
 import dondeando.modelo.servicio.ServicioProvincia;
 import dondeando.modelo.servicio.ServicioTipoLocal;
+import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(GESTION_LOCALES_BEAN)
@@ -97,6 +99,9 @@ public class GestionLocalesBean {
 	//Servicios
 	@In(value=SERVICIO_TIPO_LOCAL, create=true)
 	private ServicioTipoLocal servicioTipoLocal;
+	
+    @In(value=SERVICIO_USUARIO, create=true)
+    private ServicioUsuario servicioUsuario;
 	
 	@In(value=SERVICIO_PROVINCIA, create=true)
 	private ServicioProvincia servicioProvincia;
@@ -261,7 +266,15 @@ public class GestionLocalesBean {
 					ProtocoloEdicion protocolo = new ProtocoloEdicion(local,GESTION_LOCALES,null);
 					mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
 			
-					outcome = ACCION_MODIFICAR_LOCAL.equals(operacion) ? EDITAR_LOCAL : DETALLES_LOCAL;
+					if(ACCION_DETALLES_LOCAL.equals(operacion)){
+						//Actualizamos el karma del usuario
+						servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_DETALLES_LOCAL, null);
+						outcome = DETALLES_LOCAL;
+					}else{
+//						servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_EDITAR_LOCAL, null);
+						outcome = EDITAR_LOCAL;
+					}
+						
 					operacionRealizada = true;
 				
 				}else if(ACCION_ELIMINAR_LOCAL.equals(operacion)){

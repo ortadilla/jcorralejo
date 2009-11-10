@@ -19,6 +19,8 @@
 		<property name="calidadPrecio" column="calidadPrecio" />
 		<property name="loMejor" column="loMejor" />
 		<property name="loPeor" column="loPeor" />
+		<property name="mediaCalculada" column="mediaCalculada" />
+		<property name="karmaUsuario" column="karmaUsuario" />
 
 		<many-to-one
 			class="dondeando.modelo.entidades.implementacion.LocalImpl"

@@ -6,6 +6,7 @@ import static utilidades.varios.NombresBean.SERVICIO_FORO;
 import static utilidades.varios.NombresBean.SERVICIO_INTERES;
 import static utilidades.varios.NombresBean.SERVICIO_LOCAL;
 import static utilidades.varios.NombresBean.SERVICIO_PROVINCIA;
+import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -34,6 +35,7 @@ import dondeando.modelo.servicio.ServicioInteres;
 import dondeando.modelo.servicio.ServicioLocal;
 import dondeando.modelo.servicio.ServicioProvincia;
 import dondeando.modelo.servicio.ServicioTipoInteres;
+import dondeando.modelo.servicio.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
 @Name(SERVICIO_INTERES)
@@ -57,6 +59,9 @@ public class ServicioInteresImpl implements ServicioInteres{
 	@In(value=SERVICIO_CRITERIOS, create=true)
 	private ServicioCriterios servicioCriterios;
 	
+    @In(value=SERVICIO_USUARIO, create=true)
+    private ServicioUsuario servicioUsuario;
+	
 	/*
 	 * (non-Javadoc)
 	 * @see dondeando.modelo.servicio.ServicioInteres#eliminarOpinion(dondeando.modelo.entidades.Interes)
@@ -72,6 +77,9 @@ public class ServicioInteresImpl implements ServicioInteres{
 				log.debug("Error al eliminar un interes", e);
 				throw new RuntimeException(e);
 			}
+			
+			//Actualizamos el karma del usuario
+			servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_MENOS_NOTIFICACIONES, null);
     	}
 	}
 	
@@ -99,6 +107,9 @@ public class ServicioInteresImpl implements ServicioInteres{
 				interes.setObjetoInteres(provincia.getId());
 			
 			interesDAO.hacerPersistente(interes);
+			
+	    	//Actualizamos el karma del usuario
+	    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_MÁS_NOTIFICACIONES, null);
 			
 			if(usuario.getIntereses()==null)
 				usuario.setIntereses(new HashSet<Interes>());
