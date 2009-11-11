@@ -1,6 +1,7 @@
 package dondeando.modelo.entidades.implementacion;
 
 import java.util.Date;
+import java.util.Set;
 
 import dondeando.modelo.entidades.Local;
 import dondeando.modelo.entidades.Opinion;
@@ -14,8 +15,15 @@ public class OpinionImpl implements Opinion{
 	private Usuario usuario;
 	private Date fecha;
 	private Local local;
+	private Integer valoracionUsuarios;
+	private Set<Usuario> usuariosValoraciones;
 	
 	private String autorYFecha;
+	
+	
+	public boolean isValoracionPositiva(){
+		return valoracionUsuarios==null || valoracionUsuarios.compareTo(0)>=0;
+	}
 	
 	@Override
 	public int hashCode() {
@@ -83,6 +91,22 @@ public class OpinionImpl implements Opinion{
 
 	public void setAutorYFecha(String autorYFecha) {
 		this.autorYFecha = autorYFecha;
+	}
+
+	public Integer getValoracionUsuarios() {
+		return valoracionUsuarios;
+	}
+
+	public void setValoracionUsuarios(Integer valoracionUsuarios) {
+		this.valoracionUsuarios = valoracionUsuarios;
+	}
+
+	public Set<Usuario> getUsuariosValoraciones() {
+		return usuariosValoraciones;
+	}
+
+	public void setUsuariosValoraciones(Set<Usuario> usuariosValoraciones) {
+		this.usuariosValoraciones = usuariosValoraciones;
 	}
 
 }

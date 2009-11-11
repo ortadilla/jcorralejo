@@ -14,6 +14,7 @@
 		
 		<property name="opinion" column="opinion" />
 		<property name="fecha" column="fecha" type="timestamp"/>
+		<property name="valoracionUsuarios" column="valoracionUsuarios" />
 
 		<many-to-one
 			class="dondeando.modelo.entidades.implementacion.LocalImpl"
@@ -22,6 +23,11 @@
 		<many-to-one
 			class="dondeando.modelo.entidades.implementacion.UsuarioImpl"
 			column="usuario" name="usuario" />
-			
+
+		<set name="usuariosValoraciones" table="OpinionVotacion">
+			<key column="opinion" />
+			<many-to-many column="usuario" class="UsuarioImpl" />
+		</set>
+
 	</class>
 </hibernate-mapping>
