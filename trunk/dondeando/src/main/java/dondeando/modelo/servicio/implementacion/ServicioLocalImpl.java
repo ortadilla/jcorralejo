@@ -285,7 +285,7 @@ public class ServicioLocalImpl implements ServicioLocal{
     	servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_NUEVO_LOCAL_PROVINCIA, provincia, local);
     	
     	//Actualizamos el karma del usuario
-    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_AGREGAR_LOCAL, null);
+    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_AGREGAR_LOCAL, null, null);
     	
 		return local;
 	}
@@ -314,7 +314,7 @@ public class ServicioLocalImpl implements ServicioLocal{
 		servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_MODIFICAR_LOCAL_PROVINCIA, provincia, local);
 		
 		//Actualizamos el karma del usuario
-    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_EDITAR_LOCAL, null);
+    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_EDITAR_LOCAL, null, null);
 	}
 	
 	/**

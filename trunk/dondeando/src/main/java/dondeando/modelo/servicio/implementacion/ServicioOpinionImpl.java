@@ -102,7 +102,7 @@ public class ServicioOpinionImpl implements ServicioOpinion{
 		servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_OPINION_LOCAL, local, opinion);
 		
 		//Actualizamos el karma del usuario
-    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_OPINIONAR_LOCAL, null);
+    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_OPINIONAR_LOCAL, null, null);
 		
 		return opinion;
     }

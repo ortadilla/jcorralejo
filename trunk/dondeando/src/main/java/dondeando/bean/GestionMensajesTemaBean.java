@@ -261,11 +261,18 @@ public class GestionMensajesTemaBean {
 				Usuario usuarioActivo = servicioUsuario.devolverUsuarioActivo();
 				if(mensajesForo.get(0).getUsuariosValoraciones().contains(usuarioActivo))
 					utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("YA_HA_VALORADO"));
+				else if(mensajesForo.get(0).getAutor().equals(usuarioActivo))
+					utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("NO_VALORAR_PROPIO"));
 				else{
 					mensajesForo.get(0).setValoracionUsuarios(mensajesForo.get(0).getValoracionUsuarios() + (positivo ? 1 : -1));
 					if(mensajesForo.get(0).getUsuariosValoraciones()==null)
 						mensajesForo.get(0).setUsuariosValoraciones(new HashSet<Usuario>());
 					mensajesForo.get(0).getUsuariosValoraciones().add(usuarioActivo);
+					
+					servicioUsuario.actualizarKarma(positivo ? ServicioUsuario.OPERACION_RECIBIR_VOTO_POSITIVO_FORO 
+															 : ServicioUsuario.OPERACION_RECIBIR_VOTO_NEGATIVO_FORO, 
+													null, 
+													mensajesForo.get(0).getAutor());
 				}
 			}
 		}
