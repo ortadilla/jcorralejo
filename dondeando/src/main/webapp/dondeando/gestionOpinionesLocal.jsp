@@ -52,6 +52,28 @@
 										value="#{gestionOpinionesLocalBean.numeroElementosTabla}" />
 								</tr:panelHorizontalLayout>
 							</f:facet>
+							<tr:column headerText="#{resCore['VALORACION']}" sortable="false" inlineStyle="vertical-align: middle;">
+								<tr:panelHorizontalLayout >
+									<tr:outputText value="#{var.valoracionUsuarios}"   
+									inlineStyle="#{var.valoracionPositiva ? 'font-weight: bolder; font-size: 150%; color: green;' : 'font-weight: bolder; font-size: 150%; color: red;'}"/>
+									<tr:spacer width="15"/>
+									<tr:commandLink
+										actionListener="#{gestionOpinionesLocalBean.accionListenerAFavor}">
+										<tr:attribute name="idMensaje" value="#{var.id}" />
+										<tr:image source="/imagenes/dondeando/mas.png"
+												shortDesc="#{resCore['A_FAVOR']}" 
+												inlineStyle="height: 20px;"/>
+									</tr:commandLink>
+									<tr:spacer width="10"/>
+									<tr:commandLink
+										actionListener="#{gestionOpinionesLocalBean.accionListenerEnContra}">
+										<tr:attribute name="idMensaje" value="#{var.id}" />
+										<tr:image source="/imagenes/dondeando/menos.png"
+												shortDesc="#{resCore['EN_CONTRA']}" 
+												inlineStyle="height: 20px;"/>
+									</tr:commandLink>
+								</tr:panelHorizontalLayout>
+							</tr:column>
 							<tr:column sortable="true" headerText="#{resCore['OPINION']}" width="80%">
 								<tr:outputText value="#{var.opinion}" />
 							</tr:column>

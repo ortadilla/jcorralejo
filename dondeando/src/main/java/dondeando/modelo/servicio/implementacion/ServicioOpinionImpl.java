@@ -82,6 +82,7 @@ public class ServicioOpinionImpl implements ServicioOpinion{
     public Opinion crearOpinion(Local local, String mensaje, Usuario usuario) {
 		Opinion opinion = new OpinionImpl();
 		setearDatosOpinion(local, opinion, mensaje, usuario, new Date());
+		opinion.setValoracionUsuarios(0);
 		opinionDAO.hacerPersistente(opinion);
 		//Hay que setearle el tema después de hacerlo persistente (para que tenga id y se pueda borrar justo después)
 		if(local!=null){
