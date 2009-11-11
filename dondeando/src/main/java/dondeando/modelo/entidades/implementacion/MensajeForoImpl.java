@@ -17,12 +17,18 @@ public class MensajeForoImpl implements MensajeForo {
 	private Date fecha;
 	private MensajeForo respondeA;
 	private Foro foro;
+	private Integer valoracionUsuarios;
 	private Set<MensajeForo> respuestas;
+	private Set<Usuario> usuariosValoraciones;
 	
 	private String autorYFecha;
 	private int numeroRespuestas;
 	private Date fechaUltimaRespuesta;
 	private String autorYFechaUltimaRespuesta;
+	
+	public boolean isValoracionPositiva(){
+		return valoracionUsuarios==null || valoracionUsuarios.compareTo(0)>=0;
+	}
 	
 	@Override
 	public int hashCode() {
@@ -123,6 +129,18 @@ public class MensajeForoImpl implements MensajeForo {
 	}
 	public void setNumeroRespuestas(int numeroRespuestas) {
 		this.numeroRespuestas = numeroRespuestas;
+	}
+	public Integer getValoracionUsuarios() {
+		return valoracionUsuarios;
+	}
+	public void setValoracionUsuarios(Integer valoracionUsuarios) {
+		this.valoracionUsuarios = valoracionUsuarios;
+	}
+	public Set<Usuario> getUsuariosValoraciones() {
+		return usuariosValoraciones;
+	}
+	public void setUsuariosValoraciones(Set<Usuario> usuariosValoraciones) {
+		this.usuariosValoraciones = usuariosValoraciones;
 	}
 	
 	
