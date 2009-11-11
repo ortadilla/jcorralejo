@@ -14,7 +14,10 @@ import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+
+import javax.faces.event.ActionEvent;
 
 import org.apache.myfaces.trinidad.model.RowKeySet;
 import org.apache.myfaces.trinidad.model.RowKeySetImpl;
@@ -33,6 +36,7 @@ import utilidades.varios.MensajesCore;
 import utilidades.varios.Permisos;
 import utilidades.varios.ProtocoloEdicion;
 import dondeando.modelo.entidades.MensajeForo;
+import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.servicio.ServicioMensajeForo;
 import dondeando.modelo.servicio.ServicioPermisoUsuario;
 import dondeando.modelo.servicio.ServicioUsuario;
@@ -227,6 +231,45 @@ public class GestionMensajesTemaBean {
 	}
 
 
+	/**
+	 * Vota a favor del mensaje
+	 * @param actionEvent
+	 */
+	public void accionListenerAFavor(ActionEvent actionEvent){
+		Integer identificador = (Integer) actionEvent.getComponent().getAttributes().get("idMensaje");
+		valorarMensaje(identificador, true);
+	}
+	
+	/**
+	 * Vota en contra del mensaje
+	 * @param actionEvent
+	 */
+	public void accionListenerEnContra(ActionEvent actionEvent){
+		Integer identificador = (Integer) actionEvent.getComponent().getAttributes().get("idMensaje");
+		valorarMensaje(identificador, false);
+	}
+	
+	/**
+	 * Valora el mensaje con id indicado como positivo o negativo
+	 * @param id Id el mensaje a valorar
+	 * @param positivo Voto positivo o negativo
+	 */
+	private void valorarMensaje(Integer id, boolean positivo){
+		if(id!=null){
+			List<MensajeForo> mensajesForo = HerramientasList.obtenerElementos(listaMensajesTema, MensajeForo.ATRIBUTO_ID, id);
+			if(mensajesForo.size()==1){
+				Usuario usuarioActivo = servicioUsuario.devolverUsuarioActivo();
+				if(mensajesForo.get(0).getUsuariosValoraciones().contains(usuarioActivo))
+					utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("YA_HA_VALORADO"));
+				else{
+					mensajesForo.get(0).setValoracionUsuarios(mensajesForo.get(0).getValoracionUsuarios() + (positivo ? 1 : -1));
+					if(mensajesForo.get(0).getUsuariosValoraciones()==null)
+						mensajesForo.get(0).setUsuariosValoraciones(new HashSet<Usuario>());
+					mensajesForo.get(0).getUsuariosValoraciones().add(usuarioActivo);
+				}
+			}
+		}
+	}
 
 	public RowKeySet getEstadoDeSeleccionTabla() {
 		return estadoDeSeleccionTabla;

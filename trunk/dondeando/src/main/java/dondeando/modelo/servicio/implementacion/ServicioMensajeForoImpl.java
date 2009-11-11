@@ -117,6 +117,7 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
 	public MensajeForo crearMensajeForo(Foro foro, MensajeForo tema, String asunto, String mensaje, Usuario autor) {
 		MensajeForo mensajeForo = new MensajeForoImpl();
 		setearDatosMensajeForo(foro, tema, mensajeForo, asunto, mensaje, autor, new Date());
+		mensajeForo.setValoracionUsuarios(0);
 		mensajeForoDAO.hacerPersistente(mensajeForo);
 		//Hay que setearle el tema después de hacerlo persistente (para que tenga id y se pueda borrar justo después)
 		if(tema!=null){
@@ -165,6 +166,15 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
 		mensajeForo.setMensaje(mensaje);
 		mensajeForo.setAutor(autor);
 		mensajeForo.setFecha(fecha);
+	}
+	
+	
+	public MensajeForo encontrarMensajeForoPorId(Integer id){
+		try {
+			return mensajeForoDAO.encontrarPorId(id);
+		} catch (DAOExcepcion e) {
+			return null;
+		}
 	}
 
 

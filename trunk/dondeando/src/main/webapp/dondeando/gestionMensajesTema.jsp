@@ -53,7 +53,29 @@
 										value="#{gestionMensajesTemaBean.numeroElementosTabla}" />
 								</tr:panelHorizontalLayout>
 							</f:facet>
-							<tr:column sortable="true" headerText="#{resCore['MENSAJE']}" width="80%">
+							<tr:column headerText="#{resCore['VALORACION']}" sortable="false" inlineStyle="vertical-align: middle;">
+								<tr:panelHorizontalLayout >
+									<tr:outputText value="#{var.valoracionUsuarios}"   
+									inlineStyle="#{var.valoracionPositiva ? 'font-weight: bolder; font-size: 150%; color: green;' : 'font-weight: bolder; font-size: 150%; color: red;'}"/>
+									<tr:spacer width="15"/>
+									<tr:commandLink
+										actionListener="#{gestionMensajesTemaBean.accionListenerAFavor}">
+										<tr:attribute name="idMensaje" value="#{var.id}" />
+										<tr:image source="/imagenes/dondeando/mas.png"
+												shortDesc="#{resCore['A_FAVOR']}" 
+												inlineStyle="height: 20px;"/>
+									</tr:commandLink>
+									<tr:spacer width="10"/>
+									<tr:commandLink
+										actionListener="#{gestionMensajesTemaBean.accionListenerEnContra}">
+										<tr:attribute name="idMensaje" value="#{var.id}" />
+										<tr:image source="/imagenes/dondeando/menos.png"
+												shortDesc="#{resCore['EN_CONTRA']}" 
+												inlineStyle="height: 20px;"/>
+									</tr:commandLink>
+								</tr:panelHorizontalLayout>
+							</tr:column>
+							<tr:column sortable="true" headerText="#{resCore['MENSAJE']}" width="70%">
 								<tr:outputText value="#{var.mensaje}" />
 							</tr:column>
 							<tr:column sortable="true" headerText="#{resCore['AUTOR']}">

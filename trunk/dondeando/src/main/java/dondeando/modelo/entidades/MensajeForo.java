@@ -7,6 +7,7 @@ import java.util.Set;
 public interface MensajeForo {
 
 	public static final String ATRIBUTO_FECHA = "fecha";
+	public static final String ATRIBUTO_ID = "id";
 	public static final String ATRIBUTO_RESPONDE_A = "respondeA";
 	public static final String ATRIBUTO_FORO = "foro";
 	
@@ -34,7 +35,13 @@ public interface MensajeForo {
 	public Foro getForo();
 	public void setForo(Foro foro);
 	
+	public Integer getValoracionUsuarios();
+	public void setValoracionUsuarios(Integer valoracionUsuarios);
+	
 	public Set<MensajeForo> getRespuestas();
 	public void setRespuestas(Set<MensajeForo> respuestas);
+	
+	public Set<Usuario> getUsuariosValoraciones();
+	public void setUsuariosValoraciones(Set<Usuario> usuariosValoraciones);
 	
 }

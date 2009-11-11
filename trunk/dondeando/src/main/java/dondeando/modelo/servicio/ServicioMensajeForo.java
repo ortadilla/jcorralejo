@@ -54,5 +54,10 @@ public interface ServicioMensajeForo {
 	 */
 	public void editarMensajeForo(MensajeForo mensajeForo, String asunto, String mensaje, Usuario autor);
 
-
+	/**
+	 * Busca el MensajeForo con el id indicadi 
+	 * @param id Id por el que buscar el mensajeForo
+	 * @return MensajeForo encontrado
+	 */
+	public MensajeForo encontrarMensajeForoPorId(Integer id);
 }
