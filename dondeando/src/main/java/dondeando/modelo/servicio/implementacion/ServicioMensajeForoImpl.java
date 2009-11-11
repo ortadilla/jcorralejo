@@ -131,7 +131,7 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
     	servicioNotificacion.enviarNotificacionesTipoObjeto(ServicioTipoInteres.TIPO_NUEVO_TEMA_MENSAJE_FORO, foro, mensajeForo);
     	
     	//Actualizamos el karma del usuario
-    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_AGREGAR_TEMA_MENSAJE_FORO, null);
+    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_AGREGAR_TEMA_MENSAJE_FORO, null, null);
 		
 		return mensajeForo;
 	}

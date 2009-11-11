@@ -79,7 +79,7 @@ public class ServicioInteresImpl implements ServicioInteres{
 			}
 			
 			//Actualizamos el karma del usuario
-			servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_MENOS_NOTIFICACIONES, null);
+			servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_MENOS_NOTIFICACIONES, null, null);
     	}
 	}
 	
@@ -109,7 +109,7 @@ public class ServicioInteresImpl implements ServicioInteres{
 			interesDAO.hacerPersistente(interes);
 			
 	    	//Actualizamos el karma del usuario
-	    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_MÁS_NOTIFICACIONES, null);
+	    	servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_MÁS_NOTIFICACIONES, null, null);
 			
 			if(usuario.getIntereses()==null)
 				usuario.setIntereses(new HashSet<Interes>());

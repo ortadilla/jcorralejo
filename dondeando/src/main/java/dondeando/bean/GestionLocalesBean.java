@@ -268,7 +268,7 @@ public class GestionLocalesBean {
 			
 					if(ACCION_DETALLES_LOCAL.equals(operacion)){
 						//Actualizamos el karma del usuario
-						servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_DETALLES_LOCAL, null);
+						servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_DETALLES_LOCAL, null, null);
 						outcome = DETALLES_LOCAL;
 					}else{
 //						servicioUsuario.actualizarKarma(ServicioUsuario.OPERACION_EDITAR_LOCAL, null);

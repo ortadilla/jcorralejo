@@ -315,15 +315,15 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     	String clave =  encriptar("anonimo");
     	System.out.println(clave);
     }
-    
+
     /*
      * (non-Javadoc)
-     * @see dondeando.modelo.servicio.ServicioUsuario#actualizarKarma(java.lang.Integer, java.math.BigDecimal)
+     * @see dondeando.modelo.servicio.ServicioUsuario#actualizarKarma(java.lang.Integer, java.math.BigDecimal, dondeando.modelo.entidades.Usuario)
      */
-    public void actualizarKarma(Integer operacion, BigDecimal actualizacionKarma){
+    public void actualizarKarma(Integer operacion, BigDecimal actualizacionKarma, Usuario usuario){
     	
-    	if(!isUsuarioActivoAnonimo()){
-    		Usuario usuarioActivo = devolverUsuarioActivo();
+    	if(!isUsuarioActivoAnonimo() || usuario!=null){
+    		Usuario usuarioActivo = usuario == null ? devolverUsuarioActivo() : usuario;
     		BigDecimal karmaActual = usuarioActivo.getKarma();
 
     		if(usuarioActivo!=null && karmaActual!=null){

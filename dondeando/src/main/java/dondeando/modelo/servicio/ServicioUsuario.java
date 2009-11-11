@@ -132,6 +132,7 @@ public interface ServicioUsuario {
 	 * Si es null se auto-calcula
 	 * @param operacion Operación que modifica el karma
 	 * @param actualizacionKarma Incremento/Decrementl del karma es operaciones específicas
+	 * @param usuario Usuario al que se le aplicará la actualización (si no es null)
 	 */
-	public void actualizarKarma(Integer operacion, BigDecimal actualizacionKarma);
+	public void actualizarKarma(Integer operacion, BigDecimal actualizacionKarma, Usuario usuario);
 }
