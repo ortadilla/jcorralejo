@@ -8,6 +8,7 @@ import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENSAJES_CORE;
 import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
 import static utilidades.varios.NombresBean.PROTOCOLO_RESULTADO;
+import static utilidades.varios.NombresBean.SERVICIO_PERMISO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
@@ -31,12 +32,14 @@ import utilidades.jsf.UtilJsfContext;
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.MensajesCore;
 import utilidades.varios.NombresBean;
+import utilidades.varios.Permisos;
 import utilidades.varios.ProtocoloBusqueda;
 import utilidades.varios.ProtocoloEdicion;
 import utilidades.varios.SelectItemBuilder;
 import dondeando.binding.GestionUsuariosBinding;
 import dondeando.modelo.entidades.TipoUsuario;
 import dondeando.modelo.entidades.Usuario;
+import dondeando.modelo.servicio.ServicioPermisoUsuario;
 import dondeando.modelo.servicio.ServicioTipoUsuario;
 import dondeando.modelo.servicio.ServicioUsuario;
 
@@ -58,6 +61,8 @@ public class GestionUsuariosBean {
 	private String criterioUsuario;
 	private TipoUsuario criterioTipoUsuario;
 	private Boolean criterioActivo = Boolean.TRUE;
+	private boolean mostrarModificar;
+	private boolean mostrarEliminar;
 	
 	private ProtocoloBusqueda protocoloBusqueda;
 	private SelectItem[] selectSiNo;
@@ -69,6 +74,9 @@ public class GestionUsuariosBean {
 	
 	@In(value=SERVICIO_TIPO_USUARIO, create=true)
 	private ServicioTipoUsuario servicioTipoUsuario;
+	
+	@In(value=SERVICIO_PERMISO_USUARIO, create=true)
+	private ServicioPermisoUsuario servicioPermisoUsuario;
 
 	//Utilidades
 	@In(value=NombresBean.GESTION_USUARIOS_BINDING, create=true)
@@ -97,6 +105,10 @@ public class GestionUsuariosBean {
 	}
 	
 	public void cargarArgumentosDeEntrada(){
+		
+		mostrarModificar = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_USUARIOS) ;
+		mostrarEliminar = servicioUsuario.isUsuarioActivoAdmin();
+		
 		//Cargar los datos y lanzar la búsqueda
 		if(mapaArgumentos!=null && mapaArgumentos.contieneProtocoloBusqueda())
 			protocoloBusqueda = mapaArgumentos.getProtocoloBusqueda();
@@ -122,6 +134,13 @@ public class GestionUsuariosBean {
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
 			Usuario usuario = listaUsuarios.get(seleccion);
 			if(ACCION_MODIFICAR_USUARIO.equals(operacion) || ACCION_DETALLES_USUARIO.equals(operacion)){
+				
+				if(ACCION_MODIFICAR_USUARIO.equals(operacion)){
+					if(!usuario.equals(servicioUsuario.devolverUsuarioActivo())){
+						utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("NO_PERMISO_ACCION"));
+						return null;
+					}
+				}
 				
 				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 				mapaArgumentos.limpiaMapa();
@@ -324,6 +343,22 @@ public class GestionUsuariosBean {
 
 	public void setBuscando(boolean buscando) {
 		this.buscando = buscando;
+	}
+
+	public boolean isMostrarModificar() {
+		return mostrarModificar;
+	}
+
+	public void setMostrarModificar(boolean mostrarModificar) {
+		this.mostrarModificar = mostrarModificar;
+	}
+
+	public boolean isMostrarEliminar() {
+		return mostrarEliminar;
+	}
+
+	public void setMostrarEliminar(boolean mostrarEliminar) {
+		this.mostrarEliminar = mostrarEliminar;
 	}
 	
 }

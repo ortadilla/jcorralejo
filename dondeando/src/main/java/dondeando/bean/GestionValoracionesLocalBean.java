@@ -50,6 +50,7 @@ public class GestionValoracionesLocalBean {
 	private List<Puntuacion> listaPuntuaciones;
 	private RowKeySet estadoDeSeleccionTabla = new RowKeySetImpl();
 	private String tituloPagina;
+	private boolean mostrarAgregar;
 	
 	private Local local;
 	
@@ -83,6 +84,9 @@ public class GestionValoracionesLocalBean {
 	}
 	
 	public void cargarArgumentosDeEntrada(){
+		
+		mostrarAgregar = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_PUNTUACIONES_LOCAL); 
+		
 		//Cargar los datos y lanzar la búsqueda
 		if(mapaArgumentos!=null && mapaArgumentos.contieneProtocoloEdicion())
 			protocoloEdicion = mapaArgumentos.getProtocoloEdicion();
@@ -204,6 +208,14 @@ public class GestionValoracionesLocalBean {
 
 	public void setListaPuntuaciones(List<Puntuacion> listaPuntuaciones) {
 		this.listaPuntuaciones = listaPuntuaciones;
+	}
+
+	public boolean isMostrarAgregar() {
+		return mostrarAgregar;
+	}
+
+	public void setMostrarAgregar(boolean mostrarAgregar) {
+		this.mostrarAgregar = mostrarAgregar;
 	}
 
 

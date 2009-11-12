@@ -6,6 +6,7 @@ import java.util.Set;
 public interface Usuario {
 	
 	public static String USUARIO_ANONIMO = "anonimo";
+	public static String USUARIO_ADMIN = "admin";
 	
 	public static final String ATRIBUTO_LOGIN = "login";
 	public static final String ATRIBUTO_ACTIVO = "activo";

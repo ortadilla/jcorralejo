@@ -32,6 +32,7 @@
 							<tr:commandButton text="#{resCore['VER_MENSAJES']}"
 								id="btnVerMensaje" action="#{gestionTemasForoBean.verMensajes}" />
 							<tr:commandButton text="#{resCore['AGREGAR_TEMA']}"
+								rendered="#{gestionTemasForoBean.mostrarAgregar}"
 								id="btnAgregar" action="#{gestionTemasForoBean.agregar}" />
 							<tr:commandButton text="#{resCore['ELIMINAR_TEMA']}"
 								id="btnEliminar" action="#{gestionTemasForoBean.eliminar}"

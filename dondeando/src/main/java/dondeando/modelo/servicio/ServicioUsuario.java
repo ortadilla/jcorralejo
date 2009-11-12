@@ -48,6 +48,12 @@ public interface ServicioUsuario {
     public boolean isUsuarioActivoAnonimo();
     
     /**
+     * Comprueba si el usuario activo es administrador
+     * @return TRUE si el usuario activo es administrador
+     */
+    public boolean isUsuarioActivoAdmin();
+    
+    /**
 	 * Busca el usuario con el login pasado por parámetros
 	 * @param login Login del usuario que se busca
 	 * @return	Usuario cuyo login coincide con el pasado por parámetros

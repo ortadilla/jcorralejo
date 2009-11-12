@@ -30,10 +30,13 @@
 					<tr:panelGroupLayout>
 						<tr:panelButtonBar>
 							<tr:commandButton text="#{resCore['NUEVA_OPINION']}"
+								rendered="#{gestionOpinionesLocalBean.mostrarVotar}"
 								id="btnAgregar" action="#{gestionOpinionesLocalBean.agregar}" />
 							<tr:commandButton text="#{resCore['MODIFICAR_OPINION']}"
+								rendered="#{gestionOpinionesLocalBean.mostrarVotar}"
 								id="btnEditar" action="#{gestionOpinionesLocalBean.editar}" />
 							<tr:commandButton text="#{resCore['ELIMINAR_OPINION']}"
+								rendered="#{gestionOpinionesLocalBean.mostrarVotar}"
 								id="btnEliminar" action="#{gestionOpinionesLocalBean.eliminar}"
 								onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_OPINION']}')"/>
 						</tr:panelButtonBar>
@@ -57,15 +60,15 @@
 									<tr:outputText value="#{var.valoracionUsuarios}"   
 									inlineStyle="#{var.valoracionPositiva ? 'font-weight: bolder; font-size: 150%; color: green;' : 'font-weight: bolder; font-size: 150%; color: red;'}"/>
 									<tr:spacer width="15"/>
-									<tr:commandLink
+									<tr:commandLink rendered="#{gestionOpinionesLocalBean.mostrarVotar}"
 										actionListener="#{gestionOpinionesLocalBean.accionListenerAFavor}">
 										<tr:attribute name="idMensaje" value="#{var.id}" />
 										<tr:image source="/imagenes/dondeando/mas.png"
 												shortDesc="#{resCore['A_FAVOR']}" 
 												inlineStyle="height: 20px;"/>
 									</tr:commandLink>
-									<tr:spacer width="10"/>
-									<tr:commandLink
+									<tr:spacer width="10" rendered="#{gestionOpinionesLocalBean.mostrarVotar}"/>
+									<tr:commandLink rendered="#{gestionOpinionesLocalBean.mostrarVotar}"
 										actionListener="#{gestionOpinionesLocalBean.accionListenerEnContra}">
 										<tr:attribute name="idMensaje" value="#{var.id}" />
 										<tr:image source="/imagenes/dondeando/menos.png"

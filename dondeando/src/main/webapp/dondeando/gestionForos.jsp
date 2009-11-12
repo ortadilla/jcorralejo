@@ -71,17 +71,22 @@
 							<tr:commandButton text="#{resCore['VER_TEMAS']}"
 								id="btnVerMensajes" action="#{gestionForosBean.verTemas}" />
 							<tr:commandButton text="#{resCore['AGREGAR_FORO']}"
+								rendered="#{gestionForosBean.mostrarAgregar}"
 								id="btnAgregar" action="#{gestionForosBean.agregar}" />
 							<tr:commandButton text="#{resCore['DETALLES_FORO']}"
 								id="btnDetalles" action="#{gestionForosBean.detalles}" />
 							<tr:commandButton text="#{resCore['MODIFICAR_FORO']}"
+								rendered="#{gestionForosBean.mostrarAgregar}"
 								id="btnModificar" action="#{gestionForosBean.modificar}" />
 							<tr:commandButton text="#{resCore['ELIMINAR_FORO']}"
+								rendered="#{gestionForosBean.mostrarAgregar}"
 								id="btnEliminar" action="#{gestionForosBean.eliminar}"
 								onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_FORO']}')" />
 							<tr:commandButton text="#{resCore['RECUPERAR_FORO']}"
+								rendered="#{gestionForosBean.mostrarAgregar}"
 								id="btnRecuperar" action="#{gestionForosBean.recuperar}" />
 							<tr:commandButton text="#{resCore['MODERADORES']}"
+								rendered="#{gestionForosBean.mostrarAgregar}"
 								id="btnModeradores" action="#{gestionForosBean.irModeradores}" />
 						</tr:panelButtonBar>
 					</tr:panelGroupLayout>

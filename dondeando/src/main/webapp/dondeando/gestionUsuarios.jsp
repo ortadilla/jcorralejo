@@ -82,11 +82,14 @@
 							<tr:commandButton text="#{resCore['DETALLES_USUARIO']}"
 								id="btnDetalles" action="#{gestionUsuariosBean.detalles}" />
 							<tr:commandButton text="#{resCore['MODIFICAR_USUARIO']}"
+								rendered="#{gestionUsuariosBean.mostrarModificar}"
 								id="btnModificar" action="#{gestionUsuariosBean.modificar}" />
 							<tr:commandButton text="#{resCore['ELIMINAR_USUARIO']}"
+								rendered="#{gestionUsuariosBean.mostrarEliminar}"
 								id="btnEliminar" action="#{gestionUsuariosBean.eliminar}"
 								onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_USUARIO']}')" />
 							<tr:commandButton text="#{resCore['RECUPERAR_USUARIO']}"
+								rendered="#{gestionUsuariosBean.mostrarEliminar}"
 								id="btnRecuperar" action="#{gestionUsuariosBean.recuperar}" />
 						</tr:panelButtonBar>
 					</tr:panelGroupLayout>

@@ -30,6 +30,7 @@
 					<tr:panelGroupLayout>
 						<tr:panelButtonBar>
 							<tr:commandButton text="#{resCore['NUEVA_VALORACION']}"
+								rendered="#{gestionValoracionesLocalBean.mostrarAgregar}"
 								id="btnAgregar" action="#{gestionValoracionesLocalBean.agregar}" />
 						</tr:panelButtonBar>
 					</tr:panelGroupLayout>

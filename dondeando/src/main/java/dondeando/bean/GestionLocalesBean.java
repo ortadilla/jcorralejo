@@ -18,6 +18,7 @@ import static utilidades.varios.NombresBean.SERVICIO_TIPO_LOCAL;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 import static utilidades.varios.NombresBean.UTIL_JSF_CONTEXT;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.faces.model.SelectItem;
@@ -76,6 +77,8 @@ public class GestionLocalesBean {
 	private SelectItem[] selectPrecio;
 	private Boolean criterioActivo = Boolean.TRUE;
 	private boolean mostrarCriterioActivo = false;
+	private boolean mostrarAgregar;
+	private boolean mostrarEliminar;
 	private SelectItem[] selectSiNo;
 	
 	private boolean buscando;
@@ -137,6 +140,11 @@ public class GestionLocalesBean {
 	}
 	
 	public void cargarArgumentosDeEntrada(){
+
+		mostrarAgregar = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_LOCALES) 
+					  || servicioUsuario.devolverUsuarioActivo().getKarma().compareTo(new BigDecimal(8))>=0;
+		mostrarEliminar = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_LOCALES);
+
 		//Cargar los datos y lanzar la búsqueda
 		if(mapaArgumentos!=null && mapaArgumentos.contieneProtocoloBusqueda())
 			protocoloBusqueda = mapaArgumentos.getProtocoloBusqueda();
@@ -361,6 +369,7 @@ public class GestionLocalesBean {
 			
 		return outcome;
 	}
+	
 
 	public boolean isDesplegado() {
 		return desplegado;
@@ -479,6 +488,22 @@ public class GestionLocalesBean {
 
 	public void setBuscando(boolean buscando) {
 		this.buscando = buscando;
+	}
+
+	public boolean isMostrarAgregar() {
+		return mostrarAgregar;
+	}
+
+	public void setMostrarAgregar(boolean mostrarAgregar) {
+		this.mostrarAgregar = mostrarAgregar;
+	}
+
+	public boolean isMostrarEliminar() {
+		return mostrarEliminar;
+	}
+
+	public void setMostrarEliminar(boolean mostrarEliminar) {
+		this.mostrarEliminar = mostrarEliminar;
 	}
 
 }
