@@ -53,6 +53,7 @@ public class GestionTemasForoBean {
 	private Foro foro;
 	private RowKeySet estadoDeSeleccionTabla = new RowKeySetImpl();
 	private boolean mostrarEliminarTema;
+	private boolean mostrarAgregar;
 	private String tituloPagina;
 	
 	//Utilidades
@@ -84,8 +85,9 @@ public class GestionTemasForoBean {
 	public void inicializar(){
 		//Se podrán eliminar temas si se tiene permiso para gestionar los mensajes
 		//o si se es moderador del foro
-		mostrarEliminarTema = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_MENSAJES_FOROS)
-						   || foro.getModeradores().contains(servicioUsuario.devolverUsuarioActivo());
+		mostrarEliminarTema = servicioUsuario.isUsuarioActivoAdmin()
+						   || foro.getModeradores()!=null && foro.getModeradores().contains(servicioUsuario.devolverUsuarioActivo());
+		mostrarAgregar = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_MENSAJES_FOROS);
 	}
 	
 	public void cargarArgumentosDeEntrada(){
@@ -243,6 +245,14 @@ public class GestionTemasForoBean {
 
 	public void setListaTemasForo(List<MensajeForo> listaTemasForo) {
 		this.listaTemasForo = listaTemasForo;
+	}
+
+	public boolean isMostrarAgregar() {
+		return mostrarAgregar;
+	}
+
+	public void setMostrarAgregar(boolean mostrarAgregar) {
+		this.mostrarAgregar = mostrarAgregar;
 	}
 
 }

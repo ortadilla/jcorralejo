@@ -30,6 +30,7 @@
 					<tr:panelGroupLayout>
 						<tr:panelButtonBar>
 							<tr:commandButton text="#{resCore['NUEVA_RESPUESTA']}"
+								rendered="#{gestionMensajesTemaBean.mostrarAgregar}"
 								id="btnAgregar" action="#{gestionMensajesTemaBean.agregar}" />
 							<tr:commandButton text="#{resCore['EDITAR_RESPUESTA']}"
 								id="btnEditar" action="#{gestionMensajesTemaBean.editar}" />
@@ -58,7 +59,7 @@
 									<tr:outputText value="#{var.valoracionUsuarios}"   
 									inlineStyle="#{var.valoracionPositiva ? 'font-weight: bolder; font-size: 150%; color: green;' : 'font-weight: bolder; font-size: 150%; color: red;'}"/>
 									<tr:spacer width="15"/>
-									<tr:commandLink
+									<tr:commandLink rendered="#{gestionMensajesTemaBean.mostrarAgregar}"
 										actionListener="#{gestionMensajesTemaBean.accionListenerAFavor}">
 										<tr:attribute name="idMensaje" value="#{var.id}" />
 										<tr:image source="/imagenes/dondeando/mas.png"
@@ -66,7 +67,7 @@
 												inlineStyle="height: 20px;"/>
 									</tr:commandLink>
 									<tr:spacer width="10"/>
-									<tr:commandLink
+									<tr:commandLink rendered="#{gestionMensajesTemaBean.mostrarAgregar}"
 										actionListener="#{gestionMensajesTemaBean.accionListenerEnContra}">
 										<tr:attribute name="idMensaje" value="#{var.id}" />
 										<tr:image source="/imagenes/dondeando/menos.png"

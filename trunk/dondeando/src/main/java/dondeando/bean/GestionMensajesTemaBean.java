@@ -56,6 +56,7 @@ public class GestionMensajesTemaBean {
 	private RowKeySet estadoDeSeleccionTabla = new RowKeySetImpl();
 	private boolean mostrarEliminarRespuesta;
 	private boolean mostrarEditarRespuesta;
+	private boolean mostrarAgregar;
 	private String tituloPagina;
 	
 	private MensajeForo tema;
@@ -89,12 +90,14 @@ public class GestionMensajesTemaBean {
 	public void inicializar(){
 		//Se podrán eliminar mensajes si se tiene permiso para gestionar los mensajes,
 		//si se es moderador del foro, o si somos los creadores
-		boolean mostrar =  servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_MENSAJES_FOROS)
+		boolean mostrar =  servicioUsuario.isUsuarioActivoAdmin()
 				       || listaMensajesTema!=null && !listaMensajesTema.isEmpty() 
 				       && (listaMensajesTema.get(0).getForo().getModeradores().contains(servicioUsuario.devolverUsuarioActivo())
 				       ||  listaMensajesTema.get(0).getAutor().equals(servicioUsuario.devolverUsuarioActivo()));
 		mostrarEditarRespuesta = mostrar;
 		mostrarEliminarRespuesta = mostrar;
+		
+		mostrarAgregar = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_MENSAJES_FOROS);
 	}
 	
 	public void cargarArgumentosDeEntrada(){
@@ -315,6 +318,14 @@ public class GestionMensajesTemaBean {
 
 	public void setMostrarEditarRespuesta(boolean mostrarEditarRespuesta) {
 		this.mostrarEditarRespuesta = mostrarEditarRespuesta;
+	}
+
+	public boolean isMostrarAgregar() {
+		return mostrarAgregar;
+	}
+
+	public void setMostrarAgregar(boolean mostrarAgregar) {
+		this.mostrarAgregar = mostrarAgregar;
 	}
 
 }

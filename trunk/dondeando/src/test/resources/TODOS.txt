@@ -1,5 +1,3 @@
-· Puntuar mensajes foro y opiniones --> Actualizar karma
-· Rendered de TODOS LOS BOTONES dependiendo de los permisos y el karma
 · Menú principal
 
 
@@ -9,6 +7,7 @@ MEJORAS NECESARIAS:
 · Texto alternativo y tooltip en las imágenes
 · Comentarios en Interfaces y Clases
 · Eliminar todos los @author
+· Sacar script de carga: de creación de BD y de carga de datos maestros
   
 MEJORAS DESEABLES:
 · Añadir la entidad Encuesta

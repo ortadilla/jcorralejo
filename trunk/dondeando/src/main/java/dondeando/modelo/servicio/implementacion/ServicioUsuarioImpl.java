@@ -238,6 +238,15 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     	Usuario usuarioAnonimo = devolverUsuarioAnonimo();
 		return usuarioLogueado==null || usuarioAnonimo==null || usuarioAnonimo.getId().equals(usuarioLogueado);
     }
+
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioUsuario#isUsuarioActivoAdmin()
+     */
+    public boolean isUsuarioActivoAdmin(){
+    	Usuario usuarioAdmin = devolverUsuarioActivo();
+    	return usuarioAdmin.getTipoUsuario().getId().equals(1);
+    }
     
     /*
      * (non-Javadoc)

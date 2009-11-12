@@ -35,7 +35,6 @@ import utilidades.varios.MensajesCore;
 import utilidades.varios.Permisos;
 import utilidades.varios.ProtocoloEdicion;
 import dondeando.modelo.entidades.Local;
-import dondeando.modelo.entidades.MensajeForo;
 import dondeando.modelo.entidades.Opinion;
 import dondeando.modelo.entidades.Usuario;
 import dondeando.modelo.servicio.ServicioOpinion;
@@ -55,6 +54,7 @@ public class GestionOpinionesLocal {
 	private List<Opinion> listaOpiniones;
 	private RowKeySet estadoDeSeleccionTabla = new RowKeySetImpl();
 	private String tituloPagina;
+	private boolean mostrarVotar;
 	
 	private Local local;
 	
@@ -88,6 +88,9 @@ public class GestionOpinionesLocal {
 	}
 	
 	public void cargarArgumentosDeEntrada(){
+		
+		mostrarVotar = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_OPINIONES_LOCAL);
+		
 		//Cargar los datos y lanzar la búsqueda
 		if(mapaArgumentos!=null && mapaArgumentos.contieneProtocoloEdicion())
 			protocoloEdicion = mapaArgumentos.getProtocoloEdicion();
@@ -163,6 +166,7 @@ public class GestionOpinionesLocal {
 		|| ACCION_NUEVA_OPINION.equals(operacion)){
 			
 			if(ACCION_NUEVA_OPINION.equals(operacion)){
+				
 				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 				mapaArgumentos.limpiaMapa();
 				ProtocoloEdicion protocolo = new ProtocoloEdicion(null, GESTION_OPINIONES_LOCAL, null);
@@ -181,6 +185,13 @@ public class GestionOpinionesLocal {
 				|| opinion.getUsuario().equals(servicioUsuario.devolverUsuarioActivo())){
 					
 					if(ACCION_ELIMINAR_OPINION.equals(operacion)){
+						
+						if(!servicioUsuario.devolverUsuarioActivo().equals(opinion.getUsuario())
+						|| !servicioUsuario.isUsuarioActivoAdmin()){
+							utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("NO_PERMISO_ACCION"));
+							return null;
+						}
+						
 						if(opinion!=null){
 							//Comprobamos las respuestas justo antes de eliminar
 							servicioOpinion.eliminarOpinion(opinion);
@@ -192,6 +203,13 @@ public class GestionOpinionesLocal {
 					}
 					
 					else if(ACCION_EDITAR_OPINION.equals(operacion)){
+
+						if(!servicioUsuario.devolverUsuarioActivo().equals(opinion.getUsuario())
+						|| !servicioUsuario.isUsuarioActivoAdmin()){
+							utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("NO_PERMISO_ACCION"));
+							return null;
+						}
+
 						if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 						mapaArgumentos.limpiaMapa();
 						ProtocoloEdicion protocolo = new ProtocoloEdicion(opinion, GESTION_OPINIONES_LOCAL, null);
@@ -291,6 +309,14 @@ public class GestionOpinionesLocal {
 
 	public void setListaOpiniones(List<Opinion> listaOpiniones) {
 		this.listaOpiniones = listaOpiniones;
+	}
+
+	public boolean isMostrarVotar() {
+		return mostrarVotar;
+	}
+
+	public void setMostrarVotar(boolean mostrarVotar) {
+		this.mostrarVotar = mostrarVotar;
 	}
 
 }

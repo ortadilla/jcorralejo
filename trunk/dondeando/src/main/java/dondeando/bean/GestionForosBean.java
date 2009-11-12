@@ -316,5 +316,9 @@ public class GestionForosBean {
 		this.mostrarCriterioActivo = mostrarCriterioActivo;
 	}
 
+	public boolean isMostrarAgregar() {
+		return servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_FOROS);
+	}
+
 
 }

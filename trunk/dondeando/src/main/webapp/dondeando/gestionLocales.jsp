@@ -106,15 +106,19 @@
 						<tr:panelGroupLayout>
 							<tr:panelButtonBar>
 								<tr:commandButton text="#{resCore['AGREGAR_LOCAL']}"
+									rendered="#{gestionLocalesBean.mostrarAgregar}"
 									id="btnAgregar" action="#{gestionLocalesBean.agregar}" />
 								<tr:commandButton text="#{resCore['DETALLES_LOCAL']}"
 									id="btnDetalles" action="#{gestionLocalesBean.detalles}" />
 								<tr:commandButton text="#{resCore['MODIFICAR_LOCAL']}"
+									rendered="#{gestionLocalesBean.mostrarAgregar}"
 									id="btnModificar" action="#{gestionLocalesBean.modificar}" />
 								<tr:commandButton text="#{resCore['ELIMINAR_LOCAL']}"
+									rendered="#{gestionLocalesBean.mostrarEliminar}"
 									id="btnEliminar" action="#{gestionLocalesBean.eliminar}"
 									onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_LOCAL']}')" />
 								<tr:commandButton text="#{resCore['RECUPERAR_LOCAL']}"
+									rendered="#{gestionLocalesBean.mostrarEliminar}"
 									id="btnRecuperar" action="#{gestionLocalesBean.recuperar}" />
 								<tr:commandButton text="#{resCore['OPINIONES']}"
 									id="btnOpiniones" action="#{gestionLocalesBean.verOpiniones}" />
