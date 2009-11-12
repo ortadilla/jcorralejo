@@ -120,7 +120,7 @@ public class CabeceraPaginasBean {
 	 * @return Regla de navegación
 	 */
 	public String accionNotificaciones(){
-		ProtocoloBusqueda protocolo = new ProtocoloBusqueda(null, true, MENU_PRINCIPAL);
+		ProtocoloBusqueda protocolo = new ProtocoloBusqueda(null, true, MENU_PRINCIPAL, false);
 		protocolo.addParametro(Notificacion.ATRIBUTO_USUARIO, servicioUsuario.devolverUsuarioActivo());
 		protocolo.addParametro(Notificacion.ATRIBUTO_LEIDA, false);
 		mapaArgumentos = new MapaArgumentos(NombresBean.PROTOCOLO_BUSQUEDA, protocolo);

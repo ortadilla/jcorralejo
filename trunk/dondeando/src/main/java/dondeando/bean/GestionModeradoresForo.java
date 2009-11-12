@@ -149,7 +149,7 @@ public class GestionModeradoresForo {
 			if(ACCION_ANIADIR_MODERADOR.equals(operacion)){
 				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 				mapaArgumentos.limpiaMapa();
-				ProtocoloBusqueda protocolo = new ProtocoloBusqueda(null, true, GESTION_MODERADORES_FORO);
+				ProtocoloBusqueda protocolo = new ProtocoloBusqueda(null, true, GESTION_MODERADORES_FORO, true);
 				mapaArgumentos.setArgumento(PROTOCOLO_BUSQUEDA, protocolo);
 		
 				outcome = GESTION_USUARIOS;

@@ -8,6 +8,7 @@ public interface Local {
 	public static final String ATRIBUTO_NOMBRE = "nombre";
 	public static final String ATRIBUTO_TIPOS_LOCAL = "tiposLocal";
 	public static final String ATRIBUTO_PRECIO_MEDIO = "precioMedio";
+	public static final String ATRIBUTO_PROVINCIA = "provincia";
 	public static final String ATRIBUTO_DIRECCION = "direccion";
 	public static final String ATRIBUTO_ACTIVO = "activo";
 

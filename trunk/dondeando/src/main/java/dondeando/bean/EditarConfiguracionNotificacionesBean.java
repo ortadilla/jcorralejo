@@ -214,7 +214,7 @@ public class EditarConfiguracionNotificacionesBean {
 	public String buscarLocal(){
 		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 		mapaArgumentos.limpiaMapa();
-		ProtocoloBusqueda protocolo = new ProtocoloBusqueda(null, false, EDITAR_CONFIGURACION_NOTIFICACIONES);
+		ProtocoloBusqueda protocolo = new ProtocoloBusqueda(null, false, EDITAR_CONFIGURACION_NOTIFICACIONES, true);
 		mapaArgumentos.setArgumento(PROTOCOLO_BUSQUEDA, protocolo);
 
 		return GESTION_LOCALES;

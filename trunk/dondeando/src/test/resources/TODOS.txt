@@ -1,4 +1,6 @@
 · Menú principal
+· Menu --> Gestionar...-->Menu -->Gestionar...(no navega a la primera)
+· "background-color:green;"  a un panelBox
 
 
 MEJORAS NECESARIAS:
@@ -9,7 +11,8 @@ MEJORAS NECESARIAS:
 · Eliminar todos los @author
 · Sacar script de carga: de creación de BD y de carga de datos maestros
   
-MEJORAS DESEABLES:
+MEJORAS DESEABLES:ç
+· Poner los números de locales de cada tipo
 · Añadir la entidad Encuesta
 · ¿Añadir una carta a los locales?
 · Si edita un mensaje alguien que no es el autor --> Añadir alguna marca al mensaje

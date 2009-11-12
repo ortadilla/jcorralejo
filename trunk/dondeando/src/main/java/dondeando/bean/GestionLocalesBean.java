@@ -150,7 +150,11 @@ public class GestionLocalesBean {
 			protocoloBusqueda = mapaArgumentos.getProtocoloBusqueda();
 		
 		if(protocoloBusqueda!=null){
-			buscando = true;
+			buscando = protocoloBusqueda.isParaDevolver();
+			if(protocoloBusqueda.getParamsBusqueda().containsKey(Local.ATRIBUTO_TIPOS_LOCAL))
+				criterioTipoLocal = (List<Integer>)protocoloBusqueda.getParamsBusqueda().get(Local.ATRIBUTO_TIPOS_LOCAL);
+			if(protocoloBusqueda.getParamsBusqueda().containsKey(Local.ATRIBUTO_PROVINCIA))
+				criterioProvincia = (Provincia)protocoloBusqueda.getParamsBusqueda().get(Local.ATRIBUTO_PROVINCIA);
 			if(protocoloBusqueda.isLanzaConsulta())
 				buscar();
 		}
@@ -167,7 +171,8 @@ public class GestionLocalesBean {
 																				   criterioActivo);
 		servicioLocal.rellenarPropiedadesNoMapeadas(listaLocales);
 		desplegado = false;
-		binding.getBusqueda().setDisclosed(desplegado);
+		if(binding.getBusqueda()!=null)
+			binding.getBusqueda().setDisclosed(desplegado);
 		if(listaLocales!=null && listaLocales.size()==1)
 			estadoDeSeleccionTabla.add(0);
 	}
