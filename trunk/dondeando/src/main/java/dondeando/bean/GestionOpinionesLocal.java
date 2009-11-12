@@ -185,37 +185,41 @@ public class GestionOpinionesLocal {
 				|| opinion.getUsuario().equals(servicioUsuario.devolverUsuarioActivo())){
 					
 					if(ACCION_ELIMINAR_OPINION.equals(operacion)){
-						
-						if(!servicioUsuario.devolverUsuarioActivo().equals(opinion.getUsuario())
-						|| !servicioUsuario.isUsuarioActivoAdmin()){
+
+						if(servicioUsuario.devolverUsuarioActivo().equals(opinion.getUsuario())
+						|| servicioUsuario.isUsuarioActivoAdmin()){
+
+							if(opinion!=null){
+								//Comprobamos las respuestas justo antes de eliminar
+								servicioOpinion.eliminarOpinion(opinion);
+								listaOpiniones.remove(opinion);
+								utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("OPINION_ELIMINADA"));
+								operacionRealizada = true;
+							}else
+								utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_ELIMINAR_FORO_ELIMINADO"));
+						}else{
+
 							utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("NO_PERMISO_ACCION"));
 							return null;
 						}
-						
-						if(opinion!=null){
-							//Comprobamos las respuestas justo antes de eliminar
-							servicioOpinion.eliminarOpinion(opinion);
-							listaOpiniones.remove(opinion);
-							utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto("OPINION_ELIMINADA"));
-							operacionRealizada = true;
-						}else
-							utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_ELIMINAR_FORO_ELIMINADO"));
 					}
 					
 					else if(ACCION_EDITAR_OPINION.equals(operacion)){
 
-						if(!servicioUsuario.devolverUsuarioActivo().equals(opinion.getUsuario())
-						|| !servicioUsuario.isUsuarioActivoAdmin()){
+						if(servicioUsuario.devolverUsuarioActivo().equals(opinion.getUsuario())
+						|| servicioUsuario.isUsuarioActivoAdmin()){
+
+							if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+							mapaArgumentos.limpiaMapa();
+							ProtocoloEdicion protocolo = new ProtocoloEdicion(opinion, GESTION_OPINIONES_LOCAL, null);
+							mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+
+							outcome = EDITAR_OPINION;
+							
+						}else{
 							utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("NO_PERMISO_ACCION"));
 							return null;
 						}
-
-						if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
-						mapaArgumentos.limpiaMapa();
-						ProtocoloEdicion protocolo = new ProtocoloEdicion(opinion, GESTION_OPINIONES_LOCAL, null);
-						mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
-				
-						outcome = EDITAR_OPINION;
 					}
 				}else
 					utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("NO_PERMISO_ACCION"));
