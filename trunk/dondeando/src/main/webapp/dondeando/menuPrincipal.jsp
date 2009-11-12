@@ -52,14 +52,14 @@
 							</tr:commandLink>
 						</tr:panelHorizontalLayout>
 
-						<trh:tableLayout inlineStyle="width: 100%;" cellSpacing="10" cellPadding="0">
+						<trh:tableLayout inlineStyle="width: 100%;" cellSpacing="20" cellPadding="0">
 							<trh:rowLayout>
 								<trh:cellFormat rowSpan="2">
 									<tr:panelBox background="medium" 
 										inlineStyle="border-style: solid; border-width: 1px;">
 										<tr:panelHorizontalLayout halign="center">
 											<tr:outputText value="#{resCore['LOCALES']}" 
-												inlineStyle="font-weight: bolder; font-size: 150%; color: #6ea525;"/>
+												inlineStyle="font-weight: bolder; font-size: 150%; color: #60901a;"/>
 										</tr:panelHorizontalLayout>
 										<tr:spacer height="20" />
 										<tr:outputText value="#{resCore['DONDE_COMER']}"
@@ -75,7 +75,7 @@
 										<tr:spacer height="5" />
 										<tr:iterator var="item" varStatus="varStatus" id="iteradorTipoLocales"
 											value="#{menuPrincipalBean.listaTiposLocales}">
-											<tr:commandLink text="#{item.descripcion}" 
+											<tr:commandLink text="· #{item.descripcion}" 
 												action="#{menuPrincipalBean.accionTipoLocal}"
 												actionListener="#{menuPrincipalBean.accionListenerTipoLocal}">
 												<tr:attribute name="idTipoLocal" value="#{item.id}" />
@@ -93,8 +93,22 @@
 										<tr:outputText value="MEJORES LOCALES" />
 									</tr:panelBox>
 								</trh:cellFormat>
-								<tr:panelBox inlineStyle="border-style: solid; border-width: 1px;">
-									<tr:outputText value="ULTIMAS OPINIONES" />
+								<tr:panelBox  background="medium"  inlineStyle="border-style: solid; border-width: 1px;">
+									<tr:panelHorizontalLayout halign="center">
+										<tr:outputText value="#{resCore['ULTIMAS_OPINIONES']}" 
+											inlineStyle="font-weight: bolder; font-size: 150%; color: #60901a;"/>
+									</tr:panelHorizontalLayout>
+									<tr:spacer height="20" />
+									<tr:iterator var="item" varStatus="varStatus" id="iteradorOpiniones"
+										value="#{menuPrincipalBean.listaOpiniones}">
+										<tr:commandLink text="· #{item.resumen}" 
+											action="#{menuPrincipalBean.accionOpiniones}"
+											actionListener="#{menuPrincipalBean.accionListenerOpiniones}">
+											<tr:attribute name="idOpinion" value="#{item.id}" />
+										</tr:commandLink>
+										<tr:spacer height="5" />
+									</tr:iterator>	
+									<tr:spacer height="20" />
 								</tr:panelBox>
 							</trh:rowLayout>
 							<trh:rowLayout>
@@ -103,11 +117,21 @@
 								</tr:panelBox>
 							</trh:rowLayout>
 							<trh:rowLayout>
-								<tr:panelBox inlineStyle="border-style: solid; border-width: 1px;">
+								<tr:panelBox  background="medium"  inlineStyle="border-style: solid; border-width: 1px;">
 									<tr:panelHorizontalLayout halign="center">
-											<tr:outputText value="#{resCore['FOROS']}" 
-												inlineStyle="font-weight: bolder; font-size: 150%; color: #6ea525;"/>
-										</tr:panelHorizontalLayout>
+										<tr:outputText value="#{resCore['FOROS']}" 
+											inlineStyle="font-weight: bolder; font-size: 150%; color: #60901a;"/>
+									</tr:panelHorizontalLayout>
+									<tr:spacer height="20" />
+									<tr:iterator var="item" varStatus="varStatus" id="iteradorForos"
+										value="#{menuPrincipalBean.listaForos}">
+										<tr:commandLink text="· #{item.titulo}" 
+											action="#{menuPrincipalBean.accionForos}"
+											actionListener="#{menuPrincipalBean.accionListenerForo}">
+											<tr:attribute name="idForo" value="#{item.id}" />
+										</tr:commandLink>
+									<tr:spacer height="5" />
+									</tr:iterator>	
 									<tr:spacer height="20" />
 								</tr:panelBox>
 								<tr:panelBox inlineStyle="border-style: solid; border-width: 1px;">

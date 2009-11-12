@@ -5,6 +5,7 @@ import java.util.Set;
 public interface Foro {
 
 	public static final String ATRIBUTO_TITULO = "titulo";
+	public static final String ATRIBUTO_ID = "id";
 	public static final String ATRIBUTO_ACTIVO = "activo";
 
 	public Integer getId();
