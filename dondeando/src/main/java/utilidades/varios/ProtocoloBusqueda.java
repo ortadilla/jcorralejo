@@ -12,8 +12,13 @@ public class ProtocoloBusqueda {
     /** Si se debe lanzar directamente la búsqueda o esperar a que el usuario lo indique */
     private boolean lanzaConsulta = false;
     
+    /** Si se debe devolver algún elemento */
+    private boolean paraDevolver = false;
+    
     /** Outcome al que debe volver tras buscar. No debería ser un viewID */
     private String  outcomeVuelta = null;
+    
+    
     
     /** 
      * Crea un nuevo protocolo con los valores indicados y el resto por defecto: Sin parámetros,
@@ -23,6 +28,7 @@ public class ProtocoloBusqueda {
      */
     public ProtocoloBusqueda(String outcomeVuelta){
         this.outcomeVuelta = outcomeVuelta;
+        this.paramsBusqueda = new HashMap<String, Object>();
     }
     
     /** 
@@ -31,11 +37,12 @@ public class ProtocoloBusqueda {
      * @param lanzaConsulta         Si se debe lanzar la consulta directamente o debe lanzarla el usuario.
      * @param outcomeVuelta         Outcome al que se debe volver. Imprescindible si no es anidada ni popup.
      */
-    public ProtocoloBusqueda(Map<String, Object> paramsBusqueda, boolean lanzaConsulta, String outcomeVuelta) {
+    public ProtocoloBusqueda(Map<String, Object> paramsBusqueda, boolean lanzaConsulta, String outcomeVuelta, boolean paraDevolver) {
         super();
         this.paramsBusqueda = paramsBusqueda;
         this.lanzaConsulta = lanzaConsulta;
         this.outcomeVuelta = outcomeVuelta;
+        this.paraDevolver = paraDevolver;
     }
     
     /** 
@@ -71,5 +78,13 @@ public class ProtocoloBusqueda {
 
 	public void setOutcomeVuelta(String outcomeVuelta) {
 		this.outcomeVuelta = outcomeVuelta;
+	}
+
+	public boolean isParaDevolver() {
+		return paraDevolver;
+	}
+
+	public void setParaDevolver(boolean paraDevolver) {
+		this.paraDevolver = paraDevolver;
 	}
 }

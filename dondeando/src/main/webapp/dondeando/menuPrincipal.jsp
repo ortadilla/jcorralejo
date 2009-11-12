@@ -20,26 +20,105 @@
 		</trh:head>
 
 		<trh:body>
-		<geos:cabeceraPagina />
+			<geos:cabeceraPagina />
 			<tr:form>
-				<tr:panelHorizontalLayout halign="center">
-					<tr:panelBox inlineStyle="width: 100%;">
-						<tr:spacer height="20"/>				
-						<tr:outputText value="Futuro menú principal"/>
-						<tr:spacer height="20"/>				
-						<tr:commandButton text="#{resCore['GESTION_USUARIOS']}" id="gestionUsuarios"
-							action="#{menuPrincipalBean.gestionUsuarios}" />
-						<tr:spacer height="20"/>				
-						<tr:commandButton text="#{resCore['GESTION_LOCALES']}" id="gestionLocales"
-							action="#{menuPrincipalBean.gestionLocales}" />
-						<tr:spacer height="20"/>				
-						<tr:commandButton text="#{resCore['GESTION_FOROS']}" id="gestionForos"
-							action="#{menuPrincipalBean.gestionForos}" />
-							
+				<tr:panelPage>
+					<tr:messages />
+
+					<tr:spacer height="20" />
+					<tr:panelBox inlineStyle="width: 100%;" background="light">
+						<tr:panelHorizontalLayout halign="center"	inlineStyle="width: 100%;">
+							<tr:image source="/imagenes/dondeando/iconoTransparente.png"
+										inlineStyle="height: 30px;"/>
+							<tr:commandLink rendered="#{menuPrincipalBean.mostrarGestionUsuarios}"
+								action="#{menuPrincipalBean.gestionUsuarios}" >
+								<tr:image source="/imagenes/dondeando/gestionarUsuarios.png"
+										shortDesc="#{resCore['GESTION_USUARIOS']}" 
+										inlineStyle="height: 30px;"/>
+							</tr:commandLink>
+							<tr:spacer height="20" />
+							<tr:commandLink rendered="#{menuPrincipalBean.mostrarGestionLocales}"
+								action="#{menuPrincipalBean.gestionLocales}" >
+								<tr:image source="/imagenes/dondeando/gestionarLocales.png"
+										shortDesc="#{resCore['GESTION_LOCALES']}" 
+										inlineStyle="height: 30px;"/>
+							</tr:commandLink>
+							<tr:spacer height="20" />
+							<tr:commandLink rendered="#{menuPrincipalBean.mostrarGestionForos}"
+								action="#{menuPrincipalBean.gestionForos}" >
+								<tr:image source="/imagenes/dondeando/gestionarForos.png"
+										shortDesc="#{resCore['GESTION_FOROS']}" 
+										inlineStyle="height: 30px;"/>
+							</tr:commandLink>
+						</tr:panelHorizontalLayout>
+
+						<trh:tableLayout inlineStyle="width: 100%;" cellSpacing="10" cellPadding="0">
+							<trh:rowLayout>
+								<trh:cellFormat rowSpan="2">
+									<tr:panelBox background="medium" 
+										inlineStyle="border-style: solid; border-width: 1px;">
+										<tr:panelHorizontalLayout halign="center">
+											<tr:outputText value="#{resCore['LOCALES']}" 
+												inlineStyle="font-weight: bolder; font-size: 150%; color: #6ea525;"/>
+										</tr:panelHorizontalLayout>
+										<tr:spacer height="20" />
+										<tr:outputText value="#{resCore['DONDE_COMER']}"
+											inlineStyle="font-weight: bolder;" />
+										<tr:selectOneChoice value="#{menuPrincipalBean.provincia}">
+											<f:selectItems id="selectProvincia"
+												value="#{menuPrincipalBean.selectProvincia}" />
+										</tr:selectOneChoice>
+										<tr:spacer height="20" />
+										
+										<tr:outputText value="#{resCore['QUE_COMER']}"
+											inlineStyle="font-weight: bolder;" />
+										<tr:spacer height="5" />
+										<tr:iterator var="item" varStatus="varStatus" id="iteradorTipoLocales"
+											value="#{menuPrincipalBean.listaTiposLocales}">
+											<tr:commandLink text="#{item.descripcion}" 
+												action="#{menuPrincipalBean.accionTipoLocal}"
+												actionListener="#{menuPrincipalBean.accionListenerTipoLocal}">
+												<tr:attribute name="idTipoLocal" value="#{item.id}" />
+											</tr:commandLink>
+										<tr:spacer height="5" />
+										</tr:iterator>	
+										
+										<tr:spacer height="20" />
+										<tr:commandLink action="#{menuPrincipalBean.accionTipoLocal}" 
+											text="#{resCore['BUSQUEDA_AVANZADA']}" inlineStyle="font-weight: bolder;"/>
+									</tr:panelBox>
+								</trh:cellFormat>
+								<trh:cellFormat rowSpan="3">
+									<tr:panelBox inlineStyle="border-style: solid; border-width: 1px;">
+										<tr:outputText value="MEJORES LOCALES" />
+									</tr:panelBox>
+								</trh:cellFormat>
+								<tr:panelBox inlineStyle="border-style: solid; border-width: 1px;">
+									<tr:outputText value="ULTIMAS OPINIONES" />
+								</tr:panelBox>
+							</trh:rowLayout>
+							<trh:rowLayout>
+								<tr:panelBox inlineStyle="border-style: solid; border-width: 1px;">
+									<tr:outputText value="ULTIMAS VOTACIONES" />
+								</tr:panelBox>
+							</trh:rowLayout>
+							<trh:rowLayout>
+								<tr:panelBox inlineStyle="border-style: solid; border-width: 1px;">
+									<tr:panelHorizontalLayout halign="center">
+											<tr:outputText value="#{resCore['FOROS']}" 
+												inlineStyle="font-weight: bolder; font-size: 150%; color: #6ea525;"/>
+										</tr:panelHorizontalLayout>
+									<tr:spacer height="20" />
+								</tr:panelBox>
+								<tr:panelBox inlineStyle="border-style: solid; border-width: 1px;">
+									<tr:outputText value="ULTIMOS MENSAJES" />
+								</tr:panelBox>
+							</trh:rowLayout>
+						</trh:tableLayout>
+
 					</tr:panelBox>
 					<tr:spacer width="10" />
-				</tr:panelHorizontalLayout>
-				<tr:messages />
+				</tr:panelPage>
 			</tr:form>
 		</trh:body>
 		</trh:html>
