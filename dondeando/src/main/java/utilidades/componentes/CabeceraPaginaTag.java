@@ -137,7 +137,12 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     		//TODO: ¿Meter alguna imagen de fondo?
     		//celda = crearCelda(null, "1%", null, null, "background-image: url(../skins/geos2/skin_images/menuBarBackground.png);", fila);
     		celda = crearCelda(null, "1%", null, null, null, fila);
-    		crearBotonMenu(celda);
+        	link = crearCommandLink(null,"#{"+CABECERA_PAGINA_BEAN+"."+METODO_IR_MENU+"}", null, null, false, false,
+    				"true", celda, false);
+            crearImagen("/imagenes/dondeando/home.png",null, mensajesCore.obtenerTexto("IR_MENU"), null, link);
+            fin(link);
+            
+//    		crearBotonMenu(celda);
     		fin(celda);
     		fin(fila);
     		fin(tabla);

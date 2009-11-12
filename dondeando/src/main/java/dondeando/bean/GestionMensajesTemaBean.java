@@ -54,8 +54,6 @@ public class GestionMensajesTemaBean {
 	//Atributos
 	private List<MensajeForo> listaMensajesTema;
 	private RowKeySet estadoDeSeleccionTabla = new RowKeySetImpl();
-	private boolean mostrarEliminarRespuesta;
-	private boolean mostrarEditarRespuesta;
 	private boolean mostrarAgregar;
 	private String tituloPagina;
 	
@@ -88,15 +86,6 @@ public class GestionMensajesTemaBean {
 	@Create
 	@Begin(join=true)
 	public void inicializar(){
-		//Se podrán eliminar mensajes si se tiene permiso para gestionar los mensajes,
-		//si se es moderador del foro, o si somos los creadores
-		boolean mostrar =  servicioUsuario.isUsuarioActivoAdmin()
-				       || listaMensajesTema!=null && !listaMensajesTema.isEmpty() 
-				       && (listaMensajesTema.get(0).getForo().getModeradores().contains(servicioUsuario.devolverUsuarioActivo())
-				       ||  listaMensajesTema.get(0).getAutor().equals(servicioUsuario.devolverUsuarioActivo()));
-		mostrarEditarRespuesta = mostrar;
-		mostrarEliminarRespuesta = mostrar;
-		
 		mostrarAgregar = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_MENSAJES_FOROS);
 	}
 	
@@ -112,7 +101,7 @@ public class GestionMensajesTemaBean {
 				buscar();
 			}
 		}
-
+		
 	}
 	
 	/**
@@ -192,26 +181,48 @@ public class GestionMensajesTemaBean {
 				Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
 				MensajeForo respuesta = listaMensajesTema.get(seleccion);
 				if(ACCION_ELIMINAR_RESPUESTA.equals(operacion)){
-					if(respuesta!=null){
-						//Comprobamos las respuestas justo antes de eliminar
-						boolean esTema = respuesta.getRespondeA()==null;
-						servicioMensajeForo.eliminarMensaje(respuesta);
-						listaMensajesTema.remove(respuesta);
-						//Si es el primer mensaje (es el tema) eliminamos todas las respuestas
-						listaMensajesTema.removeAll(HerramientasList.obtenerElementos(listaMensajesTema, MensajeForo.ATRIBUTO_RESPONDE_A, respuesta));
-						utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto(esTema?"TEMA_ELIMINADO":"RESPUESTA_ELIMINADA"));
-						operacionRealizada = true;
-					}else
-						utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_ELIMINAR_FORO_ELIMINADO"));
+					
+					Usuario usuarioActivo = servicioUsuario.devolverUsuarioActivo();
+					if(servicioUsuario.isUsuarioActivoAdmin()
+					|| respuesta.getAutor().equals(usuarioActivo)
+					|| respuesta.getForo().getModeradores().contains(usuarioActivo)){
+					
+						if(respuesta!=null){
+							//Comprobamos las respuestas justo antes de eliminar
+							boolean esTema = respuesta.getRespondeA()==null;
+							servicioMensajeForo.eliminarMensaje(respuesta);
+							listaMensajesTema.remove(respuesta);
+							//Si es el primer mensaje (es el tema) eliminamos todas las respuestas
+							listaMensajesTema.removeAll(HerramientasList.obtenerElementos(listaMensajesTema, MensajeForo.ATRIBUTO_RESPONDE_A, respuesta));
+							utilJsfContext.insertaMensajeInformacion(mensajesCore.obtenerTexto(esTema?"TEMA_ELIMINADO":"RESPUESTA_ELIMINADA"));
+							operacionRealizada = true;
+						}else
+							utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("ERROR_ELIMINAR_FORO_ELIMINADO"));
+						
+					}else{
+						utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("NO_PERMISO_ACCION"));
+						return null;
+					}
 				}
 				
 				else if(ACCION_EDITAR_RESPUESTA.equals(operacion)){
-					if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
-					mapaArgumentos.limpiaMapa();
-					ProtocoloEdicion protocolo = new ProtocoloEdicion(respuesta, GESTION_MENSAJES_TEMA, null);
-					mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
-			
-					outcome = EDITAR_MENSAJE_FORO;
+					
+					Usuario usuarioActivo = servicioUsuario.devolverUsuarioActivo();
+					if(servicioUsuario.isUsuarioActivoAdmin()
+					|| respuesta.getAutor().equals(usuarioActivo)
+					|| respuesta.getForo().getModeradores().contains(usuarioActivo)){
+						
+						if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+						mapaArgumentos.limpiaMapa();
+						ProtocoloEdicion protocolo = new ProtocoloEdicion(respuesta, GESTION_MENSAJES_TEMA, null);
+						mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+				
+						outcome = EDITAR_MENSAJE_FORO;
+						
+					}else{
+						utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("NO_PERMISO_ACCION"));
+						return null;
+					}
 				}
 
 			}
@@ -302,22 +313,6 @@ public class GestionMensajesTemaBean {
 
 	public void setListaMensajesTema(List<MensajeForo> listaMensajesTema) {
 		this.listaMensajesTema = listaMensajesTema;
-	}
-
-	public boolean isMostrarEliminarRespuesta() {
-		return mostrarEliminarRespuesta;
-	}
-
-	public void setMostrarEliminarRespuesta(boolean mostrarEliminarRespuesta) {
-		this.mostrarEliminarRespuesta = mostrarEliminarRespuesta;
-	}
-
-	public boolean isMostrarEditarRespuesta() {
-		return mostrarEditarRespuesta;
-	}
-
-	public void setMostrarEditarRespuesta(boolean mostrarEditarRespuesta) {
-		this.mostrarEditarRespuesta = mostrarEditarRespuesta;
 	}
 
 	public boolean isMostrarAgregar() {

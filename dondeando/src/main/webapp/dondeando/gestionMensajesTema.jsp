@@ -33,11 +33,12 @@
 								rendered="#{gestionMensajesTemaBean.mostrarAgregar}"
 								id="btnAgregar" action="#{gestionMensajesTemaBean.agregar}" />
 							<tr:commandButton text="#{resCore['EDITAR_RESPUESTA']}"
+								rendered="#{gestionMensajesTemaBean.mostrarAgregar}"
 								id="btnEditar" action="#{gestionMensajesTemaBean.editar}" />
 							<tr:commandButton text="#{resCore['ELIMINAR_RESPUESTA']}"
 								id="btnEliminar" action="#{gestionMensajesTemaBean.eliminar}"
 								onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_TEMA']}')"
-								rendered="#{gestionMensajesTemaBean.mostrarEliminarRespuesta}" />
+								rendered="#{gestionMensajesTemaBean.mostrarAgregar}" />
 						</tr:panelButtonBar>
 					</tr:panelGroupLayout>
 					<tr:spacer height="10" />

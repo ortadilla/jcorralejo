@@ -83,14 +83,10 @@ public class GestionTemasForoBean {
 	@Create
 	@Begin(join=true)
 	public void inicializar(){
-		//Se podrán eliminar temas si se tiene permiso para gestionar los mensajes
-		//o si se es moderador del foro
-		mostrarEliminarTema = servicioUsuario.isUsuarioActivoAdmin()
-						   || foro.getModeradores()!=null && foro.getModeradores().contains(servicioUsuario.devolverUsuarioActivo());
-		mostrarAgregar = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_MENSAJES_FOROS);
 	}
 	
 	public void cargarArgumentosDeEntrada(){
+		
 		//Cargar los datos y lanzar la búsqueda
 		if(mapaArgumentos!=null && mapaArgumentos.contieneProtocoloEdicion())
 			protocoloEdicion = mapaArgumentos.getProtocoloEdicion();
@@ -102,6 +98,12 @@ public class GestionTemasForoBean {
 				buscar();
 			}
 		}
+		
+		//Se podrán eliminar temas si se tiene permiso para gestionar los mensajes
+		//o si se es moderador del foro
+		mostrarEliminarTema = servicioUsuario.isUsuarioActivoAdmin()
+						   || foro!=null &&  foro.getModeradores()!=null && foro.getModeradores().contains(servicioUsuario.devolverUsuarioActivo());
+		mostrarAgregar = servicioPermisoUsuario.hayPermiso(Permisos.GESTIONAR_MENSAJES_FOROS);
 
 	}
 	

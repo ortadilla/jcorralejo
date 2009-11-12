@@ -100,7 +100,7 @@ public class GestionUsuariosBean {
 				  											  null, 
 				  											  TipoUsuario.ATRIBUTO_DESCRIPCION,
 				  											  true);
-		desplegado = false;
+		desplegado = true;
 //		buscar();
 	}
 	
