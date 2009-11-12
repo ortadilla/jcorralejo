@@ -35,4 +35,10 @@ public interface ServicioOpinion {
 	 * @param mensaje Nuevo mensaje de la opinión
 	 */
 	public void editarOpinion(Opinion opinionEdicion, String mensaje);
+	
+	/**
+	 * Busca todas las opinones del sistema
+	 * @return Lista con todas las opiniones
+	 */
+	public List<Opinion> encontrarTodas();
 }

@@ -1,6 +1,9 @@
 · Menú principal
 · Menu --> Gestionar...-->Menu -->Gestionar...(no navega a la primera)
 · "background-color:green;"  a un panelBox
+· Ancho de los panelBox todos iguales
+· haling="center" --> Está ligeramente inclinado a la derecha 
+
 
 
 MEJORAS NECESARIAS:

@@ -1,5 +1,6 @@
 package dondeando.modelo.entidades.implementacion;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
 
@@ -23,6 +24,10 @@ public class OpinionImpl implements Opinion{
 	
 	public boolean isValoracionPositiva(){
 		return valoracionUsuarios==null || valoracionUsuarios.compareTo(0)>=0;
+	}
+	
+	public String getResumen(){
+		return (opinion.length()>=30 ? opinion.substring(0, 30) : opinion) +"... ("+usuario.getLogin()+")";
 	}
 	
 	@Override

@@ -135,5 +135,13 @@ public class ServicioOpinionImpl implements ServicioOpinion{
     	opinion.setUsuario(usuario);
     	opinion.setFecha(fecha);
     }
+    
+    /*
+     * (non-Javadoc)
+     * @see dondeando.modelo.servicio.ServicioOpinion#encontrarTodas()
+     */
+    public List<Opinion> encontrarTodas() {
+    	return opinionDAO.encontrarTodos();
+    }
 
 }

@@ -7,6 +7,9 @@ import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_USUARIOS;
 import static utilidades.jsf.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENU_PRINCIPAL_BEAN;
+import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
+import static utilidades.varios.NombresBean.SERVICIO_FORO;
+import static utilidades.varios.NombresBean.SERVICIO_OPINION;
 import static utilidades.varios.NombresBean.SERVICIO_PERMISO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_PROVINCIA;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_LOCAL;
@@ -31,10 +34,15 @@ import utilidades.varios.MapaArgumentos;
 import utilidades.varios.NombresBean;
 import utilidades.varios.Permisos;
 import utilidades.varios.ProtocoloBusqueda;
+import utilidades.varios.ProtocoloEdicion;
 import utilidades.varios.SelectItemBuilder;
+import dondeando.modelo.entidades.Foro;
 import dondeando.modelo.entidades.Local;
+import dondeando.modelo.entidades.Opinion;
 import dondeando.modelo.entidades.Provincia;
 import dondeando.modelo.entidades.TipoLocal;
+import dondeando.modelo.servicio.ServicioForo;
+import dondeando.modelo.servicio.ServicioOpinion;
 import dondeando.modelo.servicio.ServicioPermisoUsuario;
 import dondeando.modelo.servicio.ServicioProvincia;
 import dondeando.modelo.servicio.ServicioTipoLocal;
@@ -58,6 +66,12 @@ public class MenuPrincipalBean {
 	@In(value=SERVICIO_PROVINCIA, create=true)
 	private ServicioProvincia servicioProvincia;
 	
+	@In(value=SERVICIO_FORO, create=true)
+	private ServicioForo servicioForo;
+	
+	@In(value=SERVICIO_OPINION, create=true)
+	private ServicioOpinion servicioOpinion;
+	
 	@In(value=MAPA_ARGUMENTOS, required=false)
 	@Out(value=MAPA_ARGUMENTOS, required=false)
 	private MapaArgumentos mapaArgumentos;
@@ -69,6 +83,8 @@ public class MenuPrincipalBean {
 	private Provincia provincia;
 	private SelectItem[] selectProvincia;
 	private List<TipoLocal> listaTiposLocales;
+	private List<Foro> listaForos;
+	private List<Opinion> listaOpiniones;
 	
 	@Create
 	@Begin(join=true)
@@ -78,6 +94,10 @@ public class MenuPrincipalBean {
 															Provincia.ATRIBUTO_NOMBRE);
 		provincia = servicioProvincia.encontrarProvinciaPorId(43);//Sevilla
 		listaTiposLocales = HerramientasList.ordenar(servicioTipoLocal.encontrarTodos(),TipoLocal.ATRIBUTO_DESCRIPCION);
+		listaForos = HerramientasList.ordenar(servicioForo.encontrarTodos(),Foro.ATRIBUTO_TITULO);
+		listaOpiniones = HerramientasList.ordenar(servicioOpinion.encontrarTodas(),Opinion.ATRIBUTO_FECHA+" DESC");
+		if(listaOpiniones.size()>5)
+			listaOpiniones = listaOpiniones.subList(0, 5);
 	}
 
 	
@@ -146,6 +166,61 @@ public class MenuPrincipalBean {
 		return ConstantesReglasNavegacion.GESTION_LOCALES;
 	}
 
+
+	/**
+	 * Prepara el mapaargumentos para navegar a los temas del foro
+	 * seleccionado
+	 * @param actionEvent
+	 */
+	public void accionListenerForo(ActionEvent actionEvent){
+		Integer identificador = (Integer) actionEvent.getComponent().getAttributes().get("idForo");
+		if(identificador!=null){
+			List<Foro> foro = HerramientasList.obtenerElementos(listaForos, Foro.ATRIBUTO_ID, identificador);
+			if(foro.size()==1){
+				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+				mapaArgumentos.limpiaMapa();
+				ProtocoloEdicion protocolo = new ProtocoloEdicion(foro.get(0), MENU_PRINCIPAL, null);
+				mapaArgumentos.setArgumento(PROTOCOLO_EDICION, protocolo);
+			}
+		}
+	}
+	
+	/**
+	 * Navega a la gestión de foros
+	 * @return Regla de navegación
+	 */
+	public String accionForos(){
+		return ConstantesReglasNavegacion.GESTION_TEMAS_FORO;
+	}
+	
+	/**
+	 * Prepara el mapaargumentos para navegar a la gestión de locales filtrando por el tipo
+	 * seleccionado
+	 * @param actionEvent
+	 */
+	public void accionListenerOpiniones(ActionEvent actionEvent){
+		Integer identificador = (Integer) actionEvent.getComponent().getAttributes().get("idOpinion");
+		if(identificador!=null){
+			List<Opinion> opinion = HerramientasList.obtenerElementos(listaOpiniones, Opinion.ATRIBUTO_ID, identificador);
+			if(opinion.size()==1){
+				ProtocoloEdicion protocolo = new ProtocoloEdicion(opinion.get(0).getLocal(),
+																  MENU_PRINCIPAL,
+																  null);
+				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+				mapaArgumentos.limpiaMapa();
+				mapaArgumentos.setArgumento(NombresBean.PROTOCOLO_EDICION, protocolo);
+			}
+		}
+	}
+	
+	/**
+	 * Navega a la gestión de opiniones
+	 * @return Regla de navegación
+	 */
+	public String accionOpiniones(){
+		return ConstantesReglasNavegacion.GESTION_OPINIONES_LOCAL;
+	}
+
 	
 	public boolean isMostrarGestionUsuarios() {
 		return mostrarGestionUsuarios;
@@ -201,6 +276,20 @@ public class MenuPrincipalBean {
 
 	public void setListaTiposLocales(List<TipoLocal> listaTiposLocales) {
 		this.listaTiposLocales = listaTiposLocales;
+	}
+
+
+	public List<Foro> getListaForos() {
+		return listaForos;
+	}
+	public void setListaForos(List<Foro> listaForos) {
+		this.listaForos = listaForos;
+	}
+	public List<Opinion> getListaOpiniones() {
+		return listaOpiniones;
+	}
+	public void setListaOpiniones(List<Opinion> listaOpiniones) {
+		this.listaOpiniones = listaOpiniones;
 	}
 
 }
