@@ -35,4 +35,10 @@ public interface ServicioPuntuacion {
 										   String loMejor, 
 										   String loPeor, 
 										   Usuario usuario);
+	
+	/**
+	 * Devuelve todas las votaciones del sistema
+	 * @return Lista con las votaciones
+	 */
+	public List<Puntuacion> encontrarTodas();
 }

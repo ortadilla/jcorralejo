@@ -137,4 +137,12 @@ public class ServicioPuntuacionImpl implements ServicioPuntuacion{
 		
 		return puntuacion;
 	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioPuntuacion#encontrarTodas()
+	 */
+	public List<Puntuacion> encontrarTodas() {
+		return puntuacionDAO.encontrarTodos();
+	}
 }

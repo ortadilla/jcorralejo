@@ -134,4 +134,11 @@ public interface ServicioLocal {
 	 * @return
 	 */
 	public Local encontrarLocalPorId(Integer id);
+	
+	/**
+	 * Busca todos los locales del sistema
+	 * @return Lista con todos los locales
+	 */
+	public List<Local> encontrarTodos();
+	
 }

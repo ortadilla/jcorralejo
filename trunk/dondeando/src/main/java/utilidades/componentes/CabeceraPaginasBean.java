@@ -22,8 +22,6 @@ import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
-import org.jboss.seam.core.Conversation;
-import org.jboss.seam.core.ConversationContext;
 
 import utilidades.varios.MapaArgumentos;
 import utilidades.varios.NombresBean;
@@ -110,8 +108,9 @@ public class CabeceraPaginasBean {
 		return DETALLES_USUARIO;
 	}
 	
+	@End()
 	public String irAlMenu(){
-		Conversation.instance().end();
+//		Conversation.instance().end();
 		return MENU_PRINCIPAL;
 	}
 

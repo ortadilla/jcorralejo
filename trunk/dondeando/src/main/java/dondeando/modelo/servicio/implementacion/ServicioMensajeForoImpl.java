@@ -168,13 +168,24 @@ public class ServicioMensajeForoImpl implements ServicioMensajeForo{
 		mensajeForo.setFecha(fecha);
 	}
 	
-	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioMensajeForo#encontrarMensajeForoPorId(java.lang.Integer)
+	 */
 	public MensajeForo encontrarMensajeForoPorId(Integer id){
 		try {
 			return mensajeForoDAO.encontrarPorId(id);
 		} catch (DAOExcepcion e) {
 			return null;
 		}
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioMensajeForo#encontrarTodos()
+	 */
+	public List<MensajeForo> encontrarTodos() {
+		return mensajeForoDAO.encontrarTodos();
 	}
 
 

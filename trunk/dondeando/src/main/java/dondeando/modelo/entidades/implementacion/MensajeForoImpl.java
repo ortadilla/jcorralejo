@@ -26,6 +26,10 @@ public class MensajeForoImpl implements MensajeForo {
 	private Date fechaUltimaRespuesta;
 	private String autorYFechaUltimaRespuesta;
 	
+	public String getDescripcion(){
+		return (mensaje.length()>=50 ? mensaje.substring(0, 50) : mensaje) +"... ("+autor.getLogin()+"), en "+foro.getTitulo();
+	}
+	
 	public boolean isValoracionPositiva(){
 		return valoracionUsuarios==null || valoracionUsuarios.compareTo(0)>=0;
 	}

@@ -4,14 +4,18 @@ import static org.jboss.seam.ScopeType.CONVERSATION;
 import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_FOROS;
 import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_LOCALES;
 import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_USUARIOS;
+import static utilidades.jsf.ConstantesReglasNavegacion.GESTION_VALORACIONES_LOCAL;
 import static utilidades.jsf.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static utilidades.varios.NombresBean.MAPA_ARGUMENTOS;
 import static utilidades.varios.NombresBean.MENU_PRINCIPAL_BEAN;
 import static utilidades.varios.NombresBean.PROTOCOLO_EDICION;
 import static utilidades.varios.NombresBean.SERVICIO_FORO;
+import static utilidades.varios.NombresBean.SERVICIO_LOCAL;
+import static utilidades.varios.NombresBean.SERVICIO_MENSAJE_FORO;
 import static utilidades.varios.NombresBean.SERVICIO_OPINION;
 import static utilidades.varios.NombresBean.SERVICIO_PERMISO_USUARIO;
 import static utilidades.varios.NombresBean.SERVICIO_PROVINCIA;
+import static utilidades.varios.NombresBean.SERVICIO_PUNTUACION;
 import static utilidades.varios.NombresBean.SERVICIO_TIPO_LOCAL;
 import static utilidades.varios.NombresBean.SERVICIO_USUARIO;
 
@@ -38,13 +42,18 @@ import utilidades.varios.ProtocoloEdicion;
 import utilidades.varios.SelectItemBuilder;
 import dondeando.modelo.entidades.Foro;
 import dondeando.modelo.entidades.Local;
+import dondeando.modelo.entidades.MensajeForo;
 import dondeando.modelo.entidades.Opinion;
 import dondeando.modelo.entidades.Provincia;
+import dondeando.modelo.entidades.Puntuacion;
 import dondeando.modelo.entidades.TipoLocal;
 import dondeando.modelo.servicio.ServicioForo;
+import dondeando.modelo.servicio.ServicioLocal;
+import dondeando.modelo.servicio.ServicioMensajeForo;
 import dondeando.modelo.servicio.ServicioOpinion;
 import dondeando.modelo.servicio.ServicioPermisoUsuario;
 import dondeando.modelo.servicio.ServicioProvincia;
+import dondeando.modelo.servicio.ServicioPuntuacion;
 import dondeando.modelo.servicio.ServicioTipoLocal;
 import dondeando.modelo.servicio.ServicioUsuario;
 
@@ -66,11 +75,20 @@ public class MenuPrincipalBean {
 	@In(value=SERVICIO_PROVINCIA, create=true)
 	private ServicioProvincia servicioProvincia;
 	
+	@In(value=SERVICIO_PUNTUACION, create=true)
+	private ServicioPuntuacion servicioPuntuacion;
+	
 	@In(value=SERVICIO_FORO, create=true)
 	private ServicioForo servicioForo;
 	
+	@In(value=SERVICIO_MENSAJE_FORO, create=true)
+	private ServicioMensajeForo servicioMensajeForo;
+	
 	@In(value=SERVICIO_OPINION, create=true)
 	private ServicioOpinion servicioOpinion;
+	
+	@In(value=SERVICIO_LOCAL, create=true)
+	private ServicioLocal servicioLocal;
 	
 	@In(value=MAPA_ARGUMENTOS, required=false)
 	@Out(value=MAPA_ARGUMENTOS, required=false)
@@ -85,6 +103,9 @@ public class MenuPrincipalBean {
 	private List<TipoLocal> listaTiposLocales;
 	private List<Foro> listaForos;
 	private List<Opinion> listaOpiniones;
+	private List<Puntuacion> listaValoraciones;
+	private List<MensajeForo> listaMensajes;
+	private List<Local> listaDestacados;
 	
 	@Create
 	@Begin(join=true)
@@ -94,15 +115,31 @@ public class MenuPrincipalBean {
 															Provincia.ATRIBUTO_NOMBRE);
 		provincia = servicioProvincia.encontrarProvinciaPorId(43);//Sevilla
 		listaTiposLocales = HerramientasList.ordenar(servicioTipoLocal.encontrarTodos(),TipoLocal.ATRIBUTO_DESCRIPCION);
+	}
+
+
+	public void cargarArgumentosDeEntrada(){
+		pintarBotones();
+		
+		selectProvincia = SelectItemBuilder.creaSelectItems(HerramientasList.ordenar(servicioProvincia.encontrarTodos(), Provincia.ATRIBUTO_NOMBRE), 
+															null, 
+															Provincia.ATRIBUTO_NOMBRE);
+		provincia = servicioProvincia.encontrarProvinciaPorId(43);//Sevilla
 		listaForos = HerramientasList.ordenar(servicioForo.encontrarTodos(),Foro.ATRIBUTO_TITULO);
 		listaOpiniones = HerramientasList.ordenar(servicioOpinion.encontrarTodas(),Opinion.ATRIBUTO_FECHA+" DESC");
 		if(listaOpiniones.size()>5)
 			listaOpiniones = listaOpiniones.subList(0, 5);
-	}
+		listaValoraciones = HerramientasList.ordenar(servicioPuntuacion.encontrarTodas(),Puntuacion.ATRIBUTO_FECHA+" DESC");
+		if(listaValoraciones.size()>5)
+			listaValoraciones = listaValoraciones.subList(0, 5);
+		listaMensajes = HerramientasList.ordenar(servicioMensajeForo.encontrarTodos(),MensajeForo.ATRIBUTO_FECHA+" DESC");
+		if(listaMensajes.size()>5)
+			listaMensajes = listaMensajes.subList(0, 5);
+		listaDestacados = HerramientasList.ordenar(servicioLocal.encontrarTodos(),Local.ATRIBUTO_VALORACION+" DESC");
+		if(listaDestacados.size()>3)
+			listaDestacados = listaDestacados.subList(0, 3);
+		servicioLocal.rellenarPropiedadesNoMapeadas(listaDestacados);
 
-	
-	public void cargarArgumentosDeEntrada(){
-		pintarBotones();
 	}
 	
 	/**
@@ -194,8 +231,7 @@ public class MenuPrincipalBean {
 	}
 	
 	/**
-	 * Prepara el mapaargumentos para navegar a la gestión de locales filtrando por el tipo
-	 * seleccionado
+	 * Prepara el mapaargumentos para navegar a la gestión de opiniones filtrando por el local
 	 * @param actionEvent
 	 */
 	public void accionListenerOpiniones(ActionEvent actionEvent){
@@ -220,6 +256,88 @@ public class MenuPrincipalBean {
 	public String accionOpiniones(){
 		return ConstantesReglasNavegacion.GESTION_OPINIONES_LOCAL;
 	}
+	
+	/**
+	 * Prepara el mapaargumentos para navegar a la gestión valoraciones filtrando por el local
+	 * @param actionEvent
+	 */
+	public void accionListenerValoraciones(ActionEvent actionEvent){
+		Integer identificador = (Integer) actionEvent.getComponent().getAttributes().get("idValoracion");
+		if(identificador!=null){
+			List<Puntuacion> valoracino = HerramientasList.obtenerElementos(listaValoraciones, Puntuacion.ATRIBUTO_ID, identificador);
+			if(valoracino.size()==1){
+				ProtocoloEdicion protocolo = new ProtocoloEdicion(valoracino.get(0).getLocal(),
+																  MENU_PRINCIPAL,
+																  null);
+				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+				mapaArgumentos.limpiaMapa();
+				mapaArgumentos.setArgumento(NombresBean.PROTOCOLO_EDICION, protocolo);
+			}
+		}
+	}
+	
+	/**
+	 * Navega a la gestión de valoraciones
+	 * @return Regla de navegación
+	 */
+	public String accionValoraciones(){
+		return GESTION_VALORACIONES_LOCAL;
+	}
+	
+	/**
+	 * Prepara el mapaargumentos para navegar a la gestión valoraciones filtrando por el local
+	 * @param actionEvent
+	 */
+	public void accionListenerMensajes(ActionEvent actionEvent){
+		Integer identificador = (Integer) actionEvent.getComponent().getAttributes().get("idMensaje");
+		if(identificador!=null){
+			List<MensajeForo> mensaje = HerramientasList.obtenerElementos(listaMensajes, MensajeForo.ATRIBUTO_ID, identificador);
+			if(mensaje.size()==1){
+				ProtocoloEdicion protocolo = new ProtocoloEdicion(mensaje.get(0).getRespondeA()!=null 
+																? mensaje.get(0).getRespondeA() : mensaje.get(0),
+																  MENU_PRINCIPAL,
+																  null);
+				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+				mapaArgumentos.limpiaMapa();
+				mapaArgumentos.setArgumento(NombresBean.PROTOCOLO_EDICION, protocolo);
+			}
+		}
+	}
+	
+	/**
+	 * Navega a la gestión de valoraciones
+	 * @return Regla de navegación
+	 */
+	public String accionMensajes(){
+		return ConstantesReglasNavegacion.GESTION_MENSAJES_TEMA;
+	}
+	
+	/**
+	 * Prepara el mapaargumentos para navegar a la gestión valoraciones filtrando por el local
+	 * @param actionEvent
+	 */
+	public void accionLocalConcreto(ActionEvent actionEvent){
+		Integer identificador = (Integer) actionEvent.getComponent().getAttributes().get("idLocal");
+		if(identificador!=null){
+			List<Local> local = HerramientasList.obtenerElementos(listaDestacados, Local.ATRIBUTO_ID, identificador);
+			if(local.size()==1){
+				ProtocoloEdicion protocolo = new ProtocoloEdicion(local.get(0),MENU_PRINCIPAL,null);
+				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+				mapaArgumentos.limpiaMapa();
+				mapaArgumentos.setArgumento(NombresBean.PROTOCOLO_EDICION, protocolo);
+			}
+		}
+	}
+	
+	/**
+	 * Navega a la gestión de valoraciones
+	 * @return Regla de navegación
+	 */
+	public String accionLocalConcreto(){
+		return ConstantesReglasNavegacion.DETALLES_LOCAL;
+	}
+
+
 
 	
 	public boolean isMostrarGestionUsuarios() {
@@ -291,5 +409,37 @@ public class MenuPrincipalBean {
 	public void setListaOpiniones(List<Opinion> listaOpiniones) {
 		this.listaOpiniones = listaOpiniones;
 	}
+
+
+	public List<Puntuacion> getListaValoraciones() {
+		return listaValoraciones;
+	}
+
+
+	public void setListaValoraciones(List<Puntuacion> listaValoraciones) {
+		this.listaValoraciones = listaValoraciones;
+	}
+
+
+	public List<MensajeForo> getListaMensajes() {
+		return listaMensajes;
+	}
+
+
+	public void setListaMensajes(List<MensajeForo> listaMensajes) {
+		this.listaMensajes = listaMensajes;
+	}
+
+
+	public List<Local> getListaDestacados() {
+		return listaDestacados;
+	}
+
+
+	public void setListaDestacados(List<Local> listaDestacados) {
+		this.listaDestacados = listaDestacados;
+	}
+
+
 
 }

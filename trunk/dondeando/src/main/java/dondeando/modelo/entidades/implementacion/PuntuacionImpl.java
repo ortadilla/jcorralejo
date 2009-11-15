@@ -24,6 +24,10 @@ public class PuntuacionImpl implements Puntuacion{
 	private BigDecimal karmaUsuario;  
 	
 	private String autorYFecha;
+	
+	public String getDescripcion(){
+		return local.getNombre()+": "+mediaCalculada+" ("+usuario.getLogin()+")";
+	}
 
 	
 	@Override

@@ -27,7 +27,7 @@ public class OpinionImpl implements Opinion{
 	}
 	
 	public String getResumen(){
-		return (opinion.length()>=30 ? opinion.substring(0, 30) : opinion) +"... ("+usuario.getLogin()+")";
+		return (opinion.length()>=50 ? opinion.substring(0, 50) : opinion) +"... ("+usuario.getLogin()+")";
 	}
 	
 	@Override

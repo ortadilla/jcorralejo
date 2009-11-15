@@ -94,6 +94,14 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     	HtmlTableLayoutTag tabla = crearTabla(form);
     	HtmlRowLayoutTag fila = crearFila(tabla);
 
+    	
+//    	celda = crearCelda(null, null, "3", null, null, fila);
+//        crearImagen("/imagenes/dondeando/cabecera.jpg",
+//                    null, "Dondeando", "true", celda);
+//        fin(celda);
+    	
+    	
+    	
     	celda = crearCelda("right", null, null, null, null, fila);
     	CoreCommandLinkTag link = null;
 

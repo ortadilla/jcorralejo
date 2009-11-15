@@ -6,11 +6,13 @@ import java.util.Set;
 public interface Local {
 	
 	public static final String ATRIBUTO_NOMBRE = "nombre";
+	public static final String ATRIBUTO_ID = "id";
 	public static final String ATRIBUTO_TIPOS_LOCAL = "tiposLocal";
 	public static final String ATRIBUTO_PRECIO_MEDIO = "precioMedio";
 	public static final String ATRIBUTO_PROVINCIA = "provincia";
 	public static final String ATRIBUTO_DIRECCION = "direccion";
 	public static final String ATRIBUTO_ACTIVO = "activo";
+	public static final String ATRIBUTO_VALORACION = "valoracion";
 
 	public Integer getId();
 	public void setId(Integer id);
