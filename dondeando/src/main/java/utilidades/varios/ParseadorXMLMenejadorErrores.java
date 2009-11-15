@@ -8,7 +8,6 @@ import org.xml.sax.SAXParseException;
  * Clase que se encarga de manejar los errores que se producen al parsear un xml mal formado,
  * es decir, que no cumple con su DTD.
  * 
- * @author fjberrocal
  */
 public class ParseadorXMLMenejadorErrores implements ErrorHandler {
 

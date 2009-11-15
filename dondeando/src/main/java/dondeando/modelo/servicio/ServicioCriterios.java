@@ -57,7 +57,6 @@ public interface ServicioCriterios {
      * @param finNull               True indica que atributoFinRango puede ser null
      * 
      * @return Nuevo criterio generado.
-     * @author jcorralejo
      */
     Criterio construyeCriterioRangoFechas(Fecha fecha, String atributoInicioRango, boolean inicioNull, 
                                                        String atributoFinRango,    boolean finNull);

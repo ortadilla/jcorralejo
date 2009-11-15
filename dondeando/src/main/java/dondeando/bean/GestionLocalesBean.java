@@ -152,9 +152,9 @@ public class GestionLocalesBean {
 		
 		if(protocoloBusqueda!=null){
 			buscando = protocoloBusqueda.isParaDevolver();
-			if(protocoloBusqueda.getParamsBusqueda().containsKey(Local.ATRIBUTO_TIPOS_LOCAL))
+			if(protocoloBusqueda.getParamsBusqueda()!=null && protocoloBusqueda.getParamsBusqueda().containsKey(Local.ATRIBUTO_TIPOS_LOCAL))
 				criterioTipoLocal = (List<Integer>)protocoloBusqueda.getParamsBusqueda().get(Local.ATRIBUTO_TIPOS_LOCAL);
-			if(protocoloBusqueda.getParamsBusqueda().containsKey(Local.ATRIBUTO_PROVINCIA))
+			if(protocoloBusqueda.getParamsBusqueda()!=null && protocoloBusqueda.getParamsBusqueda().containsKey(Local.ATRIBUTO_PROVINCIA))
 				criterioProvincia = (Provincia)protocoloBusqueda.getParamsBusqueda().get(Local.ATRIBUTO_PROVINCIA);
 			if(protocoloBusqueda.isLanzaConsulta() && !yaBuscado){
 				buscar();

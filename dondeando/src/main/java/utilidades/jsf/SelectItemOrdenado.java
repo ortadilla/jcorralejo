@@ -10,8 +10,6 @@ import javax.faces.model.SelectItem;
 * Implementa la Interfaz Comparable para poder realizar el método compareTo.<p>
 * También proporciona un método para realizar dicha ordenación
 *
-* @author emiranda
-* @author jablaya
 *
 */
 public class SelectItemOrdenado extends SelectItem implements Comparable{

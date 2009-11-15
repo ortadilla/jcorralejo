@@ -3,7 +3,6 @@ package utilidades.varios;
 import java.util.Date;
 
 /**
- * @author jjove
  * Métodos de uso común para fechas
  */
 public class HerramientasFecha {

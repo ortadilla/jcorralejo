@@ -1,32 +1,20 @@
-· Menú principal
-· Al buscar locales se están quedadon elementos en la tabla repetidos
 · Menu --> Gestionar...-->Menu -->Gestionar...(no navega a la primera)
 
 
-
 MEJORAS NECESARIAS:
-· javadoc de todos los métodos
 · Teclas de acceso en cada botón
 · Texto alternativo y tooltip en las imágenes
-· Comentarios en Interfaces y Clases
-· Eliminar todos los @author
 · Sacar script de carga: de creación de BD y de carga de datos maestros
   
-MEJORAS DESEABLES:ç
+MEJORAS DESEABLES:
 · Poner los números de locales de cada tipo
-· Añadir la entidad Encuesta
-· ¿Añadir una carta a los locales?
-· Si edita un mensaje alguien que no es el autor --> Añadir alguna marca al mensaje
-· Al borrar/aniadir un tema, si volvemos a la gestión de foros, no se actualiza --> no tiene cargarArgumentosEntradas
-· Añadir un link en "ultima respuesta" de la gestión de temas de foros que navegue a la última respuesta?
-· ¿Botón mover tema?
-· Modificar estilos de los componentes de trinidad --> trinidad-skin.xml y/o trinidad-config.xml
-· Se pierde el file al agregar una imagen si da un error
+· ¿Cómo ordenar una tabla? ¿sortable=true? (gestionarUsuarios)
 
 OTROS:
+· Se pierde el file al agregar una imagen si da un error
+· Modificar estilos de los componentes de trinidad --> trinidad-skin.xml y/o trinidad-config.xml
 · Los problemas con el autocommit (flush necesario) puede que sean por las fases de Seam donde se hacen
   los commit 1-5 o 6
-· ¿Cómo ordenar una tabla? ¿sortable=true? (gestionarUsuarios)
   
 ---
 

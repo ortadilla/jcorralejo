@@ -273,9 +273,9 @@ public class GestionOpinionesLocal {
 			List<Opinion> opiniones = HerramientasList.obtenerElementos(listaOpiniones, Opinion.ATRIBUTO_ID, id);
 			if(opiniones.size()==1){
 				Usuario usuarioActivo = servicioUsuario.devolverUsuarioActivo();
-				if(opiniones.get(0).getUsuariosValoraciones().contains(usuarioActivo))
+				if(opiniones!=null && opiniones.get(0).getUsuariosValoraciones().contains(usuarioActivo))
 					utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("YA_HA_VALORADO"));
-				else if(opiniones.get(0).getUsuario().equals(usuarioActivo))
+				else if(opiniones!=null && opiniones.get(0).getUsuario().equals(usuarioActivo))
 					utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("NO_VALORAR_PROPIO"));
 				else{
 					opiniones.get(0).setValoracionUsuarios(opiniones.get(0).getValoracionUsuarios() + (positivo ? 1 : -1));

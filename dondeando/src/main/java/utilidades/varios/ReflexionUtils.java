@@ -29,7 +29,6 @@ import dondeando.modelo.dao.DAOGenerico;
  * Clase de utilidades para invocar por reflexión de forma simple getters,
  * setters y métodos de cualquier tipo.
  * 
- * @author rperez
  */
 public class ReflexionUtils {
 	

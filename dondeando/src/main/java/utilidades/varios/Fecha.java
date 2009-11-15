@@ -11,8 +11,6 @@ import java.util.Date;
 /**
  * Mantiene el concepto de fecha sólo como día, sin considerar la hora, y proporciona utilidades para
  * trabajar con Date y Calendar, así como otras funciones para comparar, obtener rangos, etc.
-
- * @author jmarjona
  */
 public class Fecha implements Comparable {
     

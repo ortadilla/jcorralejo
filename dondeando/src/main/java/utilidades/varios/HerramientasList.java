@@ -6,7 +6,6 @@ import java.util.*;
 /**
  * Utilidad para ordenar listas según propiedades de sus objetos.
  * 
- * @author jmarjona
  */
 public class HerramientasList {
 

@@ -28,7 +28,6 @@ import org.apache.myfaces.trinidadinternal.context.external.ServletRequestMap;
  * Se implementa la interfaz UploadedFileProcessor.java para poder controlar la excepción en caso
  * de que se supere el tamaño máximo permitido
  * 
- * @author maaguilar
  */
 public class GeosUploadedFileProcessorImpl extends UploadedFileProcessorImpl implements UploadedFileProcessor
 {

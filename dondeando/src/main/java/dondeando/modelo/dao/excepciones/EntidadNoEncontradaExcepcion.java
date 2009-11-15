@@ -3,10 +3,6 @@
  */
 package dondeando.modelo.dao.excepciones;
 
-/**
- * @author vrustarazo
- *
- */
 public class EntidadNoEncontradaExcepcion extends DAOExcepcion {
 
 	/**
