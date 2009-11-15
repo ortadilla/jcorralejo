@@ -110,7 +110,7 @@ public class GestionValoracionesLocalBean {
 		listaPuntuaciones.clear();
 		if(local.getOpiniones()!=null)
 			listaPuntuaciones.addAll(local.getPuntuaciones());
-		HerramientasList.ordenar(listaPuntuaciones, Opinion.ATRIBUTO_FECHA);
+		HerramientasList.ordenar(listaPuntuaciones, Opinion.ATRIBUTO_FECHA+" DESC");
 		servicioPuntuacion.rellenarPropiedadesNoMapeadas(listaPuntuaciones);
 		if(listaPuntuaciones!=null && listaPuntuaciones.size()==1)
 			estadoDeSeleccionTabla.add(0);

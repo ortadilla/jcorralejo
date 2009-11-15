@@ -7,6 +7,7 @@ import dondeando.modelo.entidades.Direccion;
 import dondeando.modelo.entidades.ImagenLocal;
 import dondeando.modelo.entidades.Local;
 import dondeando.modelo.entidades.Opinion;
+import dondeando.modelo.entidades.Parametros;
 import dondeando.modelo.entidades.Puntuacion;
 import dondeando.modelo.entidades.Servicio;
 import dondeando.modelo.entidades.TipoLocal;
@@ -37,6 +38,28 @@ public class LocalImpl implements Local{
 	private String shortDescPrecio;
 	private String urlVerMapa;
 	private String direccionHumana;
+	
+	public boolean isTieneImagenes(){
+		return imagenes!=null && imagenes.size()>0;
+	}
+	
+	public String getUrlPrimeraImagen(){
+		String outcome = "";
+		if(imagenes!=null && imagenes.size()>0)
+			outcome = Parametros.PARAMETRO_URL_IMAGENES+imagenes.iterator().next().getImagen().getNombre();
+		return outcome;
+	}
+	
+	public String getDescripcionPrimeraImagen(){
+		String descripcion = "";
+		if(imagenes!=null && imagenes.size()>0)
+			descripcion = imagenes.iterator().next().getImagen().getNombre();
+		return descripcion;
+	}
+	
+	public String getResumen(){
+		return (descripcion.length()>=200 ? descripcion.substring(0, 200) : descripcion) +"...";
+	}
 	
 	@Override
 	public int hashCode() {

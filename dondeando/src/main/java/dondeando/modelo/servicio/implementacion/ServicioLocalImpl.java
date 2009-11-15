@@ -111,6 +111,8 @@ public class ServicioLocalImpl implements ServicioLocal{
 		}
     	if(activo!=null)
     		criterios.add(servicioCriterios.construyeCriterio(Local.ATRIBUTO_ACTIVO, Criterio.IGUAL, activo));
+    	
+    	criterios.add(servicioCriterios.construyeCriterio(null, Criterio.SIN_REPETIDOS, null));
 
 		
 		return localDAO.encontrarPorCondicion(criterios);
@@ -379,5 +381,14 @@ public class ServicioLocalImpl implements ServicioLocal{
 		} catch (DAOExcepcion e) {
 			return  null;
 		}
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see dondeando.modelo.servicio.ServicioLocal#encontrarTodos()
+	 */
+	public List<Local> encontrarTodos() {
+		return localDAO.encontrarTodos();
+		
 	}
 }

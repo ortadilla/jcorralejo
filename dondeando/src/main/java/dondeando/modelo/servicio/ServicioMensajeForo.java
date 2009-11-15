@@ -60,4 +60,11 @@ public interface ServicioMensajeForo {
 	 * @return MensajeForo encontrado
 	 */
 	public MensajeForo encontrarMensajeForoPorId(Integer id);
+	
+	/**
+	 * Devuelve todos los mensajes de todos los foros del sistema
+	 * @return Mensajes encontrados
+	 */
+	public List<MensajeForo> encontrarTodos();
+	
 }

@@ -1,13 +1,11 @@
 · Menú principal
+· Al buscar locales se están quedadon elementos en la tabla repetidos
 · Menu --> Gestionar...-->Menu -->Gestionar...(no navega a la primera)
-· "background-color:green;"  a un panelBox
-· Ancho de los panelBox todos iguales
-· haling="center" --> Está ligeramente inclinado a la derecha 
 
 
 
 MEJORAS NECESARIAS:
-· javadoc de los cargarargumentosentrada
+· javadoc de todos los métodos
 · Teclas de acceso en cada botón
 · Texto alternativo y tooltip en las imágenes
 · Comentarios en Interfaces y Clases

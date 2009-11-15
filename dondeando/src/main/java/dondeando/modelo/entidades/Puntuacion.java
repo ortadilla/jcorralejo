@@ -6,6 +6,7 @@ import java.util.Date;
 public interface Puntuacion {
 	
 	public static final String ATRIBUTO_USUARIO = "usuario";
+	public static final String ATRIBUTO_ID = "id";
 	public static final String ATRIBUTO_FECHA = "fecha";
 
 	public Integer getId();

@@ -82,6 +82,7 @@ public class GestionLocalesBean {
 	private SelectItem[] selectSiNo;
 	
 	private boolean buscando;
+	private boolean yaBuscado = false;
 	private RowKeySet estadoDeSeleccionTabla = new RowKeySetImpl();
 	private ProtocoloBusqueda protocoloBusqueda;
 	
@@ -155,8 +156,10 @@ public class GestionLocalesBean {
 				criterioTipoLocal = (List<Integer>)protocoloBusqueda.getParamsBusqueda().get(Local.ATRIBUTO_TIPOS_LOCAL);
 			if(protocoloBusqueda.getParamsBusqueda().containsKey(Local.ATRIBUTO_PROVINCIA))
 				criterioProvincia = (Provincia)protocoloBusqueda.getParamsBusqueda().get(Local.ATRIBUTO_PROVINCIA);
-			if(protocoloBusqueda.isLanzaConsulta())
+			if(protocoloBusqueda.isLanzaConsulta() && !yaBuscado){
 				buscar();
+				yaBuscado = true;
+			}
 		}
 	}
 	

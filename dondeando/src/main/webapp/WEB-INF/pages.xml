@@ -1,7 +1,7 @@
 <pages>
-	<page view-id="/dondeando/menuPrincipal.jsp">
+<!--<page view-id="/dondeando/menuPrincipal.jsp">
 		<end-conversation />
-	</page>
+	</page> -->
 	
 	<!-- Entradas para Dondeando -->
 	<page view-id="/dondeando/editarConfiguracionNotificacionesUsuario.jsp"			action="#{editarConfiguracionNotificacionesBean.cargarArgumentosDeEntrada}" />
