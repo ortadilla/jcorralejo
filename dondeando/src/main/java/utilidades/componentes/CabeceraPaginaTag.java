@@ -91,19 +91,34 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     	form.setParent(filasPadre);
     	form.setId("formMenuSiglo");
     	form.doStartTag();
+    	
+    	if(!"false".equals(botonMenu)){
+    		HtmlTableLayoutTag tabla2 = crearTabla(this);
+    		HtmlRowLayoutTag fila2 = crearFila(tabla2);
+    		HtmlCellFormatTag celda2 = crearCelda("center", null, null, null, null, fila2);
+            crearImagen("/imagenes/dondeando/logo.jpg",null, mensajesCore.obtenerTexto("DONDECOMO"), null, celda2);
+    		fin(celda2);
+    		fin(fila2);
+    		fin(tabla2);
+    	}
+
     	HtmlTableLayoutTag tabla = crearTabla(form);
     	HtmlRowLayoutTag fila = crearFila(tabla);
-
-    	
-//    	celda = crearCelda(null, null, "3", null, null, fila);
-//        crearImagen("/imagenes/dondeando/cabecera.jpg",
-//                    null, "Dondeando", "true", celda);
+		celda = crearCelda("left", null, null, null, null, fila);
+		CoreCommandLinkTag link = crearCommandLink(null,"#{"+CABECERA_PAGINA_BEAN+"."+METODO_IR_MENU+"}", null, null, false, false,
+				"true", celda, false);
+        crearImagen("/imagenes/dondeando/home.png",null, mensajesCore.obtenerTexto("IR_MENU"), null, link);
+        fin(link);
+        fin(celda);
+        
+//		celda = crearCelda("center", "1%", null, null, null, fila);
+//        crearImagen("/imagenes/dondeando/logo.jpg",null, mensajesCore.obtenerTexto("DONDECOMO"), null, link);
 //        fin(celda);
     	
     	
     	
     	celda = crearCelda("right", null, null, null, null, fila);
-    	CoreCommandLinkTag link = null;
+//    	CoreCommandLinkTag link = null;
 
     	if(servicioUsuario.isUsuarioActivoAnonimo()){
     		link = crearCommandLink(mensajesCore.obtenerTexto("LOGIN"),
@@ -138,23 +153,25 @@ public class CabeceraPaginaTag extends CorePanelHorizontalLayoutTag {
     	fin(celda);
     	fin(fila);
 
-    	fin(tabla);
+    	fin(tabla);/*
     	if(!"false".equals(botonMenu)){
     		tabla = crearTabla(this);
     		fila = crearFila(tabla);
     		//TODO: ¿Meter alguna imagen de fondo?
     		//celda = crearCelda(null, "1%", null, null, "background-image: url(../skins/geos2/skin_images/menuBarBackground.png);", fila);
-    		celda = crearCelda(null, "1%", null, null, null, fila);
-        	link = crearCommandLink(null,"#{"+CABECERA_PAGINA_BEAN+"."+METODO_IR_MENU+"}", null, null, false, false,
-    				"true", celda, false);
-            crearImagen("/imagenes/dondeando/home.png",null, mensajesCore.obtenerTexto("IR_MENU"), null, link);
-            fin(link);
+    		celda = crearCelda("center", "1%", null, null, null, fila);
+//        	link = crearCommandLink(null,"#{"+CABECERA_PAGINA_BEAN+"."+METODO_IR_MENU+"}", null, null, false, false,
+//    				"true", celda, false);
+            crearImagen("/imagenes/dondeando/logo.jpg",null, mensajesCore.obtenerTexto("IR_MENU"), null, celda);
+//            fin(link);
             
 //    		crearBotonMenu(celda);
     		fin(celda);
     		fin(fila);
     		fin(tabla);
-    	}
+    	}*/
+    	
+    
     	fin(filasPadre);
     	fin(tablaPadre);
 
