@@ -4,7 +4,6 @@ package seam;
  * Façade para la clase Seam de Seam, valga la redundacia, en previsión de que algunas funciones
  * desaparecerán en Seam 2.0.0 (p.e., invalidateSession()). 
  * 
- * @author jmarjona
  */
 public class Seam{
     

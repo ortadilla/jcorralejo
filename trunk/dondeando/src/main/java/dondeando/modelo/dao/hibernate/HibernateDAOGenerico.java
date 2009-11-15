@@ -41,7 +41,6 @@ import utilidades.varios.NombresBean;
  * 
  * @see com.hp.geos.modelo.dao.DAOGenerico
  * 
- * @author <a href="mailto:amorales@hphis.com">Tucho</a>
  */
 public abstract class HibernateDAOGenerico<T, ID extends Serializable> implements DAOGenerico<T, ID> {
     

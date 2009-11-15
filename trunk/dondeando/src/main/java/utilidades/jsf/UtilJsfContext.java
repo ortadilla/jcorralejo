@@ -36,7 +36,6 @@ public class UtilJsfContext {
 	 * Método para insertar mensajes de información en el contexto jsf actual. 
 	 * En caso que la lista de mensajes pasada como parámetro sea nulo o la lista vacía, no se insertará ningún mensaje.
 	 * @param String mensaje
-	 * @author emiranda
 	 */
 	public void insertaMensajesInformacion(List<String> mensajes) {
 		if(mensajes != null)
@@ -49,7 +48,6 @@ public class UtilJsfContext {
 	 * o mensage principal, y el detalle.
 	 * @param mensajeSumario
 	 * @param mensajeDetalle
-	 * @author emiranda
 	 */
 	public void insertaMensajeInformacion(String mensajeSumario, String mensajeDetalle){
 		insertarMensaje(mensajeSumario, mensajeDetalle, FacesMessage.SEVERITY_INFO);
@@ -57,7 +55,6 @@ public class UtilJsfContext {
 	
 	/**
 	 * Método para insertar un mensaje de información en el contexto jsf actual. 
-	 * @author emiranda
 	 */
 	public void insertaMensajeInformacion(String mensaje){
 		insertarMensaje(mensaje, null, FacesMessage.SEVERITY_INFO);
@@ -105,7 +102,6 @@ public class UtilJsfContext {
 	 * Método para insertar mensajes de advertencia en el contexto jsf actual. 
 	 * En caso que la lista de mensajes pasada como parámetro sea nulo o la lista vacía, no se insertará ningún mensaje.
 	 * @param String mensaje
-	 * @author emiranda
 	 */
 	public void insertaMensajesAdvertencia(List<String> mensajes) {
 		if(mensajes != null && !mensajes.isEmpty())
@@ -117,7 +113,6 @@ public class UtilJsfContext {
 	 * Método para insertar mensajes de advertencia en el contexto jsf actual. Dicho mensaje vendrá dado en dos partes, el mensaje principal y el detalle.
 	 * @param mensajeSumario
 	 * @param mensajeDetalle
-	 * @author emiranda
 	 */
 	public void insertaMensajeAdvertencia(String mensajeSumario, String mensajeDetalle){
 		insertarMensaje(mensajeSumario, mensajeDetalle, FacesMessage.SEVERITY_WARN);
@@ -126,7 +121,6 @@ public class UtilJsfContext {
 	/**
 	 * Método para insertar un mensaje de advertencia en el contexto jsf
 	 * @param String mensaje
-	 * @author emiranda
 	 */
 	public void insertaMensajeAdvertencia(String mensaje){
 		insertarMensaje(mensaje, null, FacesMessage.SEVERITY_WARN);

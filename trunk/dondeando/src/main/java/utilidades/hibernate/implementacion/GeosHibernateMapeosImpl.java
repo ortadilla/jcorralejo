@@ -16,11 +16,9 @@ import org.w3c.dom.NodeList;
 import utilidades.hibernate.GeosHibernateMapeos;
 
 /**
- * Lee los mapeos y dataset a cargar a partir del fichero de configuración. Este fichero debe cumplir:
+ * Lee los mapeos y dataset a cargar a partir del fichero de configuración. 
  * 
- * http://www.hp-cda.com/productos/geos/dtd/entidadesBD.dtd
  * 
- * @author jmarjona
  */
 public class GeosHibernateMapeosImpl implements GeosHibernateMapeos {
     private Log log = LogFactory.getLog(GeosHibernateMapeosImpl.class);

@@ -20,7 +20,6 @@ import org.apache.myfaces.trinidad.model.UploadedFile;
  * Es necesario "copiar" esta clase ya que el UploadedFileImpl de trinidad define un 
  * constructor por defecto que no está visible.
  * 
- * @author maaguilar
  */
 public class GeosUploadedFileImpl implements UploadedFile, Serializable
 {

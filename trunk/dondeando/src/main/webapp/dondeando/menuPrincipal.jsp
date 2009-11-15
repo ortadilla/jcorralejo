@@ -5,9 +5,9 @@
 	xmlns:tr="http://myfaces.apache.org/trinidad"
 	xmlns:trh="http://myfaces.apache.org/trinidad/html"
 	xmlns:geos="http://www.hp-cda.com/adf/faces">
-	<jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
-		doctype-system="http://www.w3.org/TR/html4/loose.dtd"
-		doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN" />
+<!--	<jsp:output omit-xml-declaration="true" doctype-root-element="HTML"-->
+<!--		doctype-system="http://www.w3.org/TR/html4/loose.dtd"-->
+<!--		doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN" />-->
 	<jsp:directive.page contentType="text/html;charset=windows-1252" />
 
 	<f:view>
@@ -84,6 +84,9 @@
 										<tr:spacer height="20" />
 										<tr:commandLink action="#{menuPrincipalBean.accionTipoLocal}" 
 											text="#{resCore['BUSQUEDA_AVANZADA']}" inlineStyle="font-weight: bolder;"/>
+										<tr:spacer height="10" />
+										<tr:commandLink action="#{menuPrincipalBean.accionTipoLocal}" 
+											text="#{resCore['AGREGAR_LOCAL']}" inlineStyle="font-weight: bolder;"/>
 									</tr:panelBox>
 								</trh:cellFormat>
 								<trh:cellFormat rowSpan="3" width="60%">

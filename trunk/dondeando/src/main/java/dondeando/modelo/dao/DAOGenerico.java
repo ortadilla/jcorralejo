@@ -23,7 +23,6 @@ import utilidades.busquedas.consultas.Criterio;
  * automatic transactional dirty checking of business objects in persistent
  * state.
  *
- * @author <a href="mailto:amorales@hphis.com">Tucho</a>
  */
 public interface DAOGenerico<T, ID extends Serializable> {
     

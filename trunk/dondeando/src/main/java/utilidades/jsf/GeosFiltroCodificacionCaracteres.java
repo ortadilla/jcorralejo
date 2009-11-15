@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletRequest;
  * indicará qué codificación es la que se quiere forzar y 
  * "prevaleceSobreCliente" si se ha de forzar el cambio.
  * 
- * @author rperez
  */
 public class GeosFiltroCodificacionCaracteres implements Filter {
 

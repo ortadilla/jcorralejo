@@ -18,9 +18,6 @@ import org.jboss.seam.mock.MockViewHandler;
 import org.jboss.seam.web.ExceptionFilter;
 
 
-/**
- * @author jmarjona
- */
 public class GeosExceptionFilter extends ExceptionFilter {
     
     private static final LogProvider log = Logging.getLogProvider(GeosExceptionFilter.class);

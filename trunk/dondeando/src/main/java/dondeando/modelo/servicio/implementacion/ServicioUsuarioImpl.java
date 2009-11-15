@@ -180,6 +180,7 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     							TipoUsuario tipoUsuario, Imagen imagen){
     	Usuario usuario = new UsuarioImpl();
     	setearDatosUsuario(usuario, login, password, nombre, apellidos, direccion, email, tipoUsuario, imagen);
+    	usuario.setKarma(new BigDecimal(5)); //Pendiente de ver su cálculo
     	usuarioDAO.hacerPersistente(usuario);
     	
     	//Enviamos las notificaciones
@@ -226,7 +227,6 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     	usuario.setEmail(email);
     	usuario.setTipoUsuario(tipoUsuario);
     	usuario.setActivo(true); //Si ponemos confirmación por email, sería false
-    	usuario.setKarma(new BigDecimal(5)); //Pendiente de ver su cálculo
     	usuario.setAvatar(imagen);
     }
     

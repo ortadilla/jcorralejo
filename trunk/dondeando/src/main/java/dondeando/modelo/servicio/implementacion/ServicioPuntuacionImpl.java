@@ -110,7 +110,9 @@ public class ServicioPuntuacionImpl implements ServicioPuntuacion{
 
 			//Antes de actualizar la media del local, hay que actualizar el karma del usuario
 			BigDecimal actualizacionKarma = BigDecimal.ZERO;
-			if(media.compareTo(local.getValoracion().subtract(new BigDecimal(0.5)))>0 && media.compareTo(local.getValoracion().add(new BigDecimal(0.5)))<0)
+			if(local.getValoracion()==null)
+				actualizacionKarma = new BigDecimal(0.10);
+			else if(media.compareTo(local.getValoracion().subtract(new BigDecimal(0.5)))>0 && media.compareTo(local.getValoracion().add(new BigDecimal(0.5)))<0)
 				actualizacionKarma = new BigDecimal(0.15);
 			else if (media.compareTo(local.getValoracion().subtract(new BigDecimal(1)))<0 || media.compareTo(local.getValoracion().add(new BigDecimal(1)))>0)
 				actualizacionKarma = media.subtract(new BigDecimal(1)).abs().divide(BigDecimal.TEN).negate();

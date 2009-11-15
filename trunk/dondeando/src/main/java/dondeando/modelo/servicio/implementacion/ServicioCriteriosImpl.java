@@ -18,10 +18,6 @@ import utilidades.varios.Fecha;
 import dondeando.modelo.servicio.ServicioCriterios;
 
 
-/**
- * @author agomez
- */
-
 @Name(SERVICIO_CRITERIOS)
 @Scope(ScopeType.CONVERSATION)
 public class ServicioCriteriosImpl implements ServicioCriterios {
