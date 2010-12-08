@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="biblioTec.modelo.entidades.implementacion">
+	<class name="PerfilImpl" table="usuario">
+
+		<id name="id" unsaved-value="null">
+			<generator class="increment" />
+		</id>
+		<version name="version" />
+		
+		<property name="descripcion" column="descripcion" not-null="true"/>
+
+	</class>
+</hibernate-mapping>

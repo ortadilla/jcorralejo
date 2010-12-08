@@ -1,5 +1,7 @@
 package biblioTec.modelo.entidades;
 
+import java.util.Set;
+
 public interface Libro {
 
 	public Integer getId();
@@ -19,6 +21,9 @@ public interface Libro {
 	
 	public Integer getUnidadesDisponibles();
 	public void setUnidadesDisponibles(Integer unidadesDisponibles);
+	
+	public Set<Prestamo> getPrestamos();
+	public void setPrestamos(Set<Prestamo> prestamos);
 	
 	
 }

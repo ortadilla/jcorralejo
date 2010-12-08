@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="biblioTec.modelo.entidades.implementacion">
+	<class name="UsuarioImpl" table="usuario">
+
+		<id name="id" unsaved-value="null">
+			<generator class="increment" />
+		</id>
+		<version name="version" />
+		
+		<property name="login" column="login" not-null="true"/>
+		<property name="pass" column="pass" not-null="true"/>
+		<property name="nombre" column="nombre" not-null="true"/>
+		
+		<set name="perfiles" table="usuarioPerfil">
+			<key column="Usuario" />
+			<many-to-many column="perfil" class="PerfilImpl" />
+		</set>
+		
+		<set name="prestamos" inverse="true" cascade="all-delete-orphan">
+			<key column="usuario" />
+			<one-to-many class="PrestamoImpl" />
+		</set>
+
+	</class>
+</hibernate-mapping>

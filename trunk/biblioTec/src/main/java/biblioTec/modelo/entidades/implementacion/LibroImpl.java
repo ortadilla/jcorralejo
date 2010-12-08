@@ -1,6 +1,9 @@
 package biblioTec.modelo.entidades.implementacion;
 
+import java.util.Set;
+
 import biblioTec.modelo.entidades.Libro;
+import biblioTec.modelo.entidades.Prestamo;
 
 public class LibroImpl implements Libro {
 
@@ -10,7 +13,7 @@ public class LibroImpl implements Libro {
 	private String autor;
 	private String isbn;
 	private Integer unidadesDisponibles;
-	
+	private Set<Prestamo> prestamos;
 	
 	@Override
 	public int hashCode() {
@@ -68,6 +71,12 @@ public class LibroImpl implements Libro {
 	}
 	public void setUnidadesDisponibles(Integer unidadesDisponibles) {
 		this.unidadesDisponibles = unidadesDisponibles;
+	}
+	public Set<Prestamo> getPrestamos() {
+		return prestamos;
+	}
+	public void setPrestamos(Set<Prestamo> prestamos) {
+		this.prestamos = prestamos;
 	}
 	
 	
