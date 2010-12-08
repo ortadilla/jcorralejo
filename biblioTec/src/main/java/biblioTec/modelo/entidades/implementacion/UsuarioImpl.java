@@ -1,5 +1,9 @@
 package biblioTec.modelo.entidades.implementacion;
 
+import java.util.Set;
+
+import biblioTec.modelo.entidades.Perfil;
+import biblioTec.modelo.entidades.Prestamo;
 import biblioTec.modelo.entidades.Usuario;
 
 
@@ -10,6 +14,8 @@ public class UsuarioImpl implements Usuario {
 	private String nombre;
 	private String login;
 	private String pass;
+	private Set<Prestamo> prestamos;
+	private Set<Perfil> perfiles;
 	
 	@Override
 	public int hashCode() {
@@ -61,6 +67,18 @@ public class UsuarioImpl implements Usuario {
 	}
 	public void setPass(String pass) {
 		this.pass = pass;
+	}
+	public Set<Prestamo> getPrestamos() {
+		return prestamos;
+	}
+	public void setPrestamos(Set<Prestamo> prestamos) {
+		this.prestamos = prestamos;
+	}
+	public Set<Perfil> getPerfiles() {
+		return perfiles;
+	}
+	public void setPerfiles(Set<Perfil> perfiles) {
+		this.perfiles = perfiles;
 	}
 
 }

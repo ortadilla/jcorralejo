@@ -1,5 +1,7 @@
 package biblioTec.modelo.entidades;
 
+import java.util.Set;
+
 public interface Usuario {
 	
 	public Integer getId();
@@ -17,4 +19,9 @@ public interface Usuario {
 	public String getPass();
 	public void setPass(String pass);
 	
+	public Set<Prestamo> getPrestamos();
+	public void setPrestamos(Set<Prestamo> prestamos);
+	
+	public Set<Perfil> getPerfiles();
+	public void setPerfiles(Set<Perfil> perfiles);
 }

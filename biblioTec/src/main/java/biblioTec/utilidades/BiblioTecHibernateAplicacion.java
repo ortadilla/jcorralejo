@@ -95,6 +95,11 @@ public class BiblioTecHibernateAplicacion{
         List<String> mapeos = new ArrayList<String>();
         
         mapeos.add(pathMapeos+"Ejemplo.hbm.xml");
+        mapeos.add(pathMapeos+"Libro.hbm.xml");
+        mapeos.add(pathMapeos+"Usuario.hbm.xml");
+        mapeos.add(pathMapeos+"Prestamo.hbm.xml");
+        mapeos.add(pathMapeos+"Perfil.hbm.xml");
+        mapeos.add(pathMapeos+"PermisoPerfil.hbm.xml");
         
         return mapeos;
     }
