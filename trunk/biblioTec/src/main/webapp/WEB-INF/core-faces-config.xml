@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config 
+PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+                            "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<faces-config>
+
+	<!-- Phase listener needed for all Seam applications -->
+	<lifecycle>
+		<phase-listener>org.jboss.seam.jsf.SeamExtendedManagedPersistencePhaseListener</phase-listener>
+	</lifecycle>
+
+	<application>
+		<default-render-kit-id> org.apache.myfaces.trinidad.core
+		</default-render-kit-id>
+		<locale-config>
+			<default-locale>es</default-locale>
+			<supported-locale>es</supported-locale>
+		</locale-config>
+
+		<message-bundle id="mensajesCore">mensajesCore</message-bundle>
+	</application>
+
+	<render-kit>
+		<render-kit-id>
+			org.apache.myfaces.trinidad.core.desktop
+		</render-kit-id>
+
+		<render-kit-class>
+			org.apache.myfaces.trinidadinternal.renderkit.core.desktop.DesktopRenderKit
+		  </render-kit-class>
+	</render-kit>
+</faces-config>

@@ -1,0 +1,9 @@
+<pages>
+<!--<page view-id="/dondeando/menuPrincipal.jsp">
+		<end-conversation />
+	</page> -->
+	
+	<!-- Entradas BiblioTec -->
+	<page view-id="/dondeando/menuPrincipal.jsp"			action="#{menuPrincipalBean.cargarArgumentosDeEntrada}" />
+
+</pages>

@@ -33,7 +33,6 @@ public class PruebaBD{
 	public void accionBoton(){
 		rendered = true;
 		
-		laDatabase.beginTransaction();
 		Ejemplo e = new EjemploImpl();
 		e.setNombre("insertate!!!");
 		laDatabase.save(e);
