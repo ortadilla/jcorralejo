@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns="http://jboss.com/products/seam/components"
+            xmlns:security="http://jboss.com/products/seam/security"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation=
+                "http://jboss.com/products/seam/security http://jboss.com/products/seam/security-1.2.xsd
+                 http://jboss.com/products/seam/components http://jboss.com/products/seam/components-1.2.xsd">
+
+  <component name="org.jboss.seam.core.manager">
+    <property name="conversationTimeout">3000000</property>
+  </component>
+
+  <component name="biblioTecHibernate" class="biblioTec.utilidades.BiblioTecHibernateAplicacion">
+    <property name="sessionFactoryName">java:/database</property>
+  </component>
+
+  <component name="database" class="org.jboss.seam.core.ManagedHibernateSession">
+    <property name="sessionFactoryJndiName">java:/database</property>
+  </component>
+
+  
+</components>
