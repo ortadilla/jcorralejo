@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<trinidad-config xmlns="http://myfaces.apache.org/trinidad/config">
+
+  <!--<skin-family>geos2</skin-family>-->
+	<!--<skin-family>simple</skin-family>-->
+	<skin-family>hojiblanca</skin-family>
+	<accessibility-mode>inaccessible</accessibility-mode>
+	<debug-output>false</debug-output>
+	
+	<time-zone>Europe/Madrid</time-zone>
+	<currency-code>EUR</currency-code>
+	<formatting-locale>es_ES</formatting-locale>
+	
+</trinidad-config>
