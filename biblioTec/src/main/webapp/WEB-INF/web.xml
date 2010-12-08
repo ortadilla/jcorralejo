@@ -6,7 +6,7 @@
 
 	<context-param>
 		<param-name>javax.faces.CONFIG_FILES</param-name>
-		<param-value>/WEB-INF/faces-config.xml</param-value>
+		<param-value>/WEB-INF/core-faces-config.xml, /WEB-INF/faces-config.xml</param-value>
 	</context-param>
 	<context-param>
 		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
