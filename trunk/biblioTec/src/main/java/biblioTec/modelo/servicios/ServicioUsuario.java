@@ -1,5 +1,6 @@
 package biblioTec.modelo.servicios;
 
+import java.util.HashSet;
 import java.util.List;
 
 import biblioTec.modelo.entidades.Perfil;
@@ -12,5 +13,7 @@ public interface ServicioUsuario {
 	public Usuario devolverUsuarioActivo();
 	
 	public List<Usuario> encontrarUsuariosPorLoginYPerfil(String usuario, Perfil perfil);
+	
+	public void actualizarDatosUsuario(Usuario usuario, String login, String nombre, HashSet<Perfil> perfiles);
 
 }

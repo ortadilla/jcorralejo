@@ -7,6 +7,7 @@ import static org.jboss.seam.ScopeType.SESSION;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashSet;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -93,6 +94,16 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     
     public List<Usuario> encontrarUsuariosPorLoginYPerfil(String usuario, Perfil perfil) {
     	return usuarioDAO.encontrarUsuariosPorLoginYPerfil(usuario, perfil);
+    }
+    
+    public void actualizarDatosUsuario(Usuario usuario, String login, String nombre, HashSet<Perfil> perfiles) {
+    	if(usuario!=null){
+    		usuario.setNombre(nombre);
+    		usuario.setLogin(login);
+    		usuario.setPerfiles(perfiles);
+    		
+    		usuarioDAO.flushear();
+    	}
     }
 
 }

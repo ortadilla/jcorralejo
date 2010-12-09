@@ -62,5 +62,9 @@ public class UsuarioDAOImpl implements UsuarioDAO{
             res += "%";
         return res;
     }
+    
+    public void flushear() {
+    	session.flush();
+    }
 
 }

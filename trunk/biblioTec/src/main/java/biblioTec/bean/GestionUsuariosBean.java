@@ -1,5 +1,9 @@
 package biblioTec.bean;
 
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_DETALLES_USUARIO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_EDITAR_USUARIO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.USUARIO;
 import static biblioTec.utilidades.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static biblioTec.utilidades.ConstantesReglasNavegacion.MTO_USUARIOS;
 import static biblioTec.utilidades.NombresBean.GESTION_USUARIOS_BEAN;
@@ -24,8 +28,6 @@ import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 
 import biblioTec.binding.GestionUsuariosBinding;
 import biblioTec.modelo.entidades.Perfil;
@@ -33,10 +35,8 @@ import biblioTec.modelo.entidades.Usuario;
 import biblioTec.modelo.servicios.ServicioPerfil;
 import biblioTec.modelo.servicios.ServicioUsuario;
 import biblioTec.utilidades.ConstantesArgumentosNavegacion;
-import biblioTec.utilidades.ConstantesReglasNavegacion;
 import biblioTec.utilidades.MapaArgumentos;
 import biblioTec.utilidades.MensajesCore;
-import biblioTec.utilidades.NombresBean;
 import biblioTec.utilidades.SelectItemBuilder;
 import biblioTec.utilidades.UtilJsfContext;
 
@@ -119,7 +119,26 @@ public class GestionUsuariosBean {
 			Usuario usuario = listaUsuarios.get(seleccion);
 			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 			mapaArgumentos.limpiaMapa();
-			mapaArgumentos.setArgumento(ConstantesArgumentosNavegacion.USUARIO, usuario);
+			mapaArgumentos.setArgumento(USUARIO, usuario);
+			mapaArgumentos.setArgumento(ACCION, ACCION_DETALLES_USUARIO);
+			outcome = MTO_USUARIOS;
+		}else{
+			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
+		}
+
+		return outcome;
+	}
+	
+	public String modificar(){
+		String outcome = "";
+		if(estadoDeSeleccionTabla.size()==1){
+
+			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
+			Usuario usuario = listaUsuarios.get(seleccion);
+			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+			mapaArgumentos.limpiaMapa();
+			mapaArgumentos.setArgumento(USUARIO, usuario);
+			mapaArgumentos.setArgumento(ACCION, ACCION_EDITAR_USUARIO);
 			outcome = MTO_USUARIOS;
 		}else{
 			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));

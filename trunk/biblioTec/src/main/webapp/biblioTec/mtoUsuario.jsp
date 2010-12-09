@@ -32,7 +32,8 @@
 							<tr:spacer height="20" />
 							<trh:tableLayout
 								inlineStyle="width: 100%;  border-style: solid; border-width: 1px;"
-								cellSpacing="5" cellPadding="0">
+								cellSpacing="5" cellPadding="0"
+								rendered="#{mtoUsuarioBean.detalles}">
 								<trh:rowLayout>
 									<tr:outputText value="#{resCore['LOGIN']}"
 										inlineStyle="font-weight: bolder;" />
@@ -52,21 +53,63 @@
 										inlineStyle="font-weight: bolder;" />
 									<tr:spacer height="20" />
 									<trh:cellFormat columnSpan="2">
-										<tr:outputText value="#{mtoUsuarioBean.perfiles}" />
+										<tr:outputText value="#{mtoUsuarioBean.descPerfiles}" />
 									</trh:cellFormat>
 								</trh:rowLayout>
 							</trh:tableLayout>
 
+							<trh:tableLayout
+								inlineStyle="width: 100%;  border-style: solid; border-width: 1px;"
+								cellSpacing="5" cellPadding="0"
+								rendered="#{!mtoUsuarioBean.detalles}">
+								<trh:rowLayout>
+									<tr:outputText value="#{resCore['LOGIN']}"
+										inlineStyle="font-weight: bolder;" />
+									<tr:spacer height="20" />
+									<tr:inputText value="#{mtoUsuarioBean.login}" />
+								</trh:rowLayout>
+								<trh:rowLayout>
+									<tr:outputText value="#{resCore['NOMBRE']}"
+										inlineStyle="font-weight: bolder;" />
+									<tr:spacer height="20" />
+									<trh:cellFormat columnSpan="2">
+										<tr:inputText value="#{mtoUsuarioBean.nombre}" />
+									</trh:cellFormat>
+								</trh:rowLayout>
+								<trh:rowLayout>
+									<tr:outputText value="#{resCore['PERFILES']}"
+										inlineStyle="font-weight: bolder;" />
+									<tr:spacer height="20" />
+									<trh:cellFormat columnSpan="2">
+										<tr:selectManyListbox value="#{mtoUsuarioBean.perfiles}">
+											<f:selectItems id="selectPerfiles"
+												value="#{mtoUsuarioBean.selectPerfiles}" />
+										</tr:selectManyListbox>
+									</trh:cellFormat>
+								</trh:rowLayout>
+							</trh:tableLayout>
+
+							<tr:spacer width="20" height="20" />
+							<tr:panelHorizontalLayout halign="center"
+								rendered="#{!mtoUsuarioBean.detalles}">
+								<tr:commandButton text="#{resCore['ACEPTAR']}" id="btnAceptar"
+									action="#{mtoUsuarioBean.aceptar}" />
+								<tr:spacer width="20" height="10" />
+								<tr:commandButton text="#{resCore['CANCELAR']}" id="btnCancelar"
+									immediate="true" action="#{mtoUsuarioBean.cancelar}" />
+							</tr:panelHorizontalLayout>
+
+							<tr:spacer width="20" height="20" />
+							<tr:panelHorizontalLayout halign="center">
+								<tr:commandButton text="#{resCore['PRESTAMOS']}"
+									id="btnModificar" action="#{mtoUsuarioBean.verPrestamos}" />
+							</tr:panelHorizontalLayout>
 							<tr:spacer width="20" height="20" />
 							<tr:panelHorizontalLayout halign="center">
 								<tr:commandButton text="#{resCore['VOLVER']}" id="volver"
 									action="#{mtoUsuarioBean.volver}" />
 							</tr:panelHorizontalLayout>
 							<tr:spacer width="20" height="20" />
-							<tr:panelHorizontalLayout halign="center">
-								<tr:commandButton text="#{resCore['PRESTAMOS']}"
-									id="btnModificar" action="#{mtoUsuarioBean.verPrestamos}" />
-							</tr:panelHorizontalLayout>
 						</tr:panelBox>
 					</tr:panelHorizontalLayout>
 				</tr:panelPage>
