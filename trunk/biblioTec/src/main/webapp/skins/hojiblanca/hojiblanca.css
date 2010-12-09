@@ -1,0 +1,402 @@
+/**
+  * Valores por defecto para los elementos HTML
+  */
+
+IMG {
+  border: none;
+}
+
+
+/** 
+  * Alias para los valores de las fuentes por defecto
+  */
+.AFDefaultFontFamily:alias {font-family: Verdana, Arial, Sans-Serif}
+.AFDefaultFont:alias {font-size: 12px}
+
+/**
+  * Para el panelHeader
+  */
+h1.af|panelHeader {
+  background-color:  #669966;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 16px;
+  border:solid 1px black;
+  color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/**
+  * Para el showDetailHeader
+  */
+h1.af|showDetailHeader {
+  background: #dededc;  
+  margin: 0px;
+  padding: 4px;
+  padding-left: 8px;
+  color: black;
+}
+
+/*Para poner el color del triángulo del showDetailHeader en negro*/
+.p_OraHideShowDisclosedSymbol {
+  color: black;
+}
+
+/** Para todos los panelBox */
+af|panelBox::header {
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-bottom: 4px; 
+  padding-top: 4px;
+}
+
+/**
+  * Selectores para los panelBox con background "light"
+  */
+af|panelBox::light af|panelBox::body {
+  padding: 6px;
+  font-size: 12px;  
+}
+
+af|panelBox::light af|panelBox::content {
+  padding: 10px;  
+  width: 100%;
+}
+
+
+/**
+  * Selectores para los panelBox con background "medium"
+  */
+af|panelBox::medium af|panelBox::body {
+  background-color:  #f7f7f7;
+  border: solid 1px black;
+  padding: 6px;
+  font-size: 12px;  
+}
+
+af|panelBox::medium af|panelBox::header {
+  background-color: #CCCCCC;
+  padding-left: 10px;
+  padding-bottom: 4px; 
+  padding-top: 4px;
+  width: 100%;
+}
+
+af|panelLabelAndMessage::label{
+	font-weight: bold;
+}
+
+af|outputLabel {
+  font-weight: bold;
+}
+
+/**
+  * Selectores para los panelBox con background "dark"
+  */
+af|panelBox::dark {
+  width: 100%;  
+}
+
+af|panelBox::dark af|panelBox::header {
+/*  background-color: #CCCCCC;*/
+  background-color:  #669966;
+  padding-left: 10px;
+  padding-bottom: 4px; 
+  padding-top: 4px;
+  width: 100%;
+  color: white;
+}
+
+af|panelBox::dark af|panelBox::body {
+  width: 100%;
+  background-color: #E7E4EA;
+}
+
+af|panelBox::dark af|panelBox::content {
+  background-color: #E7E4EA;
+  border-top: solid 1px black;
+  padding: 10px;
+  color: white;
+  width: 100%;
+}
+
+/**
+  * Para los panelFormLayout
+  */
+af|panelFormLayout::content-cell {
+  width: 100%;
+}
+
+/**
+  * Para las columnas de las tablas
+  */
+af|column::header-icon-format {
+  /*background: blue;*/
+  color: black;
+  padding: 10px;
+}
+
+af|column::sortable-header-text {
+ /* background: yellow;*/
+  color: black;
+  padding: 10px;
+}
+
+af|column::header-text {
+  text-align: left;
+  color: black;
+}
+
+af|column::header-number {
+  text-align: left;
+  color: black;
+}
+
+.panelFondoBotonesColecciones {
+  background-color: white;
+}
+
+/** panelTabbed **/
+/** ---------- **/
+/** .AFPanelTabbed:alias is included in af|panelTabbed::orientation-top and 
+    af|panelTabbed::orientation-bottom which are the styles on the table. **/
+.AFPanelTabbed:alias {
+  background-color: #669966; 
+  text-align:center;
+}
+/** make the top tab bar have a solid border underneath **/
+af|panelTabbed::orientation-top
+{
+  border-top:3px solid #669966;
+}
+
+/** make the top tab bar have a solid border underneath **/
+af|panelTabbed::orientation-bottom
+{
+  border-bottom:3px solid #669966;
+}
+
+af|panelTabbed::separator {
+  margin-width:4px;
+  border-top: #ADBCC5; solid 4pt ;
+  border-bottom: #ADBCC5; solid 4pt ;
+  BACKGROUND-COLOR: #669966;
+  PADDING-LEFT: 5px;
+ }
+  
+ af|panelTabbed::separator-before-selected {
+  margin-width:4px;
+  border-top: #ADBCC5; solid 4pt ;
+  border-bottom: #ADBCC5; solid 4pt ;
+  BACKGROUND-COLOR: #669966;
+  PADDING-LEFT: 5px;
+ }
+  
+ af|panelTabbed::separator-after-selected {
+  margin-width:4px;
+  border-top: #ADBCC5; solid 4pt ;
+  border-bottom: #ADBCC5; solid 4pt ;
+  BACKGROUND-COLOR: #669966;
+  PADDING-LEFT: 5px;
+ }
+
+af|panelTabbed::tab {
+  font-weight:bold;
+  font-family:Tahoma; 
+  padding:6px 8px;
+  BACKGROUND-COLOR: #CCCCCC;
+}
+/* */
+af|panelTabbed::tab-selected {
+  font-family:Tahoma;
+  padding:6px 8px; 
+  text-decoration: none; 
+  BACKGROUND-COLOR: #f7f7f7;
+}  
+
+af|panelTabbed::tab-link {
+  color:white;
+  text-decoration: none;
+  
+}
+
+af|panelTabbed::tab-link:hover
+{
+  color: #E08D3C;
+}
+
+/* put some space in the first cell */
+af|panelTabbed::cell-start {
+  background-color:transparent; 
+  padding-left:3px;
+ 
+}
+af|panelTabbed::cell-end {
+	background-color:transparent;
+    padding-left:3px;
+}
+/** put some space between the tabs and the body*/
+
+af|panelTabbed::body
+{
+  padding: 10px;
+  border-left: 3px solid  #669966; 
+  border-right: 3px solid  #669966; 
+ 
+}
+
+/** Para cambiar los estilos de los textos en los mensajes*/
+af|messages::message-text {
+  color: #224422; 
+}
+
+af|messages::list {
+  color: #224422; 
+  font-weight: bolder;
+  font-size: 120%;
+}
+
+af|messages::header {
+  color: #894e1e; 
+  font-weight: bolder;  
+  font-size: 150%;
+}
+
+af|messages::body {
+  background: white;
+  border: solid 4px yellow;
+  padding-left: 10px;
+  margin-top: 5px;
+}
+
+af|messages::error {
+  font-weight: bolder;
+  font-size: 120%;
+}
+  
+.estiloDiferenteValorOriginal{color: #669966;}
+.estiloDiferenteValorCambiado{color: #ff8282;}
+.etiquetaForm{font-weight:bold;}
+
+/***********************************************************
+  * Para los botones de las tablas (acciones y colecciones)
+  */
+div.panelFondoBotonesTabla {
+  padding: 5px;
+}
+
+table.panelFondoBotonesColecciones {
+  background: #CCCCCC;
+  padding: 5px;
+}
+
+af|commandButton.claseBotonColeccionBlanco {
+ /* background:  #CCCCCC;*/
+}
+/************************************************************/
+
+/** Para que se resalten las filas de las tablas por donde pasa el ratón*/
+/* NO ESTA AÚN PARA SUBIRLO
+af|table::content tr:hover af|column::cell-text {background: #000000; color: white;}
+af|table::content tr:hover af|column::cell-text-band {background-color: #000000; color: white;}
+af|table::content tr:hover af|column::cell-number {background: #000000; color: white;}
+af|table::content tr:hover af|column::cell-number-band {background: #000000; color: white;}
+af|table::content tr:hover af|column::cell-icon-format {background: #000000; color: white;}
+af|table::content tr:hover af|column::cell-icon-format-band {background: #000000; color: white;}
+
+af|table::content tr:hover af|column::cell-text a {background: #000000; color: white;}
+af|table::content tr:hover af|column::cell-text-band a {background-color: #000000; color: white;}
+af|table::content tr:hover af|column::cell-number a {background: #000000; color: white;}
+af|table::content tr:hover af|column::cell-number-band a {background: #000000; color: white;}
+*/
+
+
+/** Para el div de espera del tr:statusIndicator */
+div#divEspera {
+	margin: -10px; 
+	padding: 0px; 
+	width: 101%; 
+	height: 110%; 
+	filter: alpha(opacity=60); 
+	opacity: .6; 
+	background-color: black; 
+	position: fixed; 
+	font-weight: bold; 
+	font-size: 110%; 
+	color: white; 
+	z-index:10000;
+}
+
+
+@agent ie (version: 5) and (version: 6) {
+
+	html, 
+	html body { 
+		height: 100%;
+		margin: 0;
+		padding: 0; 
+	}
+	
+	div#divEspera {
+	 overflow-y: hidden !important; 
+	 margin: -10px; 
+	 padding: 0px; 
+	 width: 103%; 
+	 height: 150%; 
+	 background-color: black; 
+	 font-weight: bold; 
+	 font-size: 110%; 
+	 color: white; 
+	 z-index: 10000;
+	 position: absolute;
+	 top: 0px;
+	 left: 0px;
+	 filter: alpha(opacity=60);
+	}
+
+	div#divEspera * {
+		filter: alpha(opacity=100);	
+		z-index: 1;
+	}
+
+}
+
+.nodoPadreNoEnResultados {
+	background: none;
+	background-color: white;
+	color: grey;
+}
+
+.contenedorArbolesSolicitudes {
+	background-color: white;
+	width: 100%;	
+	border: solid 1px black;
+	padding: 5px;
+}
+
+.fondoBotonVerTabla {
+	background-color:#E9E8E8;
+	border-color:#999999;
+	border-style:solid;
+	border-width:1px 1px 0px;
+	padding: 2px 3px;
+	width: 100%;
+}
+
+.tituloArbolSolic  {	
+	font-weight: bold;
+}
+
+.estiloNodoArbolPendConfirmar {
+	color: red;
+}
+
+.estiloNodoArbolPendValidar {
+	color: blue;
+}
+
+.estiloNodoArbolPendModificar {
+	color: brown;
+}
