@@ -67,7 +67,7 @@ create table PERFIL
 (
    ID                   numeric(10,0) not null,
    VERSION              numeric(10,0) not null,
-   DESRIPCION           varchar(50) not null comment 'Descripción del perfil',
+   DESCRIPCION           varchar(50) not null comment 'Descripción del perfil',
    primary key (ID)
 );
 
