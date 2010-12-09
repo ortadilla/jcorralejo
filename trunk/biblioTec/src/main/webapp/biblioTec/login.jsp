@@ -28,28 +28,28 @@
 					</f:facet>
 
 					<tr:panelHeader text="#{resCore['LOGIN']}" />
-					
+
 					<tr:panelHorizontalLayout halign="center">
 						<tr:spacer width="10" />
 						<tr:panelBox text="#{resCore['LOGIN']}">
 							<tr:spacer width="225" height="10" />
 							<tr:panelFormLayout>
-					
+
 								<tr:panelLabelAndMessage label="#{resCore['USUARIO']}">
 									<tr:inputText columns="20" id="user" value="#{loginBean.user}"
 										simple="true" />
 								</tr:panelLabelAndMessage>
-					
+
 								<tr:spacer width="10" height="10" />
-					
+
 								<tr:panelLabelAndMessage label="#{resCore['CLAVE']}">
 									<tr:inputText columns="20" id="passw" value="#{loginBean.pass}"
 										secret="true" simple="true" />
 								</tr:panelLabelAndMessage>
-					
+
 								<tr:spacer width="10" height="10" />
 							</tr:panelFormLayout>
-					
+
 							<tr:panelHorizontalLayout halign="center">
 								<tr:commandButton text="#{resCore['ACEPTAR']}" id="btnAceptar"
 									action="#{loginBean.login}" />
@@ -58,6 +58,9 @@
 					</tr:panelHorizontalLayout>
 				</tr:panelPage>
 			</tr:form>
+			<tr:panelHorizontalLayout halign="center">
+				<h:outputText value="#{resCore['VERSION']}" style="font-size:50%" />
+			</tr:panelHorizontalLayout>
 		</trh:body>
 		</trh:html>
 	</f:view>
