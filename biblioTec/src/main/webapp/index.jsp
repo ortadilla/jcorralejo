@@ -2,6 +2,6 @@
 <head>
 </head>
 <script>
-document.location="pruebaBD.jsf";
+document.location="biblioTec/login.jsf";
 </script>
 </html>

@@ -5,10 +5,11 @@ public class NombresBean {
     
 
 	/**Servicios*/
-    public static final String SERVICIO_TIPO_VIA = "servicioTipoVia";
+    public static final String SERVICIO_USUARIO = "servicioUsuario";
     
     /**Beans */    
     public static final String PRUEBA_BD = "pruebaBD"; 
+    public static final String LOGIN_BEAN = "loginBean"; 
     
     /**Binding*/
     public static final String GESTION_USUARIOS_BINDING = "gestionUsuariosBinding"; 
@@ -21,7 +22,7 @@ public class NombresBean {
     public static final String MENSAJES_CORE = "core_mensajes";
     public static final String MAPA_ARGUMENTOS = "mapaArgumentos"; 
     public static final String USUARIO_LOGUEADO = "usuarioLogueado"; 
-    public static final String UTIL_JSF_CONTEXT = "utilJsfContext";    
+    public static final String UTIL_JSF_CONTEXT = "utilJsfContext";   
     
 
 }
