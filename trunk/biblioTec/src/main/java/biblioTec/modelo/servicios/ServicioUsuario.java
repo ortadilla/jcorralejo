@@ -15,5 +15,9 @@ public interface ServicioUsuario {
 	public List<Usuario> encontrarUsuariosPorLoginYPerfil(String usuario, Perfil perfil);
 	
 	public void actualizarDatosUsuario(Usuario usuario, String login, String nombre, HashSet<Perfil> perfiles);
+	
+	public Usuario crearUsuario(String login, String nombre, HashSet<Perfil> perfiles);
+	
+	public void borrarUsuario(Usuario usuario);
 
 }

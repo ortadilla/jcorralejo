@@ -14,5 +14,9 @@ public interface UsuarioDAO {
 	public List<Usuario> encontrarUsuariosPorLoginYPerfil(String usuario, Perfil perfil);
 	
 	public void flushear();
+	
+	public void guadar(Usuario usuario);
+	
+	public void borrar(Usuario usuario);
 
 }

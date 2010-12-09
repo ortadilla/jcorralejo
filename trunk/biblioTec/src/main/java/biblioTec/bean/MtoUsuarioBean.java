@@ -33,7 +33,6 @@ import biblioTec.modelo.servicios.ServicioUsuario;
 import biblioTec.utilidades.ConstantesArgumentosNavegacion;
 import biblioTec.utilidades.MapaArgumentos;
 import biblioTec.utilidades.MensajesCore;
-import biblioTec.utilidades.NombresBean;
 import biblioTec.utilidades.SelectItemBuilder;
 import biblioTec.utilidades.UtilJsfContext;
 
@@ -112,11 +111,11 @@ public class MtoUsuarioBean {
 		|| login==null || "".equals(login)){
 			utilJsfContext.insertaMensajeAdvertencia(mensajesCore.obtenerTexto("NOMBRE_LOGIN_OBLIGATORIOS"));
 		}else{
-			
 			if(usuarioEdicion!=null){
-				servicioUsuario.actualizarDatosUsuario(usuarioEdicion, login, nombre, new HashSet<Perfil>(perfiles));
+				servicioUsuario.actualizarDatosUsuario(usuarioEdicion, login, nombre, perfiles!=null ? new HashSet<Perfil>(perfiles) : new HashSet<Perfil>());
 			}else{
-				
+				servicioUsuario.crearUsuario(login, nombre, perfiles!=null ? new HashSet<Perfil>(perfiles) : new HashSet<Perfil>());
+				limpiarFormulario();
 			}
 			outcome = GESTIONAR_USUARIOS;
 		}
@@ -124,15 +123,20 @@ public class MtoUsuarioBean {
 	}
 	
 	public String cancelar(){
+		limpiarFormulario();
 		return GESTIONAR_USUARIOS;
 	}
 	
 	public String volver(){
+		limpiarFormulario();
+		return GESTIONAR_USUARIOS;
+	}
+	
+	private void limpiarFormulario(){
 		titulo = null;
 		login = null;
 		nombre = null;
 		descPerfiles = null;
-		return GESTIONAR_USUARIOS;
 	}
 	
 	public String verPrestamos(){

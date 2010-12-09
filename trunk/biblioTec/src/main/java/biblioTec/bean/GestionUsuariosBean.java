@@ -1,6 +1,7 @@
 package biblioTec.bean;
 
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_ANIADIR_USUARIO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_DETALLES_USUARIO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_EDITAR_USUARIO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.USUARIO;
@@ -34,7 +35,6 @@ import biblioTec.modelo.entidades.Perfil;
 import biblioTec.modelo.entidades.Usuario;
 import biblioTec.modelo.servicios.ServicioPerfil;
 import biblioTec.modelo.servicios.ServicioUsuario;
-import biblioTec.utilidades.ConstantesArgumentosNavegacion;
 import biblioTec.utilidades.MapaArgumentos;
 import biblioTec.utilidades.MensajesCore;
 import biblioTec.utilidades.SelectItemBuilder;
@@ -114,7 +114,6 @@ public class GestionUsuariosBean {
 
 		String outcome = "";
 		if(estadoDeSeleccionTabla.size()==1){
-
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
 			Usuario usuario = listaUsuarios.get(seleccion);
 			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
@@ -132,7 +131,6 @@ public class GestionUsuariosBean {
 	public String modificar(){
 		String outcome = "";
 		if(estadoDeSeleccionTabla.size()==1){
-
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
 			Usuario usuario = listaUsuarios.get(seleccion);
 			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
@@ -145,6 +143,26 @@ public class GestionUsuariosBean {
 		}
 
 		return outcome;
+	}
+	
+	public String agregar(){
+		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+		mapaArgumentos.limpiaMapa();
+		mapaArgumentos.setArgumento(ACCION, ACCION_ANIADIR_USUARIO);
+		
+		return MTO_USUARIOS;
+	}
+	
+	public void eliminar(){
+		if(estadoDeSeleccionTabla.size()==1){
+			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
+			Usuario usuario = listaUsuarios.get(seleccion);
+			servicioUsuario.borrarUsuario(usuario);
+			listaUsuarios.remove(usuario);
+			estadoDeSeleccionTabla.clear();
+		}else{
+			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
+		}
 	}
 
 	public List<Usuario> getListaUsuarios() {
