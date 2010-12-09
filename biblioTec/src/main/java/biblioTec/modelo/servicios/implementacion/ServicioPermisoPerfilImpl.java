@@ -27,7 +27,6 @@ public class ServicioPermisoPerfilImpl implements ServicioPermisoPerfil{
 	public boolean hayPermiso(int permiso) {
 		Usuario usuario = servicioUsuario.devolverUsuarioActivo();
 		return permisoPerfilDAO.hayPermisoParaUsuario(usuario, permiso);
-//		return !permisos.isEmpty();
 	}
 
 }

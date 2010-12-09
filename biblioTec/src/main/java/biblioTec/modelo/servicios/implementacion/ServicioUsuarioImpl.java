@@ -7,6 +7,7 @@ import static org.jboss.seam.ScopeType.SESSION;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -17,6 +18,7 @@ import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
 import biblioTec.modelo.daos.UsuarioDAO;
+import biblioTec.modelo.entidades.Perfil;
 import biblioTec.modelo.entidades.Usuario;
 import biblioTec.modelo.servicios.ServicioUsuario;
 
@@ -86,6 +88,11 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     		usuarioActivo = usuarioDAO.encontrarPorId(usuarioLogueado);
     	}
     	return usuarioActivo;
+    }
+    
+    
+    public List<Usuario> encontrarUsuariosPorLoginYPerfil(String usuario, Perfil perfil) {
+    	return usuarioDAO.encontrarUsuariosPorLoginYPerfil(usuario, perfil);
     }
 
 }

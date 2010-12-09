@@ -25,8 +25,7 @@ public class LoginBean {
 	private String user;
 	private String pass;
 	
-	@In(value=NombresBean.MENSAJES_CORE, create=true, required=true)
-	private MensajesCore mensajesCore;
+	private MensajesCore mensajesCore = MensajesCore.instancia();
 	
 	@In(value=UTIL_JSF_CONTEXT, create=true)
 	private UtilJsfContext utilJsfContext;

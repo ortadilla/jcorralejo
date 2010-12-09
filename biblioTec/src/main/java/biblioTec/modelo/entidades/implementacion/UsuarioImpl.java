@@ -80,5 +80,26 @@ public class UsuarioImpl implements Usuario {
 	public void setPerfiles(Set<Perfil> perfiles) {
 		this.perfiles = perfiles;
 	}
+	
+	public String getDescripcionPerfiles() {
+		String descripcion = "";
+		if(perfiles!=null){
+			for(Perfil perfil : perfiles)
+				descripcion += perfil.getDescripcion() + " | ";
+			descripcion = descripcion.substring(0, perfiles.size()-2);
+		}
+		return null;
+	}
+	
+	public String getDescPerfiles() {
+		String desc = "";
+		if(perfiles!=null){
+			for(Perfil perfil : perfiles)
+				desc += perfil.getDescripcion() + " | ";
+			desc = desc.substring(0, desc.length()-2);
+		}
+		return desc;
+	}
 
+	
 }

@@ -14,10 +14,7 @@
 		<f:loadBundle basename="mensajesCore" var="resCore" />
 		<trh:html>
 
-		<trh:head>
-			<meta http-equiv="Content-Type"
-				content="text/html; charset=windows-1252" />
-		</trh:head>
+		<trh:head title="#{resCore['GESTION_PRESTAMOS']}"/>
 
 		<trh:body initialFocusId="user">
 

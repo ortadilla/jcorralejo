@@ -23,8 +23,7 @@ public class PruebaBD{
 	@In(value=NombresBean.SESION_HIBERNATE, create=true)
     private Session laDatabase;
 
-	@In(value=NombresBean.MENSAJES_CORE, create=true, required=true)
-	private MensajesCore mensajesCore;
+	private MensajesCore mensajesCore = MensajesCore.instancia();
 	
 	private boolean rendered=false;
 	private String resultadoSelect;

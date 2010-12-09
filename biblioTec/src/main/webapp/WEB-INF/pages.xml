@@ -1,8 +1,8 @@
 <pages>
-<!--<page view-id="/dondeando/menuPrincipal.jsp">
+	<page view-id="/biblioTec/menu.jsp">
 		<end-conversation />
-	</page> -->
-	
+	</page>
+
 	<!-- Entradas BiblioTec -->
 	<page view-id="/biblioTec/menu.jsp" action="#{menuBean.cargarArgumentosDeEntrada}" />
 

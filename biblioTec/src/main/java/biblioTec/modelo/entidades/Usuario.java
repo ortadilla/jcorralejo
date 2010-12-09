@@ -5,6 +5,7 @@ import java.util.Set;
 public interface Usuario {
 	
 	public static final String ATRIBUTO_LOGIN = "login";
+	public static final String ATRIBUTO_PERFILES = "perfiles";
 	
 	public Integer getId();
 	public void setId(Integer id);
@@ -26,4 +27,5 @@ public interface Usuario {
 	
 	public Set<Perfil> getPerfiles();
 	public void setPerfiles(Set<Perfil> perfiles);
+	
 }
