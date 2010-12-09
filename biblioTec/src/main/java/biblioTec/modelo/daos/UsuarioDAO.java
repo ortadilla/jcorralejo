@@ -12,5 +12,7 @@ public interface UsuarioDAO {
 	public Usuario encontrarPorId(Integer id);
 
 	public List<Usuario> encontrarUsuariosPorLoginYPerfil(String usuario, Perfil perfil);
+	
+	public void flushear();
 
 }
