@@ -12,6 +12,7 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 
 import biblioTec.modelo.daos.UsuarioDAO;
+import biblioTec.modelo.entidades.Perfil;
 import biblioTec.modelo.entidades.Usuario;
 import biblioTec.modelo.entidades.implementacion.UsuarioImpl;
 import biblioTec.utilidades.NombresBean;
@@ -40,5 +41,26 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 	public Usuario encontrarPorId(Integer id) {
 		return (Usuario) session.get(UsuarioImpl.class, id);
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Usuario> encontrarUsuariosPorLoginYPerfil(String usuario, Perfil perfil) {
+
+		Criteria criteria = session.createCriteria(UsuarioImpl.class);
+		
+    	if(usuario!=null && !"".equals(usuario))
+    		criteria.add(Restrictions.like(Usuario.ATRIBUTO_LOGIN, getValorLike(usuario)));
+    	if(perfil!=null){
+    		Criteria subCriteria = criteria.createCriteria(Usuario.ATRIBUTO_PERFILES, Criteria.INNER_JOIN);
+    		subCriteria.add(Restrictions.eq(Perfil.ATRIBUTO_ID, perfil.getId()));
+    	}
+    	return criteria.list();
+	}
+	
+    private String getValorLike(String valor){
+        String res = new String(valor).replace('*', '%').replace('?', '_');
+        if(!res.contains("%") && !res.contains("_")) 
+            res += "%";
+        return res;
+    }
 
 }

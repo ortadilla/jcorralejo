@@ -12,8 +12,7 @@
 	<f:view>
 		<f:loadBundle basename="mensajesCore" var="resCore" />
 		<trh:html>
-		<trh:head title="Prueba conexión BD">
-		</trh:head>
+		<trh:head title="Menú" />
 		<trh:body>
 
 			<tr:form>
