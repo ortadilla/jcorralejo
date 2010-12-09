@@ -4,6 +4,8 @@ import java.util.Set;
 
 public interface Usuario {
 	
+	public static final String ATRIBUTO_LOGIN = "login";
+	
 	public Integer getId();
 	public void setId(Integer id);
 	
