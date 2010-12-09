@@ -5,6 +5,10 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
 <faces-config>
 
 	<navigation-rule>
+        <navigation-case><from-outcome>menuPrincipal</from-outcome><to-view-id>/biblioTec/menu.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>gestionarLibros</from-outcome><to-view-id>/biblioTec/gestionarLibros.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>gestionarUsuarios</from-outcome><to-view-id>/biblioTec/gestionarUsuarios.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>gestionarPrestamos</from-outcome><to-view-id>/biblioTec/gestionarPrestamos.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>menu</from-outcome><to-view-id>/biblioTec/menu.jsp</to-view-id></navigation-case>
 	</navigation-rule>
 

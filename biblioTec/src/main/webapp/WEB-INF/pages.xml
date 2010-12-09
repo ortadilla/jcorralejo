@@ -4,6 +4,6 @@
 	</page> -->
 	
 	<!-- Entradas BiblioTec -->
-	<page view-id="/dondeando/menuPrincipal.jsp"			action="#{menuPrincipalBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/biblioTec/menu.jsp" action="#{menuBean.cargarArgumentosDeEntrada}" />
 
 </pages>

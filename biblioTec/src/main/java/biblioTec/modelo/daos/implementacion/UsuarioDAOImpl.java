@@ -36,5 +36,9 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		
 		return res.size() > 0 ? res.get(0) : null;
 	}
+	
+	public Usuario encontrarPorId(Integer id) {
+		return (Usuario) session.get(UsuarioImpl.class, id);
+	}
 
 }
