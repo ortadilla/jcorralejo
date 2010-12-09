@@ -77,5 +77,15 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     public void logout(){
         usuarioLogueado = null;
     }
+    
+    public Usuario devolverUsuarioActivo() {
+    	Usuario usuarioActivo = null;
+    	if(usuarioLogueado==null){
+    		log.debug("No hay usuario en sesión...");
+    	}else{
+    		usuarioActivo = usuarioDAO.encontrarPorId(usuarioLogueado);
+    	}
+    	return usuarioActivo;
+    }
 
 }

@@ -2,6 +2,9 @@ package biblioTec.modelo.entidades;
 
 public interface PermisoPerfil {
 	
+	public static final String ATRIBUTO_PERMISO = "permiso";
+	public static final String ATRIBUTO_PERFIL = "perfil";
+	
 	public Integer getId();
 	public void setId(Integer id);
 	

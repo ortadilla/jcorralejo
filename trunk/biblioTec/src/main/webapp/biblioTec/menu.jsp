@@ -10,13 +10,37 @@
 
 	<jsp:directive.page contentType="text/html;charset=windows-1252" />
 	<f:view>
-
+		<f:loadBundle basename="mensajesCore" var="resCore" />
 		<trh:html>
-		<trh:head title="Menu">
+		<trh:head title="Prueba conexión BD">
 		</trh:head>
 		<trh:body>
+
 			<tr:form>
-				<tr:outputText value="MENU" />
+				<tr:panelPage>
+					<f:facet name="messages">
+						<tr:messages />
+					</f:facet>
+
+					<tr:panelHeader text="#{resCore['MENU']}" />
+
+					<tr:panelHorizontalLayout halign="center">
+						<tr:panelBox text="#{resCore['OPCIONES']}">
+							<tr:commandButton text="#{resCore['GESTION_USUARIOS']}"
+								action="#{menuBean.gestionarUsuarios}"
+								disabled="#{!menuBean.mostrarGestionUsuarios}" />
+							<tr:commandButton text="#{resCore['GESTION_LIBROS']}"
+								action="#{menuBean.gestionarLibros}"
+								disabled="#{!menuBean.mostrarGestionLibros}" />
+							<tr:commandButton text="#{resCore['GESTION_PRESTAMOS']}"
+								action="#{menuBean.gestionarPrestamos}"
+								disabled="#{!menuBean.mostrarGestionPrestamos}" />
+						</tr:panelBox>
+					</tr:panelHorizontalLayout>
+				</tr:panelPage>
+				<tr:panelHorizontalLayout halign="center">
+					<h:outputText value="#{resCore['VERSION']}" style="font-size:50%" />
+				</tr:panelHorizontalLayout>
 			</tr:form>
 		</trh:body>
 		</trh:html>
