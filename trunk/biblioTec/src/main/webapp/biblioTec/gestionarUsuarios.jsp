@@ -75,7 +75,7 @@
 						<tr:panelGroupLayout>
 							<tr:panelButtonBar>
 								<tr:commandButton text="#{resCore['AGREGAR_USUARIO']}"
-									id="btnRecuperar" action="#{gestionUsuariosBean.recuperar}" />
+									id="btnAgregar" action="#{gestionUsuariosBean.agregar}" />
 								<tr:commandButton text="#{resCore['DETALLES_USUARIO']}"
 									id="btnDetalles" action="#{gestionUsuariosBean.detalles}" />
 								<tr:commandButton text="#{resCore['MODIFICAR_USUARIO']}"
