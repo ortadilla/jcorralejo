@@ -96,7 +96,8 @@ public class UsuarioImpl implements Usuario {
 		if(perfiles!=null){
 			for(Perfil perfil : perfiles)
 				desc += perfil.getDescripcion() + " | ";
-			desc = desc.substring(0, desc.length()-2);
+			if(!"".equals(desc))
+				desc = desc.substring(0, desc.length()-2);
 		}
 		return desc;
 	}

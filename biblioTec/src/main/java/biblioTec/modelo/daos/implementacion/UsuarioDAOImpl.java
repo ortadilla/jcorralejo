@@ -66,5 +66,13 @@ public class UsuarioDAOImpl implements UsuarioDAO{
     public void flushear() {
     	session.flush();
     }
+    
+    public void guadar(Usuario usuario) {
+    	session.saveOrUpdate(usuario);
+    }
+
+    public void borrar(Usuario usuario) {
+    	session.delete(usuario);
+    }   
 
 }

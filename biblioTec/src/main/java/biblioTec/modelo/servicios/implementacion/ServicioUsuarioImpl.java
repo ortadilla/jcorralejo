@@ -21,6 +21,7 @@ import org.jboss.seam.annotations.Scope;
 import biblioTec.modelo.daos.UsuarioDAO;
 import biblioTec.modelo.entidades.Perfil;
 import biblioTec.modelo.entidades.Usuario;
+import biblioTec.modelo.entidades.implementacion.UsuarioImpl;
 import biblioTec.modelo.servicios.ServicioUsuario;
 
 @Scope(ScopeType.CONVERSATION)
@@ -104,6 +105,23 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     		
     		usuarioDAO.flushear();
     	}
+    }
+    
+    public Usuario crearUsuario(String login, String nombre, HashSet<Perfil> perfiles) {
+    	Usuario usuario = new UsuarioImpl();
+    	usuario.setNombre(nombre);
+    	usuario.setLogin(login);
+    	usuario.setPerfiles(perfiles);
+    	usuario.setPass(encriptar(login));
+
+    	usuarioDAO.guadar(usuario);
+    	usuarioDAO.flushear();
+    	
+    	return usuario;
+    }
+    
+    public void borrarUsuario(Usuario usuario) {
+    	usuarioDAO.borrar(usuario);
     }
 
 }
