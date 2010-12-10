@@ -6,5 +6,6 @@
 	<!-- Entradas BiblioTec -->
 	<page view-id="/biblioTec/menu.jsp" action="#{menuBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/biblioTec/mtoUsuario.jsp" action="#{mtoUsuarioBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/biblioTec/mtoLibro.jsp" action="#{mtoLibroBean.cargarArgumentosDeEntrada}" />
 
 </pages>

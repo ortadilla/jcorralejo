@@ -15,6 +15,7 @@ public class NombresBean {
     public static final String GESTION_LIBROS_BEAN = "gestionLibrosBean"; 
     public static final String LOGIN_BEAN = "loginBean"; 
     public static final String MENU_BEAN = "menuBean"; 
+    public static final String MTO_LIBRO_BEAN = "mtoLibroBean"; 
     public static final String MTO_USUARIO_BEAN = "mtoUsuarioBean"; 
     public static final String PRUEBA_BD = "pruebaBD"; 
     
