@@ -75,12 +75,16 @@
 						<tr:panelGroupLayout>
 							<tr:panelButtonBar>
 								<tr:commandButton text="#{resCore['AGREGAR_USUARIO']}"
+									disabled="#{gestionUsuariosBean.buscando}"
 									id="btnAgregar" action="#{gestionUsuariosBean.agregar}" />
 								<tr:commandButton text="#{resCore['DETALLES_USUARIO']}"
+									disabled="#{gestionUsuariosBean.buscando}"
 									id="btnDetalles" action="#{gestionUsuariosBean.detalles}" />
 								<tr:commandButton text="#{resCore['MODIFICAR_USUARIO']}"
+									disabled="#{gestionUsuariosBean.buscando}"
 									id="btnModificar" action="#{gestionUsuariosBean.modificar}" />
 								<tr:commandButton text="#{resCore['ELIMINAR_USUARIO']}"
+									disabled="#{gestionUsuariosBean.buscando}"
 									id="btnEliminar" action="#{gestionUsuariosBean.eliminar}"
 									onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_USUARIO']}')" />
 							</tr:panelButtonBar>
@@ -110,7 +114,7 @@
 							</tr:column>
 						</tr:table>
 						<tr:spacer height="20" width="20" />
-						<tr:panelHorizontalLayout halign="center" rendered="false">
+						<tr:panelHorizontalLayout halign="center" rendered="#{gestionUsuariosBean.buscando}">
 							<tr:commandButton text="#{resCore['ACEPTAR']}" id="btnAceptar"
 								action="#{gestionUsuariosBean.aceptar}" />
 							<tr:spacer width="20" height="10" />

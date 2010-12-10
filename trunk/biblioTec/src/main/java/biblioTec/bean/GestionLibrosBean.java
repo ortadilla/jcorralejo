@@ -4,7 +4,10 @@ import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_ANIADIR_LIBRO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_DETALLES_LIBRO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_EDITAR_LIBRO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.DEVOLVER_OBJETO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.LIBRO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.OBJETO_DEVUELTO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.VOLVER_A;
 import static biblioTec.utilidades.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static biblioTec.utilidades.ConstantesReglasNavegacion.MTO_LIBRO;
 import static biblioTec.utilidades.NombresBean.GESTION_LIBROS_BEAN;
@@ -48,8 +51,9 @@ public class GestionLibrosBean {
 	private String criterioTitulo;
 	private String criterioAutor;
 	private String criterioISBN;
-	
+	private boolean buscando;
 	private boolean permisoGestionarLibros;
+	private String volverA;
 
 	@In(value=SERVICIO_LIBRO, create=true)
 	private ServicioLibro servicioLibro;
@@ -74,6 +78,14 @@ public class GestionLibrosBean {
 	public void inicializar(){
 		permisoGestionarLibros = servicioPermisoPerfil.hayPermiso(Permisos.GESTIONAR_LIBROS);
 		desplegado = true;
+	}
+	
+	public void cargarArgumentosDeEntrada(){
+		if(mapaArgumentos!=null && mapaArgumentos.contiene(DEVOLVER_OBJETO)){
+			buscando = true;
+			if(mapaArgumentos.contiene(VOLVER_A))
+				volverA = (String)mapaArgumentos.getArgumento(VOLVER_A);
+		}
 	}
 
 	public void buscar(){
@@ -160,6 +172,31 @@ public class GestionLibrosBean {
 		}
 	}
 	
+	public String cancelar(){
+		String outcome = volverA!=null ? volverA : "";
+		estadoDeSeleccionTabla.clear();
+		buscando = false;
+		return outcome;
+	}
+
+	public String aceptar(){
+		String outcome = "";
+		if(estadoDeSeleccionTabla.size()==1){
+			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
+			Libro libro = listaLibros.get(seleccion);
+			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+			mapaArgumentos.limpiaMapa();
+			mapaArgumentos.setArgumento(OBJETO_DEVUELTO, libro);
+			
+			outcome = volverA!=null ? volverA : "";
+			estadoDeSeleccionTabla.clear();
+			buscando = false;
+		}else
+			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
+			
+		return outcome;
+	}
+	
 	public RowKeySet getEstadoDeSeleccionTabla() {
 		return estadoDeSeleccionTabla;
 	}
@@ -222,6 +259,14 @@ public class GestionLibrosBean {
 
 	public void setPermisoGestionarLibros(boolean permisoGestionarLibros) {
 		this.permisoGestionarLibros = permisoGestionarLibros;
+	}
+
+	public boolean isBuscando() {
+		return buscando;
+	}
+
+	public void setBuscando(boolean buscando) {
+		this.buscando = buscando;
 	}
 
 }

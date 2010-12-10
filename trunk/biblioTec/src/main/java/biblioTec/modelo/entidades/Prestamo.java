@@ -4,6 +4,11 @@ import java.util.Date;
 
 public interface Prestamo {
 	
+	public static final String ATRIBUTO_USUARIO = "usuario";
+	public static final String ATRIBUTO_LIBRO = "libro";
+	public static final String ATRIBUTO_FECHA_INICIO = "fechaInicio";
+	public static final String ATRIBUTO_FECHA_FIN = "fechaFin";
+	
 	public Integer getId();
 	public void setId(Integer id);
 	

@@ -4,8 +4,12 @@
 	</page>
 
 	<!-- Entradas BiblioTec -->
+	<page view-id="/biblioTec/gestionarLibros.jsp" action="#{gestionLibrosBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/biblioTec/gestionarPrestamos.jsp" action="#{gestionPrestamosBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/biblioTec/gestionarUsuarios.jsp" action="#{gestionUsuariosBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/biblioTec/menu.jsp" action="#{menuBean.cargarArgumentosDeEntrada}" />
-	<page view-id="/biblioTec/mtoUsuario.jsp" action="#{mtoUsuarioBean.cargarArgumentosDeEntrada}" />
 	<page view-id="/biblioTec/mtoLibro.jsp" action="#{mtoLibroBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/biblioTec/mtoPrestamo.jsp" action="#{mtoPrestamoBean.cargarArgumentosDeEntrada}" />
+	<page view-id="/biblioTec/mtoUsuario.jsp" action="#{mtoUsuarioBean.cargarArgumentosDeEntrada}" />
 
 </pages>
