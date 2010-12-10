@@ -22,4 +22,7 @@ public interface Prestamo {
 	public Date getFechaFin();
 	public void setFechaFin(Date fechaFin);
 	
+	public boolean isDevuelto();
+	public void setDevuelto(boolean devuelto);
+	
 }

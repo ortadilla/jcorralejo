@@ -32,6 +32,7 @@ import org.jboss.seam.annotations.Scope;
 
 import biblioTec.binding.GestionUsuariosBinding;
 import biblioTec.modelo.entidades.Perfil;
+import biblioTec.modelo.entidades.Prestamo;
 import biblioTec.modelo.entidades.Usuario;
 import biblioTec.modelo.servicios.ServicioPerfil;
 import biblioTec.modelo.servicios.ServicioUsuario;
@@ -157,14 +158,18 @@ public class GestionUsuariosBean {
 		if(estadoDeSeleccionTabla.size()==1){
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
 			Usuario usuario = listaUsuarios.get(seleccion);
-			servicioUsuario.borrarUsuario(usuario);
-			listaUsuarios.remove(usuario);
-			estadoDeSeleccionTabla.clear();
+			if(!servicioUsuario.tienePrestamosPendientes(usuario)){
+				servicioUsuario.borrarUsuario(usuario);
+				listaUsuarios.remove(usuario);
+				estadoDeSeleccionTabla.clear();
+			}else{
+				utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("PRESTAMOS_PENDIENTES"));
+			}
 		}else{
 			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
 		}
 	}
-
+	
 	public List<Usuario> getListaUsuarios() {
 		return listaUsuarios;
 	}
