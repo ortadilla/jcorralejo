@@ -1,0 +1,61 @@
+1. Introducción
+---------------
+Hemos desarrollado una pequeña aplicación web (biblioTec v.0.1) cuyo objetivo es gestionar los préstamos de libros en una biblioteca. 
+Evidentemente al traterse de un ejercicio meramente técnico no se han implementado todas las funcionalidades que podría necesitar una 
+aplicación real para una biblioteca.
+
+La aplicación puede ser utilizada por dos tipos de usuarios o perfiles desde un sencillo menú. Los administradores, que podrán mantener las 
+usuarios de la biblioteca, los libros y los préstamos; y los usuarios de la biblioteca, que sólo podrán consultar los libros disponibles y 
+sus préstamos realizados
+
+
+2. Tecnología
+-------------
+Se han utilizado los siguientes frameworks:
+MAVEN
+MYFACES-TRINIDAD
+SEAM
+HIBERNATE
+
+
+3. Instalación
+--------------
+Para el correcto funcionamiento del proyecto será necesario:
+
+1. Instalar de un servidor de aplicaciones. Para las pruebas de desarrollo hemos utilizado "jboss 4.0.4.GA", disponible en "http://www.jboss.org/jbossas/downloads/"
+
+2. Instalar el servidor de BD MySQL. Para las pruebas de desarrollo hemos utilizado "MySQL 5", disponible en "http://dev.mysql.com/downloads/mysql/"
+
+3. Instalar el driver de MySQL en el servidor. Basta con copiar el archivo "utils/mysql-connector-java-5.1.6-bin.jar" en la carpeta
+"\jboss-4.0.4.GA\server\default\lib\"
+
+4. Arrancar el Servidor de BD. Para las pruebas de desarrollo hemos utilizado la siguiente configuración *:
+	username=user
+	password=user
+	hostname=localhost
+	port=3306
+	schema=biblioTec
+	
+5. Crear un archivo con el datasource necesario para que la aplicación se conecte a la BD y copiarlo en la carpeta
+"\jboss-4.0.4.GA\server\default\deploy". Adjuntamos el usado en las pruebas de desarrollo en "utils/hibernate-ds.xml" *
+
+* Se pueden modificar los datos de configuración de la BD, pero teniendo en cuenta que el jndi-name debe ser obligatoriamente "jdbc/hibernateDatasource"
+
+6. Instalar y empaquetar la aplicación. Para eso necesitamos ejecutar el comando "mvn clean install" en la carpeta "biblioTec".
+Esto generará el paquete war que debemos desplegar en el servidor. Para ello sólo debemos copiarlo en la carpeta
+\jboss-4.0.4.GA\server\default\deploy
+
+7. Arrancar el servidor de aplicaciones
+
+8. Si todo ha ido correctamente, tras unos segundos la aplicación debería estár disponible en la dirección
+"http://localhost:8080/biblioTec"
+
+9. Para realizar pruebas disponemos podemos utilizar los usuarios: admin/admin y usuario/usuario
+
+
+4. Notas:
+---------
+El proyecto se encuentra en el repositorio SVN: http://jcorralejo.googlecode.com/svn/trunk/biblioTec/
+Por el escaso tiempo no se ha descrito javadoc para el proyecto
+Si es necesario, se podría montar un equipo con los servidores de BD y de aplicaciones para acceder desde Internet
+Para cualquier problema, duda o sugerencia: ortadilla@gmail.com
