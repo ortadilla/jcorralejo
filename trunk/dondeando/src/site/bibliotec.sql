@@ -1,40 +1,12 @@
+
+drop database if exists BIBLIOTEC;
+
 /*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     10/12/2010 0:55:47                           */
+/* Database: BIBLIOTEC                                          */
 /*==============================================================*/
+create database BIBLIOTEC;
 
-
-drop index IDX_ID on LIBRO;
-
-drop table if exists LIBRO;
-
-drop index IDX_ID on PERFIL;
-
-drop table if exists PERFIL;
-
-drop index IDX_PERFIL on PERMISOPERFIL;
-
-drop index IDX_ID on PERMISOPERFIL;
-
-drop table if exists PERMISOPERFIL;
-
-drop index IDX_LIBRO on PRESTAMO;
-
-drop index IDX_USUARIO on PRESTAMO;
-
-drop index IDX_ID on PRESTAMO;
-
-drop table if exists PRESTAMO;
-
-drop index IDX_LOGIN on USUARIO;
-
-drop index IDX_ID on USUARIO;
-
-drop table if exists USUARIO;
-
-drop index IDX_USUARIO on USUARIOPERFIL;
-
-drop table if exists USUARIOPERFIL;
+use BIBLIOTEC;
 
 /*==============================================================*/
 /* Table: LIBRO                                                 */
@@ -218,3 +190,58 @@ alter table USUARIOPERFIL add constraint FK_USUARIOPERFIL_PERFIL foreign key (PE
 alter table USUARIOPERFIL add constraint FK_FK_USUARIOPERFIL_USUARIO foreign key (USUARIO)
       references USUARIO (ID) on delete restrict on update restrict;
 
+
+/*==============================================================*/
+/* CARGA DE DATOS DE PRUEBA                                     */
+/*==============================================================*/
+      
+INSERT INTO libro(ID, VERSION, TITULO, AUTOR, ISBN, UNIDADESDISPONIBLES)
+  VALUES(1, 0, 'Un mundo sin fin', 'Ken Follet', '9788401336560', 3);
+INSERT INTO libro(ID, VERSION, TITULO, AUTOR, ISBN, UNIDADESDISPONIBLES)
+  VALUES(2, 0, 'El color de la magia', 'Terry Pratchett', '9788397596794', 2);
+INSERT INTO libro(ID, VERSION, TITULO, AUTOR, ISBN, UNIDADESDISPONIBLES)
+  VALUES(3, 0, 'La regenta', 'Leopoldo Alas Clarín', '9788498165692', 4);
+INSERT INTO libro(ID, VERSION, TITULO, AUTOR, ISBN, UNIDADESDISPONIBLES)
+  VALUES(4, 0, 'El asombroso viaje de Pomponio Flato', 'Eduardo Mendoza', '9788432212536', 1);
+
+
+INSERT INTO perfil(ID, VERSION, DESCRIPCION)
+  VALUES(1, 0, 'Administrador general');
+INSERT INTO perfil(ID, VERSION, DESCRIPCION)
+  VALUES(2, 0, 'Usuario Biblioteca');
+
+  
+INSERT INTO permisoperfil(ID, VERSION, PERFIL, PERMISO)
+  VALUES(1, 0, 1, 1);
+INSERT INTO permisoperfil(ID, VERSION, PERFIL, PERMISO)
+  VALUES(2, 0, 1, 2);
+INSERT INTO permisoperfil(ID, VERSION, PERFIL, PERMISO)
+  VALUES(3, 0, 1, 3);
+INSERT INTO permisoperfil(ID, VERSION, PERFIL, PERMISO)
+  VALUES(4, 0, 1, 4);
+INSERT INTO permisoperfil(ID, VERSION, PERFIL, PERMISO)
+  VALUES(5, 0, 2, 3);
+INSERT INTO permisoperfil(ID, VERSION, PERFIL, PERMISO)
+  VALUES(6, 0, 2, 5);
+
+  
+INSERT INTO usuario(ID, VERSION, LOGIN, PASS, NOMBRE)
+  VALUES(1, 0, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrador');
+INSERT INTO usuario(ID, VERSION, LOGIN, PASS, NOMBRE)
+  VALUES(6, 0, 'usuario', 'b665e217b51994789b02b1838e730d6b93baa30f', 'Jesús Corralejo Banda');
+INSERT INTO usuario(ID, VERSION, LOGIN, PASS, NOMBRE)
+  VALUES(7, 0, 'aLobato', 'e6b4f43016dec11f6b4aa5e4ffdeb0a20d381109', 'Álvaro Lobato Moreno');
+
+  
+INSERT INTO usuarioperfil(USUARIO, PERFIL)
+  VALUES(1, 1);
+INSERT INTO usuarioperfil(USUARIO, PERFIL)
+  VALUES(6, 2);
+INSERT INTO usuarioperfil(USUARIO, PERFIL)
+  VALUES(7, 2);
+
+  
+INSERT INTO prestamo(ID, VERSION, USUARIO, LIBRO, FECHAINICIO, FECHAFIN, DEVUELTO)
+  VALUES(1, 0, 7, 4, '2010-12-10', '2010-12-19 00:00:00.0', 'F');
+INSERT INTO prestamo(ID, VERSION, USUARIO, LIBRO, FECHAINICIO, FECHAFIN, DEVUELTO)
+  VALUES(2, 0, 6, 2, '2010-12-10', '2010-12-19 00:00:00.0', 'F');
