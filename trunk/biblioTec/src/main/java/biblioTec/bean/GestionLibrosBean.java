@@ -1,23 +1,20 @@
 package biblioTec.bean;
 
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION;
-import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_ANIADIR_USUARIO;
-import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_DETALLES_USUARIO;
-import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_EDITAR_USUARIO;
-import static biblioTec.utilidades.ConstantesArgumentosNavegacion.USUARIO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_ANIADIR_LIBRO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_DETALLES_LIBRO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_EDITAR_LIBRO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.LIBRO;
 import static biblioTec.utilidades.ConstantesReglasNavegacion.MENU_PRINCIPAL;
-import static biblioTec.utilidades.ConstantesReglasNavegacion.MTO_USUARIO;
-import static biblioTec.utilidades.NombresBean.GESTION_USUARIOS_BEAN;
-import static biblioTec.utilidades.NombresBean.GESTION_USUARIOS_BINDING;
+import static biblioTec.utilidades.ConstantesReglasNavegacion.MTO_LIBRO;
+import static biblioTec.utilidades.NombresBean.GESTION_LIBROS_BEAN;
+import static biblioTec.utilidades.NombresBean.GESTION_LIBROS_BINDING;
 import static biblioTec.utilidades.NombresBean.MAPA_ARGUMENTOS;
-import static biblioTec.utilidades.NombresBean.SERVICIO_PERFIL;
-import static biblioTec.utilidades.NombresBean.SERVICIO_USUARIO;
+import static biblioTec.utilidades.NombresBean.SERVICIO_LIBRO;
 import static biblioTec.utilidades.NombresBean.UTIL_JSF_CONTEXT;
 import static org.jboss.seam.ScopeType.CONVERSATION;
 
 import java.util.List;
-
-import javax.faces.model.SelectItem;
 
 import org.apache.myfaces.trinidad.component.core.layout.CoreShowDetailHeader;
 import org.apache.myfaces.trinidad.model.RowKeySet;
@@ -30,37 +27,30 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.Scope;
 
-import biblioTec.binding.GestionUsuariosBinding;
-import biblioTec.modelo.entidades.Perfil;
-import biblioTec.modelo.entidades.Usuario;
-import biblioTec.modelo.servicios.ServicioPerfil;
-import biblioTec.modelo.servicios.ServicioUsuario;
+import biblioTec.binding.GestionLibrosBinding;
+import biblioTec.modelo.entidades.Libro;
+import biblioTec.modelo.servicios.ServicioLibro;
 import biblioTec.utilidades.MapaArgumentos;
 import biblioTec.utilidades.MensajesCore;
-import biblioTec.utilidades.SelectItemBuilder;
 import biblioTec.utilidades.UtilJsfContext;
 
 
 @Scope(CONVERSATION)
-@Name(GESTION_USUARIOS_BEAN)
-public class GestionUsuariosBean {
+@Name(GESTION_LIBROS_BEAN)
+public class GestionLibrosBean {
 
-	private List<Usuario> listaUsuarios;
+	private List<Libro> listaLibros;
 	private RowKeySet estadoDeSeleccionTabla = new RowKeySetImpl();
 	private boolean desplegado;
-	private String criterioUsuario;
-	private Perfil criterioPerfil;
+	private String criterioTitulo;
+	private String criterioAutor;
+	private String criterioISBN;
 
-	private SelectItem[] selectPerfil;
+	@In(value=SERVICIO_LIBRO, create=true)
+	private ServicioLibro servicioLibro;
 
-	@In(value=SERVICIO_USUARIO, create=true)
-	private ServicioUsuario servicioUsuario;
-
-	@In(value=SERVICIO_PERFIL, create=true)
-	private ServicioPerfil servicioPerfil;
-
-	@In(value=GESTION_USUARIOS_BINDING, create=true)
-	private GestionUsuariosBinding binding;
+	@In(value=GESTION_LIBROS_BINDING, create=true)
+	private GestionLibrosBinding binding;
 	
 	@In(value=UTIL_JSF_CONTEXT, create=true)
 	private UtilJsfContext utilJsfContext;
@@ -70,35 +60,27 @@ public class GestionUsuariosBean {
 	private biblioTec.utilidades.MapaArgumentos mapaArgumentos;
 
 	private MensajesCore mensajesCore = MensajesCore.instancia();
-
+	
 	@Create
 	@Begin(join=true)
 	public void inicializar(){
-		selectPerfil = SelectItemBuilder.creaSelectItems(servicioPerfil.encontrarTodos(), 
-				null, 
-				Perfil.ATRIBUTO_DESCRIPCION,
-				true);
 		desplegado = true;
 	}
 
-	public void cargarArgumentosDeEntrada(){
-
-	}
-
-
 	public void buscar(){
-		listaUsuarios = servicioUsuario.encontrarUsuariosPorLoginYPerfil(criterioUsuario, criterioPerfil);
+		listaLibros = servicioLibro.encontrarLibrosPorTituloAutorYIsbn(criterioTitulo, criterioAutor, criterioISBN);
 		desplegado = false;
 		if(binding.getBusqueda()==null) binding.setBusqueda(new CoreShowDetailHeader());
 		binding.getBusqueda().setDisclosed(desplegado);
-		if(listaUsuarios!=null && listaUsuarios.size()==1)
+		if(listaLibros!=null && listaLibros.size()==1)
 			estadoDeSeleccionTabla.add(0);
 	}
 
 	public void limpiar(){
 		binding.getBusqueda().getChildren().clear();
-		criterioUsuario = null;
-		criterioPerfil = null;
+		criterioTitulo = null;
+		criterioAutor = null;
+		criterioISBN = null;
 	}
 
 	@End
@@ -107,7 +89,7 @@ public class GestionUsuariosBean {
 	}
 
 	public String getNumeroElementosTabla(){
-		return mensajesCore.obtenerTexto("ELEMENTOS_ENCONTRADOS", listaUsuarios != null ? listaUsuarios.size() : "0");
+		return mensajesCore.obtenerTexto("ELEMENTOS_ENCONTRADOS", listaLibros!=null ? listaLibros.size() : "0");
 	}
 
 	public String detalles(){
@@ -115,12 +97,12 @@ public class GestionUsuariosBean {
 		String outcome = "";
 		if(estadoDeSeleccionTabla.size()==1){
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
-			Usuario usuario = listaUsuarios.get(seleccion);
+			Libro libro = listaLibros.get(seleccion);
 			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 			mapaArgumentos.limpiaMapa();
-			mapaArgumentos.setArgumento(USUARIO, usuario);
-			mapaArgumentos.setArgumento(ACCION, ACCION_DETALLES_USUARIO);
-			outcome = MTO_USUARIO;
+			mapaArgumentos.setArgumento(LIBRO, libro);
+			mapaArgumentos.setArgumento(ACCION, ACCION_DETALLES_LIBRO);
+			outcome = MTO_LIBRO;
 		}else{
 			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
 		}
@@ -132,12 +114,12 @@ public class GestionUsuariosBean {
 		String outcome = "";
 		if(estadoDeSeleccionTabla.size()==1){
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
-			Usuario usuario = listaUsuarios.get(seleccion);
+			Libro libro = listaLibros.get(seleccion);
 			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 			mapaArgumentos.limpiaMapa();
-			mapaArgumentos.setArgumento(USUARIO, usuario);
-			mapaArgumentos.setArgumento(ACCION, ACCION_EDITAR_USUARIO);
-			outcome = MTO_USUARIO;
+			mapaArgumentos.setArgumento(LIBRO, libro);
+			mapaArgumentos.setArgumento(ACCION, ACCION_EDITAR_LIBRO);
+			outcome = MTO_LIBRO;
 		}else{
 			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
 		}
@@ -148,18 +130,18 @@ public class GestionUsuariosBean {
 	public String agregar(){
 		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 		mapaArgumentos.limpiaMapa();
-		mapaArgumentos.setArgumento(ACCION, ACCION_ANIADIR_USUARIO);
+		mapaArgumentos.setArgumento(ACCION, ACCION_ANIADIR_LIBRO);
 		
-		return MTO_USUARIO;
+		return MTO_LIBRO;
 	}
 	
 	public void eliminar(){
 		if(estadoDeSeleccionTabla.size()==1){
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
-			Usuario usuario = listaUsuarios.get(seleccion);
-			if(!servicioUsuario.tienePrestamosPendientes(usuario)){
-				servicioUsuario.borrarUsuario(usuario);
-				listaUsuarios.remove(usuario);
+			Libro libro = listaLibros.get(seleccion);
+			if(!servicioLibro.tienePrestamosPendientes(libro)){
+				servicioLibro.borrarLibro(libro);
+				listaLibros.remove(libro);
 				estadoDeSeleccionTabla.clear();
 			}else{
 				utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("PRESTAMOS_PENDIENTES"));
@@ -169,14 +151,6 @@ public class GestionUsuariosBean {
 		}
 	}
 	
-	public List<Usuario> getListaUsuarios() {
-		return listaUsuarios;
-	}
-
-	public void setListaUsuarios(List<Usuario> listaUsuarios) {
-		this.listaUsuarios = listaUsuarios;
-	}
-
 	public RowKeySet getEstadoDeSeleccionTabla() {
 		return estadoDeSeleccionTabla;
 	}
@@ -193,35 +167,43 @@ public class GestionUsuariosBean {
 		this.desplegado = desplegado;
 	}
 
-	public String getCriterioUsuario() {
-		return criterioUsuario;
+	public String getCriterioTitulo() {
+		return criterioTitulo;
 	}
 
-	public void setCriterioUsuario(String criterioUsuario) {
-		this.criterioUsuario = criterioUsuario;
+	public void setCriterioTitulo(String criterioTitulo) {
+		this.criterioTitulo = criterioTitulo;
 	}
 
-	public Perfil getCriterioPerfil() {
-		return criterioPerfil;
+	public String getCriterioAutor() {
+		return criterioAutor;
 	}
 
-	public void setCriterioPerfil(Perfil criterioPerfil) {
-		this.criterioPerfil = criterioPerfil;
+	public void setCriterioAutor(String criterioAutor) {
+		this.criterioAutor = criterioAutor;
 	}
 
-	public SelectItem[] getSelectPerfil() {
-		return selectPerfil;
+	public String getCriterioISBN() {
+		return criterioISBN;
 	}
 
-	public void setSelectPerfil(SelectItem[] selectPerfil) {
-		this.selectPerfil = selectPerfil;
+	public void setCriterioISBN(String criterioISBN) {
+		this.criterioISBN = criterioISBN;
 	}
 
-	public GestionUsuariosBinding getBinding() {
+	public List<Libro> getListaLibros() {
+		return listaLibros;
+	}
+
+	public void setListaLibros(List<Libro> listaLibros) {
+		this.listaLibros = listaLibros;
+	}
+
+	public GestionLibrosBinding getBinding() {
 		return binding;
 	}
 
-	public void setBinding(GestionUsuariosBinding binding) {
+	public void setBinding(GestionLibrosBinding binding) {
 		this.binding = binding;
 	}
 

@@ -9,7 +9,8 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
         <navigation-case><from-outcome>gestionarLibros</from-outcome><to-view-id>/biblioTec/gestionarLibros.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionarUsuarios</from-outcome><to-view-id>/biblioTec/gestionarUsuarios.jsp</to-view-id></navigation-case>
         <navigation-case><from-outcome>gestionarPrestamos</from-outcome><to-view-id>/biblioTec/gestionarPrestamos.jsp</to-view-id></navigation-case>
-        <navigation-case><from-outcome>mtoUsuarios</from-outcome><to-view-id>/biblioTec/mtoUsuario.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>mtoUsuario</from-outcome><to-view-id>/biblioTec/mtoUsuario.jsp</to-view-id></navigation-case>
+        <navigation-case><from-outcome>mtoLibro</from-outcome><to-view-id>/biblioTec/mtoLibro.jsp</to-view-id></navigation-case>
 	</navigation-rule>
 
 </faces-config>

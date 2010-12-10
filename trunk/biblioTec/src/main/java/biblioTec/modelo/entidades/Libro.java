@@ -3,6 +3,10 @@ package biblioTec.modelo.entidades;
 import java.util.Set;
 
 public interface Libro {
+	
+	public static final String ATRIBUTO_TITULO = "titulo";
+	public static final String ATRIBUTO_AUTOR = "autor";
+	public static final String ATRIBUTO_ISBN = "isbn";
 
 	public Integer getId();
 	public void setId(Integer id);

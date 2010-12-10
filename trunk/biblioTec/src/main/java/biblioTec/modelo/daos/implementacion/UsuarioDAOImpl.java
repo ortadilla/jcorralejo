@@ -15,6 +15,7 @@ import biblioTec.modelo.daos.UsuarioDAO;
 import biblioTec.modelo.entidades.Perfil;
 import biblioTec.modelo.entidades.Usuario;
 import biblioTec.modelo.entidades.implementacion.UsuarioImpl;
+import biblioTec.utilidades.HerramientasCriteria;
 import biblioTec.utilidades.NombresBean;
 
 @Name(NombresBean.USUARIO_DAO)
@@ -48,7 +49,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		Criteria criteria = session.createCriteria(UsuarioImpl.class);
 		
     	if(usuario!=null && !"".equals(usuario))
-    		criteria.add(Restrictions.like(Usuario.ATRIBUTO_LOGIN, getValorLike(usuario)));
+    		criteria.add(Restrictions.like(Usuario.ATRIBUTO_LOGIN, HerramientasCriteria.getValorLike(usuario)));
     	if(perfil!=null){
     		Criteria subCriteria = criteria.createCriteria(Usuario.ATRIBUTO_PERFILES, Criteria.INNER_JOIN);
     		subCriteria.add(Restrictions.eq(Perfil.ATRIBUTO_ID, perfil.getId()));
@@ -56,13 +57,6 @@ public class UsuarioDAOImpl implements UsuarioDAO{
     	return criteria.list();
 	}
 	
-    private String getValorLike(String valor){
-        String res = new String(valor).replace('*', '%').replace('?', '_');
-        if(!res.contains("%") && !res.contains("_")) 
-            res += "%";
-        return res;
-    }
-    
     public void flushear() {
     	session.flush();
     }
