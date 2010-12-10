@@ -3,8 +3,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:tr="http://myfaces.apache.org/trinidad"
-	xmlns:trh="http://myfaces.apache.org/trinidad/html"
-	xmlns:geos="http://www.hp-cda.com/adf/faces">
+	xmlns:trh="http://myfaces.apache.org/trinidad/html">
 	<jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
 		doctype-system="http://www.w3.org/TR/html4/loose.dtd"
 		doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN" />
