@@ -18,6 +18,7 @@ import static biblioTec.utilidades.NombresBean.GESTION_PRESTAMOS_BINDING;
 import static biblioTec.utilidades.NombresBean.MAPA_ARGUMENTOS;
 import static biblioTec.utilidades.NombresBean.SERVICIO_PERMISO_PERFIL;
 import static biblioTec.utilidades.NombresBean.SERVICIO_PRESTAMO;
+import static biblioTec.utilidades.NombresBean.SERVICIO_USUARIO;
 import static biblioTec.utilidades.NombresBean.UTIL_JSF_CONTEXT;
 import static org.jboss.seam.ScopeType.CONVERSATION;
 
@@ -41,8 +42,10 @@ import biblioTec.modelo.entidades.Prestamo;
 import biblioTec.modelo.entidades.Usuario;
 import biblioTec.modelo.servicios.ServicioPermisoPerfil;
 import biblioTec.modelo.servicios.ServicioPrestamo;
+import biblioTec.modelo.servicios.ServicioUsuario;
 import biblioTec.utilidades.MapaArgumentos;
 import biblioTec.utilidades.MensajesCore;
+import biblioTec.utilidades.NombresBean;
 import biblioTec.utilidades.Permisos;
 import biblioTec.utilidades.UtilJsfContext;
 
@@ -58,7 +61,6 @@ public class GestionPrestamosBean {
 	private Libro criterioLibro;
 	private Date criterioFechaInicio;
 	private Date criterioFechaFin;
-	
 	private boolean permisoGestionarPrestamos;
 
 	@In(value=SERVICIO_PRESTAMO, create=true)
@@ -73,6 +75,9 @@ public class GestionPrestamosBean {
 	@In(value=SERVICIO_PERMISO_PERFIL, create=true)
 	private ServicioPermisoPerfil servicioPermisoPerfil;
 	
+	@In(value=SERVICIO_USUARIO, create=true)
+	private ServicioUsuario servicioUsuario;
+	
     @In(value=MAPA_ARGUMENTOS, required=false)
     @Out(value=MAPA_ARGUMENTOS, required=false)
 	private biblioTec.utilidades.MapaArgumentos mapaArgumentos;
@@ -83,6 +88,8 @@ public class GestionPrestamosBean {
 	@Begin(join=true)
 	public void inicializar(){
 		permisoGestionarPrestamos = servicioPermisoPerfil.hayPermiso(Permisos.GESTIONAR_PRESTAMOS);
+		if(!permisoGestionarPrestamos)
+			criterioUsuario = servicioUsuario.devolverUsuarioActivo();
 		desplegado = true;
 	}
 	

@@ -40,13 +40,14 @@
 										<tr:inputText columns="50"
 											value="#{gestionPrestamosBean.criterioUsuario!=null ? gestionPrestamosBean.criterioUsuario.nombre : ''}"
 											id="usuario" disabled="true" />
-										<tr:commandLink action="#{gestionPrestamosBean.buscarUsuario}">
+										<tr:commandLink action="#{gestionPrestamosBean.buscarUsuario}"
+											disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos}">
 											<tr:image shortDesc="#{resCore['SELECCIONAR_USUARIO']}"
 												source="#{'/imagenes/buscar.png'}"
 												inlineStyle="height: 20px;" />
 										</tr:commandLink>
-										<tr:commandLink
-											action="#{gestionPrestamosBean.eliminarUsuario}">
+										<tr:commandLink	action="#{gestionPrestamosBean.eliminarUsuario}"
+											disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos}">
 											<tr:image shortDesc="#{resCore['BORRAR_USUARIO']}"
 												source="#{'/imagenes/borrar.png'}"
 												inlineStyle="height: 20px;" />
