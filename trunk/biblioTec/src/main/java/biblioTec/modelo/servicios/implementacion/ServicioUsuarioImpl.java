@@ -20,6 +20,7 @@ import org.jboss.seam.annotations.Scope;
 
 import biblioTec.modelo.daos.UsuarioDAO;
 import biblioTec.modelo.entidades.Perfil;
+import biblioTec.modelo.entidades.Prestamo;
 import biblioTec.modelo.entidades.Usuario;
 import biblioTec.modelo.entidades.implementacion.UsuarioImpl;
 import biblioTec.modelo.servicios.ServicioUsuario;
@@ -123,5 +124,19 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     public void borrarUsuario(Usuario usuario) {
     	usuarioDAO.borrar(usuario);
     }
+    
+	public boolean tienePrestamosPendientes(Usuario usuario){
+		boolean hay = false;
+		if(usuario.getPrestamos()!=null){
+			for(Prestamo prestamo : usuario.getPrestamos()){
+				if(!prestamo.isDevuelto()){
+					hay = true;
+					break;
+				}
+			}
+		}
+		return hay;
+	}
+
 
 }

@@ -20,4 +20,5 @@ public interface ServicioUsuario {
 	
 	public void borrarUsuario(Usuario usuario);
 
+	public boolean tienePrestamosPendientes(Usuario usuario);
 }

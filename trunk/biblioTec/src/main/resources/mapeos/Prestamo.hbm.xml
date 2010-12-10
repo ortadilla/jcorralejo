@@ -14,6 +14,8 @@
 		<property name="fechaInicio" column="fechaInicio" not-null="true"/>
 		<property name="fechaFin" column="fechaFin" not-null="true"/>
 
+		<property name="devuelto" column="devuelto" type="true_false"/>
+
 		<many-to-one class="UsuarioImpl" column="usuario" name="usuario" />
 		<many-to-one class="LibroImpl" column="libro" name="libro" />
 

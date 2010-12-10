@@ -14,6 +14,7 @@ public class PrestamoImpl implements Prestamo {
 	private Libro libro;
 	private Date fechaInicio;
 	private Date fechaFin;
+	private boolean devuelto;
 	
 	@Override
 	public int hashCode() {
@@ -71,6 +72,12 @@ public class PrestamoImpl implements Prestamo {
 	}
 	public void setFechaFin(Date fechaFin) {
 		this.fechaFin = fechaFin;
+	}
+	public boolean isDevuelto() {
+		return devuelto;
+	}
+	public void setDevuelto(boolean devuelto) {
+		this.devuelto = devuelto;
 	}
 	
 	
