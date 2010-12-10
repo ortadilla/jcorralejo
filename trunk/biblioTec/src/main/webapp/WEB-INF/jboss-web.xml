@@ -1,0 +1,6 @@
+<jboss-web>
+   	<resource-ref>
+		<res-ref-name>jdbc/hibernateDatasource</res-ref-name>
+		<jndi-name>java:/jdbc/hibernateDatasource</jndi-name>
+	</resource-ref>
+</jboss-web>
