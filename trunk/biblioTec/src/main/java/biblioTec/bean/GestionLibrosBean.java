@@ -173,10 +173,19 @@ public class GestionLibrosBean {
 	}
 	
 	public String cancelar(){
-		String outcome = volverA!=null ? volverA : "";
+		limpiarFormulario();
+		return volverA!=null ? volverA : "";
+	}
+	
+	private void limpiarFormulario(){
 		estadoDeSeleccionTabla.clear();
 		buscando = false;
-		return outcome;
+		listaLibros = null;
+		criterioAutor = null;
+		criterioISBN = null;
+		criterioTitulo = null;
+		desplegado = true;
+		binding = null;
 	}
 
 	public String aceptar(){
@@ -189,8 +198,7 @@ public class GestionLibrosBean {
 			mapaArgumentos.setArgumento(OBJETO_DEVUELTO, libro);
 			
 			outcome = volverA!=null ? volverA : "";
-			estadoDeSeleccionTabla.clear();
-			buscando = false;
+			limpiarFormulario();
 		}else
 			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
 			

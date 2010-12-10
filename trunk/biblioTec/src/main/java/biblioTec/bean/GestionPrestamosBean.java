@@ -181,6 +181,19 @@ public class GestionPrestamosBean {
 		}
 	}
 	
+	public void devolver(){
+		if(estadoDeSeleccionTabla.size()==1){
+			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
+			Prestamo prestamo = listaPrestamos.get(seleccion);
+			if(!prestamo.isDevuelto())
+				prestamo.setDevuelto(true);
+			else
+				utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("LIBRO_YA_DEVUELTO"));
+		}else{
+			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
+		}
+	}
+	
 	public String buscarUsuario(){
 		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 		mapaArgumentos.limpiaMapa();

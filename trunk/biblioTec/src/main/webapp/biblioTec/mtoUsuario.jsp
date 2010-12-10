@@ -106,7 +106,8 @@
 							</tr:panelHorizontalLayout>
 
 							<tr:spacer width="20" height="20" />
-							<tr:panelHorizontalLayout halign="center">
+							<tr:panelHorizontalLayout halign="center"
+							rendered="#{mtoUsuarioBean.detalles}">
 								<tr:commandButton text="#{resCore['VOLVER']}" id="volver"
 									action="#{mtoUsuarioBean.volver}" />
 							</tr:panelHorizontalLayout>
