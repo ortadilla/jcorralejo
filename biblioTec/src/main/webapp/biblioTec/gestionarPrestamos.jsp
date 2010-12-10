@@ -64,7 +64,7 @@
 												inlineStyle="height: 20px;" />
 										</tr:commandLink>
 										<tr:commandLink
-											action="#{gestionPrestamosBean.eliminarUsuario}">
+											action="#{gestionPrestamosBean.eliminarLibro}">
 											<tr:image shortDesc="#{resCore['BORRAR_LIBRO']}"
 												source="#{'/imagenes/borrar.png'}"
 												inlineStyle="height: 20px;" />
@@ -115,6 +115,9 @@
 									disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos}"
 									id="btnEliminar" action="#{gestionPrestamosBean.eliminar}"
 									onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_PRESTAMO']}')" />
+								<tr:commandButton text="#{resCore['DEVOLVER_LIBRO']}"
+									disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos}"
+									id="btnDevolver" action="#{gestionPrestamosBean.devolver}" />
 							</tr:panelButtonBar>
 						</tr:panelGroupLayout>
 						<tr:spacer height="10" />
@@ -144,7 +147,7 @@
 								<tr:outputText value="#{var.fechaFin}" />
 							</tr:column>
 							<tr:column sortable="true" headerText="#{resCore['DEVUELTO']}">
-								<tr:outputText value="#{var.devuelto}" />
+								<tr:outputText value="#{var.devuelto ? resCore['SI'] : resCore['NO']}" />
 							</tr:column>
 						</tr:table>
 						<tr:spacer height="20" width="20" />

@@ -65,12 +65,12 @@ public class GestionUsuariosBean {
 
 	@In(value=GESTION_USUARIOS_BINDING, create=true)
 	private GestionUsuariosBinding binding;
-	
+
 	@In(value=UTIL_JSF_CONTEXT, create=true)
 	private UtilJsfContext utilJsfContext;
-	
-    @In(value=MAPA_ARGUMENTOS, required=false)
-    @Out(value=MAPA_ARGUMENTOS, required=false)
+
+	@In(value=MAPA_ARGUMENTOS, required=false)
+	@Out(value=MAPA_ARGUMENTOS, required=false)
 	private biblioTec.utilidades.MapaArgumentos mapaArgumentos;
 
 	private MensajesCore mensajesCore = MensajesCore.instancia();
@@ -135,7 +135,7 @@ public class GestionUsuariosBean {
 
 		return outcome;
 	}
-	
+
 	public String modificar(){
 		String outcome = "";
 		if(estadoDeSeleccionTabla.size()==1){
@@ -152,15 +152,15 @@ public class GestionUsuariosBean {
 
 		return outcome;
 	}
-	
+
 	public String agregar(){
 		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 		mapaArgumentos.limpiaMapa();
 		mapaArgumentos.setArgumento(ACCION, ACCION_ANIADIR_USUARIO);
-		
+
 		return MTO_USUARIO;
 	}
-	
+
 	public void eliminar(){
 		if(estadoDeSeleccionTabla.size()==1){
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
@@ -176,12 +176,20 @@ public class GestionUsuariosBean {
 			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
 		}
 	}
-	
+
 	public String cancelar(){
-		String outcome = volverA!=null ? volverA : "";
+		limpiarFormulario();
+		return volverA!=null ? volverA : "";
+	}
+
+	private void limpiarFormulario(){
 		estadoDeSeleccionTabla.clear();
 		buscando = false;
-		return outcome;
+		listaUsuarios = null;
+		criterioPerfil = null;
+		criterioUsuario = null;
+		desplegado = true;
+		binding = null;
 	}
 
 	public String aceptar(){
@@ -192,16 +200,15 @@ public class GestionUsuariosBean {
 			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
 			mapaArgumentos.limpiaMapa();
 			mapaArgumentos.setArgumento(OBJETO_DEVUELTO, usuario);
-			
+
 			outcome = volverA!=null ? volverA : "";
-			estadoDeSeleccionTabla.clear();
-			buscando = false;
+			limpiarFormulario();
 		}else
 			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
-			
+
 		return outcome;
 	}
-	
+
 	public List<Usuario> getListaUsuarios() {
 		return listaUsuarios;
 	}

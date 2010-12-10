@@ -14,7 +14,7 @@
 		<f:loadBundle basename="mensajesCore" var="resCore" />
 		<trh:html>
 
-		<trh:head title="#{resCore['GESTION_LIBROS']}" />
+		<trh:head title="#{resCore['GESTION_PRESTAMOS']}" />
 
 		<trh:body initialFocusId="user">
 
@@ -24,105 +24,114 @@
 						<tr:messages />
 					</f:facet>
 
-					<tr:panelHeader text="#{resCore['DATOS_LIBRO']}" />
+					<tr:panelHeader text="#{resCore['DATOS_PRESTAMO']}" />
 
 					<tr:panelHorizontalLayout halign="center">
 						<tr:spacer width="10" />
-						<tr:panelBox text="#{resCore['DATOS_LIBRO']}">
+						<tr:panelBox text="#{resCore['DATOS_PRESTAMO']}">
 							<tr:spacer height="20" />
 							<trh:tableLayout
 								inlineStyle="width: 100%;  border-style: solid; border-width: 1px;"
 								cellSpacing="5" cellPadding="0"
-								rendered="#{mtoLibroBean.detalles}">
+								rendered="#{mtoPrestamoBean.detalles}">
 								<trh:rowLayout>
-									<tr:outputText value="#{resCore['TITULO']}"
+									<tr:outputText value="#{resCore['USUARIO']}"
 										inlineStyle="font-weight: bolder;" />
 									<tr:spacer height="20" />
-									<tr:outputText value="#{mtoLibroBean.titulo}" />
+									<tr:outputText value="#{mtoPrestamoBean.usuario.nombre}" />
 								</trh:rowLayout>
 								<trh:rowLayout>
-									<tr:outputText value="#{resCore['AUTOR']}"
+									<tr:outputText value="#{resCore['LIBRO']}"
 										inlineStyle="font-weight: bolder;" />
 									<tr:spacer height="20" />
 									<trh:cellFormat columnSpan="2">
-										<tr:outputText value="#{mtoLibroBean.autor}" />
+										<tr:outputText value="#{mtoPrestamoBean.libro.titulo}" />
 									</trh:cellFormat>
 								</trh:rowLayout>
 								<trh:rowLayout>
-									<tr:outputText value="#{resCore['ISBN']}"
+									<tr:outputText value="#{resCore['FECHA_INICIO']}"
 										inlineStyle="font-weight: bolder;" />
 									<tr:spacer height="20" />
 									<trh:cellFormat columnSpan="2">
-										<tr:outputText value="#{mtoLibroBean.isbn}" />
+										<tr:outputText value="#{mtoPrestamoBean.fechaInicio}" />
 									</trh:cellFormat>
 								</trh:rowLayout>
 								<trh:rowLayout>
-									<tr:outputText value="#{resCore['UNIDADES_DISPONIBLES']}"
+									<tr:outputText value="#{resCore['FECHA_FIN']}"
 										inlineStyle="font-weight: bolder;" />
 									<tr:spacer height="20" />
 									<trh:cellFormat columnSpan="2">
-										<tr:outputText value="#{mtoLibroBean.unidadesDisponibles}" />
-									</trh:cellFormat>
-								</trh:rowLayout>
-							</trh:tableLayout>
-
-							<trh:tableLayout
-								inlineStyle="width: 100%;  border-style: solid; border-width: 1px;"
-								cellSpacing="5" cellPadding="0"
-								rendered="#{!mtoLibroBean.detalles}">
-								<trh:rowLayout>
-									<tr:outputText value="#{resCore['TITULO']}"
-										inlineStyle="font-weight: bolder;" />
-									<tr:spacer height="20" />
-									<tr:inputText value="#{mtoLibroBean.titulo}" />
-								</trh:rowLayout>
-								<trh:rowLayout>
-									<tr:outputText value="#{resCore['AUTOR']}"
-										inlineStyle="font-weight: bolder;" />
-									<tr:spacer height="20" />
-									<trh:cellFormat columnSpan="2">
-										<tr:inputText value="#{mtoLibroBean.autor}" />
-									</trh:cellFormat>
-								</trh:rowLayout>
-								<trh:rowLayout>
-									<tr:outputText value="#{resCore['ISBN']}"
-										inlineStyle="font-weight: bolder;" />
-									<tr:spacer height="20" />
-									<trh:cellFormat columnSpan="2">
-										<tr:inputText value="#{mtoLibroBean.isbn}"  maximumLength="13"/>
-									</trh:cellFormat>
-								</trh:rowLayout>
-								<trh:rowLayout>
-									<tr:outputText value="#{resCore['UNIDADES_DISPONIBLES']}"
-										inlineStyle="font-weight: bolder;" />
-									<tr:spacer height="20" />
-									<trh:cellFormat columnSpan="2">
-										<tr:inputText value="#{mtoLibroBean.unidadesDisponibles}"/>
+										<tr:outputText value="#{mtoPrestamoBean.fechaFin}" />
 									</trh:cellFormat>
 								</trh:rowLayout>
 							</trh:tableLayout>
 
-							<tr:spacer width="20" height="20" rendered="#{mtoLibroBean.detalles}"/>
-							<tr:panelHorizontalLayout halign="center" rendered="#{mtoLibroBean.detalles}">
-								<tr:commandButton text="#{resCore['PRESTAMOS']}"
-									id="btnPrestamos" action="#{mtoLibroBean.verPrestamos}" />
-							</tr:panelHorizontalLayout>
+							<trh:tableLayout cellSpacing="5" cellPadding="0"
+								rendered="#{!mtoPrestamoBean.detalles}">
+								<trh:rowLayout>
+									<tr:outputText value="#{resCore['USUARIO']}"
+										inlineStyle="font-weight: bolder;" />
+									<tr:inputText columns="50"
+										value="#{mtoPrestamoBean.usuario!=null ? mtoPrestamoBean.usuario.nombre : ''}"
+										id="usuario" disabled="true" />
+									<tr:commandLink action="#{mtoPrestamoBean.buscarUsuario}">
+										<tr:image shortDesc="#{resCore['SELECCIONAR_USUARIO']}"
+											source="#{'/imagenes/buscar.png'}"
+											inlineStyle="height: 20px;" />
+									</tr:commandLink>
+									<tr:commandLink
+										action="#{mtoPrestamoBean.eliminarUsuario}">
+										<tr:image shortDesc="#{resCore['BORRAR_USUARIO']}"
+											source="#{'/imagenes/borrar.png'}"
+											inlineStyle="height: 20px;" />
+									</tr:commandLink>
+								</trh:rowLayout>
+								<trh:rowLayout>
+									<tr:outputText value="#{resCore['LIBRO']}"
+										inlineStyle="font-weight: bolder;" />
+									<tr:inputText columns="50"
+										value="#{mtoPrestamoBean.libro!=null ? mtoPrestamoBean.libro.titulo : ''}"
+										id="libro" disabled="true" />
+									<tr:commandLink action="#{mtoPrestamoBean.buscarLibro}">
+										<tr:image shortDesc="#{resCore['SELECCIONAR_LIBRO']}"
+											source="#{'/imagenes/buscar.png'}"
+											inlineStyle="height: 20px;" />
+									</tr:commandLink>
+									<tr:commandLink action="#{mtoPrestamoBean.eliminarLibro}">
+										<tr:image shortDesc="#{resCore['BORRAR_LIBRO']}"
+											source="#{'/imagenes/borrar.png'}"
+											inlineStyle="height: 20px;" />
+									</tr:commandLink>
+								</trh:rowLayout>
+								<trh:rowLayout>
+									<tr:outputText value="#{resCore['FECHA_INICIO']}"
+										inlineStyle="font-weight: bolder;" />
+									<tr:inputDate columns="20" 
+										value="#{mtoPrestamoBean.fechaInicio}" />
+								</trh:rowLayout>
+								<trh:rowLayout>
+									<tr:outputText value="#{resCore['FECHA_FIN']}"
+										inlineStyle="font-weight: bolder;" />
+									<tr:inputDate columns="20" 
+										value="#{mtoPrestamoBean.fechaFin}" />
+								</trh:rowLayout>
+							</trh:tableLayout>
 
 							<tr:spacer width="20" height="20" />
 							<tr:panelHorizontalLayout halign="center"
-								rendered="#{!mtoLibroBean.detalles}">
+								rendered="#{!mtoPrestamoBean.detalles}">
 								<tr:commandButton text="#{resCore['ACEPTAR']}" id="btnAceptar"
-									action="#{mtoLibroBean.aceptar}" />
+									action="#{mtoPrestamoBean.aceptar}" />
 								<tr:spacer width="20" height="10" />
 								<tr:commandButton text="#{resCore['CANCELAR']}" id="btnCancelar"
-									immediate="true" action="#{mtoLibroBean.cancelar}" />
+									immediate="true" action="#{mtoPrestamoBean.cancelar}" />
 							</tr:panelHorizontalLayout>
 
 							<tr:spacer width="20" height="20" />
 							<tr:panelHorizontalLayout halign="center"
-							rendered="#{mtoLibroBean.detalles}">
+							rendered="#{mtoPrestamoBean.detalles}">
 								<tr:commandButton text="#{resCore['VOLVER']}" id="volver"
-									action="#{mtoLibroBean.volver}" />
+									action="#{mtoPrestamoBean.volver}" />
 							</tr:panelHorizontalLayout>
 							<tr:spacer width="20" height="20" />
 						</tr:panelBox>
