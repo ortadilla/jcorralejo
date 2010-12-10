@@ -4,8 +4,12 @@ import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_ANIADIR_LIBRO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_DETALLES_LIBRO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_EDITAR_LIBRO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.LANZAR_BUSQUEDA;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.LIBRO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.VOLVER_A;
 import static biblioTec.utilidades.ConstantesReglasNavegacion.GESTIONAR_LIBROS;
+import static biblioTec.utilidades.ConstantesReglasNavegacion.GESTIONAR_PRESTAMOS;
+import static biblioTec.utilidades.ConstantesReglasNavegacion.MTO_LIBRO;
 import static biblioTec.utilidades.NombresBean.MAPA_ARGUMENTOS;
 import static biblioTec.utilidades.NombresBean.MTO_LIBRO_BEAN;
 import static biblioTec.utilidades.NombresBean.SERVICIO_LIBRO;
@@ -35,7 +39,6 @@ public class MtoLibroBean {
 	private String autor;
 	private String isbn;
 	private Integer unidadesDisponibles;
-	
 	private boolean detalles;
 	private Libro libroEdicion;
 	
@@ -79,6 +82,7 @@ public class MtoLibroBean {
 				}
 				else if (ACCION_DETALLES_LIBRO.equals(accion)){
 					detalles = true;
+					libroEdicion = libro;
 				}
 			}
 		}
@@ -123,7 +127,12 @@ public class MtoLibroBean {
 	}
 	
 	public String verPrestamos(){
-		return null;
+		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+		mapaArgumentos.limpiaMapa();
+		mapaArgumentos.setArgumento(LANZAR_BUSQUEDA, true);
+		mapaArgumentos.setArgumento(LIBRO, libroEdicion);
+		mapaArgumentos.setArgumento(VOLVER_A, MTO_LIBRO);
+		return GESTIONAR_PRESTAMOS;
 	}
 
 	public String getTitulo() {

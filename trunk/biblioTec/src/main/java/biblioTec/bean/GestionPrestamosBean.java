@@ -5,8 +5,11 @@ import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_ANIADIR
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_DETALLES_PRESTAMOS;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_EDITAR_PRESTAMOS;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.DEVOLVER_OBJETO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.LANZAR_BUSQUEDA;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.LIBRO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.OBJETO_DEVUELTO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.PRESTAMO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.USUARIO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.VOLVER_A;
 import static biblioTec.utilidades.ConstantesReglasNavegacion.GESTIONAR_LIBROS;
 import static biblioTec.utilidades.ConstantesReglasNavegacion.GESTIONAR_PRESTAMOS;
@@ -45,7 +48,6 @@ import biblioTec.modelo.servicios.ServicioPrestamo;
 import biblioTec.modelo.servicios.ServicioUsuario;
 import biblioTec.utilidades.MapaArgumentos;
 import biblioTec.utilidades.MensajesCore;
-import biblioTec.utilidades.NombresBean;
 import biblioTec.utilidades.Permisos;
 import biblioTec.utilidades.UtilJsfContext;
 
@@ -62,7 +64,9 @@ public class GestionPrestamosBean {
 	private Date criterioFechaInicio;
 	private Date criterioFechaFin;
 	private boolean permisoGestionarPrestamos;
-
+	private boolean lanzarBusqueda = false;
+	private String volverA;
+	
 	@In(value=SERVICIO_PRESTAMO, create=true)
 	private ServicioPrestamo servicioPrestamo;
 
@@ -93,13 +97,25 @@ public class GestionPrestamosBean {
 		desplegado = true;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void cargarArgumentosDeEntrada(){
-		if(mapaArgumentos!=null && mapaArgumentos.contiene(OBJETO_DEVUELTO)){
-			Object objDevuelto = mapaArgumentos.getArgumento(OBJETO_DEVUELTO);
-			if(objDevuelto instanceof Libro)
-				criterioLibro = (Libro)objDevuelto;
-			else if (objDevuelto instanceof Usuario)
-				criterioUsuario = (Usuario) objDevuelto;
+		if(mapaArgumentos!=null){
+			if(mapaArgumentos.contiene(OBJETO_DEVUELTO)){
+				Object objDevuelto = mapaArgumentos.getArgumento(OBJETO_DEVUELTO);
+				if(objDevuelto instanceof Libro)
+					criterioLibro = (Libro)objDevuelto;
+				else if (objDevuelto instanceof Usuario)
+					criterioUsuario = (Usuario) objDevuelto;
+			}
+			
+			if(mapaArgumentos.contiene(LANZAR_BUSQUEDA)){
+				criterioUsuario = (Usuario)mapaArgumentos.getArgumento(USUARIO);
+				criterioLibro = (Libro)mapaArgumentos.getArgumento(LIBRO);
+				lanzarBusqueda = true;
+				if(mapaArgumentos.contiene(VOLVER_A))
+					volverA = (String)mapaArgumentos.getArgumento(VOLVER_A);
+				buscar();
+			}
 		}
 	}
 
@@ -227,6 +243,15 @@ public class GestionPrestamosBean {
 		criterioLibro = null;
 	}
 	
+	public String volver(){
+		String outcome = volverA!=null ? volverA : "";
+		limpiar();
+		lanzarBusqueda = false;
+		volverA = null;
+		return outcome;
+	}
+
+	
 	public RowKeySet getEstadoDeSeleccionTabla() {
 		return estadoDeSeleccionTabla;
 	}
@@ -298,5 +323,14 @@ public class GestionPrestamosBean {
 	public void setBinding(GestionPrestamosBinding binding) {
 		this.binding = binding;
 	}
+
+	public boolean isLanzarBusqueda() {
+		return lanzarBusqueda;
+	}
+
+	public void setLanzarBusqueda(boolean lanzarBusqueda) {
+		this.lanzarBusqueda = lanzarBusqueda;
+	}
+
 
 }

@@ -23,6 +23,7 @@ public class ConstantesArgumentosNavegacion {
 	public static final String DEVOLVER_OBJETO = "devolverObjeto";
 	public static final String OBJETO_DEVUELTO = "objetoDevuelto";
 	public static final String COMPROBAR_DATO_A_DEVOLVER = "comprobarDatoADevolver";
+	public static final String LANZAR_BUSQUEDA = "lanzarBusqueda";
 	
 	
 	
