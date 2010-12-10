@@ -14,6 +14,16 @@ public class ConstantesArgumentosNavegacion {
 	public static final String ACCION_EDITAR_LIBRO = "accionEditarLibro";
 	public static final String ACCION_DETALLES_LIBRO = "accionDetallesLibro";
 	
+	public static final String PRESTAMO = "prestamo";
+	public static final String ACCION_ANIADIR_PRESTAMOS = "accionAniadirPrestamo";
+	public static final String ACCION_EDITAR_PRESTAMOS = "accionEditarPrestamo";
+	public static final String ACCION_DETALLES_PRESTAMOS = "accionDetallesPrestamo";
+	
+	public static final String VOLVER_A = "volverA";
+	public static final String DEVOLVER_OBJETO = "devolverObjeto";
+	public static final String OBJETO_DEVUELTO = "objetoDevuelto";
+	
+	
 	
 
 }

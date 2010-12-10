@@ -78,15 +78,16 @@
 						<tr:panelGroupLayout>
 							<tr:panelButtonBar>
 								<tr:commandButton text="#{resCore['AGREGAR_LIBRO']}"
-									disabled="#{!gestionLibrosBean.permisoGestionarLibros}"
+									disabled="#{!gestionLibrosBean.permisoGestionarLibros || gestionLibrosBean.buscando}"
 									id="btnAgregar" action="#{gestionLibrosBean.agregar}" />
 								<tr:commandButton text="#{resCore['DETALLES_LIBRO']}"
+									disabled="#{gestionLibrosBean.buscando}"
 									id="btnDetalles" action="#{gestionLibrosBean.detalles}" />
 								<tr:commandButton text="#{resCore['MODIFICAR_LIBRO']}"
-									disabled="#{!gestionLibrosBean.permisoGestionarLibros}"
+									disabled="#{!gestionLibrosBean.permisoGestionarLibros || gestionLibrosBean.buscando}"
 									id="btnModificar" action="#{gestionLibrosBean.modificar}" />
 								<tr:commandButton text="#{resCore['ELIMINAR_LIBRO']}"
-									disabled="#{!gestionLibrosBean.permisoGestionarLibros}"
+									disabled="#{!gestionLibrosBean.permisoGestionarLibros || gestionLibrosBean.buscando}"
 									id="btnEliminar" action="#{gestionLibrosBean.eliminar}"
 									onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_LIBRO']}')" />
 							</tr:panelButtonBar>
@@ -119,7 +120,7 @@
 							</tr:column>
 						</tr:table>
 						<tr:spacer height="20" width="20" />
-						<tr:panelHorizontalLayout halign="center" rendered="false">
+						<tr:panelHorizontalLayout halign="center" rendered="#{gestionLibrosBean.buscando}">
 							<tr:commandButton text="#{resCore['ACEPTAR']}" id="btnAceptar"
 								action="#{gestionLibrosBean.aceptar}" />
 							<tr:spacer width="20" height="10" />

@@ -4,7 +4,10 @@ import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_ANIADIR_USUARIO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_DETALLES_USUARIO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_EDITAR_USUARIO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.DEVOLVER_OBJETO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.OBJETO_DEVUELTO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.USUARIO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.VOLVER_A;
 import static biblioTec.utilidades.ConstantesReglasNavegacion.MENU_PRINCIPAL;
 import static biblioTec.utilidades.ConstantesReglasNavegacion.MTO_USUARIO;
 import static biblioTec.utilidades.NombresBean.GESTION_USUARIOS_BEAN;
@@ -50,7 +53,8 @@ public class GestionUsuariosBean {
 	private boolean desplegado;
 	private String criterioUsuario;
 	private Perfil criterioPerfil;
-
+	private boolean buscando;
+	private String volverA;
 	private SelectItem[] selectPerfil;
 
 	@In(value=SERVICIO_USUARIO, create=true)
@@ -82,7 +86,11 @@ public class GestionUsuariosBean {
 	}
 
 	public void cargarArgumentosDeEntrada(){
-
+		if(mapaArgumentos!=null && mapaArgumentos.contiene(DEVOLVER_OBJETO)){
+			buscando = true;
+			if(mapaArgumentos.contiene(VOLVER_A))
+				volverA = (String)mapaArgumentos.getArgumento(VOLVER_A);
+		}
 	}
 
 
@@ -169,6 +177,31 @@ public class GestionUsuariosBean {
 		}
 	}
 	
+	public String cancelar(){
+		String outcome = volverA!=null ? volverA : "";
+		estadoDeSeleccionTabla.clear();
+		buscando = false;
+		return outcome;
+	}
+
+	public String aceptar(){
+		String outcome = "";
+		if(estadoDeSeleccionTabla.size()==1){
+			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
+			Usuario usuario = listaUsuarios.get(seleccion);
+			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+			mapaArgumentos.limpiaMapa();
+			mapaArgumentos.setArgumento(OBJETO_DEVUELTO, usuario);
+			
+			outcome = volverA!=null ? volverA : "";
+			estadoDeSeleccionTabla.clear();
+			buscando = false;
+		}else
+			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
+			
+		return outcome;
+	}
+	
 	public List<Usuario> getListaUsuarios() {
 		return listaUsuarios;
 	}
@@ -223,6 +256,14 @@ public class GestionUsuariosBean {
 
 	public void setBinding(GestionUsuariosBinding binding) {
 		this.binding = binding;
+	}
+
+	public boolean isBuscando() {
+		return buscando;
+	}
+
+	public void setBuscando(boolean buscando) {
+		this.buscando = buscando;
 	}
 
 }

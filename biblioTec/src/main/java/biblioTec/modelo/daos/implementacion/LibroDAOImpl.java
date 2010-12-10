@@ -15,7 +15,6 @@ import org.jboss.seam.annotations.Scope;
 import biblioTec.modelo.daos.LibroDAO;
 import biblioTec.modelo.entidades.Libro;
 import biblioTec.modelo.entidades.implementacion.LibroImpl;
-import biblioTec.modelo.entidades.implementacion.UsuarioImpl;
 import biblioTec.utilidades.HerramientasCriteria;
 import biblioTec.utilidades.NombresBean;
 
