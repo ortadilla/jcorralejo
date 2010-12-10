@@ -56,6 +56,7 @@ public class ServicioLibroImpl implements ServicioLibro {
     
     public void borrarLibro(Libro libro) {
     	libroDAO.borrar(libro);
+    	libroDAO.flushear();
     }
     
 	public boolean tienePrestamosPendientes(Libro libro){

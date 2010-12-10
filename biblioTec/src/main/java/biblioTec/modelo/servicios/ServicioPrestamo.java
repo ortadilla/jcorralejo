@@ -16,5 +16,7 @@ public interface ServicioPrestamo {
 	public Prestamo crearPrestamo(Usuario usuario, Libro libro, Date fechaInicio, Date fechaFin);
 	
 	public void borrarPrestamo(Prestamo prestamo);
+	
+	public void devolverLibro(Prestamo prestamo);
 
 }
