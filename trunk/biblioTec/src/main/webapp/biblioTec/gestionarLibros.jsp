@@ -118,6 +118,9 @@
 							<tr:column sortable="true" headerText="#{resCore['UNIDADES_DISPONIBLES']}">
 								<tr:outputText value="#{var.unidadesDisponibles}" />
 							</tr:column>
+							<tr:column sortable="true" headerText="#{resCore['UNIDADES_PRESTAMO']}">
+								<tr:outputText value="#{var.unidadesPrestamo}" />
+							</tr:column>
 						</tr:table>
 						<tr:spacer height="20" width="20" />
 						<tr:panelHorizontalLayout halign="center" rendered="#{gestionLibrosBean.buscando}">
