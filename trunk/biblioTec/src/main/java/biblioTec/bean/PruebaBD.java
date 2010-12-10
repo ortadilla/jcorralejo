@@ -29,6 +29,7 @@ public class PruebaBD{
 	private String resultadoSelect;
 	private String mensaje = "Prueba BD: ";
 	
+	@SuppressWarnings("unchecked")
 	public void accionBoton(){
 		rendered = true;
 		

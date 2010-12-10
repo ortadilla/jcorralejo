@@ -11,10 +11,8 @@ import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 
-
 import biblioTec.modelo.servicios.ServicioUsuario;
 import biblioTec.utilidades.MensajesCore;
-import biblioTec.utilidades.NombresBean;
 import biblioTec.utilidades.Redirect;
 import biblioTec.utilidades.UtilJsfContext;
 
