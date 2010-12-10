@@ -178,8 +178,9 @@ public class GestionUsuariosBean {
 	}
 
 	public String cancelar(){
+		String outcome = volverA!=null ? volverA : "";
 		limpiarFormulario();
-		return volverA!=null ? volverA : "";
+		return outcome;
 	}
 
 	private void limpiarFormulario(){
@@ -189,7 +190,8 @@ public class GestionUsuariosBean {
 		criterioPerfil = null;
 		criterioUsuario = null;
 		desplegado = true;
-		binding = null;
+		binding = null;		
+		volverA = null;
 	}
 
 	public String aceptar(){

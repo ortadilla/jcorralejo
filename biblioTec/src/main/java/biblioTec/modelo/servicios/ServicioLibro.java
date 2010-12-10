@@ -15,4 +15,6 @@ public interface ServicioLibro {
 	public void borrarLibro(Libro libro);
 
 	public boolean tienePrestamosPendientes(Libro libro);
+	
+	public boolean tieneUnidadesLibres(Libro libro);
 }

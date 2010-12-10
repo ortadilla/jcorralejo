@@ -4,6 +4,7 @@ import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_ANIADIR_PRESTAMOS;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_DETALLES_PRESTAMOS;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_EDITAR_PRESTAMOS;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.COMPROBAR_DATO_A_DEVOLVER;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.DEVOLVER_OBJETO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.OBJETO_DEVUELTO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.PRESTAMO;
@@ -31,6 +32,7 @@ import biblioTec.modelo.entidades.Libro;
 import biblioTec.modelo.entidades.Prestamo;
 import biblioTec.modelo.entidades.Usuario;
 import biblioTec.modelo.servicios.ServicioPrestamo;
+import biblioTec.utilidades.ConstantesArgumentosNavegacion;
 import biblioTec.utilidades.MapaArgumentos;
 import biblioTec.utilidades.MensajesCore;
 import biblioTec.utilidades.UtilJsfContext;
@@ -158,6 +160,7 @@ public class MtoPrestamoBean {
 		mapaArgumentos.limpiaMapa();
 		mapaArgumentos.setArgumento(VOLVER_A, MTO_PRESTAMO);
 		mapaArgumentos.setArgumento(DEVOLVER_OBJETO, true);
+		mapaArgumentos.setArgumento(COMPROBAR_DATO_A_DEVOLVER, true);
 		
 		return GESTIONAR_LIBROS;
 	}

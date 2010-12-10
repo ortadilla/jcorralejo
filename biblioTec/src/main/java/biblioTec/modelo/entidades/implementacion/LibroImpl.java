@@ -79,7 +79,17 @@ public class LibroImpl implements Libro {
 		this.prestamos = prestamos;
 	}
 	
-	
+	public Integer getUnidadesPrestamo(){
+		int nPrestamos = 0;
+		if(prestamos!=null){
+			for(Prestamo prestamo : prestamos){
+				if(!prestamo.isDevuelto()){
+					nPrestamos++;
+				}
+			}
+		}
+		return unidadesDisponibles - nPrestamos;
+	}
 	
 	
 }

@@ -70,5 +70,9 @@ public class ServicioLibroImpl implements ServicioLibro {
 		}
 		return hay;
 	}
+	
+	public boolean tieneUnidadesLibres(Libro libro) {
+		return !libro.getUnidadesDisponibles().equals(0) && !((LibroImpl)libro).getUnidadesPrestamo().equals(0);
+	}
 
 }

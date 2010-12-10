@@ -4,6 +4,7 @@ import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_ANIADIR_LIBRO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_DETALLES_LIBRO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_EDITAR_LIBRO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.COMPROBAR_DATO_A_DEVOLVER;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.DEVOLVER_OBJETO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.LIBRO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.OBJETO_DEVUELTO;
@@ -54,6 +55,7 @@ public class GestionLibrosBean {
 	private boolean buscando;
 	private boolean permisoGestionarLibros;
 	private String volverA;
+	private boolean comprobarDatos;
 
 	@In(value=SERVICIO_LIBRO, create=true)
 	private ServicioLibro servicioLibro;
@@ -85,6 +87,8 @@ public class GestionLibrosBean {
 			buscando = true;
 			if(mapaArgumentos.contiene(VOLVER_A))
 				volverA = (String)mapaArgumentos.getArgumento(VOLVER_A);
+			if(mapaArgumentos.contiene(COMPROBAR_DATO_A_DEVOLVER))
+				comprobarDatos = (Boolean)mapaArgumentos.getArgumento(COMPROBAR_DATO_A_DEVOLVER);
 		}
 	}
 
@@ -173,8 +177,9 @@ public class GestionLibrosBean {
 	}
 	
 	public String cancelar(){
+		String outcome = volverA!=null ? volverA : "";
 		limpiarFormulario();
-		return volverA!=null ? volverA : "";
+		return outcome;
 	}
 	
 	private void limpiarFormulario(){
@@ -186,6 +191,8 @@ public class GestionLibrosBean {
 		criterioTitulo = null;
 		desplegado = true;
 		binding = null;
+		volverA = null;
+		comprobarDatos = false;
 	}
 
 	public String aceptar(){
@@ -193,12 +200,17 @@ public class GestionLibrosBean {
 		if(estadoDeSeleccionTabla.size()==1){
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
 			Libro libro = listaLibros.get(seleccion);
-			if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
-			mapaArgumentos.limpiaMapa();
-			mapaArgumentos.setArgumento(OBJETO_DEVUELTO, libro);
 			
-			outcome = volverA!=null ? volverA : "";
-			limpiarFormulario();
+			if(!comprobarDatos || servicioLibro.tieneUnidadesLibres(libro)){
+				if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+				mapaArgumentos.limpiaMapa();
+				mapaArgumentos.setArgumento(OBJETO_DEVUELTO, libro);
+
+				outcome = volverA!=null ? volverA : "";
+				limpiarFormulario();
+			}else
+				utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("NO_UNIDADES_DISPONIBLES"));
+				
 		}else
 			utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("SELECCIONAR_UNO"));
 			
