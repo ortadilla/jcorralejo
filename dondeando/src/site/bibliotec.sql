@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     08/12/2010 21:12:23                          */
+/* Created on:     10/12/2010 0:55:47                           */
 /*==============================================================*/
 
 
@@ -67,7 +67,7 @@ create table PERFIL
 (
    ID                   numeric(10,0) not null,
    VERSION              numeric(10,0) not null,
-   DESCRIPCION           varchar(50) not null comment 'Descripción del perfil',
+   DESCRIPCION          varchar(50) not null comment 'Descripción del perfil',
    primary key (ID)
 );
 
@@ -122,6 +122,7 @@ create table PRESTAMO
    LIBRO                numeric(10,0) not null comment 'Libro que se presta',
    FECHAINICIO          date not null comment 'Fecha en la que comienza el préstamo',
    FECHAFIN             datetime not null comment 'Fecha en la que termina el préstamo',
+   DEVUELTO             char(1) not null default 'F' comment 'Indica si el libro ha siso devuelto',
    primary key (ID)
 );
 
