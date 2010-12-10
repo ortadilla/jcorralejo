@@ -11,6 +11,7 @@ import static biblioTec.utilidades.NombresBean.GESTION_LIBROS_BEAN;
 import static biblioTec.utilidades.NombresBean.GESTION_LIBROS_BINDING;
 import static biblioTec.utilidades.NombresBean.MAPA_ARGUMENTOS;
 import static biblioTec.utilidades.NombresBean.SERVICIO_LIBRO;
+import static biblioTec.utilidades.NombresBean.SERVICIO_PERMISO_PERFIL;
 import static biblioTec.utilidades.NombresBean.UTIL_JSF_CONTEXT;
 import static org.jboss.seam.ScopeType.CONVERSATION;
 
@@ -30,8 +31,10 @@ import org.jboss.seam.annotations.Scope;
 import biblioTec.binding.GestionLibrosBinding;
 import biblioTec.modelo.entidades.Libro;
 import biblioTec.modelo.servicios.ServicioLibro;
+import biblioTec.modelo.servicios.ServicioPermisoPerfil;
 import biblioTec.utilidades.MapaArgumentos;
 import biblioTec.utilidades.MensajesCore;
+import biblioTec.utilidades.Permisos;
 import biblioTec.utilidades.UtilJsfContext;
 
 
@@ -45,6 +48,8 @@ public class GestionLibrosBean {
 	private String criterioTitulo;
 	private String criterioAutor;
 	private String criterioISBN;
+	
+	private boolean permisoGestionarLibros;
 
 	@In(value=SERVICIO_LIBRO, create=true)
 	private ServicioLibro servicioLibro;
@@ -55,6 +60,9 @@ public class GestionLibrosBean {
 	@In(value=UTIL_JSF_CONTEXT, create=true)
 	private UtilJsfContext utilJsfContext;
 	
+	@In(value=SERVICIO_PERMISO_PERFIL, create=true)
+	private ServicioPermisoPerfil servicioPermisoPerfil;
+	
     @In(value=MAPA_ARGUMENTOS, required=false)
     @Out(value=MAPA_ARGUMENTOS, required=false)
 	private biblioTec.utilidades.MapaArgumentos mapaArgumentos;
@@ -64,6 +72,7 @@ public class GestionLibrosBean {
 	@Create
 	@Begin(join=true)
 	public void inicializar(){
+		permisoGestionarLibros = servicioPermisoPerfil.hayPermiso(Permisos.GESTIONAR_LIBROS);
 		desplegado = true;
 	}
 
@@ -205,6 +214,14 @@ public class GestionLibrosBean {
 
 	public void setBinding(GestionLibrosBinding binding) {
 		this.binding = binding;
+	}
+
+	public boolean isPermisoGestionarLibros() {
+		return permisoGestionarLibros;
+	}
+
+	public void setPermisoGestionarLibros(boolean permisoGestionarLibros) {
+		this.permisoGestionarLibros = permisoGestionarLibros;
 	}
 
 }
