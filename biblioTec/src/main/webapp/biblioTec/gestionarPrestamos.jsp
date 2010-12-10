@@ -105,19 +105,19 @@
 						<tr:panelGroupLayout>
 							<tr:panelButtonBar>
 								<tr:commandButton text="#{resCore['AGREGAR_PRESTAMO']}"
-									disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos}"
+									disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos || gestionPrestamosBean.lanzarBusqueda}"
 									id="btnAgregar" action="#{gestionPrestamosBean.agregar}" />
 								<tr:commandButton text="#{resCore['DETALLES_PRESTAMO']}"
 									id="btnDetalles" action="#{gestionPrestamosBean.detalles}" />
 								<tr:commandButton text="#{resCore['MODIFICAR_PRESTAMO']}"
-									disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos}"
+									disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos || gestionPrestamosBean.lanzarBusqueda}"
 									id="btnModificar" action="#{gestionPrestamosBean.modificar}" />
 								<tr:commandButton text="#{resCore['ELIMINAR_PRESTAMO']}"
-									disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos}"
+									disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos || gestionPrestamosBean.lanzarBusqueda}"
 									id="btnEliminar" action="#{gestionPrestamosBean.eliminar}"
 									onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_PRESTAMO']}')" />
 								<tr:commandButton text="#{resCore['DEVOLVER_LIBRO']}"
-									disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos}"
+									disabled="#{!gestionPrestamosBean.permisoGestionarPrestamos || gestionPrestamosBean.lanzarBusqueda}"
 									id="btnDevolver" action="#{gestionPrestamosBean.devolver}" />
 							</tr:panelButtonBar>
 						</tr:panelGroupLayout>
@@ -152,12 +152,9 @@
 							</tr:column>
 						</tr:table>
 						<tr:spacer height="20" width="20" />
-						<tr:panelHorizontalLayout halign="center" rendered="false">
-							<tr:commandButton text="#{resCore['ACEPTAR']}" id="btnAceptar"
-								action="#{gestionPrestamosBean.aceptar}" />
-							<tr:spacer width="20" height="10" />
-							<tr:commandButton text="#{resCore['CANCELAR']}" id="btnCancelar"
-								immediate="true" action="#{gestionPrestamosBean.cancelar}" />
+						<tr:panelHorizontalLayout halign="center" rendered="#{gestionPrestamosBean.lanzarBusqueda}">
+							<tr:commandButton text="#{resCore['VOLVER']}" id="btnVolver"
+								action="#{gestionPrestamosBean.volver}" />
 						</tr:panelHorizontalLayout>
 						<tr:spacer height="20" width="20" />
 						<tr:panelHorizontalLayout halign="center">

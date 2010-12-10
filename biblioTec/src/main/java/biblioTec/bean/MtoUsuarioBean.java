@@ -4,7 +4,12 @@ import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_ANIADIR_USUARIO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_DETALLES_USUARIO;
 import static biblioTec.utilidades.ConstantesArgumentosNavegacion.ACCION_EDITAR_USUARIO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.LANZAR_BUSQUEDA;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.USUARIO;
+import static biblioTec.utilidades.ConstantesArgumentosNavegacion.VOLVER_A;
+import static biblioTec.utilidades.ConstantesReglasNavegacion.GESTIONAR_PRESTAMOS;
 import static biblioTec.utilidades.ConstantesReglasNavegacion.GESTIONAR_USUARIOS;
+import static biblioTec.utilidades.ConstantesReglasNavegacion.MTO_USUARIO;
 import static biblioTec.utilidades.NombresBean.MAPA_ARGUMENTOS;
 import static biblioTec.utilidades.NombresBean.MTO_USUARIO_BEAN;
 import static biblioTec.utilidades.NombresBean.SERVICIO_PERFIL;
@@ -47,7 +52,6 @@ public class MtoUsuarioBean {
 	private String nombre;
 	private String descPerfiles;
 	public List<Perfil> perfiles;
-	
 	private boolean detalles;
 	private Usuario usuarioEdicion;
 	private SelectItem[] selectPerfiles;
@@ -98,6 +102,7 @@ public class MtoUsuarioBean {
 				}
 				else if (ACCION_DETALLES_USUARIO.equals(accion)){
 					detalles = true;
+					usuarioEdicion = usuario;
 				}
 			}
 		}
@@ -140,7 +145,12 @@ public class MtoUsuarioBean {
 	}
 	
 	public String verPrestamos(){
-		return null;
+		if(mapaArgumentos==null) mapaArgumentos = new MapaArgumentos();
+		mapaArgumentos.limpiaMapa();
+		mapaArgumentos.setArgumento(LANZAR_BUSQUEDA, true);
+		mapaArgumentos.setArgumento(USUARIO, usuarioEdicion);
+		mapaArgumentos.setArgumento(VOLVER_A, MTO_USUARIO);
+		return GESTIONAR_PRESTAMOS;
 	}
 
 	public String getTitulo() {
