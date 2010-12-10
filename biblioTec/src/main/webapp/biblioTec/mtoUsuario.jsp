@@ -24,7 +24,7 @@
 						<tr:messages />
 					</f:facet>
 
-					<tr:panelHeader text="#{mtoUsuarioBean.titulo}" />
+					<tr:panelHeader text="#{resCore['DATOS_USUARIO']}" />
 
 					<tr:panelHorizontalLayout halign="center">
 						<tr:spacer width="10" />
