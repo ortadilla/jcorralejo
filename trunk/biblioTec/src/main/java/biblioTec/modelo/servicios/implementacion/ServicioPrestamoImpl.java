@@ -56,8 +56,12 @@ public class ServicioPrestamoImpl implements ServicioPrestamo{
 	
 	public void borrarPrestamo(Prestamo prestamo) {
 		prestamoDAO.borrar(prestamo);
+		prestamoDAO.flushear();
 	}
 	
-	
+	public void devolverLibro(Prestamo prestamo) {
+		prestamo.setDevuelto(true);
+		prestamoDAO.flushear();
+	}
 	
 }

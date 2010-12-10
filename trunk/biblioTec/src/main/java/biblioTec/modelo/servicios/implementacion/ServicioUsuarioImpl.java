@@ -123,6 +123,7 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     
     public void borrarUsuario(Usuario usuario) {
     	usuarioDAO.borrar(usuario);
+    	usuarioDAO.flushear();
     }
     
 	public boolean tienePrestamosPendientes(Usuario usuario){

@@ -208,7 +208,7 @@ public class GestionPrestamosBean {
 			Integer seleccion = (Integer)estadoDeSeleccionTabla.iterator().next();
 			Prestamo prestamo = listaPrestamos.get(seleccion);
 			if(!prestamo.isDevuelto())
-				prestamo.setDevuelto(true);
+				servicioPrestamo.devolverLibro(prestamo);
 			else
 				utilJsfContext.insertaMensaje(mensajesCore.obtenerTexto("LIBRO_YA_DEVUELTO"));
 		}else{
