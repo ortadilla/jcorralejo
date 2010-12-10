@@ -97,7 +97,6 @@ public class GestionPrestamosBean {
 		desplegado = true;
 	}
 	
-	@SuppressWarnings("unchecked")
 	public void cargarArgumentosDeEntrada(){
 		if(mapaArgumentos!=null){
 			if(mapaArgumentos.contiene(OBJETO_DEVUELTO)){
