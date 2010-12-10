@@ -36,10 +36,11 @@ public class BiblioTecHibernateAplicacion{
 	private String transactionFactoryClass = "org.hibernate.transaction.JTATransactionFactory";
 	private String sessionFactoryName ;
 	private String driver = "com.mysql.jdbc.Driver" ;
-	private String connectionURL = "jdbc:mysql://localhost:3306/biblioTec";
-	private String user = "user";
-	private String pass = "user";
+//	private String connectionURL = "jdbc:mysql://localhost:3306/biblioTec";
+//	private String user = "user";
+//	private String pass = "user";
 	private String autocommit = "true";
+	private String dataSource = "java:comp/env/jdbc/hibernateDatasource";
 	
 	private static String pathMapeos = "mapeos/";
 
@@ -60,12 +61,13 @@ public class BiblioTecHibernateAplicacion{
 		acfg.setProperty(Environment.SHOW_SQL,                  showSQL);
 		acfg.setProperty(Environment.DIALECT,                   dialect);
 		acfg.setProperty(Environment.TRANSACTION_STRATEGY,      transactionFactoryClass);
-		acfg.setProperty(Environment.URL,         				connectionURL);
+//		acfg.setProperty(Environment.URL,         				connectionURL);
 		acfg.setProperty(Environment.DRIVER,       				driver);
 		acfg.setProperty(Environment.SESSION_FACTORY_NAME,      sessionFactoryName);
-		acfg.setProperty(Environment.USER,         		   		user);
-		acfg.setProperty(Environment.PASS,         		   		pass);
+//		acfg.setProperty(Environment.USER,         		   		user);
+//		acfg.setProperty(Environment.PASS,         		   		pass);
 		acfg.setProperty(Environment.AUTOCOMMIT,         		autocommit);
+		acfg.setProperty(Environment.DATASOURCE,         		dataSource);
 		acfg.setProperty(Environment.USE_SECOND_LEVEL_CACHE, 	(cacheProviderClass.toUpperCase().indexOf("EHCACHE")>-1?"true":"false"));
 
 		// Prefix regular JNDI properties for Hibernate
