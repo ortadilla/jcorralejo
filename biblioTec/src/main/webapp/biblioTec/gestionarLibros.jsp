@@ -78,12 +78,15 @@
 						<tr:panelGroupLayout>
 							<tr:panelButtonBar>
 								<tr:commandButton text="#{resCore['AGREGAR_LIBRO']}"
+									disabled="#{!gestionLibrosBean.permisoGestionarLibros}"
 									id="btnAgregar" action="#{gestionLibrosBean.agregar}" />
 								<tr:commandButton text="#{resCore['DETALLES_LIBRO']}"
 									id="btnDetalles" action="#{gestionLibrosBean.detalles}" />
 								<tr:commandButton text="#{resCore['MODIFICAR_LIBRO']}"
+									disabled="#{!gestionLibrosBean.permisoGestionarLibros}"
 									id="btnModificar" action="#{gestionLibrosBean.modificar}" />
 								<tr:commandButton text="#{resCore['ELIMINAR_LIBRO']}"
+									disabled="#{!gestionLibrosBean.permisoGestionarLibros}"
 									id="btnEliminar" action="#{gestionLibrosBean.eliminar}"
 									onclick="return confirm('#{resCore['CONFIRMAR_ELIMINAR_LIBRO']}')" />
 							</tr:panelButtonBar>
