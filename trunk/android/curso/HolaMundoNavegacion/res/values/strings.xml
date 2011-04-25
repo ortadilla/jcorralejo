@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Esto es una línea</string>
+    <string name="hello2">Esto es otra línea</string>
+    <string name="app_name">Segunda App</string>
+</resources>
