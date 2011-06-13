@@ -5,8 +5,6 @@ import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.util.StringTokenizer;
 
-import javax.print.attribute.standard.MediaSize.ISO;
-
 public class Ejercicio2 {
 	
 	private static int MAX_PRUEBAS = 100; 
@@ -97,7 +95,7 @@ public class Ejercicio2 {
 		else if (operacion=='@'){
 			res = op1;
 			if(op2!=null)
-			res = res.subtract(op2);
+				res = res.subtract(op2);
 		}
 		
 		return res;
