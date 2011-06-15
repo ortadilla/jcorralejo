@@ -30,12 +30,12 @@ public class Ejercicio6 {
 					if(tokens.hasMoreTokens()){
 						segundos = Integer.parseInt(tokens.nextToken());
 						
-						suma += lucesNivel(segundos, 1);
-						suma += lucesNivel(segundos, 2);
-						suma += lucesNivel(segundos, 3);
-						suma += lucesNivel(segundos, 4);
-						suma += lucesNivel(segundos, 5);
-						suma += lucesNivel(segundos, 6);
+						suma += lucesSeg1(segundos);
+						suma += lucesSeg2(segundos);
+						suma += lucesMin1(segundos);
+						suma += lucesMin2(segundos);
+						suma += lucesHora1(segundos);
+						suma += lucesHora2(segundos);
 					}
 					
 					System.out.println (suma);
@@ -47,20 +47,87 @@ public class Ejercicio6 {
 		}
 	}
 	
-	private static int lucesNivel(int s, int n){
+	private static int lucesSeg1(int s){
 		int suma = 0;
-
-		int vueltasCompletas = s/segundosVueltaCompletaNivel.get(n);
-		suma += vueltasCompletas * segundosVueltaCompletaNivel.get(n-1) * sumarHasta(digitosNivel.get(n-1)-1);
-
-		int segIncomp = s%segundosVueltaCompletaNivel.get(n);
-		int vueltasCompletasNivelAnterior = segIncomp/segundosVueltaCompletaNivel.get(n);
-		suma += segundosVueltaCompletaNivel.get(n) * sumarHasta(vueltasCompletasNivelAnterior-1);
-		int vueltasIncompletasNivelAnterior = segIncomp%segundosVueltaCompletaNivel.get(n);
-		if(n>1)
-			suma += (vueltasIncompletasNivelAnterior+1) * duracion.get(vueltasCompletasNivelAnterior);
-		else if(n==1)
-			suma += sumarHasta(vueltasIncompletasNivelAnterior);
+		
+		int vueltasCompletas = s/10;
+		suma += vueltasCompletas * sumarHasta(9);
+		int vueltasIncomp = s%10;
+		suma += sumarHasta(vueltasIncomp);
+		
+		return suma;
+	}
+	
+	private static int lucesSeg2(int s){
+		int suma = 0;
+		
+		int vueltasCompletas = s/60;
+		suma += 10 * vueltasCompletas * sumarHasta(5);
+		int vueltasIncomp = s%60;
+		int vueltasComAnt = vueltasIncomp/10;
+		suma += 10 * sumarHasta(vueltasComAnt-1);
+		int vueltasIncAnt = vueltasIncomp%10;
+		suma += (vueltasIncAnt+1) * duracion.get(vueltasComAnt);
+		
+		return suma;
+	}
+	
+	private static int lucesMin1(int s){
+		int suma = 0;
+		
+		int vueltasCompletas = s/600;
+		suma += 60 * vueltasCompletas * sumarHasta(9);
+		int vueltasIncomp = s%600;
+		int vueltasComAnt = vueltasIncomp/60;
+		suma += 60 * sumarHasta(vueltasComAnt-1);
+		int vueltasIncAnt = vueltasIncomp%60;
+		suma += (vueltasIncAnt+1) * duracion.get(vueltasComAnt);
+		
+		return suma;
+	}
+	
+	private static int lucesMin2(int s){
+		int suma = 0;
+		
+		int vueltasCompletas = s/3600;
+		suma += 600 * vueltasCompletas * sumarHasta(5);
+		int vueltasIncomp = s%3600;
+		int vueltasComAnt = vueltasIncomp/600;
+		suma += 600 * sumarHasta(vueltasComAnt-1);
+		int vueltasIncAnt = vueltasIncomp%600;
+		suma += (vueltasIncAnt+1) * duracion.get(vueltasComAnt);
+		
+		return suma;
+	}
+	
+	private static int lucesHora1(int s){
+		int suma = 0;
+		
+		int vueltasCompletas = s/36000;
+		int vueltasCompletas10 = vueltasCompletas*10/24;
+		suma += 3600 * vueltasCompletas10 * sumarHasta(9);
+		int vueltasCompletas4 = (vueltasCompletas*10)%24;
+		suma += 3600 * vueltasCompletas4 * sumarHasta(3);
+		
+		int vueltasIncomp = s%36000;
+		int vueltasComAnt = vueltasIncomp/3600;
+		suma += 3600 * sumarHasta(vueltasComAnt-1);
+		int vueltasIncAnt = vueltasIncomp%3600;
+		suma += (vueltasIncAnt+1) * duracion.get(vueltasComAnt);
+		
+		return suma;
+	}
+	
+	private static int lucesHora2(int s){
+		int suma = 0;
+		
+		int vueltasCompletas = s/86400;
+		suma += 36000 * vueltasCompletas * sumarHasta(3);
+		int vueltasIncomp = s%86400;
+		int vueltasComAnt = vueltasIncomp/36000;
+		suma += 36000 * sumarHasta(vueltasComAnt-1);
+		int vueltasIncAnt = vueltasIncomp%36000;
+		suma += (vueltasIncAnt+1) * duracion.get(vueltasComAnt);
 		
 		return suma;
 	}
