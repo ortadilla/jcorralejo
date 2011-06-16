@@ -62,8 +62,6 @@ public class Ejercicio7 {
 	
 	private static void obtenerAlfabeto(String origen, String destino){
 		alfabeto.clear();
-		for(int i=0; i<origen.length(); i++)
-			alfabeto.add(origen.charAt(i));
 		for(int i=0; i<destino.length(); i++)
 			alfabeto.add(destino.charAt(i));
 	}
