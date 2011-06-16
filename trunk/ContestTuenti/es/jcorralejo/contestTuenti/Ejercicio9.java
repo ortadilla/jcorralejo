@@ -19,7 +19,7 @@ public class Ejercicio9 {
 				if(linea!=null && !"".equals(linea)){
 					int N = 0;
 					N = Integer.parseInt(String.valueOf(linea.charAt(0)));
-					for(int j=0; j<N-1; j++){
+					for(int j=0; j<N; j++){
 						int l = 0;
 						int t = 0;
 						linea = br.readLine();
