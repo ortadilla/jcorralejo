@@ -1,45 +1,80 @@
 package es.jcorralejo.contestTuenti;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+
 
 public class Ejercicio8 {
 	
-	public static void main(String[] args)
-	{
-		String str1 = "cgtaattgcgat";
-		String str2 = "cgtacagtagc";
-		int[][] lcs = new int[str1.length()+1][str2.length()+1];
-		int i;
-		for(i=0;i<=str1.length();i++)
-			lcs[i][0] = 0;
-		for(i=0;i<=str2.length();i++)
-			lcs[0][i] = 0;
-		for(i=1;i<=str1.length();i++)
-		{
-			for(int j=1;j<=str2.length();j++)
-			{
-				if(str1.charAt(i-1) == str2.charAt(j-1))
-					lcs[i][j]=lcs[i-1][j-1]+1;
-				else
-					lcs[i][j]=Math.max(lcs[i-1][j], lcs[i][j-1]);
-			}
+	private static int MAX_PRUEBAS = 100;
 
+	public static void main(String[] args) {
+		
+		try{
+			BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+			int i=0;
+			while(i<MAX_PRUEBAS){
+				String linea = br.readLine();
+				if(linea!=null && !"".equals(linea)){
+					String x = "";
+					String y = "";
+					StringTokenizer tokens = new StringTokenizer(linea);
+					if(tokens.hasMoreTokens())
+						x = tokens.nextToken();
+					if(tokens.hasMoreTokens())
+						y = tokens.nextToken();
+					System.out.println(maxSubsecuencia(x, y));
+				}
+				i++;
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	private static String maxSubsecuencia(String x, String y){
+		int M = x.length();
+		int N = y.length();
+		char[][] sol = new char[M][N];
+		
+		for(int i=0; i<M; i++){
+			for(int j=0; j<N; j++){
+				if(x.charAt(i)==y.charAt(j))
+					sol[i][j] = x.charAt(i);
+				else
+					sol[i][j] = '·';
+			}
+		}
+
+		String maxSub = "";
+		for(int i=0; i<M; i++){
+			for(int j=0; j<N; j++){
+				String sub = "";
+				if(sol[i][j]!='·'){
+					sub += sol[i][j];
+					for(int k=1; i+k<M && j+k<N; k++){
+						if(sol[i+k][j+k]!='·')
+							sub += sol[i+k][j+k];
+						else
+							break;
+					}
+				}
+				if(maxSub.length()<sub.length())
+					maxSub = sub;
+			}
 		}
 		
-		int x = 0, y = 0;
-        	while(x < str1.length() && y < str2.length())
-		{
-            		if (str1.charAt(x) == str2.charAt(y))
-			{
-    		            	System.out.print(str1.charAt(x));
-                		x++;
-                		y++;
-            		}
-            		else if (lcs[x+1][y] >= lcs[x][y+1]) x++;
-            		else y++;
-        	}
-        	System.out.println();
+//		for(int i=0; i<M; i++){
+//			for(int j=0; j<N; j++){
+//				System.out.print(sol[i][j]);
+//			}
+//			System.out.println();
+//		}
+		
+		return maxSub;
+
 	}
-
-
 
 }
