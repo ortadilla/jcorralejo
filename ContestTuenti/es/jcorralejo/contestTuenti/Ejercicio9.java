@@ -6,14 +6,11 @@ import java.util.StringTokenizer;
 
 public class Ejercicio9 {
 
-//	private static int MAX_PRUEBAS = 1; 
-	
 	public static void main (String[] args){
 		try{
 			
 			BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
 			int i=0;
-//			while(i<MAX_PRUEBAS){
 				
 				String linea = br.readLine();
 				if(linea!=null && !"".equals(linea)){
@@ -54,7 +51,6 @@ public class Ejercicio9 {
 						
 					}
 				}
-//			}
 
 			i++;
 		}catch (Exception e){
