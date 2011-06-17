@@ -15,6 +15,7 @@ public class Ejercicio12 {
 	private static int mejorCamino = Integer.MAX_VALUE;
 	private static List<Camino> caminosHechos = new ArrayList<Ejercicio12.Camino>();
 	private static Camino mejor;
+	private static boolean solucionInfinita = false;
 
 	public static void main (String[] args){
 		try{
@@ -52,10 +53,11 @@ public class Ejercicio12 {
 					mejorCamino(new Camino(origen, origen, 0, new ArrayList<Ejercicio12.Camino>(), null), destino);
 
 					System.out.println(mejorCamino==Integer.MAX_VALUE ? "BAZINGA" : mejorCamino+25000);
-//					System.out.println(mejor);
+					System.out.println(mejor);
 					mejorCamino = Integer.MAX_VALUE;
 					caminos.clear();
 					caminosHechos.clear();
+					solucionInfinita = false;
 
 
 				}
@@ -66,11 +68,22 @@ public class Ejercicio12 {
 		}
 	}
 
+	 
 	private static void mejorCamino(Camino origen, int destino){
+		
+		if(solucionInfinita)
+			return;
+		
 		if(origen.destino==destino){
 			if(mejorCamino>origen.coste){
-				mejorCamino = origen.coste;
-				mejor = origen;
+				if(mejor!=null && (origen.caminos.containsAll(mejor.caminos) || mejor.caminos.containsAll(origen.caminos))){
+					solucionInfinita = true;
+					mejorCamino = Integer.MAX_VALUE;
+					return;
+				}else{
+					mejorCamino = origen.coste;
+					mejor = origen;
+				}
 			}
 		}else{
 			List<Camino> caminosPosibles = obtenerCaminosPosibles(origen);
