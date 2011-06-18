@@ -18,64 +18,78 @@ public class Ejercicio12 {
 			this.destino = destino;
 			this.coste = coste;
 		}
+		
+		@Override
+		public String toString() {
+			return origen+"->"+destino+"("+coste+")";
+		}
+	}
+	
+	private static class Ruta{
+		List<Camino> ruta;
+		int coste;
+		public Ruta(int coste) {
+			super();
+			if(ruta==null)
+				ruta = new ArrayList<Ejercicio12.Camino>();
+			this.coste = coste;
+		}
 	}
 
 
 	private static void calculaCaminos(List<Camino> caminos, int numCaminos, int numPlanetas, int origen, int destino){
-		int distancia[] = new int[numPlanetas];
+		Ruta distancia[] = new Ruta[numPlanetas];
 		for (int i=0; i < numPlanetas; ++i)
-			distancia[i] = INF;
+			distancia[i] = new Ruta(INF);
 
-		distancia[origen] = 0;
+		distancia[origen].coste = 0;
 
 		for (int i=0; i < numPlanetas; ++i){
 			for (int j=0; j < numCaminos; ++j){
-				if (distancia[caminos.get(j).origen] != INF) {
-					if (distancia[caminos.get(j).origen] + caminos.get(j).coste < distancia[caminos.get(j).destino]){
-						int coste = distancia[caminos.get(j).origen] + caminos.get(j).coste;
-						if (coste < distancia[caminos.get(j).destino])
-							distancia[caminos.get(j).destino] = coste;
+				if (distancia[caminos.get(j).origen].coste != INF) {
+					if (distancia[caminos.get(j).origen].coste + caminos.get(j).coste < distancia[caminos.get(j).destino].coste){
+						int coste = distancia[caminos.get(j).origen].coste + caminos.get(j).coste;
+						if (coste < distancia[caminos.get(j).destino].coste){
+							List<Camino> rutaAnterior = new ArrayList<Ejercicio12.Camino>(); 
+							rutaAnterior.addAll(distancia[caminos.get(j).origen].ruta);
+							distancia[caminos.get(j).destino].ruta = rutaAnterior;
+							distancia[caminos.get(j).destino].ruta.add(new Camino(caminos.get(j).origen, caminos.get(j).destino, coste));
+							distancia[caminos.get(j).destino].coste = coste;
+						}
 					}
 				}
 			}
 		}
 
-		for (int i=0; i < numCaminos; ++i) {
-			if (distancia[caminos.get(i).destino] > distancia[caminos.get(i).origen] + caminos.get(i).coste) {
-				System.out.println("BAZINGA");
-				return;
+		boolean bazinga = false;
+		int org , dest;
+		for (int i=0; i < distancia[destino].ruta.size(); ++i) {
+			org = distancia[destino].ruta.get(i).origen;
+			dest = distancia[destino].ruta.get(i).destino;
+			for(int j=0; j < distancia[destino].ruta.size(); j++){
+				if(i!=j){
+					if(org==distancia[destino].ruta.get(j).origen && dest==distancia[destino].ruta.get(j).destino){
+						bazinga = true;
+						break;
+					}
+				}
 			}
+			if(bazinga)
+				break;
 		}
 
-//		for (int i=0; i < numPlanetas; ++i) {
-//			System.out.println("Distancia entre "+origen+" y "+i+" = "+distancia[i]);
-//		}
-		System.out.println(distancia[destino]);
+		//		for (int i=0; i < numPlanetas; ++i) {
+		//			System.out.println("Distancia entre "+origen+" y "+i+" = "+distancia[i]);
+		//		}
+		if(bazinga || distancia[destino].coste>=INF)
+			System.out.println("BAZINGA");
+		else
+			System.out.println(distancia[destino].coste+ANIO_INICIAL);
 	}
-//	
-//	public static void main (String args[]){
-//		
-//		Camino edges[] = new Camino[14];
-//		edges[0] = new Camino(0,1,3000);
-//		edges[1] = new Camino(0,2,2000);
-//		edges[2] = new Camino(1,3,-2195);
-//		edges[3] = new Camino(1,4,0);
-//		edges[4] = new Camino(2,1,445);
-//		edges[5] = new Camino(3,1,2900);
-//		edges[6] = new Camino(3,5,500);
-//		edges[7] = new Camino(4,0,2300);
-//		edges[8] = new Camino(4,1,1000);
-//		edges[9] = new Camino(4,2,1200);
-//		edges[10] = new Camino(4,3,1800);
-//		edges[11] = new Camino(5,0,0);
-//		edges[12] = new Camino(5,2,1250);
-//		edges[13] = new Camino(5,2,1250);
-//           
-//		calculaCaminos(edges, 14, 6, 0);
-//	}
-	
+
 	private static int MAX_PRUEBAS = 100;
-	
+	private static int ANIO_INICIAL = 25000;
+
 	public static void main (String[] args){
 		try{
 			BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
