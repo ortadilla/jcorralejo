@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@+id/scrollView1" android:layout_width="fill_parent" android:layout_height="fill_parent" 
+xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout 
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<LinearLayout android:id="@+id/cabecera"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal" 
+		android:gravity="center"
+		android:orientation="vertical">
+		<ImageView android:gravity="center_horizontal" android:src="@drawable/logo" android:id="@+id/logo" android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>
+	</LinearLayout>
+	
+	<LinearLayout android:id="@+id/opciones"
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" 
+		android:layout_height="wrap_content" 
+		android:gravity="center_horizontal" 
+		android:layout_below="@+id/cabecera" 
+		android:layout_alignLeft="@+id/cabecera" 
+		android:layout_alignRight="@+id/cabecera">
+			<Button	android:background="@drawable/files" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" 
+				android:id="@+id/botonLista">
+			</Button>
+			<Button android:background="@drawable/maps" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" 
+				android:id="@+id/botonMapa">
+			</Button>
+	</LinearLayout>
+	
+	<LinearLayout android:id="@+id/pie"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal" 
+		android:gravity="center_horizontal"
+		android:layout_below="@+id/opciones" 
+		android:layout_alignLeft="@+id/opciones" 
+		android:layout_alignRight="@+id/opciones"
+		android:orientation="vertical">
+		<TextView android:text="MisLugares 1.0 - Jesús Corralejo Banda" 
+			android:id="@+id/textPie" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content">
+		</TextView>
+	</LinearLayout>
+
+</RelativeLayout>
+	</ScrollView>

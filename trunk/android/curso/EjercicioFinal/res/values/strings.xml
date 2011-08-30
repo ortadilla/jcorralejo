@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="acerca_de">Acerca de...</string>
+    <string name="app_name">Mis Lugares</string>
+    <string name="configuracion">Configuración</string>
+    <string name="lista">Lista</string>
+    <string name="mapa">Mapa</string>
+    <string name="salir">Salir</string>
+</resources>
