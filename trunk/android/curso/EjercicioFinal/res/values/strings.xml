@@ -6,4 +6,8 @@
     <string name="lista">Lista</string>
     <string name="mapa">Mapa</string>
     <string name="salir">Salir</string>
+    <string name="texto_acerca_de"><b>Curso Android - MisLugares 1.0</b>\n
+\nJesús Corralejo Banda\n
+email: ortadilla@gmail.com\n\n
+Ejercicio final Curso Android</string>
 </resources>

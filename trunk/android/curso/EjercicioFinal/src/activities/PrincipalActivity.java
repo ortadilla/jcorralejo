@@ -2,10 +2,14 @@ package activities;
 
 import static es.jcorralejo.android.R.layout.principal;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import es.jcorralejo.android.R;
 
@@ -65,6 +69,23 @@ public class PrincipalActivity extends Activity {
 			//Acción por defecto
 			default:
 				return super.onOptionsItemSelected(item);
+		}
+	}
+	
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch (id) {
+			// Abrimos el popUp "Acerca de..." 
+			case DIALOG_ACERCA_DE:
+				LayoutInflater li = LayoutInflater.from(this);
+				View view = li.inflate(R.layout.acercade, null);
+				final AlertDialog.Builder builder = new AlertDialog.Builder(this).setIcon(R.drawable.icon)
+																			     .setTitle(getString(R.string.app_name))
+																			     .setPositiveButton("Ok", null)
+																			     .setView(view);
+				return builder.create();
+			default:
+				return null;
 		}
 	}
 
