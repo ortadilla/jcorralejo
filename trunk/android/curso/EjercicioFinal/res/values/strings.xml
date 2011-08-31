@@ -5,6 +5,7 @@
     <string name="configuracion">Configuración</string>
     <string name="lista">Lista</string>
     <string name="mapa">Mapa</string>
+    <string name="no_hay_lugares">Aun no existen lugares definidos</string>
     <string name="salir">Salir</string>
     <string name="texto_acerca_de"><b>Curso Android - MisLugares 1.0</b>\n
 \nJesús Corralejo Banda\n
