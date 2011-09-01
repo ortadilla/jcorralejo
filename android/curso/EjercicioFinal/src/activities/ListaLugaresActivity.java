@@ -35,7 +35,7 @@ public class ListaLugaresActivity extends ListActivity{
 		
 		// Mapeamos las querys SQL a los campos de las vistas
 		String[] camposDb = new String[] {Lugar.NOMBRE, Lugar.DESCRIPCION};
-		int[] camposView = new int[] {R.id.lugarNombre, R.id.lugarNombre};
+		int[] camposView = new int[] {R.id.lugarNombre, R.id.lugarDescripcion};
 		
 		// Creamos el adapter
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.lugares_item, cursor, camposDb, camposView);
