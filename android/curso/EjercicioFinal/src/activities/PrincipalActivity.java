@@ -39,6 +39,9 @@ public class PrincipalActivity extends Activity {
 		);
 	}
 	
+	/**
+	 * Abre un {@link Intent} para navegar a la {@link Activity} de {@link ListaLugaresActivity}
+	 */
 	private void navegarListaLugaresActivity(){
 		Intent intent = new Intent();
 		intent.setClass(getApplicationContext(), ListaLugaresActivity.class);
