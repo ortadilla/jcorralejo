@@ -1,6 +1,5 @@
 package activities;
 
-import static es.jcorralejo.android.R.layout.principal;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -25,21 +24,25 @@ public class PrincipalActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(principal);
+		setContentView(R.layout.principal);
 		
 		Button botonLista = (Button) findViewById(R.id.botonLista);
 		Button botonMapa = (Button) findViewById(R.id.botonMapa);
 		
 		botonLista.setOnClickListener(
 			new OnClickListener() {
-				@Override
+//				@Override
 				public void onClick(View v) {
-					Intent intent = new Intent();
-					intent.setClass(getApplicationContext(), ListaLugaresActivity.class);
-					startActivity(intent);
+					navegarListaLugaresActivity();
 				}
 			}
 		);
+	}
+	
+	private void navegarListaLugaresActivity(){
+		Intent intent = new Intent();
+		intent.setClass(getApplicationContext(), ListaLugaresActivity.class);
+		startActivity(intent);
 	}
 	
 	
@@ -61,7 +64,7 @@ public class PrincipalActivity extends Activity {
 		switch (item.getItemId()) {
 			// Al pulsar sobre "Lista" navegamos a la actividad ListaLugaresActivity
 			case R.id.menuLista:
-				//TODO
+				navegarListaLugaresActivity();
 				return true;
 			// Al pulsar sobre "Mapa" navegamos a la actividad MapaLugaresActivity
 			case R.id.menuMapa:
