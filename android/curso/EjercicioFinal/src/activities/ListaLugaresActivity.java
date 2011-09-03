@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -96,8 +97,12 @@ public class ListaLugaresActivity extends ListActivity{
 				ListView lista = (ListView) findViewById(android.R.id.list);
 				
 				for(int i=0; i<lista.getChildCount(); i++){
-					View v = lista.getChildAt(i);
-					System.out.println(v);
+					LinearLayout lugar = (LinearLayout) lista.getChildAt(i);
+					LinearLayout check_nombre = (LinearLayout) lugar.getChildAt(0);
+					CheckBox checkBox = (CheckBox)check_nombre.getChildAt(0);
+					checkBox.setVisibility(View.VISIBLE);
+					
+					System.out.println(item);
 				}
 				
 				
