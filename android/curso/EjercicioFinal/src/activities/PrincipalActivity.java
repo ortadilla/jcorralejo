@@ -31,9 +31,17 @@ public class PrincipalActivity extends Activity {
 		
 		botonLista.setOnClickListener(
 			new OnClickListener() {
-//				@Override
+				@Override
 				public void onClick(View v) {
 					navegarListaLugaresActivity();
+				}
+			}
+		);
+		botonMapa.setOnClickListener(
+			new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					navegarMapaLugaresActivity();
 				}
 			}
 		);
@@ -45,6 +53,12 @@ public class PrincipalActivity extends Activity {
 	private void navegarListaLugaresActivity(){
 		Intent intent = new Intent();
 		intent.setClass(getApplicationContext(), ListaLugaresActivity.class);
+		startActivity(intent);
+	}
+	
+	private void navegarMapaLugaresActivity(){
+		Intent intent = new Intent();
+		intent.setClass(getApplicationContext(), MapaLugaresActivity.class);
 		startActivity(intent);
 	}
 	
@@ -71,7 +85,7 @@ public class PrincipalActivity extends Activity {
 				return true;
 			// Al pulsar sobre "Mapa" navegamos a la actividad MapaLugaresActivity
 			case R.id.menuMapa:
-				//TODO
+				navegarMapaLugaresActivity();
 				return true;
 			// Al pulsar sobre "Configuración" navegamos a la actividad ConfiguracionActivity
 			case R.id.menuConfiguracion:

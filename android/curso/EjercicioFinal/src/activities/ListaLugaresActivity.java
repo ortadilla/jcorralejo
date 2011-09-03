@@ -4,6 +4,14 @@ import android.app.ListActivity;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.bd.LugaresDB.Lugar;
@@ -41,5 +49,67 @@ public class ListaLugaresActivity extends ListActivity{
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.lugares_item, cursor, camposDb, camposView);
 		setListAdapter(adapter);
 	}
+	
+	
+	/**
+	 * "Inflamos" las opciones de menú de la pantalla de lista de lugares 
+	 */
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.menu_lista, menu);
+		return true;
+	}
+
+	/**
+	 * Definimos las acciones correspondientes con cada opción de menú
+	 */
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			// Al pulsar sobre "Agregar" navegamos a la actividad MapaLugaresActivity con un Toast que indica
+			// que se debe pulsar un punto para guardar el nuevo Lugar 
+			case R.id.listaAgregar:
+				//TODO
+				return true;
+				
+			// Al pulsar sobre "Eliminar" mostramos los checks para que el usuario marque los lugares
+			// que quiere eliminar, además del botón "Eliminar" para confirmar la acción
+			case R.id.listaEliminar:
+				Button botonEliminar = new Button(this);
+				botonEliminar.setText(R.string.eliminar);
+				botonEliminar.setOnClickListener(
+					new OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							//TODO: Comprobar checks seleccionados, preguntar y eliminar
+							System.out.println("Botón Eliminar pulsado");
+						}
+					}
+				);
+				
+				LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutLugares);
+				linearLayout.addView(botonEliminar, 0);
+				
+				
+				
+				ListView lista = (ListView) findViewById(android.R.id.list);
+				
+				for(int i=0; i<lista.getChildCount(); i++){
+					View v = lista.getChildAt(i);
+					System.out.println(v);
+				}
+				
+				
+				
+				
+				
+				return true;
+				
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
+
 
 }

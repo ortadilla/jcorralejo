@@ -14,7 +14,10 @@
 		<provider android:name=".bd.LugaresProvider"
 			android:authorities="es.jcorralejo.lugares" />
 		<activity android:name="activities.ListaLugaresActivity"></activity>
+		<activity android:name="activities.MapaLugaresActivity"></activity>
+		<uses-library android:name="com.google.android.maps"></uses-library>
 	</application>
 	
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 	<supports-screens android:anyDensity="false" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" />
 </manifest>
