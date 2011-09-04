@@ -18,6 +18,7 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.bd.LugaresDB.Lugar;
 import es.jcorralejo.android.bd.LugaresProvider;
@@ -84,6 +85,7 @@ public class ListaLugaresActivity extends ListActivity{
 			// Al pulsar sobre "Agregar" navegamos a la actividad MapaLugaresActivity con un Toast que indica
 			// que se debe pulsar un punto para guardar el nuevo Lugar 
 			case R.id.listaAgregar:
+				Toast.makeText(this, R.string.msg_info_agregar_lugar, Toast.LENGTH_LONG).show();
 				//TODO
 				return true;
 				

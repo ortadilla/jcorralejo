@@ -9,6 +9,7 @@
     <string name="lista">Lista</string>
     <string name="mapa">Mapa</string>
     <string name="msg_condirmacion_eliminar">¿Está seguro que desea Eliminar los elementos seleccionados?</string>
+    <string name="msg_info_agregar_lugar">Pulse en el lugar del Mapa que desea agregar...</string>
     <string name="no">No</string>
     <string name="no_hay_lugares">Aun no existen lugares definidos</string>
     <string name="nombre_lugares">Lugares</string>
