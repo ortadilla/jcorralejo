@@ -1,9 +1,11 @@
 package activities;
 
+import utils.Constantes;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -49,7 +51,6 @@ public class ListaLugaresActivity extends ListActivity{
 		// Nos traemos la información de todos los Lugares
 		Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
 		Cursor cursor = managedQuery(uri, columnas, null, null, Lugar.NOMBRE); //Ordeamos por Nombre
-		
 		// Queremos enterarnos si cambian los datos para recargar el cursor
 		cursor.setNotificationUri(getContentResolver(), uri);
 		
@@ -86,7 +87,11 @@ public class ListaLugaresActivity extends ListActivity{
 			// que se debe pulsar un punto para guardar el nuevo Lugar 
 			case R.id.listaAgregar:
 				Toast.makeText(this, R.string.msg_info_agregar_lugar, Toast.LENGTH_LONG).show();
-				//TODO
+				
+				Intent intent = new Intent();
+				intent.setClass(getApplicationContext(), MapaLugaresActivity.class);
+				startActivity(intent);
+				
 				return true;
 				
 			// Al pulsar sobre "Eliminar" mostramos los checks para que el usuario marque los lugares
@@ -193,7 +198,10 @@ public class ListaLugaresActivity extends ListActivity{
 	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		System.out.println(l+" "+v+" "+position+" "+id);
+		Intent i = new Intent();
+		i.setClass(getApplicationContext(), LugarAcitivity.class);
+		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, id);
+		startActivity(i);
 	}
 	
 	@Override

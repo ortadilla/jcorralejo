@@ -13,8 +13,11 @@
 
 		<provider android:name=".bd.LugaresProvider"
 			android:authorities="es.jcorralejo.lugares" />
+			
 		<activity android:name="activities.ListaLugaresActivity"></activity>
 		<activity android:name="activities.MapaLugaresActivity"></activity>
+		<activity android:name="activities.LugarAcitivity"></activity>
+		
 		<uses-library android:name="com.google.android.maps"></uses-library>
 	</application>
 	
