@@ -3,6 +3,7 @@
     <string name="acerca_de">Acerca de...</string>
     <string name="agregar">Agregar</string>
     <string name="app_name">Mis Lugares</string>
+    <string name="cancelar">Cancelar</string>
     <string name="configuracion">Configuración</string>
     <string name="eliminar">Eliminar</string>
     <string name="lista">Lista</string>
@@ -10,7 +11,6 @@
     <string name="no_hay_lugares">Aun no existen lugares definidos</string>
     <string name="nombre_lugares">Lugares</string>
     <string name="salir">Salir</string>
-    <string name="jau">Hooa</string>
     <string name="texto_acerca_de"><b>Curso Android - MisLugares 1.0</b>\n
 \nJesús Corralejo Banda\n
 email: ortadilla@gmail.com\n\n
