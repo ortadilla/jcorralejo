@@ -2,8 +2,10 @@ package activities;
 
 import android.app.ListActivity;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,12 +14,16 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.bd.LugaresDB.Lugar;
+import es.jcorralejo.android.bd.LugaresProvider;
 
 public class ListaLugaresActivity extends ListActivity{
+	
+	private SimpleCursorAdapter adapter;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,7 +39,7 @@ public class ListaLugaresActivity extends ListActivity{
 		// Sólo necesitamos id, nombre y descripción de cada Lugar
 		final String[] columnas = new String[] {Lugar._ID, Lugar.NOMBRE, Lugar.DESCRIPCION};
 		// Nos traemos la información de todos los Lugares
-		Uri uri = Uri.parse("content://es.jcorralejo.lugares/lugar");
+		Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
 		Cursor cursor = managedQuery(uri, columnas, null, null, Lugar.NOMBRE); //Ordeamos por Nombre
 		
 		// Queremos enterarnos si cambian los datos para recargar el cursor
@@ -47,7 +53,7 @@ public class ListaLugaresActivity extends ListActivity{
 		int[] camposView = new int[] {R.id.lugarNombre, R.id.lugarDescripcion};
 		
 		// Creamos el adapter
-		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.lugares_item, cursor, camposDb, camposView);
+		adapter = new SimpleCursorAdapter(this, R.layout.lugares_item, cursor, camposDb, camposView);
 		setListAdapter(adapter);
 	}
 	
@@ -77,43 +83,98 @@ public class ListaLugaresActivity extends ListActivity{
 			// Al pulsar sobre "Eliminar" mostramos los checks para que el usuario marque los lugares
 			// que quiere eliminar, además del botón "Eliminar" para confirmar la acción
 			case R.id.listaEliminar:
-				Button botonEliminar = new Button(this);
-				botonEliminar.setText(R.string.eliminar);
-				botonEliminar.setOnClickListener(
-					new OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							//TODO: Comprobar checks seleccionados, preguntar y eliminar
-							System.out.println("Botón Eliminar pulsado");
-						}
-					}
-				);
-				
-				LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutLugares);
-				linearLayout.addView(botonEliminar, 0);
-				
-				
-				
-				ListView lista = (ListView) findViewById(android.R.id.list);
-				
-				for(int i=0; i<lista.getChildCount(); i++){
-					LinearLayout lugar = (LinearLayout) lista.getChildAt(i);
-					LinearLayout check_nombre = (LinearLayout) lugar.getChildAt(0);
-					CheckBox checkBox = (CheckBox)check_nombre.getChildAt(0);
-					checkBox.setVisibility(View.VISIBLE);
-					
-					System.out.println(item);
-				}
-				
-				
-				
-				
-				
-				return true;
+				return accionMenuEliminar();
 				
 			default:
 				return super.onOptionsItemSelected(item);
 		}
+	}
+	
+	/**
+	 * Ejecutado al pulsar la opción de menú "Eliminar", muestra los checks para que el usuario marque los lugares
+	 * que quiere eliminar, además del botón "Eliminar" para confirmar la acción
+	 * @return
+	 */
+	private boolean accionMenuEliminar(){
+		// Creamos el botón "Eliminar"
+		Button botonEliminar = new Button(this);
+		botonEliminar.setText(R.string.eliminar);
+		botonEliminar.setOnClickListener(
+			new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					ListView lista = (ListView) findViewById(android.R.id.list);
+					String idsEliminar = "";
+					for(int i=0; i<lista.getChildCount(); i++){
+						LinearLayout lugar = (LinearLayout) lista.getChildAt(i);
+						LinearLayout check_nombre = (LinearLayout) lugar.getChildAt(0);
+						CheckBox checkBox = (CheckBox)check_nombre.getChildAt(0);
+						// Si está marcado, lo añadimos para eliminar el registro posteriormente
+						if(checkBox.isChecked())
+							idsEliminar += adapter.getItemId(i)+",";
+					}
+					
+					// Eliminamos todos los registro a la vez, siempre que se haya seleccionado alguno
+					if(!"".equals(idsEliminar)){
+						//Añadimos los paréntesos y quitamos la última coma ","
+						idsEliminar = "("+idsEliminar;
+						idsEliminar = idsEliminar.substring(0, idsEliminar.length()-1)+")";
+						
+						Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
+						getContentResolver().delete(uri, Lugar._ID+" in "+idsEliminar, null);
+					}
+					
+					// Se eliminen elementos o no, debemos cargar de nuevo el adapter...
+					configurarAdapter();
+					// ..y eliminar los botones "Eliminar" y "Cancelar"
+					LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutLugares);
+					linearLayout.removeViewAt(0);
+				}
+			}
+		);
+		
+		// Creamos el botón "Cancelar"
+		Button botonCancelar = new Button(this);
+		botonCancelar.setText(R.string.cancelar);
+		botonCancelar.setOnClickListener(
+			new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					// Cargamos de nuevo el adapter...
+					configurarAdapter();
+					// ..y eliminamos los botones "Eliminar" y "Cancelar"
+					LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutLugares);
+					linearLayout.removeViewAt(0);
+				}
+			}
+		);
+		
+		// Agrupamos ambos botones en un LinearLayout 
+		LinearLayout linearLayoutBotones = new LinearLayout(this);
+		linearLayoutBotones.setOrientation(LinearLayout.HORIZONTAL);
+		linearLayoutBotones.setGravity(Gravity.CENTER_HORIZONTAL);
+		linearLayoutBotones.addView(botonEliminar,0);
+		linearLayoutBotones.addView(botonCancelar,1);
+		
+		// Añadimos el LinearLayout al principio de la pantalla
+		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutLugares);
+		linearLayout.addView(linearLayoutBotones, 0);
+		
+		// Mostramos los checks 
+		ListView lista = (ListView) findViewById(android.R.id.list);
+		for(int i=0; i<lista.getChildCount(); i++){
+			LinearLayout lugar = (LinearLayout) lista.getChildAt(i);
+			LinearLayout check_nombre = (LinearLayout) lugar.getChildAt(0);
+			CheckBox checkBox = (CheckBox)check_nombre.getChildAt(0);
+			checkBox.setVisibility(View.VISIBLE);
+		}
+		
+		return true;
+	}
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		System.out.println(l+" "+v+" "+position+" "+id);
 	}
 
 
