@@ -1,8 +1,10 @@
 package activities;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -14,7 +16,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import es.jcorralejo.android.R;
@@ -22,6 +23,12 @@ import es.jcorralejo.android.bd.LugaresDB.Lugar;
 import es.jcorralejo.android.bd.LugaresProvider;
 
 public class ListaLugaresActivity extends ListActivity{
+	
+	/**
+	 * Constante para identificar el popUp para perdir confirmación al usuario
+	 */
+	private static final int DIALOG_PEDIR_CONFIRMACION = 0;
+
 	
 	private SimpleCursorAdapter adapter;
 	
@@ -103,32 +110,7 @@ public class ListaLugaresActivity extends ListActivity{
 			new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					ListView lista = (ListView) findViewById(android.R.id.list);
-					String idsEliminar = "";
-					for(int i=0; i<lista.getChildCount(); i++){
-						LinearLayout lugar = (LinearLayout) lista.getChildAt(i);
-						LinearLayout check_nombre = (LinearLayout) lugar.getChildAt(0);
-						CheckBox checkBox = (CheckBox)check_nombre.getChildAt(0);
-						// Si está marcado, lo añadimos para eliminar el registro posteriormente
-						if(checkBox.isChecked())
-							idsEliminar += adapter.getItemId(i)+",";
-					}
-					
-					// Eliminamos todos los registro a la vez, siempre que se haya seleccionado alguno
-					if(!"".equals(idsEliminar)){
-						//Añadimos los paréntesos y quitamos la última coma ","
-						idsEliminar = "("+idsEliminar;
-						idsEliminar = idsEliminar.substring(0, idsEliminar.length()-1)+")";
-						
-						Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
-						getContentResolver().delete(uri, Lugar._ID+" in "+idsEliminar, null);
-					}
-					
-					// Se eliminen elementos o no, debemos cargar de nuevo el adapter...
-					configurarAdapter();
-					// ..y eliminar los botones "Eliminar" y "Cancelar"
-					LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutLugares);
-					linearLayout.removeViewAt(0);
+					showDialog(DIALOG_PEDIR_CONFIRMACION);
 				}
 			}
 		);
@@ -140,11 +122,7 @@ public class ListaLugaresActivity extends ListActivity{
 			new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					// Cargamos de nuevo el adapter...
-					configurarAdapter();
-					// ..y eliminamos los botones "Eliminar" y "Cancelar"
-					LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutLugares);
-					linearLayout.removeViewAt(0);
+					configurarListenerCancelarEliminacion();
 				}
 			}
 		);
@@ -172,9 +150,76 @@ public class ListaLugaresActivity extends ListActivity{
 		return true;
 	}
 	
+	/**
+	 * Cancela la acción de eliminar lugares, es decir, carga de nuevo el adapter y elimina los botones "Eliminar" y "Cancelar"
+	 */
+	private void configurarListenerCancelarEliminacion(){
+		// Cargamos de nuevo el adapter...
+		configurarAdapter();
+		// ..y eliminamos los botones "Eliminar" y "Cancelar"
+		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutLugares);
+		linearLayout.removeViewAt(0);
+	}
+	
+	/**
+	 * Elimina los lugares seleccionados
+	 */
+	private void configurarListenerEliminar(){
+		ListView lista = (ListView) findViewById(android.R.id.list);
+		String idsEliminar = "";
+		for(int i=0; i<lista.getChildCount(); i++){
+			LinearLayout lugar = (LinearLayout) lista.getChildAt(i);
+			LinearLayout check_nombre = (LinearLayout) lugar.getChildAt(0);
+			CheckBox checkBox = (CheckBox)check_nombre.getChildAt(0);
+			// Si está marcado, lo añadimos para eliminar el registro posteriormente
+			if(checkBox.isChecked())
+				idsEliminar += adapter.getItemId(i)+",";
+		}
+		
+		// Eliminamos todos los registro a la vez, siempre que se haya seleccionado alguno
+		if(!"".equals(idsEliminar)){
+			//Añadimos los paréntesos y quitamos la última coma ","
+			idsEliminar = "("+idsEliminar;
+			idsEliminar = idsEliminar.substring(0, idsEliminar.length()-1)+")";
+			
+			Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
+			getContentResolver().delete(uri, Lugar._ID+" in "+idsEliminar, null);
+		}
+		
+		configurarListenerCancelarEliminacion();
+	}
+	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		System.out.println(l+" "+v+" "+position+" "+id);
+	}
+	
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch (id) {
+			// Abrimos el popUp "Acerca de..." 
+			case DIALOG_PEDIR_CONFIRMACION:
+				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setMessage(R.string.msg_condirmacion_eliminar);
+				builder.setPositiveButton(R.string.si,
+										  new DialogInterface.OnClickListener() {
+											@Override
+											public void onClick(DialogInterface dialog, int which) {
+												configurarListenerEliminar();
+											}
+									  	  });
+				builder.setNegativeButton(R.string.no, 
+										  new DialogInterface.OnClickListener() {
+											@Override
+											public void onClick(DialogInterface dialog, int which) {
+												configurarListenerCancelarEliminacion();
+											}
+										  });
+				
+				return builder.create();
+			default:
+				return null;
+		}
 	}
 
 
