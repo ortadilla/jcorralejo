@@ -1,6 +1,5 @@
-package activities;
+package es.jcorralejo.android.activities;
 
-import utils.Constantes;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
@@ -24,6 +23,7 @@ import android.widget.Toast;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.bd.LugaresDB.Lugar;
 import es.jcorralejo.android.bd.LugaresProvider;
+import es.jcorralejo.android.utils.Constantes;
 
 public class ListaLugaresActivity extends ListActivity{
 	

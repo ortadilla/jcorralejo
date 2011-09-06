@@ -1,4 +1,4 @@
-package activities;
+package es.jcorralejo.android.activities;
 
 import android.os.Bundle;
 

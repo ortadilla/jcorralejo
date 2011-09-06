@@ -1,4 +1,4 @@
-package activities;
+package es.jcorralejo.android.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
