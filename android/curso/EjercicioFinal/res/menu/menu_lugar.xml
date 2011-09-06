@@ -3,7 +3,7 @@
 	<item
 		android:id="@+id/lugarEditar" 
 		android:title="@string/editar"
-		android:icon="@drawable/ic_menu_add" />
+		android:icon="@drawable/ic_menu_compose" />
 	<item
 		android:id="@+id/lugarVerUbicacion" 
 		android:title="@string/ver_ubicacion"
@@ -11,5 +11,5 @@
 	<item
 		android:id="@+id/lugarEliminar" 
 		android:title="@string/eliminar"
-		android:icon="@drawable/ic_menu_compose" />
+		android:icon="@drawable/ic_menu_delete" />
 </menu>
