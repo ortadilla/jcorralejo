@@ -1,6 +1,5 @@
-package activities;
+package es.jcorralejo.android.activities;
 
-import utils.Constantes;
 import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Intent;
@@ -11,13 +10,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.TextView;
 import android.widget.Toast;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.bd.LugaresDB.Lugar;
 import es.jcorralejo.android.bd.LugaresProvider;
+import es.jcorralejo.android.utils.Constantes;
 
 public class LugarAcitivity extends Activity {
+	
+	private static final float COEFICIENTE_REDUCCION_IMAGEN = (float) 0.8;
 
 	private TextView nombreLugar;
 	private TextView descripcionLugar;
@@ -83,8 +86,14 @@ public class LugarAcitivity extends Activity {
 				if(descr!=null)
 					descripcionLugar.setText(descr);
 				String imagen = cursor.getString(3);
-				if(imagen!=null)
+				if(imagen!=null){
+					//Si la imagen es mayor al tamaño de la pantalla, la ajustamos al 80% de esta
 					imagenLugar.setImageURI(Uri.parse(imagen));
+					imagenLugar.setMaxHeight((int) (getApplicationContext().getResources().getDisplayMetrics().heightPixels * COEFICIENTE_REDUCCION_IMAGEN));
+					imagenLugar.setMaxWidth((int)(getApplicationContext().getResources().getDisplayMetrics().widthPixels * COEFICIENTE_REDUCCION_IMAGEN));
+					imagenLugar.setAdjustViewBounds(true);
+					imagenLugar.setScaleType(ScaleType.CENTER_INSIDE);
+				}
 			}
 		} catch (Exception e) {
 			//Si se produce algún error al obtener los datos los lugar, avisamos al usuario
