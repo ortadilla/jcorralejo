@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -108,5 +111,40 @@ public class LugarAcitivity extends Activity {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * "Inflamos" las opciones de menú de la pantalla de datos de un lugar 
+	 */
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.menu_lugar, menu);
+		return true;
+	}
 
+	/**
+	 * Definimos las acciones correspondientes con cada opción de menú
+	 */
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			// Al pulsar sobre "Editar" navegamos a la actividad EditarLugarActivity 
+			case R.id.lugarEditar:
+				//TODO
+				return true;
+				
+			// Al pulsar sobre "Eliminar" pedimos confirmación al usuario
+			case R.id.lugarEliminar:
+				//TODO
+				return true;
+				
+			// Al pulsar sobre "Editar" navegamos a la actividad MapaLugaresActivity para mostrar el lugar 
+			case R.id.lugarVerUbicacion:
+				//TODO
+				return true;
+				
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
 }
