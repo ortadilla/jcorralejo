@@ -1,7 +1,10 @@
 package es.jcorralejo.android.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ContentUris;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -135,7 +138,7 @@ public class LugarAcitivity extends Activity {
 				
 			// Al pulsar sobre "Eliminar" pedimos confirmación al usuario
 			case R.id.lugarEliminar:
-				//TODO
+				showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION);
 				return true;
 				
 			// Al pulsar sobre "Editar" navegamos a la actividad MapaLugaresActivity para mostrar el lugar 
@@ -145,6 +148,34 @@ public class LugarAcitivity extends Activity {
 				
 			default:
 				return super.onOptionsItemSelected(item);
+		}
+	}
+	
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch (id) {
+			// Abrimos el popUp "Acerca de..." 
+			case Constantes.DIALOG_PEDIR_CONFIRMACION:
+				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setMessage(R.string.msg_condirmacion_eliminar);
+				builder.setPositiveButton(R.string.si,
+										  new DialogInterface.OnClickListener() {
+											@Override
+											public void onClick(DialogInterface dialog, int which) {
+												//TODO
+											}
+									  	  });
+				builder.setNegativeButton(R.string.no, 
+										  new DialogInterface.OnClickListener() {
+											@Override
+											public void onClick(DialogInterface dialog, int which) {
+												//TODO
+											}
+										  });
+				
+				return builder.create();
+			default:
+				return null;
 		}
 	}
 }

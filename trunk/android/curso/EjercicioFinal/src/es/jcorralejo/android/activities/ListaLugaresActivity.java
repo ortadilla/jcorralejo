@@ -27,12 +27,6 @@ import es.jcorralejo.android.utils.Constantes;
 
 public class ListaLugaresActivity extends ListActivity{
 	
-	/**
-	 * Constante para identificar el popUp para perdir confirmación al usuario
-	 */
-	private static final int DIALOG_PEDIR_CONFIRMACION = 0;
-
-	
 	private SimpleCursorAdapter adapter;
 	
 	@Override
@@ -117,7 +111,7 @@ public class ListaLugaresActivity extends ListActivity{
 			new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					showDialog(DIALOG_PEDIR_CONFIRMACION);
+					showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION);
 				}
 			}
 		);
@@ -208,7 +202,7 @@ public class ListaLugaresActivity extends ListActivity{
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 			// Abrimos el popUp "Acerca de..." 
-			case DIALOG_PEDIR_CONFIRMACION:
+			case Constantes.DIALOG_PEDIR_CONFIRMACION:
 				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setMessage(R.string.msg_condirmacion_eliminar);
 				builder.setPositiveButton(R.string.si,
