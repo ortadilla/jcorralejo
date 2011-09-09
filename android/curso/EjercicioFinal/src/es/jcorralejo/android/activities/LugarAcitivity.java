@@ -31,6 +31,9 @@ public class LugarAcitivity extends Activity {
 	private TextView nombreLugar;
 	private TextView descripcionLugar;
 	private ImageView imagenLugar;
+	
+	private long idNoticia;
+	
 	/**
 	 * OnCreate
 	 */
@@ -71,7 +74,7 @@ public class LugarAcitivity extends Activity {
 		
 		try {
 			Bundle extras = getIntent().getExtras();
-			long idNoticia = extras.getLong(Constantes.PARAMETRO_ID_LUGAR);
+			idNoticia = extras.getLong(Constantes.PARAMETRO_ID_LUGAR);
 			final String[] columnas = new String[] {Lugar._ID, Lugar.NOMBRE, Lugar.DESCRIPCION, Lugar.FOTO, Lugar.LATITUD, Lugar.LONGITUD};
 		
 			Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
@@ -162,8 +165,13 @@ public class LugarAcitivity extends Activity {
 										  new DialogInterface.OnClickListener() {
 											@Override
 											public void onClick(DialogInterface dialog, int which) {
-												//TODO
-											}
+												//Eliminamos el lugar
+												Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
+												getContentResolver().delete(uri, Lugar._ID+" = "+idNoticia, null);
+												//y volvemos a ListaLugaresActivity
+												Intent intent = new Intent();
+												intent.setClass(getApplicationContext(), ListaLugaresActivity.class);
+												startActivity(intent);											}
 									  	  });
 				builder.setNegativeButton(R.string.no, 
 										  new DialogInterface.OnClickListener() {

@@ -204,7 +204,7 @@ public class ListaLugaresActivity extends ListActivity{
 			// Abrimos el popUp "Acerca de..." 
 			case Constantes.DIALOG_PEDIR_CONFIRMACION:
 				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-				builder.setMessage(R.string.msg_condirmacion_eliminar);
+				builder.setMessage(R.string.msg_condirmacion_eliminar_varios);
 				builder.setPositiveButton(R.string.si,
 										  new DialogInterface.OnClickListener() {
 											@Override
