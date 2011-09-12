@@ -16,6 +16,7 @@
 		<activity android:name=".activities.ListaLugaresActivity"></activity>
 		<activity android:name=".activities.MapaLugaresActivity"></activity>
 		<activity android:name=".activities.LugarAcitivity"></activity>
+		<activity android:name=".activities.EditarLugarActivity"></activity>
 		
 		<uses-library android:name="com.google.android.maps"></uses-library>
 	</application>
