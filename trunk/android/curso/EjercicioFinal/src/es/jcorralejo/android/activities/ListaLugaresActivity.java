@@ -8,15 +8,18 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
@@ -107,6 +110,7 @@ public class ListaLugaresActivity extends ListActivity{
 		// Creamos el botón "Eliminar"
 		Button botonEliminar = new Button(this);
 		botonEliminar.setText(R.string.eliminar);
+		botonEliminar.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT, 1));
 		botonEliminar.setOnClickListener(
 			new OnClickListener() {
 				@Override
@@ -119,6 +123,7 @@ public class ListaLugaresActivity extends ListActivity{
 		// Creamos el botón "Cancelar"
 		Button botonCancelar = new Button(this);
 		botonCancelar.setText(R.string.cancelar);
+		botonCancelar.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT, 1));
 		botonCancelar.setOnClickListener(
 			new OnClickListener() {
 				@Override
@@ -131,13 +136,16 @@ public class ListaLugaresActivity extends ListActivity{
 		// Agrupamos ambos botones en un LinearLayout 
 		LinearLayout linearLayoutBotones = new LinearLayout(this);
 		linearLayoutBotones.setOrientation(LinearLayout.HORIZONTAL);
+		LayoutParams layoutParams = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT, 1);
+		layoutParams.setMargins(0, 15, 0, 0);
+		linearLayoutBotones.setLayoutParams(layoutParams);
 		linearLayoutBotones.setGravity(Gravity.CENTER_HORIZONTAL);
 		linearLayoutBotones.addView(botonEliminar,0);
 		linearLayoutBotones.addView(botonCancelar,1);
 		
 		// Añadimos el LinearLayout al principio de la pantalla
 		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutLugares);
-		linearLayout.addView(linearLayoutBotones, 0);
+		linearLayout.addView(linearLayoutBotones, 1);
 		
 		// Mostramos los checks 
 		ListView lista = (ListView) findViewById(android.R.id.list);
@@ -159,7 +167,7 @@ public class ListaLugaresActivity extends ListActivity{
 		configurarAdapter();
 		// ..y eliminamos los botones "Eliminar" y "Cancelar"
 		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutLugares);
-		linearLayout.removeViewAt(0);
+		linearLayout.removeViewAt(1);
 	}
 	
 	/**

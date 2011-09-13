@@ -44,11 +44,17 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 		android:layout_below="@+id/nombreYDescripcion" 
 		android:layout_alignLeft="@+id/nombreYDescripcion" 
 		android:layout_alignRight="@+id/nombreYDescripcion"
-		android:orientation="vertical">
-		<Button android:text="@string/editar" 
+		android:orientation="horizontal">
+		<Button android:text="@string/editar"
 			android:id="@+id/botonEditar" 
 			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content" />
+			android:layout_height="wrap_content" 
+			android:layout_weight="1" />
+		<Button android:text="@string/eliminar" 
+			android:id="@+id/botonEliminar" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:layout_weight="1"/>
 	</LinearLayout>
 
 </RelativeLayout>
