@@ -1,7 +1,10 @@
 package es.jcorralejo.android.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ContentUris;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -26,6 +29,9 @@ public abstract class LugarAbstractActivity extends Activity{
 	protected boolean cargarImagenBD = true;
 	
 	protected abstract int getLayout();
+	
+	@SuppressWarnings("rawtypes")
+	protected abstract Class getActivityAnterior();
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -64,14 +70,19 @@ public abstract class LugarAbstractActivity extends Activity{
 				if(descr!=null)
 					descripcionLugar.setText(descr);
 				String imagen = cursor.getString(3);
-				if(imagen!=null && cargarImagenBD)
-					setImagen(Uri.parse(imagen));
+				if(imagen!=null){
+					if(cargarImagenBD)
+						setImagen(Uri.parse(imagen));
+				}else{
+					if(cargarImagenBD)
+						imagenLugar.setImageResource(R.drawable.no_imagen);
+				}
 			}
 			
 			cargarImagenBD = true;
 		} catch (Exception e) {
 			//Si se produce algún error al obtener los datos los lugar, avisamos al usuario
-			//y cerramos la aplicación, volcando la traza del error
+			//y cerramos la activity, volcando la traza del error
 			Toast.makeText(this, R.string.msg_error_salir, Toast.LENGTH_SHORT).show();
 			
 			finish();
@@ -91,6 +102,40 @@ public abstract class LugarAbstractActivity extends Activity{
 			imagenLugar.setMaxWidth((int)(getApplicationContext().getResources().getDisplayMetrics().widthPixels * Constantes.COEFICIENTE_REDUCCION_IMAGEN));
 			imagenLugar.setAdjustViewBounds(true);
 			imagenLugar.setScaleType(ScaleType.CENTER_INSIDE);
+		}
+	}
+	
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch (id) {
+			// Abrimos el popUp "Acerca de..." 
+			case Constantes.DIALOG_PEDIR_CONFIRMACION:
+				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setMessage(R.string.msg_condirmacion_eliminar);
+				builder.setPositiveButton(R.string.si,
+										  new DialogInterface.OnClickListener() {
+											@Override
+											public void onClick(DialogInterface dialog, int which) {
+												//Eliminamos el lugar
+												Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
+												getContentResolver().delete(uri, Lugar._ID+" = "+idLugar, null);
+												
+												//y volvemos a la actividad desde la que hemos llegado
+												Intent intent = new Intent();
+												intent.setClass(getApplicationContext(), getActivityAnterior());
+												startActivity(intent);}
+									  	  });
+				builder.setNegativeButton(R.string.no, 
+										  new DialogInterface.OnClickListener() {
+											@Override
+											public void onClick(DialogInterface dialog, int which) {
+												//No tenemos nada que hacer
+											}
+										  });
+				
+				return builder.create();
+			default:
+				return null;
 		}
 	}
 
