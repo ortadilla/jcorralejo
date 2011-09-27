@@ -2,7 +2,9 @@
 · Modificar lugar (update) 
 · Permitir modificar coordenadas de un lugar
 · Opciones emergentes en la lista de lugares: Ver detalles, Editar, Ver ubicación, Eliminar
+· Ver las marcas de los lugares ya existentes en el mapa
 · Añadir lugar
+· Al ver el mapa que aparezca la zona actual. Si no está encendido el GPS, avisar
 · Traducir al inglés y al alemán
-· Imágenes para dispositivos
+· Imágenes para dispositivos con distintas resoluciones
 · Estilo
