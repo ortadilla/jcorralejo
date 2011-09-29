@@ -1,5 +1,6 @@
 package es.jcorralejo.android.activities;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,6 +8,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import es.jcorralejo.android.R;
+import es.jcorralejo.android.bd.LugaresProvider;
+import es.jcorralejo.android.bd.LugaresDB.Lugar;
 import es.jcorralejo.android.utils.Constantes;
 
 
@@ -40,7 +43,13 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 				@Override
 				public void onClick(View v) {
 					
-					//TODO: modificar el lugar con los nuevos datos
+					//Modificamos el lugar con los nuevos datos
+					Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
+					ContentValues contentValues = new ContentValues();
+					contentValues.put(Lugar.FOTO, imagenLugar.getId());
+					contentValues.put(Lugar.DESCRIPCION, descripcionLugar.getText().toString());
+					contentValues.put(Lugar.NOMBRE, nombreLugar.getText().toString());
+					getContentResolver().update(uri, contentValues, Lugar._ID+" = "+idLugar, null);
 					
 					// Volvemos a los detalles del Lugar
 					Intent i = new Intent();
