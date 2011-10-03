@@ -24,12 +24,26 @@ public abstract class LugarAbstractActivity extends Activity{
 	protected TextView descripcionLugar;
 	protected ImageView imagenLugar;
 	
+	/**
+	 * Identifica el id del lugar que se está mostrando
+	 */
 	protected long idLugar;
 	
+	/**
+	 * Indica si se debe cargar la imagen que tiene el lugar en BD o la seleccionada en la galería
+	 */
 	protected boolean cargarImagenBD = true;
 	
+	/**
+	 * Devuelve el layout a mostrar
+	 * @return Layout a mostrar
+	 */
 	protected abstract int getLayout();
 	
+	/**
+	 * Devuelve la Activity a la que volver
+	 * @return Activity a la que volver
+	 */
 	@SuppressWarnings("rawtypes")
 	protected abstract Class getActivityAnterior();
 	
