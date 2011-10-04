@@ -2,6 +2,7 @@ package es.jcorralejo.android.activities;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -46,7 +47,7 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 					//Modificamos el lugar con los nuevos datos
 					Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
 					ContentValues contentValues = new ContentValues();
-					if(!imagenLugar.getDrawable().equals(R.drawable.no_imagen))
+					if(!imagenLugar.getDrawable().equals(getResources().getDrawable(R.drawable.no_imagen)))
 						contentValues.put(Lugar.FOTO, imagenLugar.getId());
 					contentValues.put(Lugar.DESCRIPCION, descripcionLugar.getText().toString());
 					contentValues.put(Lugar.NOMBRE, nombreLugar.getText().toString());
