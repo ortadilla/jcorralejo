@@ -1,4 +1,5 @@
-· Modificar lugar (update) 
+· Modificar lugar (update): Se pierde la imagen al guardar. 
+	Al modificar titulo o descripción, si navegamos a la galería perdemos los cambios 
 · Permitir modificar coordenadas de un lugar
 · Opciones emergentes en la lista de lugares: Ver detalles, Editar, Ver ubicación, Eliminar
 · Ver las marcas de los lugares ya existentes en el mapa
@@ -6,4 +7,4 @@
 · Al ver el mapa que aparezca la zona actual. Si no está encendido el GPS, avisar
 · Traducir al inglés y al alemán
 · Imágenes para dispositivos con distintas resoluciones
-· Estilo
+· Estilo: Blanco y azul

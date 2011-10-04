@@ -75,7 +75,7 @@ public abstract class LugarAbstractActivity extends Activity{
 			// Para que la actividad se encarge de manejar el cursor según sus ciclos de vida
 			startManagingCursor(cursor);
 			
-			// Tomamosl los datos del Lugar
+			// Tomamos los datos del Lugar
 			if(cursor.moveToFirst()) {
 				String nombre = cursor.getString(1);
 				if(nombre!=null)
