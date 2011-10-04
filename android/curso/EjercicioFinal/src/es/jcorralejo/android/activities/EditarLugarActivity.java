@@ -46,7 +46,8 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 					//Modificamos el lugar con los nuevos datos
 					Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
 					ContentValues contentValues = new ContentValues();
-					contentValues.put(Lugar.FOTO, imagenLugar.getId());
+					if(!imagenLugar.getDrawable().equals(R.drawable.no_imagen))
+						contentValues.put(Lugar.FOTO, imagenLugar.getId());
 					contentValues.put(Lugar.DESCRIPCION, descripcionLugar.getText().toString());
 					contentValues.put(Lugar.NOMBRE, nombreLugar.getText().toString());
 					getContentResolver().update(uri, contentValues, Lugar._ID+" = "+idLugar, null);
