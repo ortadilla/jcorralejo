@@ -1,5 +1,6 @@
 package es.jcorralejo.android.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -31,14 +32,10 @@ public class LugarAcitivity extends LugarAbstractActivity {
 					i.setClass(getApplicationContext(), EditarLugarActivity.class);
 					i.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar);
 					startActivity(i);
+					finish();
 				}
 			}
 		);
-	}
-	
-	@Override
-	protected void onStart() {
-		super.onStart();
 	}
 	
 	/**
@@ -78,12 +75,6 @@ public class LugarAcitivity extends LugarAbstractActivity {
 			default:
 				return super.onOptionsItemSelected(item);
 		}
-	}
-	
-	@SuppressWarnings("rawtypes")
-	@Override
-	protected Class getActivityAnterior() {
-		return ListaLugaresActivity.class;
 	}
 	
 }

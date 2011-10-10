@@ -1,5 +1,6 @@
 package es.jcorralejo.android.activities;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
@@ -34,11 +35,11 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 			new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-					startActivityForResult(intent, Constantes.RESULT_FOTO);
+					navegarEditarImagen();
 				}
 			}
 		);
+		// Registramos la imagen para definir su menú contextual
 		registerForContextMenu(imagenLugar);
 		
 		// Botón editar
@@ -47,7 +48,6 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 			new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					
 					//Modificamos el lugar con los nuevos datos
 					Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
 					ContentValues contentValues = new ContentValues();
@@ -81,11 +81,10 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 		super.onActivityResult(requestCode, resultCode, data);
 		if(requestCode == Constantes.RESULT_FOTO){
 			if(data!=null){
+				// Procesamos la imagen de vuelta de la galería
 				Uri selectedImage = data.getData();
 				setImagen(selectedImage);
-				
 				uriNuevaImagen = selectedImage;
-				
 				ignorarDatosBD = true;
 			}
 		}
@@ -94,12 +93,6 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 	@Override
 	protected void onStart() {
 		super.onStart();
-	}
-	
-	@SuppressWarnings("rawtypes")
-	@Override
-	protected Class getActivityAnterior() {
-		return ListaLugaresActivity.class;
 	}
 	
 	@Override
@@ -114,8 +107,7 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 	    switch(item.getItemId()) {
 	    	// Navegamos a la galería para seleccionar otra imagen
 	        case Constantes.MENU_EDITAR:
-	        	Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-				startActivityForResult(intent, Constantes.RESULT_FOTO);
+	        	navegarEditarImagen();
 	            return true;
 	        // Eliminamos la imagen actual del lugar
 	        case Constantes.MENU_ELIMINAR:
@@ -127,5 +119,14 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 	            return super.onContextItemSelected(item);
 	    }
 	}
+	
+	/**
+	 * Navega a la galería para seleccionar una nueva imagen para el lugar
+	 */
+	private void navegarEditarImagen(){
+		Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+		startActivityForResult(intent, Constantes.RESULT_FOTO);	
+	}
+	
 	
 }
