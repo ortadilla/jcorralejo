@@ -30,9 +30,9 @@ public abstract class LugarAbstractActivity extends Activity{
 	protected long idLugar;
 	
 	/**
-	 * Indica si se debe cargar la imagen que tiene el lugar en BD o la seleccionada en la galería
+	 * Indica si se debe ignorar los datos que tiene el lugar en BD o los que se editaron en la pantalla
 	 */
-	protected boolean cargarImagenBD = true;
+	protected boolean ignorarDatosBD;
 	
 	/**
 	 * Devuelve el layout a mostrar
@@ -76,7 +76,7 @@ public abstract class LugarAbstractActivity extends Activity{
 			startManagingCursor(cursor);
 			
 			// Tomamos los datos del Lugar
-			if(cursor.moveToFirst()) {
+			if(cursor.moveToFirst() && !ignorarDatosBD) {
 				String nombre = cursor.getString(1);
 				if(nombre!=null)
 					nombreLugar.setText(nombre);
@@ -84,16 +84,12 @@ public abstract class LugarAbstractActivity extends Activity{
 				if(descr!=null)
 					descripcionLugar.setText(descr);
 				String imagen = cursor.getString(3);
-				if(imagen!=null){
-					if(cargarImagenBD)
-						setImagen(Uri.parse(imagen));
-				}else{
-					if(cargarImagenBD)
-						imagenLugar.setImageResource(R.drawable.no_imagen);
-				}
+				if(imagen!=null)
+					setImagen(Uri.parse(imagen));
+				else
+					imagenLugar.setImageResource(R.drawable.no_imagen);
 			}
 			
-			cargarImagenBD = true;
 		} catch (Exception e) {
 			//Si se produce algún error al obtener los datos los lugar, avisamos al usuario
 			//y cerramos la activity, volcando la traza del error

@@ -2,20 +2,23 @@ package es.jcorralejo.android.activities;
 
 import android.content.ContentValues;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import es.jcorralejo.android.R;
-import es.jcorralejo.android.bd.LugaresProvider;
 import es.jcorralejo.android.bd.LugaresDB.Lugar;
+import es.jcorralejo.android.bd.LugaresProvider;
 import es.jcorralejo.android.utils.Constantes;
 
 
 public class EditarLugarActivity extends LugarAbstractActivity{
 
+	private Uri uriNuevaImagen;
 	
 	@Override
 	protected int getLayout() {
@@ -36,6 +39,7 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 				}
 			}
 		);
+		registerForContextMenu(imagenLugar);
 		
 		// Botón editar
 		Button botonEditar = (Button) findViewById(R.id.botonEditar);
@@ -47,17 +51,14 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 					//Modificamos el lugar con los nuevos datos
 					Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
 					ContentValues contentValues = new ContentValues();
-					if(!imagenLugar.getDrawable().equals(getResources().getDrawable(R.drawable.no_imagen)))
-						contentValues.put(Lugar.FOTO, imagenLugar.getId());
+					if(ignorarDatosBD)
+						contentValues.put(Lugar.FOTO, uriNuevaImagen!=null ? uriNuevaImagen.toString() : null);
 					contentValues.put(Lugar.DESCRIPCION, descripcionLugar.getText().toString());
 					contentValues.put(Lugar.NOMBRE, nombreLugar.getText().toString());
 					getContentResolver().update(uri, contentValues, Lugar._ID+" = "+idLugar, null);
 					
 					// Volvemos a los detalles del Lugar
-					Intent i = new Intent();
-					i.setClass(getApplicationContext(), LugarAcitivity.class);
-					i.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar);
-					startActivity(i);
+					finish();
 				}
 			}
 		);
@@ -82,7 +83,10 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 			if(data!=null){
 				Uri selectedImage = data.getData();
 				setImagen(selectedImage);
-				cargarImagenBD = false;
+				
+				uriNuevaImagen = selectedImage;
+				
+				ignorarDatosBD = true;
 			}
 		}
 	}
@@ -96,6 +100,32 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 	@Override
 	protected Class getActivityAnterior() {
 		return ListaLugaresActivity.class;
+	}
+	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+		menu.add(0, Constantes.MENU_EDITAR, 0, R.string.editar);
+		menu.add(0, Constantes.MENU_ELIMINAR, 0, R.string.eliminar);
+	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+	    switch(item.getItemId()) {
+	    	// Navegamos a la galería para seleccionar otra imagen
+	        case Constantes.MENU_EDITAR:
+	        	Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+				startActivityForResult(intent, Constantes.RESULT_FOTO);
+	            return true;
+	        // Eliminamos la imagen actual del lugar
+	        case Constantes.MENU_ELIMINAR:
+	        	imagenLugar.setImageResource(R.drawable.no_imagen);
+	        	ignorarDatosBD = true;
+	        	uriNuevaImagen = null;
+	        	return true;
+	        default:
+	            return super.onContextItemSelected(item);
+	    }
 	}
 	
 }
