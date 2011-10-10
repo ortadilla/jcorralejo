@@ -21,4 +21,14 @@ public class Constantes {
 	 * Constante para identificar cada foto seleccionada de la Galería
 	 */
 	public static final int RESULT_FOTO = 1;
+
+	/**
+	 * Constante para identificar la opción de menú contextual "EDITAR"
+	 */
+	public static final int MENU_EDITAR = 0;
+
+	/**
+	 * Constante para identificar la opción de menú contextual "ELIMINAR"
+	 */
+	public static final int MENU_ELIMINAR = 1;
 }
