@@ -40,13 +40,6 @@ public abstract class LugarAbstractActivity extends Activity{
 	 */
 	protected abstract int getLayout();
 	
-	/**
-	 * Devuelve la Activity a la que volver
-	 * @return Activity a la que volver
-	 */
-	@SuppressWarnings("rawtypes")
-	protected abstract Class getActivityAnterior();
-	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -130,10 +123,9 @@ public abstract class LugarAbstractActivity extends Activity{
 												Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
 												getContentResolver().delete(uri, Lugar._ID+" = "+idLugar, null);
 												
-												//y volvemos a la actividad desde la que hemos llegado
-												Intent intent = new Intent();
-												intent.setClass(getApplicationContext(), getActivityAnterior());
-												startActivity(intent);}
+												// terminalos la actividad y volvemos al listado de lugares
+												finish();
+											}
 									  	  });
 				builder.setNegativeButton(R.string.no, 
 										  new DialogInterface.OnClickListener() {
@@ -148,6 +140,5 @@ public abstract class LugarAbstractActivity extends Activity{
 				return null;
 		}
 	}
-
 
 }
