@@ -140,5 +140,5 @@ public abstract class LugarAbstractActivity extends Activity{
 				return null;
 		}
 	}
-
+	
 }
