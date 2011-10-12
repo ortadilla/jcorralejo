@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,6 +19,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -38,6 +41,10 @@ public class ListaLugaresActivity extends ListActivity{
 		
 		//Configuramos el adapter
 		configurarAdapter();
+		
+		// Registramos la lista de lugares para definir su menú contextual
+		ListView listaLugares = (ListView) findViewById(android.R.id.list);
+		registerForContextMenu(listaLugares);
 	}
 	
 	public void configurarAdapter() {
@@ -231,6 +238,43 @@ public class ListaLugaresActivity extends ListActivity{
 				return null;
 		}
 	}
-
-
+	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+		int id = (int)((AdapterContextMenuInfo)menuInfo).id;
+		menu.add(id, Constantes.MENU_DETALLES, Menu.NONE, R.string.detalles);
+		menu.add(id, Constantes.MENU_EDITAR, Menu.NONE, R.string.editar);
+		menu.add(id, Constantes.MENU_VER_UBICACION, Menu.NONE, R.string.ver_ubicacion);
+		menu.add(id, Constantes.MENU_ELIMINAR, Menu.NONE, R.string.eliminar);
+	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		Intent i = new Intent();
+	    switch(item.getItemId()) {
+	    	// Vemos los detalles del lugar
+	        case Constantes.MENU_DETALLES:
+	    		i.setClass(getApplicationContext(), LugarAcitivity.class);
+	    		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, (long)item.getGroupId());
+	    		startActivity(i);
+	            return true;
+            // Navegamos a editar el lugar
+	        case Constantes.MENU_EDITAR:
+	    		i.setClass(getApplicationContext(), EditarLugarActivity.class);
+	    		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, (long)item.getGroupId());
+	    		startActivity(i);
+	        	return true;
+	        // Preguntamos si eliminar el lugar
+	        case Constantes.MENU_ELIMINAR:
+	        	showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION);
+	        	return true;
+        	// Mostramos el lugar en el mapa
+	        case Constantes.MENU_VER_UBICACION:
+	        	//TODO
+	        	return true;
+	        default:
+	            return super.onContextItemSelected(item);
+	    }
+	}
 }

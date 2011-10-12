@@ -23,12 +23,23 @@ public class Constantes {
 	public static final int RESULT_FOTO = 1;
 
 	/**
+	 * Constante para identificar la opción de menú contextual "DETALLES"
+	 */
+	public static final int MENU_DETALLES = 0;
+
+	/**
 	 * Constante para identificar la opción de menú contextual "EDITAR"
 	 */
-	public static final int MENU_EDITAR = 0;
+	public static final int MENU_EDITAR = 1;
 
 	/**
 	 * Constante para identificar la opción de menú contextual "ELIMINAR"
 	 */
-	public static final int MENU_ELIMINAR = 1;
+	public static final int MENU_ELIMINAR = 3;
+
+	/**
+	 * Constante para identificar la opción de menú contextual "VER UBICACIÓN"
+	 */
+	public static final int MENU_VER_UBICACION = 2;
+	
 }
