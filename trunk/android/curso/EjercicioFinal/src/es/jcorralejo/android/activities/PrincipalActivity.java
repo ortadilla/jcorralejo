@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import es.jcorralejo.android.R;
+import es.jcorralejo.android.utils.Constantes;
 
 public class PrincipalActivity extends Activity {
 	
@@ -59,6 +60,7 @@ public class PrincipalActivity extends Activity {
 	private void navegarMapaLugaresActivity(){
 		Intent intent = new Intent();
 		intent.setClass(getApplicationContext(), MapaLugaresActivity.class);
+		intent.putExtra(Constantes.PARAMETRO_ID_LUGAR, Constantes.TODOS_LUGARES); 
 		startActivity(intent);
 	}
 	
