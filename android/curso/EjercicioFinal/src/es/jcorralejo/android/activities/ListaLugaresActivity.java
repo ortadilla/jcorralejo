@@ -213,7 +213,6 @@ public class ListaLugaresActivity extends ListActivity{
 	
 	@Override
 	protected Dialog onCreateDialog(int id, Bundle args) {
-		final long idLugar = args.getLong(Constantes.PARAMETRO_ID_LUGAR);
 		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		switch (id) {
 			// Abrimos el popUp para pedir confirmación 
@@ -236,6 +235,7 @@ public class ListaLugaresActivity extends ListActivity{
 				
 				return builder.create();
 			case Constantes.DIALOG_PEDIR_CONFIRMACION_SIMPLE:
+				final long idLugar = args.getLong(Constantes.PARAMETRO_ID_LUGAR);
 				builder.setMessage(R.string.msg_condirmacion_eliminar);
 				builder.setPositiveButton(R.string.si,
 										  new DialogInterface.OnClickListener() {
