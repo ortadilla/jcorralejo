@@ -120,7 +120,7 @@ public class ListaLugaresActivity extends ListActivity{
 			new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION);
+					showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION_MULTIPLE);
 				}
 			}
 		);
@@ -212,11 +212,12 @@ public class ListaLugaresActivity extends ListActivity{
 	}
 	
 	@Override
-	protected Dialog onCreateDialog(int id) {
+	protected Dialog onCreateDialog(int id, Bundle args) {
+		final long idLugar = args.getLong(Constantes.PARAMETRO_ID_LUGAR);
+		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		switch (id) {
-			// Abrimos el popUp "Acerca de..." 
-			case Constantes.DIALOG_PEDIR_CONFIRMACION:
-				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			// Abrimos el popUp para pedir confirmación 
+			case Constantes.DIALOG_PEDIR_CONFIRMACION_MULTIPLE:
 				builder.setMessage(R.string.msg_condirmacion_eliminar_varios);
 				builder.setPositiveButton(R.string.si,
 										  new DialogInterface.OnClickListener() {
@@ -234,6 +235,31 @@ public class ListaLugaresActivity extends ListActivity{
 										  });
 				
 				return builder.create();
+			case Constantes.DIALOG_PEDIR_CONFIRMACION_SIMPLE:
+				builder.setMessage(R.string.msg_condirmacion_eliminar);
+				builder.setPositiveButton(R.string.si,
+										  new DialogInterface.OnClickListener() {
+											@Override
+											public void onClick(DialogInterface dialog, int which) {
+												//Eliminamos el lugar
+												
+												Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
+												getContentResolver().delete(uri, Lugar._ID+" = "+idLugar, null);
+												
+												//Recargamos la pantalla
+												configurarAdapter();
+											}
+									  	  });
+				builder.setNegativeButton(R.string.no, 
+										  new DialogInterface.OnClickListener() {
+											@Override
+											public void onClick(DialogInterface dialog, int which) {
+												//No hay que hacer nada
+											}
+										  });
+				
+				return builder.create();
+
 			default:
 				return null;
 		}
@@ -267,7 +293,9 @@ public class ListaLugaresActivity extends ListActivity{
 	        	return true;
 	        // Preguntamos si eliminar el lugar
 	        case Constantes.MENU_ELIMINAR:
-	        	showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION);
+	        	Bundle b = new Bundle();
+	        	b.putLong(Constantes.PARAMETRO_ID_LUGAR, (long)item.getGroupId());
+	        	showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION_SIMPLE, b);
 	        	return true;
         	// Mostramos el lugar en el mapa
 	        case Constantes.MENU_VER_UBICACION:
