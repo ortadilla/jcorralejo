@@ -10,6 +10,7 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
@@ -37,9 +38,9 @@ public class MapaLugaresActivity extends MapActivity {
 		mapa = (MapView) findViewById(R.id.mapview);
 		mapa.displayZoomControls(true);
 		mapa.setBuiltInZoomControls(true);
+		mapa.setSatellite(true); // Activamos la vista satelite
 		mapController = mapa.getController();
 		mapController.setZoom(14); // Zoom x14
-		mapa.setSatellite(true); // Activamos la vista satelite
 
 		//Añadimos el manejador del GPS
 		LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -62,7 +63,7 @@ public class MapaLugaresActivity extends MapActivity {
 			cursor.setNotificationUri(getContentResolver(), uri);
 			startManagingCursor(cursor);
 
-			// Sin indicamos un lugar, sólo debemos mostrar ese
+			// Si indicamos un lugar, sólo debemos mostrar ese
 			Long idLugar = extras.getLong(Constantes.PARAMETRO_ID_LUGAR);
 			if(idLugar!=null && Constantes.TODOS_LUGARES!=idLugar)
 				uri = ContentUris.withAppendedId(uri, idLugar);
@@ -76,10 +77,20 @@ public class MapaLugaresActivity extends MapActivity {
 				itemizedOverlay.addLocalizacion(latitud, longitud, nombre);
 			}
 			
+			// Centramos el mapa TODO
+			Double latitud = 37.40*1E6;
+			Double longitud = -5.99*1E6;
+			GeoPoint loc = new GeoPoint(latitud.intValue(), longitud.intValue());
+	        mapController.animateTo(loc);
+	        int zoomActual = mapa.getZoomLevel();
+	        for(int i=zoomActual; i<10; i++)
+	            mapController.zoomIn();
+			
 			mapOverlays = mapa.getOverlays();
 			mapOverlays.clear();
 			mapOverlays.add(itemizedOverlay);
 		}
+		
 	}
 
 
