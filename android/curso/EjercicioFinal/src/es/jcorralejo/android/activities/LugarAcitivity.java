@@ -1,6 +1,5 @@
 package es.jcorralejo.android.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -64,7 +63,7 @@ public class LugarAcitivity extends LugarAbstractActivity {
 				
 			// Al pulsar sobre "Eliminar" pedimos confirmación al usuario
 			case R.id.lugarEliminar:
-				showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION);
+				showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION_SIMPLE);
 				return true;
 				
 			// Al pulsar sobre "Editar" navegamos a la actividad MapaLugaresActivity para mostrar el lugar 

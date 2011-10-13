@@ -8,9 +8,14 @@ public class Constantes {
 	public static final String PARAMETRO_ID_LUGAR = "idLugar";
 	
 	/**
-	 * Constante para identificar el popUp para perdir confirmación al usuario
+	 * Constante para identificar el popUp para perdir confirmación al usuario de un Lugar
 	 */
-	public static final int DIALOG_PEDIR_CONFIRMACION = 0;
+	public static final int DIALOG_PEDIR_CONFIRMACION_MULTIPLE = 0;
+	
+	/**
+	 * Constante para identificar el popUp para perdir confirmación al usuario de un Lugar
+	 */
+	public static final int DIALOG_PEDIR_CONFIRMACION_SIMPLE = 1;
 	
 	/**
 	 * Constante para identificar el % de pantalla que debe ocupar las imágenes

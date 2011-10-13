@@ -69,7 +69,7 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 					@Override
 					public void onClick(View v) {
 						//Levantamos el popUp de confirmación
-						showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION);
+						showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION_SIMPLE);
 					}
 				}
 		);

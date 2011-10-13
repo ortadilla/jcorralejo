@@ -111,8 +111,8 @@ public abstract class LugarAbstractActivity extends Activity{
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
-			// Abrimos el popUp "Acerca de..." 
-			case Constantes.DIALOG_PEDIR_CONFIRMACION:
+			// Abrimos el popUp para confirmar
+			case Constantes.DIALOG_PEDIR_CONFIRMACION_SIMPLE:
 				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setMessage(R.string.msg_condirmacion_eliminar);
 				builder.setPositiveButton(R.string.si,
@@ -123,7 +123,7 @@ public abstract class LugarAbstractActivity extends Activity{
 												Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
 												getContentResolver().delete(uri, Lugar._ID+" = "+idLugar, null);
 												
-												// terminalos la actividad y volvemos al listado de lugares
+												// terminamos la actividad y volvemos al listado de lugares
 												finish();
 											}
 									  	  });
