@@ -47,4 +47,9 @@ public class Constantes {
 	 */
 	public static final int MENU_VER_UBICACION = 2;
 	
+	/**
+	 * Constante para indicar que se deben mostrar TODOS los lugares almacenados en BD
+	 */
+	public static final long TODOS_LUGARES = Long.MIN_VALUE;
+	
 }

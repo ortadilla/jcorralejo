@@ -1,19 +1,33 @@
 package es.jcorralejo.android.activities;
 
+import java.util.List;
+
+import android.content.ContentUris;
+import android.content.Context;
+import android.database.Cursor;
+import android.graphics.drawable.Drawable;
+import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
+import com.google.android.maps.Overlay;
 
 import es.jcorralejo.android.R;
+import es.jcorralejo.android.bd.LugaresDB.Lugar;
+import es.jcorralejo.android.bd.LugaresProvider;
+import es.jcorralejo.android.maps.MiItemizedOverlay;
+import es.jcorralejo.android.maps.MiLocationListener;
+import es.jcorralejo.android.utils.Constantes;
 
 public class MapaLugaresActivity extends MapActivity {
 
 	private MapView mapa;
 	private MapController mapController;
-//	private List<Overlay> mapOverlays;
-	//	private MiItemizedOverlay itemizedoverlay;
+	private List<Overlay> mapOverlays;
+	private MiItemizedOverlay itemizedOverlay;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -27,23 +41,45 @@ public class MapaLugaresActivity extends MapActivity {
 		mapController.setZoom(14); // Zoom x14
 		mapa.setSatellite(true); // Activamos la vista satelite
 
-		/*
-		// Marcamos unos puntos en el mapa
-		Drawable drawable = this.getResources().getDrawable(R.drawable.icon);
-		itemizedoverlay = new MiItemizedOverlay(this, drawable);
-		itemizedoverlay.addLocalizacion(41.669770, -0.812602, "Punto 1");
-		itemizedoverlay.addLocalizacion(41.666597, -0.907145, "Punto 2");
-		itemizedoverlay.addLocalizacion(41.658657, -0.886501,"Punto 3");
-
-		mapOverlays = mapa.getOverlays();
-		mapOverlays.clear();
-		mapOverlays.add(itemizedoverlay);
-
 		//Añadimos el manejador del GPS
 		LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		MiLocationListener mlistener = new MiLocationListener(this, mapController);
 		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlistener);
-		*/
+	}
+	
+	@Override
+	protected void onStart() {
+		super.onStart();
+		
+		Bundle extras = getIntent().getExtras();
+		if(extras!=null){
+			// Marcamos el/los punto/s en el mapa
+			Drawable drawable = this.getResources().getDrawable(R.drawable.icon);
+			itemizedOverlay = new MiItemizedOverlay(this, drawable);
+			final String[] columnas = new String[] {Lugar._ID, Lugar.NOMBRE, Lugar.DESCRIPCION, Lugar.FOTO, Lugar.LATITUD, Lugar.LONGITUD};
+			Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
+			Cursor cursor = managedQuery(uri, columnas, null, null, null);
+			cursor.setNotificationUri(getContentResolver(), uri);
+			startManagingCursor(cursor);
+
+			// Sin indicamos un lugar, sólo debemos mostrar ese
+			Long idLugar = extras.getLong(Constantes.PARAMETRO_ID_LUGAR);
+			if(idLugar!=null && Constantes.TODOS_LUGARES!=idLugar)
+				uri = ContentUris.withAppendedId(uri, idLugar);
+
+			// Añadimos todos lo puntos
+			while(cursor.moveToNext()) {
+				String nombre = cursor.getString(1);
+				float latitud = cursor.getFloat(4);
+				float longitud = cursor.getFloat(5);
+
+				itemizedOverlay.addLocalizacion(latitud, longitud, nombre);
+			}
+			
+			mapOverlays = mapa.getOverlays();
+			mapOverlays.clear();
+			mapOverlays.add(itemizedOverlay);
+		}
 	}
 
 
