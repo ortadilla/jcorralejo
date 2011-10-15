@@ -51,5 +51,10 @@ public class Constantes {
 	 * Constante para indicar que se deben mostrar TODOS los lugares almacenados en BD
 	 */
 	public static final long TODOS_LUGARES = Long.MIN_VALUE;
+
+	/**
+	 * Constante para indicar que se deben mostrar TODOS los lugares almacenados en BD
+	 */
+	public static final int ZOOM_MAX_MAPA = 14;
 	
 }
