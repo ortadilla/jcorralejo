@@ -33,6 +33,7 @@ public class MapaLugaresActivity extends MapActivity{
 	private List<Overlay> mapOverlays;
 	private MiItemizedOverlay itemizedOverlay;
 	private LocationManager lm;
+	boolean acercar;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -73,30 +74,35 @@ public class MapaLugaresActivity extends MapActivity{
 
 			// Si indicamos un lugar, sólo debemos mostrar ese
 			Long idLugar = extras.getLong(Constantes.PARAMETRO_ID_LUGAR);
-			if(idLugar!=null && Constantes.TODOS_LUGARES!=idLugar)
+			if(idLugar!=null && Constantes.TODOS_LUGARES!=idLugar){
 				uri = ContentUris.withAppendedId(uri, idLugar);
+				cursor.setNotificationUri(getContentResolver(), uri);
+				if(cursor.moveToFirst()){
+					String nombre = cursor.getString(1);
+					float latitud = cursor.getFloat(4);
+					float longitud = cursor.getFloat(5);
 
-			// Añadimos todos lo puntos al mapa
-			while(cursor.moveToNext()) {
-				String nombre = cursor.getString(1);
-				float latitud = cursor.getFloat(4);
-				float longitud = cursor.getFloat(5);
+					itemizedOverlay.addLocalizacion(latitud, longitud, nombre);
+				}
+			// Ai no, añadimos todos los puntos al mapa
+			}else{
+				while(cursor.moveToNext()) {
+					String nombre = cursor.getString(1);
+					float latitud = cursor.getFloat(4);
+					float longitud = cursor.getFloat(5);
 
-				itemizedOverlay.addLocalizacion(latitud, longitud, nombre);
+					itemizedOverlay.addLocalizacion(latitud, longitud, nombre);
+				}
 			}
-			
+
+			//Sólo aceramos el zoom cuando se ha enviado un único lugar
+	        acercar = idLugar!=null && Constantes.TODOS_LUGARES!=idLugar;
+	        
 			// Animamos el mapa de punto a punto
 			for (int x = 0; x < itemizedOverlay.size(); x++) {
 				OverlayItem hito = itemizedOverlay.getItem(x);
 				mapController.animateTo(hito.getPoint());
 			}
-			
-	        //Sólo aceramos el zoom cuando se ha enviado un único lugar
-	        if(idLugar!=null && Constantes.TODOS_LUGARES!=idLugar){
-	        	int zoomActual = mapa.getZoomLevel();
-	        	for(int i=zoomActual; i<10; i++)
-	        		mapController.zoomIn();
-	        }
 			
 			mapOverlays = mapa.getOverlays();
 			mapOverlays.clear();
@@ -121,6 +127,16 @@ public class MapaLugaresActivity extends MapActivity{
 	@Override
 	protected boolean isRouteDisplayed() {
 		return false;
+	}
+	
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) {
+		super.onWindowFocusChanged(hasFocus);
+		//Necesitamos hacer zoom en este método, ya que en onStart aun no se ha generado el imageView
+		if(acercar){
+			for(int i=mapa.getZoomLevel(); i<Constantes.ZOOM_MAX_MAPA; i++)
+				mapController.zoomIn();
+		}
 	}
 
 }

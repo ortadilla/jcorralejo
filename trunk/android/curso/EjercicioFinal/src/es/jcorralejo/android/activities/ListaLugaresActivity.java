@@ -299,7 +299,10 @@ public class ListaLugaresActivity extends ListActivity{
 	        	return true;
         	// Mostramos el lugar en el mapa
 	        case Constantes.MENU_VER_UBICACION:
-	        	//TODO
+	    		Intent intent = new Intent();
+	    		intent.setClass(getApplicationContext(), MapaLugaresActivity.class);
+	    		intent.putExtra(Constantes.PARAMETRO_ID_LUGAR, (long)item.getGroupId()); 
+	    		startActivity(intent);
 	        	return true;
 	        default:
 	            return super.onContextItemSelected(item);
