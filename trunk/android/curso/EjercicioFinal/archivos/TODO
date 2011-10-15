@@ -1,6 +1,4 @@
 · Al modificar titulo o descripción, si navegamos a la galería y volvemos (no aceptamos) perdemos los cambios
-· Opciones emergentes en la lista de lugares: Ver ubicación
-· Ver las marcas de los lugares ya existentes en el mapa --> intentar hacer más eficiente (where id in....) --> Centrar el lugar
 · Añadir lugar
 · Permitir modificar coordenadas de un lugar
 · Al ver el mapa que aparezca la zona actual. Si no está encendido el GPS, avisar
