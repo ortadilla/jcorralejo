@@ -66,9 +66,12 @@ public class LugarAcitivity extends LugarAbstractActivity {
 				showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION_SIMPLE);
 				return true;
 				
-			// Al pulsar sobre "Editar" navegamos a la actividad MapaLugaresActivity para mostrar el lugar 
+			// Al pulsar sobre "Ver Ubicación" navegamos a la actividad MapaLugaresActivity para mostrar el lugar en el mapa 
 			case R.id.lugarVerUbicacion:
-				//TODO
+	    		Intent intent = new Intent();
+	    		intent.setClass(getApplicationContext(), MapaLugaresActivity.class);
+	    		intent.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar); 
+	    		startActivity(intent);
 				return true;
 				
 			default:
