@@ -63,36 +63,31 @@ public class MapaLugaresActivity extends MapActivity{
 		
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
-			// Marcamos el/los punto/s en el mapa
 			Drawable drawable = this.getResources().getDrawable(R.drawable.icon);
 			itemizedOverlay = new MiItemizedOverlay(this, drawable);
+			
 			final String[] columnas = new String[] {Lugar._ID, Lugar.NOMBRE, Lugar.DESCRIPCION, Lugar.FOTO, Lugar.LATITUD, Lugar.LONGITUD};
 			Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
-			Cursor cursor = managedQuery(uri, columnas, null, null, null);
-			cursor.setNotificationUri(getContentResolver(), uri);
-			startManagingCursor(cursor);
-
+			String where = null;
+			
 			// Si indicamos un lugar, sólo debemos mostrar ese
 			Long idLugar = extras.getLong(Constantes.PARAMETRO_ID_LUGAR);
 			if(idLugar!=null && Constantes.TODOS_LUGARES!=idLugar){
 				uri = ContentUris.withAppendedId(uri, idLugar);
-				cursor.setNotificationUri(getContentResolver(), uri);
-				if(cursor.moveToFirst()){
-					String nombre = cursor.getString(1);
-					float latitud = cursor.getFloat(4);
-					float longitud = cursor.getFloat(5);
+				where = Lugar._ID+" = "+idLugar;
+			}
+			
+			Cursor cursor = managedQuery(uri, columnas, where, null, null);
+			cursor.setNotificationUri(getContentResolver(), uri);
+			startManagingCursor(cursor);
 
-					itemizedOverlay.addLocalizacion(latitud, longitud, nombre);
-				}
-			// Ai no, añadimos todos los puntos al mapa
-			}else{
-				while(cursor.moveToNext()) {
-					String nombre = cursor.getString(1);
-					float latitud = cursor.getFloat(4);
-					float longitud = cursor.getFloat(5);
+			// Añadimos el/los punto/s en el mapa
+			while(cursor.moveToNext()) {
+				String nombre = cursor.getString(1);
+				float latitud = cursor.getFloat(4);
+				float longitud = cursor.getFloat(5);
 
-					itemizedOverlay.addLocalizacion(latitud, longitud, nombre);
-				}
+				itemizedOverlay.addLocalizacion(latitud, longitud, nombre);
 			}
 
 			//Sólo aceramos el zoom cuando se ha enviado un único lugar
