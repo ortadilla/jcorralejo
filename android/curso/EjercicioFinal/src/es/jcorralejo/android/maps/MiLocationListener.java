@@ -1,13 +1,13 @@
 package es.jcorralejo.android.maps;
 
-import com.google.android.maps.GeoPoint;
-import com.google.android.maps.MapController;
-
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapController;
 
 public class MiLocationListener implements LocationListener {
 	
