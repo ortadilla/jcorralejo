@@ -10,6 +10,9 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
 import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
@@ -33,19 +36,50 @@ public class MapaLugaresActivity extends MapActivity{
 	private List<Overlay> mapOverlays;
 	private MiItemizedOverlay itemizedOverlay;
 	private LocationManager lm;
+	
 	boolean acercar;
+	int xDown, yDown;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mapa);
-
+		
+		
+		
 		mapa = (MapView) findViewById(R.id.mapview);
 		mapa.displayZoomControls(true);
 		mapa.setBuiltInZoomControls(true);
 		mapa.setSatellite(true);
+		mapa.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				//Guardamos las coordenadas al pulsar, para controlar que sólo se navegue si no estamos
+				//interactuando con el mapa para, por ejemplo, hacer zoom o para moverse
+				if (event.getAction()==MotionEvent.ACTION_DOWN) {
+					xDown=(int)event.getX();
+					yDown=(int)event.getY();
+	            }
+				else if (event.getAction()==MotionEvent.ACTION_UP) {
+	                if ((int)event.getX()==xDown && (int)event.getY()==yDown) {
+	                    GeoPoint gp = mapa.getProjection().fromPixels((int)event.getX(), (int)event.getY());
+	                    Toast.makeText(getBaseContext()," lat= "+gp.getLatitudeE6()+", lon = "+gp.getLongitudeE6() , Toast.LENGTH_SHORT).show();
+	                    
+//	                    Intent i = new Intent();
+//	    				i.setClass(getApplicationContext(), EditarLugarActivity.class);
+//	    				i.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar);
+//	    				startActivity(i);
+	                }
+				}else
+					v.onTouchEvent(event);
+				
+				return true;
+			}
+		});
+		
 		mapController = mapa.getController();
 		mapController.setZoom(6);
+		
 
 		//Añadimos el manejador del GPS
 		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
