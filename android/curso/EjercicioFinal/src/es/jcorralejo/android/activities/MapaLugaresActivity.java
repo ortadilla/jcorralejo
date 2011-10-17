@@ -11,8 +11,6 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnTouchListener;
 import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
@@ -29,7 +27,7 @@ import es.jcorralejo.android.maps.MiItemizedOverlay;
 import es.jcorralejo.android.maps.MiLocationListener;
 import es.jcorralejo.android.utils.Constantes;
 
-public class MapaLugaresActivity extends MapActivity{
+public class MapaLugaresActivity extends MapActivity {
 
 	private MapView mapa;
 	private MapController mapController;
@@ -45,46 +43,32 @@ public class MapaLugaresActivity extends MapActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mapa);
 		
-		
-		
 		mapa = (MapView) findViewById(R.id.mapview);
 		mapa.displayZoomControls(true);
 		mapa.setBuiltInZoomControls(true);
 		mapa.setSatellite(true);
-		mapa.setOnTouchListener(new OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				//Guardamos las coordenadas al pulsar, para controlar que sólo se navegue si no estamos
-				//interactuando con el mapa para, por ejemplo, hacer zoom o para moverse
-				if (event.getAction()==MotionEvent.ACTION_DOWN) {
-					xDown=(int)event.getX();
-					yDown=(int)event.getY();
-	            }
-				else if (event.getAction()==MotionEvent.ACTION_UP) {
-	                if ((int)event.getX()==xDown && (int)event.getY()==yDown) {
-	                    GeoPoint gp = mapa.getProjection().fromPixels((int)event.getX(), (int)event.getY());
-	                    Toast.makeText(getBaseContext()," lat= "+gp.getLatitudeE6()+", lon = "+gp.getLongitudeE6() , Toast.LENGTH_SHORT).show();
-	                    
-//	                    Intent i = new Intent();
-//	    				i.setClass(getApplicationContext(), EditarLugarActivity.class);
-//	    				i.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar);
-//	    				startActivity(i);
-	                }
-				}else
-					v.onTouchEvent(event);
-				
-				return true;
-			}
-		});
-		
 		mapController = mapa.getController();
 		mapController.setZoom(6);
 		
-
 		//Añadimos el manejador del GPS
 		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		MiLocationListener mlistener = new MiLocationListener(this, mapController);
 		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlistener);
+	}
+	
+	@Override
+	public boolean dispatchTouchEvent(MotionEvent ev) {
+		if (ev.getAction()==MotionEvent.ACTION_DOWN) {
+			xDown=(int)ev.getX();
+			yDown=(int)ev.getY();
+        }
+		else if (ev.getAction()==MotionEvent.ACTION_UP) {
+            if ((int)ev.getX()==xDown && (int)ev.getY()==yDown) {
+                GeoPoint gp = mapa.getProjection().fromPixels((int)ev.getX(), (int)ev.getY());
+                Toast.makeText(getBaseContext()," lat= "+gp.getLatitudeE6()+", lon = "+gp.getLongitudeE6() , Toast.LENGTH_SHORT).show();
+            }
+		}
+		return super.dispatchTouchEvent(ev);
 	}
 	
 	@Override
