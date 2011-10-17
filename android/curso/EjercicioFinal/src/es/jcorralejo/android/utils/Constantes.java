@@ -8,6 +8,11 @@ public class Constantes {
 	public static final String PARAMETRO_ID_LUGAR = "idLugar";
 	
 	/**
+	 * Constante para identificar el parámetro punto seleccionado en el mapa 
+	 */
+	public static final String PARAMETRO_PUNTO_MAPA_SELECCIONADO = "puntoMapaSeleccionado";
+	
+	/**
 	 * Constante para identificar el popUp para perdir confirmación al usuario de un Lugar
 	 */
 	public static final int DIALOG_PEDIR_CONFIRMACION_MULTIPLE = 0;
@@ -56,5 +61,16 @@ public class Constantes {
 	 * Constante para indicar que se deben mostrar TODOS los lugares almacenados en BD
 	 */
 	public static final int ZOOM_MAX_MAPA = 14;
+	
+	/**
+	 * Constante para identificar el popUp "Acerca de..."
+	 */
+	public static final int DIALOG_ACERCA_DE = 0;
+
+	/**
+	 * Constante para identificar el popUp "Opciones sobre Punto en el Mapa"
+	 */
+	public static final int DIALOG_OPCIONES_MAPA = 0;
+	
 	
 }

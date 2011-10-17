@@ -17,11 +17,6 @@ import es.jcorralejo.android.utils.Constantes;
 
 public class PrincipalActivity extends Activity {
 	
-	/**
-	 * Constante para identificar el popUp "Acerca de..."
-	 */
-	private static final int DIALOG_ACERCA_DE = 0;
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -95,7 +90,7 @@ public class PrincipalActivity extends Activity {
 				return true;
 			// Al pulsar sobre "Acerca de" levantamos el popUp con la información sobre la aplicación
 			case R.id.menuAcercaDe:
-				showDialog(DIALOG_ACERCA_DE);
+				showDialog(Constantes.DIALOG_ACERCA_DE);
 				return true;
 			// Al pulsar sobre "Salir" salimos de la aplicación
 			case R.id.menuQuit:
@@ -111,7 +106,7 @@ public class PrincipalActivity extends Activity {
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 			// Abrimos el popUp "Acerca de..." 
-			case DIALOG_ACERCA_DE:
+			case Constantes.DIALOG_ACERCA_DE:
 				LayoutInflater li = LayoutInflater.from(this);
 				View view = li.inflate(R.layout.acercade, null);
 				final AlertDialog.Builder builder = new AlertDialog.Builder(this).setIcon(R.drawable.icon)
