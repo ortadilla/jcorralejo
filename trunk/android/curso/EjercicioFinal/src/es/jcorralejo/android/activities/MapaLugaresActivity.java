@@ -2,8 +2,13 @@ package es.jcorralejo.android.activities;
 
 import java.util.List;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ContentUris;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
@@ -64,11 +69,57 @@ public class MapaLugaresActivity extends MapActivity {
         }
 		else if (ev.getAction()==MotionEvent.ACTION_UP) {
             if ((int)ev.getX()==xDown && (int)ev.getY()==yDown) {
-                GeoPoint gp = mapa.getProjection().fromPixels((int)ev.getX(), (int)ev.getY());
-                Toast.makeText(getBaseContext()," lat= "+gp.getLatitudeE6()+", lon = "+gp.getLongitudeE6() , Toast.LENGTH_SHORT).show();
+            	float[] coordenada = new float[2];
+            	coordenada[0] = ev.getX(); 
+            	coordenada[1] = ev.getY(); 
+                Bundle args = new Bundle();
+                args.putFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
+                showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
+                return true;
             }
 		}
 		return super.dispatchTouchEvent(ev);
+	}
+	
+	@Override
+	protected void onPrepareDialog(int id, Dialog dialog, Bundle args) {
+		super.onPrepareDialog(id, dialog, args);
+	}
+	
+	@Override
+	protected Dialog onCreateDialog(int id, Bundle args) {
+		switch (id) {
+			// Abrimos el popUp para mostrar las opciones sobre los puntos del mapa 
+			case Constantes.DIALOG_OPCIONES_MAPA:
+				if(args!=null){
+					float[] coordenada = args.getFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO);
+					GeoPoint gp = mapa.getProjection().fromPixels((int)coordenada[0], (int)coordenada[1]);
+					Toast.makeText(getBaseContext()," lat= "+gp.getLatitudeE6()/1E6+", lon = "+gp.getLongitudeE6()/1E6 , Toast.LENGTH_SHORT).show();
+
+					AlertDialog.Builder builder = new AlertDialog.Builder(this);
+					builder.setTitle(R.string.opciones);
+					Resources resources = getResources();
+					final CharSequence[] items = {resources.getString(R.string.agregar), resources.getString(R.string.cancelar)};
+					builder.setItems(items, new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int item) {
+							//Si pulsamos "aceptar"...
+							if(item==0){
+								Intent i = new Intent();
+								i.setClass(getApplicationContext(), EditarLugarActivity.class);
+								i.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar);
+								startActivity(i);
+							}
+							
+							//En cualquier caso eliminamos el dialog para que, si pulsamos de nuevo en otro punto,
+							//se actualicen los argumentos que se pasan por parámetros
+							removeDialog(Constantes.DIALOG_OPCIONES_MAPA);
+						}
+					});
+					return builder.create();
+				}
+			default:
+				return null;
+		}
 	}
 	
 	@Override
