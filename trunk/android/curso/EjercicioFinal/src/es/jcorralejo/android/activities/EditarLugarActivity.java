@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.bd.LugaresDB.Lugar;
 import es.jcorralejo.android.bd.LugaresProvider;
@@ -19,7 +20,12 @@ import es.jcorralejo.android.utils.Constantes;
 public class EditarLugarActivity extends LugarAbstractActivity{
 
 	private Uri uriNuevaImagen;
+	
+	/** Indica si estamos agregando un luegar nuevo o editando uno existente */
 	private boolean agregando = false;
+	
+	/** Guarda la información de las coordenada a la hora de crear un nuevo lugar */
+	float[] coordenada = null;
 	
 	@Override
 	protected int getLayout() {
@@ -44,48 +50,78 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 		
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
-			float[] coordenada = (float[]) extras.get(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO);
+			coordenada = (float[]) extras.get(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO);
 			agregando = coordenada!=null;
 		}
 		
-		// Botón editar
+		// Botón editar/agregar
 		Button botonEditar = (Button) findViewById(R.id.botonEditar);
 		botonEditar.setOnClickListener(
 			new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					//Modificamos el lugar con los nuevos datos
 					Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
 					ContentValues contentValues = new ContentValues();
-					if(ignorarDatosBD)
-						contentValues.put(Lugar.FOTO, uriNuevaImagen!=null ? uriNuevaImagen.toString() : null);
-					contentValues.put(Lugar.DESCRIPCION, descripcionLugar.getText().toString());
-					contentValues.put(Lugar.NOMBRE, nombreLugar.getText().toString());
-					getContentResolver().update(uri, contentValues, Lugar._ID+" = "+idLugar, null);
-					
-					// Volvemos a los detalles del Lugar
-					finish();
+					if(agregando){
+						if("".equals(nombreLugar.getText().toString()) || "".equals(descripcionLugar.getText().toString()))
+							Toast.makeText(getBaseContext(), R.string.control_agregar_lugar, Toast.LENGTH_SHORT).show();
+						else{
+							contentValues.put(Lugar.FOTO, uriNuevaImagen!=null ? uriNuevaImagen.toString() : null);
+							contentValues.put(Lugar.DESCRIPCION, descripcionLugar.getText().toString());
+							contentValues.put(Lugar.NOMBRE, nombreLugar.getText().toString());
+							contentValues.put(Lugar.LATITUD, coordenada[0]);
+							contentValues.put(Lugar.LONGITUD, coordenada[1]);
+							getContentResolver().insert(uri, contentValues);
+							// Volvemos a la pantalla anterior
+							finish();
+						}
+					}else{
+						//Modificamos el lugar con los nuevos datos
+						if(ignorarDatosBD)
+							contentValues.put(Lugar.FOTO, uriNuevaImagen!=null ? uriNuevaImagen.toString() : null);
+						contentValues.put(Lugar.DESCRIPCION, descripcionLugar.getText().toString());
+						contentValues.put(Lugar.NOMBRE, nombreLugar.getText().toString());
+						getContentResolver().update(uri, contentValues, Lugar._ID+" = "+idLugar, null);
+						// Volvemos a la pantalla anterior
+						finish();
+					}
 				}
 			}
 		);
 		
-		// Botón eliminar
+		// Botón eliminar/cancelar
 		Button botonEliminar = (Button) findViewById(R.id.botonEliminar);
 		botonEliminar.setOnClickListener(
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						//Levantamos el popUp de confirmación
-						showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION_SIMPLE);
+						if(agregando){
+							finish();
+						}else
+							//Levantamos el popUp de confirmación
+							showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION_SIMPLE);
 					}
 				}
 		);
 		
 		//Si en vez de estar editando estamos agregando modificamos la descripción de los botones
+		//y el texto que aparece en los input
 		if(agregando){
 			botonEditar.setText(R.string.agregar);
 			botonEliminar.setText(R.string.cancelar);
+			
+			nombreLugar.setText(R.string.msg_agregar_nombre);
+			descripcionLugar.setText(R.string.msg_agregar_descripcion);
 		}
+	}
+	
+	private boolean nombreYDescripcionCorrectos(){
+		String msgAgregarDescripcion = getResources().getString(R.string.msg_agregar_descripcion);
+		String msgAgregarNombre = getResources().getString(R.string.msg_agregar_nombre);
+		
+		return "".equals(nombreLugar.getText().toString()) || "".equals(descripcionLugar.getText().toString())
+		|| msgAgregarDescripcion.equals(nombreLugar.getText().toString());
+		
 	}
 	
 	@Override
