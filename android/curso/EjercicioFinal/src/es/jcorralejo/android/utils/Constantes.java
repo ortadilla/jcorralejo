@@ -76,6 +76,15 @@ public class Constantes {
 	 * Constante para identificar el popUp "Opciones sobre Punto en el Mapa"
 	 */
 	public static final int DIALOG_OPCIONES_MAPA = 0;
-	
+
+	/**
+	 * Constante para identificar el índice de las coordenadas que identifica a la latitud 
+	 */
+	public static final int INDICE_COORDENADA_LATITUD = 0;
+
+	/**
+	 * Constante para identificar el índice de las coordenadas que identifica a la longitud
+	 */
+	public static final int INDICE_COORDENADA_LONGITUD = 1;
 	
 }
