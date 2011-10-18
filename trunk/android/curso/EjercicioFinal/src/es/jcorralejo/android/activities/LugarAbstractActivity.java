@@ -56,31 +56,35 @@ public abstract class LugarAbstractActivity extends Activity{
 		
 		try {
 			Bundle extras = getIntent().getExtras();
-			idLugar = extras.getLong(Constantes.PARAMETRO_ID_LUGAR);
-			final String[] columnas = new String[] {Lugar._ID, Lugar.NOMBRE, Lugar.DESCRIPCION, Lugar.FOTO, Lugar.LATITUD, Lugar.LONGITUD};
-		
-			Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
-			uri = ContentUris.withAppendedId(uri, idLugar);
-			Cursor cursor = managedQuery(uri, columnas, null, null, null);
-			// Queremos enterarnos si cambian los datos para recargar
-			cursor.setNotificationUri(getContentResolver(), uri);
-			
-			// Para que la actividad se encarge de manejar el cursor según sus ciclos de vida
-			startManagingCursor(cursor);
-			
-			// Tomamos los datos del Lugar
-			if(cursor.moveToFirst() && !ignorarDatosBD) {
-				String nombre = cursor.getString(1);
-				if(nombre!=null)
-					nombreLugar.setText(nombre);
-				String descr = cursor.getString(2);
-				if(descr!=null)
-					descripcionLugar.setText(descr);
-				String imagen = cursor.getString(3);
-				if(imagen!=null)
-					setImagen(Uri.parse(imagen));
-				else
-					imagenLugar.setImageResource(R.drawable.no_imagen);
+			if(extras!=null){
+				idLugar = extras.getLong(Constantes.PARAMETRO_ID_LUGAR, Constantes.NINGUN_LUGAR);
+				if(idLugar != Constantes.NINGUN_LUGAR){
+					final String[] columnas = new String[] {Lugar._ID, Lugar.NOMBRE, Lugar.DESCRIPCION, Lugar.FOTO, Lugar.LATITUD, Lugar.LONGITUD};
+
+					Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
+					uri = ContentUris.withAppendedId(uri, idLugar);
+					Cursor cursor = managedQuery(uri, columnas, null, null, null);
+					// Queremos enterarnos si cambian los datos para recargar
+					cursor.setNotificationUri(getContentResolver(), uri);
+
+					// Para que la actividad se encarge de manejar el cursor según sus ciclos de vida
+					startManagingCursor(cursor);
+
+					// Tomamos los datos del Lugar
+					if(cursor.moveToFirst() && !ignorarDatosBD) {
+						String nombre = cursor.getString(1);
+						if(nombre!=null)
+							nombreLugar.setText(nombre);
+						String descr = cursor.getString(2);
+						if(descr!=null)
+							descripcionLugar.setText(descr);
+						String imagen = cursor.getString(3);
+						if(imagen!=null)
+							setImagen(Uri.parse(imagen));
+						else
+							imagenLugar.setImageResource(R.drawable.no_imagen);
+					}
+				}
 			}
 			
 		} catch (Exception e) {

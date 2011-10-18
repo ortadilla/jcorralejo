@@ -63,10 +63,13 @@ public class MapaLugaresActivity extends MapActivity {
 	
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
+		//Al pulsar guardamos las corrdenadas...
 		if (ev.getAction()==MotionEvent.ACTION_DOWN) {
 			xDown=(int)ev.getX();
 			yDown=(int)ev.getY();
         }
+		//...y comprobamos al levantar el dedo si seguimos en el mismo punto.
+		//En este caso, levantamos el popUp con las opciones sobre el mapa
 		else if (ev.getAction()==MotionEvent.ACTION_UP) {
             if ((int)ev.getX()==xDown && (int)ev.getY()==yDown) {
             	float[] coordenada = new float[2];
@@ -82,17 +85,12 @@ public class MapaLugaresActivity extends MapActivity {
 	}
 	
 	@Override
-	protected void onPrepareDialog(int id, Dialog dialog, Bundle args) {
-		super.onPrepareDialog(id, dialog, args);
-	}
-	
-	@Override
 	protected Dialog onCreateDialog(int id, Bundle args) {
 		switch (id) {
 			// Abrimos el popUp para mostrar las opciones sobre los puntos del mapa 
 			case Constantes.DIALOG_OPCIONES_MAPA:
 				if(args!=null){
-					float[] coordenada = args.getFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO);
+					final float[] coordenada = args.getFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO);
 					GeoPoint gp = mapa.getProjection().fromPixels((int)coordenada[0], (int)coordenada[1]);
 					Toast.makeText(getBaseContext()," lat= "+gp.getLatitudeE6()/1E6+", lon = "+gp.getLongitudeE6()/1E6 , Toast.LENGTH_SHORT).show();
 
@@ -106,7 +104,7 @@ public class MapaLugaresActivity extends MapActivity {
 							if(item==0){
 								Intent i = new Intent();
 								i.setClass(getApplicationContext(), EditarLugarActivity.class);
-								i.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar);
+								i.putExtra(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
 								startActivity(i);
 							}
 							
