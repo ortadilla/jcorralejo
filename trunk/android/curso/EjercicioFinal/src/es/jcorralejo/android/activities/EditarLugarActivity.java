@@ -19,6 +19,7 @@ import es.jcorralejo.android.utils.Constantes;
 public class EditarLugarActivity extends LugarAbstractActivity{
 
 	private Uri uriNuevaImagen;
+	private boolean agregando = false;
 	
 	@Override
 	protected int getLayout() {
@@ -40,6 +41,12 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 		);
 		// Registramos la imagen para definir su menú contextual
 		registerForContextMenu(imagenLugar);
+		
+		Bundle extras = getIntent().getExtras();
+		if(extras!=null){
+			float[] coordenada = (float[]) extras.get(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO);
+			agregando = coordenada!=null;
+		}
 		
 		// Botón editar
 		Button botonEditar = (Button) findViewById(R.id.botonEditar);
@@ -73,6 +80,12 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 					}
 				}
 		);
+		
+		//Si en vez de estar editando estamos agregando modificamos la descripción de los botones
+		if(agregando){
+			botonEditar.setText(R.string.agregar);
+			botonEliminar.setText(R.string.cancelar);
+		}
 	}
 	
 	@Override
