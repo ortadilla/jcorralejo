@@ -130,7 +130,7 @@ public class MapaLugaresActivity extends MapActivity {
 		
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
-			Drawable drawable = this.getResources().getDrawable(R.drawable.icon);
+			Drawable drawable = this.getResources().getDrawable(R.drawable.chincheta);
 			itemizedOverlay = new MiItemizedOverlay(this, drawable);
 			
 			final String[] columnas = new String[] {Lugar._ID, Lugar.NOMBRE, Lugar.DESCRIPCION, Lugar.FOTO, Lugar.LATITUD, Lugar.LONGITUD};
