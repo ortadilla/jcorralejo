@@ -63,7 +63,7 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 					Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
 					ContentValues contentValues = new ContentValues();
 					if(agregando){
-						if("".equals(nombreLugar.getText().toString()) || "".equals(descripcionLugar.getText().toString()))
+						if(nombreYDescripcionIncorrectos())
 							Toast.makeText(getBaseContext(), R.string.control_agregar_lugar, Toast.LENGTH_SHORT).show();
 						else{
 							contentValues.put(Lugar.FOTO, uriNuevaImagen!=null ? uriNuevaImagen.toString() : null);
@@ -112,15 +112,17 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 			
 			nombreLugar.setText(R.string.msg_agregar_nombre);
 			descripcionLugar.setText(R.string.msg_agregar_descripcion);
+			imagenLugar.setImageResource(R.drawable.no_imagen);
 		}
 	}
 	
-	private boolean nombreYDescripcionCorrectos(){
+	private boolean nombreYDescripcionIncorrectos(){
 		String msgAgregarDescripcion = getResources().getString(R.string.msg_agregar_descripcion);
 		String msgAgregarNombre = getResources().getString(R.string.msg_agregar_nombre);
 		
 		return "".equals(nombreLugar.getText().toString()) || "".equals(descripcionLugar.getText().toString())
-		|| msgAgregarDescripcion.equals(nombreLugar.getText().toString());
+			|| msgAgregarDescripcion.equals(descripcionLugar.getText().toString())
+			|| msgAgregarNombre.equals(nombreLugar.getText().toString());
 		
 	}
 	
