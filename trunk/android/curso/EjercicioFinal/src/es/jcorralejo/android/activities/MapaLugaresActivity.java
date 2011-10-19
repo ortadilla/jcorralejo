@@ -61,8 +61,11 @@ public class MapaLugaresActivity extends MapActivity {
 		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlistener);
 	}
 	
+	
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
+		boolean result = super.dispatchTouchEvent(ev);
+		
 		//Al pulsar guardamos las corrdenadas...
 		if (ev.getAction()==MotionEvent.ACTION_DOWN) {
 			xDown=(int)ev.getX();
@@ -72,16 +75,19 @@ public class MapaLugaresActivity extends MapActivity {
 		//En este caso, levantamos el popUp con las opciones sobre el mapa
 		else if (ev.getAction()==MotionEvent.ACTION_UP) {
             if ((int)ev.getX()==xDown && (int)ev.getY()==yDown) {
-            	float[] coordenada = new float[2];
-            	coordenada[0] = ev.getX(); 
-            	coordenada[1] = ev.getY(); 
-                Bundle args = new Bundle();
-                args.putFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
-                showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
-                return true;
+            	if(itemizedOverlay.abrirOpciones){
+            		float[] coordenada = new float[2];
+            		coordenada[0] = ev.getX(); 
+            		coordenada[1] = ev.getY(); 
+            		Bundle args = new Bundle();
+            		args.putFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
+            		showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
+            		return true;
+            	}else
+            		itemizedOverlay.abrirOpciones = true;
             }
 		}
-		return super.dispatchTouchEvent(ev);
+		return result;
 	}
 	
 	@Override
