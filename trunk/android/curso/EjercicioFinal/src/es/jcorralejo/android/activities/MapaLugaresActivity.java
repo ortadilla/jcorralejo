@@ -166,9 +166,11 @@ public class MapaLugaresActivity extends MapActivity {
 				mapController.animateTo(hito.getPoint());
 			}
 			
-			mapOverlays = mapa.getOverlays();
-			mapOverlays.clear();
-			mapOverlays.add(itemizedOverlay);
+			if(itemizedOverlay.size()>0){
+				mapOverlays = mapa.getOverlays();
+				mapOverlays.clear();
+				mapOverlays.add(itemizedOverlay);
+			}
 			
 		
 		// Si no se indica lugar es que estamos añadiendo uno, por lo que comprobamos si está activo 
