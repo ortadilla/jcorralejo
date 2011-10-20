@@ -1,6 +1,7 @@
 · Al modificar titulo o descripción, si navegamos a la galería y volvemos (no aceptamos) perdemos los cambios
 · Al ver un lugar concreto no se ve su ubicación
-· Al pulsar sobre un lugar en el mapa salta el popUp, no se ve el lugar --> controlar el dispatch ese
+· Pulsar "eliminar" en la lista de lugares cuando no hay ningún lugar --> que diga que no hay lugares
+· Error móvil --> pulsar el botón editar o menú y editar, a veces se cierra al pulsar un punto del mapa
 · Permitir modificar coordenadas de un lugar
 · Codificación de caracteres
 · Traducir al inglés y al alemán
