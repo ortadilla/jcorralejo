@@ -28,7 +28,7 @@ import com.google.android.maps.OverlayItem;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.bd.LugaresDB.Lugar;
 import es.jcorralejo.android.bd.LugaresProvider;
-import es.jcorralejo.android.maps.MiItemizedOverlay;
+import es.jcorralejo.android.maps.ItemizedOverlayLugar;
 import es.jcorralejo.android.maps.MiLocationListener;
 import es.jcorralejo.android.utils.Constantes;
 
@@ -37,7 +37,7 @@ public class MapaLugaresActivity extends MapActivity {
 	private MapView mapa;
 	private MapController mapController;
 	private List<Overlay> mapOverlays;
-	private MiItemizedOverlay itemizedOverlay;
+	private ItemizedOverlayLugar itemizedOverlay;
 	private LocationManager lm;
 	
 	boolean acercar;
@@ -72,10 +72,10 @@ public class MapaLugaresActivity extends MapActivity {
 			yDown=(int)ev.getY();
         }
 		//...y comprobamos al levantar el dedo si seguimos en el mismo punto.
-		//En este caso, levantamos el popUp con las opciones sobre el mapa
 		else if (ev.getAction()==MotionEvent.ACTION_UP) {
             if ((int)ev.getX()==xDown && (int)ev.getY()==yDown) {
-            	if(itemizedOverlay.abrirOpciones){
+            	//Si no pulsamos un lugar ya definido levantamos el popUp con las opciones sobre el mapa
+            	if(itemizedOverlay.getLugarPulsado()==null){
             		float[] coordenada = new float[2];
             		coordenada[0] = ev.getX(); 
             		coordenada[1] = ev.getY(); 
@@ -83,8 +83,14 @@ public class MapaLugaresActivity extends MapActivity {
             		args.putFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
             		showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
             		return true;
-            	}else
-            		itemizedOverlay.abrirOpciones = true;
+            	// Si pulsamos un lugar mostramos sus detalles
+            	}else{
+            		Intent i = new Intent();
+            		i.setClass(getApplicationContext(), LugarAcitivity.class);
+            		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, itemizedOverlay.getLugarPulsado().getIdLugar());
+            		startActivity(i);
+            		itemizedOverlay.setLugarPulsado(null);
+            	}
             }
 		}
 		return result;
@@ -97,8 +103,6 @@ public class MapaLugaresActivity extends MapActivity {
 			case Constantes.DIALOG_OPCIONES_MAPA:
 				if(args!=null){
 					final float[] coordenada = args.getFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO);
-					GeoPoint gp = mapa.getProjection().fromPixels((int)coordenada[0], (int)coordenada[1]);
-					Toast.makeText(getBaseContext()," lat= "+gp.getLatitudeE6()/1E6+", lon = "+gp.getLongitudeE6()/1E6 , Toast.LENGTH_SHORT).show();
 
 					AlertDialog.Builder builder = new AlertDialog.Builder(this);
 					builder.setTitle(R.string.opciones);
@@ -137,7 +141,7 @@ public class MapaLugaresActivity extends MapActivity {
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
 			Drawable drawable = this.getResources().getDrawable(R.drawable.chincheta);
-			itemizedOverlay = new MiItemizedOverlay(this, drawable);
+			itemizedOverlay = new ItemizedOverlayLugar(this, drawable);
 			
 			final String[] columnas = new String[] {Lugar._ID, Lugar.NOMBRE, Lugar.DESCRIPCION, Lugar.FOTO, Lugar.LATITUD, Lugar.LONGITUD};
 			Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
@@ -156,11 +160,12 @@ public class MapaLugaresActivity extends MapActivity {
 
 			// Añadimos el/los punto/s en el mapa
 			while(cursor.moveToNext()) {
+				long id = cursor.getLong(0);
 				String nombre = cursor.getString(1);
 				float latitud = cursor.getFloat(4);
 				float longitud = cursor.getFloat(5);
 
-				itemizedOverlay.addLocalizacion(latitud, longitud, nombre);
+				itemizedOverlay.add(latitud, longitud, nombre, id);
 			}
 
 			//Sólo aceramos el zoom cuando se ha enviado un único lugar
