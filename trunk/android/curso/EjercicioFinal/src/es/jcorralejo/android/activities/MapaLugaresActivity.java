@@ -40,7 +40,7 @@ public class MapaLugaresActivity extends MapActivity {
 	private ItemizedOverlayLugar itemizedOverlay;
 	private LocationManager lm;
 	
-	boolean acercar;
+	boolean detallesLugar;
 	int xDown, yDown;
 
 	@Override
@@ -66,32 +66,34 @@ public class MapaLugaresActivity extends MapActivity {
 	public boolean dispatchTouchEvent(MotionEvent ev) {
 		boolean result = super.dispatchTouchEvent(ev);
 		
-		//Al pulsar guardamos las corrdenadas...
-		if (ev.getAction()==MotionEvent.ACTION_DOWN) {
-			xDown=(int)ev.getX();
-			yDown=(int)ev.getY();
-        }
-		//...y comprobamos al levantar el dedo si seguimos en el mismo punto.
-		else if (ev.getAction()==MotionEvent.ACTION_UP) {
-            if ((int)ev.getX()==xDown && (int)ev.getY()==yDown) {
-            	//Si no pulsamos un lugar ya definido levantamos el popUp con las opciones sobre el mapa
-            	if(itemizedOverlay.getLugarPulsado()==null){
-            		float[] coordenada = new float[2];
-            		coordenada[0] = ev.getX(); 
-            		coordenada[1] = ev.getY(); 
-            		Bundle args = new Bundle();
-            		args.putFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
-            		showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
-            		return true;
-            	// Si pulsamos un lugar mostramos sus detalles
-            	}else{
-            		Intent i = new Intent();
-            		i.setClass(getApplicationContext(), LugarAcitivity.class);
-            		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, itemizedOverlay.getLugarPulsado().getIdLugar());
-            		startActivity(i);
-            		itemizedOverlay.setLugarPulsado(null);
-            	}
-            }
+		if(!detallesLugar){
+			//Al pulsar guardamos las corrdenadas...
+			if (ev.getAction()==MotionEvent.ACTION_DOWN) {
+				xDown=(int)ev.getX();
+				yDown=(int)ev.getY();
+	        }
+			//...y comprobamos al levantar el dedo si seguimos en el mismo punto.
+			else if (ev.getAction()==MotionEvent.ACTION_UP) {
+	            if ((int)ev.getX()==xDown && (int)ev.getY()==yDown) {
+	            	//Si no pulsamos un lugar ya definido levantamos el popUp con las opciones sobre el mapa
+	            	if(itemizedOverlay.getLugarPulsado()==null){
+	            		float[] coordenada = new float[2];
+	            		coordenada[0] = ev.getX(); 
+	            		coordenada[1] = ev.getY(); 
+	            		Bundle args = new Bundle();
+	            		args.putFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
+	            		showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
+	            		return true;
+	            	// Si pulsamos un lugar mostramos sus detalles
+	            	}else{
+	            		Intent i = new Intent();
+	            		i.setClass(getApplicationContext(), LugarAcitivity.class);
+	            		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, itemizedOverlay.getLugarPulsado().getIdLugar());
+	            		startActivity(i);
+	            		itemizedOverlay.setLugarPulsado(null);
+	            	}
+	            }
+			}
 		}
 		return result;
 	}
@@ -134,10 +136,6 @@ public class MapaLugaresActivity extends MapActivity {
 	protected void onStart() {
 		super.onStart();
 		
-		//Si el GPS no está habilitado
-		if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) 
-			Toast.makeText(this, R.string.msg_notificacion_no_gps, Toast.LENGTH_LONG).show();
-		
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
 			Drawable drawable = this.getResources().getDrawable(R.drawable.chincheta);
@@ -169,7 +167,7 @@ public class MapaLugaresActivity extends MapActivity {
 			}
 
 			//Sólo aceramos el zoom cuando se ha enviado un único lugar
-	        acercar = idLugar!=null && Constantes.TODOS_LUGARES!=idLugar;
+	        detallesLugar = idLugar!=null && Constantes.TODOS_LUGARES!=idLugar;
 	        
 			// Animamos el mapa de punto a punto
 			for (int x = 0; x < itemizedOverlay.size(); x++) {
@@ -196,6 +194,10 @@ public class MapaLugaresActivity extends MapActivity {
 				GeoPoint geoPoint = new GeoPoint((int)(loc.getLatitude()*1E6), (int)(loc.getLongitude()*1E6));
 				mapController.animateTo(geoPoint);
 			}
+			
+			//Además, avisamos si el GPS no está habilitado
+			if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) 
+				Toast.makeText(this, R.string.msg_notificacion_no_gps, Toast.LENGTH_LONG).show();
 		}
 	}
 	
@@ -208,10 +210,10 @@ public class MapaLugaresActivity extends MapActivity {
 	public void onWindowFocusChanged(boolean hasFocus) {
 		super.onWindowFocusChanged(hasFocus);
 		//Necesitamos hacer zoom en este método, ya que en onStart aun no se ha generado el imageView
-		if(acercar){
-			for(int i=mapa.getZoomLevel(); i<Constantes.ZOOM_MAX_MAPA; i++)
-				mapController.zoomIn();
-		}
+//		if(detallesLugar){
+//			for(int i=mapa.getZoomLevel(); i<Constantes.ZOOM_MAX_MAPA; i++)
+//				mapController.zoomIn();
+//		}
 	}
 
 }

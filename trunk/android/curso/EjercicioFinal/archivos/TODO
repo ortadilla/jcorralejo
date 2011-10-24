@@ -1,10 +1,14 @@
 · Al modificar titulo o descripción, si navegamos a la galería y volvemos (no aceptamos) perdemos los cambios
 · Al ver un lugar concreto no se ve su ubicación
 · Pulsar "eliminar" en la lista de lugares cuando no hay ningún lugar --> que diga que no hay lugares
+· No se ve el mapa en el móvil
 · Error móvil --> pulsar el botón editar o menú y editar, a veces se cierra al pulsar un punto del mapa
+--> Controlar que siempre que se pulse en un lugar se levanten las opciones
 · Permitir modificar coordenadas de un lugar
 · Codificación de caracteres
 · Traducir al inglés y al alemán
 · Imágenes para dispositivos con distintas resoluciones
 · Estilo: Blanco y azul
 · Repasar todos los títulos de las pantallas
+· Probar a salir (home) de todas las pantallas y volver a entrar
+· Opción de "Ir a..." que navega desde tu posición al lugar indicado (lista lugares, detalles lugar, opciones en lugar en mapa)
