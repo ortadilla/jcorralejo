@@ -59,6 +59,9 @@ public class MapaLugaresActivity extends MapActivity {
 		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		MiLocationListener mlistener = new MiLocationListener(this, mapController);
 		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlistener);
+		
+		// Comprobamos si está activo el GPS y centramos el mapa en las coordenadas actuales del dispositivo
+		moverMapaAPosicionActual();
 	}
 	
 	
@@ -74,12 +77,14 @@ public class MapaLugaresActivity extends MapActivity {
 	        }
 			//...y comprobamos al levantar el dedo si seguimos en el mismo punto.
 			else if (ev.getAction()==MotionEvent.ACTION_UP) {
-	            if ((int)ev.getX()==xDown && (int)ev.getY()==yDown) {
+	            if (mismoLugar((int)ev.getX(), (int)ev.getY())) {
 	            	//Si no pulsamos un lugar ya definido levantamos el popUp con las opciones sobre el mapa
 	            	if(itemizedOverlay.getLugarPulsado()==null){
 	            		float[] coordenada = new float[2];
-	            		coordenada[0] = ev.getX(); 
-	            		coordenada[1] = ev.getY(); 
+	            		itemizedOverlay.getLatSpanE6();
+	            		itemizedOverlay.getLonSpanE6();
+	            		coordenada[0] = itemizedOverlay.getLatitudPulsada();
+	            		coordenada[1] = itemizedOverlay.getLongitudPulsada(); 
 	            		Bundle args = new Bundle();
 	            		args.putFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
 	            		showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
@@ -96,6 +101,11 @@ public class MapaLugaresActivity extends MapActivity {
 			}
 		}
 		return result;
+	}
+	
+	private boolean mismoLugar(int x, int y){
+		return (x>=xDown-5 && x<=xDown+5) && (y>=yDown-5 && y<=yDown+5); 
+//		return (x==xDown && y==yDown) || (x-10==xDown && y-10==yDown) || (x+10==xDown && y+10==yDown);
 	}
 	
 	@Override
@@ -136,13 +146,11 @@ public class MapaLugaresActivity extends MapActivity {
 	protected void onStart() {
 		super.onStart();
 		
-		// Comprobamos si está activo el GPS y centramos el mapa en las coordenadas actuales del dispositivo
-		moverMapaAPosicionActual();
-		
+		Drawable drawable = this.getResources().getDrawable(R.drawable.chincheta);
+		itemizedOverlay = new ItemizedOverlayLugar(this, drawable);
+
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
-			Drawable drawable = this.getResources().getDrawable(R.drawable.chincheta);
-			itemizedOverlay = new ItemizedOverlayLugar(this, drawable);
 			
 			final String[] columnas = new String[] {Lugar._ID, Lugar.NOMBRE, Lugar.DESCRIPCION, Lugar.FOTO, Lugar.LATITUD, Lugar.LONGITUD};
 			Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
@@ -177,9 +185,10 @@ public class MapaLugaresActivity extends MapActivity {
 				mapOverlays.add(itemizedOverlay);
 				
 				// Si sólo hay un punto animamos el mapa
-				OverlayItem hito = itemizedOverlay.getItem(0);
-				mapController.animateTo(hito.getPoint());
-
+				if(detallesLugar){
+					OverlayItem hito = itemizedOverlay.getItem(0);
+					mapController.animateTo(hito.getPoint());
+				}
 			}
 		}
 	}
