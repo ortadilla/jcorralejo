@@ -210,10 +210,10 @@ public class MapaLugaresActivity extends MapActivity {
 	public void onWindowFocusChanged(boolean hasFocus) {
 		super.onWindowFocusChanged(hasFocus);
 		//Necesitamos hacer zoom en este método, ya que en onStart aun no se ha generado el imageView
-//		if(detallesLugar){
-//			for(int i=mapa.getZoomLevel(); i<Constantes.ZOOM_MAX_MAPA; i++)
-//				mapController.zoomIn();
-//		}
+		if(detallesLugar){
+			for(int i=mapa.getZoomLevel(); i<Constantes.ZOOM_MAX_MAPA; i++)
+				mapController.zoomIn();
+		}
 	}
 
 }
