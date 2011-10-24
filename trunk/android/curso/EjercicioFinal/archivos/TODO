@@ -1,8 +1,6 @@
 · Al modificar titulo o descripción, si navegamos a la galería y volvemos (no aceptamos) perdemos los cambios
-· Error móvil --> pulsar el botón editar o menú y editar, a veces se cierra al pulsar un punto del mapa
---> Controlar que siempre que se pulse en un lugar se levanten las opciones
+· Cuando no hay lugares no salta el onTap para pillar las coordenadas
 · Permitir modificar coordenadas de un lugar --> Ver en los detalles las coordenadas y la descripción del lugar y al editar que aparezca la opción de editarlo
-· Codificación de caracteres
 · Traducir al inglés y al alemán
 · Imágenes para dispositivos con distintas resoluciones
 · Estilo: Blanco y azul
