@@ -99,7 +99,11 @@ public class ListaLugaresActivity extends ListActivity{
 			// Al pulsar sobre "Eliminar" mostramos los checks para que el usuario marque los lugares
 			// que quiere eliminar, además del botón "Eliminar" para confirmar la acción
 			case R.id.listaEliminar:
-				return accionMenuEliminar();
+				if(adapter.getCount()==0){
+					Toast.makeText(this, R.string.control_eliminar_lugares, Toast.LENGTH_LONG).show();
+					return true;
+				}else
+					return accionMenuEliminar();
 				
 			default:
 				return super.onOptionsItemSelected(item);
