@@ -136,6 +136,9 @@ public class MapaLugaresActivity extends MapActivity {
 	protected void onStart() {
 		super.onStart();
 		
+		// Comprobamos si está activo el GPS y centramos el mapa en las coordenadas actuales del dispositivo
+		moverMapaAPosicionActual();
+		
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
 			Drawable drawable = this.getResources().getDrawable(R.drawable.chincheta);
@@ -150,6 +153,8 @@ public class MapaLugaresActivity extends MapActivity {
 			if(idLugar!=null && Constantes.TODOS_LUGARES!=idLugar){
 				uri = ContentUris.withAppendedId(uri, idLugar);
 				where = Lugar._ID+" = "+idLugar;
+				
+				detallesLugar = true;
 			}
 			
 			Cursor cursor = managedQuery(uri, columnas, where, null, null);
@@ -166,39 +171,33 @@ public class MapaLugaresActivity extends MapActivity {
 				itemizedOverlay.add(latitud, longitud, nombre, id);
 			}
 
-			//Sólo aceramos el zoom cuando se ha enviado un único lugar
-	        detallesLugar = idLugar!=null && Constantes.TODOS_LUGARES!=idLugar;
-	        
-			// Animamos el mapa de punto a punto
-			for (int x = 0; x < itemizedOverlay.size(); x++) {
-				OverlayItem hito = itemizedOverlay.getItem(x);
-				mapController.animateTo(hito.getPoint());
-			}
-			
 			if(itemizedOverlay.size()>0){
 				mapOverlays = mapa.getOverlays();
 				mapOverlays.clear();
 				mapOverlays.add(itemizedOverlay);
+				
+				// Si sólo hay un punto animamos el mapa
+				OverlayItem hito = itemizedOverlay.getItem(0);
+				mapController.animateTo(hito.getPoint());
+
 			}
-			
-		
-		// Si no se indica lugar es que estamos añadiendo uno, por lo que comprobamos si está activo 
-		// el GPS y centramos el mapa en las coordenadas actuales del dispositivo 
-		}else{
-			//Comprobamos si tenemos localización por GPS...
-			Location loc = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-			//...y si no, comprobamos si tenemos localización por triangulación de antenas
-			if(loc==null)
-				loc = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-			if(loc!=null){
-				GeoPoint geoPoint = new GeoPoint((int)(loc.getLatitude()*1E6), (int)(loc.getLongitude()*1E6));
-				mapController.animateTo(geoPoint);
-			}
-			
-			//Además, avisamos si el GPS no está habilitado
-			if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) 
-				Toast.makeText(this, R.string.msg_notificacion_no_gps, Toast.LENGTH_LONG).show();
 		}
+	}
+	
+	private void moverMapaAPosicionActual(){
+		//Comprobamos si tenemos localización por GPS...
+		Location loc = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+		//...y si no, comprobamos si tenemos localización por triangulación de antenas
+		if(loc==null)
+			loc = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		if(loc!=null){
+			GeoPoint geoPoint = new GeoPoint((int)(loc.getLatitude()*1E6), (int)(loc.getLongitude()*1E6));
+			mapController.animateTo(geoPoint);
+		}
+		
+		//Además, avisamos si el GPS no está habilitado
+		if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) 
+			Toast.makeText(this, R.string.msg_notificacion_no_gps, Toast.LENGTH_LONG).show();
 	}
 	
 	@Override
@@ -209,6 +208,7 @@ public class MapaLugaresActivity extends MapActivity {
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus) {
 		super.onWindowFocusChanged(hasFocus);
+		//Sólo aceramos el zoom cuando se ha enviado un único lugar
 		//Necesitamos hacer zoom en este método, ya que en onStart aun no se ha generado el imageView
 		if(detallesLugar){
 			for(int i=mapa.getZoomLevel(); i<Constantes.ZOOM_MAX_MAPA; i++)
