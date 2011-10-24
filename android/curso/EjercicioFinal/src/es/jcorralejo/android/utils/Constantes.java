@@ -63,11 +63,6 @@ public class Constantes {
 	public static final long NINGUN_LUGAR = Long.MIN_VALUE;
 
 	/**
-	 * Constante para indicar que se deben mostrar TODOS los lugares almacenados en BD
-	 */
-	public static final int ZOOM_MAX_MAPA = 14;
-	
-	/**
 	 * Constante para identificar el popUp "Acerca de..."
 	 */
 	public static final int DIALOG_ACERCA_DE = 0;

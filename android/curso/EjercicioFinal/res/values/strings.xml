@@ -6,6 +6,7 @@
     <string name="cancelar">Cancelar</string>
     <string name="configuracion">Configuración</string>
     <string name="control_agregar_lugar">Debe indicar al menos el Nombre y la Descripción del Lugar</string>
+    <string name="control_eliminar_lugares">No existen Lugares para poder eliminar</string>
     <string name="detalles">Detalles</string>
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>

@@ -53,7 +53,7 @@ public class MapaLugaresActivity extends MapActivity {
 		mapa.setBuiltInZoomControls(true);
 		mapa.setSatellite(true);
 		mapController = mapa.getController();
-		mapController.setZoom(6);
+		mapController.setZoom(14);
 		
 		//Añadimos el manejador del GPS
 		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -211,7 +211,7 @@ public class MapaLugaresActivity extends MapActivity {
 		//Sólo aceramos el zoom cuando se ha enviado un único lugar
 		//Necesitamos hacer zoom en este método, ya que en onStart aun no se ha generado el imageView
 		if(detallesLugar){
-			for(int i=mapa.getZoomLevel(); i<Constantes.ZOOM_MAX_MAPA; i++)
+			for(int i=mapa.getZoomLevel(); i<mapa.getMaxZoomLevel(); i++)
 				mapController.zoomIn();
 		}
 	}
