@@ -1,12 +1,16 @@
 package es.jcorralejo.android.activities;
 
+import java.util.List;
+import java.util.Locale;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ContentUris;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.database.Cursor;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -22,6 +26,7 @@ public abstract class LugarAbstractActivity extends Activity{
 	
 	protected TextView nombreLugar;
 	protected TextView descripcionLugar;
+	protected TextView direccionLugar;
 	protected ImageView imagenLugar;
 	
 	/**
@@ -48,6 +53,7 @@ public abstract class LugarAbstractActivity extends Activity{
 		nombreLugar = (TextView) findViewById(R.id.lugarNombre);
 		descripcionLugar = (TextView) findViewById(R.id.lugarDescripcion);
 		imagenLugar = (ImageView) findViewById(R.id.lugarImagen);
+		direccionLugar = (TextView) findViewById(R.id.lugarDireccion);
 	}
 	
 	@Override
@@ -83,6 +89,19 @@ public abstract class LugarAbstractActivity extends Activity{
 							setImagen(Uri.parse(imagen));
 						else
 							imagenLugar.setImageResource(R.drawable.no_imagen);
+						
+						float latitud = cursor.getFloat(4);
+						float longitud = cursor.getFloat(5);
+						Geocoder gc = new Geocoder(this, Locale.getDefault());
+						List<Address> addresses = gc.getFromLocation(latitud, longitud, 1);
+						StringBuilder sb = new StringBuilder();
+						if (addresses.size() > 0) {
+							Address address = addresses.get(0);
+							for (int i = 0; i < address.getMaxAddressLineIndex(); i++)
+								sb.append(address.getAddressLine(i)).append("\t");
+							sb.append(address.getCountryName());
+						}
+						direccionLugar.setText(sb.toString());
 					}
 				}
 			}
@@ -91,12 +110,7 @@ public abstract class LugarAbstractActivity extends Activity{
 			//Si se produce algún error al obtener los datos los lugar, avisamos al usuario
 			//y cerramos la activity, volcando la traza del error
 			Toast.makeText(this, R.string.msg_error_salir, Toast.LENGTH_SHORT).show();
-			
 			finish();
-			Intent intent = new Intent();
-			intent.setClass(getApplicationContext(), PrincipalActivity.class);
-			startActivity(intent);
-			
 			e.printStackTrace();
 		}
 	}
