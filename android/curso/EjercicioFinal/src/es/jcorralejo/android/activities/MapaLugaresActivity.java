@@ -150,52 +150,48 @@ public class MapaLugaresActivity extends MapActivity {
 	protected void onStart() {
 		super.onStart();
 		
+		final String[] columnas = new String[] {Lugar._ID, Lugar.NOMBRE, Lugar.DESCRIPCION, Lugar.FOTO, Lugar.LATITUD, Lugar.LONGITUD};
+		Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
+		String where = null;
+		
+		// Si indicamos un lugar, sólo debemos mostrar ese
+		Bundle extras = getIntent().getExtras();
+		Long idLugar = extras!=null ? extras.getLong(Constantes.PARAMETRO_ID_LUGAR) : null;
+		if(idLugar!=null && Constantes.TODOS_LUGARES!=idLugar){
+			uri = ContentUris.withAppendedId(uri, idLugar);
+			where = Lugar._ID+" = "+idLugar;
+			
+			detallesLugar = true;
+		}
+		
+		Cursor cursor = managedQuery(uri, columnas, where, null, null);
+		cursor.setNotificationUri(getContentResolver(), uri);
+		startManagingCursor(cursor);
+
+		// Añadimos el/los punto/s en el mapa, aunque antes eliminamos todas las capas del mapa para limpiarlo
 		Drawable drawable = this.getResources().getDrawable(R.drawable.chincheta);
 		itemizedOverlay = new ItemizedOverlayLugar(this, drawable);
+		mapOverlays = mapa.getOverlays();
+		mapOverlays.clear();
+		while(cursor.moveToNext()) {
+			long id = cursor.getLong(0);
+			String nombre = cursor.getString(1);
+			float latitud = cursor.getFloat(4);
+			float longitud = cursor.getFloat(5);
 
-		Bundle extras = getIntent().getExtras();
-		if(extras!=null){
-			
-			final String[] columnas = new String[] {Lugar._ID, Lugar.NOMBRE, Lugar.DESCRIPCION, Lugar.FOTO, Lugar.LATITUD, Lugar.LONGITUD};
-			Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
-			String where = null;
-			
-			// Si indicamos un lugar, sólo debemos mostrar ese
-			Long idLugar = extras.getLong(Constantes.PARAMETRO_ID_LUGAR);
-			if(idLugar!=null && Constantes.TODOS_LUGARES!=idLugar){
-				uri = ContentUris.withAppendedId(uri, idLugar);
-				where = Lugar._ID+" = "+idLugar;
-				
-				detallesLugar = true;
-			}
-			
-			Cursor cursor = managedQuery(uri, columnas, where, null, null);
-			cursor.setNotificationUri(getContentResolver(), uri);
-			startManagingCursor(cursor);
-
-			// Añadimos el/los punto/s en el mapa
-			while(cursor.moveToNext()) {
-				long id = cursor.getLong(0);
-				String nombre = cursor.getString(1);
-				float latitud = cursor.getFloat(4);
-				float longitud = cursor.getFloat(5);
-
-				itemizedOverlay.add(latitud, longitud, nombre, id);
-			}
-
-			if(itemizedOverlay.size()>0){
-				mapOverlays = mapa.getOverlays();
-				mapOverlays.clear();
-				mapOverlays.add(itemizedOverlay);
-
-				// Si sólo hay un punto animamos el mapa
-				if(detallesLugar){
-					OverlayItem hito = itemizedOverlay.getItem(0);
-					mapController.animateTo(hito.getPoint());
-				}
-			}
-				
+			itemizedOverlay.add(latitud, longitud, nombre, id);
 		}
+
+		if(itemizedOverlay.size()>0){
+			mapOverlays.add(itemizedOverlay);
+
+			// Si sólo hay un punto movemos el mapa hacia él
+			if(detallesLugar){
+				OverlayItem hito = itemizedOverlay.getItem(0);
+				mapController.animateTo(hito.getPoint());
+			}
+		}
+			
 	}
 	
 	private void moverMapaAPosicionActual(){
