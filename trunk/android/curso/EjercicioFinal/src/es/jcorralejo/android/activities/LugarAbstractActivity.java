@@ -1,5 +1,6 @@
 package es.jcorralejo.android.activities;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
@@ -13,6 +14,8 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.TextView;
@@ -77,32 +80,8 @@ public abstract class LugarAbstractActivity extends Activity{
 					startManagingCursor(cursor);
 
 					// Tomamos los datos del Lugar
-					if(cursor.moveToFirst() && !ignorarDatosBD) {
-						String nombre = cursor.getString(1);
-						if(nombre!=null)
-							nombreLugar.setText(nombre);
-						String descr = cursor.getString(2);
-						if(descr!=null)
-							descripcionLugar.setText(descr);
-						String imagen = cursor.getString(3);
-						if(imagen!=null)
-							setImagen(Uri.parse(imagen));
-						else
-							imagenLugar.setImageResource(R.drawable.no_imagen);
-						
-						float latitud = cursor.getFloat(4);
-						float longitud = cursor.getFloat(5);
-						Geocoder gc = new Geocoder(this, Locale.getDefault());
-						List<Address> addresses = gc.getFromLocation(latitud, longitud, 1);
-						StringBuilder sb = new StringBuilder();
-						if (addresses.size() > 0) {
-							Address address = addresses.get(0);
-							for (int i = 0; i < address.getMaxAddressLineIndex(); i++)
-								sb.append(address.getAddressLine(i)).append("\t");
-							sb.append(address.getCountryName());
-						}
-						direccionLugar.setText(sb.toString());
-					}
+					if(cursor.moveToFirst() && !ignorarDatosBD) 
+						rellenarDatosLugar(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getFloat(4), cursor.getFloat(5));
 				}
 			}
 			
@@ -112,6 +91,39 @@ public abstract class LugarAbstractActivity extends Activity{
 			Toast.makeText(this, R.string.msg_error_salir, Toast.LENGTH_SHORT).show();
 			finish();
 			e.printStackTrace();
+		}
+	}
+	
+	private void rellenarDatosLugar(String nombre, String descripcion, String imagen, float latitud, float longitud){
+		if(nombre!=null)
+			nombreLugar.setText(nombre);
+		if(descripcion!=null)
+			descripcionLugar.setText(descripcion);
+		if(imagen!=null)
+			setImagen(Uri.parse(imagen));
+		else
+			imagenLugar.setImageResource(R.drawable.no_imagen);
+		
+		try {
+			Geocoder gc = new Geocoder(this, Locale.getDefault());
+			String dir = "";
+			List<Address> addresses = gc.getFromLocation(latitud, longitud, 1);
+			if (addresses.size() > 0) {
+				Address address = addresses.get(0);
+				for (int i = 0; i < address.getMaxAddressLineIndex(); i++)
+					dir += address.getAddressLine(i) + "\t";
+				dir += address.getCountryName();
+			}
+			if(!dir.equals("")){
+				direccionLugar.setVisibility(View.VISIBLE);
+				direccionLugar.setText(dir);
+			}else
+				direccionLugar.setVisibility(View.GONE);
+		} catch (IOException e) {
+			//Controlamos este error porque el emulador de la versión 2.2 tiene un  bug
+			//Si se produce algún error al "traducir" las coordenadas simplemente logueamos y ocultamos el campo 
+			Log.e("Error al traducir coordenadas", e.getMessage());
+			direccionLugar.setVisibility(View.GONE);
 		}
 	}
 	
