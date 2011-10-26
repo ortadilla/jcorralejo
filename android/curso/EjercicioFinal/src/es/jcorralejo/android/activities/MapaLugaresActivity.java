@@ -24,6 +24,7 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
+import com.google.android.maps.Projection;
 
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.bd.LugaresDB.Lugar;
@@ -65,26 +66,30 @@ public class MapaLugaresActivity extends MapActivity {
 	}
 	
 	
+	
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
 		boolean result = super.dispatchTouchEvent(ev);
 		
 		if(!detallesLugar){
 			//Al pulsar guardamos las corrdenadas...
+			int x = (int)ev.getX();
+			int y = (int)ev.getY();
 			if (ev.getAction()==MotionEvent.ACTION_DOWN) {
-				xDown=(int)ev.getX();
-				yDown=(int)ev.getY();
+				xDown=x;
+				yDown=y;
 	        }
 			//...y comprobamos al levantar el dedo si seguimos en el mismo punto.
 			else if (ev.getAction()==MotionEvent.ACTION_UP) {
-	            if (mismoLugar((int)ev.getX(), (int)ev.getY())) {
+	            if (mismoLugar(x, y)) {
 	            	//Si no pulsamos un lugar ya definido levantamos el popUp con las opciones sobre el mapa
 	            	if(itemizedOverlay.getLugarPulsado()==null){
+	            		Projection proj = mapa.getProjection();
+		    			GeoPoint punto = proj.fromPixels(x, y); 
 	            		float[] coordenada = new float[2];
-	            		itemizedOverlay.getLatSpanE6();
-	            		itemizedOverlay.getLonSpanE6();
-	            		coordenada[0] = itemizedOverlay.getLatitudPulsada();
-	            		coordenada[1] = itemizedOverlay.getLongitudPulsada(); 
+	            		coordenada[0] = (float) (punto.getLatitudeE6() / 1E6);
+	            		coordenada[1] = (float)(punto.getLongitudeE6() / 1E6); 
+
 	            		Bundle args = new Bundle();
 	            		args.putFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
 	            		showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
@@ -105,7 +110,6 @@ public class MapaLugaresActivity extends MapActivity {
 	
 	private boolean mismoLugar(int x, int y){
 		return (x>=xDown-5 && x<=xDown+5) && (y>=yDown-5 && y<=yDown+5); 
-//		return (x==xDown && y==yDown) || (x-10==xDown && y-10==yDown) || (x+10==xDown && y+10==yDown);
 	}
 	
 	@Override
@@ -183,13 +187,14 @@ public class MapaLugaresActivity extends MapActivity {
 				mapOverlays = mapa.getOverlays();
 				mapOverlays.clear();
 				mapOverlays.add(itemizedOverlay);
-				
+
 				// Si sólo hay un punto animamos el mapa
 				if(detallesLugar){
 					OverlayItem hito = itemizedOverlay.getItem(0);
 					mapController.animateTo(hito.getPoint());
 				}
 			}
+				
 		}
 	}
 	
@@ -220,8 +225,14 @@ public class MapaLugaresActivity extends MapActivity {
 		//Sólo aceramos el zoom cuando se ha enviado un único lugar
 		//Necesitamos hacer zoom en este método, ya que en onStart aun no se ha generado el imageView
 		if(detallesLugar){
-			for(int i=mapa.getZoomLevel(); i<mapa.getMaxZoomLevel(); i++)
-				mapController.zoomIn();
+			boolean limit = false;
+			for(int i=mapa.getZoomLevel(); i<mapa.getMaxZoomLevel()-1; i++){
+				limit = mapController.zoomIn();
+				if(limit){
+					mapController.zoomOut();
+					break;
+				}
+			}
 		}
 	}
 

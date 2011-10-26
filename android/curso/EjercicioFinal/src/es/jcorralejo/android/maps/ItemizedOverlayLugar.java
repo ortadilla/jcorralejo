@@ -7,14 +7,12 @@ import android.graphics.drawable.Drawable;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.ItemizedOverlay;
-import com.google.android.maps.MapView;
 
 public class ItemizedOverlayLugar extends ItemizedOverlay<OverlayItemLugar> {
 
 	private ArrayList<OverlayItemLugar> mOverlays = new ArrayList<OverlayItemLugar>();
 	private Context context;
 	private OverlayItemLugar lugarPulsado = null;
-	private float latitudPulsada, longitudPulsada;
 
 	public ItemizedOverlayLugar(Context context,Drawable defaultMarker) {
 		super(boundCenterBottom(defaultMarker));
@@ -46,18 +44,17 @@ public class ItemizedOverlayLugar extends ItemizedOverlay<OverlayItemLugar> {
 	}
 	
 	@Override
-	public boolean onTap(GeoPoint p, MapView mapView) {
-		boolean result = super.onTap(p, mapView);
-		latitudPulsada = (float) (p.getLatitudeE6() / 1E6);
-		longitudPulsada = (float) (p.getLongitudeE6() / 1E6);
-		return result;
-	}
-	
-	@Override
 	protected boolean onTap(int index) {
 		boolean result = super.onTap(index);
 		lugarPulsado = mOverlays.get(index);
+		
+		crearCuadroResumen();
+		
 		return result;
+	}
+	
+	private void crearCuadroResumen(){
+		
 	}
 
 	public OverlayItemLugar getLugarPulsado() {
@@ -68,21 +65,5 @@ public class ItemizedOverlayLugar extends ItemizedOverlay<OverlayItemLugar> {
 		this.lugarPulsado = lugarPulsado;
 	}
 
-	public float getLatitudPulsada() {
-		return latitudPulsada;
-	}
-
-	public void setLatitudPulsada(float latitudPulsada) {
-		this.latitudPulsada = latitudPulsada;
-	}
-
-	public float getLongitudPulsada() {
-		return longitudPulsada;
-	}
-
-	public void setLongitudPulsada(float longitudPulsada) {
-		this.longitudPulsada = longitudPulsada;
-	}
-	
 }
 
