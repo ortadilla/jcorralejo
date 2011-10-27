@@ -45,12 +45,17 @@ public class Constantes {
 	/**
 	 * Constante para identificar la opción de menú contextual "ELIMINAR"
 	 */
-	public static final int MENU_ELIMINAR = 3;
+	public static final int MENU_ELIMINAR = 4;
 
 	/**
 	 * Constante para identificar la opción de menú contextual "VER UBICACIÓN"
 	 */
 	public static final int MENU_VER_UBICACION = 2;
+	
+	/**
+	 * Constante para identificar la opción de menú contextual "VER UBICACIÓN"
+	 */
+	public static final int MENU_NAVEGAR = 3;
 	
 	/**
 	 * Constante para indicar TODOS los lugares almacenados en BD
