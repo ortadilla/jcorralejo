@@ -14,6 +14,7 @@
     <string name="key_maps">0ufFbB49KCKsZJDWV9G79FWjfNd2mOq1j47MJyA</string> <!-- Depuración trabajo -->
     <string name="lista">Lista</string>
     <string name="lugar">Lugar</string>
+    <string name="navegar">Navegar</string>
     <string name="mapa">Mapa</string>
     <string name="msg_agregar_nombre">Introduzca el Nombre del Lugar...</string>
     <string name="msg_agregar_descripcion">Introduzca la Descripción del Lugar...</string>

@@ -10,3 +10,7 @@
 
 
 https://github.com/jgilfelt/android-mapviewballoons
+
+Intent i = new Intent(Intent.ACTION_VIEW,
+Uri.parse("google.navigation:q=New+York+NY));
+startActivity(i); 

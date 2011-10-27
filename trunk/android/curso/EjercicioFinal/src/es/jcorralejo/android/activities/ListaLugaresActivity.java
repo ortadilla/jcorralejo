@@ -3,6 +3,7 @@ package es.jcorralejo.android.activities;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
+import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -276,37 +277,51 @@ public class ListaLugaresActivity extends ListActivity{
 		menu.add(id, Constantes.MENU_DETALLES, Menu.NONE, R.string.detalles);
 		menu.add(id, Constantes.MENU_EDITAR, Menu.NONE, R.string.editar);
 		menu.add(id, Constantes.MENU_VER_UBICACION, Menu.NONE, R.string.ver_ubicacion);
+		menu.add(id, Constantes.MENU_NAVEGAR, Menu.NONE, R.string.navegar);
 		menu.add(id, Constantes.MENU_ELIMINAR, Menu.NONE, R.string.eliminar);
 	}
 	
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		Intent i = new Intent();
-	    switch(item.getItemId()) {
+	    long idLugar = (long)item.getGroupId();
+		switch(item.getItemId()) {
 	    	// Vemos los detalles del lugar
 	        case Constantes.MENU_DETALLES:
 	    		i.setClass(getApplicationContext(), LugarAcitivity.class);
-	    		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, (long)item.getGroupId());
+	    		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar);
 	    		startActivity(i);
 	            return true;
             // Navegamos a editar el lugar
 	        case Constantes.MENU_EDITAR:
 	    		i.setClass(getApplicationContext(), EditarLugarActivity.class);
-	    		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, (long)item.getGroupId());
+	    		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar);
 	    		startActivity(i);
 	        	return true;
 	        // Preguntamos si eliminar el lugar
 	        case Constantes.MENU_ELIMINAR:
 	        	Bundle b = new Bundle();
-	        	b.putLong(Constantes.PARAMETRO_ID_LUGAR, (long)item.getGroupId());
+	        	b.putLong(Constantes.PARAMETRO_ID_LUGAR, idLugar);
 	        	showDialog(Constantes.DIALOG_PEDIR_CONFIRMACION_SIMPLE, b);
 	        	return true;
         	// Mostramos el lugar en el mapa
 	        case Constantes.MENU_VER_UBICACION:
-	    		Intent intent = new Intent();
-	    		intent.setClass(getApplicationContext(), MapaLugaresActivity.class);
-	    		intent.putExtra(Constantes.PARAMETRO_ID_LUGAR, (long)item.getGroupId()); 
-	    		startActivity(intent);
+	    		i.setClass(getApplicationContext(), MapaLugaresActivity.class);
+	    		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar); 
+	    		startActivity(i);
+	        	return true;
+	        case Constantes.MENU_NAVEGAR:
+				Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
+				uri = ContentUris.withAppendedId(uri, idLugar);
+				Cursor cursor = managedQuery(uri, new String[] {Lugar.LATITUD, Lugar.LONGITUD}, null, null, null);
+				cursor.setNotificationUri(getContentResolver(), uri);
+				startManagingCursor(cursor);
+
+				if(cursor.moveToFirst()){ 
+					String location = cursor.getFloat(0)+","+cursor.getFloat(1);
+					i = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q="+location));
+					startActivity(i);
+				}
 	        	return true;
 	        default:
 	            return super.onContextItemSelected(item);
