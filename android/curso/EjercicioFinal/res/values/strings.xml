@@ -10,8 +10,8 @@
     <string name="detalles">Detalles</string>
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>
-    <string name="key_maps_X">0ufFbB49KCKs9JxSWbdq1VwTbbR6oa7Duy_INnw</string> 
-    <string name="key_maps">0ufFbB49KCKsZJDWV9G79FWjfNd2mOq1j47MJyA</string> <!-- Depuración trabajo -->
+    <string name="key_maps">0ufFbB49KCKs9JxSWbdq1VwTbbR6oa7Duy_INnw</string> 
+    <string name="key_mapsX">0ufFbB49KCKsZJDWV9G79FWjfNd2mOq1j47MJyA</string> <!-- Depuración trabajo -->
     <string name="lista">Lista</string>
     <string name="lugar">Lugar</string>
     <string name="navegar">Navegar</string>
@@ -34,4 +34,5 @@
 email: ortadilla@gmail.com\n\n
 Ejercicio final Curso Android</string>
     <string name="ver_ubicacion">Ver Ubicación</string>
+    <string name="volver">Volver</string>
 </resources>
