@@ -205,9 +205,9 @@ public class MapaLugaresActivity extends MapActivity {
 			mapController.animateTo(geoPoint);
 		}
 		
-		//Además, avisamos si el GPS no está habilitado
-		if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) 
-			Toast.makeText(this, R.string.msg_notificacion_no_gps, Toast.LENGTH_LONG).show();
+		//Además, avisamos si el GPS no está habilitado --> No mostramos el mensaje, ya que el propio sistema muestra uno
+//		if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) 
+//			Toast.makeText(this, R.string.msg_notificacion_no_gps, Toast.LENGTH_LONG).show();
 	}
 	
 	@Override

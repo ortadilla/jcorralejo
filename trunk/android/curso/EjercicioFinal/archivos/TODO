@@ -5,8 +5,8 @@
 · Estilo: Blanco y azul
 · Repasar todos los títulos de las pantallas
 · Probar a salir (home) de todas las pantallas y volver a entrar
-· Opción de "Ir a..." que navega desde tu posición al lugar indicado (lista lugares, detalles lugar, opciones en lugar en mapa)
 · Si da tiempo implementar el BallonOverlay
+· Si da tiempo mostrar el punto donde se encuentra el usuario
 
 
 https://github.com/jgilfelt/android-mapviewballoons

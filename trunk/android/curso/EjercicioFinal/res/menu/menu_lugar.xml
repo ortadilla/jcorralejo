@@ -9,6 +9,10 @@
 		android:title="@string/ver_ubicacion"
 		android:icon="@drawable/ic_menu_mylocation" />
 	<item
+		android:id="@+id/lugarNavegar" 
+		android:title="@string/navegar"
+		android:icon="@drawable/ic_menu_directions" />
+	<item
 		android:id="@+id/lugarEliminar" 
 		android:title="@string/eliminar"
 		android:icon="@drawable/ic_menu_delete" />

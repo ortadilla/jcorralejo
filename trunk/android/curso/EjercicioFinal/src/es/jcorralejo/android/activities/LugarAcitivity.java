@@ -1,6 +1,9 @@
 package es.jcorralejo.android.activities;
 
+import android.content.ContentUris;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -9,6 +12,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import es.jcorralejo.android.R;
+import es.jcorralejo.android.bd.LugaresProvider;
+import es.jcorralejo.android.bd.LugaresDB.Lugar;
 import es.jcorralejo.android.utils.Constantes;
 
 public class LugarAcitivity extends LugarAbstractActivity {
@@ -72,6 +77,21 @@ public class LugarAcitivity extends LugarAbstractActivity {
 	    		intent.setClass(getApplicationContext(), MapaLugaresActivity.class);
 	    		intent.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar); 
 	    		startActivity(intent);
+				return true;
+				
+			// Al pulsar sobre "Navegar" abrimos Google Navigator para que nos indique el camino desde donde estamos hasta el Lugar 
+			case R.id.lugarNavegar:
+				Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
+				uri = ContentUris.withAppendedId(uri, idLugar);
+				Cursor cursor = managedQuery(uri, new String[] {Lugar.LATITUD, Lugar.LONGITUD}, null, null, null);
+				cursor.setNotificationUri(getContentResolver(), uri);
+				startManagingCursor(cursor);
+
+				if(cursor.moveToFirst()){ 
+					String location = cursor.getFloat(0)+","+cursor.getFloat(1);
+					i = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q="+location));
+					startActivity(i);
+				}
 				return true;
 				
 			default:
