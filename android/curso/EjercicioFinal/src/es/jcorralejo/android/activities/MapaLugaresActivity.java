@@ -16,7 +16,6 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
@@ -221,10 +220,10 @@ public class MapaLugaresActivity extends MapActivity {
 		//Sólo aceramos el zoom cuando se ha enviado un único lugar
 		//Necesitamos hacer zoom en este método, ya que en onStart aun no se ha generado el imageView
 		if(detallesLugar){
-			boolean limit = false;
+			boolean seguir = true;
 			for(int i=mapa.getZoomLevel(); i<mapa.getMaxZoomLevel()-1; i++){
-				limit = mapController.zoomIn();
-				if(limit){
+				seguir = mapController.zoomIn();
+				if(!seguir){
 					mapController.zoomOut();
 					break;
 				}
