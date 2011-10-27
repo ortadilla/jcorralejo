@@ -7,10 +7,6 @@
 · Probar a salir (home) de todas las pantallas y volver a entrar
 · Si da tiempo implementar el BallonOverlay
 · Si da tiempo mostrar el punto donde se encuentra el usuario
-
+· Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
 
 https://github.com/jgilfelt/android-mapviewballoons
-
-Intent i = new Intent(Intent.ACTION_VIEW,
-Uri.parse("google.navigation:q=New+York+NY));
-startActivity(i); 

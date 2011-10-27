@@ -1,9 +1,16 @@
 package es.jcorralejo.android.activities;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 import android.content.ContentValues;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
@@ -113,6 +120,29 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 			nombreLugar.setText(R.string.msg_agregar_nombre);
 			descripcionLugar.setText(R.string.msg_agregar_descripcion);
 			imagenLugar.setImageResource(R.drawable.no_imagen);
+			
+			try {
+				Geocoder gc = new Geocoder(this, Locale.getDefault());
+				String dir = "";
+				List<Address> addresses = gc.getFromLocation(coordenada[0], coordenada[1], 1);
+				if (addresses.size() > 0) {
+					Address address = addresses.get(0);
+					for (int i = 0; i < address.getMaxAddressLineIndex(); i++)
+						dir += address.getAddressLine(i) + "\t";
+					dir += address.getCountryName();
+				}
+				if(!dir.equals("")){
+					direccionLugar.setVisibility(View.VISIBLE);
+					direccionLugar.setText(dir);
+				}else
+					direccionLugar.setVisibility(View.GONE);
+			} catch (IOException e) {
+				//Controlamos este error porque el emulador de la versión 2.2 tiene un  bug
+				//Si se produce algún error al "traducir" las coordenadas simplemente logueamos y ocultamos el campo 
+				Log.e("Error al traducir coordenadas", e.getMessage());
+				direccionLugar.setVisibility(View.GONE);
+			}
+
 		}
 	}
 	
