@@ -103,28 +103,9 @@ public abstract class LugarAbstractActivity extends Activity{
 			setImagen(Uri.parse(imagen));
 		else
 			imagenLugar.setImageResource(R.drawable.no_imagen);
-		
-		try {
-			Geocoder gc = new Geocoder(this, Locale.getDefault());
-			String dir = "";
-			List<Address> addresses = gc.getFromLocation(latitud, longitud, 1);
-			if (addresses.size() > 0) {
-				Address address = addresses.get(0);
-				for (int i = 0; i < address.getMaxAddressLineIndex(); i++)
-					dir += address.getAddressLine(i) + "\t";
-				dir += address.getCountryName();
-			}
-			if(!dir.equals("")){
-				direccionLugar.setVisibility(View.VISIBLE);
-				direccionLugar.setText(dir);
-			}else
-				direccionLugar.setVisibility(View.GONE);
-		} catch (IOException e) {
-			//Controlamos este error porque el emulador de la versión 2.2 tiene un  bug
-			//Si se produce algún error al "traducir" las coordenadas simplemente logueamos y ocultamos el campo 
-			Log.e("Error al traducir coordenadas", e.getMessage());
-			direccionLugar.setVisibility(View.GONE);
-		}
+
+		float[] coordenada = {latitud, longitud}; 
+		traducirCoordenadas(coordenada);
 	}
 	
 	protected void setImagen(Uri uriImagen){
@@ -169,6 +150,31 @@ public abstract class LugarAbstractActivity extends Activity{
 			default:
 				return null;
 		}
+	}
+	
+	protected void traducirCoordenadas(float[] coordenada){
+		try {
+			Geocoder gc = new Geocoder(this, Locale.getDefault());
+			String dir = "";
+			List<Address> addresses = gc.getFromLocation(coordenada[0], coordenada[1], 1);
+			if (addresses.size() > 0) {
+				Address address = addresses.get(0);
+				for (int i = 0; i < address.getMaxAddressLineIndex(); i++)
+					dir += address.getAddressLine(i) + "\t";
+				dir += address.getCountryName();
+			}
+			if(!dir.equals("")){
+				direccionLugar.setVisibility(View.VISIBLE);
+				direccionLugar.setText(dir);
+			}else
+				direccionLugar.setVisibility(View.GONE);
+		} catch (IOException e) {
+			//Controlamos este error porque el emulador de la versión 2.2 tiene un  bug
+			//Si se produce algún error al "traducir" las coordenadas simplemente logueamos y ocultamos el campo 
+			Log.e("Error al traducir coordenadas", e.getMessage());
+			direccionLugar.setVisibility(View.GONE);
+		}
+
 	}
 	
 }

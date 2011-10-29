@@ -33,6 +33,11 @@ public class Constantes {
 	public static final int RESULT_FOTO = 1;
 
 	/**
+	 * Constante para identificar la nueva coordenada cuando la estamos editando en un lugar
+	 */
+	public static final int RESULT_EDITAR_COORDENADA = 2;
+
+	/**
 	 * Constante para identificar la opción de menú contextual "DETALLES"
 	 */
 	public static final int MENU_DETALLES = 0;
@@ -86,5 +91,11 @@ public class Constantes {
 	 * Constante para identificar el índice de las coordenadas que identifica a la longitud
 	 */
 	public static final int INDICE_COORDENADA_LONGITUD = 1;
+	
+	/**
+	 * Constante para indicar si estamos editando las coordenadas de un lugar
+	 */
+	public static final String EDITAR_COORDENADA_LUGAR = "EDITAR_COORDENADA_LUGAR";
+	
 	
 }

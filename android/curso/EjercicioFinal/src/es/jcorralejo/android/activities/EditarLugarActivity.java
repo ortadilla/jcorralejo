@@ -1,16 +1,9 @@
 package es.jcorralejo.android.activities;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Locale;
-
 import android.content.ContentValues;
 import android.content.Intent;
-import android.location.Address;
-import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
@@ -30,6 +23,9 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 	
 	/** Indica si estamos agregando un luegar nuevo o editando uno existente */
 	private boolean agregando = false;
+	
+	/** Indica si estamos editando las coordenadas de un lugar existente */
+	private boolean editarCoordenada = false;
 	
 	/** Guarda la información de las coordenada a la hora de crear un nuevo lugar */
 	float[] coordenada = null;
@@ -58,7 +54,9 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
 			coordenada = (float[]) extras.get(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO);
-			agregando = coordenada!=null;
+			if(extras.containsKey(Constantes.EDITAR_COORDENADA_LUGAR))
+				editarCoordenada = extras.getBoolean(Constantes.EDITAR_COORDENADA_LUGAR);
+			agregando = coordenada!=null && !editarCoordenada;
 		}
 		
 		// Botón editar/agregar
@@ -88,6 +86,10 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 							contentValues.put(Lugar.FOTO, uriNuevaImagen!=null ? uriNuevaImagen.toString() : null);
 						contentValues.put(Lugar.DESCRIPCION, descripcionLugar.getText().toString());
 						contentValues.put(Lugar.NOMBRE, nombreLugar.getText().toString());
+						if(editarCoordenada){
+							contentValues.put(Lugar.LATITUD, coordenada[0]);
+							contentValues.put(Lugar.LONGITUD, coordenada[1]);
+						}
 						getContentResolver().update(uri, contentValues, Lugar._ID+" = "+idLugar, null);
 						// Volvemos a la pantalla anterior
 						finish();
@@ -120,29 +122,21 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 			nombreLugar.setText(R.string.msg_agregar_nombre);
 			descripcionLugar.setText(R.string.msg_agregar_descripcion);
 			imagenLugar.setImageResource(R.drawable.no_imagen);
-			
-			try {
-				Geocoder gc = new Geocoder(this, Locale.getDefault());
-				String dir = "";
-				List<Address> addresses = gc.getFromLocation(coordenada[0], coordenada[1], 1);
-				if (addresses.size() > 0) {
-					Address address = addresses.get(0);
-					for (int i = 0; i < address.getMaxAddressLineIndex(); i++)
-						dir += address.getAddressLine(i) + "\t";
-					dir += address.getCountryName();
-				}
-				if(!dir.equals("")){
-					direccionLugar.setVisibility(View.VISIBLE);
-					direccionLugar.setText(dir);
-				}else
-					direccionLugar.setVisibility(View.GONE);
-			} catch (IOException e) {
-				//Controlamos este error porque el emulador de la versión 2.2 tiene un  bug
-				//Si se produce algún error al "traducir" las coordenadas simplemente logueamos y ocultamos el campo 
-				Log.e("Error al traducir coordenadas", e.getMessage());
-				direccionLugar.setVisibility(View.GONE);
-			}
 
+			traducirCoordenadas(coordenada);
+		}else{
+			direccionLugar.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Toast.makeText(getBaseContext(), R.string.msg_info_editar_coordenadas_lugar, Toast.LENGTH_LONG).show();
+					
+					Intent i = new Intent();
+					i.setClass(getApplicationContext(), MapaLugaresActivity.class);
+		    		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar); 
+		    		i.putExtra(Constantes.EDITAR_COORDENADA_LUGAR, true); 
+		    		startActivityForResult(i, Constantes.RESULT_EDITAR_COORDENADA);
+				}
+			});
 		}
 	}
 	
@@ -166,6 +160,21 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 				setImagen(selectedImage);
 				uriNuevaImagen = selectedImage;
 				ignorarDatosBD = true;
+			}
+		}
+		
+		else if (requestCode == Constantes.RESULT_EDITAR_COORDENADA){
+			if(resultCode == RESULT_OK){
+				if(data!=null && data.getExtras()!=null){
+					Bundle extras = data.getExtras();
+					coordenada = (float[]) extras.get(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO);
+					if(extras.containsKey(Constantes.EDITAR_COORDENADA_LUGAR))
+						editarCoordenada = extras.getBoolean(Constantes.EDITAR_COORDENADA_LUGAR);
+					agregando = coordenada!=null && !editarCoordenada;
+					ignorarDatosBD = true;
+				}
+				
+				traducirCoordenadas(coordenada);
 			}
 		}
 	}
