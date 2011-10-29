@@ -41,6 +41,7 @@ public class MapaLugaresActivity extends MapActivity {
 	private LocationManager lm;
 	
 	boolean detallesLugar;
+	boolean editarCoordenadas;
 	int xDown, yDown;
 
 	@Override
@@ -91,7 +92,19 @@ public class MapaLugaresActivity extends MapActivity {
 
 	            		Bundle args = new Bundle();
 	            		args.putFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
-	            		showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
+	            		
+	            		//Si estamos editando las coordenadas de un lugar volvemos con el nuevo punto
+	            		if(editarCoordenadas){
+	            			Intent i = new Intent();
+							i.setClass(getApplicationContext(), EditarLugarActivity.class);
+							i.putExtra(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
+							i.putExtra(Constantes.EDITAR_COORDENADA_LUGAR, editarCoordenadas);
+							setResult(RESULT_OK, i);
+							finish();
+						//Si no, mostramos el popUp con todoas las opciones
+	            		}else
+	            			showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
+	            		
 	            		return true;
 	            	// Si pulsamos un lugar mostramos sus detalles
 	            	}else{
@@ -160,7 +173,9 @@ public class MapaLugaresActivity extends MapActivity {
 			uri = ContentUris.withAppendedId(uri, idLugar);
 			where = Lugar._ID+" = "+idLugar;
 			
-			detallesLugar = true;
+			editarCoordenadas = extras!=null ? extras.getBoolean(Constantes.EDITAR_COORDENADA_LUGAR) : false;
+			if(!editarCoordenadas)
+				detallesLugar = true;
 		}
 		
 		Cursor cursor = managedQuery(uri, columnas, where, null, null);
@@ -172,7 +187,7 @@ public class MapaLugaresActivity extends MapActivity {
 		itemizedOverlay = new ItemizedOverlayLugar(this, drawable);
 		mapOverlays = mapa.getOverlays();
 		mapOverlays.clear();
-		while(cursor.moveToNext()) {
+		while(cursor.moveToNext() && !editarCoordenadas) {
 			long id = cursor.getLong(0);
 			String nombre = cursor.getString(1);
 			float latitud = cursor.getFloat(4);
