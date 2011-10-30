@@ -58,8 +58,8 @@ public class MapaLugaresActivity extends MapActivity {
 		
 		//Añadimos el manejador del GPS
 		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		MiLocationListener mlistener = new MiLocationListener(this, mapController);
-		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlistener);
+		MiLocationListener mlistener = new MiLocationListener(this, mapController, mapa);
+		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 10, mlistener);
 		
 		// Comprobamos si está activo el GPS y centramos el mapa en las coordenadas actuales del dispositivo
 		moverMapaAPosicionActual();
@@ -183,8 +183,8 @@ public class MapaLugaresActivity extends MapActivity {
 		startManagingCursor(cursor);
 
 		// Añadimos el/los punto/s en el mapa, aunque antes eliminamos todas las capas del mapa para limpiarlo
-		Drawable drawable = this.getResources().getDrawable(R.drawable.chincheta);
-		itemizedOverlay = new ItemizedOverlayLugar(this, drawable);
+		Drawable chincheta = this.getResources().getDrawable(R.drawable.chincheta);
+		itemizedOverlay = new ItemizedOverlayLugar(this, chincheta);
 		mapOverlays = mapa.getOverlays();
 		mapOverlays.clear();
 		while(cursor.moveToNext() && !editarCoordenadas) {
@@ -218,10 +218,6 @@ public class MapaLugaresActivity extends MapActivity {
 			GeoPoint geoPoint = new GeoPoint((int)(loc.getLatitude()*1E6), (int)(loc.getLongitude()*1E6));
 			mapController.animateTo(geoPoint);
 		}
-		
-		//Además, avisamos si el GPS no está habilitado --> No mostramos el mensaje, ya que el propio sistema muestra uno
-//		if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) 
-//			Toast.makeText(this, R.string.msg_notificacion_no_gps, Toast.LENGTH_LONG).show();
 	}
 	
 	@Override
