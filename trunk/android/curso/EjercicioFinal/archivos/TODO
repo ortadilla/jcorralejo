@@ -1,12 +1,11 @@
 · Al modificar titulo o descripción, si navegamos a la galería y volvemos (no aceptamos) perdemos los cambios
-· Permitir modificar coordenadas de un lugar --> Ver en los detalles las coordenadas y la descripción del lugar y al editar que aparezca la opción de editarlo
 · Traducir al inglés y al alemán
 · Imágenes para dispositivos con distintas resoluciones
 · Estilo: Blanco y azul
 · Repasar todos los títulos de las pantallas
 · Probar a salir (home) de todas las pantallas y volver a entrar
 · Si da tiempo implementar el BallonOverlay
-· Si da tiempo mostrar el punto donde se encuentra el usuario
+· Si da tiempo mostrar el punto donde se encuentra el usuario --> No mover al punto actual, pero añadir una opción en el mapa
 · Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
 
 https://github.com/jgilfelt/android-mapviewballoons
