@@ -34,9 +34,9 @@ public class MiLocationListener implements LocationListener {
 	public void onLocationChanged(Location location) {
 		mapa.invalidate();
         Drawable chincheta = mapa.getResources().getDrawable(R.drawable.ic_gps_actual);
-        puntoActual = new ItemizedOverlayLugar(context, chincheta);
         List<Overlay> mapOverlays = mapa.getOverlays();
         mapOverlays.remove(puntoActual);
+        puntoActual = new ItemizedOverlayLugar(context, chincheta);
         puntoActual.add(location.getLatitude(), location.getLongitude(), null, Constantes.NINGUN_LUGAR);
         mapOverlays.add(puntoActual);  
 	}
