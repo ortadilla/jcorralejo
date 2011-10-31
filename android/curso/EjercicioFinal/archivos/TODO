@@ -2,8 +2,9 @@
 · Traducir al inglés y al alemán
 · Imágenes para dispositivos con distintas resoluciones
 · Estilo: Blanco y azul
+· Si estamos viendo la ubicación de un lugar no poder añadir el lugar actual
+· Poner etiqueta a "Nombre" y "Descripcion" al añadir un lugar 
 · Si da tiempo implementar el BallonOverlay
-· Añadir opción de menú en todas las pantallas para volver al Inicio
 · Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
 
 https://github.com/jgilfelt/android-mapviewballoons
