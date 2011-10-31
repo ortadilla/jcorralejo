@@ -154,12 +154,14 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if(requestCode == Constantes.RESULT_FOTO){
-			if(data!=null){
-				// Procesamos la imagen de vuelta de la galería
-				Uri selectedImage = data.getData();
-				setImagen(selectedImage);
-				uriNuevaImagen = selectedImage;
-				ignorarDatosBD = true;
+			if(resultCode == RESULT_OK){
+				if(data!=null){
+					// Procesamos la imagen de vuelta de la galería
+					Uri selectedImage = data.getData();
+					setImagen(selectedImage);
+					uriNuevaImagen = selectedImage;
+					ignorarDatosBD = true;
+				}
 			}
 		}
 		
@@ -177,11 +179,6 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 				traducirCoordenadas(coordenada);
 			}
 		}
-	}
-	
-	@Override
-	protected void onStart() {
-		super.onStart();
 	}
 	
 	@Override
