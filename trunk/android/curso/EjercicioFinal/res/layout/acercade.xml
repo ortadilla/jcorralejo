@@ -2,4 +2,5 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:autoLink="all" android:text="@string/texto_acerca_de"
-	android:background="#eee" android:gravity="center" />
+	android:textColor="#0101DF"
+	android:background="@drawable/fondo_nombre_lugar" android:gravity="center" />

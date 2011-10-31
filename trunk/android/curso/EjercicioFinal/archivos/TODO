@@ -2,11 +2,8 @@
 · Traducir al inglés y al alemán
 · Imágenes para dispositivos con distintas resoluciones
 · Estilo: Blanco y azul
-· Repasar todos los títulos de las pantallas
-· Probar a salir (home) de todas las pantallas y volver a entrar
 · Si da tiempo implementar el BallonOverlay
 · Añadir opción de menú en todas las pantallas para volver al Inicio
 · Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
 
 https://github.com/jgilfelt/android-mapviewballoons
-https://github.com/androidMDW/guia5completo/blob/master/src/com/android/mdw/demo/Main.java
