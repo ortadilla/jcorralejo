@@ -46,12 +46,14 @@ public class MapaLugaresActivity extends MapActivity {
 	
 	boolean detallesLugar;
 	boolean editarCoordenadas;
+	boolean hacerZoom = false;
 	int xDown, yDown;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mapa);
+		setTitle(R.string.nombre_lugares);
 		
 		mapa = (MapView) findViewById(R.id.mapview);
 //		mapa.displayZoomControls(true);
@@ -208,6 +210,7 @@ public class MapaLugaresActivity extends MapActivity {
 			if(detallesLugar){
 				OverlayItem hito = itemizedOverlay.getItem(0);
 				mapController.animateTo(hito.getPoint());
+				hacerZoom = true;
 			}
 		}
 		
@@ -225,14 +228,8 @@ public class MapaLugaresActivity extends MapActivity {
 			mapController.animateTo(geoPoint);
 			
 			//Si aun no tenemos posición actual guardada, la guardamos ahora
-			if(mListener!=null && mListener.getPuntoActual()==null){
-//		        Drawable c = mapa.getResources().getDrawable(R.drawable.ic_gps_actual);
-//		        ItemizedOverlayLugar puntoActual = new ItemizedOverlayLugar(this, c);
-//		        puntoActual.add(loc.getLatitude(), loc.getLongitude(), null, Constantes.NINGUN_LUGAR);
-//		        mapOverlays.add(puntoActual);  
-//		        mListener.setPuntoActual(puntoActual);
+			if(mListener!=null && mListener.getPuntoActual()==null)
 				mListener.onLocationChanged(loc);
-			}
 		}
 		
 		return geoPoint;
@@ -248,7 +245,7 @@ public class MapaLugaresActivity extends MapActivity {
 		super.onWindowFocusChanged(hasFocus);
 		//Sólo aceramos el zoom cuando se ha enviado un único lugar
 		//Necesitamos hacer zoom en este método, ya que en onStart aun no se ha generado el imageView
-		if(detallesLugar){
+		if(detallesLugar && hasFocus && hacerZoom){
 			boolean seguir = true;
 			for(int i=mapa.getZoomLevel(); i<mapa.getMaxZoomLevel()-1; i++){
 				seguir = mapController.zoomIn();
@@ -257,6 +254,7 @@ public class MapaLugaresActivity extends MapActivity {
 					break;
 				}
 			}
+			hacerZoom = false;
 		}
 	}
 	

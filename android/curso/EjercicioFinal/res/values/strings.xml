@@ -18,7 +18,6 @@
     <string name="key_mapsX">0ufFbB49KCKsZJDWV9G79FWjfNd2mOq1j47MJyA</string> <!-- Depuración trabajo -->
     <string name="lista">Lista</string>
     <string name="lugar">Lugar</string>
-    <string name="navegar">Navegar</string>
     <string name="mapa">Mapa</string>
     <string name="msg_agregar_nombre">Introduzca el Nombre del Lugar...</string>
     <string name="msg_agregar_descripcion">Introduzca la Descripción del Lugar...</string>
@@ -28,6 +27,7 @@
     <string name="msg_info_agregar_lugar">Pulse en el lugar del Mapa que desea agregar...</string>
     <string name="msg_info_editar_coordenadas_lugar">Pulse en el lugar del Mapa donde desea mover el Lugar...</string>
     <string name="msg_notificacion_no_gps">El dispositivo GPS está desactivado, por lo que su posición no será 100% precisa...</string>
+    <string name="navegar">Navegar</string>
     <string name="no">No</string>
     <string name="no_hay_lugares">Aun no existen lugares definidos</string>
     <string name="nombre_lugares">Lugares</string>
