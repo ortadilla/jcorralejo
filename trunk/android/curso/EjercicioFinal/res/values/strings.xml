@@ -2,6 +2,7 @@
 <resources>
     <string name="acerca_de">Acerca de...</string>
     <string name="agregar">Agregar</string>
+    <string name="aniadir_posicion_actual">Añadir lugar en la posición actual</string>
     <string name="app_name">Mis Lugares</string>
     <string name="cancelar">Cancelar</string>
     <string name="configuracion">Configuración</string>
@@ -12,6 +13,7 @@
     <string name="eliminar">Eliminar</string>
     <string name="gps_activado">GPS Activado</string>
     <string name="gps_desactivado">GPS Desactivado. Para el correcto funcionamiento actívelo en la configuración de Ubicación</string>
+    <string name="ir_posicion_actual">Ir a la posición actual</string>
     <string name="key_maps">0ufFbB49KCKs9JxSWbdq1VwTbbR6oa7Duy_INnw</string> 
     <string name="key_mapsX">0ufFbB49KCKsZJDWV9G79FWjfNd2mOq1j47MJyA</string> <!-- Depuración trabajo -->
     <string name="lista">Lista</string>
@@ -37,5 +39,7 @@
 email: ortadilla@gmail.com\n\n
 Ejercicio final Curso Android</string>
     <string name="ver_ubicacion">Ver Ubicación</string>
+    <string name="vista_mapa">Vista Mapa</string>
+    <string name="vista_satelite">Vista Satélite</string>
     <string name="volver">Volver</string>
 </resources>

@@ -56,4 +56,12 @@ public class MiLocationListener implements LocationListener {
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {}
 
+	public ItemizedOverlayLugar getPuntoActual() {
+		return puntoActual;
+	}
+
+	public void setPuntoActual(ItemizedOverlayLugar puntoActual) {
+		this.puntoActual = puntoActual;
+	}
+
 }

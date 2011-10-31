@@ -15,6 +15,9 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 
 import com.google.android.maps.GeoPoint;
@@ -39,6 +42,7 @@ public class MapaLugaresActivity extends MapActivity {
 	private List<Overlay> mapOverlays;
 	private ItemizedOverlayLugar itemizedOverlay;
 	private LocationManager lm;
+	private MiLocationListener mListener;
 	
 	boolean detallesLugar;
 	boolean editarCoordenadas;
@@ -50,16 +54,17 @@ public class MapaLugaresActivity extends MapActivity {
 		setContentView(R.layout.mapa);
 		
 		mapa = (MapView) findViewById(R.id.mapview);
-		mapa.displayZoomControls(true);
-		mapa.setBuiltInZoomControls(true);
+//		mapa.displayZoomControls(true);
+//		mapa.setBuiltInZoomControls(true);
 		mapa.setSatellite(true);
 		mapController = mapa.getController();
 		mapController.setZoom(14);
+		mapOverlays = mapa.getOverlays();
 		
 		//Añadimos el manejador del GPS
 		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		MiLocationListener mlistener = new MiLocationListener(this, mapController, mapa);
-		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 10, mlistener);
+		mListener = new MiLocationListener(this, mapController, mapa);
+		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 10, mListener);
 		
 		// Comprobamos si está activo el GPS y centramos el mapa en las coordenadas actuales del dispositivo
 		moverMapaAPosicionActual();
@@ -181,12 +186,12 @@ public class MapaLugaresActivity extends MapActivity {
 		Cursor cursor = managedQuery(uri, columnas, where, null, null);
 		cursor.setNotificationUri(getContentResolver(), uri);
 		startManagingCursor(cursor);
-
+		
 		// Añadimos el/los punto/s en el mapa, aunque antes eliminamos todas las capas del mapa para limpiarlo
 		Drawable chincheta = this.getResources().getDrawable(R.drawable.chincheta);
 		itemizedOverlay = new ItemizedOverlayLugar(this, chincheta);
-		mapOverlays = mapa.getOverlays();
-		mapOverlays.clear();
+		mapOverlays.remove(itemizedOverlay);
+		
 		while(cursor.moveToNext() && !editarCoordenadas) {
 			long id = cursor.getLong(0);
 			String nombre = cursor.getString(1);
@@ -195,7 +200,7 @@ public class MapaLugaresActivity extends MapActivity {
 
 			itemizedOverlay.add(latitud, longitud, nombre, id);
 		}
-
+		
 		if(itemizedOverlay.size()>0){
 			mapOverlays.add(itemizedOverlay);
 
@@ -205,19 +210,32 @@ public class MapaLugaresActivity extends MapActivity {
 				mapController.animateTo(hito.getPoint());
 			}
 		}
-			
+		
 	}
 	
-	private void moverMapaAPosicionActual(){
+	private GeoPoint moverMapaAPosicionActual(){
+		GeoPoint geoPoint = null;
 		//Comprobamos si tenemos localización por GPS...
 		Location loc = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 		//...y si no, comprobamos si tenemos localización por triangulación de antenas
 		if(loc==null)
 			loc = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 		if(loc!=null){
-			GeoPoint geoPoint = new GeoPoint((int)(loc.getLatitude()*1E6), (int)(loc.getLongitude()*1E6));
+			geoPoint = new GeoPoint((int)(loc.getLatitude()*1E6), (int)(loc.getLongitude()*1E6));
 			mapController.animateTo(geoPoint);
+			
+			//Si aun no tenemos posición actual guardada, la guardamos ahora
+			if(mListener!=null && mListener.getPuntoActual()==null){
+//		        Drawable c = mapa.getResources().getDrawable(R.drawable.ic_gps_actual);
+//		        ItemizedOverlayLugar puntoActual = new ItemizedOverlayLugar(this, c);
+//		        puntoActual.add(loc.getLatitude(), loc.getLongitude(), null, Constantes.NINGUN_LUGAR);
+//		        mapOverlays.add(puntoActual);  
+//		        mListener.setPuntoActual(puntoActual);
+				mListener.onLocationChanged(loc);
+			}
 		}
+		
+		return geoPoint;
 	}
 	
 	@Override
@@ -241,5 +259,50 @@ public class MapaLugaresActivity extends MapActivity {
 			}
 		}
 	}
+	
+	/**
+	 * "Inflamos" las opciones de menú de la pantalla principal 
+	 */
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.menu_mapa, menu);
+		return true;
+	}
+	
+	/**
+	 * Definimos las acciones correspondientes con cada opción de menú
+	 */
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			// Al pulsar sobre "Ir posición actual" navegamos a la posición actual marcada por el GPS
+			case R.id.mapaIrPosicionActual:
+				moverMapaAPosicionActual();
+				return true;
+			// Al pulsar sobre "Añadir posición actual" navegamos a la creación de un nuevo lugar con las coordenadas actuales
+			case R.id.mapaAiniadirPosicionActual:
+				GeoPoint punto = moverMapaAPosicionActual();
+        		float[] coordenada = new float[2];
+        		coordenada[0] = (float) (punto.getLatitudeE6() / 1E6);
+        		coordenada[1] = (float)(punto.getLongitudeE6() / 1E6); 
+				Intent i = new Intent();
+				i.setClass(getApplicationContext(), EditarLugarActivity.class);
+				i.putExtra(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
+				startActivity(i);
+				return true;
+			// Al pulsar sobre "Modo Satélite" lo activamos
+			case R.id.mapaVistaSatelite:
+				mapa.setSatellite(true);
+				return true;
+			// Al pulsar sobre "Modo mapa" lo activamos
+			case R.id.mapaVistaMapa:
+				mapa.setSatellite(false);
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
+
 
 }
