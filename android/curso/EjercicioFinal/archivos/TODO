@@ -6,6 +6,7 @@
 · Probar a salir (home) de todas las pantallas y volver a entrar
 · Si da tiempo implementar el BallonOverlay
 · Si da tiempo mostrar el punto donde se encuentra el usuario --> No mover al punto actual, pero añadir una opción en el mapa
+· Añadir opción de menú en todas las pantallas para volver al Inicio
 · Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
 
 https://github.com/jgilfelt/android-mapviewballoons
