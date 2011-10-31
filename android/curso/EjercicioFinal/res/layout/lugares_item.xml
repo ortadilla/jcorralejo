@@ -19,7 +19,7 @@
 				android:layout_height="match_parent"
 				android:gravity="right" 
 				android:text="-"
-				android:textColor="#777"
+				android:textColor="#0101DF"
 				android:textAppearance="?android:attr/textAppearanceMedium" />
 		</LinearLayout>
 			<TextView android:id="@+id/lugarDescripcion"
@@ -28,5 +28,5 @@
 				android:text="-"
 				android:gravity="left"
 				android:textAppearance="?android:attr/textAppearanceSmall"
-				android:textColor="#777" />
+				android:textColor="#0101DF" />
 </LinearLayout>

@@ -3,7 +3,8 @@
 	android:id="@+id/linearLayoutLugares" 
 	android:orientation="vertical" 
 	android:layout_width="fill_parent"
-	android:layout_height="wrap_content">
+	android:layout_height="match_parent"
+	android:background="@drawable/fondo_general">
 	<ListView android:id="@android:id/list" 
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content" 
@@ -16,6 +17,7 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content" 
 		android:text="@string/no_hay_lugares"
+		android:textColor="#0101DF"
 		android:gravity="center_vertical|center_horizontal" />
 	
 </LinearLayout>

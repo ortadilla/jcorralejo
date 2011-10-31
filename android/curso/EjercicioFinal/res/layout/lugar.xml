@@ -19,7 +19,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 			android:gravity="center_horizontal"
 			android:layout_marginTop="10dip" 
 			android:text="-"
-			android:textColor="#777"
+			android:textColor="#0101DF"
 			android:textAppearance="?android:attr/textAppearanceMedium" />
 		<TextView android:id="@+id/lugarDireccion"
 			android:layout_width="fill_parent"
@@ -27,7 +27,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 			android:gravity="center_horizontal"
 			android:layout_marginTop="10dip" 
 			android:text="-"
-			android:textColor="#777"
+			android:textColor="#0101DF"
 			android:textAppearance="?android:attr/textAppearanceSmall" />
 		<ImageView 	android:id="@+id/lugarImagen"
 			android:gravity="center_horizontal"
@@ -41,7 +41,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 			android:text="-"
 			android:gravity="center_horizontal"
 			android:textAppearance="?android:attr/textAppearanceSmall"
-			android:textColor="#777" />
+			android:textColor="#0101DF" />
 	</LinearLayout>
 
 	<LinearLayout 
