@@ -7,7 +7,7 @@
 	android:background="@drawable/fondo_general">
 	<ListView android:id="@android:id/list" 
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content" 
+		android:layout_height="match_parent" 
 		android:dividerHeight="4dip"
 		android:divider="@android:color/transparent"
 		android:layout_marginLeft="5dip" 

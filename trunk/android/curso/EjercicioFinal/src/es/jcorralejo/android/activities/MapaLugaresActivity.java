@@ -116,7 +116,7 @@ public class MapaLugaresActivity extends MapActivity {
 	            	// Si pulsamos un lugar mostramos sus detalles
 	            	}else{
 	            		Intent i = new Intent();
-	            		i.setClass(getApplicationContext(), LugarAcitivity.class);
+	            		i.setClass(getApplicationContext(), LugarActivity.class);
 	            		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, itemizedOverlay.getLugarPulsado().getIdLugar());
 	            		startActivity(i);
 	            		itemizedOverlay.setLugarPulsado(null);

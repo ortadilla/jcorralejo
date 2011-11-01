@@ -146,14 +146,14 @@ public class ListaLugaresActivity extends ListActivity{
 		// Agrupamos ambos botones en un LinearLayout 
 		LinearLayout linearLayoutBotones = new LinearLayout(this);
 		linearLayoutBotones.setOrientation(LinearLayout.HORIZONTAL);
-		LayoutParams layoutParams = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT, 1);
+		LayoutParams layoutParams = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT, 7);
 		layoutParams.setMargins(0, 15, 0, 0);
 		linearLayoutBotones.setLayoutParams(layoutParams);
 		linearLayoutBotones.setGravity(Gravity.CENTER_HORIZONTAL);
 		linearLayoutBotones.addView(botonEliminar,0);
 		linearLayoutBotones.addView(botonCancelar,1);
 		
-		// Añadimos el LinearLayout al principio de la pantalla
+		// Añadimos el LinearLayout al final de la pantalla
 		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutLugares);
 		linearLayout.addView(linearLayoutBotones, 1);
 		
@@ -211,7 +211,7 @@ public class ListaLugaresActivity extends ListActivity{
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Intent i = new Intent();
-		i.setClass(getApplicationContext(), LugarAcitivity.class);
+		i.setClass(getApplicationContext(), LugarActivity.class);
 		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, id);
 		startActivity(i);
 	}
@@ -288,7 +288,7 @@ public class ListaLugaresActivity extends ListActivity{
 		switch(item.getItemId()) {
 	    	// Vemos los detalles del lugar
 	        case Constantes.MENU_DETALLES:
-	    		i.setClass(getApplicationContext(), LugarAcitivity.class);
+	    		i.setClass(getApplicationContext(), LugarActivity.class);
 	    		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, idLugar);
 	    		startActivity(i);
 	            return true;
