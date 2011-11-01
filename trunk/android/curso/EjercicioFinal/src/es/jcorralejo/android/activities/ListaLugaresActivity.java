@@ -20,6 +20,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
@@ -146,7 +147,7 @@ public class ListaLugaresActivity extends ListActivity{
 		// Agrupamos ambos botones en un LinearLayout 
 		LinearLayout linearLayoutBotones = new LinearLayout(this);
 		linearLayoutBotones.setOrientation(LinearLayout.HORIZONTAL);
-		LayoutParams layoutParams = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT, 7);
+		LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, 0, 1); //El alto debe ser 0 para que se reparta bien el espacio con el ListView
 		layoutParams.setMargins(0, 15, 0, 0);
 		linearLayoutBotones.setLayoutParams(layoutParams);
 		linearLayoutBotones.setGravity(Gravity.CENTER_HORIZONTAL);
