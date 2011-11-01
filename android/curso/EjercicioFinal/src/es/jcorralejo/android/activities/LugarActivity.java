@@ -16,11 +16,11 @@ import es.jcorralejo.android.bd.LugaresProvider;
 import es.jcorralejo.android.bd.LugaresDB.Lugar;
 import es.jcorralejo.android.utils.Constantes;
 
-public class LugarAcitivity extends LugarAbstractActivity {
+public class LugarActivity extends LugarAbstractActivity {
 	
 	@Override
 	protected int getLayout() {
-		return R.layout.lugar;
+		return R.layout.lugar2;
 	}
 	
 	@Override

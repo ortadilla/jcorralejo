@@ -20,7 +20,7 @@ public class PrincipalActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.principal);
+		setContentView(R.layout.principal2);
 		
 		Button botonLista = (Button) findViewById(R.id.botonLista);
 		Button botonMapa = (Button) findViewById(R.id.botonMapa);
