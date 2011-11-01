@@ -26,12 +26,12 @@
 		android:layout_below="@+id/cabecera" 
 		android:layout_alignLeft="@+id/cabecera" 
 		android:layout_alignRight="@+id/cabecera" android:layout_weight="2">
-			<Button	android:background="@drawable/files" 
+			<Button	android:background="@drawable/files2" 
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content" 
 				android:id="@+id/botonLista">
 			</Button>
-			<Button android:background="@drawable/maps" 
+			<Button android:background="@drawable/maps2" 
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content" 
 				android:id="@+id/botonMapa">
