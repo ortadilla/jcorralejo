@@ -22,8 +22,8 @@
     <string name="lista">Lista</string>
     <string name="lugar">Lugar</string>
     <string name="mapa">Mapa</string>
-    <string name="msg_agregar_nombre">Introduzca el Nombre del Lugar...</string>
-    <string name="msg_agregar_descripcion">Introduzca la Descripción del Lugar...</string>
+    <string name="msg_agregar_nombre">Nombre del Lugar</string>
+    <string name="msg_agregar_descripcion">Descripción del Lugar</string>
     <string name="msg_condirmacion_eliminar">¿Está seguro que desea Eliminar este elemento?</string>
     <string name="msg_condirmacion_eliminar_varios">¿Está seguro que desea Eliminar los elementos seleccionados?</string>
     <string name="msg_error_salir">Se ha producido un error y la aplicación debe cerrarse. Por favor, contacte con los autores</string>

@@ -11,7 +11,6 @@ import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
