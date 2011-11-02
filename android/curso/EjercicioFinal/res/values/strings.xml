@@ -7,10 +7,13 @@
     <string name="cancelar">Cancelar</string>
     <string name="configuracion">Configuración</string>
     <string name="control_agregar_lugar">Debe indicar al menos el Nombre y la Descripción del Lugar</string>
+    <string name="control_agregar_lugar_actual_detalles">No puede añadir un nuevo Lugar mientras ve los detalles de otro</string>
+    <string name="control_agregar_lugar_actual_coordenadas">No puede añadir un nuevo Lugar mientras modifica la ubicación de otro</string>
     <string name="control_eliminar_lugares">No existen Lugares para poder eliminar</string>
     <string name="detalles">Detalles</string>
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>
+    <string name="error_aniadir_posicion_actual">Imposible determinar la posición actual</string>
     <string name="gps_activado">GPS Activado</string>
     <string name="gps_desactivado">GPS Desactivado. Para el correcto funcionamiento actívelo en la configuración de Ubicación</string>
     <string name="ir_posicion_actual">Ir a la posición actual</string>
