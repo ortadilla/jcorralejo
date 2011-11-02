@@ -48,8 +48,6 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 				}
 			}
 		);
-		// Registramos la imagen para definir su menú contextual
-		registerForContextMenu(imagenLugar);
 		
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
