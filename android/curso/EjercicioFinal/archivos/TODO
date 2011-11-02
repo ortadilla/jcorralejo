@@ -3,9 +3,9 @@
 · Estilo: Blanco y azul
 · Al pulsar "volver" al editar un lugar no va a los detalles
 · Traducir al inglés y al alemán
-· Si estamos viendo la ubicación de un lugar no poder añadir el lugar actual
 · Poner etiqueta a "Nombre" y "Descripcion" al añadir un lugar 
 · Si da tiempo implementar el BallonOverlay
+· Si da tiempo al agregar un lugar y seleccionar el nombre o el lugar, que se seleccione todo
 · Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
 
 https://github.com/jgilfelt/android-mapviewballoons
