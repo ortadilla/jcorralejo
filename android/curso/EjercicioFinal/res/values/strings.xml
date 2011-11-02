@@ -17,8 +17,9 @@
     <string name="gps_activado">GPS on</string>
     <string name="gps_desactivado"> GPS is switched off. You can turn it on in Location Settings</string>
     <string name="ir_posicion_actual">Go to the current location</string>
-    <string name="key_maps">0ufFbB49KCKs9JxSWbdq1VwTbbR6oa7Duy_INnw</string> 
+    <string name="key_mapsY">0ufFbB49KCKs9JxSWbdq1VwTbbR6oa7Duy_INnw</string> <!-- Depuración casa -->
     <string name="key_mapsX">0ufFbB49KCKsZJDWV9G79FWjfNd2mOq1j47MJyA</string> <!-- Depuración trabajo -->
+    <string name="key_maps">0ufFbB49KCKsP1cB6dJXferKaYyqgnQULn7rDrw</string> <!-- Depuración buena -->
     <string name="lista">List</string>
     <string name="lugar">Place</string>
     <string name="mapa">Map</string>

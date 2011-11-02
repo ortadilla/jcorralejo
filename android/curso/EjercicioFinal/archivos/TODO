@@ -2,9 +2,8 @@
 · Al pulsar "volver" al editar un lugar no va a los detalles
 
 · Imágenes para dispositivos con distintas resoluciones --> sacar imágenes de -hdpi
-· Icono de la aplicación
+· No se ve el mapa en otros móviles
 · Si da tiempo implementar el BallonOverlay
-· Si da tiempo al agregar un lugar y seleccionar el nombre o el lugar, que se seleccione todo
 · Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
 
 https://github.com/jgilfelt/android-mapviewballoons
