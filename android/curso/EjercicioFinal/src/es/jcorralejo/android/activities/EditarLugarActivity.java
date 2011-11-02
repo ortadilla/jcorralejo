@@ -32,7 +32,7 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 	
 	@Override
 	protected int getLayout() {
-		return R.layout.editar_lugar2;
+		return R.layout.editar_lugar;
 	}
 
 	@Override

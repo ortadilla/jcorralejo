@@ -20,7 +20,7 @@ public class LugarActivity extends LugarAbstractActivity {
 	
 	@Override
 	protected int getLayout() {
-		return R.layout.lugar2;
+		return R.layout.lugar;
 	}
 	
 	@Override
