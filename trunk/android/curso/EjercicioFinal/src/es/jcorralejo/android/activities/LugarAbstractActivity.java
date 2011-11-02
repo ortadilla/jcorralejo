@@ -10,10 +10,13 @@ import android.app.Dialog;
 import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -110,12 +113,11 @@ public abstract class LugarAbstractActivity extends Activity{
 	
 	protected void setImagen(Uri uriImagen){
 		if(uriImagen!=null){
-			//Si la imagen es mayor al tamaño de la pantalla, la ajustamos al 80% de esta
-			imagenLugar.setImageURI(uriImagen);
-//			imagenLugar.setMaxHeight((int) (getApplicationContext().getResources().getDisplayMetrics().heightPixels * Constantes.COEFICIENTE_REDUCCION_IMAGEN));
-//			imagenLugar.setMaxWidth((int)(getApplicationContext().getResources().getDisplayMetrics().widthPixels * Constantes.COEFICIENTE_REDUCCION_IMAGEN));
+			long imgID = Long.parseLong(uriImagen.getLastPathSegment());
+			Bitmap bitmap = MediaStore.Images.Thumbnails.getThumbnail(getContentResolver(), imgID, MediaStore.Images.Thumbnails.MINI_KIND, null);
 			imagenLugar.setAdjustViewBounds(true);
 			imagenLugar.setScaleType(ScaleType.CENTER_INSIDE);
+			imagenLugar.setImageBitmap(bitmap);
 		}
 	}
 	
