@@ -112,8 +112,8 @@ public abstract class LugarAbstractActivity extends Activity{
 		if(uriImagen!=null){
 			//Si la imagen es mayor al tamaño de la pantalla, la ajustamos al 80% de esta
 			imagenLugar.setImageURI(uriImagen);
-			imagenLugar.setMaxHeight((int) (getApplicationContext().getResources().getDisplayMetrics().heightPixels * Constantes.COEFICIENTE_REDUCCION_IMAGEN));
-			imagenLugar.setMaxWidth((int)(getApplicationContext().getResources().getDisplayMetrics().widthPixels * Constantes.COEFICIENTE_REDUCCION_IMAGEN));
+//			imagenLugar.setMaxHeight((int) (getApplicationContext().getResources().getDisplayMetrics().heightPixels * Constantes.COEFICIENTE_REDUCCION_IMAGEN));
+//			imagenLugar.setMaxWidth((int)(getApplicationContext().getResources().getDisplayMetrics().widthPixels * Constantes.COEFICIENTE_REDUCCION_IMAGEN));
 			imagenLugar.setAdjustViewBounds(true);
 			imagenLugar.setScaleType(ScaleType.CENTER_INSIDE);
 		}
