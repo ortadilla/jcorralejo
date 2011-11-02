@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
@@ -230,7 +231,8 @@ public class MapaLugaresActivity extends MapActivity {
 			//Si aun no tenemos posición actual guardada, la guardamos ahora
 			if(mListener!=null && mListener.getPuntoActual()==null)
 				mListener.onLocationChanged(loc);
-		}
+		}else
+			Toast.makeText(getBaseContext(), R.string.error_aniadir_posicion_actual, Toast.LENGTH_LONG).show();
 		
 		return geoPoint;
 	}
@@ -280,14 +282,22 @@ public class MapaLugaresActivity extends MapActivity {
 				return true;
 			// Al pulsar sobre "Añadir posición actual" navegamos a la creación de un nuevo lugar con las coordenadas actuales
 			case R.id.mapaAiniadirPosicionActual:
-				GeoPoint punto = moverMapaAPosicionActual();
-        		float[] coordenada = new float[2];
-        		coordenada[0] = (float) (punto.getLatitudeE6() / 1E6);
-        		coordenada[1] = (float)(punto.getLongitudeE6() / 1E6); 
-				Intent i = new Intent();
-				i.setClass(getApplicationContext(), EditarLugarActivity.class);
-				i.putExtra(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
-				startActivity(i);
+				if(detallesLugar || editarCoordenadas){
+					Toast.makeText(getBaseContext(), detallesLugar 
+												   ? R.string.control_agregar_lugar_actual_detalles 
+												   : R.string.control_agregar_lugar_actual_coordenadas, Toast.LENGTH_LONG).show();
+				}else{
+					GeoPoint punto = moverMapaAPosicionActual();
+					if(punto!=null){
+						float[] coordenada = new float[2];
+						coordenada[0] = (float) (punto.getLatitudeE6() / 1E6);
+						coordenada[1] = (float)(punto.getLongitudeE6() / 1E6); 
+						Intent i = new Intent();
+						i.setClass(getApplicationContext(), EditarLugarActivity.class);
+						i.putExtra(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
+						startActivity(i);
+					}
+				}
 				return true;
 			// Al pulsar sobre "Modo Satélite" lo activamos
 			case R.id.mapaVistaSatelite:
