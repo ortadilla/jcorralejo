@@ -116,11 +116,11 @@ public class MapaLugaresActivity extends MapActivity {
 	            		return true;
 	            	// Si pulsamos un lugar mostramos sus detalles
 	            	}else{
-	            		Intent i = new Intent();
-	            		i.setClass(getApplicationContext(), LugarActivity.class);
-	            		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, itemizedOverlay.getLugarPulsado().getIdLugar());
-	            		startActivity(i);
-	            		itemizedOverlay.setLugarPulsado(null);
+//	            		Intent i = new Intent();
+//	            		i.setClass(getApplicationContext(), LugarActivity.class);
+//	            		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, itemizedOverlay.getLugarPulsado().getIdLugar());
+//	            		startActivity(i);
+//	            		itemizedOverlay.setLugarPulsado(null);
 	            	}
 	            }
 			}
@@ -192,7 +192,7 @@ public class MapaLugaresActivity extends MapActivity {
 		
 		// Añadimos el/los punto/s en el mapa, aunque antes eliminamos todas las capas del mapa para limpiarlo
 		Drawable chincheta = this.getResources().getDrawable(R.drawable.chincheta);
-		itemizedOverlay = new ItemizedOverlayLugar(this, chincheta);
+		itemizedOverlay = new ItemizedOverlayLugar(this, chincheta, mapa);
 		mapOverlays.remove(itemizedOverlay);
 		
 		while(cursor.moveToNext() && !editarCoordenadas) {
