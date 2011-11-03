@@ -340,6 +340,8 @@ public class MapaLugaresActivity extends MapActivity {
 		if(descripcion!=null){
 			if(descripcion.length()>Constantes.NUM_CARACTERES_RESUMEN_DESCRIPCION)
 				resumen = descripcion.substring(0, Constantes.NUM_CARACTERES_RESUMEN_DESCRIPCION)+"...";
+			else
+				resumen = descripcion;
 		}
 		return resumen;
 	}
