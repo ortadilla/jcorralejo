@@ -3,6 +3,8 @@
 
 · Imágenes para dispositivos con distintas resoluciones --> sacar imágenes de -hdpi
 · No se ve el mapa en otros móviles
+· En la lista sólo poner un resumen de la descripción
+· Color azul de "no hay elementos..."
 · Si da tiempo implementar el BallonOverlay
 · Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
 
