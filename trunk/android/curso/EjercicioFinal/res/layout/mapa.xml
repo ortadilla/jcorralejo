@@ -9,5 +9,5 @@
         android:layout_height="fill_parent"
         android:clickable="true"
         android:enabled="true"
-        android:apiKey="0ufFbB49KCKs9JxSWbdq1VwTbbR6oa7Duy_INnw"/>
+        android:apiKey="@string/key_maps"/>
 </FrameLayout>
