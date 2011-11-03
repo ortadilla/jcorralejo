@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.utils.Constantes;
 
@@ -86,7 +87,7 @@ public class PrincipalActivity extends Activity {
 				return true;
 			// Al pulsar sobre "Configuración" navegamos a la actividad ConfiguracionActivity
 			case R.id.menuConfiguracion:
-				//TODO
+				Toast.makeText(this, R.string.opcion_configuracion, Toast.LENGTH_LONG).show();
 				return true;
 			// Al pulsar sobre "Acerca de" levantamos el popUp con la información sobre la aplicación
 			case R.id.menuAcercaDe:

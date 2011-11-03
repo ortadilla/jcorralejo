@@ -4,7 +4,6 @@
 
 · Imágenes para dispositivos con distintas resoluciones --> sacar imágenes de -hdpi
 · Si da tiempo implementar el BallonOverlay
-· Eliminar la opción de menú "Configuración"
 · Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
 
 https://github.com/jgilfelt/android-mapviewballoons
