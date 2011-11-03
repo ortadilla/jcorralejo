@@ -1,11 +1,10 @@
 · Al modificar titulo o descripción, si navegamos a la galería y volvemos (no aceptamos) perdemos los cambios
 · Al pulsar "volver" al editar un lugar no va a los detalles
+· En la lista sólo poner un resumen de la descripción
 
 · Imágenes para dispositivos con distintas resoluciones --> sacar imágenes de -hdpi
-· No se ve el mapa en otros móviles
-· En la lista sólo poner un resumen de la descripción
-· Color azul de "no hay elementos..."
 · Si da tiempo implementar el BallonOverlay
+· Eliminar la opción de menú "Configuración"
 · Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
 
 https://github.com/jgilfelt/android-mapviewballoons

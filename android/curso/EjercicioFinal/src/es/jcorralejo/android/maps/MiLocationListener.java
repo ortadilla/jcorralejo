@@ -10,7 +10,6 @@ import android.location.LocationListener;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 
@@ -20,13 +19,11 @@ import es.jcorralejo.android.utils.Constantes;
 public class MiLocationListener implements LocationListener {
 	
 	private Context context;
-	private MapController mapController;
 	private MapView mapa;
 	private ItemizedOverlayLugar puntoActual;
 	
-	public MiLocationListener(Context context, MapController mapController, MapView mapa){
+	public MiLocationListener(Context context, MapView mapa){
 		this.context = context;
-		this.mapController = mapController;
 		this.mapa = mapa;
 	}
 	
@@ -36,8 +33,8 @@ public class MiLocationListener implements LocationListener {
         Drawable chincheta = mapa.getResources().getDrawable(R.drawable.ic_gps_actual);
         List<Overlay> mapOverlays = mapa.getOverlays();
         mapOverlays.remove(puntoActual);
-        puntoActual = new ItemizedOverlayLugar(context, chincheta, mapa);
-        puntoActual.add(location.getLatitude(), location.getLongitude(), null, Constantes.NINGUN_LUGAR);
+        puntoActual = new ItemizedOverlayLugar(context, chincheta, true);
+        puntoActual.add(location.getLatitude(), location.getLongitude(), null, null, Constantes.NINGUN_LUGAR);
         mapOverlays.add(puntoActual);  
 	}
 	

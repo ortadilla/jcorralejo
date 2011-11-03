@@ -92,5 +92,10 @@ public class Constantes {
 	 */
 	public static final String EDITAR_COORDENADA_LUGAR = "EDITAR_COORDENADA_LUGAR";
 	
+	/**
+	 * Constante para indicar los caracteres a mostrar en el resumen de la descripción de un Lugar
+	 */
+	public static final int NUM_CARACTERES_RESUMEN_DESCRIPCION = 40;
+	
 	
 }

@@ -15,11 +15,21 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.FrameLayout.LayoutParams;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
@@ -34,6 +44,7 @@ import es.jcorralejo.android.bd.LugaresDB.Lugar;
 import es.jcorralejo.android.bd.LugaresProvider;
 import es.jcorralejo.android.maps.ItemizedOverlayLugar;
 import es.jcorralejo.android.maps.MiLocationListener;
+import es.jcorralejo.android.maps.OverlayItemLugar;
 import es.jcorralejo.android.utils.Constantes;
 
 public class MapaLugaresActivity extends MapActivity {
@@ -44,6 +55,14 @@ public class MapaLugaresActivity extends MapActivity {
 	private ItemizedOverlayLugar itemizedOverlay;
 	private LocationManager lm;
 	private MiLocationListener mListener;
+	
+	// Views para manejar el popUp con los datos de los Lugares pulsados
+	private FrameLayout popUp;
+	private LinearLayout contenidoPopUp;
+	private LinearLayout textoPopUp;
+	private TextView nombreLugar;
+	private TextView descripcionLugar;
+	private ImageView cerrarPopUp;
 	
 	boolean detallesLugar;
 	boolean editarCoordenadas;
@@ -57,8 +76,6 @@ public class MapaLugaresActivity extends MapActivity {
 		setTitle(R.string.nombre_lugares);
 		
 		mapa = (MapView) findViewById(R.id.mapview);
-//		mapa.displayZoomControls(true);
-//		mapa.setBuiltInZoomControls(true);
 		mapa.setSatellite(true);
 		mapController = mapa.getController();
 		mapController.setZoom(14);
@@ -66,11 +83,68 @@ public class MapaLugaresActivity extends MapActivity {
 		
 		//Añadimos el manejador del GPS
 		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		mListener = new MiLocationListener(this, mapController, mapa);
-		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 10, mListener);
+		mListener = new MiLocationListener(this, mapa);
+		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 3, mListener);
 		
 		// Comprobamos si está activo el GPS y centramos el mapa en las coordenadas actuales del dispositivo
 		moverMapaAPosicionActual();
+		
+		//"Inflamos" el contenido del popUp y obtenemos sus elementos
+		LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		contenidoPopUp = (LinearLayout) inflater.inflate(R.layout.balloon_overlay, contenidoPopUp);
+		contenidoPopUp.setVisibility(LinearLayout.VISIBLE);
+		textoPopUp = (LinearLayout) contenidoPopUp.findViewById(R.id.balloon_inner_layout);
+		textoPopUp.setOnTouchListener(createTextoPopUpListener());
+		nombreLugar = (TextView) contenidoPopUp.findViewById(R.id.balloon_item_title);
+		descripcionLugar = (TextView) contenidoPopUp.findViewById(R.id.balloon_item_snippet);
+		cerrarPopUp = (ImageView) contenidoPopUp.findViewById(R.id.close_img_button);
+		cerrarPopUp.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				contenidoPopUp.setVisibility(LinearLayout.GONE);
+				itemizedOverlay.setLugarPulsado(null);
+			}
+		});
+
+		//Creamos un FrameLayout que contenga el popUp
+		FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		params.gravity = Gravity.NO_GRAVITY;
+		popUp = new FrameLayout(this);
+		popUp.setPadding(0, 0, 10, 0);
+		popUp.addView(contenidoPopUp, params);
+		mapa.addView(popUp);
+	}
+	
+	private OnTouchListener createTextoPopUpListener() {
+		return new OnTouchListener() {
+			public boolean onTouch(View v, MotionEvent event) {
+				View l =  ((View) v.getParent()).findViewById(R.id.balloon_main_layout);
+				Drawable d = l.getBackground();
+				//Manejamos las pulsaciones para modificar el estado del fondo, y así ver dos imágenes distintas
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					int[] states = {android.R.attr.state_pressed};
+					if (d.setState(states)) {
+						d.invalidateSelf();
+					}
+					return true;
+				} else if (event.getAction() == MotionEvent.ACTION_UP) {
+					int newStates[] = {};
+					if (d.setState(newStates)) {
+						d.invalidateSelf();
+					}
+					
+            		Intent i = new Intent();
+            		i.setClass(getApplicationContext(), LugarActivity.class);
+            		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, itemizedOverlay.getLugarPulsado().getIdLugar());
+            		startActivity(i);
+            		itemizedOverlay.setLugarPulsado(null);
+            		contenidoPopUp.setVisibility(LinearLayout.GONE);
+
+					return true;
+				} else {
+					return false;
+				}
+			}
+		};
 	}
 	
 	
@@ -92,40 +166,83 @@ public class MapaLugaresActivity extends MapActivity {
 	            if (mismoLugar(x, y)) {
 	            	//Si no pulsamos un lugar ya definido levantamos el popUp con las opciones sobre el mapa
 	            	if(itemizedOverlay.getLugarPulsado()==null){
-	            		Projection proj = mapa.getProjection();
-		    			GeoPoint punto = proj.fromPixels(x, y); 
-	            		float[] coordenada = new float[2];
-	            		coordenada[0] = (float) (punto.getLatitudeE6() / 1E6);
-	            		coordenada[1] = (float)(punto.getLongitudeE6() / 1E6); 
-
-	            		Bundle args = new Bundle();
-	            		args.putFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
-	            		
-	            		//Si estamos editando las coordenadas de un lugar volvemos con el nuevo punto
-	            		if(editarCoordenadas){
-	            			Intent i = new Intent();
-							i.setClass(getApplicationContext(), EditarLugarActivity.class);
-							i.putExtra(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
-							i.putExtra(Constantes.EDITAR_COORDENADA_LUGAR, editarCoordenadas);
-							setResult(RESULT_OK, i);
-							finish();
-						//Si no, mostramos el popUp con todoas las opciones
-	            		}else
-	            			showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
-	            		
+	            		levantarPopUpAgregar(x, y);
 	            		return true;
-	            	// Si pulsamos un lugar mostramos sus detalles
+	            	// Si pulsamos un lugar mostramos el marco con sus detalles
 	            	}else{
-//	            		Intent i = new Intent();
-//	            		i.setClass(getApplicationContext(), LugarActivity.class);
-//	            		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, itemizedOverlay.getLugarPulsado().getIdLugar());
-//	            		startActivity(i);
-//	            		itemizedOverlay.setLugarPulsado(null);
+	            		crearCuadroResumen(itemizedOverlay.getLugarPulsado());
+	        			mapController.animateTo(itemizedOverlay.getLugarPulsado().getPoint());
 	            	}
 	            }
 			}
 		}
 		return result;
+	}
+
+	/**
+	 * Levanta el popUp con las opciones para agregar un nuevo lugar, o devuelve las coordenadas
+	 * en caso de estar editando la posición de un lugar ya existente
+	 * @param x Posición X pulsada
+	 * @param y Posición Y pulsada
+	 */
+	private void levantarPopUpAgregar(int x, int y){
+		Projection proj = mapa.getProjection();
+		GeoPoint punto = proj.fromPixels(x, y); 
+		float[] coordenada = new float[2];
+		coordenada[0] = (float) (punto.getLatitudeE6() / 1E6);
+		coordenada[1] = (float)(punto.getLongitudeE6() / 1E6); 
+
+		Bundle args = new Bundle();
+		args.putFloatArray(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
+		
+		//Si estamos editando las coordenadas de un lugar volvemos con el nuevo punto
+		if(editarCoordenadas){
+			Intent i = new Intent();
+			i.setClass(getApplicationContext(), EditarLugarActivity.class);
+			i.putExtra(Constantes.PARAMETRO_PUNTO_MAPA_SELECCIONADO, coordenada);
+			i.putExtra(Constantes.EDITAR_COORDENADA_LUGAR, editarCoordenadas);
+			setResult(RESULT_OK, i);
+			finish();
+		//Si no, mostramos el popUp con todoas las opciones
+		}else
+			showDialog(Constantes.DIALOG_OPCIONES_MAPA, args);
+	}
+	
+	/**
+	 * Crear el cuadro resumen con el lugar indicado
+	 * @param lugarPulsado
+	 */
+	private void crearCuadroResumen(OverlayItemLugar lugarPulsado){
+		popUp.setVisibility(View.GONE);
+		GeoPoint point = lugarPulsado.getPoint();
+		MapView.LayoutParams params = new MapView.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, point, MapView.LayoutParams.BOTTOM_CENTER);
+		params.mode = MapView.LayoutParams.MODE_MAP;
+		popUp.setLayoutParams(params);
+		popUp.setVisibility(View.VISIBLE);
+
+		rellenarDatosPopUp(lugarPulsado);
+	}
+	
+	/**
+	 * Rellena los datos a mostrar en el cuadro resumen
+	 * @param lugarPulsado
+	 */
+	private void rellenarDatosPopUp(OverlayItemLugar lugarPulsado){
+		if (lugarPulsado != null){
+			contenidoPopUp.setVisibility(LinearLayout.VISIBLE);
+			if (lugarPulsado.getTitle() != null) {
+				nombreLugar.setVisibility(LinearLayout.VISIBLE);
+				nombreLugar.setText(lugarPulsado.getTitle());
+			} else {
+				nombreLugar.setVisibility(TextView.GONE);
+			}
+			if (lugarPulsado.getSnippet() != null) {
+				descripcionLugar.setVisibility(TextView.VISIBLE);
+				descripcionLugar.setText(lugarPulsado.getSnippet());
+			} else {
+				descripcionLugar.setVisibility(TextView.GONE);
+			}
+		}
 	}
 	
 	private boolean mismoLugar(int x, int y){
@@ -192,16 +309,17 @@ public class MapaLugaresActivity extends MapActivity {
 		
 		// Añadimos el/los punto/s en el mapa, aunque antes eliminamos todas las capas del mapa para limpiarlo
 		Drawable chincheta = this.getResources().getDrawable(R.drawable.chincheta);
-		itemizedOverlay = new ItemizedOverlayLugar(this, chincheta, mapa);
+		itemizedOverlay = new ItemizedOverlayLugar(this, chincheta, false);
 		mapOverlays.remove(itemizedOverlay);
 		
 		while(cursor.moveToNext() && !editarCoordenadas) {
 			long id = cursor.getLong(0);
 			String nombre = cursor.getString(1);
+			String descripcion = cursor.getString(2);
 			float latitud = cursor.getFloat(4);
 			float longitud = cursor.getFloat(5);
 
-			itemizedOverlay.add(latitud, longitud, nombre, id);
+			itemizedOverlay.add(latitud, longitud, nombre, getResumenDescripcionLugar(descripcion), id);
 		}
 		
 		if(itemizedOverlay.size()>0){
@@ -215,6 +333,15 @@ public class MapaLugaresActivity extends MapActivity {
 			}
 		}
 		
+	}
+	
+	private String getResumenDescripcionLugar(String descripcion){
+		String resumen = "";
+		if(descripcion!=null){
+			if(descripcion.length()>Constantes.NUM_CARACTERES_RESUMEN_DESCRIPCION)
+				resumen = descripcion.substring(0, Constantes.NUM_CARACTERES_RESUMEN_DESCRIPCION)+"...";
+		}
+		return resumen;
 	}
 	
 	private GeoPoint moverMapaAPosicionActual(){
