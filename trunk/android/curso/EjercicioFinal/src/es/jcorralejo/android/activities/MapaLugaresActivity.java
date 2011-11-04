@@ -99,10 +99,10 @@ public class MapaLugaresActivity extends MapActivity {
 		LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		contenidoPopUp = (LinearLayout) inflater.inflate(R.layout.pop_up_lugar, contenidoPopUp);
 		contenidoPopUp.setVisibility(LinearLayout.VISIBLE);
-		textoPopUp = (LinearLayout) contenidoPopUp.findViewById(R.id.balloon_inner_layout);
+		textoPopUp = (LinearLayout) contenidoPopUp.findViewById(R.id.pop_up_lugar_inner_layout);
 		textoPopUp.setOnTouchListener(crearTextoPopUpListener());
-		nombreLugar = (TextView) contenidoPopUp.findViewById(R.id.balloon_item_title);
-		descripcionLugar = (TextView) contenidoPopUp.findViewById(R.id.balloon_item_snippet);
+		nombreLugar = (TextView) contenidoPopUp.findViewById(R.id.pop_up_lugar_titulo);
+		descripcionLugar = (TextView) contenidoPopUp.findViewById(R.id.pop_up_lugar_desc);
 		cerrarPopUp = (ImageView) contenidoPopUp.findViewById(R.id.close_img_button);
 		cerrarPopUp.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -123,7 +123,7 @@ public class MapaLugaresActivity extends MapActivity {
 	private OnTouchListener crearTextoPopUpListener() {
 		return new OnTouchListener() {
 			public boolean onTouch(View v, MotionEvent event) {
-				View l =  ((View) v.getParent()).findViewById(R.id.balloon_main_layout);
+				View l =  ((View) v.getParent()).findViewById(R.id.pop_up_lugar_layout);
 				Drawable d = l.getBackground();
 				//Manejamos las pulsaciones para modificar el estado del fondo, y así ver dos imágenes distintas
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {

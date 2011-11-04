@@ -6,7 +6,7 @@
 	android:paddingBottom="35dip"
 	android:paddingLeft="10dip" 
 	android:minWidth="200dip" 
-	android:id="@+id/balloon_main_layout"
+	android:id="@+id/pop_up_lugar_layout"
 	android:background="@drawable/pop_up_lugar_bg_selector" 
 	android:paddingTop="0dip"
 	android:paddingRight="0dip">
@@ -17,16 +17,16 @@
 		android:orientation="vertical" 
 		android:layout_weight="1"
 		android:paddingTop="10dip" 
-		android:id="@+id/balloon_inner_layout">
+		android:id="@+id/pop_up_lugar_inner_layout">
 		<TextView android:layout_height="wrap_content"
 			android:layout_width="fill_parent" 
-			android:id="@+id/balloon_item_title"
+			android:id="@+id/pop_up_lugar_titulo"
 			android:text="balloon_item_title" 
 			android:textSize="16dip"
 			android:textColor="#FF000000" />
 		<TextView android:layout_height="wrap_content"
 			android:layout_width="fill_parent" 
-			android:id="@+id/balloon_item_snippet"
+			android:id="@+id/pop_up_lugar_desc"
 			android:text="balloon_item_snippet" 
 			android:textSize="12dip"/>
 	</LinearLayout>
