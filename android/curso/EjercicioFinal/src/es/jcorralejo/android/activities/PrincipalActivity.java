@@ -60,10 +60,6 @@ public class PrincipalActivity extends Activity {
 		startActivity(intent);
 	}
 	
-	
-	/**
-	 * "Inflamos" las opciones de menú de la pantalla principal 
-	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater menuInflater = getMenuInflater();
@@ -71,9 +67,6 @@ public class PrincipalActivity extends Activity {
 		return true;
 	}
 
-	/**
-	 * Definimos las acciones correspondientes con cada opción de menú
-	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {

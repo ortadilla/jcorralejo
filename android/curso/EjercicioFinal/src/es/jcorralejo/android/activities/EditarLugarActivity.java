@@ -19,6 +19,7 @@ import es.jcorralejo.android.utils.Constantes;
 
 public class EditarLugarActivity extends LugarAbstractActivity{
 
+	/** Uri de la imaegn seleccionada de la galería */
 	private Uri uriNuevaImagen;
 	
 	/** Indica si estamos agregando un luegar nuevo o editando uno existente */
@@ -138,6 +139,10 @@ public class EditarLugarActivity extends LugarAbstractActivity{
 		}
 	}
 	
+	/**
+	 * Comprueba que el nombre y la descripción estén rellenos
+	 * @return
+	 */
 	private boolean nombreYDescripcionIncorrectos(){
 		String msgAgregarDescripcion = getResources().getString(R.string.msg_agregar_descripcion);
 		String msgAgregarNombre = getResources().getString(R.string.msg_agregar_nombre);

@@ -64,10 +64,15 @@ public class MapaLugaresActivity extends MapActivity {
 	private TextView descripcionLugar;
 	private ImageView cerrarPopUp;
 	
+	/** Indica si estamos viendo la posición de un luigar concreto */
 	boolean detallesLugar;
+	/** Indica si se ha pulsado en el popUp que se levanta al seleccionar un lugar */
 	boolean popUpPulsado;
+	/** Indica si estamos editando las coordenadas de un lugar */
 	boolean editarCoordenadas;
+	/** Indica se debe hacer zoom al máximo */
 	boolean hacerZoom;
+	/** Indica la posición de la pantalla pulsada por el usuario */
 	int xDown, yDown;
 
 	@Override
@@ -95,7 +100,7 @@ public class MapaLugaresActivity extends MapActivity {
 		contenidoPopUp = (LinearLayout) inflater.inflate(R.layout.balloon_overlay, contenidoPopUp);
 		contenidoPopUp.setVisibility(LinearLayout.VISIBLE);
 		textoPopUp = (LinearLayout) contenidoPopUp.findViewById(R.id.balloon_inner_layout);
-		textoPopUp.setOnTouchListener(createTextoPopUpListener());
+		textoPopUp.setOnTouchListener(crearTextoPopUpListener());
 		nombreLugar = (TextView) contenidoPopUp.findViewById(R.id.balloon_item_title);
 		descripcionLugar = (TextView) contenidoPopUp.findViewById(R.id.balloon_item_snippet);
 		cerrarPopUp = (ImageView) contenidoPopUp.findViewById(R.id.close_img_button);
@@ -115,7 +120,7 @@ public class MapaLugaresActivity extends MapActivity {
 		mapa.addView(popUp);
 	}
 	
-	private OnTouchListener createTextoPopUpListener() {
+	private OnTouchListener crearTextoPopUpListener() {
 		return new OnTouchListener() {
 			public boolean onTouch(View v, MotionEvent event) {
 				View l =  ((View) v.getParent()).findViewById(R.id.balloon_main_layout);
@@ -133,6 +138,7 @@ public class MapaLugaresActivity extends MapActivity {
 						d.invalidateSelf();
 					}
 					
+					// Navegamos a ver los detalles del lugar
             		Intent i = new Intent();
             		i.setClass(getApplicationContext(), LugarActivity.class);
             		i.putExtra(Constantes.PARAMETRO_ID_LUGAR, itemizedOverlay.getLugarPulsado().getIdLugar());
@@ -148,7 +154,6 @@ public class MapaLugaresActivity extends MapActivity {
 			}
 		};
 	}
-	
 	
 	
 	@Override
@@ -250,6 +255,12 @@ public class MapaLugaresActivity extends MapActivity {
 		}
 	}
 	
+	/**
+	 * Comprueba si la posición indicada es la misma que la guardada
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	private boolean mismoLugar(int x, int y){
 		return (x>=xDown-5 && x<=xDown+5) && (y>=yDown-5 && y<=yDown+5); 
 	}
@@ -340,6 +351,11 @@ public class MapaLugaresActivity extends MapActivity {
 		
 	}
 	
+	/**
+	 * Devuelve un resumen de la descripción indicada
+	 * @param descripcion
+	 * @return
+	 */
 	private String getResumenDescripcionLugar(String descripcion){
 		String resumen = "";
 		if(descripcion!=null){
@@ -351,6 +367,10 @@ public class MapaLugaresActivity extends MapActivity {
 		return resumen;
 	}
 	
+	/**
+	 * Mueve el mapa a la última posición conocida
+	 * @return
+	 */
 	private GeoPoint moverMapaAPosicionActual(){
 		GeoPoint geoPoint = null;
 		//Comprobamos si tenemos localización por GPS...
