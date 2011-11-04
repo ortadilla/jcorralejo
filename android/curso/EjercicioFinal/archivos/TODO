@@ -2,8 +2,10 @@
 · Al pulsar "volver" al editar un lugar no va a los detalles
 · En la lista sólo poner un resumen de la descripción
 
+· Renombrar imágenes y cosas para que tengan sentido
+· Eliminar la carpeta "Archivos"
+· Hacer el manual
 · Imágenes para dispositivos con distintas resoluciones --> sacar imágenes de -hdpi
-· Si da tiempo implementar el BallonOverlay
 · Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
 
 https://github.com/jgilfelt/android-mapviewballoons
