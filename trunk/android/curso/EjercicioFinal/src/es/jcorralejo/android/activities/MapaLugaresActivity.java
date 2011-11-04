@@ -97,7 +97,7 @@ public class MapaLugaresActivity extends MapActivity {
 		
 		//"Inflamos" el contenido del popUp y obtenemos sus elementos
 		LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		contenidoPopUp = (LinearLayout) inflater.inflate(R.layout.balloon_overlay, contenidoPopUp);
+		contenidoPopUp = (LinearLayout) inflater.inflate(R.layout.pop_up_lugar, contenidoPopUp);
 		contenidoPopUp.setVisibility(LinearLayout.VISIBLE);
 		textoPopUp = (LinearLayout) contenidoPopUp.findViewById(R.id.balloon_inner_layout);
 		textoPopUp.setOnTouchListener(crearTextoPopUpListener());
