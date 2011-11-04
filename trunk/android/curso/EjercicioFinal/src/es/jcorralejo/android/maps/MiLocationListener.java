@@ -20,6 +20,7 @@ public class MiLocationListener implements LocationListener {
 	
 	private Context context;
 	private MapView mapa;
+	/** Indica el lugar actual del GPS*/
 	private ItemizedOverlayLugar puntoActual;
 	
 	public MiLocationListener(Context context, MapView mapa){
@@ -32,7 +33,9 @@ public class MiLocationListener implements LocationListener {
 		mapa.invalidate();
         Drawable chincheta = mapa.getResources().getDrawable(R.drawable.ic_gps_actual);
         List<Overlay> mapOverlays = mapa.getOverlays();
+        //Eliminamos el punto anterior..
         mapOverlays.remove(puntoActual);
+        //..y añadimos el nuevo
         puntoActual = new ItemizedOverlayLugar(context, chincheta, true);
         puntoActual.add(location.getLatitude(), location.getLongitude(), null, null, Constantes.NINGUN_LUGAR);
         mapOverlays.add(puntoActual);  
@@ -40,6 +43,7 @@ public class MiLocationListener implements LocationListener {
 	
 	@Override
 	public void onProviderDisabled(String provider) {
+		//Informamos al usuario y lo llevamos a las opciones de Ubicación...
 		Toast.makeText(context, context.getString(R.string.gps_desactivado), Toast.LENGTH_LONG).show();
 		Intent intent = new Intent( android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 		context.startActivity(intent);

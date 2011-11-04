@@ -15,6 +15,7 @@ public class ItemizedOverlayLugar extends ItemizedOverlay<OverlayItemLugar> {
 	
 	/** Indica si este ItemizedOverlay indica la posición que marca el GPS*/
 	private boolean posicionGPS = false;
+	/** Indica el lugar que se ha pulsado*/
 	private OverlayItemLugar lugarPulsado = null;
 	
 	public ItemizedOverlayLugar(Context context, Drawable defaultMarker, boolean posicionGPS) {
@@ -22,6 +23,14 @@ public class ItemizedOverlayLugar extends ItemizedOverlay<OverlayItemLugar> {
 		this.context = context;
 	}
 	
+	/**
+	 * Añade un nuevo Item con los datos indicados
+	 * @param lat
+	 * @param lon
+	 * @param etiqueta
+	 * @param descripcion
+	 * @param idLugar
+	 */
 	public void add(double lat, double lon, String etiqueta, String descripcion, long idLugar) {
 		int lt = (int) (lat * 1E6);
 		int ln = (int) (lon * 1E6);
