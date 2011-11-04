@@ -56,7 +56,6 @@ public class ListaLugaresActivity extends ListActivity{
 		Cursor cursor = managedQuery(uri, columnas, null, null, Lugar.NOMBRE); //Ordeamos por Nombre
 		// Queremos enterarnos si cambian los datos para recargar el cursor
 		cursor.setNotificationUri(getContentResolver(), uri);
-		
 		// Para que la actividad se encarge de manejar el cursor según sus ciclos de vida
 		startManagingCursor(cursor);
 		
@@ -70,9 +69,6 @@ public class ListaLugaresActivity extends ListActivity{
 	}
 	
 	
-	/**
-	 * "Inflamos" las opciones de menú de la pantalla de lista de lugares 
-	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater menuInflater = getMenuInflater();
@@ -80,9 +76,6 @@ public class ListaLugaresActivity extends ListActivity{
 		return true;
 	}
 
-	/**
-	 * Definimos las acciones correspondientes con cada opción de menú
-	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {

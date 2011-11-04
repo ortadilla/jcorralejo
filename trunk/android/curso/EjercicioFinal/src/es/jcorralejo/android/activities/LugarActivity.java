@@ -42,9 +42,6 @@ public class LugarActivity extends LugarAbstractActivity {
 		);
 	}
 	
-	/**
-	 * "Inflamos" las opciones de menú de la pantalla de datos de un lugar 
-	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater menuInflater = getMenuInflater();
@@ -52,9 +49,6 @@ public class LugarActivity extends LugarAbstractActivity {
 		return true;
 	}
 
-	/**
-	 * Definimos las acciones correspondientes con cada opción de menú
-	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {

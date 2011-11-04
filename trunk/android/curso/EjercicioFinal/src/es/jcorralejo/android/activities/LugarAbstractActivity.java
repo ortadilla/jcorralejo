@@ -75,10 +75,7 @@ public abstract class LugarAbstractActivity extends Activity{
 					Uri uri = Uri.parse(LugaresProvider.CONTENT_URI+"/lugar");
 					uri = ContentUris.withAppendedId(uri, idLugar);
 					Cursor cursor = managedQuery(uri, columnas, null, null, null);
-					// Queremos enterarnos si cambian los datos para recargar
 					cursor.setNotificationUri(getContentResolver(), uri);
-
-					// Para que la actividad se encarge de manejar el cursor según sus ciclos de vida
 					startManagingCursor(cursor);
 
 					// Tomamos los datos del Lugar
@@ -96,6 +93,14 @@ public abstract class LugarAbstractActivity extends Activity{
 		}
 	}
 	
+	/**
+	 * Rellena los campos con lo datos del lugar a mostrar
+	 * @param nombre
+	 * @param descripcion
+	 * @param imagen
+	 * @param latitud
+	 * @param longitud
+	 */
 	private void rellenarDatosLugar(String nombre, String descripcion, String imagen, float latitud, float longitud){
 		if(nombre!=null)
 			nombreLugar.setText(nombre);
@@ -110,6 +115,10 @@ public abstract class LugarAbstractActivity extends Activity{
 		traducirCoordenadas(coordenada);
 	}
 	
+	/**
+	 * Rellena el campo imagenLugar con la imagen identificada por el uri pasado por parémtros
+	 * @param uriImagen
+	 */
 	protected void setImagen(Uri uriImagen){
 		if(uriImagen!=null){
 			long imgID = Long.parseLong(uriImagen.getLastPathSegment());
@@ -153,6 +162,10 @@ public abstract class LugarAbstractActivity extends Activity{
 		}
 	}
 	
+	/**
+	 * Intentar traducir a un idioma comprensible las coordenadas pasadas por parámetros
+	 * @param coordenada
+	 */
 	protected void traducirCoordenadas(float[] coordenada){
 		try {
 			Geocoder gc = new Geocoder(this, Locale.getDefault());
