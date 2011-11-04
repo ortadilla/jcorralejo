@@ -2,13 +2,7 @@
 · Al pulsar "volver" al editar un lugar no va a los detalles
 · En la lista sólo poner un resumen de la descripción
 
-· Eliminar la carpeta "Archivos"
 · Hacer el manual
-· Imágenes para dispositivos con distintas resoluciones --> sacar imágenes de -hdpi
-· Sacar cosas comunes a un helper: intent, geo traducir, navegar, etc.
-
-https://github.com/jgilfelt/android-mapviewballoons
-
 
 MEJORAS:
 · Buscar en el mapa escribiendo un lugar
@@ -16,3 +10,7 @@ MEJORAS:
 · Posibilidad de añadir más notas
 · Posibilidad de guardar fecha de cada cambio
 · Posibilidad de enviar ubicaciones y fichas de Lugares
+· Filtros
+· Tablets
+· Al agregar, seleccionar el texto
+· Mostrar distancia a los lugares
