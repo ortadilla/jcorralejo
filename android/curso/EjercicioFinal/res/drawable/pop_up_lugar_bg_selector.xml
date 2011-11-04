@@ -2,8 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
      android:state_pressed="true"
-     android:drawable="@drawable/balloon_overlay_focused" />
+     android:drawable="@drawable/pop_up_lugar_focused" />
     <item
      android:state_pressed="false"
-     android:drawable="@drawable/balloon_overlay_unfocused" />
+     android:drawable="@drawable/pop_up_lugar_unfocused" />
 </selector>
