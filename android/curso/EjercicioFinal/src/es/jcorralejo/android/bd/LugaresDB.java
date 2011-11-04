@@ -2,11 +2,6 @@ package es.jcorralejo.android.bd;
 
 import android.provider.BaseColumns;
 
-/**
- * Abstrae los nombres de las tablas y sus campos para poder acceder de forma rápida y sencilla
- * 
- * @author ortadilla
- */
 public class LugaresDB {
 	
 	// Nombre de la base de datos
