@@ -17,9 +17,9 @@
     <string name="gps_activado">GPS Activado</string>
     <string name="gps_desactivado">GPS Desactivado. Para el correcto funcionamiento actívelo en la configuración de Ubicación</string>
     <string name="ir_posicion_actual">Ir a la posición actual</string>
-    <string name="key_maps">0ufFbB49KCKs9JxSWbdq1VwTbbR6oa7Duy_INnw</string> <!-- Depuración casa -->
-    <string name="key_mapsX">0ufFbB49KCKtdqiY0UZEtvPL7kkLWgMFSr8kRYg</string> <!-- trabajo -->
-    <string name="key_mapsY">0ufFbB49KCKsP1cB6dJXferKaYyqgnQULn7rDrw</string> <!-- Depuración buena -->
+    <string name="key_mapsX">0ufFbB49KCKs9JxSWbdq1VwTbbR6oa7Duy_INnw</string> <!-- Depuración casa -->
+    <string name="key_mapsY">0ufFbB49KCKtdqiY0UZEtvPL7kkLWgMFSr8kRYg</string> <!-- trabajo -->
+    <string name="key_maps">0ufFbB49KCKsP1cB6dJXferKaYyqgnQULn7rDrw</string> <!-- Depuración buena -->
     <string name="lista">Lista</string>
     <string name="lugar">Lugar</string>
     <string name="mapa">Mapa</string>
@@ -36,7 +36,6 @@
     <string name="no_hay_lugares">Aun no existen lugares definidos</string>
     <string name="nombre_lugares">Lugares</string>
     <string name="opciones">Opciones</string>
-    <string name="opcion_configuracion">Las configuración será añadida en la siguiente versión</string>
     <string name="salir">Salir</string>
     <string name="si">Sí</string>
     <string name="texto_acerca_de"><b>Curso Android - MisLugares 1.0</b>\n

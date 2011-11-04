@@ -65,8 +65,9 @@ public class MapaLugaresActivity extends MapActivity {
 	private ImageView cerrarPopUp;
 	
 	boolean detallesLugar;
+	boolean popUpPulsado;
 	boolean editarCoordenadas;
-	boolean hacerZoom = false;
+	boolean hacerZoom;
 	int xDown, yDown;
 
 	@Override
@@ -138,6 +139,7 @@ public class MapaLugaresActivity extends MapActivity {
             		startActivity(i);
             		itemizedOverlay.setLugarPulsado(null);
             		contenidoPopUp.setVisibility(LinearLayout.GONE);
+            		popUpPulsado = true;
 
 					return true;
 				} else {
@@ -166,8 +168,11 @@ public class MapaLugaresActivity extends MapActivity {
 	            if (mismoLugar(x, y)) {
 	            	//Si no pulsamos un lugar ya definido levantamos el popUp con las opciones sobre el mapa
 	            	if(itemizedOverlay.getLugarPulsado()==null){
-	            		levantarPopUpAgregar(x, y);
-	            		return true;
+	            		if(!popUpPulsado){
+	            			levantarPopUpAgregar(x, y);
+	            			return true;
+	            		}else
+	            			popUpPulsado = false;
 	            	// Si pulsamos un lugar mostramos el marco con sus detalles
 	            	}else{
 	            		crearCuadroResumen(itemizedOverlay.getLugarPulsado());
