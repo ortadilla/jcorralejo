@@ -1,24 +1,32 @@
 · Por cada pantalla, si no se indica sonido ambiente, habrá una serie de sonidos "por defecto"
   que se irán reproduciendo uno trás o otro
-  
-  
-  
-  
-  
-  
-  
-  ----------------------
- |						|
- |						|
- |	    OBSERVANDO		|
- |						|
- |						|
- |						|
- |						|
- |						|
- |						|
- |						|
- |		 Comenzar		|
- |						|
- |						|
-  ----------------------
+· Ir poniendo mensajes cada cierto tiempo en plan "desepctivo"  
+· La primera vez que se juegue poner una pantalla con la "historia" del juego:
+
+Vaya, veo que tenemos a un nuevo aventurero dispuesto a resolver mis acertijos...pero perdón por mi
+falta de educación, ni me he presentado: soy el Profesor Enigma. 
+
+Como sabrás me encantan los enigmas y misterios, tanto que he dedicado mi vida a diseñar cientos de ellos
+para que ingenuos como tú traten de resolverlos. Me encanta observar cómo la frustración de los aspirantes a
+Sherlok Holmes va haciendo mella hasta que deciden abandonar derrotados.
+
+Pero dime, ¿eres como el resto? No hace falta que respondas, una simple observación me lo dice todo sobre tí,
+y desde aleguas se vé que no eres como el resto...¡eres incluso peor! jajajaja
+
+Para que veas que soy bueno, te propongo una sencilla adivinanza, a la altura de un niño de 5 años. Si
+la resuelves correctamente tendrás la oportunidad de enfretarte a mis retos, si no, deberías pensar en volver
+al colegio, si es que alguna vez estuviste, jajajaja:
+
+"Ni espero ver si lo aciertas, ni espero ver si lo averiguas, ni espero ver si lo resuelves, ni espero ver que me lo digas"
+ 
+- Níspero: Menos mal, ya pensaba que eras incapaz de acertarlo. Te has ganado el acceso a mis retos.
+Pero no seas iluso, no pienses que todos serán así de sencillos, jajajaja
+- Otra cosa: ¿Voy llamando para matricularte en el cole? jajaja. Te daré otra oportunidad, a ver si 
+con una pequeña ayuda eres capaz:
+
+"NÍSPERO ver si lo aciertas, NÍSPERO ver si lo averiguas, NÍSPERO ver si lo resuelves, NÍSPERO que la solución me la digas"
+
+- Níspero: ¡Al parecer tenemos un doctor honoris causa! Te has ganado el acceso a mis retos.
+Pero no seas iluso, no pienses que todos serán así de sencillos, jajajaja
+- Otra cosa: Lo tuyo es digno de estudio, ¡me avegüenzo pensar que somos de la misma especie!. Lo siento, 
+pero no estás a la altura de mis retos. Vuelve cuando estés preparado.
