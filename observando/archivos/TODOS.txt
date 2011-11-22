@@ -1,0 +1,24 @@
+· Por cada pantalla, si no se indica sonido ambiente, habrá una serie de sonidos "por defecto"
+  que se irán reproduciendo uno trás o otro
+  
+  
+  
+  
+  
+  
+  
+  ----------------------
+ |						|
+ |						|
+ |	    OBSERVANDO		|
+ |						|
+ |						|
+ |						|
+ |						|
+ |						|
+ |						|
+ |						|
+ |		 Comenzar		|
+ |						|
+ |						|
+  ----------------------

@@ -1,21 +1,21 @@
 <juego 	titulo="Título del juego" subtitulo="Subtítulo del juego" autor="Jesús Corralejo Banda" url="http://www.google.com/"
-		icono="icon.png" imagen="portada.jpg" descripcion="Breve descripción de la aventura" version="1.0">
+		icono="icon.png" imagen="portada.jpg" descripcion="Breve descripción del juego" version="1.0">
 	<contactos>
 		<contacto type="twitter">http://twitter.com/ortadilla</contacto>
 		<contacto type="email">ortadilla@gmail.com</contacto>
-		<contact type="facebook">http://www.facebook.com/usuario</contact>
+		<contacto type="facebook">http://www.facebook.com/usuario</contacto>
 	</contactos>
 	<pantallas>
-		<pantalla id="1" nombre="Nombre de la pantalla" orden="1" sonido_ambiente="sonido_ambiente.mp3" imagen="imagen_fondo.jpg"
+		<pantalla nombre="Nombre de la pantalla" orden="1" sonido_ambiente="sonido_ambiente.mp3" imagen="imagen_fondo.jpg"
 				  sonido="sonido.mp3" texto="Texto de la pantalla">
 			<pistas>
-				<pista orden="1" texto="Texto de la pista" imagen="pista1.jpg" sonido="pista1.mp3"/>
+				<pista orden="1" texto="Texto de la pista 1" imagen="pista1.jpg" sonido="pista1.mp3"/>
+				<pista orden="2" texto="Texto de la pista 2" imagen="" sonido=""/>
 			</pistas>		
-			<solucion>
-				<posibles_soluciones>
-					<posible_solucion sol="sol" />
-				</posibles_soluciones>
-			</solucion>
+			<soluciones>
+				<solucion sol="solucion 1" />
+				<solucion sol="solucion 2" />
+			</soluciones>
 			<explicacion texto="Texto de la explicación" />
 		</pantalla>
 	</pantallas>
