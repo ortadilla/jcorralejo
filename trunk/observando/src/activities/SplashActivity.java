@@ -2,8 +2,10 @@ package activities;
 
 import es.jcorralejo.android.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -14,6 +16,8 @@ import android.widget.ImageView;
 
 public class SplashActivity extends Activity {
 
+	private final int SPLASH_DISPLAY_LENGTH = 2000;
+	 
 	AnimationSet animationSet;
 	ImageView imagen;
 
@@ -27,7 +31,20 @@ public class SplashActivity extends Activity {
 		imagen = (ImageView) findViewById(R.id.logo);
 		configurarAnimacion();
 		imagen.startAnimation(animationSet);
+		
+		new Handler().postDelayed(new Runnable(){
+	    	public void run(){
+				/*Pasados los dos segundos pasamos a la siguiente actividad */
+	    		Intent intent = new Intent(SplashActivity.this, SplashActivity.class);
+	    		startActivity(intent);
+	    		finish();
+	    	};
+
+	    }, SPLASH_DISPLAY_LENGTH);
 	}
+	
+	
+	
 
 	public void configurarAnimacion(){
 		animationSet = new AnimationSet(true);
