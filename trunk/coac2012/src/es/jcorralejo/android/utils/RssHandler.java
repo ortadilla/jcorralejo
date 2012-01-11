@@ -41,7 +41,6 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String FECHA = "fecha";
 	public static final String PUESTO = "puesto";
 	public static final String NO = "no";
-	public static final String GRUPO = "grupo";
 
 	public static final String TITLE = "title";
 	public static final String LINK = "link";
@@ -133,12 +132,26 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      	} else if(localName.equalsIgnoreCase(PUESTO)) {
      		in_puesto = true;
      		int index = Integer.parseInt(atts.getValue(NO));
-     		int agrupacion = Integer.parseInt(atts.getValue(GRUPO));
-     		agrupacionesDiaActual.add(index, getAgrupacionPorId(agrupacion));
+     		int agrupacion = -1;
+     		try{
+     			agrupacion = Integer.parseInt(atts.getValue(AGRUPACION));
+     		}catch (Exception e) {
+     			agrupacion = Integer.MAX_VALUE;
+     		}
+     		agrupacionesDiaActual.add(getAgrupacionPorId(agrupacion));
      	}
     }
     
+    private Agrupacion crearAgrupacionDescanso(){
+    	Agrupacion descanso = new Agrupacion();
+    	descanso.setId(Integer.MAX_VALUE);
+    	descanso.setNombre("Descanso");
+    	return descanso;
+    }
+    
     private Agrupacion getAgrupacionPorId(int id){
+    	if(Integer.MAX_VALUE==id)
+    		return crearAgrupacionDescanso();
     	for(Agrupacion a : agrupaciones){
     		if(a.getId()==id)
     			return a;
@@ -172,11 +185,11 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      		in_foto = false;
      	} else if(localName.equalsIgnoreCase(DIA)) {
      		in_dia = false;
+     		calendario.get(diaActual).addAll(agrupacionesDiaActual);
      		diaActual = null;
+     		agrupacionesDiaActual.clear();
      	} else if(localName.equalsIgnoreCase(PUESTO)) {
      		in_puesto = false;
-     		calendario.get(diaActual).addAll(agrupacionesDiaActual);
-     		agrupacionesDiaActual.clear();
      	}
     }
     

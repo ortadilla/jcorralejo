@@ -15,7 +15,7 @@ public class CoacApplication extends Application {
 	private Map<String,List<Agrupacion>> modalidades;
 	
 	public String getRssUrl(){
-		return "http://jcorralejo.googlecode.com/svn/trunk/observando/archivos/coac2012.xml";
+		return "http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml";
 	}
 	public List<Agrupacion> getAgrupaciones() {
 		return agrupaciones;
