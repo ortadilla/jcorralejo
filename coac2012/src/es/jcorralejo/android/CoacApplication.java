@@ -14,7 +14,9 @@ public class CoacApplication extends Application {
 	private Map<Date, List<Agrupacion>> calendario;
 	private Map<String,List<Agrupacion>> modalidades;
 	
-	
+	public String getRssUrl(){
+		return "http://jcorralejo.googlecode.com/svn/trunk/observando/archivos/coac2012.xml";
+	}
 	public List<Agrupacion> getAgrupaciones() {
 		return agrupaciones;
 	}
