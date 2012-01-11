@@ -31,7 +31,9 @@ public class SplashActivity extends Activity {
 		imagen = (ImageView) findViewById(R.id.logo);
 		configurarAnimacion();
 		imagen.startAnimation(animationSet);
-		
+		MiAplicacion miAplicacion = (MiAplicacion) getApplication();
+		System.out.println(miAplicacion.getSaludo());
+
 		new Handler().postDelayed(new Runnable(){
 	    	public void run(){
 				/*Pasados los dos segundos pasamos a la siguiente actividad */
