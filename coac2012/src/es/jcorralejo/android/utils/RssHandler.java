@@ -1,5 +1,7 @@
 package es.jcorralejo.android.utils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -120,7 +122,12 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      		if(calendario==null)
      			calendario = new HashMap<Date, List<Agrupacion>>();
      		agrupacionesDiaActual = new ArrayList<Agrupacion>();
-     		diaActual = new Date(Date.parse(atts.getValue(FECHA)));
+     		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
+     		try {
+				diaActual = sdf.parse(atts.getValue(FECHA));
+			} catch (ParseException e) {
+				new RuntimeException("ERROR AL OBTENER EL CALENDARIO");
+			}
      		if(!calendario.containsKey(diaActual))
      			calendario.put(diaActual, new ArrayList<Agrupacion>());
      	} else if(localName.equalsIgnoreCase(PUESTO)) {
