@@ -1,0 +1,48 @@
+<coac2012>
+
+	<agrupaciones>
+		<agrupacion id="1" modalidad="COMPARSA" nombre="Sentimiento caletero" autor="Perico er membri" director="J.A.Frutera"
+		localidad="Cádiz" coac2011="Los currisquillos de Santa María" cabeza_serie="true" 
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Cafe_Teatro_Alameda.php"
+		url_foto="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Imagenes/Cafe_Teatro_Alameda_1.jpg"
+		url_videos="http://www.youtube.com/results?search_query=la+milagrosa+carnaval">
+			<componentes>
+				<componente nombre="Juán Sánchez" voz_instrumento="Guitarra"/>
+				<componente nombre="Pepe Frego" voz_instrumento="Tenor"/>
+			</componentes>
+			<videos>
+				<video url="http://www.youtube.com/watch?v=nNV3wl9gXmE"/>
+			</videos>
+			<fotos>
+				<foto url="http://www.carnavaldecadiz.com/Carnaval00/adultos/imagenes/La%20Milagrosa.jpg"/>
+			</fotos>
+		</agrupacion>
+
+		<agrupacion id="2" modalidad="CHIRIGOTA" nombre="Ajú que frío" autor="Leman" director="Leman"
+		localidad="Barbate" coac2011="" cabeza_serie="false" 
+		url_cc=""
+		url_foto=""
+		url_videos="">
+			<componentes>
+				<componente nombre="Felipe el Hermoso" voz_instrumento="Palillos"/>
+				<componente nombre="Fernando Castro" voz_instrumento="Octavilla"/>
+			</componentes>
+		</agrupacion>
+		
+	</agrupaciones>
+
+	<calendario>
+		<dia fecha="21/02/2012">
+			<puesto no="1" agrupacion="1"/>
+			<puesto no="2" descanso="true" />
+			<puesto no="3" agrupacion="2" />
+		</dia>
+
+		<dia fecha="22/02/2012">
+			<puesto no="1" agrupacion="3"/>
+			<puesto no="2" descanso="true" />
+			<puesto no="3" agrupacion="4" />
+		</dia>
+	</calendario>
+
+</coac2012>
