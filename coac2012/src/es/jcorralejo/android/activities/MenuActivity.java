@@ -117,7 +117,7 @@ public class MenuActivity extends Activity{
 		@Override
 		protected Void doInBackground(Void... params) {
 			CoacApplication app = (CoacApplication) getApplication();
-			RssDownloadHelper.updateRssData(app.getRssUrl(), getContentResolver());
+			RssDownloadHelper.updateRssData(app.getRssUrl(), app.getAgrupaciones(), app.getCalendario(), app.getModalidades());
 			return null;
 		}
 
