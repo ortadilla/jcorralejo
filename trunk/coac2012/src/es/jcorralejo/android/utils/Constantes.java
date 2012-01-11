@@ -1,4 +1,4 @@
-package es.jcorralejo.android;
+package es.jcorralejo.android.utils;
 
 public class Constantes {
 
