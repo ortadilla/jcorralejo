@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, Coac2012Activity!</string>
-    <string name="app_name">Coac2012</string>
+    <string name="acerca_de">Acerca de..</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="app_name">COAC2012</string>
+    <string name="texto_acerca_de"><b>ATENCIÓN: La Aplicación COAC2012 para Android aun se encuentra en fase beta, por lo que seguro que contiene errores. Si encuentra 
+    uno de ellos no dude en contactar con el desarrollador en coac2012android@gmail.com para intentar solucionarlo lo antes posible.</b>
+    \n\n
+    COAC2012 pretende ser el punto de información sobre el COAC2012 para la plataforma móvil Android. Principalmente dispone de información referente a las actuaciones,
+    las agrupaciones, el calendario, enlaces a vídeos, etc.
+    \n\n
+    COAC2012 está desarrollada sin ánimo de lucro por Jesús Corralejo Banda, un apasionado de Carnaval y de las nuevas tecnologías.
+    \n\n
+    Si te gusta la aplicación y te parece útil, puedes invitarme a una cerveza pulsando el icono "donar" que aparece arriba a la derecha
+    </string>
+    <string name="salir">Salir</string>
 </resources>
