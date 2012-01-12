@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
@@ -14,6 +15,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.View.OnClickListener;
+import android.widget.TextView;
 import es.jcorralejo.android.CoacApplication;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.utils.Constantes;
@@ -29,6 +32,41 @@ public class MenuActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.menu);
+		
+		TextView hoy = (TextView) findViewById(R.id.hoy);
+		hoy.setOnClickListener(
+			new OnClickListener() {
+				public void onClick(View v) {
+					//TODO
+				}
+			}
+		);
+		TextView modalidades = (TextView) findViewById(R.id.modalidades);
+		modalidades.setOnClickListener(
+			new OnClickListener() {
+				public void onClick(View v) {
+					Intent intent = new Intent();
+					intent.setClass(getApplicationContext(), ModalidadesActivity.class);
+					startActivity(intent);
+				}
+			}
+		);
+		TextView calendario = (TextView) findViewById(R.id.calendario);
+		calendario.setOnClickListener(
+			new OnClickListener() {
+				public void onClick(View v) {
+					//TODO
+				}
+			}
+		);
+		TextView masCarnaval = (TextView) findViewById(R.id.masCarnaval);
+		masCarnaval.setOnClickListener(
+			new OnClickListener() {
+				public void onClick(View v) {
+					//TODO
+				}
+			}
+		);
 	}
 	
 	@Override
