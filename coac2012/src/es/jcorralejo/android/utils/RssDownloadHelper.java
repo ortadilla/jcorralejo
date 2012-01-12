@@ -19,25 +19,22 @@ public class RssDownloadHelper {
 		try {
 			URL url = new URL(rssUrl);
 
-			// Obtenemos el SAXParser
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 			SAXParser saxParser = spf.newSAXParser();
-			
-			// Creamos el Handler
 			RssHandler rssHandler = new RssHandler(agrupaciones, calendario, modalidades);
-			
-			// Definimos el manejador léxico
 			saxParser.setProperty("http://xml.org/sax/properties/lexical-handler", rssHandler);
-			
-			// Obtenemos el Reader
 			XMLReader xr = saxParser.getXMLReader();			
 			xr.setContentHandler(rssHandler);
 			
-			// Parseamos el contenido
 			InputSource is = new InputSource(url.openStream());
 			is.setEncoding("utf-8");
+			
+			//Una vez obtenido el archivo y antes de parsear, limpiamos las variables
+			agrupaciones.clear();
+			calendario.clear();
+			modalidades.clear();
+			
 			xr.parse(is);
-			// El parseo ha concluido
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
