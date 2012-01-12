@@ -88,6 +88,16 @@ public class MenuActivity extends Activity{
 											}
 									  	  });
 				return builder.create();
+
+			case Constantes.DIALOG_ACERCA_DE:
+				LayoutInflater li = LayoutInflater.from(this);
+				View view = li.inflate(R.layout.acercade, null);
+				builder.setIcon(R.drawable.icon)
+				       .setTitle(getString(R.string.app_name))
+				       .setPositiveButton("Ok", null)
+				       .setView(view);
+				return builder.create();
+
 			default:
 				return null;
 		}
@@ -140,23 +150,6 @@ public class MenuActivity extends Activity{
 				return super.onOptionsItemSelected(item);
 		}
 	}
-	
-	@Override
-	protected Dialog onCreateDialog(int id) {
-		switch (id) {
-			case Constantes.DIALOG_ACERCA_DE:
-				LayoutInflater li = LayoutInflater.from(this);
-				View view = li.inflate(R.layout.acercade, null);
-				final AlertDialog.Builder builder = new AlertDialog.Builder(this).setIcon(R.drawable.icon)
-																			     .setTitle(getString(R.string.app_name))
-																			     .setPositiveButton("Ok", null)
-																			     .setView(view);
-				return builder.create();
-			default:
-				return null;
-		}
-	}
-	
 	
 	class ActualizarPostAsyncTask extends AsyncTask<Void, Void, Void> {
 		private ProgressDialog pd;
