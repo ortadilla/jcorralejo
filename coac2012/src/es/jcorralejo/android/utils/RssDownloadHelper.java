@@ -32,7 +32,10 @@ public class RssDownloadHelper {
 			//Una vez obtenido el archivo y antes de parsear, limpiamos las variables
 			agrupaciones.clear();
 			calendario.clear();
-			modalidades.clear();
+			modalidades.get(Constantes.MODALIDAD_CHIRIGOTA).clear();
+			modalidades.get(Constantes.MODALIDAD_COMPARSA).clear();
+			modalidades.get(Constantes.MODALIDAD_CUARTETO).clear();
+			modalidades.get(Constantes.MODALIDAD_CORO).clear();
 			
 			xr.parse(is);
 		} catch (Exception e) {

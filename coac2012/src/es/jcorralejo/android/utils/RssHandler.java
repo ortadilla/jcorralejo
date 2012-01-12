@@ -168,8 +168,6 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     	if(localName.equalsIgnoreCase(AGRUPACION)) {
     		in_agrupacion = false;
     		agrupaciones.add(agrupacionActual);
-    		if(!modalidades.containsKey(agrupacionActual.getModalidad()))
-    			modalidades.put(agrupacionActual.getModalidad(), new ArrayList<Agrupacion>());
     		modalidades.get(agrupacionActual.getModalidad()).add(agrupacionActual);
     		agrupacionActual = null;
     	} else if(localName.equalsIgnoreCase(COMPONENTE)) {
