@@ -7,7 +7,7 @@
 		url_foto="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Imagenes/Cafe_Teatro_Alameda_1.jpg"
 		url_videos="http://www.youtube.com/results?search_query=la+milagrosa+carnaval">
 			<componentes>
-				<componente nombre="Ju�n S�nchez" voz="Guitarra"/>
+				<componente nombre="Juán Sánchez" voz="Guitarra"/>
 				<componente nombre="Pepe Frego" voz="Tenor"/>
 			</componentes>
 			<videos>
@@ -18,7 +18,7 @@
 			</fotos>
 		</agrupacion>
 
-		<agrupacion id="2" modalidad="CHIRIGOTA" nombre="Ajú que frío" autor="Leman" director="Leman"
+		<agrupacion id="2" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
 		localidad="Barbate" coac2011="" cabeza_serie="false" 
 		url_cc=""
 		url_foto=""
