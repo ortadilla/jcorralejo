@@ -17,7 +17,7 @@
 	<TextView android:id="@android:id/empty" 
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:textColor="#0101DF"
+		android:textColor="#6b6b6b"
 		android:text="No se han encontrado Agrupaciones"
 		android:gravity="center_vertical|center_horizontal" />
 </LinearLayout>

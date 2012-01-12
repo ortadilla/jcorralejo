@@ -52,18 +52,20 @@ public class AgrupacionesActivity extends ListActivity{
 					row = convertView;
 				}
 		 
-				TextView nombre = (TextView) row.findViewById(R.id.agrNombre);
 				Agrupacion item = getItem(position);
+				TextView nombre = (TextView) row.findViewById(R.id.agrNombre);
 				nombre.setText(item.getNombre());
 				ImageView fav = (ImageView) row.findViewById(R.id.agrFav);
 				fav.setImageResource(R.drawable.ic_fav);
+				fav.setVisibility(item.isCabezaSerie() ? View.VISIBLE : View.INVISIBLE);
 				TextView datosExtras = (TextView) row.findViewById(R.id.agrDatosExtras);
 				datosExtras.setText(item.getNombre());
 				TextView coac2011 = (TextView) row.findViewById(R.id.agrCOAC2011);
-				coac2011.setText("COAC2011: "+item.getCoac2011());
+				coac2011.setText("COAC2011: "+item.getCoac2011()!=null && !item.getCoac2011().equals("") ? item.getCoac2011() : "No partició");
 		 
 				return row;
 			}
+			
 		});
 	}
 	

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import es.jcorralejo.android.entidades.Agrupacion;
+import es.jcorralejo.android.utils.Constantes;
 
 import android.app.Application;
 
@@ -15,6 +16,19 @@ public class CoacApplication extends Application {
 	private List<Agrupacion> agrupaciones = new ArrayList<Agrupacion>();
 	private Map<Date, List<Agrupacion>> calendario = new HashMap<Date, List<Agrupacion>>();
 	private Map<String,List<Agrupacion>> modalidades = new HashMap<String, List<Agrupacion>>();
+	
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		
+		agrupaciones = new ArrayList<Agrupacion>();
+		calendario = new HashMap<Date, List<Agrupacion>>();
+		modalidades = new HashMap<String, List<Agrupacion>>();
+		modalidades.put(Constantes.MODALIDAD_CHIRIGOTA, new ArrayList<Agrupacion>());
+		modalidades.put(Constantes.MODALIDAD_COMPARSA, new ArrayList<Agrupacion>());
+		modalidades.put(Constantes.MODALIDAD_CORO, new ArrayList<Agrupacion>());
+		modalidades.put(Constantes.MODALIDAD_CUARTETO, new ArrayList<Agrupacion>());
+	}
 	
 	public String getRssUrl(){
 		return "http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml";
