@@ -21,7 +21,7 @@ import es.jcorralejo.android.utils.RssDownloadHelper;
 
 public class MenuActivity extends Activity{
 	
-	private static final long FRECUENCIA_ACTUALIZACION = 0; // recarga cada día: 60*60*1000*24
+	private static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*24; // recarga cada día: 
 	private ActualizarPostAsyncTask tarea;
 	
 	@Override
@@ -121,18 +121,29 @@ public class MenuActivity extends Activity{
 			Editor editor = prefs.edit();
 			editor.putLong("ultima_actualizacion", System.currentTimeMillis());
 			editor.commit();
-			pd.dismiss();
+			ocultarPD();
 		}
 		
 		@Override
 		protected void onCancelled() {
-			pd.dismiss();
+			ocultarPD();
 			SharedPreferences prefs = getPreferences(MODE_PRIVATE);
 			Editor editor = prefs.edit();
 			editor.putLong("ultima_actualizacion", 0);
 			editor.commit();
 
 			super.onCancelled();
+		}
+		
+		private void ocultarPD(){
+			if(pd.isShowing()){
+				try{
+					pd.dismiss();
+					pd = null;
+				}catch (Exception e) {
+				}
+			}
+
 		}
 	}
 
