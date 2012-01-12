@@ -13,8 +13,6 @@ import org.xml.sax.XMLReader;
 
 import es.jcorralejo.android.entidades.Agrupacion;
 
-import android.content.ContentResolver;
-
 public class RssDownloadHelper {
 
 	public static void updateRssData(String rssUrl, List<Agrupacion> agrupaciones, Map<Date, List<Agrupacion>> calendario, Map<String,List<Agrupacion>> modalidades) {

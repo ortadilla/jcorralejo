@@ -19,6 +19,9 @@ import es.jcorralejo.android.entidades.Componente;
 
 public class RssHandler extends DefaultHandler implements LexicalHandler {
 	
+	public static final String COAC2012 = "coac2012";
+	public static final String AGRUPACIONES = "agrupaciones";
+	public static final String CALENDARIO = "calendario";
 	public static final String AGRUPACION = "agrupacion";
 	public static final String ID = "id";
 	public static final String MODALIDAD = "modalidad";
@@ -138,7 +141,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      			agrupacion = Integer.MAX_VALUE;
      		}
      		agrupacionesDiaActual.add(getAgrupacionPorId(agrupacion));
-     	}
+     	} 
     }
     
     private Agrupacion crearAgrupacionDescanso(){
@@ -202,27 +205,20 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 
 
 
-	@Override
 	public void endCDATA() throws SAXException {
 //		in_CDATA = false;
 	}
-	@Override
 	public void startCDATA() throws SAXException {
 //		in_CDATA = true;
 	}
 
-	@Override
 	public void comment(char[] ch, int start, int length) throws SAXException {}
 
-	@Override
 	public void endDTD() throws SAXException {}
 
-	@Override
 	public void endEntity(String name) throws SAXException {}
 
-	@Override
 	public void startDTD(String name, String publicId, String systemId) throws SAXException {}
 
-	@Override
 	public void startEntity(String name) throws SAXException {}
 }

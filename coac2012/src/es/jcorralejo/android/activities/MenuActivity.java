@@ -3,6 +3,7 @@ package es.jcorralejo.android.activities;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
@@ -12,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import es.jcorralejo.android.CoacApplication;
 import es.jcorralejo.android.R;
@@ -48,9 +48,9 @@ public class MenuActivity extends Activity{
 	private void cargarDatos(boolean ignorarTiempoEspera){
 		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
 		long ultima = prefs.getLong("ultima_actualizacion", 0);
-
 		if (ignorarTiempoEspera || (System.currentTimeMillis() - ultima) > FRECUENCIA_ACTUALIZACION) {
-			tarea = new ActualizarPostAsyncTask();
+			final ProgressDialog pd = ProgressDialog.show(this,"Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
+			tarea = new ActualizarPostAsyncTask(pd);
 			tarea.execute();
 		}
 	}
@@ -96,21 +96,15 @@ public class MenuActivity extends Activity{
 	}
 	
 	
-	public void setBarraProgresoVisible(boolean visible) {
-		final Window window = getWindow();
-		if (visible) {
-			window.setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
-			window.setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_INDETERMINATE_ON);
-		} else {
-			window.setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_OFF);
-		}
-	}
-	
-	
 	class ActualizarPostAsyncTask extends AsyncTask<Void, Void, Void> {
+		private ProgressDialog pd;
+		
+		public ActualizarPostAsyncTask(ProgressDialog pd) {
+			this.pd = pd;
+		}
+		
 		@Override
 		protected void onPreExecute() {
-			setBarraProgresoVisible(true);
 			super.onPreExecute();
 		}
 
@@ -127,12 +121,12 @@ public class MenuActivity extends Activity{
 			Editor editor = prefs.edit();
 			editor.putLong("ultima_actualizacion", System.currentTimeMillis());
 			editor.commit();
-			setBarraProgresoVisible(false);
+			pd.dismiss();
 		}
 		
 		@Override
 		protected void onCancelled() {
-			setBarraProgresoVisible(false);
+			pd.dismiss();
 			SharedPreferences prefs = getPreferences(MODE_PRIVATE);
 			Editor editor = prefs.edit();
 			editor.putLong("ultima_actualizacion", 0);
@@ -142,5 +136,6 @@ public class MenuActivity extends Activity{
 		}
 	}
 
+	
 
 }
