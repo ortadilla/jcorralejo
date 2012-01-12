@@ -5,6 +5,7 @@
   android:layout_width="match_parent"
   android:background="@drawable/cartel"
   android:layout_height="match_parent">
+  
     <TableLayout android:layout_width="match_parent" android:layout_weight="8" android:layout_height="match_parent" android:id="@+id/tableLayout1" android:layout_gravity="center">
         <TableRow android:layout_weight="1" android:id="@+id/tableRow1" android:layout_width="match_parent" android:layout_height="match_parent" >
         	<TextView android:id="@+id/hoy" android:text="Hoy" 
