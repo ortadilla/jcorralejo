@@ -13,6 +13,7 @@
 				android:layout_width="wrap_content"
 				android:gravity="left" 
 				android:text="Nombre Agrupación"
+				android:textStyle="bold"
 				android:textColor="#6b6b6b"
 				android:textAppearance="?android:attr/textAppearanceMedium" android:layout_height="match_parent"/>
 			<ImageView android:id="@+id/imgCabezaSerie"
