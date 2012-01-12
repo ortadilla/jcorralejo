@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -14,7 +15,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import es.jcorralejo.android.CoacApplication;
@@ -26,11 +26,13 @@ public class MenuActivity extends Activity{
 	
 	private static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*24; // recarga cada día: 
 	private ActualizarPostAsyncTask tarea;
+	private CoacApplication app;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		app = (CoacApplication)getApplication();
+
 		super.onCreate(savedInstanceState);
-		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.menu);
 		
 		TextView hoy = (TextView) findViewById(R.id.hoy);
@@ -45,9 +47,13 @@ public class MenuActivity extends Activity{
 		modalidades.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					Intent intent = new Intent();
-					intent.setClass(getApplicationContext(), ModalidadesActivity.class);
-					startActivity(intent);
+					if(app.getModalidades()!=null && !app.getModalidades().isEmpty()){
+						Intent intent = new Intent();
+						intent.setClass(getApplicationContext(), ModalidadesActivity.class);
+						startActivity(intent);
+					}else{
+						showDialog(Constantes.DIALOG_NO_DATOS);
+					}
 				}
 			}
 		);
@@ -67,6 +73,24 @@ public class MenuActivity extends Activity{
 				}
 			}
 		);
+	}
+	
+	@Override
+	protected Dialog onCreateDialog(int id, Bundle args) {
+		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		switch (id) {
+			case Constantes.DIALOG_NO_DATOS:
+				builder.setMessage("Ha ocurrido un error al procesar los datos del Servidor.\n\nPor favor, vuelva a intentarlo pasados unos minutos. Si persiste el problema contacte con el desarrollador");
+				builder.setPositiveButton("Volver",
+										  new DialogInterface.OnClickListener() {
+											public void onClick(DialogInterface dialog, int which) {
+												cargarDatos(true);
+											}
+									  	  });
+				return builder.create();
+			default:
+				return null;
+		}
 	}
 	
 	@Override
