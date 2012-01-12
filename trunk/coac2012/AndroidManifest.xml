@@ -13,6 +13,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.ModalidadesActivity"></activity>
+        <activity android:name=".activities.AgrupacionesActivity"></activity>
 
     </application>
     

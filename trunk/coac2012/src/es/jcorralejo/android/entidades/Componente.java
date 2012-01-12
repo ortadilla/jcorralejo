@@ -1,7 +1,10 @@
 package es.jcorralejo.android.entidades;
 
-public class Componente {
+import java.io.Serializable;
+
+public class Componente implements Serializable{
 	
+	private static final long serialVersionUID = 2604329865716459603L;
 	private String nombre;
 	private String voz;
 	

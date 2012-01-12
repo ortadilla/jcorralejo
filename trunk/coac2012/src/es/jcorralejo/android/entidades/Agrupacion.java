@@ -1,8 +1,11 @@
 package es.jcorralejo.android.entidades;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Agrupacion {
+public class Agrupacion implements Serializable{
+	
+	private static final long serialVersionUID = -59448126852170073L;
 	
 	private int id;
 	private String modalidad;
