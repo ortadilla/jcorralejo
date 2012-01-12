@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -120,8 +119,6 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      		agrupacionActual.getFotos().add(atts.getValue(URL));
      	} else if(localName.equalsIgnoreCase(DIA)) {
      		in_dia = true;
-     		if(calendario==null)
-     			calendario = new HashMap<Date, List<Agrupacion>>();
      		agrupacionesDiaActual = new ArrayList<Agrupacion>();
      		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
      		try {
@@ -170,11 +167,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     	
     	if(localName.equalsIgnoreCase(AGRUPACION)) {
     		in_agrupacion = false;
-    		if(agrupaciones==null)
-    			agrupaciones = new ArrayList<Agrupacion>();
     		agrupaciones.add(agrupacionActual);
-    		if(modalidades==null)
-    			modalidades = new HashMap<String, List<Agrupacion>>();
     		if(!modalidades.containsKey(agrupacionActual.getModalidad()))
     			modalidades.put(agrupacionActual.getModalidad(), new ArrayList<Agrupacion>());
     		modalidades.get(agrupacionActual.getModalidad()).add(agrupacionActual);
