@@ -1,0 +1,4 @@
+· Añadir "información extra" a cada agrupación, para indicar "Los Carapapas"
+· Si no hay esta información, no mostrar el campo
+· Más resolución a la estrella de faboritos
+· Posibilidad de guardar favoritos
