@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.entidades.Agrupacion;
+import es.jcorralejo.android.entidades.Componente;
 import es.jcorralejo.android.utils.Constantes;
 
 public class AgrupacionActivity extends Activity{
@@ -54,6 +55,19 @@ public class AgrupacionActivity extends Activity{
 					imagen.setImageResource(R.drawable.no_imagen_agrupacion);
 			}else
 				imagen.setImageResource(R.drawable.no_imagen_agrupacion);
+			
+			TextView componentes = (TextView) findViewById(R.id.agrComponentes);
+			if(agrupacion.getComponentes()!=null && !agrupacion.getComponentes().isEmpty()){
+				componentes.setVisibility(View.VISIBLE);
+				String comps = "";
+				for(Componente comp : agrupacion.getComponentes())
+					comps += "\n"+comp.getNombre()+" ("+comp.getVoz()+")";
+				comps = comps.substring(1);
+				componentes.setText(comps);
+			}else{
+				componentes.setVisibility(View.GONE);
+				componentes.setText(null);
+			}
 	
 		}
 	}

@@ -148,6 +148,30 @@
 				android:layout_width="wrap_content" 
 				android:layout_gravity="left"/>
 		</LinearLayout>
+		<LinearLayout  
+			android:orientation="vertical" 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="left">
+			<TextView 
+				android:layout_marginLeft="5dip"
+				android:gravity="left"
+				android:text="Componentes: "
+				android:textStyle="bold"
+				android:textColor="#6b6b6b"
+				android:textAppearance="?android:attr/textAppearanceSmall" 
+				android:layout_height="wrap_content" 
+				android:layout_width="wrap_content"/>
+			<TextView android:id="@+id/agrComponentes"
+				android:layout_marginLeft="15dip"
+				android:gravity="left"
+				android:text="Pepe Rodríguez (Bombo)"
+				android:textColor="#6b6b6b"
+				android:textAppearance="?android:attr/textAppearanceSmall" 
+				android:layout_height="wrap_content" 
+				android:layout_width="wrap_content" 
+				android:layout_gravity="left"/>
+		</LinearLayout>
 	
 	
 </LinearLayout>
