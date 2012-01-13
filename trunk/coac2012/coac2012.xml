@@ -3,6 +3,7 @@
 	<agrupaciones>
 		<agrupacion id="1" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera"
 		localidad="Cádiz" coac2011="Los currisquillos de Santa María" cabeza_serie="true" 
+		info="Comparsa de JC Afrabon Cereza"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Cafe_Teatro_Alameda.php"
 		url_foto="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Imagenes/Cafe_Teatro_Alameda_1.jpg"
 		url_videos="http://www.youtube.com/results?search_query=la+milagrosa+carnaval">
@@ -19,7 +20,7 @@
 		</agrupacion>
 
 		<agrupacion id="2" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
-		localidad="Barbate" coac2011="" cabeza_serie="false" 
+		localidad="Barbate" coac2011="" cabeza_serie="false" info=""
 		url_cc=""
 		url_foto=""
 		url_videos="">
@@ -38,47 +39,7 @@
 				<componente nombre="Fernando Castro" voz_instrumento="Octavilla"/>
 			</componentes>
 		</agrupacion>
-		<agrupacion id="2" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
-		localidad="Barbate" coac2011="" cabeza_serie="false" 
-		url_cc=""
-		url_foto=""
-		url_videos="">
-			<componentes>
-				<componente nombre="Felipe el Hermoso" voz_instrumento="Palillos"/>
-				<componente nombre="Fernando Castro" voz_instrumento="Octavilla"/>
-			</componentes>
-		</agrupacion>
-		<agrupacion id="2" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
-		localidad="Barbate" coac2011="" cabeza_serie="false" 
-		url_cc=""
-		url_foto=""
-		url_videos="">
-			<componentes>
-				<componente nombre="Felipe el Hermoso" voz_instrumento="Palillos"/>
-				<componente nombre="Fernando Castro" voz_instrumento="Octavilla"/>
-			</componentes>
-		</agrupacion>
-		<agrupacion id="2" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
-		localidad="Barbate" coac2011="" cabeza_serie="false" 
-		url_cc=""
-		url_foto=""
-		url_videos="">
-			<componentes>
-				<componente nombre="Felipe el Hermoso" voz_instrumento="Palillos"/>
-				<componente nombre="Fernando Castro" voz_instrumento="Octavilla"/>
-			</componentes>
-		</agrupacion>
-		<agrupacion id="2" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
-		localidad="Barbate" coac2011="" cabeza_serie="false" 
-		url_cc=""
-		url_foto=""
-		url_videos="">
-			<componentes>
-				<componente nombre="Felipe el Hermoso" voz_instrumento="Palillos"/>
-				<componente nombre="Fernando Castro" voz_instrumento="Octavilla"/>
-			</componentes>
-		</agrupacion>
-		
+				
 	</agrupaciones>
 
 	<calendario>
