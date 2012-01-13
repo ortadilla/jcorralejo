@@ -35,8 +35,6 @@
 		url_foto=""
 		url_videos="">
 			<componentes>
-				<componente nombre="Felipe el Hermoso" voz_instrumento="Palillos"/>
-				<componente nombre="Fernando Castro" voz_instrumento="Octavilla"/>
 			</componentes>
 		</agrupacion>
 				
