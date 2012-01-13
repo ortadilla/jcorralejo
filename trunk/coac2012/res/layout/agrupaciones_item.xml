@@ -10,18 +10,26 @@
 			android:layout_height="wrap_content"
 			android:gravity="left">
 			<TextView android:id="@+id/agrNombre"
-				android:layout_width="wrap_content"
 				android:gravity="left" 
 				android:text="Nombre Agrupación"
 				android:textStyle="bold"
 				android:textColor="#6b6b6b"
-				android:textAppearance="?android:attr/textAppearanceMedium" android:layout_height="match_parent"/>
+				android:textAppearance="?android:attr/textAppearanceMedium" 
+				android:layout_height="match_parent" 
+				android:layout_weight="1" 
+				android:layout_width="match_parent"/>
+			<LinearLayout 
+				android:orientation="horizontal" 
+				android:layout_width="match_parent"
+				android:layout_height="match_parent" 
+				android:layout_weight="10">
 			<ImageView android:id="@+id/agrFav"
 				android:layout_width="wrap_content" 
 				android:visibility="visible"
 				android:src="@drawable/ic_fav" 
-				android:layout_gravity="left" 
-				android:layout_height="match_parent"/>
+				android:layout_height="wrap_content" 
+				android:layout_gravity="center_vertical"/>
+			</LinearLayout>
 		</LinearLayout>
 			<TextView android:id="@+id/agrDatosExtras"
 				android:layout_width="fill_parent" 
