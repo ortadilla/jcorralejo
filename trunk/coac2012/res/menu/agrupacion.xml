@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 	<item
 		android:id="@+id/agrFichaCC" 
-		android:title="Ficha carnavalCadiz.com"
+		android:title="Ficha"
 		android:icon="@drawable/ic_menu_archive" />
 	<item
 		android:id="@+id/agrVideos" 
@@ -14,6 +14,6 @@
 		android:icon="@drawable/ic_menu_start_conversation" />
 	<item
 		android:id="@+id/agrFavoritos" 
-		android:title="Agregar/Quitar Favoritos"
+		android:title="+/- Favoritos"
 		android:icon="@drawable/ic_menu_favorite" />
 </menu>
