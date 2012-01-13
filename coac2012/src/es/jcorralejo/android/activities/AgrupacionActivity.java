@@ -5,9 +5,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
@@ -85,5 +90,39 @@ public class AgrupacionActivity extends Activity{
         }
         return loadedImage;
     }
+    
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.agrupacion, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.agrFichaCC:
+				if(agrupacion.getUrl_cc()!=null && !agrupacion.getUrl_cc().equals("")){
+					Intent i = new Intent("android.intent.action.VIEW", Uri.parse(agrupacion.getUrl_cc()));
+					startActivity(i);
+				}else
+					Toast.makeText(getApplicationContext(), "En estos momentos se puede acceder a la Ficha de carnavaldecadiz.com", Toast.LENGTH_LONG).show();
+				return true;
+			case R.id.agrVideos:
+				if(agrupacion.getUrl_videos()!=null && !agrupacion.getUrl_videos().equals("")){
+					Intent i = new Intent("android.intent.action.VIEW", Uri.parse(agrupacion.getUrl_videos()));
+					startActivity(i);
+				}else
+					Toast.makeText(getApplicationContext(), "En estos momentos se puede acceder a los vídeos de la aplicación", Toast.LENGTH_LONG).show();
+				return true;
+			case R.id.agrFavoritos:
+				Toast.makeText(getApplicationContext(), "Utilidad de disponible en esta versión", Toast.LENGTH_LONG).show();
+				return true;
+			case R.id.agrComentarios:
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
 
 }
