@@ -106,17 +106,17 @@ public class AgrupacionActivity extends Activity{
 					Intent i = new Intent("android.intent.action.VIEW", Uri.parse(agrupacion.getUrl_cc()));
 					startActivity(i);
 				}else
-					Toast.makeText(getApplicationContext(), "En estos momentos se puede acceder a la Ficha de carnavaldecadiz.com", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "Agrupación sin Ficha en www.carnavaldecadiz.com", Toast.LENGTH_LONG).show();
 				return true;
 			case R.id.agrVideos:
 				if(agrupacion.getUrl_videos()!=null && !agrupacion.getUrl_videos().equals("")){
 					Intent i = new Intent("android.intent.action.VIEW", Uri.parse(agrupacion.getUrl_videos()));
 					startActivity(i);
 				}else
-					Toast.makeText(getApplicationContext(), "En estos momentos se puede acceder a los vídeos de la aplicación", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "En estos momentos se puede acceder a los vídeos de la Agrupación", Toast.LENGTH_LONG).show();
 				return true;
 			case R.id.agrFavoritos:
-				Toast.makeText(getApplicationContext(), "Utilidad no disponible en esta versión", Toast.LENGTH_LONG).show();
+				Toast.makeText(getApplicationContext(), "Utilidad aun no disponible en esta versión de COAC2012", Toast.LENGTH_LONG).show();
 				return true;
 			case R.id.agrComentarios:
 				return true;

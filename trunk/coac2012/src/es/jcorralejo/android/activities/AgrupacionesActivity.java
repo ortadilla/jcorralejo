@@ -78,7 +78,7 @@ public class AgrupacionesActivity extends ListActivity{
 					datosExtras.setVisibility(View.GONE);
 				}
 				TextView coac2011 = (TextView) row.findViewById(R.id.agrCOAC2011);
-				coac2011.setText("COAC2011: "+item.getCoac2011()!=null && !item.getCoac2011().equals("") ? item.getCoac2011() : "COAC2011: No participó");
+				coac2011.setText("COAC2011: "+(item.getCoac2011()!=null && !item.getCoac2011().equals("") ? item.getCoac2011() : "No participó"));
 		 
 				return row;
 			}
