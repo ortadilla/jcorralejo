@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +33,7 @@ public class AgrupacionesActivity extends ListActivity{
 		miInflater = LayoutInflater.from(this);
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
-			agrupaciones = (List<Agrupacion>) extras.get(Constantes.AGRUPACIONES_MODALIDAD);
+			agrupaciones = (List<Agrupacion>) extras.get(Constantes.PARAMETRO_AGRUPACIONES_MODALIDAD);
 			Collections.sort(agrupaciones, new ComparatorArticulos());
 		}
 		
@@ -84,5 +85,14 @@ public class AgrupacionesActivity extends ListActivity{
 			
 		});
 	}
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		Intent i = new Intent();
+		i.setClass(getApplicationContext(), AgrupacionActivity.class);
+		i.putExtra(Constantes.PARAMETRO_AGRUPACION, (Agrupacion)l.getItemAtPosition(position));
+		startActivity(i);
+	}
+	
 	
 }
