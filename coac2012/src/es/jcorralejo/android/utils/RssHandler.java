@@ -31,6 +31,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String COAC2011 = "coac2011";
 	public static final String CABEZA_SERIE = "cabeza_serie";
 	public static final String URL_CC = "url_cc";
+	public static final String INFO = "info";
 	public static final String URL_FOTO = "url_foto";
 	public static final String URL_VIDEOS = "url_videos";
 	public static final String COMPONENTE = "componente";
@@ -96,6 +97,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     		agrupacionActual.setLocalidad(atts.getValue(LOCALIDAD));
     		agrupacionActual.setCoac2011(atts.getValue(COAC2011));
     		agrupacionActual.setCabezaSerie(Boolean.TRUE.toString().equals(atts.getValue(CABEZA_SERIE)));
+    		agrupacionActual.setInfo(atts.getValue(INFO));
     		agrupacionActual.setUrl_cc(atts.getValue(URL_CC));
     		agrupacionActual.setUrl_foto(atts.getValue(URL_FOTO));
     		agrupacionActual.setUrl_videos(atts.getValue(URL_VIDEOS));

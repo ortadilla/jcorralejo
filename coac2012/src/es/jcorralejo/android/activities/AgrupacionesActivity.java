@@ -57,11 +57,17 @@ public class AgrupacionesActivity extends ListActivity{
 				nombre.setText(item.getNombre());
 				ImageView fav = (ImageView) row.findViewById(R.id.agrFav);
 				fav.setImageResource(R.drawable.ic_fav);
-				fav.setVisibility(item.isCabezaSerie() ? View.VISIBLE : View.INVISIBLE);
+				fav.setVisibility(item.isCabezaSerie() ? View.VISIBLE : View.GONE);
 				TextView datosExtras = (TextView) row.findViewById(R.id.agrDatosExtras);
-				datosExtras.setText(item.getNombre());
+				if(item.getInfo()!=null && !item.getInfo().equals("")){
+					datosExtras.setText(item.getInfo());
+					datosExtras.setVisibility(View.VISIBLE);
+				}else{
+					datosExtras.setText(null);
+					datosExtras.setVisibility(View.GONE);
+				}
 				TextView coac2011 = (TextView) row.findViewById(R.id.agrCOAC2011);
-				coac2011.setText("COAC2011: "+item.getCoac2011()!=null && !item.getCoac2011().equals("") ? item.getCoac2011() : "No partició");
+				coac2011.setText("COAC2011: "+item.getCoac2011()!=null && !item.getCoac2011().equals("") ? item.getCoac2011() : "COAC2011: No partició");
 		 
 				return row;
 			}
