@@ -1,5 +1,3 @@
-· Más resolución a la estrella de favoritos
-· Si el título es muy largo (dos líneas) no aparece la estrella de favoritos
 
 · Orden alfabético en las agrupaciones (posibilidad de ordenar por orden de actuación y por cabezas de serie)
 · Posibilidad de guardar favoritos
