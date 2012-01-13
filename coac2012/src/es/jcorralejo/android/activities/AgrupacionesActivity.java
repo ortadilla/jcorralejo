@@ -1,5 +1,7 @@
 package es.jcorralejo.android.activities;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import android.app.ListActivity;
@@ -29,8 +31,10 @@ public class AgrupacionesActivity extends ListActivity{
 		
 		miInflater = LayoutInflater.from(this);
 		Bundle extras = getIntent().getExtras();
-		if(extras!=null)
+		if(extras!=null){
 			agrupaciones = (List<Agrupacion>) extras.get(Constantes.AGRUPACIONES_MODALIDAD);
+			Collections.sort(agrupaciones, new ComparatorArticulos());
+		}
 		
 		configurarAdapter();
 		
@@ -39,7 +43,13 @@ public class AgrupacionesActivity extends ListActivity{
 		registerForContextMenu(listaAgrupaciones);
 	}
 	
-	
+	private static final class ComparatorArticulos implements Comparator<Agrupacion>{
+    	public int compare(Agrupacion obj1, Agrupacion obj2) {
+    		String nombre1 = ((Agrupacion)obj1).getNombre();
+			String nombre2= ((Agrupacion)obj2).getNombre();
+    		return nombre1.compareTo(nombre2);
+    	}
+    }; 
 	
 	public void configurarAdapter() {
 		setListAdapter(new ArrayAdapter<Agrupacion>(this, R.layout.agrupaciones_item, agrupaciones) {
@@ -67,7 +77,7 @@ public class AgrupacionesActivity extends ListActivity{
 					datosExtras.setVisibility(View.GONE);
 				}
 				TextView coac2011 = (TextView) row.findViewById(R.id.agrCOAC2011);
-				coac2011.setText("COAC2011: "+item.getCoac2011()!=null && !item.getCoac2011().equals("") ? item.getCoac2011() : "COAC2011: No partició");
+				coac2011.setText("COAC2011: "+item.getCoac2011()!=null && !item.getCoac2011().equals("") ? item.getCoac2011() : "COAC2011: No participó");
 		 
 				return row;
 			}
