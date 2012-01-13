@@ -116,7 +116,7 @@ public class AgrupacionActivity extends Activity{
 					Toast.makeText(getApplicationContext(), "En estos momentos se puede acceder a los vídeos de la aplicación", Toast.LENGTH_LONG).show();
 				return true;
 			case R.id.agrFavoritos:
-				Toast.makeText(getApplicationContext(), "Utilidad de disponible en esta versión", Toast.LENGTH_LONG).show();
+				Toast.makeText(getApplicationContext(), "Utilidad no disponible en esta versión", Toast.LENGTH_LONG).show();
 				return true;
 			case R.id.agrComentarios:
 				return true;
