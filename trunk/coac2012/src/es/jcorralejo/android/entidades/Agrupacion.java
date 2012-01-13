@@ -15,6 +15,7 @@ public class Agrupacion implements Serializable{
 	private String localidad;
 	private String coac2011;
 	private boolean cabezaSerie;
+	private String info;
 	private String url_cc;
 	private String url_foto;
 	private String url_videos;
@@ -105,6 +106,12 @@ public class Agrupacion implements Serializable{
 	}
 	public void setComponentes(List<Componente> componentes) {
 		this.componentes = componentes;
+	}
+	public String getInfo() {
+		return info;
+	}
+	public void setInfo(String info) {
+		this.info = info;
 	}
 
 }
