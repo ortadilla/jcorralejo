@@ -17,6 +17,7 @@
         <activity android:name=".activities.ModalidadesActivity"></activity>
         <activity android:name=".activities.AgrupacionesActivity"></activity>
         <activity android:name=".activities.AgrupacionActivity"></activity>
+        <activity android:name=".activities.VideosActivity"></activity>
 
     </application>
     

@@ -1,6 +1,9 @@
 package es.jcorralejo.android.entidades;
 
-public class Video {
+import java.io.Serializable;
+
+public class Video implements Serializable{
+	private static final long serialVersionUID = -8533270663571629186L;
 	private String descripcion;
 	private String url;
 	
