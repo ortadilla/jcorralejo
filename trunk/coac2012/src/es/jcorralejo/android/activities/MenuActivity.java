@@ -1,6 +1,8 @@
 package es.jcorralejo.android.activities;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
@@ -46,13 +48,8 @@ public class MenuActivity extends Activity{
 		hoy.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-//					SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
-//		     		try {
-//						diaActual = sdf.parse(atts.getValue(FECHA));
-//					} catch (ParseException e) {
-//						new RuntimeException("ERROR AL OBTENER EL CALENDARIO");
-//					}
-					String dia = "21/02/2012";
+					SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
+					String dia = sdf.format(new Date());
 					List<Agrupacion> agrupaciones = app.getCalendario().get(dia);
 					if(agrupaciones!=null && !agrupaciones.isEmpty()){
 						Intent intent = new Intent();
