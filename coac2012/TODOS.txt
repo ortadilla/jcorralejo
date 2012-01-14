@@ -1,1 +1,3 @@
-· "Conocida como" en la ficha, eliminar la información extra de "agruaciones"
+· Añadir "Conocida como" en el orden
+· Usar los iconos por defecto: android.R.drawable.ic_menu_agenda 
+· 
