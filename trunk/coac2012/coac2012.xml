@@ -12,10 +12,10 @@
 				<componente nombre="Pepe Frego" voz="Tenor"/>
 			</componentes>
 			<videos>
-				<video url="http://www.youtube.com/watch?v=nNV3wl9gXmE"/>
+				<video descripcion="Preeliminar" url="http://www.youtube.com/watch?v=nNV3wl9gXmE"/>
 			</videos>
 			<fotos>
-				<foto url="http://www.carnavaldecadiz.com/Carnaval00/adultos/imagenes/La%20Milagrosa.jpg"/>
+				<foto descripcion="General" url="http://www.carnavaldecadiz.com/Carnaval00/adultos/imagenes/La%20Milagrosa.jpg"/>
 			</fotos>
 		</agrupacion>
 

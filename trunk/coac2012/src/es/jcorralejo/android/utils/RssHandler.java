@@ -15,6 +15,8 @@ import org.xml.sax.helpers.DefaultHandler;
 import android.content.ContentValues;
 import es.jcorralejo.android.entidades.Agrupacion;
 import es.jcorralejo.android.entidades.Componente;
+import es.jcorralejo.android.entidades.Foto;
+import es.jcorralejo.android.entidades.Video;
 
 public class RssHandler extends DefaultHandler implements LexicalHandler {
 	
@@ -43,6 +45,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String FECHA = "fecha";
 	public static final String PUESTO = "puesto";
 	public static final String NO = "no";
+	public static final String DESCRIPCION = "descripcion";
 
 	public static final String TITLE = "title";
 	public static final String LINK = "link";
@@ -112,13 +115,13 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     	} else if(localName.equalsIgnoreCase(VIDEO)) {
     		in_video = true;
     		if(agrupacionActual.getVideos()==null)
-    			agrupacionActual.setVideos(new ArrayList<String>());
-    		agrupacionActual.getVideos().add(atts.getValue(URL));
+    			agrupacionActual.setVideos(new ArrayList<Video>());
+    		agrupacionActual.getVideos().add(new Video(atts.getValue(DESCRIPCION), atts.getValue(URL)));
     	} else if(localName.equalsIgnoreCase(FOTO)) {
      		in_foto = true;
      		if(agrupacionActual.getFotos()==null)
-     			agrupacionActual.setFotos(new ArrayList<String>());
-     		agrupacionActual.getFotos().add(atts.getValue(URL));
+     			agrupacionActual.setFotos(new ArrayList<Foto>());
+     		agrupacionActual.getFotos().add(new Foto(atts.getValue(DESCRIPCION), atts.getValue(URL)));
      	} else if(localName.equalsIgnoreCase(DIA)) {
      		in_dia = true;
      		agrupacionesDiaActual = new ArrayList<Agrupacion>();
