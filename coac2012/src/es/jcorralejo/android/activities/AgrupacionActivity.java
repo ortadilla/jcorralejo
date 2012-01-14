@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.entidades.Agrupacion;
+import es.jcorralejo.android.entidades.Comentario;
 import es.jcorralejo.android.entidades.Componente;
 import es.jcorralejo.android.entidades.Video;
 import es.jcorralejo.android.utils.Constantes;
@@ -163,6 +164,14 @@ public class AgrupacionActivity extends Activity{
 				Toast.makeText(getApplicationContext(), "Utilidad aun no disponible en esta versión de COAC2012", Toast.LENGTH_LONG).show();
 				return true;
 			case R.id.agrComentarios:
+				if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
+					Intent i = new Intent();
+					i.setClass(getApplicationContext(), ComentariosActivity.class);
+					i.putExtra(Constantes.PARAMETRO_COMENTARIOS, (ArrayList<Comentario>)agrupacion.getComentarios());
+					startActivity(i);
+				}else{
+					Toast.makeText(getApplicationContext(), "No se han encontrado comentarios de la Agrupación", Toast.LENGTH_LONG).show();
+				}
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
