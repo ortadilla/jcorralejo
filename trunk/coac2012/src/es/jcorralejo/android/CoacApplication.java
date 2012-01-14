@@ -1,15 +1,13 @@
 package es.jcorralejo.android;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.app.Application;
 import es.jcorralejo.android.entidades.Agrupacion;
 import es.jcorralejo.android.utils.Constantes;
-
-import android.app.Application;
 
 public class CoacApplication extends Application {
 	
@@ -17,6 +15,7 @@ public class CoacApplication extends Application {
 	private Map<String, List<Agrupacion>> calendario = new HashMap<String, List<Agrupacion>>();
 	private Map<String,List<Agrupacion>> modalidades = new HashMap<String, List<Agrupacion>>();
 	private List<Integer> favoritas = new ArrayList<Integer>();
+	private Map<String, List<String>> concurso = new HashMap<String, List<String>>();
 	
 	@Override
 	public void onCreate() {
@@ -29,6 +28,43 @@ public class CoacApplication extends Application {
 		modalidades.put(Constantes.MODALIDAD_COMPARSA, new ArrayList<Agrupacion>());
 		modalidades.put(Constantes.MODALIDAD_CORO, new ArrayList<Agrupacion>());
 		modalidades.put(Constantes.MODALIDAD_CUARTETO, new ArrayList<Agrupacion>());
+		
+		List<String> preeliminares = new ArrayList<String>();
+		preeliminares.add("21/01/21012");
+		preeliminares.add("22/01/21012");
+		preeliminares.add("23/01/21012");
+		preeliminares.add("24/01/21012");
+		preeliminares.add("25/01/21012");
+		preeliminares.add("26/01/21012");
+		preeliminares.add("27/01/21012");
+		preeliminares.add("28/01/21012");
+		preeliminares.add("29/01/21012");
+		preeliminares.add("30/01/21012");
+		preeliminares.add("31/01/21012");
+		preeliminares.add("01/02/21012");
+		preeliminares.add("02/02/21012");
+		preeliminares.add("03/02/21012");
+		preeliminares.add("04/02/21012");
+		concurso.put(Constantes.FASE_PREELIMINAR, preeliminares);
+
+		List<String> cuartos = new ArrayList<String>();
+		cuartos.add("06/02/21012");
+		cuartos.add("07/02/21012");
+		cuartos.add("08/02/21012");
+		cuartos.add("09/02/21012");
+		cuartos.add("10/02/21012");
+		cuartos.add("11/02/21012");
+		concurso.put(Constantes.FASE_CUARTOS, cuartos);
+
+		List<String> semis = new ArrayList<String>();
+		semis.add("13/02/21012");
+		semis.add("14/02/21012");
+		semis.add("15/02/21012");
+		concurso.put(Constantes.FASE_SEMIS, semis);
+
+		List<String> final2 = new ArrayList<String>();
+		semis.add("17/02/21012");
+		concurso.put(Constantes.FASE_FINAL, final2);
 	}
 	
 	public String getRssUrl(){
@@ -59,6 +95,14 @@ public class CoacApplication extends Application {
 
 	public void setFavoritas(List<Integer> favoritas) {
 		this.favoritas = favoritas;
+	}
+
+	public Map<String, List<String>> getConcurso() {
+		return concurso;
+	}
+
+	public void setConcurso(Map<String, List<String>> concurso) {
+		this.concurso = concurso;
 	}
 
 }

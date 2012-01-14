@@ -80,7 +80,13 @@ public class MenuActivity extends Activity{
 		calendario.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					//TODO
+					if(app.getConcurso()!=null && !app.getConcurso().isEmpty()){
+						Intent intent = new Intent();
+						intent.setClass(getApplicationContext(), ConcursoActivity.class);
+						startActivity(intent);
+					}else{
+						showDialog(Constantes.DIALOG_NO_DATOS);
+					}
 				}
 			}
 		);
