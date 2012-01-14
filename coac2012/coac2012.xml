@@ -18,6 +18,10 @@
 			<fotos>
 				<foto descripcion="General" url="http://www.carnavaldecadiz.com/Carnaval00/adultos/imagenes/La%20Milagrosa.jpg"/>
 			</fotos>
+			<comentarios>
+				<comentario origen="Diario de Cádiz" url="http://www.diariodecadiz.es/article/carnaval/330332/los/trasnochadores.html"/>
+				<comentario origen="La Voz de Cádiz" url="http://carnaval.lavozdigital.es/agrupaciones/2011/los-currelantes.html"/>
+			</comentarios>
 		</agrupacion>
 
 		<agrupacion id="2" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
