@@ -25,7 +25,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import es.jcorralejo.android.CoacApplication;
