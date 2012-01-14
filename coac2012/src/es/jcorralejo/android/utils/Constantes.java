@@ -10,6 +10,7 @@ public class Constantes {
 	public static final String PARAMETRO_VIDEOS = "PARAMETRO_VIDEOS";
 	public static final String PARAMETRO_COMENTARIOS = "PARAMETRO_COMENTARIOS";
 	public static final String PARAMETRO_DIA_ACTUACION = "PARAMETRO_DIA_ACTUACION";
+	public static final String PARAMETRO_FASE = "PARAMETRO_FASE";
 	
 	public static final String MODALIDAD_COMPARSA = "COMPARSA";
 	public static final String MODALIDAD_CHIRIGOTA = "CHIRIGOTA";
@@ -19,4 +20,9 @@ public class Constantes {
 	public static final String PATH_IMAGENES = "/coac2012/";
 
 	public static final String PREFERENCE_FAVORITAS = "PREFERENCE_FAVORITAS";
+
+	public static final String FASE_PREELIMINAR = "FASE_PREELIMINAR";
+	public static final String FASE_CUARTOS = "FASE_CUARTOS";
+	public static final String FASE_SEMIS = "FASE_SEMIS";
+	public static final String FASE_FINAL = "FASE_FINAL";
 }

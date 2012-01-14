@@ -20,6 +20,8 @@
         <activity android:name=".activities.VideosActivity"></activity>
         <activity android:name=".activities.ComentariosActivity"></activity>
         <activity android:name=".activities.ActuacionActivity"></activity>
+        <activity android:name=".activities.ConcursoActivity"></activity>
+        <activity android:name=".activities.DiasFaseActivity"></activity>
 
     </application>
     
