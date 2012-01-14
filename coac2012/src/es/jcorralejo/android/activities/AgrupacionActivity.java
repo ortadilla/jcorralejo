@@ -41,6 +41,8 @@ public class AgrupacionActivity extends Activity{
 			director.setText(agrupacion.getDirector());
 			TextView autor = (TextView) findViewById(R.id.agrAutor);
 			autor.setText(agrupacion.getAutor());
+			TextView modalidad = (TextView) findViewById(R.id.agrModalidad);
+			modalidad.setText(agrupacion.getModalidad());
 			TextView localidad = (TextView) findViewById(R.id.agrLocalidad);
 			localidad.setText(agrupacion.getLocalidad());
 			TextView coac2011 = (TextView) findViewById(R.id.agrCOAC2011);
