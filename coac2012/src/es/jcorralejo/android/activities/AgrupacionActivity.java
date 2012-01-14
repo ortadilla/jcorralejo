@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,6 +26,7 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import es.jcorralejo.android.CoacApplication;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.entidades.Agrupacion;
 import es.jcorralejo.android.entidades.Comentario;
@@ -55,9 +57,10 @@ public class AgrupacionActivity extends Activity{
 			localidad.setText(agrupacion.getLocalidad());
 			TextView coac2011 = (TextView) findViewById(R.id.agrCOAC2011);
 			coac2011.setText(agrupacion.getCoac2011()!=null && !agrupacion.getCoac2011().equals("") ? agrupacion.getCoac2011() : "No participó");
-			
+
+			CoacApplication app = (CoacApplication) getApplication();
 			LinearLayout agrFav = (LinearLayout) findViewById(R.id.agrFav);
-			agrFav.setVisibility(agrupacion.isCabezaSerie() ? View.VISIBLE : View.GONE);
+			agrFav.setVisibility(agrupacion.isCabezaSerie() || app.getFavoritas().contains(agrupacion.getId()) ? View.VISIBLE : View.GONE);
 			
 			ImageView imagen = (ImageView) findViewById(R.id.agrImagen);
 			imagen.setAdjustViewBounds(true);
@@ -161,7 +164,25 @@ public class AgrupacionActivity extends Activity{
 				}
 				return true;
 			case R.id.agrFavoritos:
-				Toast.makeText(getApplicationContext(), "Utilidad aun no disponible en esta versión de COAC2012", Toast.LENGTH_LONG).show();
+				CoacApplication app = (CoacApplication) getApplication();
+				LinearLayout agrFav = (LinearLayout) findViewById(R.id.agrFav);
+				if(app.getFavoritas().contains(agrupacion.getId())){
+					if(!agrupacion.isCabezaSerie()){
+						Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' ha dejado de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+						app.getFavoritas().remove((Object)agrupacion.getId());
+						agrFav.setVisibility(View.GONE);
+					}else{
+						Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' es cabeza de serie y no puede dejar de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+					}
+				}else{
+					if(!agrupacion.isCabezaSerie()){
+						Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' ha pasado a ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+						app.getFavoritas().add(agrupacion.getId());
+						agrFav.setVisibility(View.VISIBLE);
+					}else{
+						Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' es cabeza de serie y ya es una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+					}
+				}
 				return true;
 			case R.id.agrComentarios:
 				if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){

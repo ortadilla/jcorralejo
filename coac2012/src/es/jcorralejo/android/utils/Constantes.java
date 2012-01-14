@@ -16,4 +16,6 @@ public class Constantes {
 	public static final String MODALIDAD_CUARTETO = "CUARTETO";
 
 	public static final String PATH_IMAGENES = "/coac2012/";
+
+	public static final String PREFERENCE_FAVORITAS = "PREFERENCE_FAVORITAS";
 }
