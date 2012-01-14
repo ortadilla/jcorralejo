@@ -9,7 +9,7 @@
         android:id="@+id/layoutNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left"
+        android:gravity="center"
         android:orientation="horizontal" >
 
         <TextView
@@ -17,7 +17,7 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="left"
+            android:gravity="center"
             android:text="Nombre Agrupación"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#6b6b6b"
@@ -37,17 +37,8 @@
         android:id="@+id/agrDatosExtras"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="left"
-        android:text="Los Carapapas"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#6b6b6b" />
-
-    <TextView
-        android:id="@+id/agrCOAC2011"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:text="COAC2012: Los currisquillos"
+        android:gravity="center"
+        android:text="COMPARSA (Las Cabezas de San Juán)"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#6b6b6b" />
 
