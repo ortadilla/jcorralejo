@@ -1,6 +1,10 @@
 package es.jcorralejo.android.activities;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -10,6 +14,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -81,11 +86,38 @@ public class AgrupacionActivity extends Activity{
 	
     private Bitmap downloadFile(String imageHttpAddress) {
     	Bitmap loadedImage = null;
-        try {
-        	URL imageUrl = new URL(imageHttpAddress);
-            HttpURLConnection conn = (HttpURLConnection) imageUrl.openConnection();
-            conn.connect();
-            loadedImage = BitmapFactory.decodeStream(conn.getInputStream());
+    	try {
+    		File root = Environment.getExternalStorageDirectory();
+    		File folder = new File(root,Constantes.PATH_IMAGENES);
+    		//Si no existe, creamos la carpeta
+    		if(!folder.exists())
+    		    folder.mkdirs();
+    		
+    		//Antes de nada comprobamos si existe la imagen en la tarjeta
+    		String[] split = imageHttpAddress.split("/");
+    		String nombre = split[split.length-1];
+    		File file = new File(folder,nombre);
+    		if (file.exists()) {
+    			//Tomamos la imagen de la SD
+    			loadedImage = BitmapFactory.decodeFile(file.getAbsolutePath());
+    		}else{
+    			URL imageUrl = new URL(imageHttpAddress);
+    			HttpURLConnection conn = (HttpURLConnection) imageUrl.openConnection();
+    			conn.connect();
+    			InputStream is = conn.getInputStream();
+				loadedImage = BitmapFactory.decodeStream(is);
+    			conn.disconnect();
+
+    			//Guardamos la imagen en la SD
+    			OutputStream f = null;
+    			try {
+    			    f = new FileOutputStream(file);
+    			    loadedImage.compress(Bitmap.CompressFormat.JPEG, 100, f);
+    			    f.close();
+    			} catch (Exception e) {
+    			    e.printStackTrace();
+    			}
+    		}
         } catch (IOException e) {
             Toast.makeText(getApplicationContext(), "Error cargando imagen: "+e.getMessage(), Toast.LENGTH_LONG).show();
             e.printStackTrace();
