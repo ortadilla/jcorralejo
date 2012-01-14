@@ -1,7 +1,5 @@
 package es.jcorralejo.android.activities;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import android.app.ListActivity;
@@ -19,7 +17,7 @@ import es.jcorralejo.android.R;
 import es.jcorralejo.android.entidades.Agrupacion;
 import es.jcorralejo.android.utils.Constantes;
 
-public class AgrupacionesActivity extends ListActivity{
+public class ActuacionActivity extends ListActivity{
 
 	private List<Agrupacion> agrupaciones;
 	private LayoutInflater miInflater;
@@ -29,13 +27,12 @@ public class AgrupacionesActivity extends ListActivity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.agrupaciones_list);
+		setContentView(R.layout.actuaciones_list);
 		
 		miInflater = LayoutInflater.from(this);
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
 			agrupaciones = (List<Agrupacion>) extras.get(Constantes.PARAMETRO_AGRUPACIONES);
-			Collections.sort(agrupaciones, new ComparatorArticulos());
 		}
 		
 		configurarAdapter();
@@ -51,21 +48,13 @@ public class AgrupacionesActivity extends ListActivity{
 		configurarAdapter();
 	}
 	
-	private static final class ComparatorArticulos implements Comparator<Agrupacion>{
-    	public int compare(Agrupacion obj1, Agrupacion obj2) {
-    		String nombre1 = ((Agrupacion)obj1).getNombre();
-			String nombre2= ((Agrupacion)obj2).getNombre();
-    		return nombre1.compareTo(nombre2);
-    	}
-    }; 
-	
 	public void configurarAdapter() {
-		setListAdapter(new ArrayAdapter<Agrupacion>(this, R.layout.agrupaciones_item, agrupaciones) {
+		setListAdapter(new ArrayAdapter<Agrupacion>(this, R.layout.actuaciones_item, agrupaciones) {
 			@Override
 			public View getView(int position, View convertView, ViewGroup parent) {
 				View row;
 				if (null == convertView) {
-					row = miInflater.inflate(R.layout.agrupaciones_item, null);
+					row = miInflater.inflate(R.layout.actuaciones_item, null);
 				} else {
 					row = convertView;
 				}
@@ -78,15 +67,14 @@ public class AgrupacionesActivity extends ListActivity{
 				CoacApplication app = (CoacApplication) getApplication();
 				fav.setVisibility(item.isCabezaSerie() || app.getFavoritas().contains(item.getId()) ? View.VISIBLE : View.GONE);
 				TextView datosExtras = (TextView) row.findViewById(R.id.agrDatosExtras);
-				if(item.getInfo()!=null && !item.getInfo().equals("")){
-					datosExtras.setText(item.getInfo());
+				if(item.getModalidad()!=null && !item.getModalidad().equals("")
+				&& item.getLocalidad()!=null && !item.getLocalidad().equals("")){
+					datosExtras.setText(item.getModalidad()+" ("+item.getLocalidad()+")");
 					datosExtras.setVisibility(View.VISIBLE);
 				}else{
 					datosExtras.setText(null);
 					datosExtras.setVisibility(View.GONE);
 				}
-				TextView coac2011 = (TextView) row.findViewById(R.id.agrCOAC2011);
-				coac2011.setText("COAC2011: "+(item.getCoac2011()!=null && !item.getCoac2011().equals("") ? item.getCoac2011() : "No participó"));
 		 
 				return row;
 			}
@@ -96,10 +84,13 @@ public class AgrupacionesActivity extends ListActivity{
 	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		Intent i = new Intent();
-		i.setClass(getApplicationContext(), AgrupacionActivity.class);
-		i.putExtra(Constantes.PARAMETRO_AGRUPACION, (Agrupacion)l.getItemAtPosition(position));
-		startActivity(i);
+		Agrupacion agr = (Agrupacion)l.getItemAtPosition(position);
+		if(agr.getId()>0){
+			Intent i = new Intent();
+			i.setClass(getApplicationContext(), AgrupacionActivity.class);
+			i.putExtra(Constantes.PARAMETRO_AGRUPACION, agr);
+			startActivity(i);
+		}
 	}
 	
 	

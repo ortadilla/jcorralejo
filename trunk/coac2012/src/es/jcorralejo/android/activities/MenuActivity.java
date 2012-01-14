@@ -1,5 +1,8 @@
 package es.jcorralejo.android.activities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -17,8 +20,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 import es.jcorralejo.android.CoacApplication;
 import es.jcorralejo.android.R;
+import es.jcorralejo.android.entidades.Agrupacion;
 import es.jcorralejo.android.utils.Constantes;
 import es.jcorralejo.android.utils.RssDownloadHelper;
 
@@ -41,7 +46,22 @@ public class MenuActivity extends Activity{
 		hoy.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					//TODO
+//					SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
+//		     		try {
+//						diaActual = sdf.parse(atts.getValue(FECHA));
+//					} catch (ParseException e) {
+//						new RuntimeException("ERROR AL OBTENER EL CALENDARIO");
+//					}
+					String dia = "21/02/2012";
+					List<Agrupacion> agrupaciones = app.getCalendario().get(dia);
+					if(agrupaciones!=null && !agrupaciones.isEmpty()){
+						Intent intent = new Intent();
+						intent.setClass(getApplicationContext(), ActuacionActivity.class);
+						intent.putExtra(Constantes.PARAMETRO_AGRUPACIONES, (ArrayList<Agrupacion>)agrupaciones);
+						startActivity(intent);
+					}else{
+						Toast.makeText(getApplicationContext(), "Hoy no hay concurso", Toast.LENGTH_LONG).show();
+					}
 				}
 			}
 		);
