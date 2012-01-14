@@ -62,7 +62,7 @@ public class ModalidadesActivity extends Activity{
 //		Bundle b = new Bundle();
 //		b.putSerializable(Constantes.PARAMETRO_AGRUPACIONES_MODALIDAD, (ArrayList<Agrupacion>)app.getModalidades().get(modalidad));
 //		i.putExtras(b);
-		i.putExtra(Constantes.PARAMETRO_AGRUPACIONES_MODALIDAD, (ArrayList<Agrupacion>)app.getModalidades().get(modalidad));
+		i.putExtra(Constantes.PARAMETRO_AGRUPACIONES, (ArrayList<Agrupacion>)app.getModalidades().get(modalidad));
 		i.setClass(getApplicationContext(), AgrupacionesActivity.class);
 		startActivity(i);
 	}

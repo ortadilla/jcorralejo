@@ -64,7 +64,7 @@ public class AgrupacionActivity extends Activity{
 			coac2011.setText(agrupacion.getCoac2011()!=null && !agrupacion.getCoac2011().equals("") ? agrupacion.getCoac2011() : "No participó");
 
 			CoacApplication app = (CoacApplication) getApplication();
-			LinearLayout agrFav = (LinearLayout) findViewById(R.id.agrFav);
+			ImageView agrFav = (ImageView) findViewById(R.id.agrFav);
 			agrFav.setVisibility(agrupacion.isCabezaSerie() || app.getFavoritas().contains(agrupacion.getId()) ? View.VISIBLE : View.GONE);
 			
 			ImageView imagen = (ImageView) findViewById(R.id.agrImagen);
@@ -220,7 +220,7 @@ public class AgrupacionActivity extends Activity{
 	}
 	
 	private void accionFav(){
-		LinearLayout agrFav = (LinearLayout) findViewById(R.id.agrFav);
+		ImageView agrFav = (ImageView) findViewById(R.id.agrFav);
 		if(app.getFavoritas().contains(agrupacion.getId())){
 			if(!agrupacion.isCabezaSerie()){
 				Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' ha dejado de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();

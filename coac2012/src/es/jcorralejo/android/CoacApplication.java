@@ -14,7 +14,7 @@ import android.app.Application;
 public class CoacApplication extends Application {
 	
 	private List<Agrupacion> agrupaciones = new ArrayList<Agrupacion>();
-	private Map<Date, List<Agrupacion>> calendario = new HashMap<Date, List<Agrupacion>>();
+	private Map<String, List<Agrupacion>> calendario = new HashMap<String, List<Agrupacion>>();
 	private Map<String,List<Agrupacion>> modalidades = new HashMap<String, List<Agrupacion>>();
 	private List<Integer> favoritas = new ArrayList<Integer>();
 	
@@ -23,7 +23,7 @@ public class CoacApplication extends Application {
 		super.onCreate();
 		
 		agrupaciones = new ArrayList<Agrupacion>();
-		calendario = new HashMap<Date, List<Agrupacion>>();
+		calendario = new HashMap<String, List<Agrupacion>>();
 		modalidades = new HashMap<String, List<Agrupacion>>();
 		modalidades.put(Constantes.MODALIDAD_CHIRIGOTA, new ArrayList<Agrupacion>());
 		modalidades.put(Constantes.MODALIDAD_COMPARSA, new ArrayList<Agrupacion>());
@@ -40,10 +40,10 @@ public class CoacApplication extends Application {
 	public void setAgrupaciones(List<Agrupacion> agrupaciones) {
 		this.agrupaciones = agrupaciones;
 	}
-	public Map<Date, List<Agrupacion>> getCalendario() {
+	public Map<String, List<Agrupacion>> getCalendario() {
 		return calendario;
 	}
-	public void setCalendario(Map<Date, List<Agrupacion>> calendario) {
+	public void setCalendario(Map<String, List<Agrupacion>> calendario) {
 		this.calendario = calendario;
 	}
 	public Map<String, List<Agrupacion>> getModalidades() {

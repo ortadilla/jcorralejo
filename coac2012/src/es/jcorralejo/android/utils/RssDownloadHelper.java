@@ -15,7 +15,7 @@ import es.jcorralejo.android.entidades.Agrupacion;
 
 public class RssDownloadHelper {
 
-	public static void updateRssData(String rssUrl, List<Agrupacion> agrupaciones, Map<Date, List<Agrupacion>> calendario, Map<String,List<Agrupacion>> modalidades) {
+	public static void updateRssData(String rssUrl, List<Agrupacion> agrupaciones, Map<String, List<Agrupacion>> calendario, Map<String,List<Agrupacion>> modalidades) {
 		try {
 			URL url = new URL(rssUrl);
 

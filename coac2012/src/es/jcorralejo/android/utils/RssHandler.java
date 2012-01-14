@@ -1,9 +1,6 @@
 package es.jcorralejo.android.utils;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -58,7 +55,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String DESCRIPTION = "description";
 	
 	private List<Agrupacion> agrupaciones;
-	private Map<Date, List<Agrupacion>> calendario;
+	private Map<String, List<Agrupacion>> calendario;
 	private Map<String,List<Agrupacion>> modalidades;
 	
 	// Donde iremos guardando los datos del registro a guardar
@@ -66,7 +63,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	
 	Agrupacion agrupacionActual;
 	private List<Agrupacion> agrupacionesDiaActual;
-	private Date diaActual;
+	private String diaActual;
 
 	// Flags para saber en que nodo estamos
 	private boolean in_agrupacion = false;
@@ -77,7 +74,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	private boolean in_puesto = false;
 	
 	
-    public RssHandler(List<Agrupacion> agrupaciones, Map<Date, List<Agrupacion>> calendario, Map<String,List<Agrupacion>> modalidades) {
+    public RssHandler(List<Agrupacion> agrupaciones, Map<String, List<Agrupacion>> calendario, Map<String,List<Agrupacion>> modalidades) {
 		this.agrupaciones = agrupaciones;
 		this.calendario = calendario;
 		this.modalidades = modalidades;
@@ -132,12 +129,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      	} else if(localName.equalsIgnoreCase(DIA)) {
      		in_dia = true;
      		agrupacionesDiaActual = new ArrayList<Agrupacion>();
-     		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
-     		try {
-				diaActual = sdf.parse(atts.getValue(FECHA));
-			} catch (ParseException e) {
-				new RuntimeException("ERROR AL OBTENER EL CALENDARIO");
-			}
+     		diaActual = atts.getValue(FECHA);
      		if(!calendario.containsKey(diaActual))
      			calendario.put(diaActual, new ArrayList<Agrupacion>());
      	} else if(localName.equalsIgnoreCase(PUESTO)) {
@@ -147,21 +139,23 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      		try{
      			agrupacion = Integer.parseInt(atts.getValue(AGRUPACION));
      		}catch (Exception e) {
-     			agrupacion = Integer.MAX_VALUE;
+     			agrupacion = Integer.MIN_VALUE;
      		}
-     		agrupacionesDiaActual.add(getAgrupacionPorId(agrupacion));
+     		Agrupacion agr = getAgrupacionPorId(agrupacion);
+     		if(agr!=null)
+     			agrupacionesDiaActual.add(agr);
      	} 
     }
     
     private Agrupacion crearAgrupacionDescanso(){
     	Agrupacion descanso = new Agrupacion();
-    	descanso.setId(Integer.MAX_VALUE);
-    	descanso.setNombre("Descanso");
+    	descanso.setId(Integer.MIN_VALUE);
+    	descanso.setNombre("- Descanso -");
     	return descanso;
     }
     
     private Agrupacion getAgrupacionPorId(int id){
-    	if(Integer.MAX_VALUE==id)
+    	if(Integer.MIN_VALUE==id)
     		return crearAgrupacionDescanso();
     	for(Agrupacion a : agrupaciones){
     		if(a.getId()==id)
@@ -190,7 +184,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      		in_foto = false;
      	} else if(localName.equalsIgnoreCase(DIA)) {
      		in_dia = false;
-     		calendario.get(diaActual).addAll(agrupacionesDiaActual);
+     		calendario.get(diaActual).addAll(new ArrayList<Agrupacion>(agrupacionesDiaActual));
      		diaActual = null;
      		agrupacionesDiaActual.clear();
      	} else if(localName.equalsIgnoreCase(PUESTO)) {
