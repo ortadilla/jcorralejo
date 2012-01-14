@@ -19,8 +19,8 @@ public class Agrupacion implements Serializable{
 	private String url_cc;
 	private String url_foto;
 	private String url_videos;
-	private List<String> fotos;
-	private List<String> videos;
+	private List<Foto> fotos;
+	private List<Video> videos;
 	private List<Componente> componentes;
 	
 	public int getId() {
@@ -89,16 +89,16 @@ public class Agrupacion implements Serializable{
 	public void setUrl_videos(String url_videos) {
 		this.url_videos = url_videos;
 	}
-	public List<String> getFotos() {
+	public List<Foto> getFotos() {
 		return fotos;
 	}
-	public void setFotos(List<String> fotos) {
+	public void setFotos(List<Foto> fotos) {
 		this.fotos = fotos;
 	}
-	public List<String> getVideos() {
+	public List<Video> getVideos() {
 		return videos;
 	}
-	public void setVideos(List<String> videos) {
+	public void setVideos(List<Video> videos) {
 		this.videos = videos;
 	}
 	public List<Componente> getComponentes() {
