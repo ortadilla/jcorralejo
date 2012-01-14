@@ -19,6 +19,7 @@
         <activity android:name=".activities.AgrupacionActivity"></activity>
         <activity android:name=".activities.VideosActivity"></activity>
         <activity android:name=".activities.ComentariosActivity"></activity>
+        <activity android:name=".activities.ActuacionActivity"></activity>
 
     </application>
     

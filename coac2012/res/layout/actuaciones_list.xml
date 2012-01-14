@@ -6,6 +6,19 @@
 	android:background="@drawable/cartel"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
+
+	<TextView
+	    android:id="@+id/actDia"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:textColor="#6b6b6b"
+	    android:textStyle="bold"
+	    android:layout_marginTop="5dip"
+	    android:layout_marginBottom="10dip"
+	    android:textAppearance="?android:attr/textAppearanceMedium"
+	    android:text="Actuaciones 21/01/2012" />
+
 	<ListView android:id="@android:id/list" 
 		android:layout_width="match_parent"
 		android:layout_height="0dip"
