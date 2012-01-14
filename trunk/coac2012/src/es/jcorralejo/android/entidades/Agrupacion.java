@@ -22,6 +22,7 @@ public class Agrupacion implements Serializable{
 	private List<Foto> fotos;
 	private List<Video> videos;
 	private List<Componente> componentes;
+	private List<Comentario> comentarios;
 	
 	public int getId() {
 		return id;
@@ -112,6 +113,12 @@ public class Agrupacion implements Serializable{
 	}
 	public void setInfo(String info) {
 		this.info = info;
+	}
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
 	}
 
 }

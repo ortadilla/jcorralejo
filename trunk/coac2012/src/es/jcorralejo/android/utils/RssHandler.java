@@ -14,6 +14,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import android.content.ContentValues;
 import es.jcorralejo.android.entidades.Agrupacion;
+import es.jcorralejo.android.entidades.Comentario;
 import es.jcorralejo.android.entidades.Componente;
 import es.jcorralejo.android.entidades.Foto;
 import es.jcorralejo.android.entidades.Video;
@@ -24,6 +25,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String AGRUPACIONES = "agrupaciones";
 	public static final String CALENDARIO = "calendario";
 	public static final String AGRUPACION = "agrupacion";
+	public static final String COMENTARIO = "comentario";
 	public static final String ID = "id";
 	public static final String MODALIDAD = "modalidad";
 	public static final String NOMBRE = "nombre";
@@ -46,6 +48,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String PUESTO = "puesto";
 	public static final String NO = "no";
 	public static final String DESCRIPCION = "descripcion";
+	public static final String ORIGEN = "origen";
 
 	public static final String TITLE = "title";
 	public static final String LINK = "link";
@@ -117,6 +120,10 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     		if(agrupacionActual.getVideos()==null)
     			agrupacionActual.setVideos(new ArrayList<Video>());
     		agrupacionActual.getVideos().add(new Video(atts.getValue(DESCRIPCION), atts.getValue(URL)));
+    	} else if(localName.equalsIgnoreCase(COMENTARIO)) {
+    		if(agrupacionActual.getComentarios()==null)
+    			agrupacionActual.setComentarios(new ArrayList<Comentario>());
+    		agrupacionActual.getComentarios().add(new Comentario(atts.getValue(ORIGEN), atts.getValue(URL)));
     	} else if(localName.equalsIgnoreCase(FOTO)) {
      		in_foto = true;
      		if(agrupacionActual.getFotos()==null)
