@@ -11,6 +11,8 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -36,12 +38,15 @@ import es.jcorralejo.android.utils.Constantes;
 
 public class AgrupacionActivity extends Activity{
 	
+	CoacApplication app;
 	private Agrupacion agrupacion;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.agrupacion);
+		
+		app = (CoacApplication) getApplication();
 		
 		agrupacion = (Agrupacion) getIntent().getSerializableExtra(Constantes.PARAMETRO_AGRUPACION);
 		if(agrupacion!=null){
@@ -215,12 +220,12 @@ public class AgrupacionActivity extends Activity{
 	}
 	
 	private void accionFav(){
-		CoacApplication app = (CoacApplication) getApplication();
 		LinearLayout agrFav = (LinearLayout) findViewById(R.id.agrFav);
 		if(app.getFavoritas().contains(agrupacion.getId())){
 			if(!agrupacion.isCabezaSerie()){
 				Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' ha dejado de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
 				app.getFavoritas().remove((Object)agrupacion.getId());
+				guardarFav();
 				agrFav.setVisibility(View.GONE);
 			}else{
 				Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' es cabeza de serie y no puede dejar de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
@@ -229,11 +234,23 @@ public class AgrupacionActivity extends Activity{
 			if(!agrupacion.isCabezaSerie()){
 				Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' ha pasado a ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
 				app.getFavoritas().add(agrupacion.getId());
+				guardarFav();
 				agrFav.setVisibility(View.VISIBLE);
 			}else{
 				Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' es cabeza de serie y ya es una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
 			}
 		}
+	}
+	
+	private void guardarFav(){
+		String favoritas = "";
+		for(Integer fav : app.getFavoritas())
+			favoritas += fav+"|";
+		
+		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+		Editor editor = prefs.edit();
+		editor.putString(Constantes.PREFERENCE_FAVORITAS, favoritas);
+		editor.commit();
 	}
 	
 	private void accionComent(){
