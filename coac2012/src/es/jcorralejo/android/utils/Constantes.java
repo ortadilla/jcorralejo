@@ -12,4 +12,6 @@ public class Constantes {
 	public static final String MODALIDAD_CHIRIGOTA = "CHIRIGOTA";
 	public static final String MODALIDAD_CORO = "CORO";
 	public static final String MODALIDAD_CUARTETO = "CUARTETO";
+
+	public static final String PATH_IMAGENES = "/coac2012/";
 }
