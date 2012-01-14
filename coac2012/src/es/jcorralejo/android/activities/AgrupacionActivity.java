@@ -10,7 +10,6 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -21,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
@@ -86,8 +86,40 @@ public class AgrupacionActivity extends Activity{
 				componentes.setVisibility(View.GONE);
 				componentes.setText(null);
 			}
-	
 		}
+		
+		ImageView btnFicha = (ImageView) findViewById(R.id.btnFicha);
+		btnFicha.setOnClickListener(
+			new OnClickListener() {
+				public void onClick(View v) {
+					accionFicha();
+				}
+			}
+		);
+		ImageView btnVideos = (ImageView) findViewById(R.id.btnVideos);
+		btnVideos.setOnClickListener(
+				new OnClickListener() {
+					public void onClick(View v) {
+						accionVideos();
+					}
+				}
+		);
+		ImageView btnComent = (ImageView) findViewById(R.id.btnComent);
+		btnComent.setOnClickListener(
+				new OnClickListener() {
+					public void onClick(View v) {
+						accionComent();
+					}
+				}
+		);
+		ImageView btnFav = (ImageView) findViewById(R.id.btnFav);
+		btnFav.setOnClickListener(
+				new OnClickListener() {
+					public void onClick(View v) {
+						accionFav();
+					}
+				}
+		);
 	}
 	
     private Bitmap downloadFile(String imageHttpAddress) {
@@ -142,60 +174,76 @@ public class AgrupacionActivity extends Activity{
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.agrFichaCC:
-				if(agrupacion.getUrl_cc()!=null && !agrupacion.getUrl_cc().equals("")){
-					Intent i = new Intent("android.intent.action.VIEW", Uri.parse(agrupacion.getUrl_cc()));
-					startActivity(i);
-				}else
-					Toast.makeText(getApplicationContext(), "Agrupación sin Ficha en www.carnavaldecadiz.com", Toast.LENGTH_LONG).show();
+				accionFicha();
 				return true;
 			case R.id.agrVideos:
-				if(agrupacion.getVideos()!=null && !agrupacion.getVideos().isEmpty()){
-					Intent i = new Intent();
-					i.setClass(getApplicationContext(), VideosActivity.class);
-					i.putExtra(Constantes.PARAMETRO_VIDEOS, (ArrayList<Video>)agrupacion.getVideos());
-					startActivity(i);
-				}else{
-					if(agrupacion.getUrl_videos()!=null && !agrupacion.getUrl_videos().equals("")){
-						Toast.makeText(getApplicationContext(), "Vídeos de la Agrupación no disponibles. Buscando en Youtube...", Toast.LENGTH_LONG).show();
-						Intent i = new Intent("android.intent.action.VIEW", Uri.parse(agrupacion.getUrl_videos()));
-						startActivity(i);
-					}else
-						Toast.makeText(getApplicationContext(), "No se han encontrado vídeos de la Agrupación", Toast.LENGTH_LONG).show();
-				}
+				accionVideos();
 				return true;
 			case R.id.agrFavoritos:
-				CoacApplication app = (CoacApplication) getApplication();
-				LinearLayout agrFav = (LinearLayout) findViewById(R.id.agrFav);
-				if(app.getFavoritas().contains(agrupacion.getId())){
-					if(!agrupacion.isCabezaSerie()){
-						Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' ha dejado de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
-						app.getFavoritas().remove((Object)agrupacion.getId());
-						agrFav.setVisibility(View.GONE);
-					}else{
-						Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' es cabeza de serie y no puede dejar de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
-					}
-				}else{
-					if(!agrupacion.isCabezaSerie()){
-						Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' ha pasado a ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
-						app.getFavoritas().add(agrupacion.getId());
-						agrFav.setVisibility(View.VISIBLE);
-					}else{
-						Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' es cabeza de serie y ya es una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
-					}
-				}
+				accionFav();
 				return true;
 			case R.id.agrComentarios:
-				if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
-					Intent i = new Intent();
-					i.setClass(getApplicationContext(), ComentariosActivity.class);
-					i.putExtra(Constantes.PARAMETRO_COMENTARIOS, (ArrayList<Comentario>)agrupacion.getComentarios());
-					startActivity(i);
-				}else{
-					Toast.makeText(getApplicationContext(), "No se han encontrado comentarios de la Agrupación", Toast.LENGTH_LONG).show();
-				}
+				accionComent();
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
+		}
+	}
+	
+	private void accionFicha(){
+		if(agrupacion.getUrl_cc()!=null && !agrupacion.getUrl_cc().equals("")){
+			Intent i = new Intent("android.intent.action.VIEW", Uri.parse(agrupacion.getUrl_cc()));
+			startActivity(i);
+		}else
+			Toast.makeText(getApplicationContext(), "Agrupación sin Ficha en www.carnavaldecadiz.com", Toast.LENGTH_LONG).show();
+	}
+	
+	private void accionVideos(){
+		if(agrupacion.getVideos()!=null && !agrupacion.getVideos().isEmpty()){
+			Intent i = new Intent();
+			i.setClass(getApplicationContext(), VideosActivity.class);
+			i.putExtra(Constantes.PARAMETRO_VIDEOS, (ArrayList<Video>)agrupacion.getVideos());
+			startActivity(i);
+		}else{
+			if(agrupacion.getUrl_videos()!=null && !agrupacion.getUrl_videos().equals("")){
+				Toast.makeText(getApplicationContext(), "Vídeos de la Agrupación no disponibles. Buscando en Youtube...", Toast.LENGTH_LONG).show();
+				Intent i = new Intent("android.intent.action.VIEW", Uri.parse(agrupacion.getUrl_videos()));
+				startActivity(i);
+			}else
+				Toast.makeText(getApplicationContext(), "No se han encontrado vídeos de la Agrupación", Toast.LENGTH_LONG).show();
+		}
+	}
+	
+	private void accionFav(){
+		CoacApplication app = (CoacApplication) getApplication();
+		LinearLayout agrFav = (LinearLayout) findViewById(R.id.agrFav);
+		if(app.getFavoritas().contains(agrupacion.getId())){
+			if(!agrupacion.isCabezaSerie()){
+				Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' ha dejado de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+				app.getFavoritas().remove((Object)agrupacion.getId());
+				agrFav.setVisibility(View.GONE);
+			}else{
+				Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' es cabeza de serie y no puede dejar de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+			}
+		}else{
+			if(!agrupacion.isCabezaSerie()){
+				Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' ha pasado a ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+				app.getFavoritas().add(agrupacion.getId());
+				agrFav.setVisibility(View.VISIBLE);
+			}else{
+				Toast.makeText(getApplicationContext(), "'"+agrupacion.getNombre()+"' es cabeza de serie y ya es una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+			}
+		}
+	}
+	
+	private void accionComent(){
+		if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
+			Intent i = new Intent();
+			i.setClass(getApplicationContext(), ComentariosActivity.class);
+			i.putExtra(Constantes.PARAMETRO_COMENTARIOS, (ArrayList<Comentario>)agrupacion.getComentarios());
+			startActivity(i);
+		}else{
+			Toast.makeText(getApplicationContext(), "No se han encontrado comentarios de la Agrupación", Toast.LENGTH_LONG).show();
 		}
 	}
 
