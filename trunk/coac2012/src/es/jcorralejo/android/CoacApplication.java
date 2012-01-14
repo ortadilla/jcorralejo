@@ -16,6 +16,7 @@ public class CoacApplication extends Application {
 	private List<Agrupacion> agrupaciones = new ArrayList<Agrupacion>();
 	private Map<Date, List<Agrupacion>> calendario = new HashMap<Date, List<Agrupacion>>();
 	private Map<String,List<Agrupacion>> modalidades = new HashMap<String, List<Agrupacion>>();
+	private List<Integer> favoritas = new ArrayList<Integer>();
 	
 	@Override
 	public void onCreate() {
@@ -50,6 +51,14 @@ public class CoacApplication extends Application {
 	}
 	public void setModalidades(Map<String, List<Agrupacion>> modalidades) {
 		this.modalidades = modalidades;
+	}
+
+	public List<Integer> getFavoritas() {
+		return favoritas;
+	}
+
+	public void setFavoritas(List<Integer> favoritas) {
+		this.favoritas = favoritas;
 	}
 
 }

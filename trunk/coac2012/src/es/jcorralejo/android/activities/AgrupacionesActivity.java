@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import es.jcorralejo.android.CoacApplication;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.entidades.Agrupacion;
 import es.jcorralejo.android.utils.Constantes;
@@ -44,6 +45,12 @@ public class AgrupacionesActivity extends ListActivity{
 		registerForContextMenu(listaAgrupaciones);
 	}
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		configurarAdapter();
+	}
+	
 	private static final class ComparatorArticulos implements Comparator<Agrupacion>{
     	public int compare(Agrupacion obj1, Agrupacion obj2) {
     		String nombre1 = ((Agrupacion)obj1).getNombre();
@@ -68,7 +75,8 @@ public class AgrupacionesActivity extends ListActivity{
 				nombre.setText(item.getNombre());
 				ImageView fav = (ImageView) row.findViewById(R.id.agrFav);
 				fav.setImageResource(R.drawable.ic_fav);
-				fav.setVisibility(item.isCabezaSerie() ? View.VISIBLE : View.GONE);
+				CoacApplication app = (CoacApplication) getApplication();
+				fav.setVisibility(item.isCabezaSerie() || app.getFavoritas().contains(item.getId()) ? View.VISIBLE : View.GONE);
 				TextView datosExtras = (TextView) row.findViewById(R.id.agrDatosExtras);
 				if(item.getInfo()!=null && !item.getInfo().equals("")){
 					datosExtras.setText(item.getInfo());

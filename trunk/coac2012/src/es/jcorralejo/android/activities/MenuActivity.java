@@ -35,6 +35,8 @@ public class MenuActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
 		
+		cargarFavoritas();
+		
 		TextView hoy = (TextView) findViewById(R.id.hoy);
 		hoy.setOnClickListener(
 			new OnClickListener() {
@@ -73,6 +75,17 @@ public class MenuActivity extends Activity{
 				}
 			}
 		);
+	}
+	
+	private void cargarFavoritas(){
+		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+		String favString = prefs.getString(Constantes.PREFERENCE_FAVORITAS, "");
+		if(favString!=null && !favString.equals("")){
+			String[] split = favString.split("||");
+			for(String fav : split)
+				app.getFavoritas().add(Integer.parseInt(fav));
+		}
+
 	}
 	
 	@Override
