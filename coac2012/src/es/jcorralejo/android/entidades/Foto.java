@@ -1,6 +1,9 @@
 package es.jcorralejo.android.entidades;
 
-public class Foto {
+import java.io.Serializable;
+
+public class Foto implements Serializable{
+	private static final long serialVersionUID = 6561609868525623543L;
 	private String descripcion;
 	private String url;
 	

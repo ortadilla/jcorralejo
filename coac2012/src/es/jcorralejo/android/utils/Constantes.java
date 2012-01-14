@@ -7,6 +7,7 @@ public class Constantes {
 
 	public static final String PARAMETRO_AGRUPACIONES_MODALIDAD = "PARAMETRO_AGRUPACIONES_MODALIDAD";
 	public static final String PARAMETRO_AGRUPACION = "PARAMETRO_AGRUPACION";
+	public static final String PARAMETRO_VIDEOS = "PARAMETRO_VIDEOS";
 	
 	public static final String MODALIDAD_COMPARSA = "COMPARSA";
 	public static final String MODALIDAD_CHIRIGOTA = "CHIRIGOTA";

@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -27,6 +28,7 @@ import android.widget.Toast;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.entidades.Agrupacion;
 import es.jcorralejo.android.entidades.Componente;
+import es.jcorralejo.android.entidades.Video;
 import es.jcorralejo.android.utils.Constantes;
 
 public class AgrupacionActivity extends Activity{
@@ -144,6 +146,10 @@ public class AgrupacionActivity extends Activity{
 				return true;
 			case R.id.agrVideos:
 				if(agrupacion.getVideos()!=null && !agrupacion.getVideos().isEmpty()){
+					Intent i = new Intent();
+					i.setClass(getApplicationContext(), VideosActivity.class);
+					i.putExtra(Constantes.PARAMETRO_VIDEOS, (ArrayList<Video>)agrupacion.getVideos());
+					startActivity(i);
 				}else{
 					if(agrupacion.getUrl_videos()!=null && !agrupacion.getUrl_videos().equals("")){
 						Toast.makeText(getApplicationContext(), "Vídeos de la Agrupación no disponibles. Buscando en Youtube...", Toast.LENGTH_LONG).show();

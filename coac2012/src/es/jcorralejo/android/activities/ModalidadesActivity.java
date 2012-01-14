@@ -59,9 +59,10 @@ public class ModalidadesActivity extends Activity{
 	
 	private void navegarModalidad(String modalidad){
 		Intent i = new Intent();
-		Bundle b = new Bundle();
-		b.putSerializable(Constantes.PARAMETRO_AGRUPACIONES_MODALIDAD, (ArrayList<Agrupacion>)app.getModalidades().get(modalidad));
-		i.putExtras(b);
+//		Bundle b = new Bundle();
+//		b.putSerializable(Constantes.PARAMETRO_AGRUPACIONES_MODALIDAD, (ArrayList<Agrupacion>)app.getModalidades().get(modalidad));
+//		i.putExtras(b);
+		i.putExtra(Constantes.PARAMETRO_AGRUPACIONES_MODALIDAD, (ArrayList<Agrupacion>)app.getModalidades().get(modalidad));
 		i.setClass(getApplicationContext(), AgrupacionesActivity.class);
 		startActivity(i);
 	}
