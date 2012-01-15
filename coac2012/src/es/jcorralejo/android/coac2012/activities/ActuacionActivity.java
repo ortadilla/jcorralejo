@@ -84,6 +84,11 @@ public class ActuacionActivity extends ListActivity{
 				return row;
 			}
 			
+			@Override
+			public int getCount() {
+				return agrupaciones!=null ? agrupaciones.size() : 0;
+			}
+			
 		});
 	}
 	
