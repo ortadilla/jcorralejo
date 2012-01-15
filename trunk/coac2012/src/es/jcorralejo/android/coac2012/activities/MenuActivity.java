@@ -1,4 +1,4 @@
-package es.jcorralejo.android.activities;
+package es.jcorralejo.android.coac2012.activities;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,11 +23,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
-import es.jcorralejo.android.CoacApplication;
 import es.jcorralejo.android.R;
-import es.jcorralejo.android.entidades.Agrupacion;
-import es.jcorralejo.android.utils.Constantes;
-import es.jcorralejo.android.utils.RssDownloadHelper;
+import es.jcorralejo.android.coac2012.CoacApplication;
+import es.jcorralejo.android.coac2012.entidades.Agrupacion;
+import es.jcorralejo.android.coac2012.utils.Constantes;
+import es.jcorralejo.android.coac2012.utils.RssDownloadHelper;
 
 public class MenuActivity extends Activity{
 	
@@ -55,6 +55,7 @@ public class MenuActivity extends Activity{
 						Intent intent = new Intent();
 						intent.setClass(getApplicationContext(), ActuacionActivity.class);
 						intent.putExtra(Constantes.PARAMETRO_AGRUPACIONES, (ArrayList<Agrupacion>)agrupaciones);
+						intent.putExtra(Constantes.PARAMETRO_TEXTO_DIA, app.getTextoDia(dia));
 						startActivity(intent);
 					}else{
 						Toast.makeText(getApplicationContext(), "Hoy no hay concurso", Toast.LENGTH_LONG).show();

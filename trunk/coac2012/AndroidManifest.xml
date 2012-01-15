@@ -7,21 +7,21 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name="CoacApplication">
-        <activity android:label="@string/app_name" android:name=".activities.MenuActivity">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name=".coac2012.CoacApplication">
+        <activity android:label="@string/app_name" android:name=".coac2012.activities.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ModalidadesActivity"></activity>
-        <activity android:name=".activities.AgrupacionesActivity"></activity>
-        <activity android:name=".activities.AgrupacionActivity"></activity>
-        <activity android:name=".activities.VideosActivity"></activity>
-        <activity android:name=".activities.ComentariosActivity"></activity>
-        <activity android:name=".activities.ActuacionActivity"></activity>
-        <activity android:name=".activities.ConcursoActivity"></activity>
-        <activity android:name=".activities.DiasFaseActivity"></activity>
+        <activity android:name=".coac2012.activities.ModalidadesActivity"></activity>
+        <activity android:name=".coac2012.activities.AgrupacionesActivity"></activity>
+        <activity android:name=".coac2012.activities.AgrupacionActivity"></activity>
+        <activity android:name=".coac2012.activities.VideosActivity"></activity>
+        <activity android:name=".coac2012.activities.ComentariosActivity"></activity>
+        <activity android:name=".coac2012.activities.ActuacionActivity"></activity>
+        <activity android:name=".coac2012.activities.ConcursoActivity"></activity>
+        <activity android:name=".coac2012.activities.DiasFaseActivity"></activity>
 
     </application>
     

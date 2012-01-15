@@ -1,4 +1,4 @@
-package es.jcorralejo.android.activities;
+package es.jcorralejo.android.coac2012.activities;
 
 import java.util.ArrayList;
 
@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
-import es.jcorralejo.android.CoacApplication;
 import es.jcorralejo.android.R;
-import es.jcorralejo.android.entidades.Agrupacion;
-import es.jcorralejo.android.utils.Constantes;
+import es.jcorralejo.android.coac2012.CoacApplication;
+import es.jcorralejo.android.coac2012.entidades.Agrupacion;
+import es.jcorralejo.android.coac2012.utils.Constantes;
 
 public class ModalidadesActivity extends Activity{
 	private CoacApplication app;

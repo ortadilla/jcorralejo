@@ -1,4 +1,4 @@
-package es.jcorralejo.android.activities;
+package es.jcorralejo.android.coac2012.activities;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -15,10 +15,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import es.jcorralejo.android.R;
-import es.jcorralejo.android.entidades.Agrupacion;
-import es.jcorralejo.android.entidades.Comentario;
-import es.jcorralejo.android.entidades.Video;
-import es.jcorralejo.android.utils.Constantes;
+import es.jcorralejo.android.coac2012.entidades.Agrupacion;
+import es.jcorralejo.android.coac2012.entidades.Comentario;
+import es.jcorralejo.android.coac2012.entidades.Video;
+import es.jcorralejo.android.coac2012.utils.Constantes;
 
 public class ComentariosActivity extends ListActivity{
 

@@ -1,4 +1,4 @@
-package es.jcorralejo.android.entidades;
+package es.jcorralejo.android.coac2012.entidades;
 
 import java.io.Serializable;
 
