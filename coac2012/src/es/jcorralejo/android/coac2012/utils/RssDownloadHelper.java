@@ -1,4 +1,4 @@
-package es.jcorralejo.android.utils;
+package es.jcorralejo.android.coac2012.utils;
 
 import java.net.URL;
 import java.util.Date;
@@ -11,7 +11,7 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
-import es.jcorralejo.android.entidades.Agrupacion;
+import es.jcorralejo.android.coac2012.entidades.Agrupacion;
 
 public class RssDownloadHelper {
 

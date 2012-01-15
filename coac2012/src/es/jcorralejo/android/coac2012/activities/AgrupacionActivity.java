@@ -1,4 +1,4 @@
-package es.jcorralejo.android.activities;
+package es.jcorralejo.android.coac2012.activities;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -27,13 +27,13 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.TextView;
 import android.widget.Toast;
-import es.jcorralejo.android.CoacApplication;
 import es.jcorralejo.android.R;
-import es.jcorralejo.android.entidades.Agrupacion;
-import es.jcorralejo.android.entidades.Comentario;
-import es.jcorralejo.android.entidades.Componente;
-import es.jcorralejo.android.entidades.Video;
-import es.jcorralejo.android.utils.Constantes;
+import es.jcorralejo.android.coac2012.CoacApplication;
+import es.jcorralejo.android.coac2012.entidades.Agrupacion;
+import es.jcorralejo.android.coac2012.entidades.Comentario;
+import es.jcorralejo.android.coac2012.entidades.Componente;
+import es.jcorralejo.android.coac2012.entidades.Video;
+import es.jcorralejo.android.coac2012.utils.Constantes;
 
 public class AgrupacionActivity extends Activity{
 	

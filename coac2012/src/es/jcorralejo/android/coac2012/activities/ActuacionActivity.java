@@ -1,4 +1,4 @@
-package es.jcorralejo.android.activities;
+package es.jcorralejo.android.coac2012.activities;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import es.jcorralejo.android.CoacApplication;
 import es.jcorralejo.android.R;
-import es.jcorralejo.android.entidades.Agrupacion;
-import es.jcorralejo.android.utils.Constantes;
+import es.jcorralejo.android.coac2012.CoacApplication;
+import es.jcorralejo.android.coac2012.entidades.Agrupacion;
+import es.jcorralejo.android.coac2012.utils.Constantes;
 
 public class ActuacionActivity extends ListActivity{
 
@@ -30,10 +30,15 @@ public class ActuacionActivity extends ListActivity{
 		setContentView(R.layout.actuaciones_list);
 		
 		miInflater = LayoutInflater.from(this);
+		String textoDia = "";
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
 			agrupaciones = (List<Agrupacion>) extras.get(Constantes.PARAMETRO_AGRUPACIONES);
+			textoDia = extras.getString(Constantes.PARAMETRO_TEXTO_DIA);
 		}
+		
+		TextView dia = (TextView) findViewById(R.id.actDia);
+		dia.setText(textoDia);
 		
 		configurarAdapter();
 		

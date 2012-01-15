@@ -1,4 +1,4 @@
-package es.jcorralejo.android.activities;
+package es.jcorralejo.android.coac2012.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import es.jcorralejo.android.R;
-import es.jcorralejo.android.utils.Constantes;
+import es.jcorralejo.android.coac2012.utils.Constantes;
 
 public class ConcursoActivity extends Activity{
 	

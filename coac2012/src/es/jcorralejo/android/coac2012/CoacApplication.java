@@ -1,4 +1,4 @@
-package es.jcorralejo.android;
+package es.jcorralejo.android.coac2012;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Application;
-import es.jcorralejo.android.entidades.Agrupacion;
-import es.jcorralejo.android.utils.Constantes;
+import es.jcorralejo.android.coac2012.entidades.Agrupacion;
+import es.jcorralejo.android.coac2012.utils.Constantes;
 
 public class CoacApplication extends Application {
 	
@@ -70,6 +70,21 @@ public class CoacApplication extends Application {
 	public String getRssUrl(){
 		return "http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml";
 	}
+	
+	public String getTextoDia(String dia){
+		String result = "";
+		if(getConcurso().get(Constantes.FASE_PREELIMINAR).contains(dia))
+			result = "Preeliminar "+ (getConcurso().get(Constantes.FASE_PREELIMINAR).indexOf(dia)+1);
+		else if(getConcurso().get(Constantes.FASE_CUARTOS).contains(dia))
+			result = "Cuarto final "+ (getConcurso().get(Constantes.FASE_CUARTOS).indexOf(dia)+1);
+		else if(getConcurso().get(Constantes.FASE_SEMIS).contains(dia))
+			result = "Cuarto final "+ (getConcurso().get(Constantes.FASE_SEMIS).indexOf(dia)+1);
+		else if(getConcurso().get(Constantes.FASE_FINAL).contains(dia))
+			result = "Final";
+		return result;
+	}
+
+	
 	public List<Agrupacion> getAgrupaciones() {
 		return agrupaciones;
 	}

@@ -1,4 +1,4 @@
-package es.jcorralejo.android.utils;
+package es.jcorralejo.android.coac2012.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +10,11 @@ import org.xml.sax.ext.LexicalHandler;
 import org.xml.sax.helpers.DefaultHandler;
 
 import android.content.ContentValues;
-import es.jcorralejo.android.entidades.Agrupacion;
-import es.jcorralejo.android.entidades.Comentario;
-import es.jcorralejo.android.entidades.Componente;
-import es.jcorralejo.android.entidades.Foto;
-import es.jcorralejo.android.entidades.Video;
+import es.jcorralejo.android.coac2012.entidades.Agrupacion;
+import es.jcorralejo.android.coac2012.entidades.Comentario;
+import es.jcorralejo.android.coac2012.entidades.Componente;
+import es.jcorralejo.android.coac2012.entidades.Foto;
+import es.jcorralejo.android.coac2012.entidades.Video;
 
 public class RssHandler extends DefaultHandler implements LexicalHandler {
 	
