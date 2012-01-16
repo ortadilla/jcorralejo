@@ -49,6 +49,19 @@
 	</agrupaciones>
 
 	<calendario>
+		<dia fecha="16/01/2012">
+			<puesto no="1" agrupacion="1"/>
+			<puesto no="1" agrupacion="1"/>
+			<puesto no="1" agrupacion="1"/>
+			<puesto no="1" agrupacion="1"/>
+			<puesto no="1" agrupacion="1"/>
+			<puesto no="2" agrupacion="DESCANSO" />
+			<puesto no="3" agrupacion="2" />
+			<puesto no="3" agrupacion="2" />
+			<puesto no="3" agrupacion="2" />
+			<puesto no="3" agrupacion="2" />
+		</dia>
+	
 		<dia fecha="21/01/2012">
 			<puesto no="1" agrupacion="1"/>
 			<puesto no="2" agrupacion="DESCANSO" />
