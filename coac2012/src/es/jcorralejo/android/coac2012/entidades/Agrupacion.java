@@ -19,6 +19,7 @@ public class Agrupacion implements Serializable{
 	private String url_cc;
 	private String url_foto;
 	private String url_videos;
+	private String puntos;
 	private List<Foto> fotos;
 	private List<Video> videos;
 	private List<Componente> componentes;
@@ -119,6 +120,12 @@ public class Agrupacion implements Serializable{
 	}
 	public void setComentarios(List<Comentario> comentarios) {
 		this.comentarios = comentarios;
+	}
+	public String getPuntos() {
+		return puntos;
+	}
+	public void setPuntos(String puntos) {
+		this.puntos = puntos;
 	}
 
 }
