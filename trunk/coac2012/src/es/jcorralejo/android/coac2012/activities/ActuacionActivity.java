@@ -138,6 +138,8 @@ public class ActuacionActivity extends ListActivity{
 		switch (item.getItemId()) {
 			case R.id.actVer:
 				showDialog(Constantes.DIALOG_ACERCA_DE);
+				String urlOndaCadizDirecto = "http://www.youtube.com/watch?v=2lPm2VzCOi0&feature=youtu.be";
+				String urlEmisionDirecto = "http://pointers.audiovideoweb.com/stcasx/1c2winlive6748/play.asx";
 				return true;
 			case R.id.actOir:
 				try{
