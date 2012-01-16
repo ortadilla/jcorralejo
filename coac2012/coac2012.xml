@@ -6,7 +6,8 @@
 		info="Comparsa de JC Afrabon Cereza"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Cafe_Teatro_Alameda.php"
 		url_foto="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Imagenes/Cafe_Teatro_Alameda_1.jpg"
-		url_videos="http://www.youtube.com/results?search_query=la+milagrosa+carnaval">
+		url_videos="http://www.youtube.com/results?search_query=la+milagrosa+carnaval"
+		puntos="">
 			<componentes>
 				<componente nombre="Juán Sánchez" voz="Guitarra"/>
 				<componente nombre="Pepe Frego" voz="Tenor"/>
@@ -28,7 +29,8 @@
 		localidad="Barbate" coac2011="" cabeza_serie="false" info=""
 		url_cc=""
 		url_foto=""
-		url_videos="http://www.youtube.com/results?search_query=la+milagrosa+carnaval">
+		url_videos="http://www.youtube.com/results?search_query=la+milagrosa+carnaval"
+		puntos="305">
 			<componentes>
 				<componente nombre="Felipe el Hermoso" voz_instrumento="Palillos"/>
 				<componente nombre="Fernando Castro" voz_instrumento="Octavilla"/>
@@ -38,7 +40,8 @@
 		localidad="Barbate" coac2011="" cabeza_serie="false" 
 		url_cc=""
 		url_foto=""
-		url_videos="">
+		url_videos=""
+		puntos="216">
 			<componentes>
 			</componentes>
 		</agrupacion>
