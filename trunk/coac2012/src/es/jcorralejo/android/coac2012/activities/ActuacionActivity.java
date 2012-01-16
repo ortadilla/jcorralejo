@@ -2,8 +2,14 @@ package es.jcorralejo.android.coac2012.activities;
 
 import java.util.List;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ListActivity;
+import android.content.ComponentName;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ComponentInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -15,6 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import es.jcorralejo.android.R;
 import es.jcorralejo.android.coac2012.CoacApplication;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
@@ -133,13 +140,72 @@ public class ActuacionActivity extends ListActivity{
 				showDialog(Constantes.DIALOG_ACERCA_DE);
 				return true;
 			case R.id.actOir:
-				showDialog(Constantes.DIALOG_ACERCA_DE);
+				try{
+					Intent i = new Intent("android.intent.action.VIEW");
+					i.setComponent(ComponentName.unflattenFromString("tunein.player/.Activity"));
+					startActivity(i);
+					Toast.makeText(getApplicationContext(), "Pulse 'Radio Local' y busque en el listado 'Radio Andalucía Información, el sonido comenzará " +
+							"a reproducirse pasados unos segundos", Toast.LENGTH_LONG).show();
+				}catch (Exception e) {
+					showDialog(Constantes.DIALOG_INSTALAR_RADIO);
+				}
+
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
 		}
 	}
 	
+	@Override
+	protected Dialog onCreateDialog(int id, Bundle args) {
+		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		switch (id) {
+			case Constantes.DIALOG_INSTALAR_RADIO:
+				builder.setMessage("Si lo desea puede instalar la aplicación 'TuneIn Radio' con la que podrá escuchar Radio Andalucía Información" +
+						" a través de Internet desde cualquier lugar del mundo, además de miles de cadenas. Una vez instalado pulse " +
+						"'Radio Local' y busque en la lista 'Radio Andalucía Información, el sonido comenzará a reproducirse pasados unos segundos" +
+						"\n\nSi su dispositivo dispone de aplicación de Radio puede ejecutarla y buscar el dial de Radio Andalucía Información:" +
+						"\nAlmeria ---- 90.5" +
+						"\nCampo de Dalias ---- 88.5" +
+						"\nCádiz ---- 99.4" +
+						"\nCampo de Gibraltar ---- 106.4" +
+						"\nSierra de Cádiz ---- 97.7" +
+						"\nUbrique ---- 93.5" +
+						"\nVejer de la Frontera ---- 98.6" +
+						"\nCórdoba ---- 99.4" +
+						"\nSubbética-Cabra ---- 106.1" +
+						"\nValle de los Pedroches ---- 89.6" +
+						"\nGranada ---- 89.8" +
+						"\nBaza ---- 91.3" +
+						"\nGuadix ---- 102.7" +
+						"\nLoja ---- 101.3" +
+						"\nMotril-Calahonda	---- 99.3" +
+						"\nHuelva ---- 97.3" +
+						"\nRociana-El Condado ---- 92.9" +
+						"\nJaén ---- 91.6" +
+						"\nMálaga ---- 94.9" +
+						"\nMarbella ---- 104.3" +
+						"\nArchidona ---- 94.7" +
+						"\nSevilla ---- 94.3" +
+						"\nSierra Norte ---- 104.6" +
+						"\nEstepa ---- 99.2" +
+						"\n\n");
+				builder.setPositiveButton("Instalar TuneIn Radio",
+										  new DialogInterface.OnClickListener() {
+											public void onClick(DialogInterface dialog, int which) {
+												Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://market.android.com/details?id=tunein.player&hl=es"));
+												startActivity(i);
+									  	  }});
+				builder.setNegativeButton("Volver",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+							}});
+				return builder.create();
+
+			default:
+				return null;
+		}
+	}
 	
 	
 }
