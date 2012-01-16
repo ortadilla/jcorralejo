@@ -34,11 +34,20 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/agrDatosExtras"
+        android:id="@+id/agrModLoc"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="COMPARSA (Las Cabezas de San Juán)"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#6b6b6b" />
+
+    <TextView
+        android:id="@+id/agrDatosExtras"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Comparsa de JC Aragón"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#6b6b6b" />
 

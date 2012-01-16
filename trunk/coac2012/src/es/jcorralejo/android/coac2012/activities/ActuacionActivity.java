@@ -71,14 +71,22 @@ public class ActuacionActivity extends ListActivity{
 				fav.setImageResource(R.drawable.ic_fav);
 				CoacApplication app = (CoacApplication) getApplication();
 				fav.setVisibility(item.isCabezaSerie() || app.getFavoritas().contains(item.getId()) ? View.VISIBLE : View.GONE);
-				TextView datosExtras = (TextView) row.findViewById(R.id.agrDatosExtras);
+				TextView modLoc = (TextView) row.findViewById(R.id.agrModLoc);
 				if(item.getModalidad()!=null && !item.getModalidad().equals("")
 				&& item.getLocalidad()!=null && !item.getLocalidad().equals("")){
-					datosExtras.setText(item.getModalidad()+" ("+item.getLocalidad()+")");
-					datosExtras.setVisibility(View.VISIBLE);
+					modLoc.setText(item.getModalidad()+" ("+item.getLocalidad()+")");
+					modLoc.setVisibility(View.VISIBLE);
 				}else{
-					datosExtras.setText(null);
-					datosExtras.setVisibility(View.GONE);
+					modLoc.setText(null);
+					modLoc.setVisibility(View.GONE);
+				}
+				TextView infoExtra = (TextView) row.findViewById(R.id.agrDatosExtras);
+				if(item.getInfo()!=null && !item.getInfo().equals("")){
+					infoExtra.setText(item.getInfo());
+					infoExtra.setVisibility(View.VISIBLE);
+				}else{
+					infoExtra.setText(null);
+					infoExtra.setVisibility(View.GONE);
 				}
 		 
 				return row;
