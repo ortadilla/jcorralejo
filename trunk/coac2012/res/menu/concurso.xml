@@ -3,5 +3,5 @@
 	<item
 		android:id="@+id/concursoClasif" 
 		android:title="Clasificación"
-		android:icon="@drawable/ic_clasificacion" />
+		android:icon="@android:drawable/ic_menu_sort_by_size"/>
 </menu>
