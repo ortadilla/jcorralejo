@@ -46,6 +46,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String NO = "no";
 	public static final String DESCRIPCION = "descripcion";
 	public static final String ORIGEN = "origen";
+	public static final String PUNTOS = "puntos";
 
 	public static final String TITLE = "title";
 	public static final String LINK = "link";
@@ -104,6 +105,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     		agrupacionActual.setUrl_cc(atts.getValue(URL_CC));
     		agrupacionActual.setUrl_foto(atts.getValue(URL_FOTO));
     		agrupacionActual.setUrl_videos(atts.getValue(URL_VIDEOS));
+    		agrupacionActual.setPuntos(atts.getValue(PUNTOS));
     	} else if(localName.equalsIgnoreCase(COMPONENTE)) {
     		in_componente = true;
     		Componente componente = new Componente();

@@ -22,6 +22,7 @@
         <activity android:name=".coac2012.activities.ActuacionActivity"></activity>
         <activity android:name=".coac2012.activities.ConcursoActivity"></activity>
         <activity android:name=".coac2012.activities.DiasFaseActivity"></activity>
+        <activity android:name=".coac2012.activities.OrdenActivity"></activity>
 
     </application>
     

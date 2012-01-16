@@ -1,5 +1,7 @@
 package es.jcorralejo.android.coac2012.activities;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +12,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import es.jcorralejo.android.R;
+import es.jcorralejo.android.coac2012.CoacApplication;
+import es.jcorralejo.android.coac2012.entidades.Agrupacion;
 import es.jcorralejo.android.coac2012.utils.Constantes;
 
 public class ConcursoActivity extends Activity{
@@ -71,6 +75,11 @@ public class ConcursoActivity extends Activity{
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.concursoClasif:
+				Intent i = new Intent();
+				CoacApplication app = (CoacApplication) getApplication();
+				i.putExtra(Constantes.PARAMETRO_AGRUPACIONES, (ArrayList<Agrupacion>)app.getAgrupaciones());
+				i.setClass(getApplicationContext(), OrdenActivity.class);
+				startActivity(i);
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
