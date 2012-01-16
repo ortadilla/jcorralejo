@@ -12,6 +12,7 @@ public class Constantes {
 	public static final String PARAMETRO_DIA_ACTUACION = "PARAMETRO_DIA_ACTUACION";
 	public static final String PARAMETRO_FASE = "PARAMETRO_FASE";
 	public static final String PARAMETRO_TEXTO_DIA = "PARAMETRO_TEXTO_DIA";
+	public static final String PARAMETRO_ONLINE = "PARAMETRO_ONLINE";
 	
 	public static final String MODALIDAD_COMPARSA = "COMPARSA";
 	public static final String MODALIDAD_CHIRIGOTA = "CHIRIGOTA";
