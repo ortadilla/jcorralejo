@@ -1,0 +1,2 @@
+· Comprobar que hay conexión a internet al actualizar y avisar al usuario si no hay
+· Destacar el descanso en las actuaciones
