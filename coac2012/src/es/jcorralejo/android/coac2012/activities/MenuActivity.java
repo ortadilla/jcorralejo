@@ -56,6 +56,7 @@ public class MenuActivity extends Activity{
 						intent.setClass(getApplicationContext(), ActuacionActivity.class);
 						intent.putExtra(Constantes.PARAMETRO_AGRUPACIONES, (ArrayList<Agrupacion>)agrupaciones);
 						intent.putExtra(Constantes.PARAMETRO_TEXTO_DIA, app.getTextoDia(dia));
+						intent.putExtra(Constantes.PARAMETRO_ONLINE, true);
 						startActivity(intent);
 					}else{
 						Toast.makeText(getApplicationContext(), "Hoy no hay concurso", Toast.LENGTH_LONG).show();

@@ -6,6 +6,9 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -21,6 +24,7 @@ public class ActuacionActivity extends ListActivity{
 
 	private List<Agrupacion> agrupaciones;
 	private LayoutInflater miInflater;
+	private boolean online;
 	
 	
 	@SuppressWarnings("unchecked")
@@ -35,6 +39,7 @@ public class ActuacionActivity extends ListActivity{
 		if(extras!=null){
 			agrupaciones = (List<Agrupacion>) extras.get(Constantes.PARAMETRO_AGRUPACIONES);
 			textoDia = extras.getString(Constantes.PARAMETRO_TEXTO_DIA);
+			online = extras.getBoolean(Constantes.PARAMETRO_ONLINE);
 		}
 		
 		TextView dia = (TextView) findViewById(R.id.actDia);
@@ -110,6 +115,31 @@ public class ActuacionActivity extends ListActivity{
 			startActivity(i);
 		}
 	}
+	
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		if(online){
+			MenuInflater menuInflater = getMenuInflater();
+			menuInflater.inflate(R.menu.actuaciones, menu);
+		}
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.actVer:
+				showDialog(Constantes.DIALOG_ACERCA_DE);
+				return true;
+			case R.id.actOir:
+				showDialog(Constantes.DIALOG_ACERCA_DE);
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
+	
 	
 	
 }
