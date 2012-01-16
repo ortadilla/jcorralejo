@@ -1,2 +1,4 @@
-· Añadir "Conocida como" en el orden
 · Usar los iconos por defecto: android.R.drawable.ic_menu_agenda 
+
+
+android.R.drawable.ic_menu_sort_by_size
