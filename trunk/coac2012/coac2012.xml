@@ -63,6 +63,54 @@
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/tripulacion.html"/>
 			</comentarios>
 		</agrupacion>
+		
+		<agrupacion id="4" modalidad="CUARTETO" nombre="El que está resfriao, que arríe las velas" autor="Ramón López/Juan Manuel Braza" director=""
+		localidad="Algeciras" coac2011="Aquí el que no corre vuela (2º Premio)" cabeza_serie="true" 
+		info="Cuarteto de Algeciras"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/que-esta-resfriao-que-arrie-las-velas.html"/>
+			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="5" modalidad="COMPARSA" nombre="Entre algodones" autor="José Antonio Alvarado/Inés García" director=""
+		localidad="Sevilla" coac2011="La extranjera (36º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/entre-algodones.html"/>
+			</comentarios>
+		</agrupacion>		
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -118,7 +166,8 @@
 			<puesto no="1" agrupacion="1"/>
 			<puesto no="2" agrupacion="2"/>
 			<puesto no="3" agrupacion="3"/>
-			<puesto no="2" agrupacion="DESCANSO" />
+			<puesto no="4" agrupacion="4"/>
+			<puesto no="5" agrupacion="DESCANSO" />
 			<puesto no="3" agrupacion="2" />
 		</dia>
 	</calendario>
