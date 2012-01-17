@@ -904,7 +904,112 @@
 			</comentarios>
 		</agrupacion>		
 			
-	
+		<agrupacion id="44" modalidad="CORO" nombre="Los muñecos de Cádiz otra vez pero a ver..." autor="Manuel Morera" director=""
+		localidad="Cádiz" coac2011="Paraos y colgaos pero con arte por tos laos (5º Semifinales)" cabeza_serie="true" 
+		info="Coro de Valdés"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-munecos-cadiz-otra-vez-pero-ver.html"/>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="45" modalidad="CHIRIGOTA" nombre="Los hinchapelotas" autor="José Antonio Vera" director=""
+		localidad="Cádiz" coac2011="The Cádiz Post Time (el períodico de la mañana pero no mu temprano) (11º Cuartos)" cabeza_serie="false" 
+		info="Chirigota de Vera Luque"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hinchapelotas.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="46" modalidad="COMPARSA" nombre="El marqués de pacotilla" autor="Sergio Molina/David Ruiz" director=""
+		localidad="La Rinconada (Sevilla)" coac2011="El sevillano (25º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/marques-pacotilla.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="47" modalidad="CHIRIGOTA" nombre="Desahogo en Belén" autor="José Manuel Santos/Francisco Sánchez" director=""
+		localidad="Cádiz" coac2011="Los achuchaos (24º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/desahogo-belen.html"/>
+			</comentarios>
+		</agrupacion>				
+
+		<agrupacion id="48" modalidad="COMPARSA" nombre="Los duendes coloraos" autor="David Márquez/Francisco Javier Márquez" director=""
+		localidad="Cádiz" coac2011="Los muñecos de Cádiz (4º Semifinales)" cabeza_serie="true" 
+		info="Comparsa de loa Carapapas"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-duendes-coloraos.html"/>
+			</comentarios>
+		</agrupacion>	
+
+
 
 	
 		<agrupacion id="100" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera"
@@ -1012,6 +1117,14 @@
 			<puesto no="8" agrupacion="41"/>
 			<puesto no="9" agrupacion="42"/>
 			<puesto no="10" agrupacion="43"/>
+		</dia>
+		<dia fecha="26/01/2012">
+			<puesto no="1" agrupacion="44"/>
+			<puesto no="2" agrupacion="45"/>
+			<puesto no="3" agrupacion="46"/>
+			<puesto no="4" agrupacion="47"/>
+			<puesto no="5" agrupacion="48"/>
+			<puesto no="6" agrupacion="DESCANSO" />
 		</dia>
 	</calendario>
 
