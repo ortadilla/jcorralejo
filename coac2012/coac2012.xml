@@ -990,7 +990,7 @@
 
 		<agrupacion id="48" modalidad="COMPARSA" nombre="Los duendes coloraos" autor="David Márquez/Francisco Javier Márquez" director=""
 		localidad="Cádiz" coac2011="Los muñecos de Cádiz (4º Semifinales)" cabeza_serie="true" 
-		info="Comparsa de loa Carapapas"
+		info="Comparsa de los Carapapas"
 		url_cc=""
 		url_foto=""
 		url_videos=""
@@ -1009,8 +1009,261 @@
 			</comentarios>
 		</agrupacion>	
 
+		<agrupacion id="49" modalidad="CHIRIGOTA" nombre="Oido cocina" autor="Roberto José Leal/Juan Manuel Moreno" director=""
+		localidad="Alcalá de Guadaira (Sevilla)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/oido-cocina.html"/>
+			</comentarios>
+		</agrupacion>
+			
+		<agrupacion id="50" modalidad="COMPARSA" nombre="El 15 R" autor="Juan Antonio Muñoz/Francisco Javier Vázquez" director=""
+		localidad="El Puerto (Cádiz)" coac2011="Don Rodrigo (53º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/el-15-r.html"/>
+			</comentarios>
+		</agrupacion>				
+
+		<agrupacion id="51" modalidad="CHIRIGOTA" nombre="Parque Infantil Patapalo" autor="Álvaro García/Juan Jose Panes" director=""
+		localidad="Chiclana (Cádiz)" coac2011="Una chirigota de cine (36º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/parque-infantil-patapalo.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="52" modalidad="COMPARSA" nombre="El yerbatero" autor="José Antonio Valdivia/José Antonio López" director=""
+		localidad="Los Barrios (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/yerbatero.html"/>
+			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="53" modalidad="CORO" nombre="La nueva Cádiz" autor="José Mata/Francisco Martínez" director=""
+		localidad="Cádiz" coac2011="Cádiz de cine (6º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/nueva-cadiz.html"/>
+			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="54" modalidad="CHIRIGOTA" nombre="Los echaos palante" autor="F. J. Gallego/J.M. Fernández/J.L Jiménez" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-echaos-palante.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="55" modalidad="COMPARSA" nombre="Viene a esta tierra un barquito" autor="Francisco Clares/David Virlán" director=""
+		localidad="San Fernando (Cádiz)" coac2011="Eternos (54º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/viene-esta-tierra-barquito.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="56" modalidad="CHIRIGOTA" nombre="Los herederos del conde de Salvatierra Eduardo III izquierda" autor="Juan Carlos Vegara/José Antonio Alvarado/David Virlán/David Márquez" director=""
+		localidad="Sevila" coac2011="Los niños cantores de Viena o de Manolete (3º Premio)" cabeza_serie="true" 
+		info="Chirigota de Sevilla"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-herederos-del-conde-salvatierra.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="57" modalidad="COMPARSA" nombre="Los fieras" autor="Raúl Mateos/Horacio Calvillo" director=""
+		localidad="Ronda (Málaga)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-fieras.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="58" modalidad="CHIRIGOTA" nombre="Todos por una y una para todos" autor="Pilar Román/Serbando Sabajanes/M. Sánchez" director=""
+		localidad="Sevilla" coac2011="Lo que diga Don Manue (51º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/todos-por-una-una-para-todos.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="59" modalidad="COMPARSA" nombre="Pepa" autor="José Luis Zampaña" director=""
+		localidad="El Puerto (Cádiz)" coac2011="Los vecinos de abajo (40º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/pepa.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="60" modalidad="CHIRIGOTA" nombre="¡No me ralles!" autor="Jesús Benárquez/Pablo de la Prida" director=""
+		localidad="Sevilla" coac2011="Los sgayderman (34º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/no-me-ralles.html"/>
+			</comentarios>
+		</agrupacion>
 
 
+
+	
 	
 		<agrupacion id="100" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera"
 		localidad="Cádiz" coac2011="Los currisquillos de Santa María" cabeza_serie="true" 
@@ -1125,6 +1378,21 @@
 			<puesto no="4" agrupacion="47"/>
 			<puesto no="5" agrupacion="48"/>
 			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="49"/>
+			<puesto no="8" agrupacion="50"/>
+			<puesto no="9" agrupacion="51"/>
+			<puesto no="10" agrupacion="52"/>
+		</dia>
+		<dia fecha="27/01/2012">
+			<puesto no="1" agrupacion="53"/>
+			<puesto no="2" agrupacion="54"/>
+			<puesto no="3" agrupacion="55"/>
+			<puesto no="4" agrupacion="56"/>
+			<puesto no="5" agrupacion="DESCANSO" />
+			<puesto no="6" agrupacion="57"/>
+			<puesto no="7" agrupacion="58"/>
+			<puesto no="8" agrupacion="59"/>
+			<puesto no="9" agrupacion="60"/>
 		</dia>
 	</calendario>
 
