@@ -1,7 +1,30 @@
 <coac2012>
 
 	<agrupaciones>
-		<agrupacion id="1" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera"
+		<agrupacion id="1" modalidad="CORO" nombre="Los hijos del 78" autor="Francisco Javier Sevilla Pecci/Manuel Sevilla Pecci/Tino Tovar" director="Antonio Cuesta Pino"
+		localidad="Cádiz" coac2011="La infantería (8º Cuartos)" cabeza_serie="false" 
+		info="El coro a pie"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
+			</comentarios>
+		</agrupacion>
+	
+	
+	
+		<agrupacion id="100" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera"
 		localidad="Cádiz" coac2011="Los currisquillos de Santa María" cabeza_serie="true" 
 		info="Comparsa de JC Afrabon Cereza"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Cafe_Teatro_Alameda.php"
@@ -25,7 +48,7 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="2" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
+		<agrupacion id="200" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
 		localidad="Barbate" coac2011="" cabeza_serie="false" info=""
 		url_cc=""
 		url_foto=""
@@ -36,7 +59,7 @@
 				<componente nombre="Fernando Castro" voz_instrumento="Octavilla"/>
 			</componentes>
 		</agrupacion>
-		<agrupacion id="2" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
+		<agrupacion id="300" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
 		localidad="Barbate" coac2011="" cabeza_serie="false" 
 		url_cc=""
 		url_foto=""
@@ -49,7 +72,7 @@
 	</agrupaciones>
 
 	<calendario>
-		<dia fecha="16/01/2012">
+		<dia fecha="17/01/2012">
 			<puesto no="1" agrupacion="1"/>
 			<puesto no="1" agrupacion="1"/>
 			<puesto no="1" agrupacion="1"/>
