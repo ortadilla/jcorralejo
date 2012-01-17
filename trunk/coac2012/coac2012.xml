@@ -167,11 +167,259 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/por-exagerao.html"/>
 			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="9" modalidad="CORO" nombre="Bollywood" autor="Luis Manuel Rivero/La agrupación" director=""
+		localidad="Cádiz" coac2011="El triángulo (3º Premio)" cabeza_serie="true" 
+		info="Coro de Luís Rivero"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/bollywood.html"/>
+			</comentarios>
+		</agrupacion>	
+		
+		<agrupacion id="10" modalidad="CHIRIGOTA" nombre="Una chirigota inventá" autor="Kuto Vergara" director=""
+		localidad="El Arahal (Sevilla)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/una-chirigota-inventa.html"/>
+			</comentarios>
+		</agrupacion>				
+	
+		<agrupacion id="11" modalidad="COMPARSA" nombre="Los bailarines" autor="Juan Fernández" director="Juan Fernández"
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info="Comparsa de Juán Fernández"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-bailarines.html"/>
+			</comentarios>
+		</agrupacion>		
+		
+		<agrupacion id="12" modalidad="CHIRIGOTA" nombre="Los de la custodia" autor="Francisco José Fernández/Mario Rodríguez" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-custodia.html"/>
+			</comentarios>
 		</agrupacion>		
 	
+		<agrupacion id="13" modalidad="COMPARSA" nombre="El chaparrón" autor="Joaquín Quiñones/Juan Manuel Romero" director="Fali Mosquera"
+		localidad="Cádiz" coac2011="La corona (7º Semifinales)" cabeza_serie="true" 
+		info="Comparsa de Joaquín Quiñones"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/chaparron.html"/>
+			</comentarios>
+		</agrupacion>	
+		
+		<agrupacion id="14" modalidad="CHIRIGOTA" nombre="Los mayordomos de la Casa de Alba" autor="Francisco Abeijón/Luis María Rodríguez" director=""
+		localidad="Cádiz" coac2011="Los toreros multiusos (40º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-mayordomos-casa-alba.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="15" modalidad="COMPARSA" nombre="Los caraduras de Cádiz" autor="Jesús Cervera/Francisco Cervera" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-caraduras-cadiz.html"/>
+			</comentarios>
+		</agrupacion>		
+		
+		<agrupacion id="16" modalidad="CHIRIGOTA" nombre="El comandante plutoriano y todos sus marcianos" autor="Manuel Zambrano/Javier Aguilera/Luis Manuel Rivero" director=""
+		localidad="Trenujena(Cádiz)" coac2011="Los del sobre (31º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/comandante-plutoriano-todos-sus-marcianos.html"/>
+			</comentarios>
+		</agrupacion>						
 	
-	
-	
+		<agrupacion id="17" modalidad="COMPARSA" nombre="El arquitecto" autor="José Gutiérrez/José Manuel Pérez" director=""
+		localidad="Barbate(Cádiz)" coac2011="El buscador (28º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/arquitecto.html"/>
+			</comentarios>
+		</agrupacion>			
+
+		<agrupacion id="18" modalidad="CORO" nombre="2012" autor="Antonio Procopio/Salvador Longobardo" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/2012.html"/>
+			</comentarios>
+		</agrupacion>		
+		
+		<agrupacion id="19" modalidad="CHIRIGOTA" nombre="Almejitas a la marinera" autor="Rafael Valero" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/almejitas-marinera.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="20" modalidad="COMPARSA" nombre="La isla de los anónimos" autor="Guillermo Caballero" director=""
+		localidad="Sevilla" coac2011="Los segundos (44º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/isla-los-anonimos.html"/>
+			</comentarios>
+		</agrupacion>								
 	
 	
 	
@@ -233,6 +481,23 @@
 			<puesto no="7" agrupacion="6" />
 			<puesto no="8" agrupacion="7" />
 			<puesto no="9" agrupacion="8" />
+		</dia>
+		<dia fecha="22/01/2012">
+			<puesto no="1" agrupacion="9"/>
+			<puesto no="2" agrupacion="10"/>
+			<puesto no="3" agrupacion="11"/>
+			<puesto no="4" agrupacion="12"/>
+			<puesto no="5" agrupacion="13"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="14"/>
+			<puesto no="8" agrupacion="15"/>
+			<puesto no="9" agrupacion="16"/>
+			<puesto no="10" agrupacion="17"/>
+		</dia>
+		<dia fecha="23/01/2012">
+			<puesto no="1" agrupacion="18"/>
+			<puesto no="2" agrupacion="19"/>
+			<puesto no="6" agrupacion="DESCANSO" />
 		</dia>
 	</calendario>
 
