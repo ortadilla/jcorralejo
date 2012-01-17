@@ -21,6 +21,48 @@
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
 			</comentarios>
 		</agrupacion>
+		
+		<agrupacion id="2" modalidad="CHIRIGOTA" nombre="Con el doce basta" autor="F.Cárdenas/R.Peñalver/J.M.Sáenz/J.M. Barranco" director=""
+		localidad="Cádiz" coac2011="Los que siempre les toca bailar con la más fea (12º Cuartos)" cabeza_serie="false" 
+		info="Chirigota de Manolín Gálvez"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/con-doce-basta.html"/>
+			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="3" modalidad="COMPARSA" nombre="La tripulación" autor="Luis Ripoll" director=""
+		localidad="Jerez" coac2011="Esto me suena (14º Cuartos)" cabeza_serie="false" 
+		info="Compara de Ripoll"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/tripulacion.html"/>
+			</comentarios>
+		</agrupacion>
 	
 	
 	
@@ -72,29 +114,12 @@
 	</agrupaciones>
 
 	<calendario>
-		<dia fecha="17/01/2012">
-			<puesto no="1" agrupacion="1"/>
-			<puesto no="1" agrupacion="1"/>
-			<puesto no="1" agrupacion="1"/>
-			<puesto no="1" agrupacion="1"/>
-			<puesto no="1" agrupacion="1"/>
-			<puesto no="2" agrupacion="DESCANSO" />
-			<puesto no="3" agrupacion="2" />
-			<puesto no="3" agrupacion="2" />
-			<puesto no="3" agrupacion="2" />
-			<puesto no="3" agrupacion="2" />
-		</dia>
-	
 		<dia fecha="21/01/2012">
 			<puesto no="1" agrupacion="1"/>
+			<puesto no="2" agrupacion="2"/>
+			<puesto no="3" agrupacion="3"/>
 			<puesto no="2" agrupacion="DESCANSO" />
 			<puesto no="3" agrupacion="2" />
-		</dia>
-
-		<dia fecha="22/01/2012">
-			<puesto no="1" agrupacion="3"/>
-			<puesto no="2" agrupacion="DESCANSO" />
-			<puesto no="3" agrupacion="4" />
 		</dia>
 	</calendario>
 
