@@ -420,6 +420,216 @@
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/isla-los-anonimos.html"/>
 			</comentarios>
 		</agrupacion>								
+
+		<agrupacion id="21" modalidad="CHIRIGOTA" nombre="La C.N.C. (canal de noticias chirigoteras)" autor="Mario del Valle/Rubén Vargas/Juan Carlos Aragón" director=""
+		localidad="Cádiz" coac2011="Los antesdeayesterday (9º Semifinales)" cabeza_serie="true" 
+		info="Chirigota de J.C. Aragón"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/cnc-canal-noticias-chirigoteras.html"/>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="22" modalidad="COMPARSA" nombre="Los gobernantes" autor="Francisco Javier Trujillo" director="Francisco Javier Trujillo"
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info="Comparsa de Paco 'El Catalán'"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-gobernantes.html"/>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="23" modalidad="CHIRIGOTA" nombre="Los supervivientes del Vaporcito" autor="Álvaro Ballén/Jaime Fernández/José Manuel Vallejo" director=""
+		localidad="Sanlúcar (Cádiz)" coac2011="Los del 3 X 4, buena táctica... (39º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-supervivientes-del-vaporcito.html"/>
+			</comentarios>
+		</agrupacion>			
+	
+		<agrupacion id="24" modalidad="COMPARSA" nombre="¡Qué pelotazo!" autor="David Amaya/Juan Olivero/Juan Sarrión/Antonio Galán" director=""
+		localidad="Sanlúcar (Cádiz)" coac2011="Nunca jamás (13º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/que-pelotazo.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="25" modalidad="CHIRIGOTA" nombre="Los superquitamanchas" autor="Miguel Monje/Servando Sabajanes" director=""
+		localidad="San Fernando(Cádiz)" coac2011="Las plantadas (43º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-superquitamanchas.html"/>
+			</comentarios>
+		</agrupacion>			
+
+		<agrupacion id="26" modalidad="CORO" nombre="Este coro tiene tela" autor="David Fernández/Rafael Pastrana" director=""
+		localidad="Cádiz" coac2011="Las napoleonas (16º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/este-coro-tiene-tela.html"/>
+			</comentarios>
+		</agrupacion>		
+	
+		<agrupacion id="27" modalidad="CHIRIGOTA" nombre="Uno y a dormir" autor="P.Castillo/J.J.Pastrana " director=""
+		localidad="Estepona (Málaga)" coac2011="La tengo encantá (57º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/uno-dormir.html"/>
+			</comentarios>
+		</agrupacion>		
+	
+		<agrupacion id="28" modalidad="COMPARSA" nombre="Las cuatro naturaleza" autor="Francisco José Rueda/Juan Fernández" director=""
+		localidad="Cádiz" coac2011="Las rosas negras (22º Preeliminares)" cabeza_serie="false" 
+		info="Comparsa femenina de Juán Fernández"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/las-cuatro-naturaleza.html"/>
+			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="29" modalidad="CHIRIGOTA" nombre="De nuevo en el mercado" autor="J.A. Díaz/D. Amaya" director=""
+		localidad="Algeciras (Cádiz)" coac2011="Vaya viaje me han dao (42º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/nuevo-mercado.html"/>
+			</comentarios>
+		</agrupacion>			
+		
+		<agrupacion id="30" modalidad="COMPARSA" nombre="Se acabó el cuento" autor="Antonio Martín/José Guerrero" director=""
+		localidad="Cádiz" coac2011="Las locuras de Martin Burton (3º premio)" cabeza_serie="true" 
+		info="Comparsa de Antonio Martín"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/acabo-cuento.html"/>
+			</comentarios>
+		</agrupacion>			
 	
 	
 	
@@ -497,6 +707,20 @@
 		<dia fecha="23/01/2012">
 			<puesto no="1" agrupacion="18"/>
 			<puesto no="2" agrupacion="19"/>
+			<puesto no="3" agrupacion="20"/>
+			<puesto no="4" agrupacion="21"/>
+			<puesto no="5" agrupacion="DESCANSO" />
+			<puesto no="6" agrupacion="22"/>
+			<puesto no="7" agrupacion="23"/>
+			<puesto no="8" agrupacion="24"/>
+			<puesto no="9" agrupacion="25"/>
+		</dia>
+		<dia fecha="24/01/2012">
+			<puesto no="1" agrupacion="26"/>
+			<puesto no="2" agrupacion="27"/>
+			<puesto no="3" agrupacion="28"/>
+			<puesto no="4" agrupacion="29"/>
+			<puesto no="5" agrupacion="30"/>
 			<puesto no="6" agrupacion="DESCANSO" />
 		</dia>
 	</calendario>
