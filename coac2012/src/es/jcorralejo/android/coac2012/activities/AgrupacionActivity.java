@@ -8,6 +8,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -80,12 +81,15 @@ public class AgrupacionActivity extends Activity{
 			
 			TextView componentes = (TextView) findViewById(R.id.agrComponentes);
 			if(agrupacion.getComponentes()!=null && !agrupacion.getComponentes().isEmpty()){
-				componentes.setVisibility(View.VISIBLE);
 				String comps = "";
-				for(Componente comp : agrupacion.getComponentes())
-					comps += "\n"+comp.getNombre()+" ("+comp.getVoz()+")";
-				comps = comps.substring(1);
+				for(Componente comp : agrupacion.getComponentes()){
+					if(comp.getNombre()!=null && !comp.getNombre().equals(""))
+						comps += "\n"+comp.getNombre()+" ("+comp.getVoz()+")";
+				}
+				if(!comps.equals(""))
+					comps = comps.substring(1);
 				componentes.setText(comps);
+				componentes.setVisibility(comps!=null && !comps.equals("") ? View.VISIBLE : View.GONE);
 			}else{
 				componentes.setVisibility(View.GONE);
 				componentes.setText(null);
@@ -203,10 +207,17 @@ public class AgrupacionActivity extends Activity{
 	}
 	
 	private void accionVideos(){
+		List<Video> videos = new ArrayList<Video>();
 		if(agrupacion.getVideos()!=null && !agrupacion.getVideos().isEmpty()){
+			for(Video v : agrupacion.getVideos()){
+				if(v.getUrl()!=null && !v.getUrl().equals(""))
+					videos.add(v);
+			}
+		}
+		if(videos!=null && !videos.isEmpty()){
 			Intent i = new Intent();
 			i.setClass(getApplicationContext(), VideosActivity.class);
-			i.putExtra(Constantes.PARAMETRO_VIDEOS, (ArrayList<Video>)agrupacion.getVideos());
+			i.putExtra(Constantes.PARAMETRO_VIDEOS, (ArrayList<Video>)videos);
 			startActivity(i);
 		}else{
 			if(agrupacion.getUrl_videos()!=null && !agrupacion.getUrl_videos().equals("")){
@@ -253,10 +264,17 @@ public class AgrupacionActivity extends Activity{
 	}
 	
 	private void accionComent(){
+		List<Comentario> comentarios = new ArrayList<Comentario>();
 		if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
+			for(Comentario c : agrupacion.getComentarios()){
+				if(c.getUrl()!=null && !c.getUrl().equals(""))
+					comentarios.add(c);
+			}
+		}
+		if(comentarios!=null && !comentarios.isEmpty()){
 			Intent i = new Intent();
 			i.setClass(getApplicationContext(), ComentariosActivity.class);
-			i.putExtra(Constantes.PARAMETRO_COMENTARIOS, (ArrayList<Comentario>)agrupacion.getComentarios());
+			i.putExtra(Constantes.PARAMETRO_COMENTARIOS, (ArrayList<Comentario>)comentarios);
 			startActivity(i);
 		}else{
 			Toast.makeText(getApplicationContext(), "No se han encontrado comentarios de la Agrupación", Toast.LENGTH_LONG).show();
