@@ -630,6 +630,93 @@
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/acabo-cuento.html"/>
 			</comentarios>
 		</agrupacion>			
+
+		<agrupacion id="31" modalidad="COMPARSA" nombre="Los del coliseo " autor="José Manuel Martínez/Rafael Valero" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-del-coliseo.html"/>
+			</comentarios>
+		</agrupacion>
+				
+		<agrupacion id="32" modalidad="CHIRIGOTA" nombre="Viva la Pepi " autor="José Luis García Cossío" director=""
+		localidad="Cádiz" coac2011="Número 1 en ventas (y gasolineras) (4º Semifinales)" cabeza_serie="true" 
+		info="Chirigota del Selu"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/viva-pepi.html"/>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="33" modalidad="COMPARSA" nombre="¡...Y canto porque me toca!" autor="Germán Fernández" director=""
+		localidad="Marbella (Málaga)" coac2011="" cabeza_serie="false" 
+		info="Chirigota del Selu"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/canto-porque-toca.html"/>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="34" modalidad="CHIRIGOTA" nombre="Perdidos en la ciudad" autor="Antonio M. Pedrosa/Marco A. García" director=""
+		localidad="Chipiona(Cádiz)" coac2011="El ingenio (42º Semifinales)" cabeza_serie="false" 
+		info="Chirigota del Selu"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/perdidos-ciudad.html"/>
+			</comentarios>
+		</agrupacion>			
+	
+	
+	
 	
 	
 	
@@ -722,6 +809,10 @@
 			<puesto no="4" agrupacion="29"/>
 			<puesto no="5" agrupacion="30"/>
 			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="31"/>
+			<puesto no="8" agrupacion="32"/>
+			<puesto no="9" agrupacion="33"/>
+			<puesto no="10" agrupacion="34"/>
 		</dia>
 	</calendario>
 
