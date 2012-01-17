@@ -713,12 +713,199 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/perdidos-ciudad.html"/>
 			</comentarios>
-		</agrupacion>			
+		</agrupacion>		
+
+		<agrupacion id="35" modalidad="CORO" nombre="Los señores de la naturaleza" autor="Luis Ripoll/José Antonio Pérez/Jesús Ignacio García" director=""
+		localidad="Cádiz" coac2011="Los chinos de Cadi Cadi (13º Preeliminares)" cabeza_serie="false" 
+		info="Coro de la Viña"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-senores-naturaleza.html"/>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="36" modalidad="CHIRIGOTA" nombre="Los que la meten con arte" autor="Francisco Fuentes/José Luis Gómez" director=""
+		localidad="Chipiona(Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-que-meten-con-arte.html"/>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="37" modalidad="COMPARSA" nombre="Sonrisas al sol" autor="Guillermo Valle/Tomás García" director=""
+		localidad="Chiclana(Cádiz)" coac2011="La civilización (34º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/sonrisas-sol.html"/>
+			</comentarios>
+		</agrupacion>								
 	
+		<agrupacion id="38" modalidad="CUARTETO" nombre="Los que hundieron el Vaporcito" autor="Manuel Jesús Morera" director=""
+		localidad="Cádiz" coac2011="Los que cogieron al mono Amedio y lo quitaron de en medio (1º Premio)" cabeza_serie="true" 
+		info="Cuarteto del Morera"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-que-hundieron-vaporcito.html"/>
+			</comentarios>
+		</agrupacion>								
 	
+		<agrupacion id="39" modalidad="CHIRIGOTA" nombre="Los doce Gabanna" autor="Juan Antonio Bocuñano/José Antonio Gómez" director=""
+		localidad="Cádiz" coac2011="Las fans de los santos (8º Semifinales)" cabeza_serie="true" 
+		info="Chirigota del Bocu"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-doce-gabanna.html"/>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="40" modalidad="COMPARSA" nombre="Kilimanjaro" autor="Rafael Garzón/Bonifacio Cano" director=""
+		localidad="Úbeda (Jaén)" coac2011="La máquina del tiempo (47º Semifinales)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/kilimanjaro.html"/>
+			</comentarios>
+		</agrupacion>		
 	
+		<agrupacion id="41" modalidad="CHIRIGOTA" nombre="Se solicita príncipe azul" autor="Juan Miguel Villegas/Rafael Fernández" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/solicita-principe-azul.html"/>
+			</comentarios>
+		</agrupacion>		
 	
+		<agrupacion id="42" modalidad="COMPARSA" nombre="Las gobernantas" autor="Juan Antonio Mateo" director=""
+		localidad="Cádiz" coac2011="Las francesitas (tercer premio en juveniles)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/las-gobernantas.html"/>
+			</comentarios>
+		</agrupacion>		
+		
+		<agrupacion id="43" modalidad="CHIRIGOTA" nombre="Este año hemos perdío el tipo" autor="Abraham Sevilla/La agrupación" director=""
+		localidad="Bailén (Jaén)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/este-ano-hemos-perdio-tipo.html"/>
+			</comentarios>
+		</agrupacion>		
+			
 	
+
 	
 		<agrupacion id="100" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera"
 		localidad="Cádiz" coac2011="Los currisquillos de Santa María" cabeza_serie="true" 
@@ -813,6 +1000,18 @@
 			<puesto no="8" agrupacion="32"/>
 			<puesto no="9" agrupacion="33"/>
 			<puesto no="10" agrupacion="34"/>
+		</dia>
+		<dia fecha="25/01/2012">
+			<puesto no="1" agrupacion="35"/>
+			<puesto no="2" agrupacion="36"/>
+			<puesto no="3" agrupacion="37"/>
+			<puesto no="4" agrupacion="38"/>
+			<puesto no="5" agrupacion="39"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="40"/>
+			<puesto no="8" agrupacion="41"/>
+			<puesto no="9" agrupacion="42"/>
+			<puesto no="10" agrupacion="43"/>
 		</dia>
 	</calendario>
 
