@@ -106,7 +106,68 @@
 			</comentarios>
 		</agrupacion>		
 	
+		<agrupacion id="6" modalidad="CHIRIGOTA" nombre="Mejor no salgo" autor="Antonio Pedro Serrano/Constantino Tovar" director=""
+		localidad="Cádiz" coac2011="Ricas y maduras (1º Premio)" cabeza_serie="true" 
+		info="Chirigota del Canijo"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/mejor-salgo.html"/>
+			</comentarios>
+		</agrupacion>		
 	
+		<agrupacion id="7" modalidad="COMPARSA" nombre="El oráculo de Gadeiras" autor="José María García" director=""
+		localidad="Algeciras" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/oraculo-gadeiras.html"/>
+			</comentarios>
+		</agrupacion>		
+		
+		<agrupacion id="8" modalidad="CHIRIGOTA" nombre="Por mi... ¡Exagerao!" autor="Francisco Castro/David Castro/Manuel Chamorro" director=""
+		localidad="Écija (Sevilla)" coac2011="Tengo velillo pa hacer un cepillo" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/por-exagerao.html"/>
+			</comentarios>
+		</agrupacion>		
 	
 	
 	
@@ -168,7 +229,10 @@
 			<puesto no="3" agrupacion="3"/>
 			<puesto no="4" agrupacion="4"/>
 			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="3" agrupacion="2" />
+			<puesto no="6" agrupacion="5" />
+			<puesto no="7" agrupacion="6" />
+			<puesto no="8" agrupacion="7" />
+			<puesto no="9" agrupacion="8" />
 		</dia>
 	</calendario>
 
