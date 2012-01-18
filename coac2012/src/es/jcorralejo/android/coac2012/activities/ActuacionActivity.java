@@ -8,6 +8,7 @@ import android.app.ListActivity;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -78,6 +79,12 @@ public class ActuacionActivity extends ListActivity{
 				Agrupacion item = getItem(position);
 				TextView nombre = (TextView) row.findViewById(R.id.agrNombre);
 				nombre.setText(item.getNombre());
+				if(Constantes.TEXTO_DESCANSO.equals(item.getNombre())){
+					nombre.setBackgroundColor(Color.GRAY);
+					nombre.setTextColor(Color.BLACK);
+				}
+				
+				
 				ImageView fav = (ImageView) row.findViewById(R.id.agrFav);
 				fav.setImageResource(R.drawable.ic_fav);
 				CoacApplication app = (CoacApplication) getApplication();
