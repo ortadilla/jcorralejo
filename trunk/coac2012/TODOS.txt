@@ -334,7 +334,5 @@ COAC 2011:  La fundación (24º en clasificatorias)
 
 ----
 Buenas a todos,
-os cuento un problema que estoy teniendo, por si a alguien le suena el caso.
-Estoy realizando una aplicación en la que tengo pantallas con ListView. Como es normal, cuando el número
-de elementos supera el tamaño de la pantalla aparece el scroll automático, pero al hacer el gesto
-de subir/bajar los elementos el ListView se queda como seleccionado, con un estilo como sombreado
+os cuento un problema que estoy teniendo, por si a alguien le suena el caso. Estoy realizando una aplicación en la que tengo pantallas con ListView. Como es normal, cuando el número de elementos supera el tamaño de la pantalla aparece el scroll automático, pero al hacer el gesto de subir/bajar los elementos el ListView éste y sus elementos se quedan como seleccionado, con un estilo como sombreado. Debe ser una tontería, porque en otras aplicaciones y ejemplos que he hecho no he tenido este problema.
+Muchas gracias por todo. Un saludo

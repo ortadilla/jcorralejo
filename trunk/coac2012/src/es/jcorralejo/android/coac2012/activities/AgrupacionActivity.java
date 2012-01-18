@@ -19,9 +19,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -171,32 +168,32 @@ public class AgrupacionActivity extends Activity{
         return loadedImage;
     }
     
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater menuInflater = getMenuInflater();
-		menuInflater.inflate(R.menu.agrupacion, menu);
-		return true;
-	}
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-			case R.id.agrFichaCC:
-				accionFicha();
-				return true;
-			case R.id.agrVideos:
-				accionVideos();
-				return true;
-			case R.id.agrFavoritos:
-				accionFav();
-				return true;
-			case R.id.agrComentarios:
-				accionComent();
-				return true;
-			default:
-				return super.onOptionsItemSelected(item);
-		}
-	}
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		MenuInflater menuInflater = getMenuInflater();
+//		menuInflater.inflate(R.menu.agrupacion, menu);
+//		return true;
+//	}
+//	
+//	@Override
+//	public boolean onOptionsItemSelected(MenuItem item) {
+//		switch (item.getItemId()) {
+//			case R.id.agrFichaCC:
+//				accionFicha();
+//				return true;
+//			case R.id.agrVideos:
+//				accionVideos();
+//				return true;
+//			case R.id.agrFavoritos:
+//				accionFav();
+//				return true;
+//			case R.id.agrComentarios:
+//				accionComent();
+//				return true;
+//			default:
+//				return super.onOptionsItemSelected(item);
+//		}
+//	}
 	
 	private void accionFicha(){
 		if(agrupacion.getUrl_cc()!=null && !agrupacion.getUrl_cc().equals("")){

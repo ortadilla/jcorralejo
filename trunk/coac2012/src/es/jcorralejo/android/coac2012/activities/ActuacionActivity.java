@@ -137,15 +137,23 @@ public class ActuacionActivity extends ListActivity{
 		Intent i = null;
 		switch (item.getItemId()) {
 			case R.id.actVer:
-				showDialog(Constantes.DIALOG_INSTALAR_VIDEO);
+				try{
+					i = new Intent(Intent.ACTION_VIEW);
+					i.addCategory(Intent.CATEGORY_LAUNCHER);
+					i.setClassName("com.opera.browser", "com.opera.Opera");
+					i.setData(Uri.parse(Constantes.URL_ONDA_CADIZ));
+					startActivity(i);
+				}catch (Exception e) {
+					showDialog(Constantes.DIALOG_INSTALAR_VIDEO);
+				}
 				return true;
 			case R.id.actOir:
 				try{
-					i = new Intent("android.intent.action.VIEW");
+					i = new Intent(Intent.ACTION_VIEW);
 					i.setComponent(ComponentName.unflattenFromString("tunein.player/.Activity"));
 					startActivity(i);
-					Toast.makeText(getApplicationContext(), "Pulse 'Radio Local' y busque en el listado 'Radio Andalucía Información, el sonido comenzará " +
-							"a reproducirse pasados unos segundos", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "Pulse 'Radio Local' y busque en el listado 'Radio Andalucía Información', el sonido comenzará " +
+							"a reproducirse pasados unos segundos. Si no la cuentra pruebe a usar el buscador", Toast.LENGTH_LONG).show();
 				}catch (Exception e) {
 					showDialog(Constantes.DIALOG_INSTALAR_RADIO);
 				}
@@ -161,9 +169,10 @@ public class ActuacionActivity extends ListActivity{
 		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		switch (id) {
 			case Constantes.DIALOG_INSTALAR_RADIO:
-				builder.setMessage("Si lo desea puede instalar la aplicación 'TuneIn Radio' con la que podrá escuchar Radio Andalucía Información" +
+				builder.setMessage("Le recomendamos instalar 'TuneIn Radio' con la que podrá escuchar Radio Andalucía Información" +
 						" a través de Internet desde cualquier lugar del mundo, además de miles de cadenas. Una vez instalado pulse " +
-						"'Radio Local' y busque en la lista 'Radio Andalucía Información, el sonido comenzará a reproducirse pasados unos segundos" +
+						"'Radio Local' y busque en la lista 'Radio Andalucía Información', el sonido comenzará a reproducirse pasados unos segundos. " +
+						"Si no la cuentra pruebe a usar el buscador" +
 						"\n\nSi su dispositivo dispone de aplicación de Radio puede ejecutarla y buscar el dial de Radio Andalucía Información:" +
 						"\nAlmeria ---- 90.5" +
 						"\nCampo de Dalias ---- 88.5" +
@@ -188,41 +197,25 @@ public class ActuacionActivity extends ListActivity{
 						"\nArchidona ---- 94.7" +
 						"\nSevilla ---- 94.3" +
 						"\nSierra Norte ---- 104.6" +
-						"\nEstepa ---- 99.2" +
-						"\n\n");
+						"\nEstepa ---- 99.2");
 				builder.setPositiveButton("Instalar TuneIn Radio",
 										  new DialogInterface.OnClickListener() {
 											public void onClick(DialogInterface dialog, int which) {
-												Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://market.android.com/details?id=tunein.player&hl=es"));
+												Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(Constantes.URL_TUNEIN));
 												startActivity(i);
 									  	  }});
-				builder.setNegativeButton("Volver",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int which) {
-							}});
+				builder.setNegativeButton("Volver", null);
 				return builder.create();
 
 			case Constantes.DIALOG_INSTALAR_VIDEO:
-				builder.setMessage("Si aun no la tiene en el sistema, le recomendamos que instale la aplicación " +
-						"'Opera Mobile' para poder disfrutar de la emisión online de 'Onda Cádiz'." +
-						"\n\nSi ya la tiene pulse 'Ver online' y a continuación 'Opera Mobile'"); 
+				builder.setMessage("Le recomendamos que instale 'Opera Mobile' para poder disfrutar de la emisión online de 'Onda Cádiz'");
 				builder.setPositiveButton("Instalar Opera Mobile",
 						  new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int which) {
-								Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://market.android.com/details?id=com.opera.browser&hl=es"));
+								Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(Constantes.URL_OPERA));
 								startActivity(i);
 					  	  }});
-				builder.setNeutralButton("Ver online",
-						  new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int which) {
-								Intent i = new Intent("android.intent.action.VIEW", Uri.parse("http://www.youtube.com/embed/One2Jbph-Po"));
-								startActivity(i);
-							}});
-				builder.setNegativeButton("Volver",
-						  new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int which) {
-							}});
-
+				builder.setNegativeButton("Volver",null);
 				return builder.create();
 			default:
 				return null;
