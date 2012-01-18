@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/cartel" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/infantilesJuveniles"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Infantiles / Juveniles"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6b6b6b"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/romanceros"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Romanceros"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6b6b6b"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/callejeras"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Callejeras"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6b6b6b"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/enlaces"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Enlaces"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6b6b6b"
+            android:textStyle="bold" />
+    </TableRow>
+
+</TableLayout>
