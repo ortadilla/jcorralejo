@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -45,6 +49,10 @@ public class MenuActivity extends Activity{
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
+		
+		String pubID = "a14f1728557472c";
+		AdView adView = new AdView(this, AdSize.BANNER, pubID);
+		adView.loadAd(new AdRequest());
 		
 		cargarFavoritas();
 		

@@ -28,6 +28,9 @@
         <activity android:name=".coac2012.activities.MasCarnavalActivity"></activity>
         <activity android:name=".coac2012.activities.EnlacesActivity"></activity>
         <activity android:name=".coac2012.activities.EnlacesTipoActivity"></activity>
+         
+         <activity android:name="com.google.ads.AdActivity"
+              android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 
     </application>
     
