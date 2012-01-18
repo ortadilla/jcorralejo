@@ -9,10 +9,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -136,7 +139,9 @@ public class MenuActivity extends Activity{
 				       .setPositiveButton("Contactar", 
 									    	new DialogInterface.OnClickListener() {
 												public void onClick(DialogInterface dialog, int which) {
-													Intent i = new Intent("android.content.Intent.ACTION_SEND", Uri.parse("coac2012android@gmail.com"));
+													Intent i = new Intent(android.content.Intent.ACTION_SEND);
+													i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{ "coac2012android@gmail.com"});
+													i.setType("plain/text");
 													startActivity(i);
 										  	}})
 				       .setNeutralButton("Donar", 
@@ -172,10 +177,31 @@ public class MenuActivity extends Activity{
 		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
 		long ultima = prefs.getLong("ultima_actualizacion", 0);
 		if (ignorarTiempoEspera || (System.currentTimeMillis() - ultima) > FRECUENCIA_ACTUALIZACION) {
-			final ProgressDialog pd = ProgressDialog.show(this,"Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
-			tarea = new ActualizarPostAsyncTask(pd);
-			tarea.execute();
+			//Comprobamos si hay conexión ha internet
+			if(networkAvailable()){
+				final ProgressDialog pd = ProgressDialog.show(this,"Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
+				tarea = new ActualizarPostAsyncTask(pd);
+				tarea.execute();
+			}else{
+				Toast.makeText(getApplicationContext(), "COAC2012 necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde", Toast.LENGTH_LONG).show();
+				finish();
+			}
 		}
+	}
+	
+	private boolean networkAvailable() {
+		ConnectivityManager connectMgr = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+		if (connectMgr != null) {
+			NetworkInfo[] netInfo = connectMgr.getAllNetworkInfo();
+			if (netInfo != null) {
+				for (NetworkInfo net : netInfo) {
+					if (net.getState() == NetworkInfo.State.CONNECTED) {
+						return true;
+					}
+				}
+			}
+		} 
+		return false;
 	}
 	
 	@Override
