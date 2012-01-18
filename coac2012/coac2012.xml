@@ -1799,5 +1799,9 @@
 			<puesto no="10" agrupacion="78"/>
 		</dia>
 	</calendario>
+	
+	<enlaces>
+		<enlace tipo="AGRUPACION" descripcion="La Comparsa de Tino" url="http://www.lacomparsadetino.com/" />
+	</enlaces>
 
 </coac2012>
