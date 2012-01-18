@@ -7,6 +7,22 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.google.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="100dip"
+            ads:adSize="BANNER"
+            ads:adUnitId="a14f1728557472c"
+            ads:loadAdOnCreate="true"
+            ads:testDevices="TEST_EMULATOR, TEST_DEVICE_ID" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/tableRow1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,7 +51,6 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#6b6b6b"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -67,7 +82,6 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#6b6b6b"
             android:textStyle="bold" />
-
     </LinearLayout>
 
 </LinearLayout>
