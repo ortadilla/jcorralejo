@@ -25,6 +25,9 @@
         <activity android:name=".coac2012.activities.DiasFaseActivity"></activity>
         <activity android:name=".coac2012.activities.OrdenActivity"></activity>
         <activity android:name=".coac2012.activities.ModalidadOrdenActivity"></activity>
+        <activity android:name=".coac2012.activities.MasCarnavalActivity"></activity>
+        <activity android:name=".coac2012.activities.EnlacesActivity"></activity>
+        <activity android:name=".coac2012.activities.EnlacesTipoActivity"></activity>
 
     </application>
     

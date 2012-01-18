@@ -13,6 +13,7 @@ import android.content.ContentValues;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
 import es.jcorralejo.android.coac2012.entidades.Comentario;
 import es.jcorralejo.android.coac2012.entidades.Componente;
+import es.jcorralejo.android.coac2012.entidades.Enlace;
 import es.jcorralejo.android.coac2012.entidades.Foto;
 import es.jcorralejo.android.coac2012.entidades.Video;
 
@@ -47,6 +48,8 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String DESCRIPCION = "descripcion";
 	public static final String ORIGEN = "origen";
 	public static final String PUNTOS = "puntos";
+	public static final String ENLACE = "enlace";
+	public static final String TIPO = "tipo";
 
 	public static final String TITLE = "title";
 	public static final String LINK = "link";
@@ -58,6 +61,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	private List<Agrupacion> agrupaciones;
 	private Map<String, List<Agrupacion>> calendario;
 	private Map<String,List<Agrupacion>> modalidades;
+	private Map<String, List<Enlace>> enlaces;
 	
 	// Donde iremos guardando los datos del registro a guardar
 	ContentValues rssItem;
@@ -75,10 +79,12 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	private boolean in_puesto = false;
 	
 	
-    public RssHandler(List<Agrupacion> agrupaciones, Map<String, List<Agrupacion>> calendario, Map<String,List<Agrupacion>> modalidades) {
+    public RssHandler(List<Agrupacion> agrupaciones, Map<String, List<Agrupacion>> calendario, 
+    				  Map<String,List<Agrupacion>> modalidades, Map<String, List<Enlace>> enlaces) {
 		this.agrupaciones = agrupaciones;
 		this.calendario = calendario;
 		this.modalidades = modalidades;
+		this.enlaces = enlaces;
 	}
 
     /** 
@@ -146,7 +152,17 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      		Agrupacion agr = getAgrupacionPorId(agrupacion);
      		if(agr!=null)
      			agrupacionesDiaActual.add(agr);
-     	} 
+     	} else if(localName.equalsIgnoreCase(ENLACE)) {
+    		Enlace enlace = new Enlace();
+    		enlace.setDescripcion(atts.getValue(DESCRIPCION));
+    		String tipo = atts.getValue(TIPO);
+			enlace.setTipo(tipo);
+    		enlace.setUrl(atts.getValue(URL));
+    		
+    		if(!enlaces.containsKey(tipo))
+    			enlaces.put(tipo, new ArrayList<Enlace>());
+    		enlaces.get(tipo).add(enlace);
+     	}
     }
     
     private Agrupacion crearAgrupacionDescanso(){

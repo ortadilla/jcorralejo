@@ -9,6 +9,7 @@ import java.util.Map;
 
 import android.app.Application;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
+import es.jcorralejo.android.coac2012.entidades.Enlace;
 import es.jcorralejo.android.coac2012.utils.Constantes;
 
 public class CoacApplication extends Application {
@@ -18,6 +19,7 @@ public class CoacApplication extends Application {
 	private Map<String,List<Agrupacion>> modalidades = new HashMap<String, List<Agrupacion>>();
 	private List<Integer> favoritas = new ArrayList<Integer>();
 	private Map<String, List<String>> concurso = new HashMap<String, List<String>>();
+	private Map<String,List<Enlace>> enlaces = new HashMap<String, List<Enlace>>();
 	
 	@Override
 	public void onCreate() {
@@ -127,5 +129,14 @@ public class CoacApplication extends Application {
 	public void setConcurso(Map<String, List<String>> concurso) {
 		this.concurso = concurso;
 	}
+
+	public Map<String, List<Enlace>> getEnlaces() {
+		return enlaces;
+	}
+
+	public void setEnlaces(Map<String, List<Enlace>> enlaces) {
+		this.enlaces = enlaces;
+	}
+
 
 }

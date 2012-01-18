@@ -12,16 +12,18 @@ import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
+import es.jcorralejo.android.coac2012.entidades.Enlace;
 
 public class RssDownloadHelper {
 
-	public static void updateRssData(String rssUrl, List<Agrupacion> agrupaciones, Map<String, List<Agrupacion>> calendario, Map<String,List<Agrupacion>> modalidades) {
+	public static void updateRssData(String rssUrl, List<Agrupacion> agrupaciones, Map<String, List<Agrupacion>> calendario, 
+									 Map<String,List<Agrupacion>> modalidades, Map<String, List<Enlace>> enlaces) {
 		try {
 			URL url = new URL(rssUrl);
 
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 			SAXParser saxParser = spf.newSAXParser();
-			RssHandler rssHandler = new RssHandler(agrupaciones, calendario, modalidades);
+			RssHandler rssHandler = new RssHandler(agrupaciones, calendario, modalidades, enlaces);
 			saxParser.setProperty("http://xml.org/sax/properties/lexical-handler", rssHandler);
 			XMLReader xr = saxParser.getXMLReader();			
 			xr.setContentHandler(rssHandler);

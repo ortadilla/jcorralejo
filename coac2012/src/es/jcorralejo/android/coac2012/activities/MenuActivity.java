@@ -101,7 +101,9 @@ public class MenuActivity extends Activity{
 		masCarnaval.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					//TODO
+					Intent intent = new Intent();
+					intent.setClass(getApplicationContext(), MasCarnavalActivity.class);
+					startActivity(intent);
 				}
 			}
 		);
@@ -244,7 +246,7 @@ public class MenuActivity extends Activity{
 		@Override
 		protected Void doInBackground(Void... params) {
 			CoacApplication app = (CoacApplication) getApplication();
-			RssDownloadHelper.updateRssData(app.getRssUrl(), app.getAgrupaciones(), app.getCalendario(), app.getModalidades());
+			RssDownloadHelper.updateRssData(app.getRssUrl(), app.getAgrupaciones(), app.getCalendario(), app.getModalidades(), app.getEnlaces());
 			return null;
 		}
 
