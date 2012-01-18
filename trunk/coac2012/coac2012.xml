@@ -1801,7 +1801,10 @@
 	</calendario>
 	
 	<enlaces>
-		<enlace tipo="AGRUPACION" descripcion="La Comparsa de Tino" url="http://www.lacomparsadetino.com/" />
+		<enlace tipo="Agrupaciones" descripcion="La Comparsa de Tino" url="http://www.lacomparsadetino.com/" />
+		<enlace tipo="Blogs" descripcion="Al compás Gaditano" url="http://compasgaditano.blogspot.com/" />
+		<enlace tipo="Diarios" descripcion="Diario de Cádiz" url="http://www.diariodecadiz.es/" />
+		<enlace tipo="Otros" descripcion="Carnaval Colombino" url="http://www.carnavalcolombino.com/" />
 	</enlaces>
 
 </coac2012>
