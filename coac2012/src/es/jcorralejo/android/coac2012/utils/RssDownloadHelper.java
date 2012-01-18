@@ -1,7 +1,6 @@
 package es.jcorralejo.android.coac2012.utils;
 
 import java.net.URL;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 

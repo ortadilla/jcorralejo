@@ -8,17 +8,13 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 import es.jcorralejo.android.R;
-import es.jcorralejo.android.coac2012.CoacApplication;
 
 public class MasCarnavalActivity extends Activity{
-	private CoacApplication app;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mas_carnaval);
-		
-		app = (CoacApplication)getApplication();
 		
 		TextView comparsas = (TextView) findViewById(R.id.infantilesJuveniles);
 		comparsas.setOnClickListener(
