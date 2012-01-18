@@ -1574,11 +1574,77 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/nombre-rosa.html"/>
 			</comentarios>
-		</agrupacion>	
+		</agrupacion>
+		
+		<agrupacion id="76" modalidad="COMPARSA" nombre="El batallón del arcoiris" autor="Francisco José Gómez/José María Fuentes" director=""
+		localidad="El Puerto (Cádiz)" coac2011="El contador de historias (50º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/batallon-del-arcoiris.html"/>
+			</comentarios>
+		</agrupacion>			
 
+		<agrupacion id="77" modalidad="CHIRIGOTA" nombre="Los arao olímpico" autor="Rafael Romero/Sergio Guillén/Juan Manuel Braza" director=""
+		localidad="Trebujena (Cádiz)" coac2011="Los que viven por la gorra (19º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-arao-olimpico.html"/>
+			</comentarios>
+		</agrupacion>				
+
+		<agrupacion id="78" modalidad="COMPARSA" nombre="Los vidalegre" autor="Raúl Villanueva/Ramón Jesús Herrera/José Ramón de Castro" director=""
+		localidad="El Puerto (Cádiz)" coac2011="La carnavalera (20º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-vidalegre.html"/>
+			</comentarios>
+		</agrupacion>			
 	
 	
 	
+	
+	
+	
+
 		<agrupacion id="100" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera"
 		localidad="Cádiz" coac2011="Los currisquillos de Santa María" cabeza_serie="true" 
 		info="Comparsa de JC Afrabon Cereza"
@@ -1728,6 +1794,9 @@
 			<puesto no="5" agrupacion="74"/>
 			<puesto no="6" agrupacion="DESCANSO" />
 			<puesto no="7" agrupacion="75"/>
+			<puesto no="8" agrupacion="76"/>
+			<puesto no="9" agrupacion="77"/>
+			<puesto no="10" agrupacion="78"/>
 		</dia>
 	</calendario>
 
