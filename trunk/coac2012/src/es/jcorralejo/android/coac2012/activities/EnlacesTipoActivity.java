@@ -7,7 +7,6 @@ import java.util.Set;
 
 import android.app.TabActivity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
@@ -19,14 +18,12 @@ import es.jcorralejo.android.coac2012.utils.Constantes;
 public class EnlacesTipoActivity extends TabActivity{
 
 	static private TabHost mTabHost;
-	private Resources mResources;	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fase);
 		mTabHost = getTabHost();       
-		mResources = getResources();
 		
 		CoacApplication app = (CoacApplication) getApplication();
 		Set<String> tipos = app.getEnlaces().keySet();
