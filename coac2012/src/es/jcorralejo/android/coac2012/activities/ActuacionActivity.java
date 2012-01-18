@@ -137,14 +137,18 @@ public class ActuacionActivity extends ListActivity{
 		Intent i = null;
 		switch (item.getItemId()) {
 			case R.id.actVer:
-				try{
-					i = new Intent(Intent.ACTION_VIEW);
-					i.addCategory(Intent.CATEGORY_LAUNCHER);
-					i.setClassName("com.opera.browser", "com.opera.Opera");
-					i.setData(Uri.parse(Constantes.URL_ONDA_CADIZ));
-					startActivity(i);
-				}catch (Exception e) {
-					showDialog(Constantes.DIALOG_INSTALAR_VIDEO);
+				if(((CoacApplication)getApplication()).isPreeliminar()){
+					try{
+						i = new Intent(Intent.ACTION_VIEW);
+						i.addCategory(Intent.CATEGORY_LAUNCHER);
+						i.setClassName("com.opera.browser", "com.opera.Opera");
+						i.setData(Uri.parse(Constantes.URL_ONDA_CADIZ));
+						startActivity(i);
+					}catch (Exception e) {
+						showDialog(Constantes.DIALOG_INSTALAR_VIDEO);
+					}
+				}else{
+					Toast.makeText(getApplicationContext(), "Lo sentimos, pero sólo la fase Preeliminar es emitida en directo por Onda Cádiz", Toast.LENGTH_LONG).show();
 				}
 				return true;
 			case R.id.actOir:
@@ -163,6 +167,7 @@ public class ActuacionActivity extends ListActivity{
 				return super.onOptionsItemSelected(item);
 		}
 	}
+	
 	
 	@Override
 	protected Dialog onCreateDialog(int id, Bundle args) {

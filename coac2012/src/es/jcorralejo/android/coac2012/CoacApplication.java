@@ -1,6 +1,8 @@
 package es.jcorralejo.android.coac2012;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -82,6 +84,12 @@ public class CoacApplication extends Application {
 		else if(getConcurso().get(Constantes.FASE_FINAL).contains(dia))
 			result = "Final";
 		return result;
+	}
+	
+	public boolean isPreeliminar(){
+		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
+		String dia = sdf.format(new Date());
+		return concurso.get(Constantes.FASE_PREELIMINAR).contains(dia);
 	}
 
 	
