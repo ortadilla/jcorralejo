@@ -34,4 +34,6 @@ public class Constantes {
 	public static final String URL_OPERA = "https://market.android.com/details?id=com.opera.browser&hl=es";
 	public static final String URL_TUNEIN = "https://market.android.com/details?id=tunein.player&hl=es";
 	
+	public static final String TEXTO_DESCANSO = "-- DESCANSO --";
+	
 }

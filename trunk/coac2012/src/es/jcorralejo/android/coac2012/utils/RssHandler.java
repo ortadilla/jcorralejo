@@ -152,7 +152,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     private Agrupacion crearAgrupacionDescanso(){
     	Agrupacion descanso = new Agrupacion();
     	descanso.setId(Integer.MIN_VALUE);
-    	descanso.setNombre("- Descanso -");
+    	descanso.setNombre(Constantes.TEXTO_DESCANSO);
     	return descanso;
     }
     
