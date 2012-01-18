@@ -1,7 +1,9 @@
 package es.jcorralejo.android.coac2012.activities;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -27,7 +29,10 @@ public class EnlacesTipoActivity extends TabActivity{
 		mResources = getResources();
 		
 		CoacApplication app = (CoacApplication) getApplication();
-		for(String tipo : app.getEnlaces().keySet()){
+		Set<String> tipos = app.getEnlaces().keySet();
+		List<String> tiposOrd = new ArrayList<String>(tipos);
+		Collections.sort(tiposOrd);
+		for(String tipo : tiposOrd){
 			addTab(tipo, tipo, app.getEnlaces().get(tipo));
 		}
 		
