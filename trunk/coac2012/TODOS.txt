@@ -333,3 +333,9 @@ COAC 2011:  Los diestros muu diestros (15º en cuartos)
 Comparsa	Los guiaditanos                                                                                          Cádiz
 COAC 2011:  La fundación (24º en clasificatorias)
 
+----
+Buenas a todos,
+os cuento un problema que estoy teniendo, por si a alguien le suena el caso.
+Estoy realizando una aplicación en la que tengo pantallas con ListView. Como es normal, cuando el número
+de elementos supera el tamaño de la pantalla aparece el scroll automático, pero al hacer el gesto
+de subir/bajar los elementos el ListView se queda como seleccionado, con un estilo como sombreado
