@@ -8,7 +8,6 @@ import android.app.ListActivity;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ComponentInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -135,15 +134,14 @@ public class ActuacionActivity extends ListActivity{
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent i = null;
 		switch (item.getItemId()) {
 			case R.id.actVer:
-				showDialog(Constantes.DIALOG_ACERCA_DE);
-				String urlOndaCadizDirecto = "http://www.youtube.com/watch?v=2lPm2VzCOi0&feature=youtu.be";
-				String urlEmisionDirecto = "http://pointers.audiovideoweb.com/stcasx/1c2winlive6748/play.asx";
+				showDialog(Constantes.DIALOG_INSTALAR_VIDEO);
 				return true;
 			case R.id.actOir:
 				try{
-					Intent i = new Intent("android.intent.action.VIEW");
+					i = new Intent("android.intent.action.VIEW");
 					i.setComponent(ComponentName.unflattenFromString("tunein.player/.Activity"));
 					startActivity(i);
 					Toast.makeText(getApplicationContext(), "Pulse 'Radio Local' y busque en el listado 'Radio Andalucía Información, el sonido comenzará " +
@@ -204,6 +202,28 @@ public class ActuacionActivity extends ListActivity{
 							}});
 				return builder.create();
 
+			case Constantes.DIALOG_INSTALAR_VIDEO:
+				builder.setMessage("Si aun no la tiene en el sistema, le recomendamos que instale la aplicación " +
+						"'Opera Mobile' para poder disfrutar de la emisión online de 'Onda Cádiz'." +
+						"\n\nSi ya la tiene pulse 'Ver online' y a continuación 'Opera Mobile'"); 
+				builder.setPositiveButton("Instalar Opera Mobile",
+						  new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+								Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://market.android.com/details?id=com.opera.browser&hl=es"));
+								startActivity(i);
+					  	  }});
+				builder.setNeutralButton("Ver online",
+						  new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+								Intent i = new Intent("android.intent.action.VIEW", Uri.parse("http://www.youtube.com/embed/One2Jbph-Po"));
+								startActivity(i);
+							}});
+				builder.setNegativeButton("Volver",
+						  new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+							}});
+
+				return builder.create();
 			default:
 				return null;
 		}
