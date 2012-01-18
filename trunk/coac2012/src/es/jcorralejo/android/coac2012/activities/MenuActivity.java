@@ -13,6 +13,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -132,7 +133,19 @@ public class MenuActivity extends Activity{
 				View view = li.inflate(R.layout.acercade, null);
 				builder.setIcon(R.drawable.icon)
 				       .setTitle(getString(R.string.app_name))
-				       .setPositiveButton("Ok", null)
+				       .setPositiveButton("Contactar", 
+									    	new DialogInterface.OnClickListener() {
+												public void onClick(DialogInterface dialog, int which) {
+													Intent i = new Intent("android.content.Intent.ACTION_SEND", Uri.parse("coac2012android@gmail.com"));
+													startActivity(i);
+										  	}})
+				       .setNeutralButton("Donar", 
+						    				new DialogInterface.OnClickListener() {
+												public void onClick(DialogInterface dialog, int which) {
+													Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://market.android.com/details?id=com.opera.browser&hl=es"));
+													startActivity(i);
+												}})
+				       .setNegativeButton("Volver", null)
 				       .setView(view);
 				return builder.create();
 
