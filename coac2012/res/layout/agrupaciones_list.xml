@@ -12,6 +12,7 @@
 		android:layout_weight="6"
 		android:dividerHeight="4dip"
 		android:divider="@android:color/transparent"
+		android:cacheColorHint="@android:color/transparent"
 		android:layout_marginLeft="5dip"
 		android:layout_marginRight="5dip" />
 	<TextView android:id="@android:id/empty" 

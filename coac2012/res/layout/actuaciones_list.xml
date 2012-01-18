@@ -24,6 +24,7 @@
 		android:layout_height="0dip"
 		android:layout_weight="6"
 		android:dividerHeight="4dip"
+	    android:cacheColorHint="@android:color/transparent" 
 		android:divider="@android:color/transparent"
 		android:layout_marginLeft="5dip"
 		android:layout_marginRight="5dip" />
