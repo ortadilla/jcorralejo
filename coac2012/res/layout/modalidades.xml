@@ -1,23 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <TableLayout 
-        xmlns:android="http://schemas.android.com/apk/res/android"
-  		android:background="@drawable/cartel"
-        android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/tableLayout1" android:layout_gravity="center">
-        <TableRow android:layout_weight="1" android:id="@+id/tableRow1" android:layout_width="match_parent" android:layout_height="match_parent" >
-        	<TextView android:id="@+id/comparsas" android:text="Comparsas" 
-        		android:layout_width="match_parent" android:layout_height="match_parent" 
-        		android:layout_weight="1" android:gravity="center_horizontal|center_vertical" 
-        		android:textColor="#6b6b6b" android:textAppearance="?android:attr/textAppearanceLarge" android:textStyle="bold"/>
-        	<TextView android:id="@+id/chirigotas" android:text="Chirigotas" android:layout_width="match_parent" 
-        	android:layout_height="match_parent" android:layout_weight="1" android:gravity="center_horizontal|center_vertical"
-        	android:textColor="#6b6b6b" android:textAppearance="?android:attr/textAppearanceLarge" android:textStyle="bold"/>
-        </TableRow>
-        <TableRow android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:id="@+id/tableRow2">
-        	<TextView android:id="@+id/coros" android:text="Coros" android:layout_width="match_parent" 
-        	android:layout_height="match_parent" android:layout_weight="1" android:gravity="center_horizontal|center_vertical"
-        	android:textColor="#6b6b6b" android:textAppearance="?android:attr/textAppearanceLarge" android:textStyle="bold"/>
-        	<TextView android:id="@+id/cuartetos" android:text="Cuartetos" android:layout_width="match_parent" 
-        	android:layout_height="match_parent" android:layout_weight="1" android:gravity="center_horizontal|center_vertical"
-        	android:textColor="#6b6b6b" android:textAppearance="?android:attr/textAppearanceLarge" android:textStyle="bold"/>
-        </TableRow>
-    </TableLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cartel"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/comparsas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Comparsas"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6b6b6b"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chirigotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Chirigotas"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6b6b6b"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/coros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Coros"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6b6b6b"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cuartetos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Cuartetos"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6b6b6b"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
