@@ -1,37 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="es.jcorralejo.android"
-      android:versionCode="1"
-      android:versionName="1.0">
+    package="es.jcorralejo.android.coac2012"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
     <uses-sdk android:minSdkVersion="8" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name=".coac2012.CoacApplication">
-        <activity android:label="@string/app_name" android:name=".coac2012.activities.MenuActivity">
+
+    <application
+        android:name="CoacApplication"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".activities.MenuActivity"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".coac2012.activities.ModalidadesActivity"></activity>
-        <activity android:name=".coac2012.activities.AgrupacionesActivity"></activity>
-        <activity android:name=".coac2012.activities.AgrupacionActivity"></activity>
-        <activity android:name=".coac2012.activities.VideosActivity"></activity>
-        <activity android:name=".coac2012.activities.ComentariosActivity"></activity>
-        <activity android:name=".coac2012.activities.ActuacionActivity"></activity>
-        <activity android:name=".coac2012.activities.ConcursoActivity"></activity>
-        <activity android:name=".coac2012.activities.DiasFaseActivity"></activity>
-        <activity android:name=".coac2012.activities.OrdenActivity"></activity>
-        <activity android:name=".coac2012.activities.ModalidadOrdenActivity"></activity>
-        <activity android:name=".coac2012.activities.MasCarnavalActivity"></activity>
-        <activity android:name=".coac2012.activities.EnlacesActivity"></activity>
-        <activity android:name=".coac2012.activities.EnlacesTipoActivity"></activity>
-         
-         <activity android:name="com.google.ads.AdActivity"
-              android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity android:name=".activities.ModalidadesActivity" >
+        </activity>
+        <activity android:name=".activities.AgrupacionesActivity" >
+        </activity>
+        <activity android:name=".activities.AgrupacionActivity" >
+        </activity>
+        <activity android:name=".activities.VideosActivity" >
+        </activity>
+        <activity android:name=".activities.ComentariosActivity" >
+        </activity>
+        <activity android:name=".activities.ActuacionActivity" >
+        </activity>
+        <activity android:name=".activities.ConcursoActivity" >
+        </activity>
+        <activity android:name=".activities.DiasFaseActivity" >
+        </activity>
+        <activity android:name=".activities.OrdenActivity" >
+        </activity>
+        <activity android:name=".activities.ModalidadOrdenActivity" >
+        </activity>
+        <activity android:name=".activities.MasCarnavalActivity" >
+        </activity>
+        <activity android:name=".activities.EnlacesActivity" >
+        </activity>
+        <activity android:name=".activities.EnlacesTipoActivity" >
+        </activity>
+
+        
+                <!-- The application's publisher ID assigned by AdMob -->
+        <meta-data
+            android:name="ADMOB_PUBLISHER_ID"
+            android:value="a14f1728557472c" />
+
+        <!-- AdMobActivity definition -->
+        <activity 
+            android:name="com.google.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
 
     </application>
-    
+
 </manifest>

@@ -1639,6 +1639,26 @@
 			</comentarios>
 		</agrupacion>			
 	
+		<agrupacion id="79" modalidad="CORO" nombre="El amanecer" autor="Rafael Pastrana" director=""
+		localidad="Cádiz" coac2011="La madrugá (2º Premio)" cabeza_serie="true" 
+		info="Coro de Pastrana"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/amanecer.html"/>
+			</comentarios>
+		</agrupacion>			
 	
 	
 	
@@ -1798,6 +1818,11 @@
 			<puesto no="9" agrupacion="77"/>
 			<puesto no="10" agrupacion="78"/>
 		</dia>
+		<dia fecha="30/01/2012">
+			<puesto no="1" agrupacion="79"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+		</dia>
+
 	</calendario>
 	
 	<enlaces>

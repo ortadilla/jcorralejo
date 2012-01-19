@@ -20,5 +20,5 @@
 		android:layout_height="wrap_content"
 		android:textColor="#6b6b6b"
 		android:text="No se han encontrado Agrupaciones"
-		android:gravity="center_vertical|center_horizontal" />
+		android:gravity="center_vertical|center_horizontal"/>
 </LinearLayout>
