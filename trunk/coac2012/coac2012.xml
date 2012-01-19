@@ -2955,7 +2955,8 @@
 			<puesto no="5" agrupacion="DESCANSO" />
 			<puesto no="6" agrupacion="128"/>
 			<puesto no="7" agrupacion="129"/>
-			<puesto no="7" agrupacion="130"/>
+			<puesto no="8" agrupacion="130"/>
+			<puesto no="9" agrupacion="131"/>
 		</dia>
 
 	</calendario>
