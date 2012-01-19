@@ -1766,7 +1766,7 @@
 		</agrupacion>		
 	
 		<agrupacion id="85" modalidad="COMPARSA" nombre="Los habitantes del planeta arte" autor="Juan Antonio Pozo" director=""
-		localidad="Algeciras (Cádiz)" coac2011="" cabeza_serie="false" 
+		localidad="Algeciras (Cádiz)" coac2011="Los bufones del zur (En Algeciras)" cabeza_serie="false" 
 		info=""
 		url_cc=""
 		url_foto=""
@@ -1807,7 +1807,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="87" modalidad="COMPARSA" nombre="El rincón de los elegidos" autor="uan Antonio Garrido" director=""
+		<agrupacion id="87" modalidad="COMPARSA" nombre="El rincón de los elegidos" autor="Juan Antonio Garrido" director=""
 		localidad="Punta Umbría (Huelva)" coac2011="El capitán de la playa (38º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -1827,9 +1827,199 @@
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/rincon-los-elegidos.html"/>
 			</comentarios>
 		</agrupacion>		
-	
 
+		<agrupacion id="88" modalidad="CORO" nombre="Las cacas" autor="José Manuel Zampaña/Lucía Pardo" director=""
+		localidad="Cádiz" coac2011="Qué fresquito lo tengo (11º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/las-cacas.html"/>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="89" modalidad="COMPARSA" nombre="Tiempo de títeres" autor="Juan Manuel Báez/La agrupación" director=""
+		localidad="Arcos (Cádiz)" coac2011="El mesón de la molinera (46º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/tiempo-titeres.html"/>
+			</comentarios>
+		</agrupacion>	
 	
+		<agrupacion id="90" modalidad="CHIRIGOTA" nombre="A lo loco se corre mejor" autor="Manuel Domínguez" director=""
+		localidad="Mairena del Aljarafe (Sevilla)" coac2011="Los aquariu (60º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/loco-corre-mejor.html"/>
+			</comentarios>
+		</agrupacion>	
+		
+		<agrupacion id="91" modalidad="COMPARSA" nombre="La comparsa de Córdoba" autor="José Manuel Aranda/Miguel Amate/Rafael Castro" director=""
+		localidad="Córdoba" coac2011="Los molto contenti (Descalificados Cuartos)" cabeza_serie="false" 
+		info="Comparsa de Córdoba"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/comparsa-cordoba.html"/>
+			</comentarios>
+		</agrupacion>
+			
+		<agrupacion id="92" modalidad="CHIRIGOTA" nombre="Los protagonistas" autor="Francisco Javier Rodríguez/Enrique García Rosado" director=""
+		localidad="Cádiz" coac2011="Los Joaquín pamplina, cantautor de la plaza mina (2º Premio)" cabeza_serie="true" 
+		info="Chirigota de Kike Remolino"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-protagonistas.html"/>
+			</comentarios>
+		</agrupacion>			
+
+		<agrupacion id="93" modalidad="COMPARSA" nombre="El parlamento de las 3" autor="José Antonio Alvarado" director=""
+		localidad="Sevilla" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/parlamento-las.html"/>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="94" modalidad="CHIRIGOTA" nombre="Esto no hay quien lo salve" autor="Antonio Galán/Francisco Javier Sevilla" director=""
+		localidad="Cádiz" coac2011="Aquí no hay quien viva (17º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/esto-hay-quien-salve.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="95" modalidad="COMPARSA" nombre="La Bicentenaria" autor="Miguel Ángel García/José Antonio Cheza" director=""
+		localidad="Cádiz" coac2011="Los pobres diablos (10º Cuartos)" cabeza_serie="false" 
+		info="Comparsa de Nene Cheza"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/bicentenaria.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="96" modalidad="CHIRIOGOTA" nombre="Una chirigota de cuartos" autor="La agrupación/josé Ramón Zamora/Miguel Ángel Cáceres" director=""
+		localidad="Sevilla" coac2011="Generación ni-ni (38º en clasificatorias)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/una-chirigota-cuartos.html"/>
+			</comentarios>
+		</agrupacion>	
+
+
+
+
 
 
 		<agrupacion id="100" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera"
@@ -1996,6 +2186,18 @@
 			<puesto no="8" agrupacion="85"/>
 			<puesto no="9" agrupacion="86"/>
 			<puesto no="10" agrupacion="87"/>
+		</dia>
+		<dia fecha="31/01/2012">
+			<puesto no="1" agrupacion="88"/>
+			<puesto no="2" agrupacion="89"/>
+			<puesto no="3" agrupacion="90"/>
+			<puesto no="4" agrupacion="91"/>
+			<puesto no="5" agrupacion="92"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="93"/>
+			<puesto no="8" agrupacion="94"/>
+			<puesto no="9" agrupacion="95"/>
+			<puesto no="10" agrupacion="96"/>
 		</dia>
 
 	</calendario>
