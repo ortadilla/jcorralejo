@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import es.jcorralejo.android.R;
+import es.jcorralejo.android.coac2012.R;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
 import es.jcorralejo.android.coac2012.utils.Constantes;
 

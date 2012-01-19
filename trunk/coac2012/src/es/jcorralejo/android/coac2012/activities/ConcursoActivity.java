@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
-import es.jcorralejo.android.R;
+import es.jcorralejo.android.coac2012.R;
 import es.jcorralejo.android.coac2012.utils.Constantes;
 
 public class ConcursoActivity extends Activity{

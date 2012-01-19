@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:app="http://schemas.android.com/apk/res/es.jcorralejo.android.coac2012"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cartel"
@@ -7,19 +9,20 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
-
+ 
         <com.google.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="match_parent"
-            android:layout_height="100dip"
+            android:id="@+id/ad" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             ads:adSize="BANNER"
             ads:adUnitId="a14f1728557472c"
-            ads:loadAdOnCreate="true"
-            ads:testDevices="TEST_EMULATOR, TEST_DEVICE_ID" />
+            app:backgroundColor="#FFFFFF"
+            app:keywords="Android game"
+            app:testing="true"
+            app:textColor="#000000" />
     </LinearLayout>
 
     <LinearLayout

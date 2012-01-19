@@ -31,7 +31,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
-import es.jcorralejo.android.R;
+import es.jcorralejo.android.coac2012.R;
 import es.jcorralejo.android.coac2012.CoacApplication;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
 import es.jcorralejo.android.coac2012.utils.Constantes;
@@ -50,9 +50,10 @@ public class MenuActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
 		
-		String pubID = "a14f1728557472c";
-		AdView adView = new AdView(this, AdSize.BANNER, pubID);
-		adView.loadAd(new AdRequest());
+//		AdView adView = (AdView) this.findViewById(R.id.ad);
+//	    AdRequest adRequest = new AdRequest();
+//	    adView.loadAd(adRequest); 
+
 		
 		cargarFavoritas();
 		
