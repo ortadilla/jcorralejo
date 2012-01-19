@@ -10,7 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
-import es.jcorralejo.android.coac2012.R;
+import es.jcorralejo.android.R;
 import es.jcorralejo.android.coac2012.CoacApplication;
 import es.jcorralejo.android.coac2012.entidades.Enlace;
 import es.jcorralejo.android.coac2012.utils.Constantes;
