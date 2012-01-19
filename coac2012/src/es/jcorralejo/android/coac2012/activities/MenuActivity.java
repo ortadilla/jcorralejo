@@ -204,6 +204,7 @@ public class MenuActivity extends Activity{
 	public void onResume() {
 		super.onResume();
 		cargarDatos(app.getAgrupaciones().isEmpty());
+		cargarAnuncios();
 	}
 	
 	@Override
