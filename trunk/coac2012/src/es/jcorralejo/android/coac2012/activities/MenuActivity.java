@@ -188,7 +188,7 @@ public class MenuActivity extends Activity{
 				       .setNeutralButton("Donar", 
 						    				new DialogInterface.OnClickListener() {
 												public void onClick(DialogInterface dialog, int which) {
-													Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://market.android.com/details?id=com.opera.browser&hl=es"));
+													Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://market.android.com/details?id=es.jcorralejo.android.coac2012"));
 													startActivity(i);
 												}})
 				       .setNegativeButton("Volver", null)
