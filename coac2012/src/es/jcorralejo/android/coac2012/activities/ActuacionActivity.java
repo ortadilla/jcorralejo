@@ -86,7 +86,7 @@ public class ActuacionActivity extends ListActivity{
 				Agrupacion item = getItem(position);
 				TextView nombre = (TextView) row.findViewById(R.id.agrNombre);
 				nombre.setText(item.getNombre());
-				if(Constantes.TEXTO_DESCANSO.equals(item.getNombre())){
+				if(Constantes.TEXTO_DESCANSO.equals(item.getNombre()) && convertView!=null){
 					nombre.setBackgroundColor(Color.GRAY);
 					nombre.setTextColor(Color.BLACK);
 				}
