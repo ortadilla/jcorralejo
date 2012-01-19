@@ -2101,6 +2101,112 @@
 			</comentarios>
 		</agrupacion>
 
+		<agrupacion id="101" modalidad="COMPARSA" nombre="La sereníssima" autor="Juan Carlos Aragón" director=""
+		localidad="Cádiz" coac2011="Los Príncipes (6º Semifinales)" cabeza_serie="true" 
+		info="Comparsa de JC Aragón"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/serenissima.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="102" modalidad="COMPARSA" nombre="Como salidas de un cuento" autor=" Joaquín Moreno/José María Barranco" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/como-salidas-cuento.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="103" modalidad="CHIRIGOTA" nombre="Los puretas del Caribe" autor="Manuel Álvarez/José Manuel Cornejo" director=""
+		localidad="Cádiz" coac2011="Los gafas (7º Semifinales)" cabeza_serie="true" 
+		info="Chirigota del Lobe"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-puretas-del-caribe.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="104" modalidad="COMPARSA" nombre="La comparsa de los fantasmas" autor="Julián Balmón/ José Manuel Viejo/Daniel Aparicio" director=""
+		localidad="Camas (Sevilla)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/comparsa-los-fantasmas.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="105" modalidad="CHIRIGOTA" nombre="El porque de cada que" autor="Miguel Ángel Moñino" director=""
+		localidad="Castilblanco de los Arroyos (Sevilla)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/porque-cada-que.html"/>
+			</comentarios>
+		</agrupacion>
+
+
 
 
 
@@ -2290,7 +2396,12 @@
 			<puesto no="2" agrupacion="98"/>
 			<puesto no="3" agrupacion="99"/>
 			<puesto no="4" agrupacion="100"/>
+			<puesto no="5" agrupacion="101"/>
 			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="102"/>
+			<puesto no="8" agrupacion="103"/>
+			<puesto no="9" agrupacion="104"/>
+			<puesto no="10" agrupacion="105"/>
 		</dia>
 
 	</calendario>
