@@ -30,7 +30,7 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.TextView;
 import android.widget.Toast;
-import es.jcorralejo.android.coac2012.R;
+import es.jcorralejo.android.R;
 import es.jcorralejo.android.coac2012.CoacApplication;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
 import es.jcorralejo.android.coac2012.entidades.Comentario;

@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
-import es.jcorralejo.android.coac2012.R;
+import es.jcorralejo.android.R;
 
 public class MasCarnavalActivity extends Activity{
 	
