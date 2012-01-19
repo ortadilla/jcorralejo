@@ -64,7 +64,7 @@ public class MenuActivity extends Activity{
 				public void onClick(View v) {
 					SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
 					String dia = sdf.format(new Date());
-					List<Agrupacion> agrupaciones = app.getCalendario().get("21/01/2012");
+					List<Agrupacion> agrupaciones = app.getCalendario().get(dia);
 					if(agrupaciones!=null && !agrupaciones.isEmpty()){
 						Intent intent = new Intent();
 						intent.setClass(getApplicationContext(), ActuacionActivity.class);
