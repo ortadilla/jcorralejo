@@ -1997,7 +1997,7 @@
 		</agrupacion>	
 
 		<agrupacion id="96" modalidad="CHIRIOGOTA" nombre="Una chirigota de cuartos" autor="La agrupación/josé Ramón Zamora/Miguel Ángel Cáceres" director=""
-		localidad="Sevilla" coac2011="Generación ni-ni (38º en clasificatorias)" cabeza_serie="false" 
+		localidad="Sevilla" coac2011="Generación ni-ni (38º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
 		url_foto=""
@@ -2015,7 +2015,93 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/una-chirigota-cuartos.html"/>
 			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="97" modalidad="CORO" nombre="¿Listos los de atras? ¡Listos!" autor="R. Peñalver/F. Cárdenas/J. A. Flores/A. Martín" director=""
+		localidad="Cádiz" coac2011="El asedio (7º Cuartos)" cabeza_serie="false" 
+		info="Coro del Lamas"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/listos-los-atras-listos.html"/>
+			</comentarios>
+		</agrupacion>				
+		
+		<agrupacion id="98" modalidad="CHIRIGOTA" nombre="Los traviesos que vienen con caja, bombo y platillo..." autor="José Carlos Patrón/María del Mar Nuño" director=""
+		localidad="Cádiz" coac2011="Los diligentes (25º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-traviesos-que-vienen-con-caja.html"/>
+			</comentarios>
 		</agrupacion>	
+
+		<agrupacion id="99" modalidad="COMPARSA" nombre="El friunfo" autor="Ricardo Rodríguez/Rubén Gil" director=""
+		localidad="Las Cabezas de San Juan (Sevilla)" coac2011="El levantamiento (35º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/triunfo.html"/>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="100" modalidad="CUARTETO" nombre="Llévatelo calentito" autor="Miguel Ángel Real/Dolores Prado" director=""
+		localidad="Cádiz" coac2011="Cuarto y mitad de siglo bien despachao (6º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/llevatelo-calentito.html"/>
+			</comentarios>
+		</agrupacion>
+
+
 
 
 
@@ -2198,6 +2284,13 @@
 			<puesto no="8" agrupacion="94"/>
 			<puesto no="9" agrupacion="95"/>
 			<puesto no="10" agrupacion="96"/>
+		</dia>
+		<dia fecha="01/02/2012">
+			<puesto no="1" agrupacion="97"/>
+			<puesto no="2" agrupacion="98"/>
+			<puesto no="3" agrupacion="99"/>
+			<puesto no="4" agrupacion="100"/>
+			<puesto no="6" agrupacion="DESCANSO" />
 		</dia>
 
 	</calendario>
