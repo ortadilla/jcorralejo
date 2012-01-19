@@ -1660,10 +1660,177 @@
 			</comentarios>
 		</agrupacion>			
 	
+		<agrupacion id="80" modalidad="CHIRIGOTA" nombre="Los reflotaos" autor="Francisco Gatica/José Antonio Segundo" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-reflotaos.html"/>
+			</comentarios>
+		</agrupacion>	
 	
+		<agrupacion id="81" modalidad="COMPARSA" nombre="Las malas" autor="María Núñez/Cristina Calle" director=""
+		localidad="Sevilla" coac2011="La niña (18º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/las-malas.html"/>
+			</comentarios>
+		</agrupacion>		
 	
+		<agrupacion id="82" modalidad="CHIRIGOTA" nombre="Los inspectoresbache, detectives privao" autor="Marco Romero/Eugenio Cheza" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-inspectoresbache-detectives-privao.html"/>
+			</comentarios>
+		</agrupacion>		
+		
+		<agrupacion id="83" modalidad="COMPARSA" nombre="Ciudadano Zero" autor="Constantino Tovar" director=""
+		localidad="Cádiz" coac2011="Juana la Loca (1º Premio)" cabeza_serie="true" 
+		info="Comparsa de Tino Tovar"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/ciudadano-zero.html"/>
+			</comentarios>
+		</agrupacion>		
 	
+		<agrupacion id="84" modalidad="CHIRIGOTA" nombre="Los de la A.P.P.C. (Asociacion de picadores paraos de Cataluña)" autor="Antonio Rodríguez/José María Barranco" director=""
+		localidad="Chiclana (Cádiz)" coac2011="Made in Taiwan (39º Premio)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-appc.html"/>
+			</comentarios>
+		</agrupacion>		
 	
+		<agrupacion id="85" modalidad="COMPARSA" nombre="Los habitantes del planeta arte" autor="Juan Antonio Pozo" director=""
+		localidad="Algeciras (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-habitantes-del-planeta-arte.html"/>
+			</comentarios>
+		</agrupacion>	
+	
+		<agrupacion id="86" modalidad="CHIRIGOTA" nombre="Truco, o eso trato" autor="Francisco Javier Ramos/José Antonio Gobea" director=""
+		localidad="Sevilla" coac2011="Por una regulación de empleo así me veo (47º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/truco-eso-trato.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="87" modalidad="COMPARSA" nombre="El rincón de los elegidos" autor="uan Antonio Garrido" director=""
+		localidad="Punta Umbría (Huelva)" coac2011="El capitán de la playa (38º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/rincon-los-elegidos.html"/>
+			</comentarios>
+		</agrupacion>		
+	
+
+	
+
 
 		<agrupacion id="100" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera"
 		localidad="Cádiz" coac2011="Los currisquillos de Santa María" cabeza_serie="true" 
@@ -1820,7 +1987,15 @@
 		</dia>
 		<dia fecha="30/01/2012">
 			<puesto no="1" agrupacion="79"/>
+			<puesto no="2" agrupacion="80"/>
+			<puesto no="3" agrupacion="81"/>
+			<puesto no="4" agrupacion="82"/>
+			<puesto no="5" agrupacion="83"/>
 			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="84"/>
+			<puesto no="8" agrupacion="85"/>
+			<puesto no="9" agrupacion="86"/>
+			<puesto no="10" agrupacion="87"/>
 		</dia>
 
 	</calendario>
