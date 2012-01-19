@@ -31,7 +31,7 @@ public class MasCarnavalActivity extends Activity{
 		comparsas.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					Toast.makeText(getApplicationContext(), "Apartado no disponible en esta versión", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "Próximamente disponible......", Toast.LENGTH_LONG).show();
 				}
 			}
 		);
@@ -39,7 +39,7 @@ public class MasCarnavalActivity extends Activity{
 		chirigotas.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					Toast.makeText(getApplicationContext(), "Apartado no disponible en esta versión", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "Próximamente disponible......", Toast.LENGTH_LONG).show();
 				}
 			}
 		);
@@ -47,7 +47,7 @@ public class MasCarnavalActivity extends Activity{
 		coros.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					Toast.makeText(getApplicationContext(), "Apartado no disponible en esta versión", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "Próximamente disponible......", Toast.LENGTH_LONG).show();
 				}
 			}
 		);
