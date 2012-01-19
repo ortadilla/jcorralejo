@@ -2418,7 +2418,7 @@
 
 		<agrupacion id="116" modalidad="CHIRIGOTA" nombre="Mari Carmen y sus muñecos" autor="Juan Romero/Daniel Rosales/Iván Romero" director=""
 		localidad="Cádiz" coac2011="Bien empezamos el año (21º Preeliminares)" cabeza_serie="false" 
-		info="Coro de Nandi Migueles"
+		info=""
 		url_cc=""
 		url_foto=""
 		url_videos=""
@@ -2437,57 +2437,348 @@
 			</comentarios>
 		</agrupacion>	
 
-
-
-
-
-
-
-		<agrupacion id="100" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera"
-		localidad="Cádiz" coac2011="Los currisquillos de Santa María" cabeza_serie="true" 
-		info="Comparsa de JC Afrabon Cereza"
-		url_cc="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Cafe_Teatro_Alameda.php"
-		url_foto="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Imagenes/Cafe_Teatro_Alameda_1.jpg"
-		url_videos="http://www.youtube.com/results?search_query=la+milagrosa+carnaval"
-		puntos="">
-			<componentes>
-				<componente nombre="Juán Sánchez" voz="Guitarra"/>
-				<componente nombre="Pepe Frego" voz="Tenor"/>
-			</componentes>
-			<videos>
-				<video descripcion="Preeliminar" url="http://www.youtube.com/watch?v=nNV3wl9gXmE"/>
-				<video descripcion="Semifinal - Pasodoble 1 + Cuplés y Estribillos" url="http://www.youtube.com/watch?v=nNV3wl9gXmE"/>
-			</videos>
-			<fotos>
-				<foto descripcion="General" url="http://www.carnavaldecadiz.com/Carnaval00/adultos/imagenes/La%20Milagrosa.jpg"/>
-			</fotos>
-			<comentarios>
-				<comentario origen="Diario de Cádiz" url="http://www.diariodecadiz.es/article/carnaval/330332/los/trasnochadores.html"/>
-				<comentario origen="La Voz de Cádiz" url="http://carnaval.lavozdigital.es/agrupaciones/2011/los-currelantes.html"/>
-			</comentarios>
-		</agrupacion>
-
-		<agrupacion id="200" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
-		localidad="Barbate" coac2011="" cabeza_serie="false" info=""
-		url_cc=""
-		url_foto=""
-		url_videos="http://www.youtube.com/results?search_query=la+milagrosa+carnaval"
-		puntos="305">
-			<componentes>
-				<componente nombre="Felipe el Hermoso" voz_instrumento="Palillos"/>
-				<componente nombre="Fernando Castro" voz_instrumento="Octavilla"/>
-			</componentes>
-		</agrupacion>
-		<agrupacion id="300" modalidad="COMPARSA" nombre="Ajú que frío" autor="Leman" director="Leman"
-		localidad="Barbate" coac2011="" cabeza_serie="false" 
+		<agrupacion id="117" modalidad="COMPARSA" nombre="Capricho de Cai" autor="Emilio Álvarez" director=""
+		localidad="San Fernando (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
 		url_cc=""
 		url_foto=""
 		url_videos=""
-		puntos="216">
+		puntos="">
 			<componentes>
+				<componente nombre="" voz=""/>
 			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/capricho-cai.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="118" modalidad="CHIRIGOTA" nombre="El padre Carrasco y las niñas que dan asco" autor="Rafael Mora/Antonio Logroño/Javier Vargas" director=""
+		localidad="San José de la Rinconada (Sevilla)" coac2011="Los defensores de Luis (8º Semifinales)" cabeza_serie="true" 
+		info="Comparsa de Luís Rivero"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-carroneros.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="119" modalidad="COMPARSA" nombre="Los carroñeros" autor="Luis Rivero/Francisco Javier Rodríguez/E. García Rosado" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/padre-carrasco-las-ninas-que-dan-asco.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="120" modalidad="CHIRIGOTA" nombre="Los contables" autor="Francisco Javier Mateo/Guillermo Guerrero" director=""
+		localidad="Marbella (Málaga)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-contables.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="121" modalidad="COMPARSA" nombre="El torbellino" autor="Javier Raya/Miguel Ángel Vela" director=""
+		localidad="Marbella (Málaga)" coac2011="Mar de amores (15º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/torbellino.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="122" modalidad="CHIRIGOTA" nombre="De tienda en tienda" autor="Juan Manuel Braza" director=""
+		localidad="Cádiz" coac2011="Cai Story (13º Cuartos)" cabeza_serie="false" 
+		info="Chirigota del Sheriff"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/tienda-tienda.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="123" modalidad="COMPARSA" nombre="La leyenda negra" autor="Ramón Manuel Ruiz" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/leyenda-negra.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="124" modalidad="CORO" nombre="Un mundo aparte" autor="Manuel Meléndez/Isidoro Delgado/Antonio García" director=""
+		localidad="Chiclana (Cádiz)" coac2011="5 de marzo (12º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/mundo-aparte.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="125" modalidad="CHIRIGOTA" nombre="Los barrenderos de Venecia" autor="José María Pardac/Rafael Castillo/Francisco José Torrejón" director=""
+		localidad="San Fernando (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-barrenderos-venecia.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="126" modalidad="COMPARSA" nombre="Los levantera" autor="José Manuel Cardoso" director=""
+		localidad="Tarifa (Cádiz)" coac2011="El reino de la playa (11º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-levantera.html"/>
+			</comentarios>
 		</agrupacion>
-				
+		
+		<agrupacion id="127" modalidad="CHIRIGOTA" nombre="Los indignados (entre perros y flautas)" autor="Javier Gómez/Javier Cuevas" director=""
+		localidad="Cádiz" coac2011="Los encantadores de perrosa (5º Cuartos)" cabeza_serie="true" 
+		info="Chirigota del Cascana"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-indignados-entre-perros-flautas.html"/>
+			</comentarios>
+		</agrupacion>		
+		
+		<agrupacion id="128" modalidad="CHIRIGOTA" nombre="Le llaman copla" autor="Julio González/David Pérez/José Antonio Pérez" director=""
+		localidad="Cádiz" coac2011="¿Queréis guerrilla? (30º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/llaman-copla.html"/>
+			</comentarios>
+		</agrupacion>		
+		
+		<agrupacion id="129" modalidad="COMPARSA" nombre="El hombre sin corazón" autor="Víctor García/Juan Manuel Moreno" director=""
+		localidad="Alcalá de Guadaira (Sevilla)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/hombre-sin-corazon.html"/>
+			</comentarios>
+		</agrupacion>		
+		
+		<agrupacion id="130" modalidad="CHIRIGOTA" nombre="Los apoderaos sin ambiciones" autor="José María Parrado/Carlos Bastón/José Manuel Martínez" director=""
+		localidad="Puerto Real (Cádiz)" coac2011="Los diestros muu diestros (15º Cuartos)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-apoderaos-sin-ambiciones.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="131" modalidad="COMPARSA" nombre="Los guiaditanos" autor="Antonio Galán" director=""
+		localidad="Cádiz" coac2011="La fundación (24º Preeliminares)" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-guiaditanos.html"/>
+			</comentarios>
+		</agrupacion>	
+
+
+
+
+<!-- 		<agrupacion id="100" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera" -->
+<!-- 		localidad="Cádiz" coac2011="Los currisquillos de Santa María" cabeza_serie="true"  -->
+<!-- 		info="Comparsa de JC Afrabon Cereza" -->
+<!-- 		url_cc="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Cafe_Teatro_Alameda.php" -->
+<!-- 		url_foto="http://www.carnavaldecadiz.com/Carnaval2011/Absoluta/Imagenes/Cafe_Teatro_Alameda_1.jpg" -->
+<!-- 		url_videos="http://www.youtube.com/results?search_query=la+milagrosa+carnaval" -->
+<!-- 		puntos=""> -->
+<!-- 			<componentes> -->
+<!-- 				<componente nombre="Juán Sánchez" voz="Guitarra"/> -->
+<!-- 				<componente nombre="Pepe Frego" voz="Tenor"/> -->
+<!-- 			</componentes> -->
+<!-- 			<videos> -->
+<!-- 				<video descripcion="Preeliminar" url="http://www.youtube.com/watch?v=nNV3wl9gXmE"/> -->
+<!-- 				<video descripcion="Semifinal - Pasodoble 1 + Cuplés y Estribillos" url="http://www.youtube.com/watch?v=nNV3wl9gXmE"/> -->
+<!-- 			</videos> -->
+<!-- 			<fotos> -->
+<!-- 				<foto descripcion="General" url="http://www.carnavaldecadiz.com/Carnaval00/adultos/imagenes/La%20Milagrosa.jpg"/> -->
+<!-- 			</fotos> -->
+<!-- 			<comentarios> -->
+<!-- 				<comentario origen="Diario de Cádiz" url="http://www.diariodecadiz.es/article/carnaval/330332/los/trasnochadores.html"/> -->
+<!-- 				<comentario origen="La Voz de Cádiz" url="http://carnaval.lavozdigital.es/agrupaciones/2011/los-currelantes.html"/> -->
+<!-- 			</comentarios> -->
+<!-- 		</agrupacion> -->
+
 	</agrupaciones>
 
 	<calendario>
@@ -2647,7 +2938,24 @@
 		<dia fecha="03/02/2012">
 			<puesto no="1" agrupacion="115"/>
 			<puesto no="2" agrupacion="116"/>
+			<puesto no="3" agrupacion="117"/>
+			<puesto no="4" agrupacion="118"/>
+			<puesto no="5" agrupacion="119"/>
 			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="120"/>
+			<puesto no="8" agrupacion="121"/>
+			<puesto no="9" agrupacion="122"/>
+			<puesto no="10" agrupacion="123"/>
+		</dia>
+		<dia fecha="04/02/2012">
+			<puesto no="1" agrupacion="124"/>
+			<puesto no="2" agrupacion="125"/>
+			<puesto no="3" agrupacion="126"/>
+			<puesto no="4" agrupacion="127"/>
+			<puesto no="5" agrupacion="DESCANSO" />
+			<puesto no="6" agrupacion="128"/>
+			<puesto no="7" agrupacion="129"/>
+			<puesto no="7" agrupacion="130"/>
 		</dia>
 
 	</calendario>
