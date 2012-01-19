@@ -5,10 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -31,8 +27,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
-import es.jcorralejo.android.coac2012.R;
+
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
+
 import es.jcorralejo.android.coac2012.CoacApplication;
+import es.jcorralejo.android.coac2012.R;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
 import es.jcorralejo.android.coac2012.utils.Constantes;
 import es.jcorralejo.android.coac2012.utils.RssDownloadHelper;
@@ -42,6 +42,8 @@ public class MenuActivity extends Activity{
 	private static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*24; // recarga cada día: 
 	private ActualizarPostAsyncTask tarea;
 	private CoacApplication app;
+	private AdView adView1;
+	private AdView adView2;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +52,10 @@ public class MenuActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
 		
-		AdView adView = new AdView(this, AdSize.BANNER, "a14f1728557472c");
-	    adView = (AdView) findViewById(R.id.ad);
-	    adView.loadAd(new AdRequest());
+		adView1 = (AdView) findViewById(R.id.ad1);
+	    adView1.loadAd(new AdRequest());
+	    adView2 = (AdView) findViewById(R.id.ad2);
+	    adView2.loadAd(new AdRequest());
 
 		
 		cargarFavoritas();
@@ -117,6 +120,13 @@ public class MenuActivity extends Activity{
 			}
 		);
 	}
+	
+	  @Override
+	  public void onDestroy() {
+	    adView1.destroy();
+	    adView2.destroy();
+	    super.onDestroy();
+	  }
 	
 	private void cargarFavoritas(){
 		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
