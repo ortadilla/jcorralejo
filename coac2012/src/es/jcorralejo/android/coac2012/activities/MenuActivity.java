@@ -3,7 +3,9 @@ package es.jcorralejo.android.coac2012.activities;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -52,11 +54,7 @@ public class MenuActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
 		
-		adView1 = (AdView) findViewById(R.id.ad1);
-	    adView1.loadAd(new AdRequest());
-	    adView2 = (AdView) findViewById(R.id.ad2);
-	    adView2.loadAd(new AdRequest());
-
+		cargarAnuncios();
 		
 		cargarFavoritas();
 		
@@ -121,13 +119,34 @@ public class MenuActivity extends Activity{
 		);
 	}
 	
-	  @Override
-	  public void onDestroy() {
-	    adView1.destroy();
-	    adView2.destroy();
-	    super.onDestroy();
-	  }
+	private void cargarAnuncios(){
+		Set<String> key = new HashSet<String>();
+		key.add("Carnaval"); 
+		key.add("Cádiz"); 
+		key.add("Comparsa"); 
+		key.add("Chirigota"); 
+		key.add("Coro"); 
+		key.add("Cuarteto"); 
+		key.add("Febrero"); 
+
+		AdRequest r1 = new AdRequest();
+		r1.setKeywords(key);
+		adView1 = (AdView) findViewById(R.id.ad1);
+	    adView1.loadAd(r1);
+
+	    AdRequest r2 = new AdRequest();
+	    r1.setKeywords(key);
+	    adView2 = (AdView) findViewById(R.id.ad2);
+	    adView2.loadAd(r2);
+	}
 	
+	@Override
+	public void onDestroy() {
+		adView1.destroy();
+		adView2.destroy();
+		super.onDestroy();
+	}
+
 	private void cargarFavoritas(){
 		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
 		String favString = prefs.getString(Constantes.PREFERENCE_FAVORITAS, "");
