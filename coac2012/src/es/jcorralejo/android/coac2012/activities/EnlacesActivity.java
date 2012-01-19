@@ -1,6 +1,11 @@
 package es.jcorralejo.android.coac2012.activities;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -20,12 +25,15 @@ public class EnlacesActivity extends ListActivity{
 
 	private List<Enlace> enlaces;
 	private LayoutInflater miInflater;
+	private AdView adView1;
 	
 	@SuppressWarnings("unchecked")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.enlaces_list);
+		
+		cargarAnuncios();
 		
 		miInflater = LayoutInflater.from(this);
 		Bundle extras = getIntent().getExtras();
@@ -79,6 +87,30 @@ public class EnlacesActivity extends ListActivity{
 		startActivity(i);
 	}
 	
+
+	private void cargarAnuncios(){
+		Set<String> key = new HashSet<String>();
+		key.add("Carnaval"); 
+		key.add("Cádiz"); 
+		key.add("Comparsa"); 
+		key.add("Chirigota"); 
+		key.add("Coro"); 
+		key.add("Cuarteto"); 
+		key.add("Febrero"); 
+
+		AdRequest r1 = new AdRequest();
+		r1.setKeywords(key);
+		adView1 = (AdView) findViewById(R.id.ad1);
+	    adView1.loadAd(r1);
+
+	}
+	
+	@Override
+	public void onDestroy() {
+		adView1.destroy();
+		super.onDestroy();
+	}
+
 	
 	
 }
