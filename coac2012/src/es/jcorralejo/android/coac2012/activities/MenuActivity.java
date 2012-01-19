@@ -50,9 +50,9 @@ public class MenuActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
 		
-//		AdView adView = (AdView) this.findViewById(R.id.ad);
-//	    AdRequest adRequest = new AdRequest();
-//	    adView.loadAd(adRequest); 
+		AdView adView = new AdView(this, AdSize.BANNER, "a14f1728557472c");
+	    adView = (AdView) findViewById(R.id.ad);
+	    adView.loadAd(new AdRequest());
 
 		
 		cargarFavoritas();
