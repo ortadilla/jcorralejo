@@ -2459,28 +2459,7 @@
 		</agrupacion>	
 
 		<agrupacion id="118" modalidad="CHIRIGOTA" nombre="El padre Carrasco y las niñas que dan asco" autor="Rafael Mora/Antonio Logroño/Javier Vargas" director=""
-		localidad="San José de la Rinconada (Sevilla)" coac2011="Los defensores de Luis (8º Semifinales)" cabeza_serie="true" 
-		info="Comparsa de Luís Rivero"
-		url_cc=""
-		url_foto=""
-		url_videos=""
-		puntos="">
-			<componentes>
-				<componente nombre="" voz=""/>
-			</componentes>
-			<videos>
-				<video descripcion="" url=""/>
-			</videos>
-			<fotos>
-				<foto descripcion="" url=""/>
-			</fotos>
-			<comentarios>
-				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-carroneros.html"/>
-			</comentarios>
-		</agrupacion>	
-
-		<agrupacion id="119" modalidad="COMPARSA" nombre="Los carroñeros" autor="Luis Rivero/Francisco Javier Rodríguez/E. García Rosado" director=""
-		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		localidad="San José de la Rinconada (Sevilla)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
 		url_foto=""
@@ -2497,6 +2476,27 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/padre-carrasco-las-ninas-que-dan-asco.html"/>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="119" modalidad="COMPARSA" nombre="Los carroñeros" autor="Luis Rivero/Francisco Javier Rodríguez/E. García Rosado" director=""
+		localidad="Cádiz" coac2011="Los defensores de Luís (8º Semifinales)" cabeza_serie="true" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-carroneros.html"/>
 			</comentarios>
 		</agrupacion>	
 
@@ -2963,6 +2963,16 @@
 	
 	<enlaces>
 		<enlace tipo="Agrupaciones" descripcion="La Comparsa de Tino" url="http://www.lacomparsadetino.com/" />
+		<enlace tipo="Agrupaciones" descripcion="La Comparsa de J.C.Aragón" url="http://www.lacomparsadejuancarlos.com/" />
+		<enlace tipo="Agrupaciones" descripcion="La Comparsa de Joaquín Quiñones" url="http://www.joaquinquinones.com/" />
+		<enlace tipo="Agrupaciones" descripcion="La Comparsa de Los Carapapas" url="http://www.lawebdeloscarapapas.com/" />
+		<enlace tipo="Agrupaciones" descripcion="La Comparsa de Los Majaras" url="http://losmajaras.tk/" />
+		<enlace tipo="Agrupaciones" descripcion="La Comparsa de Antonio Martín" url="http://elblogdeantoniomartin.blogspot.com/" />
+		<enlace tipo="Agrupaciones" descripcion="La Comparsa de Luís Rivero" url="http://www.lacomparsadeluisrivero.com/" />
+		<enlace tipo="Agrupaciones" descripcion="La Chiriota del Sheriff" url="http://www.lachirigotadelsheriff.com/" />
+		<enlace tipo="Agrupaciones" descripcion="La Chiriota del Selu" url="http://www.lachirigotadelselu.com/" />
+		<enlace tipo="Agrupaciones" descripcion="La Chiriota de Sevilla" url="http://www.lachirigotadesevilla.com/" />
+		<enlace tipo="Agrupaciones" descripcion="La Chiriota del Canijo" url="http://www.elcanijo.es/ />
 		<enlace tipo="Blogs" descripcion="Al compás Gaditano" url="http://compasgaditano.blogspot.com/" />
 		<enlace tipo="Diarios" descripcion="Diario de Cádiz" url="http://www.diariodecadiz.es/" />
 		<enlace tipo="Otros" descripcion="Carnaval Colombino" url="http://www.carnavalcolombino.com/" />
