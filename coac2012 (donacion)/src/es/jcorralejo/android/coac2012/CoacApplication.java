@@ -32,6 +32,11 @@ public class CoacApplication extends Application {
 		modalidades.put(Constantes.MODALIDAD_COMPARSA, new ArrayList<Agrupacion>());
 		modalidades.put(Constantes.MODALIDAD_CORO, new ArrayList<Agrupacion>());
 		modalidades.put(Constantes.MODALIDAD_CUARTETO, new ArrayList<Agrupacion>());
+		modalidades.put(Constantes.MODALIDAD_INFANTIL, new ArrayList<Agrupacion>());
+		modalidades.put(Constantes.MODALIDAD_JUVENIL, new ArrayList<Agrupacion>());
+		modalidades.put(Constantes.MODALIDAD_ROMANCERO, new ArrayList<Agrupacion>());
+		modalidades.put(Constantes.MODALIDAD_CALLEJERA, new ArrayList<Agrupacion>());
+
 		
 		List<String> preeliminares = new ArrayList<String>();
 		preeliminares.add("21/01/2012");
