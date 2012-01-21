@@ -1,5 +1,6 @@
 package es.jcorralejo.android.coac2012.activities;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,6 +15,9 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 import es.jcorralejo.android.R;
+import es.jcorralejo.android.coac2012.CoacApplication;
+import es.jcorralejo.android.coac2012.entidades.Agrupacion;
+import es.jcorralejo.android.coac2012.utils.Constantes;
 
 public class MasCarnavalActivity extends Activity{
 	
@@ -27,10 +31,18 @@ public class MasCarnavalActivity extends Activity{
 		
 		cargarAnuncios();
 		
-		TextView comparsas = (TextView) findViewById(R.id.infantilesJuveniles);
-		comparsas.setOnClickListener(
+		final CoacApplication app = (CoacApplication)getApplication();
+		
+		TextView infantJuv = (TextView) findViewById(R.id.infantilesJuveniles);
+		infantJuv.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
+					Intent i = new Intent();
+					ArrayList<Agrupacion> agr = (ArrayList<Agrupacion>)app.getModalidades().get(Constantes.MODALIDAD_INFANTIL);
+					agr.addAll((ArrayList<Agrupacion>)app.getModalidades().get(Constantes.MODALIDAD_JUVENIL));
+					i.putExtra(Constantes.PARAMETRO_AGRUPACIONES, agr);
+					i.setClass(getApplicationContext(), AgrupacionesActivity.class);
+					startActivity(i);
 					Toast.makeText(getApplicationContext(), "Próximamente disponible......", Toast.LENGTH_LONG).show();
 				}
 			}
