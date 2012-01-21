@@ -1545,7 +1545,7 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Vídeo promocional" url="http://www.youtube.com/watch?v=O1QRg3CVb4M"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
