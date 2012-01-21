@@ -37,21 +37,17 @@ public class MasCarnavalActivity extends Activity{
 		infantJuv.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					Intent i = new Intent();
 					ArrayList<Agrupacion> agr = (ArrayList<Agrupacion>)app.getModalidades().get(Constantes.MODALIDAD_INFANTIL);
 					agr.addAll((ArrayList<Agrupacion>)app.getModalidades().get(Constantes.MODALIDAD_JUVENIL));
-					i.putExtra(Constantes.PARAMETRO_AGRUPACIONES, agr);
-					i.setClass(getApplicationContext(), AgrupacionesActivity.class);
-					startActivity(i);
-					Toast.makeText(getApplicationContext(), "Próximamente disponible......", Toast.LENGTH_LONG).show();
+					navegarAgrupaciones(agr);
 				}
 			}
 		);
-		TextView chirigotas = (TextView) findViewById(R.id.callejeras);
-		chirigotas.setOnClickListener(
+		TextView callejeras = (TextView) findViewById(R.id.callejeras);
+		callejeras.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					Toast.makeText(getApplicationContext(), "Próximamente disponible......", Toast.LENGTH_LONG).show();
+					navegarAgrupaciones((ArrayList<Agrupacion>)app.getModalidades().get(Constantes.MODALIDAD_CALLEJERA));
 				}
 			}
 		);
@@ -59,7 +55,7 @@ public class MasCarnavalActivity extends Activity{
 		coros.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					Toast.makeText(getApplicationContext(), "Próximamente disponible......", Toast.LENGTH_LONG).show();
+					navegarAgrupaciones((ArrayList<Agrupacion>)app.getModalidades().get(Constantes.MODALIDAD_ROMANCERO));
 				}
 			}
 		);
@@ -73,6 +69,13 @@ public class MasCarnavalActivity extends Activity{
 				}
 			}
 		);
+	}
+	
+	private void navegarAgrupaciones(ArrayList<Agrupacion> agr){
+		Intent i = new Intent();
+		i.putExtra(Constantes.PARAMETRO_AGRUPACIONES, agr);
+		i.setClass(getApplicationContext(), AgrupacionesActivity.class);
+		startActivity(i);
 	}
 	
 
