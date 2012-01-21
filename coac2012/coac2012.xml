@@ -3452,6 +3452,28 @@
 			</comentarios>
 		</agrupacion>			
 							
+		<agrupacion id="165" modalidad="CALLEJERA" nombre="Vniversitati gvatifvrvm"" autor="" director=""
+		localidad="Cádiz" coac2011="La banca guatifó" cabeza_serie="true" 
+		info="Chirigota de Los Guatifó"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
+							
+							
+							
 		  
 		
 <!-- 		<agrupacion id="100" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera" -->
@@ -3677,6 +3699,8 @@
 		<enlace tipo="Agrupaciones" descripcion="La Chiriota de J.C.Aragón" url="http://www.chirigotalapasma.com/" />
 		<enlace tipo="Agrupaciones" descripcion="La Chiriota del Bocu" url="http://es-es.facebook.com/pages/Chirigota-del-Bocu-y-Jose-Rodicio/160664203964811" />
 		<enlace tipo="Agrupaciones" descripcion="La Chiriota de Kike Remolino" url="http://www.lachirigotadelremolino.com/" />
+		<enlace tipo="Agrupaciones" descripcion="El coro de Nandi Migueles (de los niños)" url="http://www.corodenandi.com/" />
+		<enlace tipo="Agrupaciones" descripcion="Los Guatifó" url="http://guatifo.blogspot.com/" />
 		<enlace tipo="Blogs" descripcion="Al compás Gaditano" url="http://compasgaditano.blogspot.com/" />
 		<enlace tipo="Blogs" descripcion="Carnavaleando" url="http://carnavaleando.com/" />
 		<enlace tipo="Blogs" descripcion="Carnavalitas" url="http://www.carnavalistas.com/" />
