@@ -5,7 +5,7 @@
 		localidad="Cádiz" coac2011="La infantería (8º Cuartos)" cabeza_serie="false" 
 		info="El coro a pie"
 		url_cc=""
-		url_foto=""
+		url_foto="http://www.andaluciainformacion.es/sistema/fotos/articulos-116215.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -28,7 +28,7 @@
 		localidad="Cádiz" coac2011="Los que siempre les toca bailar con la más fea (12º Cuartos)" cabeza_serie="false" 
 		info="Chirigota de Manolín Gálvez"
 		url_cc=""
-		url_foto=""
+		url_foto="http://www.andaluciainformacion.es/sistema/fotos/articulos-116216.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -51,7 +51,7 @@
 		localidad="Jerez" coac2011="Esto me suena (14º Cuartos)" cabeza_serie="false" 
 		info="Compara de Ripoll"
 		url_cc=""
-		url_foto=""
+		url_foto="http://www.andaluciainformacion.es/sistema/fotos/articulos-116217.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -74,7 +74,7 @@
 		localidad="Algeciras" coac2011="Aquí el que no corre vuela (2º Premio)" cabeza_serie="true" 
 		info="Cuarteto de Algeciras"
 		url_cc=""
-		url_foto=""
+		url_foto="http://www.andaluciainformacion.es/sistema/fotos/articulos-116224.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -3707,6 +3707,7 @@
 		<enlace tipo="Agrupaciones" descripcion="La Chiriota de Kike Remolino" url="http://www.lachirigotadelremolino.com/" />
 		<enlace tipo="Agrupaciones" descripcion="El coro de Nandi Migueles (de los niños)" url="http://www.corodenandi.com/" />
 		<enlace tipo="Agrupaciones" descripcion="Los Guatifó" url="http://guatifo.blogspot.com/" />
+		<enlace tipo="Agrupaciones" descripcion="El Cuarteto de Algeciras" url="http://elcuartetodealgeciras.blogspot.com/" />
 		<enlace tipo="Blogs" descripcion="Al compás Gaditano" url="http://compasgaditano.blogspot.com/" />
 		<enlace tipo="Blogs" descripcion="Carnavaleando" url="http://carnavaleando.com/" />
 		<enlace tipo="Blogs" descripcion="Carnavalitas" url="http://www.carnavalistas.com/" />
