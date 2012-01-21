@@ -2751,10 +2751,689 @@
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-guiaditanos.html"/>
 			</comentarios>
 		</agrupacion>	
+		
+		<agrupacion id="132" modalidad="INFANTIL" nombre="Los informáticos (los que siempre llevan la razón) (Chirigota infantil)" autor="Eduardo José Mejias Rosales" director="Diego Letrán Toledo"
+		localidad="Cádiz" coac2011="Los Wii" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
 
+		<agrupacion id="133" modalidad="INFANTIL" nombre="Los nietos del Piyayo (Comparsa infantil)" autor="" director=""
+		localidad="Barbate (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="134" modalidad="INFANTIL" nombre="No hay esquimal que por bien no venga (Cuarteto infantil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="135" modalidad="INFANTIL" nombre="Los rockabillys (Chirigota infantil)" autor="" director=""
+		localidad="Barbate (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>					
 
+		<agrupacion id="136" modalidad="INFANTIL" nombre="¿Dónde está la plaza? (Cuarteto infantil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
 
+		<agrupacion id="137" modalidad="INFANTIL" nombre="Deseo (Comparsa infantil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+		
+		<agrupacion id="138" modalidad="INFANTIL" nombre="Los niños de Oxford (Chirifota infantil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
 
+		<agrupacion id="139" modalidad="INFANTIL" nombre="Los indígenas de la Viña (Chirigota infantil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>		
+		
+		<agrupacion id="140" modalidad="INFANTIL" nombre="Pasodobles, cuplés y tanguillos (Comparsa infantil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="141" modalidad="INFANTIL" nombre="Todo el día abierto (Cuarteto infantil)" autor="" director=""
+		localidad="Las Cabezas" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
+
+		<agrupacion id="142" modalidad="INFANTIL" nombre="Tres cuarto metro tela doble de ancho (Chirigota infantil)" autor="" director=""
+		localidad="Barbate (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="143" modalidad="INFANTIL" nombre="Las reinas del surf (Chirigota infantil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="144" modalidad="INFANTIL" nombre="El sonar de mis palabras (Comparsa infantil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="145" modalidad="INFANTIL" nombre="Cailloween (Chirigota infantil)" autor="" director=""
+		localidad="Chiclana (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="146" modalidad="JUVENIL" nombre="Domingo de piñata (Coro juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="147" modalidad="JUVENIL" nombre="Los pata de plata (Comparsa juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="148" modalidad="JUVENIL" nombre="O limpiadas o ensuciadas (Cuarteto juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="149" modalidad="JUVENIL" nombre="Los de la tasca (Chirigota juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+		<agrupacion id="150" modalidad="JUVENIL" nombre="Las bienaventuradas (Comparsa juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="151" modalidad="JUVENIL" nombre="Los recursos rumanos (Cuarteto juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+		
+		<agrupacion id="152" modalidad="JUVENIL" nombre="El sermón (Cuarteto juvenil)" autor="" director=""
+		localidad="El Puerto (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>		
+
+		<agrupacion id="153" modalidad="JUVENIL" nombre="Los infantes (Coro juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+			
+		<agrupacion id="154" modalidad="JUVENIL" nombre=" Los telecadi (una chirigota infantil) (Chirigota juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+									
+		<agrupacion id="155" modalidad="JUVENIL" nombre="Los que van de camino (Cuarteto juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+									
+		<agrupacion id="156" modalidad="JUVENIL" nombre="La isla de los sueños (Comparsa juvenil)" autor="" director=""
+		localidad="Barbate (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+									
+		<agrupacion id="157" modalidad="JUVENIL" nombre="Menuda noche carnavalesca (Cuarteto juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+									
+		<agrupacion id="158" modalidad="JUVENIL" nombre="La carbonera (Comparsa juvenil)" autor="" director=""
+		localidad="Barbate (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+																		
+		<agrupacion id="159" modalidad="JUVENIL" nombre="El motor de la música (Coro juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+						
+		<agrupacion id="160" modalidad="JUVENIL" nombre="Los caballeros de Dios (Comparsa juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+							
+		<agrupacion id="161" modalidad="JUVENIL" nombre="Las autónomas (Cuarteto juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+
+		<agrupacion id="162" modalidad="JUVENIL" nombre="Los expósito de la santa caridad (Comparsa juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+							
+		<agrupacion id="162" modalidad="JUVENIL" nombre="Los expósito de la santa caridad (Comparsa juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+							
+		<agrupacion id="163" modalidad="JUVENIL" nombre="Las divinas (Chirigota juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+							
+		<agrupacion id="163" modalidad="JUVENIL" nombre="La barrendera (Comparsa juvenil)" autor="" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>	
+							
+		  
+		
 <!-- 		<agrupacion id="100" modalidad="COMPARSA" nombre="Sentimiento caletero, ahora que el título es más largo" autor="Perico er membri" director="J.A.Frutera" -->
 <!-- 		localidad="Cádiz" coac2011="Los currisquillos de Santa María" cabeza_serie="true"  -->
 <!-- 		info="Comparsa de JC Afrabon Cereza" -->
@@ -2985,12 +3664,14 @@
 		<enlace tipo="Blogs" descripcion="Carnaval-tk" url="http://carnaval-tk.es/" />
 		<enlace tipo="Blogs" descripcion="Letras del Carnaval de Cádiz" url="http://libretodecarnaval.blogspot.com/" />
 		<enlace tipo="Blogs" descripcion="Carnavalsur" url="http://blogs.canalsur.es/carnavalsur/" />
-		<enlace tipo="Diarios" descripcion="Diario de Cádiz" url="http://www.diariodecadiz.es/" />
-		<enlace tipo="Diarios" descripcion="La Voz Digital" url="http://www.lavozdigital.es/" />
-		<enlace tipo="Diarios" descripcion="Diario Bahía de Cádiz" url="http://www.diariobahiadecadiz.com/" />
+		<enlace tipo="Diarios" descripcion="Diario de Cádiz" url="http://www.diariodecadiz.es/carnavalcadiz2012" />
+		<enlace tipo="Diarios" descripcion="La Voz Digital" url="http://carnaval.lavozdigital.es/" />
+		<enlace tipo="Diarios" descripcion="Diario Bahía de Cádiz" url="http://www.diariobahiadecadiz.com/portada-seccion-141-el-coac-2012" />
 		<enlace tipo="Otros" descripcion="Carnavalbook (Cádizbook)" url="http://www.cadizbook.es/carnavalbook" />
+		<enlace tipo="Otros" descripcion="Carnaval de Cádiz" url="http://www.carnavaldecadiz.com/" />
 		<enlace tipo="Otros" descripcion="Carnaval Colombino" url="http://www.carnavalcolombino.com/" />
 		<enlace tipo="Otros" descripcion="Carnaval de Chipiona" url="http://www.carnavaldechipiona.es/" />
+		<enlace tipo="Otros" descripcion="Callejeras" url="http://callejeras.es/" />
 	</enlaces>
 
 </coac2012>
