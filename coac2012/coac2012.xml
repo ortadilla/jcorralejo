@@ -3431,6 +3431,26 @@
 			<comentarios>
 			</comentarios>
 		</agrupacion>	
+
+		<agrupacion id="165" modalidad="CALLEJERA" nombre="Los loros ye-ye" autor="Jesús Bienvenido" director=""
+		localidad="Cádiz" coac2011="Los currelantes (2º Premio)" cabeza_serie="true" 
+		info="Comparsa callejera de Jesús Bienvenido"
+		url_cc=""
+		url_foto=""
+		url_videos=""
+		puntos="">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
 							
 		  
 		
