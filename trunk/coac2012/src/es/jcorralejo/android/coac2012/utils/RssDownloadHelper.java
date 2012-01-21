@@ -37,6 +37,8 @@ public class RssDownloadHelper {
 			modalidades.get(Constantes.MODALIDAD_COMPARSA).clear();
 			modalidades.get(Constantes.MODALIDAD_CUARTETO).clear();
 			modalidades.get(Constantes.MODALIDAD_CORO).clear();
+			modalidades.get(Constantes.MODALIDAD_INFANTIL).clear();
+			modalidades.get(Constantes.MODALIDAD_JUVENIL).clear();
 			
 			xr.parse(is);
 		} catch (Exception e) {
