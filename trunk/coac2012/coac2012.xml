@@ -26,7 +26,7 @@
 			</comentarios>
 		</agrupacion>
 		
-		<agrupacion id="2" modalidad="CHIRIGOTA" nombre="Con el doce basta" autor="F.Cárdenas/R.Peñalver/J.M.Sáenz/J.M. Barranco" director=""
+		<agrupacion id="2" modalidad="CHIRIGOTA" nombre="Con el doce basta" autor="F.Cárdenas/R.Peñalver/J.M.Sáenz/J.M. Barranco" director="Manolín Galvez"
 		localidad="Cádiz" coac2011="Los que siempre les toca bailar con la más fea (12º Cuartos)" cabeza_serie="false" 
 		info="Chirigota de Manolín Gálvez"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Con_el_12_basta.php"
@@ -56,7 +56,7 @@
 			</comentarios>
 		</agrupacion>
 		
-		<agrupacion id="3" modalidad="COMPARSA" nombre="La tripulación" autor="Luis Ripoll" director=""
+		<agrupacion id="3" modalidad="COMPARSA" nombre="La tripulación" autor="Luis Ripoll" director="Manuel Otero"
 		localidad="Jerez" coac2011="Esto me suena (14º Cuartos)" cabeza_serie="false" 
 		info="Compara de Ripoll"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_tripulacion.php"
@@ -86,7 +86,7 @@
 			</comentarios>
 		</agrupacion>
 		
-		<agrupacion id="4" modalidad="CUARTETO" nombre="El que está resfriao, que arríe las velas" autor="Ramón López/Juan Manuel Braza" director=""
+		<agrupacion id="4" modalidad="CUARTETO" nombre="El que está resfriao, que arríe las velas" autor="Ramón López/Juan Manuel Braza" director="Ramón López"
 		localidad="Algeciras" coac2011="Aquí el que no corre vuela (2º Premio)" cabeza_serie="true" 
 		info="Cuarteto de Algeciras"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_que_este_resfriao.php"
@@ -110,7 +110,7 @@
 			</comentarios>
 		</agrupacion>
 		
-		<agrupacion id="5" modalidad="COMPARSA" nombre="Entre algodones" autor="José Antonio Alvarado/Inés García" director=""
+		<agrupacion id="5" modalidad="COMPARSA" nombre="Entre algodones" autor="José Antonio Alvarado/Inés García" director="Ines García Barragán"
 		localidad="Sevilla" coac2011="La extranjera (36º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Entre_algodones.php"
@@ -190,7 +190,7 @@
 			</comentarios>
 		</agrupacion>		
 		
-		<agrupacion id="8" modalidad="CHIRIGOTA" nombre="Por mi... ¡Exagerao!" autor="Francisco Castro/David Castro/Manuel Chamorro" director=""
+		<agrupacion id="8" modalidad="CHIRIGOTA" nombre="Por mi... ¡Exagerao!" autor="Francisco Castro/David Castro/Manuel Chamorro" director="Daniel Benítez"
 		localidad="Écija (Sevilla)" coac2011="Tengo velillo pa hacer un cepillo (35º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Por_mi_Exagerao.php"
@@ -236,7 +236,7 @@
 			</comentarios>
 		</agrupacion>	
 		
-		<agrupacion id="10" modalidad="CHIRIGOTA" nombre="Una chirigota inventá" autor="Kuto Vergara" director=""
+		<agrupacion id="10" modalidad="CHIRIGOTA" nombre="Una chirigota inventá" autor="Kuto Vergara" director="Kuto Vergara Sánchez"
 		localidad="El Arahal (Sevilla)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -257,7 +257,7 @@
 			</comentarios>
 		</agrupacion>				
 	
-		<agrupacion id="11" modalidad="COMPARSA" nombre="Los bailarines" autor="Juan Fernández" director="Juan Fernández"
+		<agrupacion id="11" modalidad="COMPARSA" nombre="Los bailarines" autor="Juan Fernández" director="Raúl Trechera"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info="Comparsa de Juán Fernández"
 		url_cc=""
@@ -278,7 +278,7 @@
 			</comentarios>
 		</agrupacion>		
 		
-		<agrupacion id="12" modalidad="CHIRIGOTA" nombre="Los de la custodia" autor="Francisco José Fernández/Mario Rodríguez" director=""
+		<agrupacion id="12" modalidad="CHIRIGOTA" nombre="Los de la custodia" autor="Francisco José Fernández/Mario Rodríguez" director="Manuel Santillana Tirado"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -320,7 +320,7 @@
 			</comentarios>
 		</agrupacion>	
 		
-		<agrupacion id="14" modalidad="CHIRIGOTA" nombre="Los mayordomos de la Casa de Alba" autor="Francisco Abeijón/Luis María Rodríguez" director=""
+		<agrupacion id="14" modalidad="CHIRIGOTA" nombre="Los mayordomos de la Casa de Alba" autor="Francisco Abeijón/Luis María Rodríguez" director="Luis Mª Rodríguez"
 		localidad="Cádiz" coac2011="Los toreros multiusos (40º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -341,7 +341,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="15" modalidad="COMPARSA" nombre="Los caraduras de Cádiz" autor="Jesús Cervera/Francisco Cervera" director=""
+		<agrupacion id="15" modalidad="COMPARSA" nombre="Los caraduras de Cádiz" autor="Jesús Cervera/Francisco Cervera" director="Jesús Cervera Vilches"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -362,7 +362,7 @@
 			</comentarios>
 		</agrupacion>		
 		
-		<agrupacion id="16" modalidad="CHIRIGOTA" nombre="El comandante plutoriano y todos sus marcianos" autor="Manuel Zambrano/Javier Aguilera/Luis Manuel Rivero" director=""
+		<agrupacion id="16" modalidad="CHIRIGOTA" nombre="El comandante plutoriano y todos sus marcianos" autor="Manuel Zambrano/Javier Aguilera/Luis Manuel Rivero" director="Manuel Zambrano"
 		localidad="Trenujena(Cádiz)" coac2011="Los del sobre (31º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -383,7 +383,7 @@
 			</comentarios>
 		</agrupacion>						
 	
-		<agrupacion id="17" modalidad="COMPARSA" nombre="El arquitecto" autor="José Gutiérrez/José Manuel Pérez" director=""
+		<agrupacion id="17" modalidad="COMPARSA" nombre="El arquitecto" autor="José Gutiérrez/José Manuel Pérez" director="José Manuel Pérez Martínez"
 		localidad="Barbate(Cádiz)" coac2011="El buscador (28º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
