@@ -119,21 +119,22 @@
 		<agrupacion id="6" modalidad="CHIRIGOTA" nombre="Mejor no salgo" autor="Antonio Pedro Serrano/Constantino Tovar" director=""
 		localidad="Cádiz" coac2011="Ricas y maduras (1º Premio)" cabeza_serie="true" 
 		info="Chirigota del Canijo"
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mejo_no_salgo.php"
+		url_foto="http://estaticos.elmundo.es/elmundo/imagenes/2012/01/22/andalucia/1327226675_0.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=OKmoKUtuJ2I"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/mejor-salgo.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mejo_no_salgo_comentarios.php"/>
 			</comentarios>
 		</agrupacion>		
 	
