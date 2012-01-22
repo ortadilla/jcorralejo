@@ -72,7 +72,7 @@ public class MenuActivity extends Activity{
 						intent.putExtra(Constantes.PARAMETRO_TEXTO_DIA, app.getTextoDia(dia));
 						intent.putExtra(Constantes.PARAMETRO_ONLINE, true);
 						startActivity(intent);
-						Toast.makeText(getApplicationContext(), "Los datos de esta sesión se actualizarán pasadas 24 horas. Gracias por la paciencia", Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), "Los datos de esta sesión se actualizarán pasadas unas 12 horas. Gracias por la paciencia", Toast.LENGTH_LONG).show();
 					}else{
 						Toast.makeText(getApplicationContext(), "Hoy no hay concurso", Toast.LENGTH_LONG).show();
 					}
