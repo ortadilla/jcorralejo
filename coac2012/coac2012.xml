@@ -139,23 +139,24 @@
 		</agrupacion>		
 	
 		<agrupacion id="7" modalidad="COMPARSA" nombre="El oráculo de Gadeiras" autor="José María García" director=""
-		localidad="Algeciras" coac2011="" cabeza_serie="false" 
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_oraculo_de_Gadeiras.php"
+		url_foto="http://carnaval.lavozdigital.es//fotos/agrupaciones/eloraculo.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=vgYpaEHjVqg"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/oraculo-gadeiras.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_oraculo_de_Gadeiras_comentarios.php"/>
 			</comentarios>
 		</agrupacion>		
 		
