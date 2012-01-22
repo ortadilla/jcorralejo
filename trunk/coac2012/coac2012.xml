@@ -5,7 +5,7 @@
 		localidad="Cádiz" coac2011="La infantería (8º Cuartos)" cabeza_serie="false" 
 		info="El coro a pie"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78.php"
-		url_foto="http://carnaval.lavozdigital.es//fotos/agrupaciones/hijos78.jpg"
+		url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/Los_hijos_del_78_1.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -29,7 +29,7 @@
 		localidad="Cádiz" coac2011="Los que siempre les toca bailar con la más fea (12º Cuartos)" cabeza_serie="false" 
 		info="Chirigota de Manolín Gálvez"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Con_el_12_basta.php"
-		url_foto="http://www.andaluciainformacion.es/sistema/fotos/articulos-116216.jpg"
+		url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/Con_el_12_basta_1.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -53,7 +53,7 @@
 		localidad="Jerez" coac2011="Esto me suena (14º Cuartos)" cabeza_serie="false" 
 		info="Compara de Ripoll"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_tripulacion.php"
-		url_foto="http://www.andaluciainformacion.es/sistema/fotos/articulos-116217.jpg"
+		url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/La_tripulacion_1.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -76,15 +76,15 @@
 		<agrupacion id="4" modalidad="CUARTETO" nombre="El que está resfriao, que arríe las velas" autor="Ramón López/Juan Manuel Braza" director=""
 		localidad="Algeciras" coac2011="Aquí el que no corre vuela (2º Premio)" cabeza_serie="true" 
 		info="Cuarteto de Algeciras"
-		url_cc=""
-		url_foto="http://www.andaluciainformacion.es/sistema/fotos/articulos-116224.jpg"
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_que_este_resfriao.php"
+		url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/El_que_este_resfriao_1.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=5v-QXM-k_fk"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -97,21 +97,22 @@
 		<agrupacion id="5" modalidad="COMPARSA" nombre="Entre algodones" autor="José Antonio Alvarado/Inés García" director=""
 		localidad="Sevilla" coac2011="La extranjera (36º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Entre_algodones.php"
+		url_foto="http://www.diariobahiadecadiz.com/webfiles/fckeditor/05%20entre%20algodones.JPG"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=e8yfBDPMic4"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/entre-algodones.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Entre_algodones_comentarios.php"/>
 			</comentarios>
 		</agrupacion>		
 	
