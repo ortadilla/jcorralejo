@@ -41,7 +41,7 @@ import es.jcorralejo.android.coac2012.utils.RssDownloadHelper;
 
 public class MenuActivity extends Activity{
 	
-	private static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*24; // recarga cada día: 
+	private static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*1; // recarga cada hora 
 	private ActualizarPostAsyncTask tarea;
 	private CoacApplication app;
 	private AdView adView1;
@@ -203,7 +203,7 @@ public class MenuActivity extends Activity{
 	@Override
 	public void onResume() {
 		super.onResume();
-		cargarDatos(app.getAgrupaciones().isEmpty());
+		cargarDatos(false);
 		cargarAnuncios();
 	}
 	
