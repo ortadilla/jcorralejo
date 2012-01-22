@@ -52,7 +52,7 @@
 		<agrupacion id="3" modalidad="COMPARSA" nombre="La tripulación" autor="Luis Ripoll" director=""
 		localidad="Jerez" coac2011="Esto me suena (14º Cuartos)" cabeza_serie="false" 
 		info="Compara de Ripoll"
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_tripulacion.php"
 		url_foto="http://www.andaluciainformacion.es/sistema/fotos/articulos-116217.jpg"
 		url_videos=""
 		puntos="">
@@ -60,7 +60,7 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=41C95cy8lpc"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -69,6 +69,7 @@
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/tripulacion.html"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=3"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/jRCPg"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_tripulacion_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 		
