@@ -4,7 +4,7 @@
 		<agrupacion id="1" modalidad="CORO" nombre="Los hijos del 78" autor="Francisco Javier Sevilla Pecci/Manuel Sevilla Pecci/Tino Tovar" director="Antonio Cuesta Pino"
 		localidad="Cádiz" coac2011="La infantería (8º Cuartos)" cabeza_serie="false" 
 		info="El coro a pie"
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78.php"
 		url_foto="http://www.andaluciainformacion.es/sistema/fotos/articulos-116215.jpg"
 		url_videos=""
 		puntos="">
@@ -12,7 +12,7 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -21,6 +21,7 @@
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=1"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/jRCPg"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 		
