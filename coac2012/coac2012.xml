@@ -163,21 +163,22 @@
 		<agrupacion id="8" modalidad="CHIRIGOTA" nombre="Por mi... ¡Exagerao!" autor="Francisco Castro/David Castro/Manuel Chamorro" director=""
 		localidad="Écija (Sevilla)" coac2011="Tengo velillo pa hacer un cepillo (35º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Por_mi_Exagerao.php"
+		url_foto="http://www.diariobahiadecadiz.com/webfiles/fckeditor/08%20por%20mi%20exagerao.JPG"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=n7n4m-F3kN0"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/por-exagerao.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Por_mi_Exagerao_comentarios.php/>
 			</comentarios>
 		</agrupacion>
 		
