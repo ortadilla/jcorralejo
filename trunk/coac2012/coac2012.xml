@@ -454,7 +454,7 @@
 			</comentarios>
 		</agrupacion>			
 
-		<agrupacion id="18" modalidad="CORO" nombre="2012" autor="Antonio Procopio/Salvador Longobardo" director=""
+		<agrupacion id="18" modalidad="CORO" nombre="2012" autor="Antonio Procopio/Salvador Longobardo" director="Antonio Procopio"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -475,7 +475,7 @@
 			</comentarios>
 		</agrupacion>		
 		
-		<agrupacion id="19" modalidad="CHIRIGOTA" nombre="Almejitas a la marinera" autor="Rafael Valero" director=""
+		<agrupacion id="19" modalidad="CHIRIGOTA" nombre="Almejitas a la marinera" autor="Rafael Valero" director="Manuel Castellón"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -496,7 +496,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="20" modalidad="COMPARSA" nombre="La isla de los anónimos" autor="Guillermo Caballero" director=""
+		<agrupacion id="20" modalidad="COMPARSA" nombre="La isla de los anónimos" autor="Guillermo Caballero" director="Guillermo Caballero Jiménez"
 		localidad="Sevilla" coac2011="Los segundos (44º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -517,7 +517,7 @@
 			</comentarios>
 		</agrupacion>								
 
-		<agrupacion id="21" modalidad="CHIRIGOTA" nombre="La C.N.C. (canal de noticias chirigoteras)" autor="Mario del Valle/Rubén Vargas/Juan Carlos Aragón" director=""
+		<agrupacion id="21" modalidad="CHIRIGOTA" nombre="La C.N.C. (canal de noticias chirigoteras)" autor="Mario del Valle/Rubén Vargas/Juan Carlos Aragón" director="Juan Manuel Agroso"
 		localidad="Cádiz" coac2011="Los antesdeayesterday (9º Semifinales)" cabeza_serie="true" 
 		info="Chirigota de J.C. Aragón"
 		url_cc=""
