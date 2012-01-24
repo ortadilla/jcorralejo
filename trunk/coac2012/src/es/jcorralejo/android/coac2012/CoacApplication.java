@@ -8,16 +8,9 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Application;
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.AsyncTask;
-import android.widget.Toast;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
 import es.jcorralejo.android.coac2012.entidades.Enlace;
 import es.jcorralejo.android.coac2012.utils.Constantes;
-import es.jcorralejo.android.coac2012.utils.RssDownloadHelper;
 
 public class CoacApplication extends Application {
 	
@@ -27,8 +20,6 @@ public class CoacApplication extends Application {
 	private List<Integer> favoritas = new ArrayList<Integer>();
 	private Map<String, List<String>> concurso = new HashMap<String, List<String>>();
 	private Map<String,List<Enlace>> enlaces = new HashMap<String, List<Enlace>>();
-	
-	private ActualizarPostAsyncTask tarea;
 	
 	@Override
 	public void onCreate() {
@@ -150,83 +141,6 @@ public class CoacApplication extends Application {
 
 	public void setEnlaces(Map<String, List<Enlace>> enlaces) {
 		this.enlaces = enlaces;
-	}
-	
-	public void cargarDatos(ProgressDialog pd){
-		if(noHayDatos()){
-			tarea = new ActualizarPostAsyncTask(pd);
-			tarea.execute();
-		}
-	}
-	
-	public boolean noHayDatos(){
-		//Comprobamos si hay conexión ha internet
-		if(networkAvailable()){
-			if(getAgrupaciones().isEmpty() || concurso.isEmpty() || modalidades.isEmpty() || !enlaces.isEmpty()){
-				return true;
-			}
-		}else{
-			Toast.makeText(getApplicationContext(), "COAC2012 necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde", Toast.LENGTH_LONG).show();
-		}
-		return false;
-	}
-	
-	private boolean networkAvailable() {
-		ConnectivityManager connectMgr = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-		if (connectMgr != null) {
-			NetworkInfo[] netInfo = connectMgr.getAllNetworkInfo();
-			if (netInfo != null) {
-				for (NetworkInfo net : netInfo) {
-					if (net.getState() == NetworkInfo.State.CONNECTED) {
-						return true;
-					}
-				}
-			}
-		} 
-		return false;
-	}
-
-
-
-	class ActualizarPostAsyncTask extends AsyncTask<Void, Void, Void> {
-		private ProgressDialog pd;
-		
-		public ActualizarPostAsyncTask(ProgressDialog pd) {
-			this.pd = pd;
-		}
-		
-		@Override
-		protected void onPreExecute() {
-			super.onPreExecute();
-		}
-
-		@Override
-		protected Void doInBackground(Void... params) {
-			RssDownloadHelper.updateRssData(getRssUrl(), getAgrupaciones(), getCalendario(), getModalidades(), getEnlaces());
-			return null;
-		}
-
-		@Override
-		protected void onPostExecute(Void result) {
-			ocultarPD();
-		}
-		
-		@Override
-		protected void onCancelled() {
-			ocultarPD();
-			super.onCancelled();
-		}
-		
-		private void ocultarPD(){
-			if(pd!=null && pd.isShowing()){
-				try{
-					pd.dismiss();
-					pd = null;
-				}catch (Exception e) {
-				}
-			}
-
-		}
 	}
 	
 }

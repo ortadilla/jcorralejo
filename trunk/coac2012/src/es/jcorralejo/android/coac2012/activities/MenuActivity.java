@@ -167,7 +167,7 @@ public class MenuActivity extends Activity{
 				builder.setPositiveButton("Volver",
 										  new DialogInterface.OnClickListener() {
 											public void onClick(DialogInterface dialog, int which) {
-												cargarDatos();
+												cargarDatos(true);
 											}
 									  	  });
 				return builder.create();
@@ -203,7 +203,7 @@ public class MenuActivity extends Activity{
 	@Override
 	public void onResume() {
 		super.onResume();
-		cargarDatos();
+		cargarDatos(app.getAgrupaciones().isEmpty() || app.getEnlaces().isEmpty() || app.getCalendario().isEmpty());
 		cargarAnuncios();
 	}
 	
@@ -215,21 +215,21 @@ public class MenuActivity extends Activity{
 		super.onStop();
 	}
 	
-//	private void cargarDatos(boolean ignorarTiempoEspera){
-//		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
-//		long ultima = prefs.getLong("ultima_actualizacion", 0);
-//		if (ignorarTiempoEspera || (System.currentTimeMillis() - ultima) > FRECUENCIA_ACTUALIZACION) {
-//			//Comprobamos si hay conexión ha internet
-//			if(networkAvailable()){
-//				final ProgressDialog pd = ProgressDialog.show(this,"Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
-//				tarea = new ActualizarPostAsyncTask(pd);
-//				tarea.execute();
-//			}else{
-//				Toast.makeText(getApplicationContext(), "COAC2012 necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde", Toast.LENGTH_LONG).show();
-//				finish();
-//			}
-//		}
-//	}
+	private void cargarDatos(boolean ignorarTiempoEspera){
+		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+		long ultima = prefs.getLong("ultima_actualizacion", 0);
+		if (ignorarTiempoEspera || (System.currentTimeMillis() - ultima) > FRECUENCIA_ACTUALIZACION) {
+			//Comprobamos si hay conexión ha internet
+			if(networkAvailable()){
+				final ProgressDialog pd = ProgressDialog.show(this,"Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
+				tarea = new ActualizarPostAsyncTask(pd);
+				tarea.execute();
+			}else{
+				Toast.makeText(getApplicationContext(), "COAC2012 necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde", Toast.LENGTH_LONG).show();
+				finish();
+			}
+		}
+	}
 	
 	private boolean networkAvailable() {
 		ConnectivityManager connectMgr = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -260,7 +260,7 @@ public class MenuActivity extends Activity{
 				showDialog(Constantes.DIALOG_ACERCA_DE);
 				return true;
 			case R.id.menuActualizar:
-				cargarDatos();
+				cargarDatos(true);
 				return true;
 			case R.id.menuQuit:
 				finish();
@@ -318,14 +318,6 @@ public class MenuActivity extends Activity{
 				}
 			}
 
-		}
-	}
-
-
-	private void cargarDatos(){
-		if(app.noHayDatos()){
-			ProgressDialog pd = ProgressDialog.show(this,"Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
-			app.cargarDatos(pd);
 		}
 	}
 
