@@ -533,20 +533,21 @@
 		localidad="Cádiz" coac2011="Los antesdeayesterday (9º Semifinales)" cabeza_serie="true" 
 		info="Chirigota de J.C. Aragón"
 		url_cc=""
-		url_foto=""
+		url_foto="http://www.diariobahiadecadiz.com/webfiles/fckeditor/04%20CNC.JPG"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=XXlCC4xBIws"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/cnc-canal-noticias-chirigoteras.html"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/La%20C.N.C.%20%28Canal%20de%20noticias%20chirigoteras%29/2012"/>
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15954"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=21"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/NSYf2"/>
