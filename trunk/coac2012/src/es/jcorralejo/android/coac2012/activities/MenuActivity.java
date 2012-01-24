@@ -42,7 +42,7 @@ import es.jcorralejo.android.coac2012.utils.RssDownloadHelper;
 public class MenuActivity extends Activity{
 	
 	private static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*1; // recarga cada hora 
-	private ActualizarPostAsyncTask tarea;
+//	private ActualizarPostAsyncTask tarea;
 	private CoacApplication app;
 	private AdView adView1;
 	private AdView adView2;
@@ -117,6 +117,9 @@ public class MenuActivity extends Activity{
 				}
 			}
 		);
+		
+		if(app.isError())
+			finish();
 	}
 	
 	private void cargarAnuncios(){
@@ -167,7 +170,7 @@ public class MenuActivity extends Activity{
 				builder.setPositiveButton("Volver",
 										  new DialogInterface.OnClickListener() {
 											public void onClick(DialogInterface dialog, int which) {
-												cargarDatos(true);
+//												cargarDatos(true);
 											}
 									  	  });
 				return builder.create();
@@ -203,49 +206,49 @@ public class MenuActivity extends Activity{
 	@Override
 	public void onResume() {
 		super.onResume();
-		cargarDatos(app.getAgrupaciones().isEmpty() || app.getEnlaces().isEmpty() || app.getCalendario().isEmpty());
+//		cargarDatos(app.getAgrupaciones().isEmpty() || app.getEnlaces().isEmpty() || app.getCalendario().isEmpty());
 		cargarAnuncios();
 	}
 	
 	@Override
 	protected void onStop() {
-		if (tarea != null && !tarea.getStatus().equals(AsyncTask.Status.FINISHED)) {
-			tarea.cancel(true);
-		}
+//		if (tarea != null && !tarea.getStatus().equals(AsyncTask.Status.FINISHED)) {
+//			tarea.cancel(true);
+//		}
 		super.onStop();
 	}
 	
-	private void cargarDatos(boolean ignorarTiempoEspera){
-		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
-		long ultima = prefs.getLong("ultima_actualizacion", 0);
-		if (ignorarTiempoEspera || (System.currentTimeMillis() - ultima) > FRECUENCIA_ACTUALIZACION) {
-			//Comprobamos si hay conexión ha internet
-			if(networkAvailable()){
-				final ProgressDialog pd = ProgressDialog.show(this,"Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
-				tarea = new ActualizarPostAsyncTask(pd);
-				tarea.execute();
-			}else{
-				Toast.makeText(getApplicationContext(), "COAC2012 necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde", Toast.LENGTH_LONG).show();
-				finish();
-			}
-		}
-	}
-	
-	private boolean networkAvailable() {
-		ConnectivityManager connectMgr = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-		if (connectMgr != null) {
-			NetworkInfo[] netInfo = connectMgr.getAllNetworkInfo();
-			if (netInfo != null) {
-				for (NetworkInfo net : netInfo) {
-					if (net.getState() == NetworkInfo.State.CONNECTED) {
-						return true;
-					}
-				}
-			}
-		} 
-		return false;
-	}
-	
+//	private void cargarDatos(boolean ignorarTiempoEspera){
+//		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+//		long ultima = prefs.getLong("ultima_actualizacion", 0);
+//		if (ignorarTiempoEspera || (System.currentTimeMillis() - ultima) > FRECUENCIA_ACTUALIZACION) {
+//			//Comprobamos si hay conexión ha internet
+//			if(networkAvailable()){
+//				final ProgressDialog pd = ProgressDialog.show(this,"Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
+//				tarea = new ActualizarPostAsyncTask(pd);
+//				tarea.execute();
+//			}else{
+//				Toast.makeText(getApplicationContext(), "COAC2012 necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde", Toast.LENGTH_LONG).show();
+//				finish();
+//			}
+//		}
+//	}
+//	
+//	private boolean networkAvailable() {
+//		ConnectivityManager connectMgr = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+//		if (connectMgr != null) {
+//			NetworkInfo[] netInfo = connectMgr.getAllNetworkInfo();
+//			if (netInfo != null) {
+//				for (NetworkInfo net : netInfo) {
+//					if (net.getState() == NetworkInfo.State.CONNECTED) {
+//						return true;
+//					}
+//				}
+//			}
+//		} 
+//		return false;
+//	}
+//	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater menuInflater = getMenuInflater();
@@ -260,7 +263,8 @@ public class MenuActivity extends Activity{
 				showDialog(Constantes.DIALOG_ACERCA_DE);
 				return true;
 			case R.id.menuActualizar:
-				cargarDatos(true);
+				final ProgressDialog pd = ProgressDialog.show(this, "Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
+				app.cargarDatos(pd);
 				return true;
 			case R.id.menuQuit:
 				finish();
@@ -269,56 +273,56 @@ public class MenuActivity extends Activity{
 				return super.onOptionsItemSelected(item);
 		}
 	}
-	
-	class ActualizarPostAsyncTask extends AsyncTask<Void, Void, Void> {
-		private ProgressDialog pd;
-		
-		public ActualizarPostAsyncTask(ProgressDialog pd) {
-			this.pd = pd;
-		}
-		
-		@Override
-		protected void onPreExecute() {
-			super.onPreExecute();
-		}
-
-		@Override
-		protected Void doInBackground(Void... params) {
-			CoacApplication app = (CoacApplication) getApplication();
-			RssDownloadHelper.updateRssData(app.getRssUrl(), app.getAgrupaciones(), app.getCalendario(), app.getModalidades(), app.getEnlaces());
-			return null;
-		}
-
-		@Override
-		protected void onPostExecute(Void result) {
-			SharedPreferences prefs = getPreferences(MODE_PRIVATE);
-			Editor editor = prefs.edit();
-			editor.putLong("ultima_actualizacion", System.currentTimeMillis());
-			editor.commit();
-			ocultarPD();
-		}
-		
-		@Override
-		protected void onCancelled() {
-			ocultarPD();
-			SharedPreferences prefs = getPreferences(MODE_PRIVATE);
-			Editor editor = prefs.edit();
-			editor.putLong("ultima_actualizacion", 0);
-			editor.commit();
-
-			super.onCancelled();
-		}
-		
-		private void ocultarPD(){
-			if(pd.isShowing()){
-				try{
-					pd.dismiss();
-					pd = null;
-				}catch (Exception e) {
-				}
-			}
-
-		}
-	}
+//	
+//	class ActualizarPostAsyncTask extends AsyncTask<Void, Void, Void> {
+//		private ProgressDialog pd;
+//		
+//		public ActualizarPostAsyncTask(ProgressDialog pd) {
+//			this.pd = pd;
+//		}
+//		
+//		@Override
+//		protected void onPreExecute() {
+//			super.onPreExecute();
+//		}
+//
+//		@Override
+//		protected Void doInBackground(Void... params) {
+//			CoacApplication app = (CoacApplication) getApplication();
+//			RssDownloadHelper.updateRssData(app.getRssUrl(), app.getAgrupaciones(), app.getCalendario(), app.getModalidades(), app.getEnlaces());
+//			return null;
+//		}
+//
+//		@Override
+//		protected void onPostExecute(Void result) {
+//			SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+//			Editor editor = prefs.edit();
+//			editor.putLong("ultima_actualizacion", System.currentTimeMillis());
+//			editor.commit();
+//			ocultarPD();
+//		}
+//		
+//		@Override
+//		protected void onCancelled() {
+//			ocultarPD();
+//			SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+//			Editor editor = prefs.edit();
+//			editor.putLong("ultima_actualizacion", 0);
+//			editor.commit();
+//
+//			super.onCancelled();
+//		}
+//		
+//		private void ocultarPD(){
+//			if(pd.isShowing()){
+//				try{
+//					pd.dismiss();
+//					pd = null;
+//				}catch (Exception e) {
+//				}
+//			}
+//
+//		}
+//	}
 
 }
