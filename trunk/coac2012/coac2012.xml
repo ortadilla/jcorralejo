@@ -558,20 +558,21 @@
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info="Comparsa de Paco 'El Catalán'"
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losgobernantes.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=mafaEI9pUOA"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-gobernantes.html"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20gobernantes/2012"/>
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15954"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=22"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/NSYf2"/>
