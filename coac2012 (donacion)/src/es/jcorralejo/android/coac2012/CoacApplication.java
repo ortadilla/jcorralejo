@@ -8,9 +8,16 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Application;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
+import android.widget.Toast;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
 import es.jcorralejo.android.coac2012.entidades.Enlace;
 import es.jcorralejo.android.coac2012.utils.Constantes;
+import es.jcorralejo.android.coac2012.utils.RssDownloadHelper;
 
 public class CoacApplication extends Application {
 	
@@ -20,6 +27,9 @@ public class CoacApplication extends Application {
 	private List<Integer> favoritas = new ArrayList<Integer>();
 	private Map<String, List<String>> concurso = new HashMap<String, List<String>>();
 	private Map<String,List<Enlace>> enlaces = new HashMap<String, List<Enlace>>();
+	
+	private ActualizarPostAsyncTask tarea;
+	private boolean error = false;
 	
 	@Override
 	public void onCreate() {
@@ -36,7 +46,6 @@ public class CoacApplication extends Application {
 		modalidades.put(Constantes.MODALIDAD_JUVENIL, new ArrayList<Agrupacion>());
 		modalidades.put(Constantes.MODALIDAD_ROMANCERO, new ArrayList<Agrupacion>());
 		modalidades.put(Constantes.MODALIDAD_CALLEJERA, new ArrayList<Agrupacion>());
-
 		
 		List<String> preeliminares = new ArrayList<String>();
 		preeliminares.add("21/01/2012");
@@ -74,6 +83,9 @@ public class CoacApplication extends Application {
 		List<String> final2 = new ArrayList<String>();
 		final2.add("17/02/2012");
 		concurso.put(Constantes.FASE_FINAL, final2);
+		
+		cargarDatos(null);
+		System.out.println(" ------ COMENZANDO APPLICATION ------ ");
 	}
 	
 	public String getRssUrl(){
@@ -83,7 +95,7 @@ public class CoacApplication extends Application {
 	public String getTextoDia(String dia){
 		String result = "";
 		if(getConcurso().get(Constantes.FASE_PREELIMINAR).contains(dia))
-			result = "Preeliminar "+ (getConcurso().get(Constantes.FASE_PREELIMINAR).indexOf(dia)+1);
+			result = "Preliminar "+ (getConcurso().get(Constantes.FASE_PREELIMINAR).indexOf(dia)+1);
 		else if(getConcurso().get(Constantes.FASE_CUARTOS).contains(dia))
 			result = "Cuarto de Final "+ (getConcurso().get(Constantes.FASE_CUARTOS).indexOf(dia)+1);
 		else if(getConcurso().get(Constantes.FASE_SEMIS).contains(dia))
@@ -142,6 +154,79 @@ public class CoacApplication extends Application {
 	public void setEnlaces(Map<String, List<Enlace>> enlaces) {
 		this.enlaces = enlaces;
 	}
+	
+	
+	public void cargarDatos(ProgressDialog pd){
+		//Comprobamos si hay conexión ha internet
+		if(networkAvailable()){
+			tarea = new ActualizarPostAsyncTask(pd);
+			tarea.execute();
+			error = false;
+		}else{
+			Toast.makeText(getApplicationContext(), "COAC2012 necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde", Toast.LENGTH_LONG).show();
+			error = true;
+		}
+	}
+	
+	private boolean networkAvailable() {
+		ConnectivityManager connectMgr = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+		if (connectMgr != null) {
+			NetworkInfo[] netInfo = connectMgr.getAllNetworkInfo();
+			if (netInfo != null) {
+				for (NetworkInfo net : netInfo) {
+					if (net.getState() == NetworkInfo.State.CONNECTED) {
+						return true;
+					}
+				}
+			}
+		} 
+		return false;
+	}
+	
+	class ActualizarPostAsyncTask extends AsyncTask<Void, Void, Void> {
+		private ProgressDialog pd;
+		
+		public ActualizarPostAsyncTask(ProgressDialog pd) {
+			this.pd = pd;
+		}
 
+		@Override
+		protected Void doInBackground(Void... params) {
+			RssDownloadHelper.updateRssData(getRssUrl(), getAgrupaciones(), getCalendario(), getModalidades(), getEnlaces());
+			return null;
+		}
+		
+		@Override
+		protected void onPostExecute(Void result) {
+			ocultarPD();
+			super.onPostExecute(result);
+		}
+		
+		@Override
+		protected void onCancelled() {
+			ocultarPD();
+			super.onCancelled();
+		}
+		
+		private void ocultarPD(){
+			if(pd!=null && pd.isShowing()){
+				try{
+					pd.dismiss();
+					pd = null;
+				}catch (Exception e) {
+				}
+			}
+		}
+
+		
+	}
+
+	public boolean isError() {
+		return error;
+	}
+
+	public void setError(boolean error) {
+		this.error = error;
+	}
 
 }
