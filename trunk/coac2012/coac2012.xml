@@ -888,7 +888,7 @@
 			</comentarios>
 		</agrupacion>		
 
-		<agrupacion id="35" modalidad="CORO" nombre="Los señores de la naturaleza" autor="Luis Ripoll/José Antonio Pérez/Jesús Ignacio García" director=""
+		<agrupacion id="35" modalidad="CORO" nombre="Los señores de la naturaleza" autor="Luis Ripoll/José Antonio Pérez/Jesús Ignacio García" director="Fernando Pérez Brañ"
 		localidad="Cádiz" coac2011="Los chinos de Cadi Cadi (13º Preeliminares)" cabeza_serie="false" 
 		info="Coro de la Viña"
 		url_cc=""
@@ -909,7 +909,7 @@
 			</comentarios>
 		</agrupacion>		
 
-		<agrupacion id="36" modalidad="CHIRIGOTA" nombre="Los que la meten con arte" autor="Francisco Fuentes/José Luis Gómez" director=""
+		<agrupacion id="36" modalidad="CHIRIGOTA" nombre="Los que la meten con arte" autor="Francisco Fuentes/José Luis Gómez" director="José Luis Gómez Pérez"
 		localidad="Chipiona(Cádiz)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -930,7 +930,7 @@
 			</comentarios>
 		</agrupacion>		
 
-		<agrupacion id="37" modalidad="COMPARSA" nombre="Sonrisas al sol" autor="Guillermo Valle/Tomás García" director=""
+		<agrupacion id="37" modalidad="COMPARSA" nombre="Sonrisas al sol" autor="Guillermo Valle/Tomás García" director="José Ramón Corbacho"
 		localidad="Chiclana(Cádiz)" coac2011="La civilización (34º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -993,7 +993,7 @@
 			</comentarios>
 		</agrupacion>		
 
-		<agrupacion id="40" modalidad="COMPARSA" nombre="Kilimanjaro" autor="Rafael Garzón/Bonifacio Cano" director=""
+		<agrupacion id="40" modalidad="COMPARSA" nombre="Kilimanjaro" autor="Rafael Garzón/Bonifacio Cano" director="Juan Antonio Cano Ruiz"
 		localidad="Úbeda (Jaén)" coac2011="La máquina del tiempo (47º Semifinales)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -1014,7 +1014,7 @@
 			</comentarios>
 		</agrupacion>		
 	
-		<agrupacion id="41" modalidad="CHIRIGOTA" nombre="Se solicita príncipe azul" autor="Juan Miguel Villegas/Rafael Fernández" director=""
+		<agrupacion id="41" modalidad="CHIRIGOTA" nombre="Se solicita príncipe azul" autor="Juan Miguel Villegas/Rafael Fernández" director="Rafael Fernández Reyes"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -1056,7 +1056,7 @@
 			</comentarios>
 		</agrupacion>		
 		
-		<agrupacion id="43" modalidad="CHIRIGOTA" nombre="Este año hemos perdío el tipo" autor="Abraham Sevilla/La agrupación" director=""
+		<agrupacion id="43" modalidad="CHIRIGOTA" nombre="Este año hemos perdío el tipo" autor="Abraham Sevilla/La agrupación" director="Antonio Jesús Villarejo"
 		localidad="Bailén (Jaén)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
