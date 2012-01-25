@@ -95,7 +95,7 @@ public class CoacApplication extends Application {
 	public String getTextoDia(String dia){
 		String result = "";
 		if(getConcurso().get(Constantes.FASE_PREELIMINAR).contains(dia))
-			result = "Preeliminar "+ (getConcurso().get(Constantes.FASE_PREELIMINAR).indexOf(dia)+1);
+			result = "Preliminar "+ (getConcurso().get(Constantes.FASE_PREELIMINAR).indexOf(dia)+1);
 		else if(getConcurso().get(Constantes.FASE_CUARTOS).contains(dia))
 			result = "Cuarto de Final "+ (getConcurso().get(Constantes.FASE_CUARTOS).indexOf(dia)+1);
 		else if(getConcurso().get(Constantes.FASE_SEMIS).contains(dia))
