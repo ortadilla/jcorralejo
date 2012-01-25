@@ -206,7 +206,16 @@ public class MenuActivity extends Activity{
 	@Override
 	public void onResume() {
 		super.onResume();
-//		cargarDatos(app.getAgrupaciones().isEmpty() || app.getEnlaces().isEmpty() || app.getCalendario().isEmpty());
+		
+		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+		long ultima = prefs.getLong("ultima_actualizacion", 0);
+		if ((System.currentTimeMillis() - ultima) > FRECUENCIA_ACTUALIZACION){ 
+			app.cargarDatos(null);
+			Editor editor = prefs.edit();
+			editor.putLong("ultima_actualizacion", System.currentTimeMillis());
+			editor.commit();
+		}
+		
 		cargarAnuncios();
 	}
 	
@@ -265,6 +274,11 @@ public class MenuActivity extends Activity{
 			case R.id.menuActualizar:
 				final ProgressDialog pd = ProgressDialog.show(this, "Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
 				app.cargarDatos(pd);
+
+				SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+				Editor editor = prefs.edit();
+				editor.putLong("ultima_actualizacion", System.currentTimeMillis());
+				editor.commit();
 				return true;
 			case R.id.menuQuit:
 				finish();
