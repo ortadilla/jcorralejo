@@ -658,7 +658,7 @@
 		localidad="Cádiz" coac2011="Las napoleonas (16º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Estecorotiene.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -672,6 +672,7 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/este-coro-tiene-tela.html"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15972"/>
 			</comentarios>
 		</agrupacion>		
 	
@@ -679,7 +680,7 @@
 		localidad="Estepona (Málaga)" coac2011="La tengo encantá (57º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Unoyadormir.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -693,6 +694,7 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/uno-dormir.html"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15972"/>
 			</comentarios>
 		</agrupacion>		
 	
@@ -700,7 +702,7 @@
 		localidad="Cádiz" coac2011="Las rosas negras (22º Preeliminares)" cabeza_serie="false" 
 		info="Comparsa femenina de Juán Fernández"
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/lascuatro.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -714,6 +716,7 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/las-cuatro-naturaleza.html"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15972"/>
 			</comentarios>
 		</agrupacion>
 		
@@ -721,7 +724,7 @@
 		localidad="Algeciras (Cádiz)" coac2011="Vaya viaje me han dao (42º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Denuevo.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -735,6 +738,7 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/nuevo-mercado.html"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15972"/>
 			</comentarios>
 		</agrupacion>			
 		
@@ -742,7 +746,7 @@
 		localidad="Cádiz" coac2011="Las locuras de Martin Burton (3º premio)" cabeza_serie="true" 
 		info="Comparsa de Antonio Martín"
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Seacabo.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -756,6 +760,7 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/acabo-cuento.html"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15972"/>
 			</comentarios>
 		</agrupacion>			
 
@@ -763,7 +768,7 @@
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
-		url_foto=""
+		url_foto="imagen=http://carnaval.lavozdigital.es/fotos/agrupaciones/losdelcoliseo.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -777,6 +782,7 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-del-coliseo.html"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15972"/>
 			</comentarios>
 		</agrupacion>
 				
@@ -784,7 +790,7 @@
 		localidad="Cádiz" coac2011="Número 1 en ventas (y gasolineras) (4º Semifinales)" cabeza_serie="true" 
 		info="Chirigota del Selu"
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Viva.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -798,14 +804,15 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/viva-pepi.html"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15972"/>
 			</comentarios>
 		</agrupacion>		
 
 		<agrupacion id="33" modalidad="COMPARSA" nombre="¡...Y canto porque me toca!" autor="Germán Fernández" director=""
-		localidad="Marbella (Málaga)" coac2011="" cabeza_serie="false" 
+		localidad="Chipiona (Cádiz)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/ycantoporque.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -819,14 +826,15 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/canto-porque-toca.html"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15972"/>
 			</comentarios>
 		</agrupacion>		
 
 		<agrupacion id="34" modalidad="CHIRIGOTA" nombre="Perdidos en la ciudad" autor="Antonio M. Pedrosa/Marco A. García" director=""
-		localidad="Chipiona(Cádiz)" coac2011="El ingenio (42º Semifinales)" cabeza_serie="false" 
-		info="Chirigota del Selu"
+		localidad="Marbella (Málaga)" coac2011="El ingenio (42º Semifinales)" cabeza_serie="false" 
+		info=""
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Perdidos.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -840,6 +848,7 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/perdidos-ciudad.html"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15972"/>
 			</comentarios>
 		</agrupacion>		
 
