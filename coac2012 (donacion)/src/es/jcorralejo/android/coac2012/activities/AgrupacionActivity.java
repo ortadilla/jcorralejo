@@ -262,7 +262,7 @@ public class AgrupacionActivity extends Activity{
 		for(Integer fav : app.getFavoritas())
 			favoritas += fav+"|";
 		
-		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
 		Editor editor = prefs.edit();
 		editor.putString(Constantes.PREFERENCE_FAVORITAS, favoritas);
 		editor.commit();

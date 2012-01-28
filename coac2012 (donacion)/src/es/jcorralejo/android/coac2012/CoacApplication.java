@@ -30,6 +30,7 @@ public class CoacApplication extends Application {
 	
 	private ActualizarPostAsyncTask tarea;
 	private boolean error = false;
+	private Boolean actualizando = Boolean.FALSE;
 	
 	@Override
 	public void onCreate() {
@@ -159,9 +160,11 @@ public class CoacApplication extends Application {
 	public void cargarDatos(ProgressDialog pd){
 		//Comprobamos si hay conexión ha internet
 		if(networkAvailable()){
-			tarea = new ActualizarPostAsyncTask(pd);
-			tarea.execute();
-			error = false;
+			if(!actualizando){
+				tarea = new ActualizarPostAsyncTask(pd);
+				tarea.execute();
+				error = false;
+			}
 		}else{
 			Toast.makeText(getApplicationContext(), "COAC2012 necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde", Toast.LENGTH_LONG).show();
 			error = true;
@@ -192,6 +195,7 @@ public class CoacApplication extends Application {
 
 		@Override
 		protected Void doInBackground(Void... params) {
+			actualizando = true;
 			RssDownloadHelper.updateRssData(getRssUrl(), getAgrupaciones(), getCalendario(), getModalidades(), getEnlaces());
 			return null;
 		}
@@ -199,12 +203,14 @@ public class CoacApplication extends Application {
 		@Override
 		protected void onPostExecute(Void result) {
 			ocultarPD();
+			actualizando = false;
 			super.onPostExecute(result);
 		}
 		
 		@Override
 		protected void onCancelled() {
 			ocultarPD();
+			actualizando = false;
 			super.onCancelled();
 		}
 		
