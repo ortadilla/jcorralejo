@@ -151,12 +151,13 @@ public class MenuActivity extends Activity{
 	}
 
 	private void cargarFavoritas(){
-		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
 		String favString = prefs.getString(Constantes.PREFERENCE_FAVORITAS, "");
 		if(favString!=null && !favString.equals("")){
-			String[] split = favString.split("||");
+			String[] split = favString.split("\\|");
 			for(String fav : split)
-				app.getFavoritas().add(Integer.parseInt(fav));
+				if(fav!=null && !fav.equals(""))
+					app.getFavoritas().add(Integer.parseInt(fav));
 		}
 
 	}
@@ -207,7 +208,7 @@ public class MenuActivity extends Activity{
 	public void onResume() {
 		super.onResume();
 		
-		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);;
 		long ultima = prefs.getLong("ultima_actualizacion", 0);
 		if ((System.currentTimeMillis() - ultima) > FRECUENCIA_ACTUALIZACION){ 
 			app.cargarDatos(null);
@@ -275,7 +276,7 @@ public class MenuActivity extends Activity{
 				final ProgressDialog pd = ProgressDialog.show(this, "Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
 				app.cargarDatos(pd);
 
-				SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+				SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);;
 				Editor editor = prefs.edit();
 				editor.putLong("ultima_actualizacion", System.currentTimeMillis());
 				editor.commit();
