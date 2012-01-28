@@ -154,11 +154,11 @@ public class MenuActivity extends Activity{
 		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
 		String favString = prefs.getString(Constantes.PREFERENCE_FAVORITAS, "");
 		if(favString!=null && !favString.equals("")){
-			String[] split = favString.split("||");
+			String[] split = favString.split("\\|");
 			for(String fav : split)
-				app.getFavoritas().add(Integer.parseInt(fav));
+				if(fav!=null && !fav.equals(""))
+					app.getFavoritas().add(Integer.parseInt(fav));
 		}
-
 	}
 	
 	@Override
