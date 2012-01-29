@@ -1572,7 +1572,7 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="61" modalidad="CORO" nombre="The Cadiz Gospel Choir" autor="Antonio Rivas/Julio Pardo" director="Julio Pardo"
+		<agrupacion id="61" modalidad="CORO" nombre="The Cadiz Gospel Choir" autor="Antonio Rivas/Julio Pardo" director="Juan Lucena"
 		localidad="Cádiz" coac2011="Los manitas (4º Semifinales)" cabeza_serie="true" 
 		info="Coro de Julio Pardo"
 		url_cc=""
@@ -1593,7 +1593,7 @@
 			</comentarios>
 		</agrupacion>
 	
-		<agrupacion id="62" modalidad="CHIRIGOTA" nombre="Los Que Estan Pendientes Del Tiempo" autor="José Manuel Segura" director=""
+		<agrupacion id="62" modalidad="CHIRIGOTA" nombre="Los Que Estan Pendientes Del Tiempo" autor="José Manuel Segura" director="Antonio Barroso"
 		localidad="Alcalá de Guadaira (Sevilla)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -1614,7 +1614,7 @@
 			</comentarios>
 		</agrupacion>	
 	
-		<agrupacion id="63" modalidad="COMPARSA" nombre="Las que viven como reinas" autor="Rafael Pastrana" director=""
+		<agrupacion id="63" modalidad="COMPARSA" nombre="Las que viven como reinas" autor="Rafael Pastrana" director="Carmen Jiménez"
 		localidad="Cádiz" coac2011="La prometida (16º Cuartos)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -1635,7 +1635,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="64" modalidad="CUARTETO" nombre="Que morro y que jeta: de fuera y una quinteta" autor="M.J. Domínguez/Miguel Ángel del Ojo/Manuel Barba" director=""
+		<agrupacion id="64" modalidad="CUARTETO" nombre="Que morro y que jeta: de fuera y una quinteta" autor="M.J. Domínguez/Miguel Ángel del Ojo/Manuel Barba" director="Mª José Domínguez"
 		localidad="Medina de las torres (Badajoz)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -1656,7 +1656,7 @@
 			</comentarios>
 		</agrupacion>		
 
-		<agrupacion id="65" modalidad="COMPARSA" nombre="Llámame Jesus" autor="Antonio Rivas/José Martínez" director=""
+		<agrupacion id="65" modalidad="COMPARSA" nombre="Llámame Jesus" autor="Antonio Rivas/José Martínez" director="José Ramón de Castro"
 		localidad="El Puerto(Cádiz)" coac2011="Al volver de los ensayos (5º Semifinales)" cabeza_serie="true" 
 		info="Comparsa de Los Majaras"
 		url_cc=""
@@ -1677,7 +1677,7 @@
 			</comentarios>
 		</agrupacion>			
 
-		<agrupacion id="66" modalidad="CHIRIGOTA" nombre="La orquesta camballati" autor="Jesús Baro/Luis Pérez" director=""
+		<agrupacion id="66" modalidad="CHIRIGOTA" nombre="La orquesta camballati" autor="Jesús Baro/Luis Pérez" director=" Luis Pérez"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -1698,7 +1698,7 @@
 			</comentarios>
 		</agrupacion>			
 
-		<agrupacion id="67" modalidad="COMPARSA" nombre="La banda de los girasoles" autor="José María Durán/Francisco Javier Sevilla" director=""
+		<agrupacion id="67" modalidad="COMPARSA" nombre="La banda de los girasoles" autor="José María Durán/Francisco Javier Sevilla" director="José Mª Durán"
 		localidad="Algeciras (Cádiz)" coac2011="El tablero (17º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -1719,7 +1719,7 @@
 			</comentarios>
 		</agrupacion>		
 	
-		<agrupacion id="68" modalidad="CHIRIGOTA" nombre="Los monologuistas, Paramount Cady" autor="Ismael Campos/Juan Manuel Romero" director=""
+		<agrupacion id="68" modalidad="CHIRIGOTA" nombre="Los monologuistas, Paramount Cady" autor="Ismael Campos/Juan Manuel Romero" director=" Gustavo Cárdenas"
 		localidad="Cádiz" coac2011="Los que mantienen la línea (20º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -1740,7 +1740,7 @@
 			</comentarios>
 		</agrupacion>			
 
-		<agrupacion id="69" modalidad="COMPARSA" nombre="OBDC!" autor="Germán García" director=""
+		<agrupacion id="69" modalidad="COMPARSA" nombre="OBDC!" autor="Germán García" director="Nicolás Muñoz"
 		localidad="Cádiz" coac2011="Los niños del barrio (31º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
