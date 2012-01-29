@@ -466,7 +466,7 @@
 		<agrupacion id="18" modalidad="CORO" nombre="2012" autor="Antonio Procopio/Salvador Longobardo" director="Antonio Procopio"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/2012.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/2012.jpeg"
 		url_videos=""
 		puntos="">
@@ -485,13 +485,14 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15954"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=18"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/NSYf2"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/2012_comentarios.php"/>
 			</comentarios>
 		</agrupacion>		
 		
 		<agrupacion id="19" modalidad="CHIRIGOTA" nombre="Almejitas a la marinera" autor="Rafael Valero" director="Manuel Castellón"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Almejitas_a_la_marinera.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/almejitasalamarinera.jpeg"
 		url_videos=""
 		puntos="">
@@ -510,13 +511,14 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15954"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=19"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/NSYf2"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Almejitas_a_la_marinera_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
 		<agrupacion id="20" modalidad="COMPARSA" nombre="La isla de los anónimos" autor="Guillermo Caballero" director="Guillermo Caballero Jiménez"
 		localidad="Sevilla" coac2011="Los segundos (44º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_isla_de_los_anonimos.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Laisladelosanonimos.jpeg"
 		url_videos=""
 		puntos="">
@@ -535,13 +537,14 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15954"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=20"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/NSYf2"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_isla_de_los_anonimos_comentarios.php"/>
 			</comentarios>
 		</agrupacion>								
 
 		<agrupacion id="21" modalidad="CHIRIGOTA" nombre="La C.N.C. (canal de noticias chirigoteras)" autor="Mario del Valle/Rubén Vargas/Juan Carlos Aragón" director="Juan Manuel Agroso"
 		localidad="Cádiz" coac2011="Los antesdeayesterday (9º Semifinales)" cabeza_serie="true" 
 		info="Chirigota de J.C. Aragón"
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_CNC.php"
 		url_foto="http://www.diariobahiadecadiz.com/webfiles/fckeditor/04%20CNC.JPG"
 		url_videos=""
 		puntos="">
@@ -560,13 +563,14 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15954"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=21"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/NSYf2"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_CNC_comentarios.php"/>
 			</comentarios>
 		</agrupacion>		
 
 		<agrupacion id="22" modalidad="COMPARSA" nombre="Los gobernantes" autor="Francisco Javier Trujillo" director="Francisco Javier Trujillo"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info="Comparsa de Paco 'El Catalán'"
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_gobernantes.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losgobernantes.jpeg"
 		url_videos=""
 		puntos="">
@@ -585,13 +589,14 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15954"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=22"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/NSYf2"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_gobernantes_comentarios.php"/>
 			</comentarios>
 		</agrupacion>		
 
 		<agrupacion id="23" modalidad="CHIRIGOTA" nombre="Los supervivientes del Vaporcito" autor="Álvaro Ballén/Jaime Fernández/José Manuel Vallejo" director=""
 		localidad="Sanlúcar (Cádiz)" coac2011="Los del 3 X 4, buena táctica... (39º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_supervivientes_del_vaporcito.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losupervivientesdelvaporcito.jpeg"
 		url_videos=""
 		puntos="">
@@ -610,6 +615,7 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15954"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=23"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/NSYf2"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_supervivientes_del_vaporcito_comentarios.php"/>
 			</comentarios>
 		</agrupacion>			
 	
@@ -641,7 +647,7 @@
 		<agrupacion id="25" modalidad="CHIRIGOTA" nombre="Los superquitamanchas" autor="Miguel Monje/Servando Sabajanes" director=""
 		localidad="San Fernando(Cádiz)" coac2011="Las plantadas (43º Cuartos)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_superquitamanchas.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losuperquitamanchas.jpeg"
 		url_videos=""
 		puntos="">
@@ -660,6 +666,7 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15954"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=25"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/NSYf2"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_superquitamanchas_comentarios.php"/>
 			</comentarios>
 		</agrupacion>			
 
