@@ -1402,7 +1402,7 @@
 		<agrupacion id="53" modalidad="CORO" nombre="La nueva Cádiz" autor="José Mata/Francisco Martínez" director="Francisco Martínez Mora"
 		localidad="Cádiz" coac2011="Cádiz de cine (6º Cuartos)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_nueva_Cadiz.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/nuevacai.JPG"
 		url_videos=""
 		puntos="">
@@ -1415,20 +1415,21 @@
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
-			<comentarios>http://goo.gl/PFgN3
+			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/nueva-cadiz.html"/>
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/La%20nueva%20C%C3%A1diz/2012"/>
 				<comentario origen="Diario de Cádiz - Ficha" url="http://www.diariodecadiz.es/article/carnavalcadiz2012/1170772/coro/la/nueva/caacutediz.html"/>
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16010"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=53"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/PFgN3"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_nueva_Cadiz_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 		
 		<agrupacion id="54" modalidad="CHIRIGOTA" nombre="Los echaos palante" autor="F. J. Gallego/J.M. Fernández/J.L Jiménez" director="Antonio Nieto Baena"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_echaos_palante.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/echaopalante5.jpg"
 		url_videos=""
 		puntos="">
@@ -1448,13 +1449,14 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16010"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=54"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/PFgN3"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_echaos_palante_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 
 		<agrupacion id="55" modalidad="COMPARSA" nombre="Viene a esta tierra un barquito" autor="Francisco Clares/David Virlán" director="José Ángel Orce Barrios"
 		localidad="San Fernando (Cádiz)" coac2011="Eternos (54º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Viene_a_esta_tierra_un_barquito.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vineenunbaco.JPG"
 		url_videos=""
 		puntos="">
@@ -1474,13 +1476,14 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16010"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=55"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/PFgN3"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Viene_a_esta_tierra_un_barquito_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 
 		<agrupacion id="56" modalidad="CHIRIGOTA" nombre="Los herederos del conde de Salvatierra Eduardo III izquierda" autor="Juan Carlos Vegara/José Antonio Alvarado/David Virlán/David Márquez" director="Juan Carlos Vegara"
 		localidad="Sevila" coac2011="Los niños cantores de Viena o de Manolete (3º Premio)" cabeza_serie="true" 
 		info="Chirigota de Sevilla"
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_herederos_del_Conde_de_Salvatierra.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/herederos3.jpg"
 		url_videos=""
 		puntos="">
@@ -1499,13 +1502,14 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16010"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=56"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/PFgN3"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_herederos_del_Conde_de_Salvatierra_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 
 		<agrupacion id="57" modalidad="COMPARSA" nombre="Los fieras" autor="Raúl Mateos/Horacio Calvillo" director="Raúl Mateos Ganzalez"
 		localidad="Ronda (Málaga)" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_fieras.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/fiera.jpg"
 		url_videos=""
 		puntos="">
@@ -1525,13 +1529,14 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16010"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=57"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/PFgN3"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_fieras_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 
 		<agrupacion id="58" modalidad="CHIRIGOTA" nombre="Todos por una y una para todos" autor="Pilar Román/Serbando Sabajanes/M. Sánchez" director="Manuel Sánchez Gamito"
 		localidad="Sevilla" coac2011="Lo que diga Don Manue (51º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Todos_por_una_y_una_para_todos.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/unapararatodo6.jpg"
 		url_videos=""
 		puntos="">
@@ -1551,13 +1556,14 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16010"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=58"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/PFgN3"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Todos_por_una_y_una_para_todos_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 
 		<agrupacion id="59" modalidad="COMPARSA" nombre="Pepa" autor="José Luis Zampaña" director="José Manuel Delgado Feria"
 		localidad="El Puerto (Cádiz)" coac2011="Los vecinos de abajo (40º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Pepa.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/pepa3.jpg"
 		url_videos=""
 		puntos="">
@@ -1577,13 +1583,14 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16010"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=59"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/PFgN3"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Pepa_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 
 		<agrupacion id="60" modalidad="CHIRIGOTA" nombre="¡No me ralles!" autor="Jesús Benárquez/Pablo de la Prida" director="Cristobal Porras Montes"
 		localidad="Sevilla" coac2011="Los sgayderman (34º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/No_me_ralles.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/nomeralle.jpg"
 		url_videos=""
 		puntos="">
@@ -1603,6 +1610,7 @@
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16010"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=60"/>
 				<comentario origen="Andalucía Información - Comentario preeliminares" url="http://goo.gl/PFgN3"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/No_me_ralles_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 
