@@ -1848,7 +1848,7 @@
 			</comentarios>
 		</agrupacion>	
 	
-		<agrupacion id="70" modalidad="CORO" nombre="Teatro barvariedades" autor="Antonio Bayón/Francisco Reyes" director=""
+		<agrupacion id="70" modalidad="CORO" nombre="Teatro barvariedades" autor="Antonio Bayón/Francisco Reyes" director="Carmen Mª Cabaña Quintero"
 		localidad="Cádiz" coac2011="Asante sana (1º premio Juveniles)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -1869,7 +1869,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="71" modalidad="CHIRIGOTA" nombre="Mis padres son unos guarros" autor="Jesús Poveda" director=""
+		<agrupacion id="71" modalidad="CHIRIGOTA" nombre="Mis padres son unos guarros" autor="Jesús Poveda" director="Antonio Tomás Garzón"
 		localidad="Úbeda (Jaén)" coac2011="De aquí al paro (53º preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -1890,7 +1890,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="72" modalidad="CHIRIGOTA" nombre="Alcahuetes, escuela de amantes" autor="Juan Diego Segovia/José González/Víctor Liebana" director=""
+		<agrupacion id="72" modalidad="CHIRIGOTA" nombre="Alcahuetes, escuela de amantes" autor="Juan Diego Segovia/José González/Víctor Liebana" director="Juan Diego Segovia Sierra"
 		localidad="Arjona (Jaén)" coac2011="Vividores (27º preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
