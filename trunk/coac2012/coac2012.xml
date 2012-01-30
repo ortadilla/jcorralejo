@@ -1892,24 +1892,25 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="72" modalidad="CHIRIGOTA" nombre="Alcahuetes, escuela de amantes" autor="Juan Diego Segovia/José González/Víctor Liebana" director="Juan Diego Segovia Sierra"
+		<agrupacion id="72" modalidad="COMPARSA" nombre="Alcahuetes, escuela de amantes" autor="Juan Diego Segovia/José González/Víctor Liebana" director="Juan Diego Segovia Sierra"
 		localidad="Arjona (Jaén)" coac2011="Vividores (27º preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Alcahuetes_escuela_de_amantes.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/alcahuetes.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=H7orZXd0AeY"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/alcahuetes-escuela-amantes.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Alcahuetes_escuela_de_amantes_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
