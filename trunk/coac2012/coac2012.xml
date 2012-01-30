@@ -1917,21 +1917,22 @@
 		<agrupacion id="73" modalidad="CUARTETO" nombre="Los tuyos" autor="Francisco Javier Aguilera/Ángel Piulestán" director=""
 		localidad="Cádiz" coac2011="Si Emilio hablara (3º premio)" cabeza_serie="true" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_tuyos.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/lostuyos.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=2BnSL39TlYo"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-tuyos.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_tuyos_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
