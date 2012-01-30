@@ -1955,7 +1955,7 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/mujeres-hombres-mucha-berza.html"/>
-				<comentario origen="Preeliminar - Actuación completa" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mujeres_y_hombres_y_mucha_berza_comentarios.php"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mujeres_y_hombres_y_mucha_berza_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 		
@@ -1977,7 +1977,7 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/nombre-rosa.html"/>
-				<comentario origen="Preeliminar - Actuación completa" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/En_el_nombre_de_la_rosa_comentarios.php"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/En_el_nombre_de_la_rosa_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 		
@@ -1999,28 +1999,29 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/batallon-del-arcoiris.html"/>
-				<comentario origen="Preeliminar - Actuación completa" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_batall%C3%B3n_del_arcoiris_comentarios.php"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_batall%C3%B3n_del_arcoiris_comentarios.php"/>
 			</comentarios>
 		</agrupacion>			
 
 		<agrupacion id="77" modalidad="CHIRIGOTA" nombre="Los arao olímpico" autor="Rafael Romero/Sergio Guillén/Juan Manuel Braza" director=""
 		localidad="Trebujena (Cádiz)" coac2011="Los que viven por la gorra (19º Cuartos)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_arao_limpico.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losarados.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=NjfQ01sSeCI"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-arao-olimpico.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_arao_limpico_comentarios.php"/>
 			</comentarios>
 		</agrupacion>				
 
