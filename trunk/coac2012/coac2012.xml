@@ -1851,42 +1851,44 @@
 		<agrupacion id="70" modalidad="CORO" nombre="Teatro barvariedades" autor="Antonio Bayón/Francisco Reyes" director="Carmen Mª Cabaña Quintero"
 		localidad="Cádiz" coac2011="Asante sana (1º premio Juveniles)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="www.carnavaldecadiz.com/Carnaval2012/Absoluta/Teatro_Barvariedades.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/teatro.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=gXc4BFvsrlc"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/teatro-barvariedades.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Teatro_Barvariedades_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
 		<agrupacion id="71" modalidad="CHIRIGOTA" nombre="Mis padres son unos guarros" autor="Jesús Poveda" director="Antonio Tomás Garzón"
 		localidad="Úbeda (Jaén)" coac2011="De aquí al paro (53º preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mis_padres_son_unos_guarros.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/mispadres.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=8_0-ednWY7s"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/mis-padres-son-unos-guarros.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mis_padres_son_unos_guarros_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
