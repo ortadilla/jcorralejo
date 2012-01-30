@@ -1984,21 +1984,22 @@
 		<agrupacion id="76" modalidad="COMPARSA" nombre="El batallón del arcoiris" autor="Francisco José Gómez/José María Fuentes" director=""
 		localidad="El Puerto (Cádiz)" coac2011="El contador de historias (50º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_batall%C3%B3n_del_arcoiris.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/elbatallon.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=hR6184d3u_g"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/batallon-del-arcoiris.html"/>
+				<comentario origen="Preeliminar - Actuación completa" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_batall%C3%B3n_del_arcoiris_comentarios.php"/>
 			</comentarios>
 		</agrupacion>			
 
