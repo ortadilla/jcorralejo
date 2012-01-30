@@ -1939,8 +1939,8 @@
 		<agrupacion id="74" modalidad="CHIRIGOTA" nombre="Mujeres y hombres y mucha berza" autor="José Antonio Peral/Julio González" director=""
 		localidad="Cádiz" coac2011="Los que se mojan de verdad (10º Semifinales)" cabeza_serie="true" 
 		info="Chirigota del Lupo"
-		url_cc=""
-		url_foto=""
+		url_cc="www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mujeres_y_hombres_y_mucha_berza.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/mujeres.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -1948,33 +1948,36 @@
 			</componentes>
 			<videos>
 				<video descripcion="Vídeo promocional" url="http://www.youtube.com/watch?v=O1QRg3CVb4M"/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=YRyf1e7vmJA"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/mujeres-hombres-mucha-berza.html"/>
+				<comentario origen="Preeliminar - Actuación completa" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mujeres_y_hombres_y_mucha_berza_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 		
 		<agrupacion id="75" modalidad="CORO" nombre="En el nombre de la rosa" autor="José Manuel Gil/Miguel Ángel Cáceres" director=""
 		localidad="Sevilla" coac2011="Café Teatro Alameda (9º Cuartos)" cabeza_serie="false" 
 		info="Coro de Sevilla"
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/En_el_nombre_de_la_rosa.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/enelnombre.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=vjnHVGLGtyk"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/nombre-rosa.html"/>
+				<comentario origen="Preeliminar - Actuación completa" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/En_el_nombre_de_la_rosa_comentarios.php"/>
 			</comentarios>
 		</agrupacion>
 		
