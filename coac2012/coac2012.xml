@@ -2335,7 +2335,7 @@
 			</comentarios>
 		</agrupacion>		
 
-		<agrupacion id="88" modalidad="CORO" nombre="Las cacas" autor="José Manuel Zampaña/Lucía Pardo" director=""
+		<agrupacion id="88" modalidad="CORO" nombre="Las cacas" autor="José Manuel Zampaña/Lucía Pardo" director="María José Ortega Braza"
 		localidad="Cádiz" coac2011="Qué fresquito lo tengo (11º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2356,7 +2356,7 @@
 			</comentarios>
 		</agrupacion>		
 
-		<agrupacion id="89" modalidad="COMPARSA" nombre="Tiempo de títeres" autor="Juan Manuel Báez/La agrupación" director=""
+		<agrupacion id="89" modalidad="COMPARSA" nombre="Tiempo de títeres" autor="Juan Manuel Báez/La agrupación" director="Jesús Huertas Pajuelo"
 		localidad="Arcos (Cádiz)" coac2011="El mesón de la molinera (46º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2377,7 +2377,7 @@
 			</comentarios>
 		</agrupacion>	
 	
-		<agrupacion id="90" modalidad="CHIRIGOTA" nombre="A lo loco se corre mejor" autor="Manuel Domínguez" director=""
+		<agrupacion id="90" modalidad="CHIRIGOTA" nombre="A lo loco se corre mejor" autor="Manuel Domínguez" director="Manuel Domínguez Moya"
 		localidad="Mairena del Aljarafe (Sevilla)" coac2011="Los aquariu (60º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2461,7 +2461,7 @@
 			</comentarios>
 		</agrupacion>		
 
-		<agrupacion id="94" modalidad="CHIRIGOTA" nombre="Esto no hay quien lo salve" autor="Antonio Galán/Francisco Javier Sevilla" director=""
+		<agrupacion id="94" modalidad="CHIRIGOTA" nombre="Esto no hay quien lo salve" autor="Antonio Galán/Francisco Javier Sevilla" director="Antonio Beiro Baro"
 		localidad="Cádiz" coac2011="Aquí no hay quien viva (17º Cuartos)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2482,7 +2482,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="95" modalidad="COMPARSA" nombre="La Bicentenaria" autor="Miguel Ángel García/José Antonio Cheza" director=""
+		<agrupacion id="95" modalidad="COMPARSA" nombre="La Bicentenaria" autor="Miguel Ángel García/José Antonio Cheza" director="José Antonio Cheza Martínez"
 		localidad="Cádiz" coac2011="Los pobres diablos (10º Cuartos)" cabeza_serie="false" 
 		info="Comparsa de Nene Cheza"
 		url_cc=""
