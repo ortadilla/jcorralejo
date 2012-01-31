@@ -2227,7 +2227,7 @@
 		<agrupacion id="85" modalidad="COMPARSA" nombre="Los habitantes del planeta arte" autor="Juan Antonio Pozo" director=""
 		localidad="Algeciras (Cádiz)" coac2011="Los bufones del zur (En Algeciras)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_habitantes_del_planeta_arte.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/loshabitantes.jpeg"
 		url_videos=""
 		puntos="">
@@ -2235,20 +2235,21 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=kNmnctQI8ms"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-habitantes-del-planeta-arte.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_habitantes_del_planeta_arte_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 	
 		<agrupacion id="86" modalidad="CHIRIGOTA" nombre="Truco, o eso trato" autor="Francisco Javier Ramos/José Antonio Gobea" director=""
 		localidad="Sevilla" coac2011="Por una regulación de empleo así me veo (47º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Truco_o_eso_trato.php"
 		url_foto=""
 		url_videos=""
 		puntos="">
@@ -2256,20 +2257,21 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=8eeubmtXnIo"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/truco-eso-trato.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Truco_o_eso_trato_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
 		<agrupacion id="87" modalidad="COMPARSA" nombre="El rincón de los elegidos" autor="Juan Antonio Garrido" director=""
 		localidad="Punta Umbría (Huelva)" coac2011="El capitán de la playa (38º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_rincon_de_los_elegidos.php"
 		url_foto=""
 		url_videos=""
 		puntos="">
@@ -2277,13 +2279,14 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=xbD5JauX9Is"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/rincon-los-elegidos.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_rincon_de_los_elegidos_comentarios.php"/>
 			</comentarios>
 		</agrupacion>		
 
