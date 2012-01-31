@@ -2095,7 +2095,7 @@
 		<agrupacion id="79" modalidad="CORO" nombre="El amanecer" autor="Rafael Pastrana" director=""
 		localidad="Cádiz" coac2011="La madrugá (2º Premio)" cabeza_serie="true" 
 		info="Coro de Pastrana"
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_amanecer.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/elamanecer.jpeg"
 		url_videos=""
 		puntos="">
@@ -2103,20 +2103,21 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=FEbPEstotlY"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/amanecer.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_amanecer_comentarios.php"/>
 			</comentarios>
 		</agrupacion>			
 	
 		<agrupacion id="80" modalidad="CHIRIGOTA" nombre="Los reflotaos" autor="Francisco Gatica/José Antonio Segundo" director=""
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_reflotaos.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losreflotaos.jpeg"
 		url_videos=""
 		puntos="">
@@ -2124,20 +2125,21 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=O-uAMkeJVSg"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-reflotaos.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_reflotaos_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 	
 		<agrupacion id="81" modalidad="COMPARSA" nombre="Las malas" autor="María Núñez/Cristina Calle" director=""
 		localidad="Sevilla" coac2011="La niña (18º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Las_malas.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/malassss.jpg"
 		url_videos=""
 		puntos="">
@@ -2145,20 +2147,21 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=nHW6RYRu1_4"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/las-malas.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Las_malas_comentarios.php"/>
 			</comentarios>
 		</agrupacion>		
 	
 		<agrupacion id="82" modalidad="CHIRIGOTA" nombre="Los inspectoresbache, detectives privao" autor="Marco Romero/Eugenio Cheza" director=""
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_inspectoresbache_detectives_privao.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losinspectores.jpeg"
 		url_videos=""
 		puntos="">
@@ -2166,20 +2169,21 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=FoYjeBQpngc"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-inspectoresbache-detectives-privao.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_inspectoresbache_detectives_privao_comentarios.php"/>
 			</comentarios>
 		</agrupacion>		
 		
 		<agrupacion id="83" modalidad="COMPARSA" nombre="Ciudadano Zero" autor="Constantino Tovar" director=""
 		localidad="Cádiz" coac2011="Juana la Loca (1º Premio)" cabeza_serie="true" 
 		info="Comparsa de Tino Tovar"
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Ciudadano_Zero.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/ciudadanoszero.jpeg"
 		url_videos=""
 		puntos="">
@@ -2187,20 +2191,21 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=VaqOZnI3IDk"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/ciudadano-zero.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Ciudadano_Zero_comentarios.php"/>
 			</comentarios>
 		</agrupacion>		
 	
 		<agrupacion id="84" modalidad="CHIRIGOTA" nombre="Los de la A.P.P.C. (Asociacion de picadores paraos de Cataluña)" autor="Antonio Rodríguez/José María Barranco" director=""
 		localidad="Chiclana (Cádiz)" coac2011="Made in Taiwan (39º Premio)" cabeza_serie="false" 
 		info=""
-		url_cc=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_de_la_APPC.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losdelaappc.jpeg"
 		url_videos=""
 		puntos="">
@@ -2208,13 +2213,14 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=oFfrQgCoH9k"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-appc.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_de_la_APPC_comentarios.php"/>
 			</comentarios>
 		</agrupacion>		
 	
