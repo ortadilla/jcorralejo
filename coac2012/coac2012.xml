@@ -2522,21 +2522,23 @@
 		<agrupacion id="96" modalidad="CHIRIGOTA" nombre="Una chirigota de cuartos" autor="La agrupación/josé Ramón Zamora/Miguel Ángel Cáceres" director=""
 		localidad="Sevilla" coac2011="Generación ni-ni (38º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Una_chirigota_de_cuartos.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/unachirigota.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=GK4dU4_o_t4"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/una-chirigota-cuartos.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Una_chirigota_de_cuartos_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Una%20chirigota%20de%20cuartos/2012"/>
 			</comentarios>
 		</agrupacion>
 		
