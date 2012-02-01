@@ -2361,21 +2361,23 @@
 		<agrupacion id="89" modalidad="COMPARSA" nombre="Tiempo de títeres" autor="Juan Manuel Báez/La agrupación" director="Jesús Huertas Pajuelo"
 		localidad="Arcos (Cádiz)" coac2011="El mesón de la molinera (46º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Tiempo_de_titeres.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/tiempodetiteres.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=Qfl67pt004o"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/tiempo-titeres.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Tiempo_de_titeres_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Tiempo%20de%20t%C3%ADteres/2012"/>
 			</comentarios>
 		</agrupacion>	
 	
