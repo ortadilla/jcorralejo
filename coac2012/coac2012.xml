@@ -2499,21 +2499,23 @@
 		<agrupacion id="95" modalidad="COMPARSA" nombre="La Bicentenaria" autor="Miguel Ángel García/José Antonio Cheza" director="José Antonio Cheza Martínez"
 		localidad="Cádiz" coac2011="Los pobres diablos (10º Cuartos)" cabeza_serie="false" 
 		info="Comparsa de Nene Cheza"
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_bicentenaria.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/labicentenaria.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=EXfScwqC-6c"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/bicentenaria.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_bicentenaria_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/La%20Bicentenaria/2012"/>
 			</comentarios>
 		</agrupacion>	
 
