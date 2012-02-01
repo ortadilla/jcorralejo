@@ -2476,21 +2476,23 @@
 		<agrupacion id="94" modalidad="CHIRIGOTA" nombre="Esto no hay quien lo salve" autor="Antonio Galán/Francisco Javier Sevilla" director="Antonio Beiro Baro"
 		localidad="Cádiz" coac2011="Aquí no hay quien viva (17º Cuartos)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Esto_no_hay_quien_lo_salve.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/estonohay.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=3yt_eMVn4jc"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/esto-hay-quien-salve.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Esto_no_hay_quien_lo_salve_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Esto%20no%20hay%20quien%20lo%20salve/2012"/>
 			</comentarios>
 		</agrupacion>	
 
