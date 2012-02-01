@@ -2453,21 +2453,23 @@
 		<agrupacion id="93" modalidad="COMPARSA" nombre="El parlamento de las 3" autor="José Antonio Alvarado" director=""
 		localidad="Sevilla" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_parlamento_de_las_3.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/apartamento.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=q-dnBEY9igA"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/parlamento-las.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_parlamento_de_las_3_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/El%20parlamento%20de%20las%203/2012"/>
 			</comentarios>
 		</agrupacion>		
 
