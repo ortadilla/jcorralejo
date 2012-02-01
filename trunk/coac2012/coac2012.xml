@@ -2384,21 +2384,23 @@
 		<agrupacion id="90" modalidad="CHIRIGOTA" nombre="A lo loco se corre mejor" autor="Manuel Domínguez" director="Manuel Domínguez Moya"
 		localidad="Mairena del Aljarafe (Sevilla)" coac2011="Los aquariu (60º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/A_lo_loco_se_corre_mejor.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/aloloco.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=TtN5-7lReNY"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/loco-corre-mejor.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/A_lo_loco_se_corre_mejor_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/A%20lo%20loco%20se%20corre%20mejor/2012"/>
 			</comentarios>
 		</agrupacion>	
 		
