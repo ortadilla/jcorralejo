@@ -2569,7 +2569,7 @@
 			</comentarios>
 		</agrupacion>
 		
-		<agrupacion id="97" modalidad="CORO" nombre="¿Listos los de atras? ¡Listos!" autor="R. Peñalver/F. Cárdenas/J. A. Flores/A. Martín" director=""
+		<agrupacion id="97" modalidad="CORO" nombre="¿Listos los de atras? ¡Listos!" autor="R. Peñalver/F. Cárdenas/J. A. Flores/A. Martín" director=" Leonardo Calle"
 		localidad="Cádiz" coac2011="El asedio (7º Cuartos)" cabeza_serie="false" 
 		info="Coro del Lamas"
 		url_cc=""
@@ -2590,7 +2590,7 @@
 			</comentarios>
 		</agrupacion>				
 		
-		<agrupacion id="98" modalidad="CHIRIGOTA" nombre="Los traviesos que vienen con caja, bombo y platillo..." autor="José Carlos Patrón/María del Mar Nuño" director=""
+		<agrupacion id="98" modalidad="CHIRIGOTA" nombre="Los traviesos que vienen con caja, bombo y platillo..." autor="José Carlos Patrón/María del Mar Nuño" director="Fernando Otero Ramírez"
 		localidad="Cádiz" coac2011="Los diligentes (25º Cuartos)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2611,7 +2611,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="99" modalidad="COMPARSA" nombre="El friunfo" autor="Ricardo Rodríguez/Rubén Gil" director=""
+		<agrupacion id="99" modalidad="COMPARSA" nombre="El friunfo" autor="Ricardo Rodríguez/Rubén Gil" director="Rubén Gil Quiñones"
 		localidad="Las Cabezas de San Juan (Sevilla)" coac2011="El levantamiento (35º Cuartos)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2632,7 +2632,7 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="100" modalidad="CUARTETO" nombre="Llévatelo calentito" autor="Miguel Ángel Real/Dolores Prado" director=""
+		<agrupacion id="100" modalidad="CUARTETO" nombre="Llévatelo calentito" autor="Miguel Ángel Real/Dolores Prado" director="Miguel Ángel Real Prado"
 		localidad="Cádiz" coac2011="Cuarto y mitad de siglo bien despachao (6º Cuartos)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2653,7 +2653,7 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="101" modalidad="COMPARSA" nombre="La sereníssima" autor="Juan Carlos Aragón" director=""
+		<agrupacion id="101" modalidad="COMPARSA" nombre="La sereníssima" autor="Juan Carlos Aragón" director="Vicente Lázaro"
 		localidad="Cádiz" coac2011="Los Príncipes (6º Semifinales)" cabeza_serie="true" 
 		info="Comparsa de JC Aragón"
 		url_cc=""
@@ -2674,7 +2674,7 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="102" modalidad="COMPARSA" nombre="Como salidas de un cuento" autor=" Joaquín Moreno/José María Barranco" director=""
+		<agrupacion id="102" modalidad="COMPARSA" nombre="Como salidas de un cuento" autor=" Joaquín Moreno/José María Barranco" director="Ramón Manuel Ruiz Lorenzo"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2695,7 +2695,7 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="103" modalidad="CHIRIGOTA" nombre="Los puretas del Caribe" autor="Manuel Álvarez/José Manuel Cornejo" director=""
+		<agrupacion id="103" modalidad="CHIRIGOTA" nombre="Los puretas del Caribe" autor="Manuel Álvarez/José Manuel Cornejo" director="Manuel Cornejo Aragón"
 		localidad="Cádiz" coac2011="Los gafas (7º Semifinales)" cabeza_serie="true" 
 		info="Chirigota del Love"
 		url_cc=""
@@ -2716,7 +2716,7 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="104" modalidad="COMPARSA" nombre="La comparsa de los fantasmas" autor="Julián Balmón/ José Manuel Viejo/Daniel Aparicio" director=""
+		<agrupacion id="104" modalidad="COMPARSA" nombre="La comparsa de los fantasmas" autor="Julián Balmón/ José Manuel Viejo/Daniel Aparicio" director="Francisco Varros Egea"
 		localidad="Camas (Sevilla)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2737,7 +2737,7 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="105" modalidad="CHIRIGOTA" nombre="El porque de cada que" autor="Miguel Ángel Moñino" director=""
+		<agrupacion id="105" modalidad="CHIRIGOTA" nombre="El porque de cada que" autor="Miguel Ángel Moñino" director="Antonio Baeza Ruiz"
 		localidad="Castilblanco de los Arroyos (Sevilla)" coac2011="Pagafantas...(En su población)" cabeza_serie="false" 
 		info=""
 		url_cc=""
