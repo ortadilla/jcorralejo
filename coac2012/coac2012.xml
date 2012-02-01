@@ -2407,21 +2407,23 @@
 		<agrupacion id="91" modalidad="COMPARSA" nombre="La comparsa de Córdoba" autor="José Manuel Aranda/Miguel Amate/Rafael Castro" director=""
 		localidad="Córdoba" coac2011="Los molto contenti (Descalificados Cuartos)" cabeza_serie="false" 
 		info="Comparsa de Córdoba"
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_comparsa_de_Cordoba.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/lacomparsa.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=9aXafrYHR-I"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/comparsa-cordoba.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_comparsa_de_Cordoba_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/La%20comparsa%20de%20C%C3%B3rdoba/2012"/>
 			</comentarios>
 		</agrupacion>
 			
