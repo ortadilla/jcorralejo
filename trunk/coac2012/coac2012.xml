@@ -2338,21 +2338,23 @@
 		<agrupacion id="88" modalidad="CORO" nombre="Las cacas" autor="José Manuel Zampaña/Lucía Pardo" director="María José Ortega Braza"
 		localidad="Cádiz" coac2011="Qué fresquito lo tengo (11º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Las_cacas.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/cacas.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=okfM4osY6IQ"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/las-cacas.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Las_cacas_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Las%20cacas/2012"/>
 			</comentarios>
 		</agrupacion>		
 
