@@ -2595,21 +2595,23 @@
 		<agrupacion id="98" modalidad="CHIRIGOTA" nombre="Los traviesos que vienen con caja, bombo y platillo..." autor="José Carlos Patrón/María del Mar Nuño" director="Fernando Otero Ramírez"
 		localidad="Cádiz" coac2011="Los diligentes (25º Cuartos)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_traviesos_que_vienen_con_caja_bombo_y_platillo.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/lostraviesos.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=-B0hBccfnq0"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-traviesos-que-vienen-con-caja.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_traviesos_que_vienen_con_caja_bombo_y_platillo_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20traviesos%3B%20que%20viven%20con%20caja%2C%20bombo%20y%20platillo%2C%20la%20que%20van%20a%20liar%20chiquillo/2012"/>
 			</comentarios>
 		</agrupacion>	
 
