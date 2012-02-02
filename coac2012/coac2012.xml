@@ -2688,20 +2688,22 @@
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/comosalidas.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
-				<componente nombre="" voz=""/>
+				<componente nombre="" voz="http://www.youtube.com/watch?v=KnDbCoWBeiw"/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url=""/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/como-salidas-cuento.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Como_salidas_de_un_cuento.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Como_salidas_de_un_cuento.php"/>
 			</comentarios>
 		</agrupacion>
 
