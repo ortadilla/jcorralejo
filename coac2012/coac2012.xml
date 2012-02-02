@@ -2734,20 +2734,22 @@
 		localidad="Camas (Sevilla)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1328164706-lacomparsa.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=12SL-OcOi2g"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/comparsa-los-fantasmas.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_comparsa_de_los_fantasmas_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/La%20comparsa%20de%20los%20fantasmas/2012"/>
 			</comentarios>
 		</agrupacion>
 
