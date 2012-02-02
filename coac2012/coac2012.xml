@@ -2641,21 +2641,23 @@
 		<agrupacion id="100" modalidad="CUARTETO" nombre="Llévatelo calentito" autor="Miguel Ángel Real/Dolores Prado" director="Miguel Ángel Real Prado"
 		localidad="Cádiz" coac2011="Cuarto y mitad de siglo bien despachao (6º Cuartos)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Llevatelo_calentito.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/llevatelo.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=Ts5RzaSVTMI"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/llevatelo-calentito.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Llevatelo_calentito_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Ll%C3%A9vatelo%20calentito/2012"/>
 			</comentarios>
 		</agrupacion>
 
