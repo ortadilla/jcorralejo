@@ -2822,7 +2822,7 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="106" modalidad="CORO" nombre="El palacio" autor="Victoriano Cano/ Raúl Cano/Luis Alfonso Betanzos" director=""
+		<agrupacion id="106" modalidad="CORO" nombre="El palacio" autor="Victoriano Cano/ Raúl Cano/Luis Alfonso Betanzos" director="José Manuel Betanzos"
 		localidad=" San Fernando (Cádiz)" coac2011="La plaza de los colores (15º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2843,7 +2843,7 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="107" modalidad="CHIRIGOTA" nombre="Este año nos los tomamos con karma" autor="Antonio Álvarez" director=""
+		<agrupacion id="107" modalidad="CHIRIGOTA" nombre="Este año nos los tomamos con karma" autor="Antonio Álvarez" director="Ernesto Urmeneta"
 		localidad="San José de la Rinconada (Sevilla)" coac2011="¿Quién anda ahí? (26º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2864,7 +2864,7 @@
 			</comentarios>
 		</agrupacion>
 		
-		<agrupacion id="108" modalidad="COMPARSA" nombre="Los 20 locos" autor="Miguel Ángel Bonmati" director=""
+		<agrupacion id="108" modalidad="COMPARSA" nombre="Los 20 locos" autor="Miguel Ángel Bonmati" director="Miguel Ángel Bonmati"
 		localidad="San Fernando (Cádiz)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2885,7 +2885,7 @@
 			</comentarios>
 		</agrupacion>
 		
-		<agrupacion id="109" modalidad="CUARTETO" nombre="Drácula de gran estoque" autor="Miguel Ángel Moreno/José Manuel Cossi" director=""
+		<agrupacion id="109" modalidad="CUARTETO" nombre="Drácula de gran estoque" autor="Miguel Ángel Moreno/José Manuel Cossi" director="Ángel Gago Cubelo"
 		localidad="Cádiz" coac2011="Un cuarteto para la historia (4º Semifinales)" cabeza_serie="true" 
 		info="Cuarteto del Gago"
 		url_cc=""
@@ -2906,7 +2906,7 @@
 			</comentarios>
 		</agrupacion>
 		
-		<agrupacion id="110" modalidad="CHIRIGOTA" nombre="Los hijos de Juana La Loca" autor="José Miguel Choza" director=""
+		<agrupacion id="110" modalidad="CHIRIGOTA" nombre="Los hijos de Juana La Loca" autor="José Miguel Choza" director="José Miguel Choza"
 		localidad="Cádiz" coac2011="Los creadores S.A. (6º Semifinales)" cabeza_serie="true" 
 		info=""
 		url_cc=""
@@ -2927,7 +2927,7 @@
 			</comentarios>
 		</agrupacion>
 				
-		<agrupacion id="111" modalidad="COMPARSA" nombre="En tus manos" autor="Cecilio Gamaza/Miguel Ángel Collantes" director=""
+		<agrupacion id="111" modalidad="COMPARSA" nombre="En tus manos" autor="Cecilio Gamaza/Miguel Ángel Collantes" director="Manuel Berrocal Gómez"
 		localidad="Medina Sidonia (Cádiz)" coac2011="A sangre fría (46º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -2948,7 +2948,7 @@
 			</comentarios>
 		</agrupacion>
 	
-		<agrupacion id="112" modalidad="CHIRIGOTA" nombre="Las más buscadas de La Caleta" autor="Eloy Manuel Ortiz/José Ángel Valle" director=""
+		<agrupacion id="112" modalidad="CHIRIGOTA" nombre="Las más buscadas de La Caleta" autor="Eloy Manuel Ortiz/José Ángel Valle" director="José Ángel Valle Álvarez"
 		localidad="Santoña (Santander)" coac2011="La saga de los Martínez (22º Preeliminares)" cabeza_serie="false" 
 		info="Chirigota de Santoña"
 		url_cc=""
@@ -2969,7 +2969,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="113" modalidad="COMPARSA" nombre="Los superhéroes" autor="Jonathan Pérez/Sergio Guillén" director=""
+		<agrupacion id="113" modalidad="COMPARSA" nombre="Los superhéroes" autor="Jonathan Pérez/Sergio Guillén" director="Jonathan Pérez"
 		localidad="Cádiz" coac2011="Pa gusto los colores (21º Preeliminares)" cabeza_serie="false" 
 		info="Comparsa de Jonathan"
 		url_cc=""
