@@ -2572,21 +2572,23 @@
 		<agrupacion id="97" modalidad="CORO" nombre="¿Listos los de atras? ¡Listos!" autor="R. Peñalver/F. Cárdenas/J. A. Flores/A. Martín" director=" Leonardo Calle"
 		localidad="Cádiz" coac2011="El asedio (7º Cuartos)" cabeza_serie="false" 
 		info="Coro del Lamas"
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Listos_los_de_atras_Listos.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/listos.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=S_lN12-YCgM"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/listos-los-atras-listos.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://carnaval.lavozdigital.es/agrupaciones/2012/listos-los-atras-listos.html"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/%C2%BFListos%20los%20de%20atr%C3%A1s?%20%C2%A1Listos!/2012"/>
 			</comentarios>
 		</agrupacion>				
 		
@@ -2656,8 +2658,8 @@
 		<agrupacion id="101" modalidad="COMPARSA" nombre="La sereníssima" autor="Juan Carlos Aragón" director="Vicente Lázaro"
 		localidad="Cádiz" coac2011="Los Príncipes (6º Semifinales)" cabeza_serie="true" 
 		info="Comparsa de JC Aragón"
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_serenissima.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Laserenissima.jpeg"
 		url_videos=""
 		puntos="">
 			<componentes>
@@ -2670,6 +2672,7 @@
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/serenissima.html"/>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/serenissima.html"/>
 			</comentarios>
 		</agrupacion>
