@@ -3056,7 +3056,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="115" modalidad="CORO" nombre="Los niños" autor="Fernando Migueles" director=""
+		<agrupacion id="115" modalidad="CORO" nombre="Los niños (el musical)" autor="Fernando Migueles" director="Nandi Migueles"
 		localidad="Cádiz" coac2011="Allegro Molto Vivace (1º Premio)" cabeza_serie="true" 
 		info="Coro de Nandi Migueles"
 		url_cc=""
@@ -3077,7 +3077,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="116" modalidad="CHIRIGOTA" nombre="Mari Carmen y sus muñecos" autor="Juan Romero/Daniel Rosales/Iván Romero" director=""
+		<agrupacion id="116" modalidad="CHIRIGOTA" nombre="Mari Carmen y sus muñecos" autor="Juan Romero/Daniel Rosales/Iván Romero" director="Rafael Torrejón"
 		localidad="Cádiz" coac2011="Bien empezamos el año (21º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -3119,7 +3119,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="118" modalidad="CHIRIGOTA" nombre="El padre Carrasco y las niñas que dan asco" autor="Rafael Mora/Antonio Logroño/Javier Vargas" director=""
+		<agrupacion id="118" modalidad="CHIRIGOTA" nombre="El padre Carrasco y las niñas que dan asco" autor="Rafael Mora/Antonio Logroño/Javier Vargas" director="Manuel David de la Torre"
 		localidad="San José de la Rinconada (Sevilla)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -3140,7 +3140,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="119" modalidad="COMPARSA" nombre="Los carroñeros" autor="Luis Rivero/Francisco Javier Rodríguez/E. García Rosado" director=""
+		<agrupacion id="119" modalidad="COMPARSA" nombre="Los carroñeros" autor="Luis Rivero/Francisco Javier Rodríguez/E. García Rosado" director="Guillermo Guerrero Melero"
 		localidad="Cádiz" coac2011="Los defensores de Luís (8º Semifinales)" cabeza_serie="true" 
 		info="Comparsa de Luís Rivero"
 		url_cc=""
@@ -3161,7 +3161,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="120" modalidad="CHIRIGOTA" nombre="Los contables" autor="Francisco Javier Mateo/Guillermo Guerrero" director=""
+		<agrupacion id="120" modalidad="CHIRIGOTA" nombre="Los contables" autor="Francisco Javier Mateo/Guillermo Guerrero" director="Guillermo Guerrero"
 		localidad="Marbella (Málaga)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -3182,7 +3182,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="121" modalidad="COMPARSA" nombre="El torbellino" autor="Javier Raya/Miguel Ángel Vela" director=""
+		<agrupacion id="121" modalidad="COMPARSA" nombre="El torbellino" autor="Javier Raya/Miguel Ángel Vela" director="Francisco Javier Moya"
 		localidad="Marbella (Málaga)" coac2011="Mar de amores (15º Cuartos)" cabeza_serie="false" 
 		info=""
 		url_cc=""
@@ -3203,7 +3203,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="122" modalidad="CHIRIGOTA" nombre="De tienda en tienda" autor="Juan Manuel Braza" director=""
+		<agrupacion id="122" modalidad="CHIRIGOTA" nombre="De tienda en tienda" autor="Juan Manuel Braza" director="Juan Carlos Moreno García"
 		localidad="Cádiz" coac2011="Cai Story (13º Cuartos)" cabeza_serie="false" 
 		info="Chirigota del Sheriff"
 		url_cc=""
@@ -3224,7 +3224,7 @@
 			</comentarios>
 		</agrupacion>	
 
-		<agrupacion id="123" modalidad="COMPARSA" nombre="La leyenda negra" autor="Ramón Manuel Ruiz" director=""
+		<agrupacion id="123" modalidad="COMPARSA" nombre="La leyenda negra" autor="Ramón Manuel Ruiz" director="Jesús Parra"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc=""
