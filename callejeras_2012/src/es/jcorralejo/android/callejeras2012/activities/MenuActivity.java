@@ -79,6 +79,7 @@ public class MenuActivity extends Activity{
 		dondeAndan.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
+					Toast.makeText(v.getContext(), "Cargando la posición de las agrupaciones...", Toast.LENGTH_LONG).show();
 					List<Lugar> lugares = obtenerLugaresActuales();
 					if(!lugares.isEmpty()){
 						Intent intent = new Intent();
