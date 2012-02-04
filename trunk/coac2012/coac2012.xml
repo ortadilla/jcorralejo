@@ -3137,15 +3137,15 @@
 		<agrupacion id="118" modalidad="CHIRIGOTA" nombre="El padre Carrasco y las niñas que dan asco" autor="Rafael Mora/Antonio Logroño/Javier Vargas" director="Manuel David de la Torre"
 		localidad="San José de la Rinconada (Sevilla)" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_padre_Carrasco_y_la_ninnas_que_dan_asco.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/elpadre.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=VzpZVgGO_RY"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3153,6 +3153,7 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/padre-carrasco-las-ninas-que-dan-asco.html"/>
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/El%20padre%20carrasco%20y%20las%20ni%C3%B1as%20que%20dan%20asco/2012"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_padre_Carrasco_y_la_ninnas_que_dan_asco_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
