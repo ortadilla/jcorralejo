@@ -3068,15 +3068,15 @@
 		<agrupacion id="115" modalidad="CORO" nombre="Los niños (el musical)" autor="Fernando Migueles" director="Nandi Migueles"
 		localidad="Cádiz" coac2011="Allegro Molto Vivace (1º Premio)" cabeza_serie="true" 
 		info="Coro de Nandi Migueles"
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_ninnos_el_musical.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losninos.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=vcUpOesNupY"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3084,6 +3084,7 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-ninos.html"/>
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20ni%C3%B1os%20%28el%20musical%29/2012"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_ninnos_el_musical_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
