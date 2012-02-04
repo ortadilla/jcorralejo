@@ -28,7 +28,6 @@ import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
-import com.google.android.maps.OverlayItem;
 
 import es.jcorralejo.android.callejeras2012.CallejerasApplication;
 import es.jcorralejo.android.callejeras2012.R;
@@ -47,7 +46,8 @@ public class MapaActivity extends MapActivity {
 	private MapView mapa;
 	private MapController mapController;
 	private List<Overlay> mapOverlays;
-	private ItemizedOverlayLugar itemizedOverlay;
+	private ItemizedOverlayLugar itemizedOverlayInteres;
+	private ItemizedOverlayLugar itemizedOverlayAgrupacion;
 	private LocationManager lm;
 	private MiLocationListener mListener;
 	
@@ -99,7 +99,8 @@ public class MapaActivity extends MapActivity {
 		cerrarPopUp.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				contenidoPopUp.setVisibility(LinearLayout.GONE);
-				itemizedOverlay.setLugarPulsado(null);
+				itemizedOverlayInteres.setLugarPulsado(null);
+				itemizedOverlayAgrupacion.setLugarPulsado(null);
 			}
 		});
 
@@ -130,13 +131,13 @@ public class MapaActivity extends MapActivity {
 						d.invalidateSelf();
 					}
 					
-					// Navegamos a ver los detalles del lugar
-					if(itemizedOverlay.getLugarPulsado().getIdAgrupacion()!=Constantes.NINGUNA_AGRUPACION){
+					// Navegamos a ver los detalles de la agrupación
+					if(itemizedOverlayInteres.getLugarPulsado()!=null && itemizedOverlayInteres.getLugarPulsado().getAgrupacion()!=null){
 						Intent i = new Intent();
 						i.setClass(getApplicationContext(), AgrupacionActivity.class);
-						i.putExtra(Constantes.PARAMETRO_AGRUPACION, itemizedOverlay.getLugarPulsado().getIdLugar());
+						i.putExtra(Constantes.PARAMETRO_AGRUPACION, itemizedOverlayInteres.getLugarPulsado().getIdLugar());
 						startActivity(i);
-						itemizedOverlay.setLugarPulsado(null);
+						itemizedOverlayInteres.setLugarPulsado(null);
 						contenidoPopUp.setVisibility(LinearLayout.GONE);
 						popUpPulsado = true;
 					}
@@ -166,9 +167,14 @@ public class MapaActivity extends MapActivity {
 			else if (ev.getAction()==MotionEvent.ACTION_UP) {
 	            if (mismoLugar(x, y)) {
 	            	// Si pulsamos un lugar mostramos el marco con sus detalles
-	            	if(itemizedOverlay.getLugarPulsado()!=null){
-	            		crearCuadroResumen(itemizedOverlay.getLugarPulsado());
-	        			mapController.animateTo(itemizedOverlay.getLugarPulsado().getPoint());
+	            	if(itemizedOverlayInteres.getLugarPulsado()!=null){
+	            		crearCuadroResumen(itemizedOverlayInteres.getLugarPulsado());
+	        			mapController.animateTo(itemizedOverlayInteres.getLugarPulsado().getPoint());
+	            	}
+	            	
+	            	else if (itemizedOverlayAgrupacion.getLugarPulsado()!=null){
+	            		crearCuadroResumen(itemizedOverlayAgrupacion.getLugarPulsado());
+	            		mapController.animateTo(itemizedOverlayAgrupacion.getLugarPulsado().getPoint());
 	            	}
 	            }
 			}
@@ -230,26 +236,29 @@ public class MapaActivity extends MapActivity {
 		
 		// Añadimos el/los punto/s en el mapa, aunque antes eliminamos todas las capas del mapa para limpiarlo
 		Drawable chincheta = this.getResources().getDrawable(R.drawable.chincheta);
-		itemizedOverlay = new ItemizedOverlayLugar(chincheta, false);
-		mapOverlays.remove(itemizedOverlay);
+		Drawable serpentina = this.getResources().getDrawable(R.drawable.serpentina);
+		itemizedOverlayInteres = new ItemizedOverlayLugar(chincheta, false);
+		itemizedOverlayAgrupacion = new ItemizedOverlayLugar(serpentina, false);
+		mapOverlays.remove(itemizedOverlayInteres);
+		mapOverlays.remove(itemizedOverlayAgrupacion);
 		
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null)
 			lugares = (List<Lugar>) extras.get(Constantes.PARAMETRO_LUGARES);
 		
-		for(Lugar lugar : lugares)
-			itemizedOverlay.add(lugar.getLatitud(), lugar.getLongitud(), lugar.getNombre(), getResumenDescripcionLugar(lugar.getDescripcion()), lugar.getId(), lugar.getIdAgrupacion());
-		
-		if(itemizedOverlay.size()>0){
-			mapOverlays.add(itemizedOverlay);
-
-			// Si sólo hay un punto movemos el mapa hacia él
-			if(detallesLugar){
-				OverlayItem hito = itemizedOverlay.getItem(0);
-				mapController.animateTo(hito.getPoint());
-				hacerZoom = true;
-			}
+		for(Lugar lugar : lugares){
+			//Puntos de interés
+			if(lugar.getAgrupacion()==null)
+				itemizedOverlayInteres.add(lugar.getLatitud(), lugar.getLongitud(), lugar.getNombre(), getResumenDescripcionLugar(lugar.getDescripcion()), lugar.getId(), lugar.getAgrupacion());
+			else
+				itemizedOverlayAgrupacion.add(lugar.getLatitud(), lugar.getLongitud(), lugar.getNombre(), getResumenDescripcionLugar(lugar.getDescripcion()), lugar.getId(), lugar.getAgrupacion());
 		}
+		
+		if(itemizedOverlayInteres.size()>0)
+			mapOverlays.add(itemizedOverlayInteres);
+		
+		if(itemizedOverlayAgrupacion.size()>0)
+			mapOverlays.add(itemizedOverlayAgrupacion);
 		
 	}
 	
