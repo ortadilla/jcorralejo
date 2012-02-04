@@ -3114,15 +3114,15 @@
 		<agrupacion id="117" modalidad="COMPARSA" nombre="Capricho de Cai" autor="Emilio Álvarez" director=""
 		localidad="San Fernando (Cádiz)" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Capricho_de_Cai.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/caprichocai.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=Mqss5xKlz5k"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3130,6 +3130,7 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/capricho-cai.html"/>
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Capricho%20de%20Cai/2012"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Capricho_de_Cai_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
