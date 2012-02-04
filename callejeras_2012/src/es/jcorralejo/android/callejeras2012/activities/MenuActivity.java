@@ -176,7 +176,9 @@ public class MenuActivity extends Activity{
 			lugar.setLongitud(log);
 			lugar.setNombre(agrupacion.getNombre());
 			float[] coordenada = {lat, log};
-			lugar.setDescripcion(traducirCoordenadas(coordenada));
+			String desc = "Posición actualizada hace "+diferencia/(60*1000)+" minutos";
+			desc += "\n"+traducirCoordenadas(coordenada);
+			lugar.setDescripcion(desc);
 			lugaresActuales.add(lugar);
 		}
 	}

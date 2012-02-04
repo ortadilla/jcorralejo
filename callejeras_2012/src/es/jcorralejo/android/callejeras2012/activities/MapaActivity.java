@@ -135,12 +135,22 @@ public class MapaActivity extends MapActivity {
 					}
 					
 					// Navegamos a ver los detalles de la agrupación
-					if(itemizedOverlayInteres.getLugarPulsado()!=null && itemizedOverlayInteres.getLugarPulsado().getAgrupacion()!=null){
+					if(itemizedOverlayInteres.getLugarPulsado()!=null && itemizedOverlayInteres.getLugarPulsado().getLugar()!=null){
 						Intent i = new Intent();
 						i.setClass(getApplicationContext(), AgrupacionActivity.class);
-						i.putExtra(Constantes.PARAMETRO_AGRUPACION, itemizedOverlayInteres.getLugarPulsado().getIdLugar());
+						i.putExtra(Constantes.PARAMETRO_LUGAR, itemizedOverlayInteres.getLugarPulsado().getLugar());
 						startActivity(i);
 						itemizedOverlayInteres.setLugarPulsado(null);
+						contenidoPopUp.setVisibility(LinearLayout.GONE);
+						popUpPulsado = true;
+					}
+					
+					else if (itemizedOverlayAgrupacion.getLugarPulsado()!=null && itemizedOverlayAgrupacion.getLugarPulsado().getAgrupacion()!=null){
+						Intent i = new Intent();
+						i.setClass(getApplicationContext(), AgrupacionActivity.class);
+						i.putExtra(Constantes.PARAMETRO_AGRUPACION, itemizedOverlayAgrupacion.getLugarPulsado().getAgrupacion());
+						startActivity(i);
+						itemizedOverlayAgrupacion.setLugarPulsado(null);
 						contenidoPopUp.setVisibility(LinearLayout.GONE);
 						popUpPulsado = true;
 					}
@@ -252,9 +262,9 @@ public class MapaActivity extends MapActivity {
 		for(Lugar lugar : lugares){
 			//Puntos de interés
 			if(lugar.getAgrupacion()==null)
-				itemizedOverlayInteres.add(lugar.getLatitud(), lugar.getLongitud(), lugar.getNombre(), getResumenDescripcionLugar(lugar.getDescripcion()), lugar.getId(), lugar.getAgrupacion());
+				itemizedOverlayInteres.add(lugar.getLatitud(), lugar.getLongitud(), lugar.getNombre(), getResumenDescripcionLugar(lugar.getDescripcion()), lugar, lugar.getAgrupacion());
 			else
-				itemizedOverlayAgrupacion.add(lugar.getLatitud(), lugar.getLongitud(), lugar.getNombre(), getResumenDescripcionLugar(lugar.getDescripcion()), lugar.getId(), lugar.getAgrupacion());
+				itemizedOverlayAgrupacion.add(lugar.getLatitud(), lugar.getLongitud(), lugar.getNombre(), lugar.getDescripcion(), null, lugar.getAgrupacion());
 		}
 		
 		if(itemizedOverlayInteres.size()>0)
