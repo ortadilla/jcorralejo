@@ -4437,5 +4437,10 @@
 		<enlace tipo="Otros" descripcion="Callejeras" url="http://callejeras.es/" />
 		<enlace tipo="Otros" descripcion="Canal youtube COAC2012" url="http://www.youtube.com/user/COAC2012" />
 	</enlaces>
+	
+	<puntosInteres>
+		<punto long="36.529644" lat="-6.295021" nombre="Plaza de la Catedral" descripcion="La Plaza de la Catedral es..." />
+	</puntosInteres>
+	
 
 </coac2012>
