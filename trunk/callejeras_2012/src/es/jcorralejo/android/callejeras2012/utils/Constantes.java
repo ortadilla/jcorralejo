@@ -4,7 +4,7 @@ public class Constantes {
 
 	public static final int DIALOG_ACERCA_DE = 0;
 	public static final int DIALOG_NO_DATOS = 1;
-	public static final int DIALOG_INSTALAR_RADIO = 2;
+	public static final int DIALOG_INSTALAR_COAC2012 = 2;
 	public static final int DIALOG_INSTALAR_VIDEO = 3;
 
 	public static final String PARAMETRO_AGRUPACIONES = "PARAMETRO_AGRUPACIONES";
@@ -36,9 +36,7 @@ public class Constantes {
 	public static final String FASE_SEMIS = "FASE_SEMIS";
 	public static final String FASE_FINAL = "FASE_FINAL";
 	
-	public static final String URL_ONDA_CADIZ = "http://www.youtube.com/embed/One2Jbph-Po";
-	public static final String URL_OPERA = "https://market.android.com/details?id=com.opera.browser&hl=es";
-	public static final String URL_TUNEIN = "https://market.android.com/details?id=tunein.player&hl=es";
+	public static final String URL_COAC2012 = "https://market.android.com/search?q=coac2012&c=apps";
 	
 	public static final String TEXTO_DESCANSO = "-- DESCANSO --";
 	
