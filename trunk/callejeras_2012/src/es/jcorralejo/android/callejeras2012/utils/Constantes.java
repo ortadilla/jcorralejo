@@ -9,6 +9,7 @@ public class Constantes {
 
 	public static final String PARAMETRO_AGRUPACIONES = "PARAMETRO_AGRUPACIONES";
 	public static final String PARAMETRO_LUGARES = "PARAMETRO_LUGARES";
+	public static final String PARAMETRO_LUGAR = "PARAMETRO_LUGAR";
 	public static final String PARAMETRO_ENLACES = "PARAMETRO_ENLACES";
 	public static final String PARAMETRO_AGRUPACION = "PARAMETRO_AGRUPACION";
 	public static final String PARAMETRO_VIDEOS = "PARAMETRO_VIDEOS";
@@ -41,8 +42,6 @@ public class Constantes {
 	
 	public static final String TEXTO_DESCANSO = "-- DESCANSO --";
 
-	public static final long NINGUN_LUGAR = Long.MIN_VALUE;
-	public static final int NINGUNA_AGRUPACION = Integer.MIN_VALUE;
 	public static final String PARAMETRO_PUNTO_MAPA_SELECCIONADO = "puntoMapaSeleccionado";
 	public static final String PARAMETRO_ID_LUGAR = "idLugar";
 	public static final long TODOS_LUGARES = Long.MAX_VALUE;

@@ -8,6 +8,7 @@ import com.google.android.maps.GeoPoint;
 import com.google.android.maps.ItemizedOverlay;
 
 import es.jcorralejo.android.callejeras2012.entidades.Agrupacion;
+import es.jcorralejo.android.callejeras2012.entidades.Lugar;
 
 public class ItemizedOverlayLugar extends ItemizedOverlay<OverlayItemLugar> {
 
@@ -30,11 +31,11 @@ public class ItemizedOverlayLugar extends ItemizedOverlay<OverlayItemLugar> {
 	 * @param descripcion
 	 * @param idLugar
 	 */
-	public void add(double lat, double lon, String etiqueta, String descripcion, long idLugar, Agrupacion agrupacion) {
+	public void add(double lat, double lon, String etiqueta, String descripcion, Lugar lugar, Agrupacion agrupacion) {
 		int lt = (int) (lat * 1E6);
 		int ln = (int) (lon * 1E6);
 		GeoPoint punto = new GeoPoint(lt, ln);
-		OverlayItemLugar item = new OverlayItemLugar(punto, etiqueta, descripcion, idLugar, agrupacion);
+		OverlayItemLugar item = new OverlayItemLugar(punto, etiqueta, descripcion, lugar, agrupacion);
 		mOverlays.add(item);
 		populate();
 	}

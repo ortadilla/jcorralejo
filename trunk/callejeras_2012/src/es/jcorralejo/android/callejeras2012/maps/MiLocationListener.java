@@ -37,7 +37,7 @@ public class MiLocationListener implements LocationListener {
         mapOverlays.remove(puntoActual);
         //..y añadimos el nuevo
         puntoActual = new ItemizedOverlayLugar(chincheta, true);
-        puntoActual.add(location.getLatitude(), location.getLongitude(), null, null, Constantes.NINGUN_LUGAR, null);
+        puntoActual.add(location.getLatitude(), location.getLongitude(), null, null, null, null);
         mapOverlays.add(puntoActual);  
 	}
 	
