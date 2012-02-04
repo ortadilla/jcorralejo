@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Callejeras2012Activity!</string>
+    <string name="app_name">Callejeras 2012</string>
+    <string name="acerca_de">Acerca de..</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="adId">a14f1728557472c</string>
+    <string name="loguin">Login</string>
+    <string name="salir">Salir</string>
+    <string name="texto_acerca_de"><b>ATENCIÓN: La Aplicación Callejeras2012 para Android aun se encuentra en fase beta, 
+    por lo que seguro que contiene algunos errores; por lo tanto si encuentra alguno de ellos, ve algún dato incorrecto o quiere  
+    proponer alguna mejora no dude en contactar con el equipo de desarrollo y en el menor tiempo posible intentaremos contestar y solucionar el problema</b>    \n\n
+    Callejeras2012 pretende ser el punto de información sobre el las agrupaciones Callejeras del Carnaval de Cádiz de este 2012 para la plataforma móvil Android. 
+    Principalmente dispone de información referente a las agrupaciones, enlaces a vídeos y comentarios, localización en tiempo real de
+    donde se encuentran los grupos, puntos de interes, etc. 
+    \n\n
+    Callejeras2012 está desarrollada sin ánimo de lucro por Jesús Corralejo Banda, un apasionado de Carnaval y de las nuevas tecnologías.
+    Es es mismo creador de COAC2012, una aplicación para seguir el COAC en su edidión del 2012.
+    Si te gusta la aplicación y/o te parece útil, puedes invitarlo a una cerveza comprando la versión de pago de Callejeras2012* 
+    o puedes pulsar de vez en cuando en la publicidad, no te cuesta nada.
+    \n\n\n
+    *La versión de pago de Callejeras2012 no tiene ninguna mejora sobre la versión gratuita, salvo la eliminación
+    de la publicidad en sus pantallas. Sólo es una forma de reconocer el trabajo realizado por su autor</string>
+
+</resources>
