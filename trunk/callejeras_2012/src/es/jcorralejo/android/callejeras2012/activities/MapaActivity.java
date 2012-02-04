@@ -12,6 +12,9 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -324,6 +327,37 @@ public class MapaActivity extends MapActivity {
 			hacerZoom = false;
 		}
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.mapa, menu);
+		return true;
+	}
+	
+	/**
+	 * Definimos las acciones correspondientes con cada opción de menú
+	 */
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			// Al pulsar sobre "Ir posición actual" navegamos a la posición actual marcada por el GPS
+			case R.id.mapaIrPosicionActual:
+				moverMapaAPosicionActual();
+				return true;
+			// Al pulsar sobre "Modo Satélite" lo activamos
+			case R.id.mapaVistaSatelite:
+				mapa.setSatellite(true);
+				return true;
+			// Al pulsar sobre "Modo mapa" lo activamos
+			case R.id.mapaVistaMapa:
+				mapa.setSatellite(false);
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
+
 	
 
 }
