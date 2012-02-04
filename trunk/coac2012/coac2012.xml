@@ -3183,15 +3183,15 @@
 		<agrupacion id="120" modalidad="CHIRIGOTA" nombre="Los contables" autor="Francisco Javier Mateo/Guillermo Guerrero" director="Guillermo Guerrero"
 		localidad="Marbella (Málaga)" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_contables.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/loscontables.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=bPBoGGJOJr8"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3199,6 +3199,7 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-contables.html"/>
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20contables/2012"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_contables_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
