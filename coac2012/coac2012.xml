@@ -3229,15 +3229,15 @@
 		<agrupacion id="122" modalidad="CHIRIGOTA" nombre="De tienda en tienda" autor="Juan Manuel Braza" director="Juan Carlos Moreno García"
 		localidad="Cádiz" coac2011="Cai Story (13º Cuartos)" cabeza_serie="false" 
 		info="Chirigota del Sheriff"
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/De_tienda_en_tienda.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/tienda.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=ufx8MT1zElQ"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3245,6 +3245,7 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/tienda-tienda.html"/>
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/De%20tienda%20en%20tienda/2012"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/De_tienda_en_tienda_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
