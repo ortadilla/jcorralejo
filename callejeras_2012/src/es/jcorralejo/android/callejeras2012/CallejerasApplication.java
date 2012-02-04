@@ -12,11 +12,13 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.widget.Toast;
 import es.jcorralejo.android.callejeras2012.entidades.Agrupacion;
+import es.jcorralejo.android.callejeras2012.entidades.Lugar;
 import es.jcorralejo.android.callejeras2012.utils.RssDownloadHelper;
 
 public class CallejerasApplication extends Application {
 	
 	private List<Agrupacion> agrupaciones = new ArrayList<Agrupacion>();
+	private List<Lugar> puntosInteres = new ArrayList<Lugar>();
 	private List<Integer> favoritas = new ArrayList<Integer>();
 	
 	private ActualizarPostAsyncTask tarea;
@@ -27,6 +29,7 @@ public class CallejerasApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		agrupaciones = new ArrayList<Agrupacion>();
+		puntosInteres = new ArrayList<Lugar>();
 		cargarDatos(null);
 		System.out.println(" ------ COMENZANDO APPLICATION ------ ");
 	}
@@ -88,7 +91,7 @@ public class CallejerasApplication extends Application {
 		@Override
 		protected Void doInBackground(Void... params) {
 			actualizando = true;
-			RssDownloadHelper.updateRssData(getRssUrl(), getAgrupaciones());
+			RssDownloadHelper.updateRssData(getRssUrl(), getAgrupaciones(), getPuntosInteres());
 			return null;
 		}
 		
@@ -125,6 +128,14 @@ public class CallejerasApplication extends Application {
 
 	public void setError(boolean error) {
 		this.error = error;
+	}
+
+	public List<Lugar> getPuntosInteres() {
+		return puntosInteres;
+	}
+
+	public void setPuntosInteres(List<Lugar> puntosInteres) {
+		this.puntosInteres = puntosInteres;
 	}
 
 }

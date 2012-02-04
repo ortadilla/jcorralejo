@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name="CallejerasApplication"
@@ -31,6 +32,8 @@
         <activity android:name=".activities.VideosActivity" >
         </activity>
 
+        <uses-library android:name="com.google.android.maps"></uses-library>
+        
         <!-- The application's publisher ID assigned by AdMob -->
         <meta-data
             android:name="ADMOB_PUBLISHER_ID"
@@ -40,6 +43,7 @@
         <activity
             android:name="com.google.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity android:name=".activities.MapaActivity"></activity>
     </application>
 
 </manifest>

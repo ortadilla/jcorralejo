@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -29,6 +28,7 @@ import com.google.ads.AdView;
 import es.jcorralejo.android.callejeras2012.CallejerasApplication;
 import es.jcorralejo.android.callejeras2012.R;
 import es.jcorralejo.android.callejeras2012.entidades.Agrupacion;
+import es.jcorralejo.android.callejeras2012.entidades.Lugar;
 import es.jcorralejo.android.callejeras2012.utils.Constantes;
 
 public class MenuActivity extends Activity{
@@ -72,7 +72,10 @@ public class MenuActivity extends Activity{
 		lugares.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					//TODO
+					Intent intent = new Intent();
+					intent.setClass(getApplicationContext(), MapaActivity.class);
+					intent.putExtra(Constantes.PARAMETRO_LUGARES, (ArrayList<Lugar>)app.getPuntosInteres());
+					startActivity(intent);
 				}
 			}
 		);
@@ -82,14 +85,12 @@ public class MenuActivity extends Activity{
 				public void onClick(View v) {
 					try{
 						Intent i = new Intent(Intent.ACTION_VIEW);
-//						i.setComponent(ComponentName.unflattenFromString("es.jcorralejo.android/.MenuActivity"));
 						i.addCategory(Intent.CATEGORY_LAUNCHER);
 						i.setClassName("es.jcorralejo.android", "es.jcorralejo.android.coac2012.activities.MenuActivity");
 						startActivity(i);
 					}catch (Exception e) {
 						try{
 							Intent i = new Intent(Intent.ACTION_VIEW);
-//							i.setComponent(ComponentName.unflattenFromString("es.jcorralejo.android.coac2012/.MenuActivity"));
 							i.addCategory(Intent.CATEGORY_LAUNCHER);
 							i.setClassName("es.jcorralejo.android.coac2012", "es.jcorralejo.android.coac2012.activities.MenuActivity");
 							startActivity(i);

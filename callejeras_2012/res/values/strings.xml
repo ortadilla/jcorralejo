@@ -7,6 +7,9 @@
     <string name="actualizar">Actualizar</string>
     <string name="adId">a14f1728557472c</string>
     <string name="loguin">Login</string>
+    <string name="key_mapsX">0ufFbB49KCKsP1cB6dJXferKaYyqgnQULn7rDrw</string>
+    <string name="key_maps">0ufFbB49KCKs9JxSWbdq1VwTbbR6oa7Duy_INnw</string> <!-- Depuración casa -->
+    <string name="key_maps2">0ufFbB49KCKtdqiY0UZEtvPL7kkLWgMFSr8kRYg</string> <!-- trabajo -->
     <string name="salir">Salir</string>
     <string name="texto_acerca_de"><b>ATENCIÓN: La Aplicación Callejeras2012 para Android aun se encuentra en fase beta, 
     por lo que seguro que contiene algunos errores; por lo tanto si encuentra alguno de ellos, ve algún dato incorrecto o quiere  
