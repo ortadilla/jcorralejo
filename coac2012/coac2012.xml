@@ -3206,15 +3206,15 @@
 		<agrupacion id="121" modalidad="COMPARSA" nombre="El torbellino" autor="Javier Raya/Miguel Ángel Vela" director="Francisco Javier Moya"
 		localidad="Marbella (Málaga)" coac2011="Mar de amores (15º Cuartos)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_torbellino.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/torbellino.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=ufx8MT1zElQ"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3222,6 +3222,7 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/torbellino.html"/>
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/El%20torbellino/2012"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_torbellino_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
