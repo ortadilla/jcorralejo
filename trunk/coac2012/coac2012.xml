@@ -3160,15 +3160,15 @@
 		<agrupacion id="119" modalidad="COMPARSA" nombre="Los carroñeros" autor="Luis Rivero/Francisco Javier Rodríguez/E. García Rosado" director="Guillermo Guerrero Melero"
 		localidad="Cádiz" coac2011="Los defensores de Luís (8º Semifinales)" cabeza_serie="true" 
 		info="Comparsa de Luís Rivero"
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_carronneros.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/carronero.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=ytz1CoXdGx0"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3176,6 +3176,7 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-carroneros.html"/>
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20carro%C3%B1eros/2012"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_carronneros_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
