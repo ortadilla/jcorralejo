@@ -3252,15 +3252,15 @@
 		<agrupacion id="123" modalidad="COMPARSA" nombre="La leyenda negra" autor="Ramón Manuel Ruiz" director="Jesús Parra"
 		localidad="Cádiz" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_leyenda_negra.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/leyenda.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=hFDJSDY2OzI"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3268,6 +3268,7 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/leyenda-negra.html"/>
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/La%20leyenda%20negra/2012"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_leyenda_negra_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
