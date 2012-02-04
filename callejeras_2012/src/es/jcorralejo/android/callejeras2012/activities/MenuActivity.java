@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -79,7 +80,23 @@ public class MenuActivity extends Activity{
 		coac2012.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					//TODO
+					try{
+						Intent i = new Intent(Intent.ACTION_VIEW);
+//						i.setComponent(ComponentName.unflattenFromString("es.jcorralejo.android/.MenuActivity"));
+						i.addCategory(Intent.CATEGORY_LAUNCHER);
+						i.setClassName("es.jcorralejo.android", "es.jcorralejo.android.coac2012.activities.MenuActivity");
+						startActivity(i);
+					}catch (Exception e) {
+						try{
+							Intent i = new Intent(Intent.ACTION_VIEW);
+//							i.setComponent(ComponentName.unflattenFromString("es.jcorralejo.android.coac2012/.MenuActivity"));
+							i.addCategory(Intent.CATEGORY_LAUNCHER);
+							i.setClassName("es.jcorralejo.android.coac2012", "es.jcorralejo.android.coac2012.activities.MenuActivity");
+							startActivity(i);
+						}catch(Exception e2){
+							showDialog(Constantes.DIALOG_INSTALAR_COAC2012);
+						}
+					}
 				}
 			}
 		);
@@ -163,6 +180,17 @@ public class MenuActivity extends Activity{
 												}})
 				       .setNegativeButton("Volver", null)
 				       .setView(view);
+				return builder.create();
+
+			case Constantes.DIALOG_INSTALAR_COAC2012:
+				builder.setMessage("Le recomendamos que instale 'COAC2012' para poder seguir con todo detalle el concurso COAC en este 2012");
+				builder.setPositiveButton("Instalar COAC2012",
+						  new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+								Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(Constantes.URL_COAC2012));
+								startActivity(i);
+					  	  }});
+				builder.setNegativeButton("Volver",null);
 				return builder.create();
 
 			default:
