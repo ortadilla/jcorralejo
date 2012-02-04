@@ -13,6 +13,7 @@ import es.jcorralejo.android.callejeras2012.entidades.Agrupacion;
 import es.jcorralejo.android.callejeras2012.entidades.Comentario;
 import es.jcorralejo.android.callejeras2012.entidades.Componente;
 import es.jcorralejo.android.callejeras2012.entidades.Foto;
+import es.jcorralejo.android.callejeras2012.entidades.Lugar;
 import es.jcorralejo.android.callejeras2012.entidades.Video;
 
 public class RssHandler extends DefaultHandler implements LexicalHandler {
@@ -48,6 +49,9 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String PUNTOS = "puntos";
 	public static final String ENLACE = "enlace";
 	public static final String TIPO = "tipo";
+	public static final String PUNTO = "punto";
+	public static final String LONG = "long";
+	public static final String LAT = "lat";
 
 	public static final String TITLE = "title";
 	public static final String LINK = "link";
@@ -57,6 +61,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String DESCRIPTION = "description";
 	
 	private List<Agrupacion> agrupaciones;
+	private List<Lugar> puntosInteres;
 	
 	// Donde iremos guardando los datos del registro a guardar
 	ContentValues rssItem;
@@ -65,8 +70,9 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	private List<Agrupacion> agrupacionesDiaActual;
 	private String diaActual;
 
-    public RssHandler(List<Agrupacion> agrupaciones) {
+    public RssHandler(List<Agrupacion> agrupaciones, List<Lugar> puntosInteres) {
 		this.agrupaciones = agrupaciones;
+		this.puntosInteres = puntosInteres;
 	}
 
     /** 
@@ -115,6 +121,14 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      	} else if(localName.equalsIgnoreCase(DIA)) {
      	} else if(localName.equalsIgnoreCase(PUESTO)) {
      	} else if(localName.equalsIgnoreCase(ENLACE)) {
+     	} else if(localName.equalsIgnoreCase(PUNTO)){
+     		Lugar lugar = new Lugar();
+     		lugar.setDescripcion(atts.getValue(DESCRIPCION));
+     		lugar.setNombre(atts.getValue(NOMBRE));
+     		lugar.setLatitud(Float.valueOf(atts.getValue(LAT)));
+     		lugar.setLongitud(Float.valueOf(atts.getValue(LONG)));
+     		lugar.setId(Integer.parseInt(atts.getValue(ID)));
+     		puntosInteres.add(lugar);
      	}
     }
     
