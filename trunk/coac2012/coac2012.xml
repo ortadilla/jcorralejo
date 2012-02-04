@@ -4439,7 +4439,7 @@
 	</enlaces>
 	
 	<puntosInteres>
-		<punto id=1 long="36.529644" lat="-6.295021" nombre="Plaza de la Catedral" descripcion="La Plaza de la Catedral es..." />
+		<punto id="1" long="36.529644" lat="-6.295021" nombre="Plaza de la Catedral" descripcion="La Plaza de la Catedral es" />
 	</puntosInteres>
 	
 
