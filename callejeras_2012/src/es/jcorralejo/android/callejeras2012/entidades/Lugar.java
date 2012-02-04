@@ -3,15 +3,13 @@ package es.jcorralejo.android.callejeras2012.entidades;
 import java.io.Serializable;
 import java.util.Date;
 
-import es.jcorralejo.android.callejeras2012.utils.Constantes;
-
 public class Lugar  implements Serializable {
 	private static final long serialVersionUID = 8976801267922925720L;
 	
 	private int id;
 	private double latitud;
 	private double longitud;
-	private Integer idAgrupacion;
+	private Agrupacion agrupacion;
 	private String descripcion;
 	private String nombre;
 	private Date ultimaActualizacion;
@@ -28,11 +26,11 @@ public class Lugar  implements Serializable {
 	public void setLongitud(double longitud) {
 		this.longitud = longitud;
 	}
-	public Integer getIdAgrupacion() {
-		return idAgrupacion!=null ? idAgrupacion : Constantes.NINGUNA_AGRUPACION;
+	public Agrupacion getAgrupacion() {
+		return agrupacion;
 	}
-	public void setIdAgrupacion(Integer idAgrupacion) {
-		this.idAgrupacion = idAgrupacion;
+	public void setAgrupacion(Agrupacion agrupacion) {
+		this.agrupacion = agrupacion;
 	}
 	public String getDescripcion() {
 		return descripcion;
