@@ -3091,15 +3091,15 @@
 		<agrupacion id="116" modalidad="CHIRIGOTA" nombre="Mari Carmen y sus muñecos" autor="Juan Romero/Daniel Rosales/Iván Romero" director="Rafael Torrejón"
 		localidad="Cádiz" coac2011="Bien empezamos el año (21º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mari_Carmen_y_sus_munnecos.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1328339870-maricarmen.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=uFscwOyAltM"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3107,6 +3107,7 @@
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/mari-carmen-sus-munecos.html"/>
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Mari%20Carmen%20y%20sus%20mu%C3%B1ecos/2012"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mari_Carmen_y_sus_munnecos_comentarios.php"/>
 			</comentarios>
 		</agrupacion>	
 
