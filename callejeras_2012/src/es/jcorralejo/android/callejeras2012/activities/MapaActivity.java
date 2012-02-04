@@ -79,7 +79,7 @@ public class MapaActivity extends MapActivity {
 		mapa = (MapView) findViewById(R.id.mapview);
 		mapa.setSatellite(true);
 		mapController = mapa.getController();
-		mapController.setZoom(14);
+		mapController.setZoom(18);
 		mapOverlays = mapa.getOverlays();
 		
 		//Añadimos el manejador del GPS
