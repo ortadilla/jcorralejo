@@ -4,9 +4,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.google.ads.AdRequest;
-import com.google.ads.AdView;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
@@ -27,8 +24,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import es.jcorralejo.android.coac2012.CoacApplication;
+
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
+
 import es.jcorralejo.android.R;
+import es.jcorralejo.android.coac2012.CoacApplication;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
 import es.jcorralejo.android.coac2012.utils.Constantes;
 
@@ -162,7 +163,7 @@ public class ActuacionActivity extends ListActivity{
 						showDialog(Constantes.DIALOG_INSTALAR_VIDEO);
 					}
 				}else{
-					Toast.makeText(getApplicationContext(), "Lo sentimos, pero sólo la fase Preeliminar es emitida en directo por Onda Cádiz", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "Lo sentimos, pero esta fase no la emite ninguna TV online", Toast.LENGTH_LONG).show();
 				}
 				return true;
 			case R.id.actOir:

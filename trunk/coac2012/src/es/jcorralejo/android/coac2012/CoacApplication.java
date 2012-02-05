@@ -112,6 +112,12 @@ public class CoacApplication extends Application {
 		return concurso.get(Constantes.FASE_PREELIMINAR).contains(dia);
 	}
 
+	public boolean isCuartos(){
+		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
+		String dia = sdf.format(new Date());
+		return concurso.get(Constantes.FASE_CUARTOS).contains(dia);
+	}
+	
 	
 	public List<Agrupacion> getAgrupaciones() {
 		return agrupaciones;
