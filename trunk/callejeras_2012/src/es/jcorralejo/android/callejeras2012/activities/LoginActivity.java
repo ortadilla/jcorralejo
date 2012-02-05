@@ -70,7 +70,7 @@ public class LoginActivity extends Activity{
 			if(agr!=null){
 				SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
 				Editor editor = prefs.edit();
-				editor.putInt("agrupacion_logueada", agr.getId() );
+				editor.putInt(Constantes.PREFERENCE_AGRUPACION_LOGUEADA, agr.getId() );
 				editor.commit();
 				
 				correcto = true;

@@ -245,9 +245,22 @@ public class MenuActivity extends Activity{
 		menuInflater.inflate(R.menu.menu, menu);
 		return true;
 	}
+	
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		MenuItem menuLoguearse = menu.findItem(R.id.menuLoguearse);
+		MenuItem menuLoguearseOut = menu.findItem(R.id.menuLoguearseOut);
+		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
+		int agrLogueada = prefs.getInt(Constantes.PREFERENCE_AGRUPACION_LOGUEADA, -1);
+		menuLoguearse.setVisible(agrLogueada<0);
+		menuLoguearseOut.setVisible(agrLogueada>0);
+		return super.onPrepareOptionsMenu(menu);
+	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		SharedPreferences prefs;
+		Editor editor;
 		switch (item.getItemId()) {
 			case R.id.menuAcercaDe:
 				showDialog(Constantes.DIALOG_ACERCA_DE);
@@ -256,8 +269,8 @@ public class MenuActivity extends Activity{
 				final ProgressDialog pd = ProgressDialog.show(this, "Cargando datos","Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
 				app.cargarDatos(pd);
 
-				SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);;
-				Editor editor = prefs.edit();
+				prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
+				editor = prefs.edit();
 				editor.putLong("ultima_actualizacion", System.currentTimeMillis());
 				editor.commit();
 				return true;
@@ -268,6 +281,14 @@ public class MenuActivity extends Activity{
 				Intent intent = new Intent();
 				intent.setClass(this, LoginActivity.class);
 				startActivity(intent);
+				return true;
+			case R.id.menuLoguearseOut:
+				prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
+				editor = prefs.edit();
+				editor.remove(Constantes.PREFERENCE_AGRUPACION_LOGUEADA);
+				editor.commit();
+				Toast.makeText(getBaseContext(), "Usuario desconectado", Toast.LENGTH_LONG).show();
+
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
