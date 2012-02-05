@@ -84,16 +84,7 @@ public class MenuActivity extends Activity{
 				new OnClickListener() {
 					public void onClick(View v) {
 						if(!app.getActualizando()){
-							if(!cargarLugaresActuales()){
-								if(lugaresActuales!=null && !lugaresActuales.isEmpty()){
-									Intent intent = new Intent();
-									intent.setClass(getApplicationContext(), MapaActivity.class);
-									intent.putExtra(Constantes.PARAMETRO_LUGARES, (ArrayList<Lugar>)lugaresActuales);
-									startActivity(intent);
-								}else{
-									Toast.makeText(getBaseContext(), "Ninguna agrupación ha indicado su lugar recientemente...", Toast.LENGTH_LONG).show();
-								}
-							}
+							cargarLugaresActuales();
 						}else
 							Toast.makeText(getBaseContext(), "Actualizando datos...Por favor vuelva a intentarlo pasados unos segundos", Toast.LENGTH_LONG).show();
 					}
@@ -282,23 +273,10 @@ public class MenuActivity extends Activity{
 		}
 	}
 	
-	private boolean cargarLugaresActuales(){
-		boolean actualizar = false;
-
-		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);;
-		long ultima = prefs.getLong("ultima_actualizacion_lugar", 0);
-		if ((System.currentTimeMillis() - ultima) > FRECUENCIA_ACTUALIZACION_LUGARES){
-			actualizar = true;
-			ProgressDialog pd = ProgressDialog.show(this, "Cargando datos", "Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
-			ActualizarLugaresAsyncTask tarea = new ActualizarLugaresAsyncTask(pd, this);
-			tarea.execute();
-
-			Editor editor = prefs.edit();
-			editor.putLong("ultima_actualizacion_lugar", System.currentTimeMillis());
-			editor.commit();
-		}
-		
-		return actualizar;
+	private void cargarLugaresActuales(){
+		ProgressDialog pd = ProgressDialog.show(this, "Cargando datos", "Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
+		ActualizarLugaresAsyncTask tarea = new ActualizarLugaresAsyncTask(pd, this);
+		tarea.execute();
 	}
 	
 	class ActualizarLugaresAsyncTask extends AsyncTask<Void, Void, Void> {
