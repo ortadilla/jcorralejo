@@ -162,7 +162,7 @@ public class ActuacionActivity extends ListActivity{
 						showDialog(Constantes.DIALOG_INSTALAR_VIDEO);
 					}
 				}else{
-					Toast.makeText(getApplicationContext(), "Lo sentimos, pero sólo la fase Preeliminar es emitida en directo por Onda Cádiz", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "Lo sentimos, pero esta fase no la emite ninguna TV online", Toast.LENGTH_LONG).show();
 				}
 				return true;
 			case R.id.actOir:
