@@ -14,7 +14,6 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 
 import es.jcorralejo.android.callejeras2012.R;
-import es.jcorralejo.android.callejeras2012.utils.Constantes;
 
 public class MiLocationListener implements LocationListener {
 	

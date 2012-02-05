@@ -79,7 +79,7 @@ public class MapaActivity extends MapActivity {
 		mapa = (MapView) findViewById(R.id.mapview);
 		mapa.setSatellite(true);
 		mapController = mapa.getController();
-		mapController.setZoom(18);
+		mapController.setZoom(16);
 		mapOverlays = mapa.getOverlays();
 		
 		//Añadimos el manejador del GPS
@@ -88,7 +88,7 @@ public class MapaActivity extends MapActivity {
 		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 3, mListener);
 		
 		// Comprobamos si está activo el GPS y centramos el mapa en las coordenadas actuales del dispositivo
-		moverMapaAPosicionActual();
+		moverMapaAPosicion(false);
 		
 		//"Inflamos" el contenido del popUp y obtenemos sus elementos
 		LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -295,26 +295,28 @@ public class MapaActivity extends MapActivity {
 	 * Mueve el mapa a la última posición conocida
 	 * @return
 	 */
-	private GeoPoint moverMapaAPosicionActual(){
-		GeoPoint geoPoint = null;
-		//Comprobamos si tenemos localización por GPS...
-		Location loc = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-		//...y si no, comprobamos si tenemos localización por triangulación de antenas
-		if(loc==null)
-			loc = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-		if(loc!=null){
-			geoPoint = new GeoPoint((int)(loc.getLatitude()*1E6), (int)(loc.getLongitude()*1E6));
+	private void moverMapaAPosicion(boolean actual){
+		if(actual){
+			//Comprobamos si tenemos localización por GPS...
+			Location loc = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+			//...y si no, comprobamos si tenemos localización por triangulación de antenas
+			if(loc==null)
+				loc = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+			if(loc!=null){
+				GeoPoint geoPoint = new GeoPoint((int)(loc.getLatitude()*1E6), (int)(loc.getLongitude()*1E6));
+				mapController.animateTo(geoPoint);
+
+				//Si aun no tenemos posición actual guardada, la guardamos ahora
+				if(mListener!=null && mListener.getPuntoActual()==null)
+					mListener.onLocationChanged(loc);
+			}else
+				Toast.makeText(getBaseContext(), "Imposible determinar la posición actual", Toast.LENGTH_LONG).show();
+		}else{
+			GeoPoint geoPoint = new GeoPoint((int)(Constantes.LATITUD_CADIZ*1E6), (int)(Constantes.LONGITUD_CADIZ*1E6));
 			mapController.animateTo(geoPoint);
-			
-			//Si aun no tenemos posición actual guardada, la guardamos ahora
-			if(mListener!=null && mListener.getPuntoActual()==null)
-				mListener.onLocationChanged(loc);
-		}else
-			Toast.makeText(getBaseContext(), "Imposible determinar la posición actual", Toast.LENGTH_LONG).show();
-		
-		return geoPoint;
+		}
 	}
-	
+
 	@Override
 	protected boolean isRouteDisplayed() {
 		return false;
@@ -353,7 +355,7 @@ public class MapaActivity extends MapActivity {
 		switch (item.getItemId()) {
 			// Al pulsar sobre "Ir posición actual" navegamos a la posición actual marcada por el GPS
 			case R.id.mapaIrPosicionActual:
-				moverMapaAPosicionActual();
+				moverMapaAPosicion(true);
 				return true;
 			// Al pulsar sobre "Modo Satélite" lo activamos
 			case R.id.mapaVistaSatelite:

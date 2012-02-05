@@ -125,8 +125,10 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      		Lugar lugar = new Lugar();
      		lugar.setDescripcion(atts.getValue(DESCRIPCION));
      		lugar.setNombre(atts.getValue(NOMBRE));
-     		lugar.setLatitud(Float.valueOf(atts.getValue(LAT)));
-     		lugar.setLongitud(Float.valueOf(atts.getValue(LONG)));
+     		String lat = atts.getValue(LAT);
+     		String log = atts.getValue(LONG);
+			lugar.setLatitud(Float.parseFloat(lat));
+			lugar.setLongitud(Float.parseFloat(log));
      		lugar.setId(Integer.parseInt(atts.getValue(ID)));
      		puntosInteres.add(lugar);
      	}

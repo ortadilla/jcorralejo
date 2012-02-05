@@ -47,4 +47,10 @@ public class Constantes {
 	public static final long TODOS_LUGARES = Long.MAX_VALUE;
 	public static final int NUM_CARACTERES_RESUMEN_DESCRIPCION = 40;
 	
+	public static final float LATITUD_CADIZ = Float.parseFloat("36.532013");
+	public static final float LONGITUD_CADIZ = Float.parseFloat("-6.297003");
+	
+
+	
+	
 }
