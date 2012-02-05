@@ -51,7 +51,6 @@ import es.jcorralejo.android.callejeras2012.utils.Constantes;
 public class MenuActivity extends Activity{
 	
 	private static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*1; // recarga cada hora 
-	private static final long FRECUENCIA_ACTUALIZACION_LUGARES = 5*60*1000; // recarga cada 5 minutos 
 	private CallejerasApplication app;
 	private AdView adView1;
 	private AdView adView2;
@@ -266,7 +265,9 @@ public class MenuActivity extends Activity{
 				finish();
 				return true;
 			case R.id.menuLoguearse:
-				//TODO
+				Intent intent = new Intent();
+				intent.setClass(this, LoginActivity.class);
+				startActivity(intent);
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);

@@ -88,6 +88,16 @@ public class CallejerasApplication extends Application {
     	}
     	return null;
     }
+    
+    public Agrupacion getAgrupacionPorUsuarioPass(String usuario, String pass){
+    	for(Agrupacion a : getAgrupaciones()){
+    		if(a.getUsuario()!=null && a.getUsuario().equals(usuario)
+    		&& a.getPass()!=null && a.getPass().equals(pass))
+    			return a;
+    	}
+    	return null;
+    }
+    
 	
 	class ActualizarPostAsyncTask extends AsyncTask<Void, Void, Void> {
 		private ProgressDialog pd;

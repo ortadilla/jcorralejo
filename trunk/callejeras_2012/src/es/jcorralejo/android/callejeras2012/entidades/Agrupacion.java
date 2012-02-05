@@ -14,6 +14,8 @@ public class Agrupacion implements Serializable{
 	private String director;
 	private String localidad;
 	private String coac2011;
+	private String usuario;
+	private String pass;
 	private boolean cabezaSerie;
 	private String info;
 	private String url_cc;
@@ -126,6 +128,18 @@ public class Agrupacion implements Serializable{
 	}
 	public void setPuntos(String puntos) {
 		this.puntos = puntos;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 
 }
