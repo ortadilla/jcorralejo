@@ -17,6 +17,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,6 +25,7 @@ import android.content.SharedPreferences.Editor;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -49,9 +51,11 @@ import es.jcorralejo.android.callejeras2012.utils.Constantes;
 public class MenuActivity extends Activity{
 	
 	private static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*1; // recarga cada hora 
+	private static final long FRECUENCIA_ACTUALIZACION_LUGARES = 5*60*1000; // recarga cada 5 minutos 
 	private CallejerasApplication app;
 	private AdView adView1;
 	private AdView adView2;
+	private List<Lugar> lugaresActuales;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -77,20 +81,23 @@ public class MenuActivity extends Activity{
 		);
 		TextView dondeAndan = (TextView) findViewById(R.id.dondeAndan);
 		dondeAndan.setOnClickListener(
-			new OnClickListener() {
-				public void onClick(View v) {
-					Toast.makeText(v.getContext(), "Cargando la posición de las agrupaciones...", Toast.LENGTH_LONG).show();
-					List<Lugar> lugares = obtenerLugaresActuales();
-					if(!lugares.isEmpty()){
-						Intent intent = new Intent();
-						intent.setClass(getApplicationContext(), MapaActivity.class);
-						intent.putExtra(Constantes.PARAMETRO_LUGARES, (ArrayList<Lugar>)lugares);
-						startActivity(intent);
-					}else{
-						Toast.makeText(getBaseContext(), "Ninguna agrupación ha indicado su lugar recientemente...", Toast.LENGTH_LONG).show();
+				new OnClickListener() {
+					public void onClick(View v) {
+						if(!app.getActualizando()){
+							if(!cargarLugaresActuales()){
+								if(lugaresActuales!=null && !lugaresActuales.isEmpty()){
+									Intent intent = new Intent();
+									intent.setClass(getApplicationContext(), MapaActivity.class);
+									intent.putExtra(Constantes.PARAMETRO_LUGARES, (ArrayList<Lugar>)lugaresActuales);
+									startActivity(intent);
+								}else{
+									Toast.makeText(getBaseContext(), "Ninguna agrupación ha indicado su lugar recientemente...", Toast.LENGTH_LONG).show();
+								}
+							}
+						}else
+							Toast.makeText(getBaseContext(), "Actualizando datos...Por favor vuelva a intentarlo pasados unos segundos", Toast.LENGTH_LONG).show();
 					}
 				}
-			}
 		);
 		TextView lugares = (TextView) findViewById(R.id.lugares);
 		lugares.setOnClickListener(
@@ -131,76 +138,6 @@ public class MenuActivity extends Activity{
 		
 		if(app.isError())
 			finish();
-	}
-	
-	private List<Lugar> obtenerLugaresActuales(){
-		List<Lugar> lugaresActuales = new ArrayList<Lugar>();
-		
-		try {
-			ConexionFTPUtil conexionFTPUtil = new ConexionFTPUtil();
-			byte[] fichero = conexionFTPUtil.descargarFichero2("lugares.txt", "coac2012.webatu.com", "a3635692", "elmejor1", "public_html");
-			
-			String nombreFile = Environment.getExternalStorageDirectory().getAbsolutePath()+Constantes.PATH_IMAGENES+"lugares.txt";
-			FileOutputStream fos = new FileOutputStream(nombreFile);
-			fos.write(fichero);
-			fos.flush();
-			fos.close();
-			BufferedReader bf = new BufferedReader(new FileReader(nombreFile));
-			String linea;
-			while ((linea = bf.readLine())!=null) 
-				procesarLineaLugar(linea, lugaresActuales);
-		} catch (Exception e) {
-			Toast.makeText(getBaseContext(), "Imposible determinar la posición de las agrupaciones...", Toast.LENGTH_LONG).show();
-		}
-		
-		return lugaresActuales; 
-	}
-	
-	private void procesarLineaLugar(String lineaLugar, List<Lugar> lugaresActuales){
-		String[] datos = lineaLugar.split("\\|");
-		Integer idAgrupacion = Integer.parseInt(datos[0]);
-		float log = Float.parseFloat(datos[1]);
-		float lat = Float.parseFloat(datos[2]);
-		String dia = datos[3];
-		String hora = datos[4];
-		
-		String[] datosDia = dia.split("/");
-		String[] datosHora = hora.split(":");
-		Calendar calendar = new GregorianCalendar(Integer.parseInt(datosDia[2]), Integer.parseInt(datosDia[1])-1, Integer.parseInt(datosDia[0]),
-												  Integer.parseInt(datosHora[0]), Integer.parseInt(datosHora[1])); 
-		Date fecha = new java.sql.Date(calendar.getTimeInMillis());
-		Date ahora = new Date();
-		long diferencia = ( ahora.getTime() - fecha.getTime() );
-		if(diferencia<FRECUENCIA_ACTUALIZACION){
-			Lugar lugar = new Lugar();
-			Agrupacion agrupacion = app.getAgrupacionPorId(idAgrupacion);
-			lugar.setAgrupacion(agrupacion);
-			lugar.setLatitud(lat);
-			lugar.setLongitud(log);
-			lugar.setNombre(agrupacion.getNombre());
-			float[] coordenada = {lat, log};
-			String desc = "Posición actualizada hace "+diferencia/(60*1000)+" minutos";
-			desc += "\n"+traducirCoordenadas(coordenada);
-			lugar.setDescripcion(desc);
-			lugaresActuales.add(lugar);
-		}
-	}
-	
-	protected String traducirCoordenadas(float[] coordenada){
-		String dir = "";
-		try {
-			Geocoder gc = new Geocoder(this, Locale.getDefault());
-			List<Address> addresses = gc.getFromLocation(coordenada[0], coordenada[1], 1);
-			if (addresses.size() > 0) {
-				Address address = addresses.get(0);
-				for (int i = 0; i < address.getMaxAddressLineIndex(); i++)
-					dir += address.getAddressLine(i) + "\t";
-				dir += address.getCountryName();
-			}
-		} catch (IOException e) {
-			Log.e("Error al traducir coordenadas", e.getMessage());
-		}
-		return dir;
 	}
 	
 	private void cargarAnuncios(){
@@ -343,6 +280,143 @@ public class MenuActivity extends Activity{
 			default:
 				return super.onOptionsItemSelected(item);
 		}
+	}
+	
+	private boolean cargarLugaresActuales(){
+		boolean actualizar = false;
+
+		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);;
+		long ultima = prefs.getLong("ultima_actualizacion_lugar", 0);
+		if ((System.currentTimeMillis() - ultima) > FRECUENCIA_ACTUALIZACION_LUGARES){
+			actualizar = true;
+			ProgressDialog pd = ProgressDialog.show(this, "Cargando datos", "Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
+			ActualizarLugaresAsyncTask tarea = new ActualizarLugaresAsyncTask(pd, this);
+			tarea.execute();
+
+			Editor editor = prefs.edit();
+			editor.putLong("ultima_actualizacion_lugar", System.currentTimeMillis());
+			editor.commit();
+		}
+		
+		return actualizar;
+	}
+	
+	class ActualizarLugaresAsyncTask extends AsyncTask<Void, Void, Void> {
+		private ProgressDialog pd;
+		private Context context;
+		
+		public ActualizarLugaresAsyncTask(ProgressDialog pd, Context context) {
+			this.pd = pd;
+			this.context = context;
+		}
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			obtenerLugaresActuales();
+			return null;
+		}
+		
+		@Override
+		protected void onPostExecute(Void result) {
+			ocultarPD();
+			
+			if(lugaresActuales!=null && !lugaresActuales.isEmpty()){
+				Intent intent = new Intent();
+				intent.setClass(context, MapaActivity.class);
+				intent.putExtra(Constantes.PARAMETRO_LUGARES, (ArrayList<Lugar>)lugaresActuales);
+				startActivity(intent);
+			}else
+				Toast.makeText(context, "Ninguna agrupación ha indicado su lugar recientemente...", Toast.LENGTH_LONG).show();
+			
+			super.onPostExecute(result);
+		}
+		
+		@Override
+		protected void onCancelled() {
+			ocultarPD();
+			super.onCancelled();
+		}
+
+		private void ocultarPD(){
+			if(pd!=null && pd.isShowing()){
+				try{
+					pd.dismiss();
+					pd = null;
+				}catch (Exception e) {
+				}
+			}
+		}
+		
+		private void obtenerLugaresActuales(){
+			try {
+				lugaresActuales = new ArrayList<Lugar>();
+				
+				ConexionFTPUtil conexionFTPUtil = new ConexionFTPUtil();
+				byte[] fichero = conexionFTPUtil.descargarFichero2("lugares.txt", "coac2012.webatu.com", "a3635692", "elmejor1", "public_html");
+				
+				String nombreFile = Environment.getExternalStorageDirectory().getAbsolutePath()+Constantes.PATH_IMAGENES+"lugares.txt";
+				FileOutputStream fos = new FileOutputStream(nombreFile);
+				fos.write(fichero);
+				fos.flush();
+				fos.close();
+				BufferedReader bf = new BufferedReader(new FileReader(nombreFile));
+				String linea;
+				while ((linea = bf.readLine())!=null) 
+					procesarLineaLugar(linea);
+			} catch (Exception e) {
+				Toast.makeText(getBaseContext(), "Imposible determinar la posición de las agrupaciones...", Toast.LENGTH_LONG).show();
+			}
+		}
+		
+		private void procesarLineaLugar(String lineaLugar){
+			String[] datos = lineaLugar.split("\\|");
+			Integer idAgrupacion = Integer.parseInt(datos[0]);
+			float log = Float.parseFloat(datos[1]);
+			float lat = Float.parseFloat(datos[2]);
+			String dia = datos[3];
+			String hora = datos[4];
+			
+			String[] datosDia = dia.split("/");
+			String[] datosHora = hora.split(":");
+			Calendar calendar = new GregorianCalendar(Integer.parseInt(datosDia[2]), Integer.parseInt(datosDia[1])-1, Integer.parseInt(datosDia[0]),
+													  Integer.parseInt(datosHora[0]), Integer.parseInt(datosHora[1])); 
+			Date fecha = new java.sql.Date(calendar.getTimeInMillis());
+			Date ahora = new Date();
+			long diferencia = ( ahora.getTime() - fecha.getTime() );
+			if(diferencia<FRECUENCIA_ACTUALIZACION){
+				Lugar lugar = new Lugar();
+				Agrupacion agrupacion = app.getAgrupacionPorId(idAgrupacion);
+				lugar.setAgrupacion(agrupacion);
+				lugar.setLatitud(lat);
+				lugar.setLongitud(log);
+				lugar.setNombre(agrupacion.getNombre());
+				float[] coordenada = {lat, log};
+				String desc = "Posición actualizada hace "+diferencia/(60*1000)+" minutos";
+				desc += "\n"+traducirCoordenadas(coordenada);
+				lugar.setDescripcion(desc);
+				lugaresActuales.add(lugar);
+			}
+		}
+		
+		protected String traducirCoordenadas(float[] coordenada){
+			String dir = "";
+			try {
+				Geocoder gc = new Geocoder(context, Locale.getDefault());
+				List<Address> addresses = gc.getFromLocation(coordenada[0], coordenada[1], 1);
+				if (addresses.size() > 0) {
+					Address address = addresses.get(0);
+					for (int i = 0; i < address.getMaxAddressLineIndex(); i++)
+						dir += address.getAddressLine(i) + "\t";
+					dir += address.getCountryName();
+				}
+			} catch (IOException e) {
+				Log.e("Error al traducir coordenadas", e.getMessage());
+			}
+			return dir;
+		}
+		
+
+		
 	}
 
 }
