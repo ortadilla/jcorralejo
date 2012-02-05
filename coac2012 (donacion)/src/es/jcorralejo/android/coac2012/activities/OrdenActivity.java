@@ -12,6 +12,7 @@ import com.google.ads.AdView;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,8 +70,11 @@ public class OrdenActivity extends ListActivity{
 				String n1 = ((Agrupacion)obj1).getNombre();
 				String n2 = ((Agrupacion)obj2).getNombre();
 				return n1.compareTo(n2);
-			}else
-				return -puntos1.compareTo(puntos2);
+			}else{
+				Integer p1 = new Integer(puntos1);
+				Integer p2 = new Integer(puntos2);
+				return -p1.compareTo(p2);
+			}
     	}
     }; 
 	
@@ -96,6 +100,13 @@ public class OrdenActivity extends ListActivity{
 					nombre.setTextColor(Color.RED);
 					nombre.setTextAppearance(getApplicationContext(), android.R.attr.textAppearance);
 					puntos.setTextAppearance(getApplicationContext(), android.R.attr.textAppearance);
+				}else{
+					puntos.setTextColor(Color.GRAY);
+					nombre.setTextColor(Color.GRAY);
+					nombre.setTextAppearance(getApplicationContext(), android.R.attr.textAppearance);
+					puntos.setTextAppearance(getApplicationContext(), android.R.attr.textAppearance);
+					nombre.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD), Typeface.BOLD);
+					puntos.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD), Typeface.BOLD);
 				}
 		 
 				return row;
