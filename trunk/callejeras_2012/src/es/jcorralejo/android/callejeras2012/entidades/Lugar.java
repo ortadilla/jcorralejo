@@ -13,6 +13,7 @@ public class Lugar  implements Serializable {
 	private String descripcion;
 	private String nombre;
 	private Date ultimaActualizacion;
+	private String foto;
 	
 	public double getLatitud() {
 		return latitud;
@@ -55,5 +56,11 @@ public class Lugar  implements Serializable {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public String getFoto() {
+		return foto;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 }
