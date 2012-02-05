@@ -81,6 +81,14 @@ public class CallejerasApplication extends Application {
 		return false;
 	}
 	
+    public Agrupacion getAgrupacionPorId(int id){
+    	for(Agrupacion a : getAgrupaciones()){
+    		if(a.getId()==id)
+    			return a;
+    	}
+    	return null;
+    }
+	
 	class ActualizarPostAsyncTask extends AsyncTask<Void, Void, Void> {
 		private ProgressDialog pd;
 		
@@ -136,6 +144,14 @@ public class CallejerasApplication extends Application {
 
 	public void setPuntosInteres(List<Lugar> puntosInteres) {
 		this.puntosInteres = puntosInteres;
+	}
+
+	public Boolean getActualizando() {
+		return actualizando;
+	}
+
+	public void setActualizando(Boolean actualizando) {
+		this.actualizando = actualizando;
 	}
 
 }

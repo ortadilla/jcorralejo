@@ -96,10 +96,13 @@ public class MenuActivity extends Activity{
 		lugares.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					Intent intent = new Intent();
-					intent.setClass(getApplicationContext(), MapaActivity.class);
-					intent.putExtra(Constantes.PARAMETRO_LUGARES, (ArrayList<Lugar>)app.getPuntosInteres());
-					startActivity(intent);
+					if(!app.getActualizando()){
+						Intent intent = new Intent();
+						intent.setClass(getApplicationContext(), MapaActivity.class);
+						intent.putExtra(Constantes.PARAMETRO_LUGARES, (ArrayList<Lugar>)app.getPuntosInteres());
+						startActivity(intent);
+					}else
+						Toast.makeText(getBaseContext(), "Actualizando datos...Por favor vuelva a intentarlo pasados unos segundos", Toast.LENGTH_LONG).show();
 				}
 			}
 		);
@@ -170,7 +173,7 @@ public class MenuActivity extends Activity{
 		long diferencia = ( ahora.getTime() - fecha.getTime() );
 		if(diferencia<FRECUENCIA_ACTUALIZACION){
 			Lugar lugar = new Lugar();
-			Agrupacion agrupacion = getAgrupacionPorId(idAgrupacion);
+			Agrupacion agrupacion = app.getAgrupacionPorId(idAgrupacion);
 			lugar.setAgrupacion(agrupacion);
 			lugar.setLatitud(lat);
 			lugar.setLongitud(log);
@@ -199,15 +202,6 @@ public class MenuActivity extends Activity{
 		}
 		return dir;
 	}
-	
-    private Agrupacion getAgrupacionPorId(int id){
-    	for(Agrupacion a : app.getAgrupaciones()){
-    		if(a.getId()==id)
-    			return a;
-    	}
-    	return null;
-    }
-
 	
 	private void cargarAnuncios(){
 		Set<String> key = new HashSet<String>();
