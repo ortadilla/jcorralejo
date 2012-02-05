@@ -45,6 +45,7 @@ import es.jcorralejo.android.callejeras2012.CallejerasApplication;
 import es.jcorralejo.android.callejeras2012.R;
 import es.jcorralejo.android.callejeras2012.entidades.Agrupacion;
 import es.jcorralejo.android.callejeras2012.entidades.Lugar;
+import es.jcorralejo.android.callejeras2012.utils.ActualizarPosicionService;
 import es.jcorralejo.android.callejeras2012.utils.ConexionFTPUtil;
 import es.jcorralejo.android.callejeras2012.utils.Constantes;
 
@@ -64,8 +65,8 @@ public class MenuActivity extends Activity{
 		setContentView(R.layout.menu);
 		
 		cargarAnuncios();
-		
 		cargarFavoritas();
+		startService();
 		
 		TextView callejeras = (TextView) findViewById(R.id.callejeras);
 		callejeras.setOnClickListener(
@@ -287,6 +288,8 @@ public class MenuActivity extends Activity{
 				editor = prefs.edit();
 				editor.remove(Constantes.PREFERENCE_AGRUPACION_LOGUEADA);
 				editor.commit();
+				
+				stopService();
 				Toast.makeText(getBaseContext(), "Usuario desconectado", Toast.LENGTH_LONG).show();
 
 				return true;
@@ -294,6 +297,20 @@ public class MenuActivity extends Activity{
 				return super.onOptionsItemSelected(item);
 		}
 	}
+	
+    private void stopService() {
+    	Intent svc = new Intent(this, ActualizarPosicionService.class);
+		stopService(svc);
+    }
+    
+    private void startService() {
+    	SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
+    	int agrLogueada = prefs.getInt(Constantes.PREFERENCE_AGRUPACION_LOGUEADA, -1);
+    	if(agrLogueada>0){
+    		Intent svc = new Intent(this, ActualizarPosicionService.class);
+    		startService(svc);
+    	}
+    }
 	
 	private void cargarLugaresActuales(){
 		ProgressDialog pd = ProgressDialog.show(this, "Cargando datos", "Por favor, espere mientras actualizamos los datos desde el servidor...", true, false);
