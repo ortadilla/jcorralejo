@@ -676,7 +676,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Este_coro_tiene_tela.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Estecorotiene.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="180">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1699,7 +1699,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Que_morro_y_que_jeta_de_fuera_y_una_quinteta.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/quemorro.JPG"
 		url_videos=""
-		puntos="">
+		puntos="3">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1855,7 +1855,7 @@
 		url_cc="www.carnavaldecadiz.com/Carnaval2012/Absoluta/Teatro_Barvariedades.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/teatro.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="167">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1990,7 +1990,7 @@
 		info="Coro de Sevilla"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/En_el_nombre_de_la_rosa.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/enelnombre.jpeg"
-		url_videos=""
+		url_videos="156"
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -2342,7 +2342,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Las_cacas.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/cacas.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="185">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -2666,7 +2666,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Llevatelo_calentito.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/llevatelo.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="15">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3305,7 +3305,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Un_mundo_aparte.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/unmundo.jpg"
 		url_videos=""
-		puntos="">
+		puntos="181">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3321,6 +3321,7 @@
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Un%20mundo%20aparte/2012"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=124"/>
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16118"/>
+				<comentario origen="Andalucía Información - Comentarios preeliminares" url="http://goo.gl/5FTnG"/>
 			</comentarios>
 		</agrupacion>	
 
@@ -3346,6 +3347,7 @@
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20barrenderos%20de%20Venecia/2012"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=125"/>
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16118"/>
+				<comentario origen="Andalucía Información - Comentarios preeliminares" url="http://goo.gl/5FTnG"/>
 			</comentarios>
 		</agrupacion>	
 
@@ -3371,6 +3373,7 @@
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20levantera/2012"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=126"/>
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16118"/>
+				<comentario origen="Andalucía Información - Comentarios preeliminares" url="http://goo.gl/5FTnG"/>
 			</comentarios>
 		</agrupacion>
 		
@@ -3396,6 +3399,7 @@
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20indignados%20%28entre%20perros%20y%20flautas%29/2012"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=127"/>
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16118"/>
+				<comentario origen="Andalucía Información - Comentarios preeliminares" url="http://goo.gl/5FTnG"/>
 			</comentarios>
 		</agrupacion>		
 		
@@ -3421,6 +3425,7 @@
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Le%20llaman%20copla/2012"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=128"/>
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16118"/>
+				<comentario origen="Andalucía Información - Comentarios preeliminares" url="http://goo.gl/5FTnG"/>
 			</comentarios>
 		</agrupacion>		
 		
@@ -3446,6 +3451,7 @@
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/El%20hombre%20sin%20coraz%C3%B3n/2012"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=129"/>
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16118"/>
+				<comentario origen="Andalucía Información - Comentarios preeliminares" url="http://goo.gl/5FTnG"/>
 			</comentarios>
 		</agrupacion>		
 		
@@ -3471,6 +3477,7 @@
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20Apoderaos%20sin%20ambiciones/2012"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=130"/>
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16118"/>
+				<comentario origen="Andalucía Información - Comentarios preeliminares" url="http://goo.gl/5FTnG"/>
 			</comentarios>
 		</agrupacion>	
 
@@ -3496,6 +3503,7 @@
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20guiaditanos/2012"/>
 				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=131"/>
 				<comentario origen="Diario Bahía de Cádiz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-16118"/>
+				<comentario origen="Andalucía Información - Comentarios preeliminares" url="http://goo.gl/5FTnG"/>
 			</comentarios>
 		</agrupacion>	
 		
