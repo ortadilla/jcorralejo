@@ -45,6 +45,7 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
         <activity android:name=".activities.MapaActivity"></activity>
         <activity android:name=".activities.LugarActivity"></activity>
+        <activity android:name=".activities.LoginActivity"></activity>
     </application>
 
 </manifest>

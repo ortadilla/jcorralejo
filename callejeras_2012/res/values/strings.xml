@@ -6,6 +6,9 @@
     <string name="acerca_de">Acerca de..</string>
     <string name="actualizar">Actualizar</string>
     <string name="adId">a14f1728557472c</string>
+    <string name="login">* Si es miembro de una agrupación Callejera o de un Romancero y desea que los aficionados al Carnaval tengan la 
+    posibilidad de saber dónde está actuando en cada momento sólo tiene que contactar con nosotros (Opción "Acerca de" en el Menú Principal) 
+    y en el menor tiempo posible nos pondermos en contacto para solicitar los datos necesarios y entregar sus credenciales</string>
     <string name="loguin">Login</string>
     <string name="key_mapsX">0ufFbB49KCKsP1cB6dJXferKaYyqgnQULn7rDrw</string>
     <string name="key_maps">0ufFbB49KCKs9JxSWbdq1VwTbbR6oa7Duy_INnw</string> <!-- Depuración casa -->
