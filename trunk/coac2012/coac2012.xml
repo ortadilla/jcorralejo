@@ -3440,21 +3440,23 @@
 		<agrupacion id="130" modalidad="CHIRIGOTA" nombre="Los apoderaos sin ambiciones" autor="José María Parrado/Carlos Bastón/José Manuel Martínez" director=""
 		localidad="Puerto Real (Cádiz)" coac2011="Los diestros muu diestros (15º Cuartos)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_apoderaos_sin_ambiciones.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losapoderaos.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=0A_QI1vckL0"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-apoderaos-sin-ambiciones.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_apoderaos_sin_ambiciones_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20Apoderaos%20sin%20ambiciones/2012"/>
 			</comentarios>
 		</agrupacion>	
 
