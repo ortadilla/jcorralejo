@@ -3386,7 +3386,7 @@
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-indignados-entre-perros-flautas.html"/>
-				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_indignaos_entre_perros_y_flautas.php"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_indignaos_entre_perros_y_flautas_comentarios.php"/>
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20indignados%20%28entre%20perros%20y%20flautas%29/2012"/>
 			</comentarios>
 		</agrupacion>		
@@ -3395,20 +3395,22 @@
 		localidad="Cádiz" coac2011="¿Queréis guerrilla? (30º Cuartos)" cabeza_serie="false" 
 		info=""
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/lellamancopla.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=63WZ_k2YpJc"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/llaman-copla.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Le_llaman_copla_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Le%20llaman%20copla/2012"/>
 			</comentarios>
 		</agrupacion>		
 		
