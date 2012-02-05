@@ -261,7 +261,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Una_chirigota_inventa.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/unachiri.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="47">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1990,8 +1990,8 @@
 		info="Coro de Sevilla"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/En_el_nombre_de_la_rosa.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/enelnombre.jpeg"
-		url_videos="156"
-		puntos="">
+		url_videos=""
+		puntos="156">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
