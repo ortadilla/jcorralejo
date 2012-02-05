@@ -130,6 +130,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 			lugar.setLatitud(Float.parseFloat(lat));
 			lugar.setLongitud(Float.parseFloat(log));
      		lugar.setId(Integer.parseInt(atts.getValue(ID)));
+     		lugar.setFoto(atts.getValue(FOTO));
      		puntosInteres.add(lugar);
      	}
     }

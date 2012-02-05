@@ -137,7 +137,7 @@ public class MapaActivity extends MapActivity {
 					// Navegamos a ver los detalles de la agrupación
 					if(itemizedOverlayInteres.getLugarPulsado()!=null && itemizedOverlayInteres.getLugarPulsado().getLugar()!=null){
 						Intent i = new Intent();
-						i.setClass(getApplicationContext(), AgrupacionActivity.class);
+						i.setClass(getApplicationContext(), LugarActivity.class);
 						i.putExtra(Constantes.PARAMETRO_LUGAR, itemizedOverlayInteres.getLugarPulsado().getLugar());
 						startActivity(i);
 						itemizedOverlayInteres.setLugarPulsado(null);
