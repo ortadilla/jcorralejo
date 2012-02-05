@@ -4193,7 +4193,7 @@
 		url_cc=""
 		url_foto="http://a4.sphotos.ak.fbcdn.net/hphotos-ak-ash4/394053_237716582969109_100001923076478_533390_2018989435_n.jpg"
 		url_videos=""
-		puntos="">
+		puntos="" usuario="los-ye" pass="1234">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -4213,7 +4213,7 @@
 		url_cc=""
 		url_foto=""
 		url_videos=""
-		puntos="">
+		puntos="" usuario="vnirvm" pass="4321">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
