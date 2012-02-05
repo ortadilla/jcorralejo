@@ -3302,42 +3302,46 @@
 		<agrupacion id="124" modalidad="CORO" nombre="Un mundo aparte" autor="Manuel Meléndez/Isidoro Delgado/Antonio García" director=""
 		localidad="Chiclana (Cádiz)" coac2011="5 de marzo (12º Preeliminares)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Un_mundo_aparte.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/unmundo.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=sELWaUS7uEg"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/mundo-aparte.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Un_mundo_aparte_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Un%20mundo%20aparte/2012"/>
 			</comentarios>
 		</agrupacion>	
 
 		<agrupacion id="125" modalidad="CHIRIGOTA" nombre="Los barrenderos de Venecia" autor="José María Pardac/Rafael Castillo/Francisco José Torrejón" director=""
 		localidad="San Fernando (Cádiz)" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_barrenderos_de_Venecia.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/barrendero.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=gKRkFw_DYJ0"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-barrenderos-venecia.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_barrenderos_de_Venecia_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20barrenderos%20de%20Venecia/2012"/>
 			</comentarios>
 		</agrupacion>	
 
@@ -4439,9 +4443,40 @@
 	</enlaces>
 	
 	<puntosInteres>
-		<punto id="1" long="-6.295021" lat="36.529644" nombre="Plaza de la Catedral" descripcion="La Plaza de la Catedral es" />
-		<punto id="2" long="-6.071454" lat="37.360688" nombre="Bormujos" descripcion="En la localidad de Bormujos podemos encontrar" />
+		<punto id="1" long="-6.295021" lat="36.529644" nombre="Plaza de la Catedral" descripcion="Enclave de la Catedral de Cádiz, un compendio de los estilos barroco, rococó y neoclásico.
+		En ella se encuentra uno de los 'tablaos' oficiales donde las agrupaciones semifinalistas y finalistas del COAC realizan actuaciones" foto="http://historiadoreshistericos.files.wordpress.com/2011/04/catedral-cadiz.jpg"/>
+		<punto id="2" long="-6.293319" lat="36.528953" nombre="El Pópulo" descripcion="El barrio de El Pópulo, situado a la entrada del casco histórico, 
+		entre el Ayuntamiento y la Catedral, es el más antiguo de la capital gaditana. Entrar en El Pópulo es sentir el latido de la historia de Cádiz. 
+		Es el centro neurálgico de las chirigotas ilegales y los romanceros" foto="http://2.bp.blogspot.com/_KhLkDpX02kM/S1Iu9wzmXqI/AAAAAAAAA18/yWrKvH4jcqE/s400/mentidero+y+populo+039.JPG"/>
+		<punto id="3" long="-6.294517" lat="36.529236" nombre="Arco de la Rosa" descripcion="El Arco de la Rosa es la antigua puerta occidental enclavada en las murallas de la 
+		Cádiz medieval. Actualmente se encuentra junto a la catedral de Cádiz y es la puerta al barrio del Pópulo" foto="http://laciudad.cadiz.es/fotos/cultura/monumentos/murallas/cadiz/g/arcodelarosa.jpg"/>
+		<punto id="4" long="-6.292934‎" lat="36.529694" nombre="Ayuntamiento" descripcion="Emplazado sobre las anteriores Casas Consistoriales, no es raro ver cantar algunas ilegales en algunas de sus puertas" 
+		foto="http://aula.espacadiz.org/file.php/1/ARCHIVO_IMAGENES/AYUNTA_1.JPG"/> 
+		<punto id="5" long="-6.293948" lat="36.532297" nombre="Plaza de S.Agustín" descripcion="Llamada así por encontrarse junto al convento del mismo nombre, tiene la peculiaridad de estar dividida en dos partes,
+		y se encuentra en medio de la transitada Calle San Francisco. En ella se celebra el tradicional concurso de coplas de Unicaja por donde pasan muchas agrupaciones durante la semana de carnaval" 
+		foto="http://3.bp.blogspot.com/_rNeQSj4WJas/Sjlps9vYAPI/AAAAAAAAErQ/qTq0v_ezvgo/s320/san+agustin.jpg"/> 
+		<punto id="6" long="-6.296488‎‎" lat="36.532000" nombre="Plaza del Palillero" descripcion="De planta triangular y escasas dimensiones, es uno de los puntos donde se montan 'tablaos' oficiales donde 
+		las agrupaciones semifinalistas y finalistas del COAC realizan actuaciones" foto="http://static.panoramio.com/photos/original/26059303.jpg" /> 
+		<punto id="7" long="-6.297306‎‎‎" lat="36.530970" nombre="Plaza de las flores" descripcion="Conocida así por los puestos que se hallan en su centro. Está rodeada de bares y tiendas, y a sus espaldas de encuentra 
+		el edificio de Correos (en sus escaleras es normal encontrar grupos cantando) y el Mercado de abastos" foto="http://mw2.google.com/mw-panoramio/photos/medium/24109124.jpg" /> 
+		<punto id="8" long="-6.301064‎‎‎" lat="36.530970" nombre="Plaza del mentidero" descripcion="De planta triangular y alargada, recibe su numbre porque era el lugar preferido por los desocupados para hacer circular todo tipo de rumores, 
+		falsedades y noticias inciertas. En ella se encuentra uno de los 'tablaos' oficiales donde las agrupaciones semifinalistas y finalistas del COAC realizan actuaciones" foto="http://sobrecadiz.com/wp-content/uploads/plaza-del-mentidero.jpg" /> 
+		<punto id="9" long="-6.299042‎‎‎‎" lat="36.535658" nombre="Plaza de S.Antonio" descripcion="Es una de las más grandes y céntricas de Cádiz, donde desemboca la famosa calle ancha. 
+		Es conocida por ser el escenario del Pregón de Carnaval y del Pregón del Dios Momo el martes de Carnaval" foto="http://lacasacadiz.com/images/cadiz_plaza_sanantonio.jpg" /> 
+		<punto id="10" long="-6.303705‎‎‎‎" lat="36.529712" nombre="Calle La Palma" descripcion="Calle principal del Barrio de la Viña, corazón del Carnaval de Cádiz. En sus calles se pueden
+		escuchar repertorios tanto de chirigotas ilegales como oficiales. Es famoso su concurso de Popurrís" foto="http://fotos.lavozdigital.es/200908/dsc_0269-640x640x80.jpg" /> 
+		<punto id="11" long="-6.288616‎" lat="36.526030" nombre="Puertas de Tierra" descripcion="Reducto de la que fuera muralla de entrada a la ciudad de Cádiz es la entrada es la puerta de entrada
+		al Casco Antiguo" foto="http://www.spainonline.com/images/C%C3%81DIZ/Monumentos/C%C3%A1diz-Puertas%20de%20tierra01.jpg" /> 
+		<punto id="12" long="-6.298020" lat="36.530890" nombre="Plaza de Abastos" descripcion="En el reformado Mercado central de abastos se encuentra el banderín de salida del conocido Carrusel de Coros
+		que recorre el centro de la ciudad" foto="http://2.bp.blogspot.com/_E-GB-YmksvI/TP_3ONzBPkI/AAAAAAAAD4Y/ttRAxz31ca8/s1600/mercado+abastos.jpg" /> 
 	</puntosInteres>
+ ‎
+‎‎
+ 
+ 
+  
+ ‎
+ ‎
 	
 
 </coac2012>
