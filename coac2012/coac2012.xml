@@ -3372,20 +3372,22 @@
 		localidad="Cádiz" coac2011="Los encantadores de perrosa (5º Cuartos)" cabeza_serie="true" 
 		info="Chirigota del Cascana"
 		url_cc=""
-		url_foto=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/indignaos.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=npYLaQJE0Xg"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-indignados-entre-perros-flautas.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_indignaos_entre_perros_y_flautas.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20indignados%20%28entre%20perros%20y%20flautas%29/2012"/>
 			</comentarios>
 		</agrupacion>		
 		
