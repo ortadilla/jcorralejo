@@ -3348,21 +3348,23 @@
 		<agrupacion id="126" modalidad="COMPARSA" nombre="Los levantera" autor="José Manuel Cardoso" director=""
 		localidad="Tarifa (Cádiz)" coac2011="El reino de la playa (11º Cuartos)" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_levantera.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/loslevanteras.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=4xem7GsVs04"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-levantera.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_levantera_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20levantera/2012"/>
 			</comentarios>
 		</agrupacion>
 		
