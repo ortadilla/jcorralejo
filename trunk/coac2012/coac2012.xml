@@ -208,7 +208,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Por_mi_Exagerao.php"
 		url_foto="http://www.diariobahiadecadiz.com/webfiles/fckeditor/08%20por%20mi%20exagerao.JPG"
 		url_videos=""
-		puntos="">
+		puntos="86">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -365,7 +365,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_mayordomos_de_la_Casa_de_Alba.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losmayordomos.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="140">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -417,7 +417,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_comandante_plutoriano.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/elcomandante.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="147">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -599,7 +599,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_supervivientes_del_vaporcito.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losupervivientesdelvaporcito.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="136">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -650,7 +650,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_superquitamanchas.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losuperquitamanchas.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="103">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -703,7 +703,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Uno_y_a_dormir.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Unoyadormir.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="0">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -892,7 +892,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Perdidos_en_la_ciudad.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Perdidos.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="109">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -946,7 +946,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_que_la_meten_con_arte.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1327563122-losquelameten.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="144">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1081,7 +1081,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Se_solicita_principe_azul.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1327562984-sesolicita.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="150">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1135,7 +1135,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Este_anno_hemos_perdio_el_tipo.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1327562941-estea%F1o.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="65">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1243,7 +1243,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Desahogo_en_Belen.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/belen.jpg"
 		url_videos=""
-		puntos="">
+		puntos="138">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1297,7 +1297,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Oido_cocina.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/cocina.jpg"
 		url_videos=""
-		puntos="">
+		puntos="137">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1351,7 +1351,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Parque_Infantil_Patapalo.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/infantil.jpg"
 		url_videos=""
-		puntos="">
+		puntos="185">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1432,7 +1432,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_echaos_palante.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/echaopalante5.jpg"
 		url_videos=""
-		puntos="">
+		puntos="152">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1533,13 +1533,13 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="58" modalidad="CHIRIGOTA" nombre="Todos por una y una para todos" autor="Pilar Román/Serbando Sabajanes/M. Sánchez" director="Manuel Sánchez Gamito"
+		<agrupacion id="58" modalidad="CHIRIGOTA" nombre="Todos para una y una para todos" autor="Pilar Román/Serbando Sabajanes/M. Sánchez" director="Manuel Sánchez Gamito"
 		localidad="Sevilla" coac2011="Lo que diga Don Manue (51º Preeliminares)" cabeza_serie="false" 
 		info=""
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Todos_por_una_y_una_para_todos.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/unapararatodo6.jpg"
 		url_videos=""
-		puntos="">
+		puntos="0">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1640,13 +1640,13 @@
 			</comentarios>
 		</agrupacion>
 	
-		<agrupacion id="62" modalidad="CHIRIGOTA" nombre="Los Que Estan Pendientes Del Tiempo" autor="José Manuel Segura" director="Antonio Barroso"
+		<agrupacion id="62" modalidad="CHIRIGOTA" nombre="Los que están pendientes del tiempo" autor="José Manuel Segura" director="Antonio Barroso"
 		localidad="Alcalá de Guadaira (Sevilla)" coac2011="" cabeza_serie="false" 
 		info=""
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_que_estan_pendientes_del_tiempo.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losqueestanpendiente.jpg"
 		url_videos=""
-		puntos="">
+		puntos="0">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1751,7 +1751,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_Orquesta_Camballati.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/orquestacamba.JPG"
 		url_videos=""
-		puntos="">
+		puntos="106">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1803,7 +1803,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_monologuistas_Paramount_Cady.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/monologista.JPG"
 		url_videos=""
-		puntos="">
+		puntos="185">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1882,7 +1882,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mis_padres_son_unos_guarros.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/mispadres.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="139">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -2126,7 +2126,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_reflotaos.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losreflotaos.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="118">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -2234,7 +2234,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_de_la_APPC.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losdelaappc.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="87">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -2288,7 +2288,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Truco_o_eso_trato.php"
 		url_foto=""
 		url_videos=""
-		puntos="">
+		puntos="108">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -2396,7 +2396,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/A_lo_loco_se_corre_mejor.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/aloloco.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="102">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -2504,7 +2504,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Esto_no_hay_quien_lo_salve.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/estonohay.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="170">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -2558,7 +2558,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Una_chirigota_de_cuartos.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/unachirigota.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="103">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -2612,7 +2612,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_traviesos_que_vienen_con_caja_bombo_y_platillo.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/lostraviesos.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="157">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -2795,13 +2795,13 @@
 			</comentarios>
 		</agrupacion>
 
-		<agrupacion id="105" modalidad="CHIRIGOTA" nombre="El porque de cada que" autor="Miguel Ángel Moñino" director="Antonio Baeza Ruiz"
+		<agrupacion id="105" modalidad="CHIRIGOTA" nombre="El porqué de cada que" autor="Miguel Ángel Moñino" director="Antonio Baeza Ruiz"
 		localidad="Castilblanco de los Arroyos (Sevilla)" coac2011="Pagafantas...(En su población)" cabeza_serie="false" 
 		info=""
 		url_cc=""
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/elporque.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="0">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -2990,7 +2990,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Las_mas_buscadas_de_La_Caleta.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/lasmasbellas.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="105">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3044,7 +3044,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Por_motivos_naturales.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/pormotivos.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="182">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3097,7 +3097,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mari_Carmen_y_sus_munnecos.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1328339870-maricarmen.jpg"
 		url_videos=""
-		puntos="">
+		puntos="185">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3149,7 +3149,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_padre_Carrasco_y_la_ninnas_que_dan_asco.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/elpadre.jpg"
 		url_videos=""
-		puntos="">
+		puntos="75">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3201,7 +3201,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_contables.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/loscontables.jpg"
 		url_videos=""
-		puntos="">
+		puntos="82">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3331,7 +3331,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_barrenderos_de_Venecia.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/barrendero.jpg"
 		url_videos=""
-		puntos="">
+		puntos="84">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3383,7 +3383,7 @@
 		url_cc=""
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/indignaos.jpg"
 		url_videos=""
-		puntos="">
+		puntos="162">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3409,7 +3409,7 @@
 		url_cc=""
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/lellamancopla.jpg"
 		url_videos=""
-		puntos="">
+		puntos="157">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3461,7 +3461,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_apoderaos_sin_ambiciones.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losapoderaos.jpg"
 		url_videos=""
-		puntos="">
+		puntos="171">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3953,7 +3953,7 @@
 		url_cc=""
 		url_foto=""
 		url_videos=""
-		puntos="">
+		puntos="47">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
