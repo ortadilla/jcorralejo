@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import com.google.ads.AdView;
 import es.jcorralejo.android.callejeras2012.CallejerasApplication;
 import es.jcorralejo.android.callejeras2012.R;
 import es.jcorralejo.android.callejeras2012.entidades.Agrupacion;
+import es.jcorralejo.android.callejeras2012.utils.ActualizarPosicionService;
 import es.jcorralejo.android.callejeras2012.utils.Constantes;
 
 public class LoginActivity extends Activity{
@@ -73,6 +75,7 @@ public class LoginActivity extends Activity{
 				editor.putInt(Constantes.PREFERENCE_AGRUPACION_LOGUEADA, agr.getId() );
 				editor.commit();
 				
+				startService();
 				correcto = true;
 				finish();
 			}
@@ -80,6 +83,11 @@ public class LoginActivity extends Activity{
 		
 		return correcto;
 	}
+	
+    private void startService() {
+    	Intent svc = new Intent(this, ActualizarPosicionService.class);
+        startService(svc);
+    }
 
 
 	private void cargarAnuncios(){
