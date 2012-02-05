@@ -145,7 +145,7 @@
 			</comentarios>
 		</agrupacion>		
 	
-		<agrupacion id="6" modalidad="CHIRIGOTA" nombre="Mejor no salgo" autor="Antonio Pedro Serrano/Constantino Tovar" director="Rubén Navarro"
+		<agrupacion id="6" modalidad="CHIRIGOTA" nombre="Mejó no salgo" autor="Antonio Pedro Serrano/Constantino Tovar" director="Rubén Navarro"
 		localidad="Cádiz" coac2011="Ricas y maduras (1º Premio)" cabeza_serie="true" 
 		info="Chirigota del Canijo"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mejo_no_salgo.php"
@@ -4434,7 +4434,79 @@
 			<puesto no="8" agrupacion="130"/>
 			<puesto no="9" agrupacion="131"/>
 		</dia>
-
+		<!-- Cuartos -->
+		<dia fecha="06/02/2012">
+			<puesto no="1" agrupacion="1"/>
+			<puesto no="2" agrupacion="2"/>
+			<puesto no="3" agrupacion="11"/>
+			<puesto no="4" agrupacion="4"/>
+			<puesto no="5" agrupacion="13"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="9"/>
+			<puesto no="8" agrupacion="6"/>
+			<puesto no="9" agrupacion="17"/>
+			<puesto no="10" agrupacion="12"/>
+		</dia>
+		<dia fecha="07/02/2012">
+			<puesto no="1" agrupacion="18"/>
+			<puesto no="2" agrupacion="19"/>
+			<puesto no="3" agrupacion="22"/>
+			<puesto no="4" agrupacion="38"/>
+			<puesto no="5" agrupacion="24"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="35"/>
+			<puesto no="8" agrupacion="21"/>
+			<puesto no="9" agrupacion="28"/>
+			<puesto no="10" agrupacion="29"/>
+		</dia>
+		<dia fecha="08/02/2012">
+			<puesto no="1" agrupacion="44"/>
+			<puesto no="2" agrupacion="32"/>
+			<puesto no="3" agrupacion="30"/>
+			<puesto no="4" agrupacion="73"/>
+			<puesto no="5" agrupacion="48"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="53"/>
+			<puesto no="8" agrupacion="39"/>
+			<puesto no="9" agrupacion="52"/>
+			<puesto no="10" agrupacion="45"/>
+		</dia>
+		<dia fecha="09/02/2012">
+			<puesto no="1" agrupacion="61"/>
+			<puesto no="2" agrupacion="56"/>
+			<puesto no="3" agrupacion="63"/>
+			<puesto no="4" agrupacion="109"/>
+			<puesto no="5" agrupacion="65"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="79"/>
+			<puesto no="8" agrupacion="60"/>
+			<puesto no="9" agrupacion="83"/>
+			<puesto no="10" agrupacion="74"/>
+		</dia>
+		<dia fecha="10/02/2012">
+			<puesto no="1" agrupacion="97"/>
+			<puesto no="2" agrupacion="77"/>
+			<puesto no="3" agrupacion="91"/>
+			<puesto no="4" agrupacion="82"/>
+			<puesto no="5" agrupacion="93"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="106"/>
+			<puesto no="8" agrupacion="95"/>
+			<puesto no="9" agrupacion="92"/>
+			<puesto no="10" agrupacion="101"/>
+		</dia>
+		<dia fecha="11/02/2012">
+			<puesto no="1" agrupacion="115"/>
+			<puesto no="2" agrupacion="103"/>
+			<puesto no="3" agrupacion="104"/>
+			<puesto no="4" agrupacion="107"/>
+			<puesto no="5" agrupacion="113"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="110"/>
+			<puesto no="8" agrupacion="119"/>
+			<puesto no="9" agrupacion="122"/>
+			<puesto no="10" agrupacion="131"/>
+		</dia>		
 	</calendario>
 	
 	<enlaces>
