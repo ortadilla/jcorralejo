@@ -3417,21 +3417,23 @@
 		<agrupacion id="129" modalidad="COMPARSA" nombre="El hombre sin corazón" autor="Víctor García/Juan Manuel Moreno" director=""
 		localidad="Alcalá de Guadaira (Sevilla)" coac2011="" cabeza_serie="false" 
 		info=""
-		url_cc=""
-		url_foto=""
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_hombre_sin_corazon.php"
+		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/hombresincoraz%F3n.jpg"
 		url_videos=""
 		puntos="">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=AT0FjMoEuu0"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
 				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/hombre-sin-corazon.html"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_hombre_sin_corazon_comentarios.php"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/El%20hombre%20sin%20coraz%C3%B3n/2012"/>
 			</comentarios>
 		</agrupacion>		
 		
