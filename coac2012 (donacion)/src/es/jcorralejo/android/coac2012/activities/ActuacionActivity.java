@@ -4,9 +4,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.google.ads.AdRequest;
-import com.google.ads.AdView;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
@@ -27,6 +24,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
+
 import es.jcorralejo.android.coac2012.CoacApplication;
 import es.jcorralejo.android.coac2012.R;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
@@ -161,9 +162,18 @@ public class ActuacionActivity extends ListActivity{
 					}catch (Exception e) {
 						showDialog(Constantes.DIALOG_INSTALAR_VIDEO);
 					}
-				}else{
+				}else if (((CoacApplication)getApplication()).isCuartos()){
+					try{
+						i = new Intent(Intent.ACTION_VIEW);
+						i.addCategory(Intent.CATEGORY_LAUNCHER);
+						i.setClassName("com.opera.browser", "com.opera.Opera");
+						i.setData(Uri.parse(Constantes.URL_CANAL_ANDALUCIA));
+						startActivity(i);
+					}catch (Exception e) {
+						showDialog(Constantes.DIALOG_INSTALAR_VIDEO);
+					}
+				}else
 					Toast.makeText(getApplicationContext(), "Lo sentimos, pero esta fase no la emite ninguna TV online", Toast.LENGTH_LONG).show();
-				}
 				return true;
 			case R.id.actOir:
 				try{
@@ -227,7 +237,7 @@ public class ActuacionActivity extends ListActivity{
 				return builder.create();
 
 			case Constantes.DIALOG_INSTALAR_VIDEO:
-				builder.setMessage("Le recomendamos que instale 'Opera Mobile' para poder disfrutar de la emisión online de 'Onda Cádiz'");
+				builder.setMessage("Le recomendamos que instale 'Opera Mobile' para poder disfrutar de la emisión online de 'Onda Cádiz' y 'Canal Sur'");
 				builder.setPositiveButton("Instalar Opera Mobile",
 						  new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int which) {
