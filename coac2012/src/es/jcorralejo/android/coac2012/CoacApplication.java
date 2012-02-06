@@ -241,4 +241,12 @@ public class CoacApplication extends Application {
 		this.error = error;
 	}
 
+	public Boolean getActualizando() {
+		return actualizando;
+	}
+
+	public void setActualizando(Boolean actualizando) {
+		this.actualizando = actualizando;
+	}
+
 }

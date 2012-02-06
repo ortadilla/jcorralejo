@@ -57,20 +57,23 @@ public class MenuActivity extends Activity{
 		hoy.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
-					String dia = sdf.format(new Date());
-					List<Agrupacion> agrupaciones = app.getCalendario().get(dia);
-					if(agrupaciones!=null && !agrupaciones.isEmpty()){
-						Intent intent = new Intent();
-						intent.setClass(getApplicationContext(), ActuacionActivity.class);
-						intent.putExtra(Constantes.PARAMETRO_AGRUPACIONES, (ArrayList<Agrupacion>)agrupaciones);
-						intent.putExtra(Constantes.PARAMETRO_TEXTO_DIA, app.getTextoDia(dia));
-						intent.putExtra(Constantes.PARAMETRO_ONLINE, true);
-						startActivity(intent);
-						Toast.makeText(getApplicationContext(), "Los datos de esta sesión se actualizarán pasadas unas 12 horas. Gracias por la paciencia", Toast.LENGTH_LONG).show();
-					}else{
-						Toast.makeText(getApplicationContext(), "Hoy no hay concurso", Toast.LENGTH_LONG).show();
-					}
+					if(!app.getActualizando()){
+						SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
+						String dia = sdf.format(new Date());
+						List<Agrupacion> agrupaciones = app.getCalendario().get(dia);
+						if(agrupaciones!=null && !agrupaciones.isEmpty()){
+							Intent intent = new Intent();
+							intent.setClass(getApplicationContext(), ActuacionActivity.class);
+							intent.putExtra(Constantes.PARAMETRO_AGRUPACIONES, (ArrayList<Agrupacion>)agrupaciones);
+							intent.putExtra(Constantes.PARAMETRO_TEXTO_DIA, app.getTextoDia(dia));
+							intent.putExtra(Constantes.PARAMETRO_ONLINE, true);
+							startActivity(intent);
+							Toast.makeText(getApplicationContext(), "Los datos de esta sesión se actualizarán pasadas unas 12 horas. Gracias por la paciencia", Toast.LENGTH_LONG).show();
+						}else{
+							Toast.makeText(getApplicationContext(), "Hoy no hay concurso", Toast.LENGTH_LONG).show();
+						}
+					}else 
+						Toast.makeText(getBaseContext(), "Actualizando datos...Por favor vuelva a intentarlo pasados unos segundos", Toast.LENGTH_LONG).show();
 				}
 			}
 		);
