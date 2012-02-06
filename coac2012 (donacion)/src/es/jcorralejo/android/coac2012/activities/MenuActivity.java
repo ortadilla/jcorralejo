@@ -11,15 +11,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -33,11 +29,10 @@ import android.widget.Toast;
 import com.google.ads.AdRequest;
 import com.google.ads.AdView;
 
-import es.jcorralejo.android.coac2012.R;
 import es.jcorralejo.android.coac2012.CoacApplication;
+import es.jcorralejo.android.coac2012.R;
 import es.jcorralejo.android.coac2012.entidades.Agrupacion;
 import es.jcorralejo.android.coac2012.utils.Constantes;
-import es.jcorralejo.android.coac2012.utils.RssDownloadHelper;
 
 public class MenuActivity extends Activity{
 	
@@ -62,20 +57,23 @@ public class MenuActivity extends Activity{
 		hoy.setOnClickListener(
 			new OnClickListener() {
 				public void onClick(View v) {
-					SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
-					String dia = sdf.format(new Date());
-					List<Agrupacion> agrupaciones = app.getCalendario().get(dia);
-					if(agrupaciones!=null && !agrupaciones.isEmpty()){
-						Intent intent = new Intent();
-						intent.setClass(getApplicationContext(), ActuacionActivity.class);
-						intent.putExtra(Constantes.PARAMETRO_AGRUPACIONES, (ArrayList<Agrupacion>)agrupaciones);
-						intent.putExtra(Constantes.PARAMETRO_TEXTO_DIA, app.getTextoDia(dia));
-						intent.putExtra(Constantes.PARAMETRO_ONLINE, true);
-						startActivity(intent);
-						Toast.makeText(getApplicationContext(), "Los datos de esta sesión se actualizarán pasadas unas 12 horas. Gracias por la paciencia", Toast.LENGTH_LONG).show();
-					}else{
-						Toast.makeText(getApplicationContext(), "Hoy no hay concurso", Toast.LENGTH_LONG).show();
-					}
+					if(!app.getActualizando()){
+						SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
+						String dia = sdf.format(new Date());
+						List<Agrupacion> agrupaciones = app.getCalendario().get(dia);
+						if(agrupaciones!=null && !agrupaciones.isEmpty()){
+							Intent intent = new Intent();
+							intent.setClass(getApplicationContext(), ActuacionActivity.class);
+							intent.putExtra(Constantes.PARAMETRO_AGRUPACIONES, (ArrayList<Agrupacion>)agrupaciones);
+							intent.putExtra(Constantes.PARAMETRO_TEXTO_DIA, app.getTextoDia(dia));
+							intent.putExtra(Constantes.PARAMETRO_ONLINE, true);
+							startActivity(intent);
+							Toast.makeText(getApplicationContext(), "Los datos de esta sesión se actualizarán pasadas unas 12 horas. Gracias por la paciencia", Toast.LENGTH_LONG).show();
+						}else{
+							Toast.makeText(getApplicationContext(), "Hoy no hay concurso", Toast.LENGTH_LONG).show();
+						}
+					}else
+						Toast.makeText(getBaseContext(), "Actualizando datos...Por favor vuelva a intentarlo pasados unos segundos", Toast.LENGTH_LONG).show();
 				}
 			}
 		);
