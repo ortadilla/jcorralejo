@@ -13,6 +13,7 @@
 			</componentes>
 			<videos>
 				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
+				<video descripcion="Cuartos del final - Actuación completa" url="http://www.youtube.com/watch?v=AfXw-hKq8hA"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -42,11 +43,7 @@
 			</componentes>
 			<videos>
 				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=CXT-mIaD-H8"/>
-				<video descripcion="Preeliminar - Presentación" url="http://www.youtube.com/watch?v=Vo8swnZSICE"/>
-				<video descripcion="Preeliminar - Pasodoble 1" url="http://www.youtube.com/watch?v=l7uql1a_jbY"/>
-				<video descripcion="Preeliminar - Pasodoble 2" url="http://www.youtube.com/watch?v=RNsQfoYMdvI"/>
-				<video descripcion="Preeliminar - Cuplés" url="http://www.youtube.com/watch?v=IVAH4lQuTNw"/>
-				<video descripcion="Preeliminar - Popurrí" url="http://www.youtube.com/watch?v=-On-9hruyzc"/>
+				<video descripcion="Cuartos de Final - Actuación completa" url="http://www.youtube.com/watch?v=V6toDn8h43M"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -95,7 +92,7 @@
 			</comentarios>
 		</agrupacion>
 		
-		<agrupacion id="4" modalidad="CUARTETO" nombre="El que está resfriao, que arríe las velas" autor="Ramón López/Juan Manuel Braza" director="Ramón López"
+		<agrupacion id="4" modalidad="CUARTETO" nombre="El que esté resfriao, que arríe las velas" autor="Ramón López/Juan Manuel Braza" director="Ramón López"
 		localidad="Algeciras" coac2011="Aquí el que no corre vuela (2º Premio)" cabeza_serie="true" 
 		info="Cuarteto de Algeciras"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_que_este_resfriao.php"
@@ -107,11 +104,7 @@
 			</componentes>
 			<videos>
 				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=5v-QXM-k_fk"/>
-				<video descripcion="Preeliminar - Parte 1" url="http://www.youtube.com/watch?v=Rau8OB1pTs8"/>
-				<video descripcion="Preeliminar - Parte 2" url="http://www.youtube.com/watch?v=Xqwr1TGG2jA"/>
-				<video descripcion="Preeliminar - Parte 3" url="http://www.youtube.com/watch?v=uIo22ETQTLE"/>
-				<video descripcion="Preeliminar - Parte 4" url="http://www.youtube.com/watch?v=XXhcf_sg-TE"/>
-				<video descripcion="Preeliminar - Parte 5" url="http://www.youtube.com/watch?v=ol2EmOlYZWc"/>
+				<video descripcion="Cuartos de Final - Actuación completa" url="http://www.youtube.com/watch?v=T7bocPytU-0"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -166,11 +159,7 @@
 			</componentes>
 			<videos>
 				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=OKmoKUtuJ2I"/>
-				<video descripcion="Preeliminar - Presentación" url="http://www.youtube.com/watch?v=-W6jHNyIBeY"/>
-				<video descripcion="Preeliminar - Pasodoble 1" url="http://www.youtube.com/watch?v=sYUu5H8L-RU"/>
-				<video descripcion="Preeliminar - Pasodoble 2" url="http://www.youtube.com/watch?v=T7XOihgCjWo"/>
-				<video descripcion="Preeliminar - Cuplés y Estribillo" url="http://www.youtube.com/watch?v=iFRlCOxqLDE"/>
-				<video descripcion="Preeliminar - Popurrí" url="http://www.youtube.com/watch?v=dIj2RutbBQs"/>
+				<video descripcion="Cuartos de Final - Actuación completa" url="http://www.youtube.com/watch?v=9pATHWRIYpQ"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -252,7 +241,7 @@
 			</componentes>
 			<videos>
 				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=Vkq1YPMnLrA"/>
-				<video descripcion="Preeliminar - Presentación" url="http://www.youtube.com/watch?v=s6th7t2yoEU"/>
+				<video descripcion="Cuartos del Final - Actuación completa" url="http://www.youtube.com/watch?v=dufJURPpDTY"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -307,6 +296,7 @@
 			</componentes>
 			<videos>
 				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=VWqPck-l1G8"/>
+				<video descripcion="Cuartos de Final - Actuación completa" url="http://www.youtube.com/watch?v=u9MMbjTz3NM"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -336,6 +326,7 @@
 			</componentes>
 			<videos>
 				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=IDmgC8aFY44"/>
+				<video descripcion="Cuartos de final - Actuación completa" url="http://www.youtube.com/watch?v=a1vjUbJdqek"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -365,6 +356,7 @@
 			</componentes>
 			<videos>
 				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=MjF0VBP160w"/>
+				<video descripcion="Cuartos de Final - Actuación completa" url="http://www.youtube.com/watch?v=fWLl5dyNowk"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -472,6 +464,7 @@
 			</componentes>
 			<videos>
 				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=tuYGquhHGaU"/>
+				<video descripcion="Cuartos de final - Actuación completa" url="http://www.youtube.com/watch?v=29tBInsb0nE"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3544,7 +3537,8 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preeliminares - Actuación completa" url="http://www.youtube.com/watch?v=A-on4pkRxHs"/>
+				<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=A-on4pkRxHs"/>
+				<video descripcion="Final - Actuación completa" url="http://www.youtube.com/watch?v=9hDSXn9JAHg"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3564,7 +3558,8 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preeliminares - Actuación completa" url="http://www.youtube.com/watch?v=1zcThQjMdoQ"/>
+				<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=1zcThQjMdoQ"/>
+				<video descripcion="Final - Actuación completa" url="http://www.youtube.com/watch?v=2nmBvlXTdxs"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3584,7 +3579,8 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preeliminares - Actuación completa" url="http://www.youtube.com/watch?v=K57VFBuXW80"/>
+				<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=K57VFBuXW80"/>
+				<video descripcion="Final - Actuación completa" url="http://www.youtube.com/watch?v=XbfnDz2wrqM"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3604,7 +3600,7 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preeliminares - Actuación completa" url="http://www.youtube.com/watch?v=jI5H-O-0noo"/>
+				<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=jI5H-O-0noo"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3644,7 +3640,7 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preeliminares - Actuación completa" url="http://www.youtube.com/watch?v=caUPTkhDFrE"/>
+				<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=caUPTkhDFrE"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3684,7 +3680,8 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=1RYCHbyDd7A"/>
+				<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=1RYCHbyDd7A"/>
+				<video descripcion="Final - Actuación completa" url="http://www.youtube.com/watch?v=0o8fzNllx1k"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3704,7 +3701,8 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=ldJiDeqT8RA"/>
+				<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=ldJiDeqT8RA"/>
+				<video descripcion="Final - Actuación completa" url="http://www.youtube.com/watch?v=F9A16il7YuU"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3744,7 +3742,7 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=nlPpWYxj4sw"/>
+				<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=nlPpWYxj4sw"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3764,7 +3762,7 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=aN1_14NCFw0"/>
+				<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=aN1_14NCFw0"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3784,7 +3782,8 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preeliminar - Actuación completa" url="http://www.youtube.com/watch?v=zQYj6vEfoTY"/>
+				<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=zQYj6vEfoTY"/>
+				<video descripcion="Final - Actuación completa" url="http://www.youtube.com/watch?v=AlIUTHfoNt4"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3804,7 +3803,8 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preeliminares - Actuación completa" url="http://www.youtube.com/watch?v=_4BHlOU8Q7Y"/>
+				<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=_4BHlOU8Q7Y"/>
+				<video descripcion="Final - Actuación completa" url="http://www.youtube.com/watch?v=AUMoOmplEoc"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
