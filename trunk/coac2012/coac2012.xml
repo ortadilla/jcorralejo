@@ -4779,6 +4779,42 @@
 			<puesto no="9" agrupacion="122"/>
 			<puesto no="10" agrupacion="131"/>
 		</dia>		
+		<dia fecha="13/02/2012">
+			<puesto no="1" agrupacion="1"/>
+			<puesto no="2" agrupacion="6"/>
+			<puesto no="3" agrupacion="11"/>
+			<puesto no="4" agrupacion="4"/>
+			<puesto no="5" agrupacion="13"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="9"/>
+			<puesto no="8" agrupacion="38"/>
+			<puesto no="9" agrupacion="30"/>
+			<puesto no="10" agrupacion="29"/>
+		</dia>		
+		<dia fecha="14/02/2012">
+			<puesto no="1" agrupacion="44"/>
+			<puesto no="2" agrupacion="32"/>
+			<puesto no="3" agrupacion="48"/>
+			<puesto no="4" agrupacion="73"/>
+			<puesto no="5" agrupacion="65"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="61"/>
+			<puesto no="8" agrupacion="45"/>
+			<puesto no="9" agrupacion="83"/>
+			<puesto no="10" agrupacion="56"/>
+		</dia>		
+		<dia fecha="15/02/2012">
+			<puesto no="1" agrupacion="79"/>
+			<puesto no="2" agrupacion="92"/>
+			<puesto no="3" agrupacion="91"/>
+			<puesto no="4" agrupacion="109"/>
+			<puesto no="5" agrupacion="101"/>
+			<puesto no="6" agrupacion="DESCANSO" />
+			<puesto no="7" agrupacion="115"/>
+			<puesto no="8" agrupacion="103"/>
+			<puesto no="9" agrupacion="119"/>
+			<puesto no="10" agrupacion="122"/>
+		</dia>		
 	</calendario>
 	
 	<enlaces>
