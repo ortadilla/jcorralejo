@@ -27,7 +27,6 @@ public class MiLocationListener implements LocationListener {
 		this.mapa = mapa;
 	}
 	
-	@Override
 	public void onLocationChanged(Location location) {
 		mapa.invalidate();
         Drawable chincheta = mapa.getResources().getDrawable(R.drawable.ic_maps_indicator_current_position);
@@ -40,7 +39,6 @@ public class MiLocationListener implements LocationListener {
         mapOverlays.add(puntoActual);  
 	}
 	
-	@Override
 	public void onProviderDisabled(String provider) {
 		//Informamos al usuario y lo llevamos a las opciones de Ubicación...
 		Toast.makeText(context, "GPS Desactivado. Para el correcto funcionamiento actívelo en la configuración de Ubicación", Toast.LENGTH_LONG).show();
@@ -48,12 +46,10 @@ public class MiLocationListener implements LocationListener {
 		context.startActivity(intent);
 	}
 
-	@Override
 	public void onProviderEnabled(String provider) {
 		Toast.makeText(context, "GPS Activado", Toast.LENGTH_LONG).show();
 	}
 	
-	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {}
 
 	public ItemizedOverlayLugar getPuntoActual() {
