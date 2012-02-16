@@ -106,7 +106,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_que_este_resfriao.php"
 		url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/El_que_este_resfriao_1.jpg"
 		url_videos=""
-		puntos="">
+		puntos="130">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
