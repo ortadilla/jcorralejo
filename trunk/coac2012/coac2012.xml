@@ -4959,6 +4959,22 @@
 			<puesto no="9" agrupacion="119"/>
 			<puesto no="10" agrupacion="122"/>
 		</dia>		
+		<dia fecha="17/02/2012">
+			<puesto no="1" agrupacion="9"/>
+			<puesto no="2" agrupacion="32"/>
+			<puesto no="3" agrupacion="38"/>
+			<puesto no="4" agrupacion="101"/>
+			<puesto no="5" agrupacion="DESCANSO" />
+			<puesto no="6" agrupacion="61"/>
+			<puesto no="7" agrupacion="103"/>
+			<puesto no="8" agrupacion="109"/>
+			<puesto no="9" agrupacion="83"/>
+			<puesto no="10" agrupacion="DESCANSO" />
+			<puesto no="11" agrupacion="79"/>
+			<puesto no="12" agrupacion="92"/>
+			<puesto no="13" agrupacion="73"/>
+			<puesto no="14" agrupacion="48"/>
+		</dia>		
 	</calendario>
 	
 	<enlaces>
