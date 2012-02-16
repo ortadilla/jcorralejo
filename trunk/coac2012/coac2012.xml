@@ -7,7 +7,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78.php"
 		url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/Los_hijos_del_78_1.jpg"
 		url_videos=""
-		puntos="">
+		puntos="701">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -167,7 +167,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Mejo_no_salgo.php"
 		url_foto="http://estaticos.elmundo.es/elmundo/imagenes/2012/01/22/andalucia/1327226675_0.jpg"
 		url_videos=""
-		puntos="">
+		puntos="723">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -319,7 +319,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_bailarines.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losbailarines.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="690">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -387,7 +387,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/El_chaparron.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/elchaparron.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="740">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -853,7 +853,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/De_nuevo_en_el_mercado.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Denuevo.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="729">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -893,7 +893,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Se_acabo_el_cuento.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Seacabo.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="743">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1314,7 +1314,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_munnecos_de_Cadiz_otra_vez.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/muneco.jpg"
 		url_videos=""
-		puntos="">
+		puntos="697">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1349,7 +1349,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hinchapelotas.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/pelota1.jpg"
 		url_videos=""
-		puntos="">
+		puntos="730">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1357,6 +1357,7 @@
 				<video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=o4M0orJaXRc"/>
 				<video descripcion="Cuartos del Final - Actuación completa" url="http://www.youtube.com/watch?v=zpz3Ddhsvvg"/>
 				<video descripcion="Cuartos del Final - Cuplés" url="http://www.youtube.com/watch?v=G3YxyM_14FM"/>
+				<video descripcion="Semifinales - Pasodobles y Cuplés" url="http://www.youtube.com/watch?v=DT5OZSaurJM"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -1679,7 +1680,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_herederos_del_Conde_de_Salvatierra.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/herederos3.jpg"
 		url_videos=""
-		puntos="">
+		puntos="705">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1687,6 +1688,7 @@
 				<video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=QeoY-gFbZ2o"/>
 				<video descripcion="Cuartos de Final - Actuación completa" url="http://www.youtube.com/watch?v=uZlMqQVSShg"/>
 				<video descripcion="Cuartos de Final - Pasodobles y Cuplés" url="http://www.youtube.com/watch?v=8j8uzrkClIY"/>
+				<video descripcion="Semifinales - Pasodobles y Cuplés" url="http://www.youtube.com/watch?v=3rEdwtJqu6M"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -1947,7 +1949,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Llamame_Jesus.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/llamamejesus.JPG"
 		url_videos=""
-		puntos="">
+		puntos="711">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -1956,6 +1958,8 @@
 				<video descripcion="Cuartos de Final - Actuación completa" url="http://www.youtube.com/watch?v=ke89chAwOS8"/>
 				<video descripcion="Cuartos de Final - Pasodobles y Cuplés" url="http://www.youtube.com/watch?v=E0UyahxbGqM"/>
 				<video descripcion="Semifinal - Presentación" url="http://www.youtube.com/watch?v=HeU3jGZJ9IM"/>
+				<video descripcion="Semifinal - Popurrí" url="http://www.youtube.com/watch?v=oRnwE6WQ0lY"/>
+				<video descripcion="Semifinal - Pasodobles y Cuplés" url="http://www.youtube.com/watch?v=LfXgwjVlpEc"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -2480,6 +2484,7 @@
 				<video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=VaqOZnI3IDk"/>
 				<video descripcion="Cuartos de Final - Actuación completa" url="http://www.youtube.com/watch?v=0hV7BtItZKs"/>
 				<video descripcion="Cuartos de Final - Pasodobles y Cuplés" url="http://www.youtube.com/watch?v=uPP_hGfcCfU"/>
+				<video descripcion="Semifinales - Pasodobles y Cuplés" url="http://www.youtube.com/watch?v=JFauSFssPBk"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -2698,7 +2703,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/La_comparsa_de_Cordoba.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/lacomparsa.jpeg"
 		url_videos=""
-		puntos="">
+		puntos="700">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -2736,6 +2741,7 @@
 			<videos>
 				<video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=nChA0g8YUic"/>
 				<video descripcion="Cuartos de final - Pasodoble y Cuplés" url="http://www.youtube.com/watch?v=CuooBtNQNFk"/>
+				<video descripcion="Semifinales - Pasodoble y Cuplés" url="http://www.youtube.com/watch?v=pnee9lyM8AI"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -3422,7 +3428,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_ninnos_el_musical.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/losninos.jpg"
 		url_videos=""
-		puntos="">
+		puntos="739">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3535,7 +3541,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_carronneros.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/carronero.jpg"
 		url_videos=""
-		puntos="">
+		puntos="699">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
@@ -3621,7 +3627,7 @@
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/De_tienda_en_tienda.php"
 		url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/tienda.jpg"
 		url_videos=""
-		puntos="">
+		puntos="706">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
