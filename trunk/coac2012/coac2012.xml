@@ -4676,14 +4676,15 @@
 		localidad="Cádiz" coac2011="Los currelantes (2º Premio)" cabeza_serie="false" 
 		info="Comparsa callejera de Jesús Bienvenido"
 		url_cc=""
-		url_foto="http://a4.sphotos.ak.fbcdn.net/hphotos-ak-ash4/394053_237716582969109_100001923076478_533390_2018989435_n.jpg"
+		url_foto="http://a8.sphotos.ak.fbcdn.net/hphotos-ak-ash4/402672_254146924659408_100001923076478_570919_1759304852_n.jpg"
 		url_videos=""
 		puntos="" usuario="los-ye" pass="1234">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Presentación" url="http://www.youtube.com/watch?v=OXa6TK5YfgQ"/>
+				<video descripcion="Pasodoble" url="http://www.youtube.com/watch?v=YvemmV4HKok"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -4696,14 +4697,14 @@
 		localidad="Cádiz" coac2011="La banca guatifó" cabeza_serie="false" 
 		info="Chirigota de Los Guatifó"
 		url_cc=""
-		url_foto=""
+		url_foto="http://a2.sphotos.ak.fbcdn.net/hphotos-ak-snc7/428729_10150622211407557_313625667556_9031417_354716652_n.jpg"
 		url_videos=""
 		puntos="" usuario="vnirvm" pass="4321">
 			<componentes>
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="" url=""/>
+				<video descripcion="Universidad privada Guatifó" url="http://www.youtube.com/watch?v=izk9KYTP8d0"/>
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -5078,6 +5079,26 @@
 		info=""
 		url_cc=""
 		url_foto="http://carnaval.lavozdigital.es/fotos/amoscucha/loshijosuca.jpg"
+		url_videos=""
+		puntos="" usuario="vnirvm" pass="4321">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="Cuplé" url="http://www.youtube.com/watch?v=C4sJ_4L8l58"/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
+							
+		<agrupacion id="186" modalidad="CALLEJERA" nombre="Los forrest Gump-ditanos" autor="Alejandro Fernández" director=""
+		localidad="El Puerto (Cádiz)" coac2011="Las margaritas Yeyé" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto="http://carnaval.lavozdigital.es//fotos/cache/amoscucha-forrestfeos-crop300x225.jpg"
 		url_videos=""
 		puntos="" usuario="vnirvm" pass="4321">
 			<componentes>
