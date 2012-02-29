@@ -4673,7 +4673,7 @@
 		</agrupacion>	
 
 		<agrupacion id="165" modalidad="CALLEJERA" nombre="Los loros ye-ye" autor="Jesús Bienvenido" director=""
-		localidad="Cádiz" coac2011="Los currelantes (2º Premio)" cabeza_serie="true" 
+		localidad="Cádiz" coac2011="Los currelantes (2º Premio)" cabeza_serie="false" 
 		info="Comparsa callejera de Jesús Bienvenido"
 		url_cc=""
 		url_foto="http://a4.sphotos.ak.fbcdn.net/hphotos-ak-ash4/394053_237716582969109_100001923076478_533390_2018989435_n.jpg"
@@ -4693,7 +4693,7 @@
 		</agrupacion>			
 							
 		<agrupacion id="166" modalidad="CALLEJERA" nombre="Vniversitati gvatiforvm" autor="" director=""
-		localidad="Cádiz" coac2011="La banca guatifó" cabeza_serie="true" 
+		localidad="Cádiz" coac2011="La banca guatifó" cabeza_serie="false" 
 		info="Chirigota de Los Guatifó"
 		url_cc=""
 		url_foto=""
@@ -5052,6 +5052,48 @@
 			<comentarios>
 			</comentarios>
 		</agrupacion>			
+		
+		<agrupacion id="184" modalidad="CALLEJERA" nombre="El psicodélico espectáculo de la gran Lady Braga" autor="La agrupación / F.J. Pantoja Vías. " director=""
+		localidad="Puerto Real (Cádiz)" coac2011="Los Deivi Breka" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/amoscucha/ladybraga.jpg"
+		url_videos=""
+		puntos="" usuario="vnirvm" pass="4321">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
+							
+		<agrupacion id="185" modalidad="CALLEJERA" nombre="Los hijos de la gran UCA" autor="La agrupación" director=""
+		localidad="Cádiz" coac2011="Los jurados de misses" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/amoscucha/loshijosuca.jpg"
+		url_videos=""
+		puntos="" usuario="vnirvm" pass="4321">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="Cuplé" url="http://www.youtube.com/watch?v=C4sJ_4L8l58"/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
+							
+		
 											
 							
 		  
