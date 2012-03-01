@@ -5178,6 +5178,68 @@
 			</comentarios>
 		</agrupacion>			
 							
+		<agrupacion id="190" modalidad="CALLEJERA" nombre="Los caballeros del Rey Arturo al que le cabe tela en el culo" autor="Juan González y Jesús Romero. " director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/amoscucha/1329899986-a.jpg"
+		url_videos=""
+		puntos="" usuario="vnirvm" pass="4321">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="Presentación" url="http://www.youtube.com/watch?v=IPomKB5vs8c"/>
+				<video descripcion="Cuplés" url="http://www.youtube.com/watch?v=wSbrWSMeLBw"/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
+							
+		<agrupacion id="191" modalidad="CALLEJERA" nombre="Pizzería e Trattoría «Hermanos Cochambrini»" autor="La agrupación" director=""
+		localidad="El Puerto (Cádiz)" coac2011="Los que buscan su plaza, vulgo Toreros Catalanes" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/amoscucha/a.jpg"
+		url_videos=""
+		puntos="" usuario="vnirvm" pass="4321">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="Presentación" url="http://www.youtube.com/watch?v=IPomKB5vs8c"/>
+				<video descripcion="Cuplés" url="http://www.youtube.com/watch?v=wSbrWSMeLBw"/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
+							
+		<agrupacion id="192" modalidad="CALLEJERA" nombre="En el fondo te gustamos" autor=" Raúl López y Faluco" director=""
+		localidad="El Puerto (Cádiz)" coac2011="'Qué mancha de colgaos" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/amoscucha/submarinoo.jpg"
+		url_videos=""
+		puntos="" usuario="vnirvm" pass="4321">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="Popurrí" url="http://www.youtube.com/watch?v=gm32xo74AJg"/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
+							
 		
 											
 							
