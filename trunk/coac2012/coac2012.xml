@@ -5114,6 +5114,70 @@
 			</comentarios>
 		</agrupacion>			
 							
+		<agrupacion id="187" modalidad="CALLEJERA" nombre="Los idos de la olla" autor="Mario García Alba" director=""
+		localidad="Cádiz" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/amoscucha/ollaa.JPG"
+		url_videos=""
+		puntos="" usuario="vnirvm" pass="4321">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
+							
+		<agrupacion id="188" modalidad="CALLEJERA" nombre="Lo que el ojo no ve" autor="Álvaro Verano" director=""
+		localidad="El Puerto (Cádiz)" coac2011="" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto="http://carnaval.lavozdigital.es/fotos/amoscucha/ojooo.JPG"
+		url_videos=""
+		puntos="" usuario="vnirvm" pass="4321">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="" url=""/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
+							
+		<agrupacion id="189" modalidad="CALLEJERA" nombre="Los jinetes de la Poca Crisis" autor=" Producciones la de Mármol" director=""
+		localidad="Cádiz" coac2011="Las vocales" cabeza_serie="false" 
+		info=""
+		url_cc=""
+		url_foto="http://carnaval.lavozdigital.es//fotos/cache/amoscucha-jinetee-crop300x225.jpg"
+		url_videos=""
+		puntos="" usuario="vnirvm" pass="4321">
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="Cuplés" url="http://www.youtube.com/watch?v=QO_zP7_MqEY"/>
+				<video descripcion="Cuplés" url="http://www.youtube.com/watch?v=6fVTkYiUmrM"/>
+				<video descripcion="Cuplés" url="http://www.youtube.com/watch?v=yGiZZMkiP0g"/>
+				<video descripcion="Cuplés" url="http://www.youtube.com/watch?v=ZtEye6Ih0O0"/>
+				<video descripcion="Schettino" url="http://www.youtube.com/watch?v=gku4L8JZ070"/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>			
+							
 		
 											
 							
