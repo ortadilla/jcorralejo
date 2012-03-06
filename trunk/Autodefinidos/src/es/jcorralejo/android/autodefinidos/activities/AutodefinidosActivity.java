@@ -1,5 +1,7 @@
-package es.jcorralejo.android.autodefinidos;
+package es.jcorralejo.android.autodefinidos.activities;
 
+import es.jcorralejo.android.autodefinidos.R;
+import es.jcorralejo.android.autodefinidos.R.layout;
 import android.app.Activity;
 import android.os.Bundle;
 
