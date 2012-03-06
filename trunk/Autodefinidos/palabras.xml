@@ -1,0 +1,17 @@
+<palabras>
+	<palabra palabra="A" definicion="Vocal" dificultad="FACIL"/>
+	<palabra palabra="B" definicion="Consonante" dificultad="FACIL"/>
+	<palabra palabra="C" definicion="Consonante" dificultad="FACIL"/>
+	<palabra palabra="C" definicion="100 en N.Romano" dificultad="FACIL"/>
+	<palabra palabra="D" definicion="500 en N.Romano" dificultad="FACIL"/>
+	<palabra palabra="E" definicion="Vocal" dificultad="FACIL"/>
+	<palabra palabra="E" definicion="Base número neperiano" dificultad="DIFICIL"/>
+	<palabra palabra="E" definicion="Y" dificultad="FACIL"/>
+
+
+	<palabra palabra="I" definicion="Vocal" dificultad="FACIL"/>
+	<palabra palabra="O" definicion="Vocal" dificultad="FACIL"/>
+	<palabra palabra="U" definicion="Vocal" dificultad="FACIL"/>
+
+
+</palabras>
