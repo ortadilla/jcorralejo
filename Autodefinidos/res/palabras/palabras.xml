@@ -8,7 +8,8 @@
 	<palabra palabra="C" definicion="Carbono" dificultad="NORMAL"/>
 	<palabra palabra="C" definicion="Columbio" dificultad="DIFICIL"/>
 	<palabra palabra="C" definicion="Constante de la Velocidad de la Luz" dificultad="DIFICL"/>
-	<palabra palabra="D" definicion="500 en N.Romano" dificultad="FACIL"/>
+	<palabra palabra="D" definicion="Consonante" dificultad="FACIL"/>
+	<palabra palabra="D" definicion="500 en N.Romano" dificultad="NORMAL"/>
 	<palabra palabra="E" definicion="Vocal" dificultad="FACIL"/>
 	<palabra palabra="E" definicion="Base número neperiano" dificultad="DIFICIL"/>
 	<palabra palabra="E" definicion="Y" dificultad="FACIL"/>
