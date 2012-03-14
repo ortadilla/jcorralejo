@@ -4,23 +4,37 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import entidades.Palabra;
 
 public class DBHelper extends SQLiteOpenHelper{
 
 	//Ruta por defecto de las bases de datos en el sistema Android
 	private static String DB_PATH = "/data/data/es.jcorralejo.android.autodefinidos/databases/";
 
-	private static String DB_NAME = "NOMBRE_DE_FICHERO";
+	private static String DB_NAME = "palabras.sqlite";
+	private static String DATABASE_TABLE = "palabra";
 
 	private SQLiteDatabase myDataBase;
 
 	private final Context myContext;
+
+	//Establecemos los nombres de las columnas
+	public static final String KEY_ID = "_id";
+	public final static String KEY_COL1 = "palabra";
+	public final static String KEY_COL2 = "definicion";
+	public final static String KEY_COL3 = "dificultad";
+	//Array de strings para su uso en los diferentes métodos
+	private static final String[] cols = new String[] { KEY_ID, KEY_COL1, KEY_COL2, KEY_COL3 };
 
 	/**
 	 * Constructor
@@ -123,7 +137,7 @@ public class DBHelper extends SQLiteOpenHelper{
 		}
 
 		String myPath = DB_PATH + DB_NAME;
-		myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+		myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
 
 	}
 
@@ -143,10 +157,74 @@ public class DBHelper extends SQLiteOpenHelper{
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
 	}
+
 	/**
 	 * A continuación se crearán los métodos de lectura, inserción, actualización
 	 * y borrado de la base de datos.
 	 * */
-	
-	
+	/**
+	 * INSERTAR NUEVA ALARMA
+	 * */
+	public long insertPalabra(Integer id, String palabra, String definicion, String dificultad) {
+		ContentValues newValues = new ContentValues();
+		//		newValues.put(KEY_ID, id);
+		newValues.put(KEY_COL1, palabra);
+		newValues.put(KEY_COL2, definicion);
+		newValues.put(KEY_COL3, dificultad);
+		return myDataBase.insert(DATABASE_TABLE, null, newValues);
+	}
+
+	/**
+	 * BORRAR ALARMA CON _id = _rowIndex
+	 * */
+	public boolean removePalabra(long _rowIndex) {
+		return myDataBase.delete(DATABASE_TABLE, KEY_ID + "=" + _rowIndex, null) > 0;
+	}
+
+	/**
+	 * ACTUALIZAR ALARMA _id = _rowIndex
+	 * */
+	public boolean updateAlarma(Integer _rowIndex,  String palabra, String definicion, String dificultad) {
+		ContentValues newValues = new ContentValues();
+		newValues.put(KEY_COL1,palabra);
+		newValues.put(KEY_COL2, definicion);
+		newValues.put(KEY_COL3, dificultad);
+		return myDataBase.update(DATABASE_TABLE, newValues, KEY_ID + "=" + _rowIndex, null) > 0;
+	}	
+
+	public Palabra getPalabra(long _rowIndex) {
+		Palabra palabra = null;
+		Cursor result = myDataBase.query(true, DATABASE_TABLE, cols, KEY_ID + "=" + _rowIndex, null, null, null,null, null);
+		if ((result.getCount() == 0) || !result.moveToFirst()) {
+			//Si la alarma no existe, devuelve una alarma sin valores
+			palabra = new Palabra(-1, "", "", "");
+		} else {
+			if (result.moveToFirst()) {
+				palabra = new Palabra(
+						result.getInt(result.getColumnIndex(KEY_ID)),
+						result.getString(result.getColumnIndex(KEY_COL1)),
+						result.getString(result.getColumnIndex(KEY_COL2)),
+						result.getString(result.getColumnIndex(KEY_COL3))
+				);
+			}
+		}
+		return palabra;
+	}
+
+	public List<Palabra> getPalabras() {
+		List<Palabra> palabras = new ArrayList<Palabra>();
+		Cursor result = myDataBase.query(DATABASE_TABLE, cols, null, null, null, null, KEY_ID);
+		if (result.moveToFirst())
+			do {
+				Palabra pal = new Palabra(
+						result.getInt(result.getColumnIndex(KEY_ID)),
+						result.getString(result.getColumnIndex(KEY_COL1)),
+						result.getString(result.getColumnIndex(KEY_COL2)),
+						result.getString(result.getColumnIndex(KEY_COL3))
+				);
+				palabras.add(pal);
+			} while(result.moveToNext());
+		return palabras;
+	}
+
 }
