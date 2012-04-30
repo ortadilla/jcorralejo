@@ -2,11 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="fill_parent"
+    android:orientation="vertical"
+     >
+
+    <Button
+        android:id="@+id/nuevoJuego"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
+        android:layout_gravity="center"
+        style="@style/botones"
+        android:layout_margin="5dp"
+        android:text="@string/nuevo_juego"/>
 
+    <Button
+        android:id="@+id/continuarJuego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        style="@style/botones"
+        android:layout_margin="5dp"
+        android:text="@string/continuar_juego"/>
+
+    <Button
+        android:id="@+id/salir"
+        style="@style/botones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:text="@string/salir" />
+	
 </LinearLayout>
