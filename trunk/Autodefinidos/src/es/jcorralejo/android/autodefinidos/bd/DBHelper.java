@@ -158,13 +158,11 @@ public class DBHelper extends SQLiteOpenHelper{
 
 	}
 
-	/**
+	/*
 	 * A continuación se crearán los métodos de lectura, inserción, actualización
 	 * y borrado de la base de datos.
-	 * */
-	/**
-	 * INSERTAR NUEVA ALARMA
-	 * */
+	 */
+	
 	public long insertPalabra(Integer id, String palabra, String definicion, String dificultad) {
 		ContentValues newValues = new ContentValues();
 		//		newValues.put(KEY_ID, id);
@@ -174,17 +172,11 @@ public class DBHelper extends SQLiteOpenHelper{
 		return myDataBase.insert(DATABASE_TABLE, null, newValues);
 	}
 
-	/**
-	 * BORRAR ALARMA CON _id = _rowIndex
-	 * */
 	public boolean removePalabra(long _rowIndex) {
 		return myDataBase.delete(DATABASE_TABLE, KEY_ID + "=" + _rowIndex, null) > 0;
 	}
 
-	/**
-	 * ACTUALIZAR ALARMA _id = _rowIndex
-	 * */
-	public boolean updateAlarma(Integer _rowIndex,  String palabra, String definicion, String dificultad) {
+	public boolean updatePalabra(Integer _rowIndex,  String palabra, String definicion, String dificultad) {
 		ContentValues newValues = new ContentValues();
 		newValues.put(KEY_COL1,palabra);
 		newValues.put(KEY_COL2, definicion);
