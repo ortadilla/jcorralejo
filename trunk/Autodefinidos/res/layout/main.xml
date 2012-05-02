@@ -3,33 +3,52 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-     >
-
-    <Button
-        android:id="@+id/nuevoJuego"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        style="@style/botones"
-        android:layout_margin="5dp"
-        android:text="@string/nuevo_juego"/>
+    android:weightSum="1" >
 
-    <Button
-        android:id="@+id/continuarJuego"
+    <ImageView
+        android:id="@+id/pong_logo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center"
-        style="@style/botones"
-        android:layout_margin="5dp"
-        android:text="@string/continuar_juego"/>
+        android:layout_weight="0.55"
+        android:contentDescription="@string/autodefinidos"
+        android:src="@drawable/pong" >
+    </ImageView>
 
-    <Button
-        android:id="@+id/salir"
-        style="@style/botones"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.45"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/botonNuevoJuego"
+            style="@style/botones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nuevo_juego" />
+
+        <TextView
+            android:id="@+id/botonContinuarJuego"
+            style="@style/botones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/continuar_juego" />
+
+        <TextView
+            android:id="@+id/botonSalir"
+            style="@style/botones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/salir" />
+    </LinearLayout>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="5dp"
-        android:text="@string/salir" />
-	
+        android:layout_weight="0.05"
+        android:text="@string/version" />
+
 </LinearLayout>
