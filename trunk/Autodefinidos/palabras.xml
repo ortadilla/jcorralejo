@@ -1,33 +1,69 @@
 <palabras>
+	<!-- PALABRAS CON 1 LETRA -->
 	<palabra palabra="A" definicion="Vocal" dificultad="FACIL"/>
 	<palabra palabra="A" definicion="Amperio" dificultad="FACIL"/>
+	<palabra palabra="A" definicion="Ángstrom" dificultad="DIFICIL"/>
+	<palabra palabra="A" definicion="Tamaño de batería" dificultad="NORMAL"/>
+	<palabra palabra="A" definicion="Grupos sanguíneo" dificultad="NORMAL"/>
+	<palabra palabra="A" definicion="Masa atómica" dificultad="DIFICIL"/>
+	<palabra palabra="A" definicion="Vitamina" dificultad="FACIL"/>
+	<palabra palabra="A" definicion="Nota musical anglosajona" dificultad="NORMAL"/>
+	<palabra palabra="A" definicion="Alicante" dificultad="NORMAL"/>
 	<palabra palabra="B" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="B" definicion="Boro" dificultad="DIFICIL"/>
+	<palabra palabra="B" definicion="Campo magnético" dificultad="DIFICIL"/>
+	<palabra palabra="B" definicion="Nota musical anglosajona" dificultad="NORMAL"/>
+	<palabra palabra="B" definicion="Lenguaje de programación" dificultad="DIFICIL"/>
+	<palabra palabra="B" definicion="Dinero negro" dificultad="NORMAL"/>
+	<palabra palabra="B" definicion="Vitamina" dificultad="FACIL"/>
 	<palabra palabra="C" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="C" definicion="100 en N.Romano" dificultad="NORMAL"/>
 	<palabra palabra="C" definicion="Carbono" dificultad="NORMAL"/>
 	<palabra palabra="C" definicion="Columbio" dificultad="DIFICIL"/>
 	<palabra palabra="C" definicion="Constante de la Velocidad de la Luz" dificultad="DIFICL"/>
+	<palabra palabra="C" definicion="Grado Celsius" dificultad="NORMAL"/>
+	<palabra palabra="C" definicion="Vitamina" dificultad="FACIL"/>
+	<palabra palabra="C" definicion="Nota musical anglosajona" dificultad="NORMAL"/>
+	<palabra palabra="C" definicion="Lenguaje de programación" dificultad="DIFICIL"/>
 	<palabra palabra="D" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="D" definicion="500 en N.Romano" dificultad="NORMAL"/>
+	<palabra palabra="D" definicion="Deuterio" dificultad="DIFICIL"/>
+	<palabra palabra="D" definicion="Vitamina" dificultad="FACIL"/>
+	<palabra palabra="D" definicion="Lenguaje de programación" dificultad="DIFICIL"/>
+	<palabra palabra="D" definicion="Nota musical anglosajona" dificultad="NORMAL"/>
 	<palabra palabra="E" definicion="Vocal" dificultad="FACIL"/>
 	<palabra palabra="E" definicion="Base número neperiano" dificultad="DIFICIL"/>
 	<palabra palabra="E" definicion="Y" dificultad="FACIL"/>
 	<palabra palabra="E" definicion="Este" dificultad="FACIL"/>
 	<palabra palabra="E" definicion="Electrón" dificultad="NORMAL"/>
 	<palabra palabra="E" definicion="Energía" dificultad="NORMAL"/>
+	<palabra palabra="E" definicion="Épsilon" dificultad="DIFICIL"/>
+	<palabra palabra="E" definicion="Base logaritmo neperiano" dificultad="DIFICIL"/>
+	<palabra palabra="E" definicion="Lenguaje de programación" dificultad="DIFICIL"/>
+	<palabra palabra="E" definicion="Vitamina" dificultad="FACIL"/>
+	<palabra palabra="E" definicion="Euro" dificultad="FACIL"/>
+	<palabra palabra="E" definicion="España" dificultad="FACIL"/>
+	<palabra palabra="E" definicion="Nota musical anglosajona" dificultad="NORMAL"/>
+	<palabra palabra="E" definicion="Este" dificultad="FACIL"/>
 	<palabra palabra="F" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="F" definicion="Fuerza" dificultad="NORMAL"/>
 	<palabra palabra="F" definicion="Grado Fahrenheit" dificultad="DIFICIL"/>
 	<palabra palabra="F" definicion="Faradio" dificultad="DIFICIL"/>
 	<palabra palabra="F" definicion="Flúor" dificultad="DIFICIL"/>
 	<palabra palabra="F" definicion="Constante de Faraday" dificultad="DIFICIL"/>
+	<palabra palabra="F" definicion="Frecuencia" dificultad="NORMAL"/>
+	<palabra palabra="F" definicion="Forte" dificultad="NORMAL"/>
+	<palabra palabra="F" definicion="Nota musical anglosajona" dificultad="NORMAL"/>
 	<palabra palabra="G" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="G" definicion="Gramo" dificultad="NORMAL"/>
 	<palabra palabra="G" definicion="Constante de Gravitación Universal" dificultad="DIFICIL"/>
+	<palabra palabra="G" definicion="Giga" dificultad="DIFICIL"/>
+	<palabra palabra="G" definicion="Nota musical anglosajona" dificultad="NORMAL"/>
 	<palabra palabra="H" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="H" definicion="Hidrógeno" dificultad="NORMAL"/>
 	<palabra palabra="H" definicion="Constante de Planck" dificultad="DIFICIL"/>
+	<palabra palabra="H" definicion="Hora" dificultad="FACIL"/>
+	<palabra palabra="H" definicion="Nota musical alemana" dificultad="DIFICIL"/>
 	<palabra palabra="I" definicion="Vocal" dificultad="FACIL"/>
 	<palabra palabra="I" definicion="1 en N.Romano" dificultad="NORMAL"/>
 	<palabra palabra="I" definicion="Nº Imaginario" dificultad="DIFICIL"/>
@@ -35,15 +71,18 @@
 	<palabra palabra="I" definicion="Yodo" dificultad="DIFICIL"/>
 	<palabra palabra="J" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="J" definicion="Julio" dificultad="DIFICIL"/>
+	<palabra palabra="J" definicion="Lenguaje de programación" dificultad="DIFICIL"/>
 	<palabra palabra="K" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="K" definicion="Kilo" dificultad="NORMAL"/>
 	<palabra palabra="K" definicion="Kelvin" dificultad="DIFICIL"/>
 	<palabra palabra="K" definicion="Potasio" dificultad="DIFICIL"/>
 	<palabra palabra="K" definicion="Constante de Coulomb" dificultad="DIFICIL"/>
 	<palabra palabra="K" definicion="Constante de Boltzmann" dificultad="DIFICIL"/>
+	<palabra palabra="K" definicion="Quilate" dificultad="NORMAL"/>
 	<palabra palabra="L" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="L" definicion="50 en N.Romano" dificultad="NORMAL"/>
 	<palabra palabra="L" definicion="Longitud" dificultad="NORMAL"/>
+	<palabra palabra="L" definicion="Litro" dificultad="NORMAL"/>
 	<palabra palabra="M" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="M" definicion="Masa" dificultad="NORMAL"/>
 	<palabra palabra="M" definicion="Metro" dificultad="NORMAL"/>
@@ -55,27 +94,41 @@
 	<palabra palabra="N" definicion="Mol" dificultad="DIFICIL"/>
 	<palabra palabra="N" definicion="Newton" dificultad="DIFICIL"/>
 	<palabra palabra="N" definicion="Número indeterminado" dificultad="DIFICIL"/>
+	<palabra palabra="N" definicion="Norte" dificultad="FACIL"/>
+	<palabra palabra="N" definicion="Números naturales" dificultad="NORMAL"/>
 	<palabra palabra="Ñ" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="O" definicion="Vocal" dificultad="FACIL"/>
 	<palabra palabra="O" definicion="Oeste" dificultad="FACIL"/>
 	<palabra palabra="O" definicion="Proposición" dificultad="NORMAL"/>
 	<palabra palabra="O" definicion="Oxígeno" dificultad="NORMAL"/>
+	<palabra palabra="O" definicion="Disyunción lógica" dificultad="NORMAL"/>
+	<palabra palabra="O" definicion="Octeto" dificultad="DIFICIL"/>
 	<palabra palabra="P" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="P" definicion="Peso" dificultad="NORMAL"/>
+	<palabra palabra="P" definicion="Potencia" dificultad="NORMAL"/>
+	<palabra palabra="P" definicion="Piano" dificultad="NORMAL"/>
 	<palabra palabra="P" definicion="Fósforo" dificultad="DIFICIL"/>
 	<palabra palabra="Q" definicion="Consonante" dificultad="FACIL"/>
+	<palabra palabra="Q" definicion="Números racionales" dificultad="DIFICIL"/>
+	<palabra palabra="Q" definicion="Calor" dificultad="DIFICIL"/>
+	<palabra palabra="Q" definicion="Carga eléctrica" dificultad="DIFICIL"/>
 	<palabra palabra="R" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="R" definicion="Radio" dificultad="NORMAL"/>
+	<palabra palabra="R" definicion="Números reales" dificultad="NORMAL"/>
 	<palabra palabra="S" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="S" definicion="Segundo" dificultad="NORMAL"/>
 	<palabra palabra="S" definicion="Sur" dificultad="FACIL"/>
 	<palabra palabra="S" definicion="Siemens" dificultad="DIFICL"/>
 	<palabra palabra="S" definicion="Azufre" dificultad="DIFICL"/>
+	<palabra palabra="S" definicion="Siglo" dificultad="NORMAL"/>
+	<palabra palabra="S" definicion="Sur" dificultad="FACIL"/>
 	<palabra palabra="T" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="T" definicion="Tiempo" dificultad="NORMAL"/>
 	<palabra palabra="T" definicion="Temperatura" dificultad="NORMAL"/>
 	<palabra palabra="T" definicion="Tesla" dificultad="DIFICIL"/>
+	<palabra palabra="T" definicion="Tonelada" dificultad="NORMAL"/>
 	<palabra palabra="U" definicion="Vocal" dificultad="FACIL"/>
+	<palabra palabra="U" definicion="Uranio" dificultad="DIFICIL"/>
 	<palabra palabra="V" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="V" definicion="5 en N.Romano" dificultad="NORMAL"/>
 	<palabra palabra="V" definicion="Velocidad" dificultad="NORMAL"/>
@@ -84,15 +137,69 @@
 	<palabra palabra="V" definicion="Vanadio" dificultad="DIFICIL"/>
 	<palabra palabra="W" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="W" definicion="Watio" dificultad="NORMAL"/>
+	<palabra palabra="W" definicion="Wolframio" dificultad="DIFICIL"/>
+	<palabra palabra="W" definicion="tungsteno" dificultad="DIFICIL"/>
 	<palabra palabra="X" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="X" definicion="Incógnita" dificultad="FACIL"/>
 	<palabra palabra="X" definicion="Marca el lugar" dificultad="FACIL"/>
-	<palabra palabra="X" definicion="Por" dificultad="FACIL"/>
+	<palabra palabra="X" definicion="Multiplicación" dificultad="FACIL"/>
 	<palabra palabra="X" definicion="10 en N.Romano" dificultad="NORMAL"/>
+	<palabra palabra="X" definicion="Cromosoma" dificultad="NORMAL"/>
+	<palabra palabra="X" definicion="Rayos" dificultad="NORMAL"/>
 	<palabra palabra="Y" definicion="Consonante" dificultad="FACIL"/>
 	<palabra palabra="Y" definicion="Conjunción" dificultad="NORMAL"/>
 	<palabra palabra="Y" definicion="Itrio" dificultad="DIFICIL"/>
+	<palabra palabra="Y" definicion="Cromosoma" dificultad="NORMAL"/>
 	<palabra palabra="Z" definicion="Consonante" dificultad="FACIL"/>
+	<palabra palabra="Z" definicion="Números enteros" dificultad="DIFICIL"/>
+	<palabra palabra="Z" definicion="Número atómico" dificultad="DIFICIL"/>
+	
+	<!-- PALABRAS CON 2 LETRA -->
+	<palabra palabra="AD" definicion="Anno Domini" dificultad="DIFICIL"/>
+	<palabra palabra="AD" definicion="Ad hoc" dificultad="DIFICIL"/>
+	<palabra palabra="AH" definicion="Pena, sorpresa, admiración" dificultad="DIFICIL"/>
+	<palabra palabra="AJ" definicion="Achaque" dificultad="DIFICIL"/>
+	<palabra palabra="AJ" definicion="Fuerza espiritual egipcia" dificultad="DIFICIL"/>
+	<palabra palabra="AL" definicion="A el" dificultad="NORMAL"/>
+	<palabra palabra="AL" definicion="Aluminio" dificultad="DIFICIL"/>
+	<palabra palabra="AR" definicion="Voz de mando" dificultad="NORMAL"/>
+	<palabra palabra="AR" definicion="Argón" dificultad="DIFICIL"/>
+	<palabra palabra="AS" definicion="Carta de la baraja" dificultad="FACIL"/>
+	<palabra palabra="AS" definicion="Cara de dado con un punto" dificultad="FACIL"/>
+	<palabra palabra="AS" definicion="Arsénico" dificultad="DIFICIL"/>
+	<palabra palabra="AS" definicion="Sobresale en su profesión" dificultad="DIFICIL"/>
+	<palabra palabra="AS" definicion="Antigua moneda romana" dificultad="DIFICIL"/>
+	<palabra palabra="AX" definicion="Achaque" dificultad="DIFICIL"/>
+	<palabra palabra="AY" definicion="Interjección" dificultad="FACIL"/>
+	
+	
+	  
+id - in - ir
+re - ro
+be - bu
+ja -  je - ji - jo - ju
+se - si - so - su
+ca - ce - cu
+la - le - lo
+ta - te - ti - to - tu
+cha - che - cho
+lle
+uf - uh - un
+da - de - di - do
+me - mi - mu
+va - ve - vi
+ea - eh - el - en - es - et -ex
+na - ne - ni - no
+xi
+fa - fe - fi - fo - fu
+ña - ño - ñu
+ya - ye - yo
+ge
+oa - oc - oh - oi - os - ox
+za
+ha - he - hi
+pe - pi - pu
+
 
 
 </palabras>
