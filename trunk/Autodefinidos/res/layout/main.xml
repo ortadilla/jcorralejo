@@ -3,23 +3,24 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:weightSum="1" >
+    android:weightSum="1" 
+    android:background="@drawable/fondo_menu">
 
     <ImageView
-        android:id="@+id/pong_logo"
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_weight="0.55"
+        android:layout_weight="0.5"
         android:contentDescription="@string/autodefinidos"
-        android:src="@drawable/pong" >
+        android:src="@drawable/logo" >
     </ImageView>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_weight="0.45"
+        android:layout_weight="0.5"
         android:orientation="vertical" >
 
         <TextView
@@ -35,6 +36,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/continuar_juego" />
+
+        <TextView
+            android:id="@+id/botonOpciones"
+            style="@style/botones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/opciones" />
 
         <TextView
             android:id="@+id/botonSalir"
