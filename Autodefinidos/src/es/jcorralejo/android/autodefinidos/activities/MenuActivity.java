@@ -3,8 +3,8 @@ package es.jcorralejo.android.autodefinidos.activities;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,21 +27,23 @@ public class MenuActivity extends Activity {
         
         
         app = (AutodefinidosApplication) getApplication();
-        Typeface font = Typeface.createFromAsset(getAssets(), "handsean.ttf");
 
         TextView botonNuevoJuego = (TextView) findViewById(R.id.botonNuevoJuego);
-        botonNuevoJuego.setTypeface(font);
+        botonNuevoJuego.setTypeface(app.getFuenteApp());
         botonNuevoJuego.setOnClickListener(
         	new OnClickListener() {
         		public void onClick(View v) {
-        			//TODO: Navegar a la configuración de la partida
+        			//Navegamos a la configuración de la partida
+        			Intent intent = new Intent();
+        			intent.setClass(getApplicationContext(), ConfigurarJuegoActivity.class);
+        			startActivity(intent);
                 }
         	}
         );
 
         
         TextView botonContinuarJuego = (TextView) findViewById(R.id.botonContinuarJuego);
-        botonContinuarJuego.setTypeface(font);
+        botonContinuarJuego.setTypeface(app.getFuenteApp());
         botonContinuarJuego.setOnClickListener(
         	new OnClickListener() {
         		public void onClick(View v) {
@@ -55,7 +57,7 @@ public class MenuActivity extends Activity {
         );
         
         TextView botonOpciones = (TextView) findViewById(R.id.botonOpciones);
-        botonOpciones.setTypeface(font);
+        botonOpciones.setTypeface(app.getFuenteApp());
         botonOpciones.setOnClickListener(
         	new OnClickListener() {
         		public void onClick(View v) {
@@ -66,7 +68,7 @@ public class MenuActivity extends Activity {
         );
         
         TextView botonSalir = (TextView) findViewById(R.id.botonSalir);
-        botonSalir.setTypeface(font);
+        botonSalir.setTypeface(app.getFuenteApp());
         botonSalir.setOnClickListener(
         	new OnClickListener() {
         		public void onClick(View v) {
