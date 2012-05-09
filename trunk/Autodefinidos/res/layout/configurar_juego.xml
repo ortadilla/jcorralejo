@@ -24,6 +24,7 @@
         android:orientation="vertical" >
 
         <TextView
+            android:id="@+id/textoDificultad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/texto"
@@ -32,9 +33,9 @@
         <SeekBar
             android:id="@+id/dificultad"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:max="3"
-            />
+            android:layout_height="wrap_content"
+            android:max="2" 
+            android:progressDrawable="@drawable/seekbar_progress_bg"/>
 
     </LinearLayout>
 
