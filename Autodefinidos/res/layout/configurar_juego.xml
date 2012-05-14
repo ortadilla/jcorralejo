@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/fondo_menu"
     android:orientation="vertical"
-    android:weightSum="1" 
-    android:background="@drawable/fondo_menu">
+    android:weightSum="1" >
 
     <ImageView
         android:id="@+id/logo"
@@ -25,19 +25,27 @@
 
         <TextView
             android:id="@+id/textoDificultad"
+            style="@style/texto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/texto"
             android:text="@string/dificultad" />
 
         <SeekBar
             android:id="@+id/dificultad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="2" 
+            android:max="2"
             android:progress="1"
-            android:progressDrawable="@drawable/seekbar_progress_bg"/>
+            android:progressDrawable="@drawable/seekbar_progress_bg" />
 
+        <TextView
+            android:id="@+id/descDificultad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/normal" 
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
     </LinearLayout>
-
+    
 </LinearLayout>
