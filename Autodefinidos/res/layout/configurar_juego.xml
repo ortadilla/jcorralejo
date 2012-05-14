@@ -37,15 +37,42 @@
             android:max="2"
             android:progress="1"
             android:progressDrawable="@drawable/seekbar_progress_bg" />
-
+
         <TextView
             android:id="@+id/descDificultad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/normal" 
-            android:textSize="20dp"
             android:layout_gravity="center"
-            android:gravity="center"/>
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="@string/normal"
+            android:textSize="20dp" />
+        
+         <TextView
+            android:id="@+id/textoTamanio"
+            style="@style/texto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tamanio" />
+
+        <SeekBar
+            android:id="@+id/tamanio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="2"
+            android:progress="1"
+            android:progressDrawable="@drawable/seekbar_progress_bg" />
+
+
+        <TextView
+            android:id="@+id/descTamanio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/mediano"
+            android:textSize="20dp" />
+
     </LinearLayout>
     
 </LinearLayout>

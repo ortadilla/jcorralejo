@@ -8,13 +8,17 @@
     <string name="dificil">Dificil</string>
     <string name="dificultad">Dificultad</string>
     <string name="facil">Fácil</string>
+    <string name="grande">Grande</string>
+    <string name="mediano">Mediano</string>
     <string name="no">No</string>
     <string name="normal">Normal</string>
     <string name="nuevo_juego">Nuevo Juego</string>
     <string name="opciones">Opciones</string>
+    <string name="paquenio">Pequeño</string>
     <string name="salir">Salir</string>
     <string name="salir_pregunta">¿Seguro que desea salir?</string>
     <string name="si">Sí</string>
+    <string name="tamanio">Tamaño</string>
     <string name="version">Autodefinidos v.0.1</string>
 
 </resources>
