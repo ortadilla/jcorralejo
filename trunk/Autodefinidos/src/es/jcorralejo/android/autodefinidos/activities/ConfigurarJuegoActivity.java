@@ -17,6 +17,7 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
 	private AutodefinidosApplication app;
 	
 	private TextView descDificultad;
+	private TextView descTamanio;
 
 	
 	@Override
@@ -43,6 +44,24 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
 					//TODO: Levantar popUp para indicar que en esta versión no se puede modificar la dificultad
 				}
 			}});
+        
+        TextView textoTamanio = (TextView) findViewById(R.id.textoTamanio);
+        textoTamanio.setTypeface(app.getFuenteApp());
+
+        descTamanio = (TextView) findViewById(R.id.descTamanio);
+        descTamanio.setTypeface(app.getFuenteApp());
+        
+        SeekBar tamanio = (SeekBar) findViewById(R.id.tamanio);
+        tamanio.setOnSeekBarChangeListener(this);
+        tamanio.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(app.isFree()){
+					//TODO: Levantar popUp para indicar que en esta versión no se puede modificar el tamaño
+				}
+			}});
+
+
 	}
 	
 	
@@ -52,6 +71,9 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
 		{
 		 case R.id.dificultad:
 			 descDificultad.setText(progress==0 ? R.string.facil : progress==1 ? R.string.normal : R.string.dificil);
+			 break;
+		 case R.id.tamanio:
+			 descTamanio.setText(progress==0 ? R.string.paquenio : progress==1 ? R.string.mediano : R.string.grande);
 			 break;
 		}
 	}
