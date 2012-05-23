@@ -2,8 +2,9 @@ package es.jcorralejo.android.autodefinidos.activities;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.DialogFragment;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -83,6 +84,23 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
 		switch (id) {
 		case Constantes.DIALOG_VERSION_PAGO:
 			VersionCompleta alert = new VersionCompleta(this);
+			TextView obtener = (TextView) alert.findViewById(R.id.obtenerPRO);
+			obtener.setOnClickListener(
+	        	new OnClickListener() {
+	        		public void onClick(View v) {
+	        			Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(Constantes.URL_VERSION_PAGO));
+						startActivity(i);
+	                }
+	        	}
+	        );
+			TextView noObtener = (TextView) alert.findViewById(R.id.enOtroMomento);
+			noObtener.setOnClickListener(
+	        	new OnClickListener() {
+	        		public void onClick(View v) {
+	        			finish();
+	                }
+	        	}
+	        );
 			return alert;
 		default:
 			return null;
