@@ -1,16 +1,21 @@
 package es.jcorralejo.android.autodefinidos.activities;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+import android.view.Window;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import aplicacion.AutodefinidosApplication;
 import es.jcorralejo.android.autodefinidos.R;
+import es.jcorralejo.android.autodefinidos.utilities.Constantes;
 
 public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChangeListener {
 	
@@ -37,13 +42,18 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
         
         SeekBar dificultad = (SeekBar) findViewById(R.id.dificultad);
         dificultad.setOnSeekBarChangeListener(this);
-        dificultad.setOnClickListener(new OnClickListener() {
+        dificultad.setClickable(true);
+        dificultad.setOnTouchListener(new OnTouchListener() {
+			@SuppressWarnings("deprecation")
 			@Override
-			public void onClick(View v) {
+			public boolean onTouch(View v, MotionEvent event) {
 				if(app.isFree()){
-					//TODO: Levantar popUp para indicar que en esta versión no se puede modificar la dificultad
+					showDialog(Constantes.DIALOG_VERSION_PAGO);
+					return true;
 				}
-			}});
+				return false;
+			}
+		});
         
         TextView textoTamanio = (TextView) findViewById(R.id.textoTamanio);
         textoTamanio.setTypeface(app.getFuenteApp());
@@ -53,16 +63,32 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
         
         SeekBar tamanio = (SeekBar) findViewById(R.id.tamanio);
         tamanio.setOnSeekBarChangeListener(this);
-        tamanio.setOnClickListener(new OnClickListener() {
+        tamanio.setOnTouchListener(new OnTouchListener() {
+			@SuppressWarnings("deprecation")
 			@Override
-			public void onClick(View v) {
+			public boolean onTouch(View v, MotionEvent event) {
 				if(app.isFree()){
-					//TODO: Levantar popUp para indicar que en esta versión no se puede modificar el tamaño
+					showDialog(Constantes.DIALOG_VERSION_PAGO);
+					return true;
 				}
-			}});
+				return false;
+			}
+		});
 
 
 	}
+	
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch (id) {
+		case Constantes.DIALOG_VERSION_PAGO:
+			VersionCompleta alert = new VersionCompleta(this);
+			return alert;
+		default:
+			return null;
+		}
+	}
+
 	
 	
 	@Override
