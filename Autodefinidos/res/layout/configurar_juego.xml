@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_weight="0.5"
+        android:layout_weight="0.4"
         android:contentDescription="@string/autodefinidos"
         android:src="@drawable/logo" >
     </ImageView>
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_weight="0.5"
+        android:layout_weight="0.6"
         android:orientation="vertical" >
 
         <TextView
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="2"
-            android:progress="1"
+            android:progress="0"
             android:progressDrawable="@drawable/seekbar_progress_bg" />
 
         <TextView
@@ -45,7 +45,8 @@
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
             android:gravity="center"
-            android:text="@string/normal"
+            android:textColor="#A0A0A0"
+            android:text="@string/facil"
             android:textSize="20dp" />
         
          <TextView
@@ -60,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="2"
-            android:progress="1"
+            android:progress="0"
             android:progressDrawable="@drawable/seekbar_progress_bg" />
 
 
@@ -70,7 +71,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="@string/mediano"
+            android:textColor="#A0A0A0"
+            android:text="@string/paquenio"
             android:textSize="20dp" />
 
     </LinearLayout>

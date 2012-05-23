@@ -2,6 +2,7 @@ package es.jcorralejo.android.autodefinidos.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -12,6 +13,7 @@ import android.view.Window;
 import android.widget.TextView;
 import aplicacion.AutodefinidosApplication;
 import es.jcorralejo.android.autodefinidos.R;
+import es.jcorralejo.android.autodefinidos.utilities.Constantes;
 
 public class MenuActivity extends Activity {
 	
@@ -48,7 +50,7 @@ public class MenuActivity extends Activity {
         	new OnClickListener() {
         		public void onClick(View v) {
         			if(app.isFree()){
-        				//TODO: Levantar popUp para indicar que en esta versión no se puede guardar partidas
+        				showDialog(Constantes.DIALOG_VERSION_PAGO);
         			}else{
         				//TODO: Cargar última partida
         			}
@@ -80,6 +82,17 @@ public class MenuActivity extends Activity {
         
         
     }
+    
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch (id) {
+		case Constantes.DIALOG_VERSION_PAGO:
+			VersionCompleta alert = new VersionCompleta(this);
+			return alert;
+		default:
+			return null;
+		}
+	}
     
     @Override
     public void onBackPressed() {
