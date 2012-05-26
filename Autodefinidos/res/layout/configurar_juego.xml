@@ -74,6 +74,15 @@
             android:textColor="#A0A0A0"
             android:text="@string/paquenio"
             android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/jugar"
+            style="@style/botones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/jugar"
+            android:textSize="30dp" />
 
     </LinearLayout>
     
