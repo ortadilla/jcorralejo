@@ -1,5 +1,6 @@
 package es.jcorralejo.android.autodefinidos.activities;
 
+import android.R.dimen;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -45,7 +46,6 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
         dificultad.setOnSeekBarChangeListener(this);
         dificultad.setClickable(true);
         dificultad.setOnTouchListener(new OnTouchListener() {
-			@SuppressWarnings("deprecation")
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if(app.isFree()){
@@ -65,7 +65,6 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
         SeekBar tamanio = (SeekBar) findViewById(R.id.tamanio);
         tamanio.setOnSeekBarChangeListener(this);
         tamanio.setOnTouchListener(new OnTouchListener() {
-			@SuppressWarnings("deprecation")
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if(app.isFree()){
@@ -83,8 +82,11 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 		case Constantes.DIALOG_VERSION_PAGO:
-			VersionCompleta alert = new VersionCompleta(this);
+			Dialog alert = new Dialog(this);
+			alert.setContentView(R.layout.version_completa);
+			alert.setTitle(R.string.app_name);
 			TextView obtener = (TextView) alert.findViewById(R.id.obtenerPRO);
+			obtener.setTypeface(app.getFuenteApp());
 			obtener.setOnClickListener(
 	        	new OnClickListener() {
 	        		public void onClick(View v) {
@@ -94,6 +96,7 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
 	        	}
 	        );
 			TextView noObtener = (TextView) alert.findViewById(R.id.enOtroMomento);
+			noObtener.setTypeface(app.getFuenteApp());
 			noObtener.setOnClickListener(
 	        	new OnClickListener() {
 	        		public void onClick(View v) {
@@ -101,6 +104,11 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
 	                }
 	        	}
 	        );
+			
+			TextView textoObtenerPRO = (TextView) alert.findViewById(R.id.textoVersionPago);
+			textoObtenerPRO.setTypeface(app.getFuenteApp());
+
+			alert.show();
 			return alert;
 		default:
 			return null;

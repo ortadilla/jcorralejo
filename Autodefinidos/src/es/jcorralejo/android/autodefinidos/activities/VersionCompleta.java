@@ -20,8 +20,8 @@ public class VersionCompleta extends AlertDialog {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-        setContentView(R.layout.version_completa);
+//		super.onCreate(savedInstanceState);
+//        setContentView(R.layout.version_completa);
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
