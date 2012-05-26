@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 
 public class AutodefinidosApplication extends Application {
 	
-	private boolean free = true;
+	private boolean free = false;
 	private Typeface fuenteApp;
 	
 	@Override

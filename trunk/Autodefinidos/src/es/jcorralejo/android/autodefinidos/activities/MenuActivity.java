@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.TextView;
 import aplicacion.AutodefinidosApplication;
 import es.jcorralejo.android.autodefinidos.R;
+import es.jcorralejo.android.autodefinidos.utilities.ActivitiesHelper;
 import es.jcorralejo.android.autodefinidos.utilities.Constantes;
 
 public class MenuActivity extends Activity {
@@ -87,8 +88,7 @@ public class MenuActivity extends Activity {
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 		case Constantes.DIALOG_VERSION_PAGO:
-			VersionCompleta alert = new VersionCompleta(this);
-			return alert;
+			return ActivitiesHelper.levantarPopupPago(app, this);
 		default:
 			return null;
 		}
