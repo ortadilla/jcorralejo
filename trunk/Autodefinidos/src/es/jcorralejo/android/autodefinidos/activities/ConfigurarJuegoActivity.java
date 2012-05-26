@@ -71,7 +71,9 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
 				return false;
 			}
 		});
-
+        
+        TextView jugar = (TextView) findViewById(R.id.jugar);
+        jugar.setTypeface(app.getFuenteApp());
 
 	}
 	
