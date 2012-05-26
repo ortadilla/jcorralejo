@@ -1,15 +1,11 @@
 package es.jcorralejo.android.autodefinidos.activities;
 
-import android.R.dimen;
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.widget.SeekBar;
@@ -17,6 +13,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import aplicacion.AutodefinidosApplication;
 import es.jcorralejo.android.autodefinidos.R;
+import es.jcorralejo.android.autodefinidos.utilities.ActivitiesHelper;
 import es.jcorralejo.android.autodefinidos.utilities.Constantes;
 
 public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChangeListener {
@@ -82,34 +79,7 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 		case Constantes.DIALOG_VERSION_PAGO:
-			Dialog alert = new Dialog(this);
-			alert.setContentView(R.layout.version_completa);
-			alert.setTitle(R.string.app_name);
-			TextView obtener = (TextView) alert.findViewById(R.id.obtenerPRO);
-			obtener.setTypeface(app.getFuenteApp());
-			obtener.setOnClickListener(
-	        	new OnClickListener() {
-	        		public void onClick(View v) {
-	        			Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(Constantes.URL_VERSION_PAGO));
-						startActivity(i);
-	                }
-	        	}
-	        );
-			TextView noObtener = (TextView) alert.findViewById(R.id.enOtroMomento);
-			noObtener.setTypeface(app.getFuenteApp());
-			noObtener.setOnClickListener(
-	        	new OnClickListener() {
-	        		public void onClick(View v) {
-	        			finish();
-	                }
-	        	}
-	        );
-			
-			TextView textoObtenerPRO = (TextView) alert.findViewById(R.id.textoVersionPago);
-			textoObtenerPRO.setTypeface(app.getFuenteApp());
-
-			alert.show();
-			return alert;
+			return ActivitiesHelper.levantarPopupPago(app, this);
 		default:
 			return null;
 		}
