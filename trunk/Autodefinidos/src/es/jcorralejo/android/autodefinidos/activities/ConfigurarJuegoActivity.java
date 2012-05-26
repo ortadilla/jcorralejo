@@ -2,10 +2,12 @@ package es.jcorralejo.android.autodefinidos.activities;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.widget.SeekBar;
@@ -39,7 +41,7 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
         descDificultad = (TextView) findViewById(R.id.descDificultad);
         descDificultad.setTypeface(app.getFuenteApp());
         
-        SeekBar dificultad = (SeekBar) findViewById(R.id.dificultad);
+        final SeekBar dificultad = (SeekBar) findViewById(R.id.dificultad);
         dificultad.setOnSeekBarChangeListener(this);
         dificultad.setClickable(true);
         dificultad.setOnTouchListener(new OnTouchListener() {
@@ -59,7 +61,7 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
         descTamanio = (TextView) findViewById(R.id.descTamanio);
         descTamanio.setTypeface(app.getFuenteApp());
         
-        SeekBar tamanio = (SeekBar) findViewById(R.id.tamanio);
+        final SeekBar tamanio = (SeekBar) findViewById(R.id.tamanio);
         tamanio.setOnSeekBarChangeListener(this);
         tamanio.setOnTouchListener(new OnTouchListener() {
 			@Override
@@ -74,6 +76,16 @@ public class ConfigurarJuegoActivity extends Activity implements OnSeekBarChange
         
         TextView jugar = (TextView) findViewById(R.id.jugar);
         jugar.setTypeface(app.getFuenteApp());
+        jugar.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+    			Intent intent = new Intent();
+    			intent.setClass(getApplicationContext(), JuegoActivity.class);
+    			intent.putExtra(Constantes.DIFICULTAD, dificultad.getProgress());
+    			intent.putExtra(Constantes.TAMANIO, tamanio.getProgress());
+    			startActivity(intent);
+			}
+		});
 
 	}
 	
