@@ -1,22 +1,17 @@
 package es.jcorralejo.android.autodefinidos.utilities;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 import entidades.Casilla;
 import entidades.Tablero;
 
-public class TablerosPredefinidos {
+public class TablerosHelper {
 	
-	public static final Tablero tableroPequenioUno = crearTableroPequenioUno();
-	public static final Tablero tableroPequenioDos = null;
-	public static final Tablero tableroMedianoUno = null;
-	public static final Tablero tableroMedianoDos = null;
-	public static final Tablero tableroMedianoTres = null;
-	public static final Tablero tableroGrandeUno = null;
-	public static final Tablero tableroGrandeDos = null;
-	public static final Tablero tableroGrandeTres = null;
-	public static final Tablero tableroGrandeCuatro = null;
-	
+	public static final List<Tablero> tablerosPequenios = Arrays.asList(crearTableroPequenioUno());
+	public static final List<Tablero> tablerosMedianos = null; //Arrays.asList(null);
+	public static final List<Tablero> tablerosGrandes = null; //Arrays.asList(null);
 	
 	private static Tablero crearTableroPequenioUno(){
 		Tablero tablero = new Tablero(Constantes.TAMANIO_PEQUENIO_ALTO, Constantes.TAMANIO_PEQUENIO_ANCHO);
@@ -31,6 +26,21 @@ public class TablerosPredefinidos {
 				else
 					tablero.getTablero()[i][j] = new Casilla(null, null, null, 0, null, false);
 			}
+		}
+		
+		return tablero;
+	}
+	
+	public static Tablero crearTablero(int tamanio){
+		Tablero tablero = null;
+
+		Random r = new Random(System.currentTimeMillis());
+		if(Constantes.TAMANIO_PEQUENIO == tamanio){
+			tablero = tablerosPequenios.get(r.nextInt(tablerosPequenios.size()));			
+		}else if (Constantes.TAMANIO_MEDIANO == tamanio){
+			tablero = tablerosMedianos.get(r.nextInt(tablerosMedianos.size()));			
+		}else if (Constantes.TAMANIO_GRANDE == tamanio){
+			tablero = tablerosGrandes.get(r.nextInt(tablerosGrandes.size()));			
 		}
 		
 		return tablero;
