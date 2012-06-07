@@ -68,7 +68,7 @@ public class JuegoActivity extends Activity {
 						layoutParam.setMargins(1, 1, 1, 1);
 						t.setLayoutParams(layoutParam);
 						t.setText("C " + counter);
-						t.setBackgroundResource(R.drawable.fondo_casilla);
+						t.setBackgroundResource(tablero.getTablero()[i][j].isPregunta() ? R.drawable.fondo_casilla_ocupada : R.drawable.fondo_casilla_libre);
 						fila.addView(t);
 					}
 			        tabla.addView(fila);
