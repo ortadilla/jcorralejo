@@ -4,6 +4,8 @@ public class Constantes {
 	
 	public static final int DIALOG_VERSION_PAGO = 0;
 	public static final String URL_VERSION_PAGO = "https://market.android.com/details?id=es.jcorralejo.android.coac2012";
+
+	public static final int PORCENTAJE_TAMANIO_FLECHA = 6;
 	
 	public static final String TAMANIO = "TAMANIO";
 	public static final int TAMANIO_PEQUENIO = 0;

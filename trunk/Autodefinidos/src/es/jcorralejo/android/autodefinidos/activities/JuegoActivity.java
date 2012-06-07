@@ -1,24 +1,19 @@
 package es.jcorralejo.android.autodefinidos.activities;
 
 import android.app.Activity;
-import android.app.LauncherActivity;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.FrameLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-import android.widget.TextView;
 import android.widget.Toast;
 import aplicacion.AutodefinidosApplication;
 import entidades.Tablero;
 import es.jcorralejo.android.autodefinidos.R;
 import es.jcorralejo.android.autodefinidos.utilities.Constantes;
 import es.jcorralejo.android.autodefinidos.utilities.TablerosHelper;
+import es.jcorralejo.android.autodefinidos.views.TextViewFlechas;
 
 public class JuegoActivity extends Activity {
 
@@ -63,12 +58,15 @@ public class JuegoActivity extends Activity {
 					fila.setWeightSum(tablero.getAncho());
 					for(int j=0; j<tablero.getAncho(); j++){
 						counter++;
-						TextView t = new TextView(this);
+						TextViewFlechas t = new TextViewFlechas(this, false, false, false, false);
 						TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
 						layoutParam.setMargins(1, 1, 1, 1);
 						t.setLayoutParams(layoutParam);
 						t.setText("C " + counter);
-						t.setBackgroundResource(tablero.getTablero()[i][j].isPregunta() ? R.drawable.fondo_casilla_ocupada : R.drawable.fondo_casilla_libre);
+						t.setBackgroundResource(tablero.getCasilla(i,j).isPregunta() ? R.drawable.fondo_casilla_ocupada : R.drawable.fondo_casilla_libre);
+						
+						
+						
 						fila.addView(t);
 					}
 			        tabla.addView(fila);
