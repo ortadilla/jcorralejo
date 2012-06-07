@@ -1,11 +1,15 @@
 package es.jcorralejo.android.autodefinidos.activities;
 
 import android.app.Activity;
+import android.app.LauncherActivity;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
+import android.widget.CheckBox;
+import android.widget.FrameLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -52,20 +56,24 @@ public class JuegoActivity extends Activity {
 			tablero = TablerosHelper.crearTablero(tamanio);
 			if(tablero!=null){
 				error = false;
-				
-				for(int i=0; i<tablero.getTablero()[0].length; i++){
+				int counter = 0;
+				for(int i=0; i<tablero.getAlto(); i++){
 					TableRow fila = new TableRow(this);
-					fila.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-					for(int j=0; j<tablero.getTablero()[1].length; j++){
-						TextView celda = new TextView(this);
-						celda.setText("celda");
-//						celda.setBackgroundColor(tablero.getTablero()[i][j].isPregunta() ? Color.BLACK : Color.BLUE);
-						celda.setBackgroundColor(Color.RED);
-						celda.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));            
-						fila.addView(celda, fila.getChildCount());      
+					fila.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1));
+					fila.setWeightSum(tablero.getAncho());
+					for(int j=0; j<tablero.getAncho(); j++){
+						counter++;
+						TextView t = new TextView(this);
+						TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
+						layoutParam.setMargins(1, 1, 1, 1);
+						t.setLayoutParams(layoutParam);
+						t.setText("C " + counter);
+						t.setBackgroundResource(R.drawable.fondo_casilla);
+						fila.addView(t);
 					}
-					tabla.addView(fila, tabla.getChildCount());
+			        tabla.addView(fila);
 				}
+				tabla.setWeightSum(tablero.getAlto());
 				
 			}
 		}

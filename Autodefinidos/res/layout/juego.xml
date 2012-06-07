@@ -3,12 +3,70 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <TableRow
-        android:id="@+id/tableRow1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#FF2233" >
+<!--     <TableRow -->
+<!--         android:id="@+id/tableRow1" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="0dp" -->
+<!--         android:layout_weight="1" -->
+<!--         android:background="#FF2233" > -->
 
-    </TableRow>
+<!--         <TextView -->
+<!--             android:id="@+id/textView1" -->
+<!--             android:layout_width="0dp" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_margin="5dp" -->
+<!--             android:layout_weight="1" -->
+<!--             android:text="TextView" /> -->
+
+<!--         <TextView -->
+<!--             android:id="@+id/textView1" -->
+<!--             android:layout_width="0dp" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_margin="5dp" -->
+<!--             android:layout_weight="1" -->
+<!--             android:text="TextView" /> -->
+<!--     </TableRow> -->
+
+<!--     <TableRow -->
+<!--         android:id="@+id/tableRow1" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="0dp" -->
+<!--         android:layout_weight="1" -->
+<!--         android:background="#FF2233" > -->
+
+<!--         <TextView -->
+<!--             android:id="@+id/textView1" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:text="TextView" /> -->
+<!--     </TableRow> -->
+
+<!--     <TableRow -->
+<!--         android:id="@+id/tableRow1" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="0dp" -->
+<!--         android:layout_weight="1" -->
+<!--         android:background="#FF2233" > -->
+
+<!--         <TextView -->
+<!--             android:id="@+id/textView1" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:text="TextView" /> -->
+<!--     </TableRow> -->
+
+<!--     <TableRow -->
+<!--         android:id="@+id/tableRow1" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="0dp" -->
+<!--         android:layout_weight="1" -->
+<!--         android:background="#FF2233" > -->
+
+<!--         <TextView -->
+<!--             android:id="@+id/textView1" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:text="TextView" /> -->
+<!--     </TableRow> -->
 
 </TableLayout>
