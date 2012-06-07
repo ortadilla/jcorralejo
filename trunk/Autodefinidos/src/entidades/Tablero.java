@@ -4,9 +4,21 @@ package entidades;
 public class Tablero {
 	
 	private Casilla[][] tablero;
+	private int alto;
+	private int ancho;
 	
 	public Tablero(int alto, int ancho) {
 		tablero = new Casilla[alto][ancho];
+		this.alto = alto;
+		this.ancho = ancho;
+	}
+	
+	public int getAlto(){
+		return alto; 
+	}
+	
+	public int getAncho(){
+		return ancho; 
 	}
 	
 	public void imprimir(boolean usuario){
