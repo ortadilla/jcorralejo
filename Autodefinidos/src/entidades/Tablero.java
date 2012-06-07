@@ -7,6 +7,18 @@ public class Tablero {
 	private int alto;
 	private int ancho;
 	
+	public Casilla getCasilla(int i, int j){
+		Casilla casilla = null;
+		if(i>=0 && j>=0 && i<getAlto() && j<getAncho())
+			casilla = tablero[i][j];
+		return casilla;	
+	}
+	
+	public void setCasilla(int i, int j, Casilla casilla){
+		if(i>=0 && j>=0 && i<getAlto() && j<getAncho())
+			tablero[i][j] = casilla;
+	}
+	
 	public Tablero(int alto, int ancho) {
 		tablero = new Casilla[alto][ancho];
 		this.alto = alto;
@@ -47,12 +59,5 @@ public class Tablero {
 		}
 	}
 
-	public Casilla[][] getTablero() {
-		return tablero;
-	}
-
-	public void setTablero(Casilla[][] tablero) {
-		this.tablero = tablero;
-	}
 
 }
