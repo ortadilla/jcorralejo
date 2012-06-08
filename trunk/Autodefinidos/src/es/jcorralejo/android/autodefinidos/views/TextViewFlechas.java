@@ -41,7 +41,7 @@ public class TextViewFlechas extends TextView{
 			numFlechasHorizontales++;
 		if(abajo)
 			numFlechasVerticales++;
-		if(derechaAbajo)
+		if(abajoDerecha)
 			numFlechasVerticales++;
 		
 		int alto = getHeight();
@@ -64,10 +64,23 @@ public class TextViewFlechas extends TextView{
         			pintarFlecha(canvas, path, paint, puntosDerechaAbajo);
         		}
         	}else if (numFlechasHorizontales==2){
-//        		int[][] puntosDerecha = {{0, alto/3 - anchoFlecha}, {anchoFlecha, alto/3}, {0, alto/3 + anchoFlecha}};
         		pintarFlecha(canvas, path, paint, puntosDerecha);
-//        		int[][] puntosDerechaAbajo = {{0, 2*alto/3}, {2*anchoFlecha, 2*alto/3}, {anchoFlecha, 2*alto/3 + 2*anchoFlecha}};
         		pintarFlecha(canvas, path, paint, puntosDerechaAbajo);
+        	}
+        }
+        
+        if(numFlechasVerticales>0){
+        	int[][] puntosAbajo = {{ancho/(numFlechasVerticales+1) - anchoFlecha, 0}, {ancho/(numFlechasVerticales+1), anchoFlecha}, {ancho/(numFlechasVerticales+1) + anchoFlecha, 0}};
+        	int[][] puntosAbajoDerecha = {{numFlechasVerticales*ancho/(numFlechasVerticales+1), 0}, {numFlechasVerticales*ancho/(numFlechasVerticales+1), 2*anchoFlecha}, {numFlechasVerticales*ancho/(numFlechasVerticales+1) + 2*anchoFlecha, anchoFlecha}};
+        	if(numFlechasVerticales==1){
+        		if(abajo){
+        			pintarFlecha(canvas, path, paint, puntosAbajo);
+        		}else if(abajoDerecha){
+        			pintarFlecha(canvas, path, paint, puntosAbajoDerecha);
+        		}
+        	}else if (numFlechasVerticales==2){
+        		pintarFlecha(canvas, path, paint, puntosAbajo);
+        		pintarFlecha(canvas, path, paint, puntosAbajoDerecha);
         	}
         }
         
