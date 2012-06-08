@@ -20,9 +20,9 @@ public class TablerosHelper {
 				if(i==0 && j==0)
 					tablero.setCasilla(i, j, new Casilla(null, null, null, 2, Arrays.asList(Casilla.DIRECCION_ABAJO_DERECHA, Casilla.DIRECCION_DERECHA_ABAJO), true));
 				else if((i==2 && j==0) || (i==4 && j==0) || (i==6 && j==0))
-					tablero.setCasilla(i, j, new Casilla(null, null, null, 2, Arrays.asList(Casilla.DIRECCION_DERECHA, Casilla.DIRECCION_DERECHA_ABAJO), true));
+					tablero.setCasilla(i, j, new Casilla(null, null, null, 2, Arrays.asList(Casilla.DIRECCION_DERECHA, Casilla.DIRECCION_ABAJO_DERECHA), true));
 				else if((i==0 && j==2) || (i==0 && j==4))
-					tablero.setCasilla(i, j, new Casilla(null, null, null, 2, Arrays.asList(Casilla.DIRECCION_ABAJO_DERECHA, Casilla.DIRECCION_ABAJO), true));
+					tablero.setCasilla(i, j, new Casilla(null, null, null, 2, Arrays.asList(Casilla.DIRECCION_ABAJO, Casilla.DIRECCION_DERECHA_ABAJO), true));
 				else
 					tablero.setCasilla(i, j, new Casilla(null, null, null, 0, null, false));
 			}

@@ -58,7 +58,12 @@ public class JuegoActivity extends Activity {
 					fila.setWeightSum(tablero.getAncho());
 					for(int j=0; j<tablero.getAncho(); j++){
 						counter++;
-						TextViewFlechas t = new TextViewFlechas(this, true, true, false, false);
+						
+						boolean flechaDerecha = j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerecha(); 
+						boolean flechaDerechaAbajo = j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerechaAbajo(); 
+						boolean flechaAbajo = i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajo(); 
+						boolean flechaAbajoDerecha = i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajoDerecha(); 
+						TextViewFlechas t = new TextViewFlechas(this, flechaDerecha, flechaDerechaAbajo, flechaAbajo, flechaAbajoDerecha);
 						TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
 						layoutParam.setMargins(1, 1, 1, 1);
 						t.setLayoutParams(layoutParam);
