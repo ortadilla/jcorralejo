@@ -58,7 +58,7 @@ public class JuegoActivity extends Activity {
 					fila.setWeightSum(tablero.getAncho());
 					for(int j=0; j<tablero.getAncho(); j++){
 						counter++;
-						TextViewFlechas t = new TextViewFlechas(this, false, false, false, false);
+						TextViewFlechas t = new TextViewFlechas(this, true, true, false, false);
 						TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
 						layoutParam.setMargins(1, 1, 1, 1);
 						t.setLayoutParams(layoutParam);
