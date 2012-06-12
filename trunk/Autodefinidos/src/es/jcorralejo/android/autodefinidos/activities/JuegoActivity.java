@@ -2,7 +2,13 @@ package es.jcorralejo.android.autodefinidos.activities;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
+import android.graphics.PointF;
 import android.os.Bundle;
+import android.util.FloatMath;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.widget.LinearLayout;
@@ -17,7 +23,21 @@ import es.jcorralejo.android.autodefinidos.utilities.Constantes;
 import es.jcorralejo.android.autodefinidos.utilities.TablerosHelper;
 import es.jcorralejo.android.autodefinidos.views.TextViewFlechas;
 
-public class JuegoActivity extends Activity {
+public class JuegoActivity extends Activity implements OnTouchListener{
+	
+	// Remember some things for zooming
+	 PointF start = new PointF();
+	 PointF mid = new PointF();
+
+	 float oldDist = 1f;
+	 PointF oldDistPoint = new PointF();
+
+	 public static String TAG = "ZOOM";
+
+	 static final int NONE = 0;
+	 static final int DRAG = 1;
+	 static final int ZOOM = 2;
+	 int mode = NONE;
 
 	private AutodefinidosApplication app;
 	private Integer dificultad;
@@ -34,6 +54,7 @@ public class JuegoActivity extends Activity {
 
 		app = (AutodefinidosApplication) getApplication();
 		tabla = (LinearLayout) findViewById(R.id.tablero);
+		tabla.setOnTouchListener(this);
 
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
@@ -42,8 +63,10 @@ public class JuegoActivity extends Activity {
 		}
 
 		crearTablero();
-
+		
 	}
+	
+	
 
 	private void crearTablero(){
 		
@@ -130,4 +153,80 @@ public class JuegoActivity extends Activity {
 		}
 	}
 
+
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		switch (event.getAction() & MotionEvent.ACTION_MASK) {
+		case MotionEvent.ACTION_DOWN:
+			start.set(event.getX(), event.getY());
+			mode = DRAG;
+			break;
+		case MotionEvent.ACTION_POINTER_DOWN:
+			oldDist = spacing(event);
+			oldDistPoint = spacingPoint(event);
+			if (oldDist > 10f) {
+				midPoint(mid, event);
+				mode = ZOOM;
+			}
+			break;
+		case MotionEvent.ACTION_UP:
+		case MotionEvent.ACTION_POINTER_UP:
+			mode = NONE;
+			break;
+		case MotionEvent.ACTION_MOVE:
+			if (mode == DRAG) {
+
+			} else if (mode == ZOOM) {
+				PointF newDist = spacingPoint(event);
+				float newD = spacing(event);
+				int scale = (int)(newD / oldDist);
+				Log.e(TAG, "distancia = " + newD);
+				Log.e(TAG, "zoom = " + scale);
+				if(scale>0){
+					zoom(scale, scale, start);
+				}
+			}
+			break;
+		}
+		return true;
+	}
+	
+	/** 
+	 * zooming is done from here 
+	 */
+	public void zoom(int scaleX, int scaleY, PointF pivot) {
+		tabla.setPivotX(pivot.x);
+		tabla.setPivotY(pivot.y);
+		tabla.setScaleX(scaleX);
+		tabla.setScaleY(scaleY);
+	}
+
+	/**
+	 * space between the first two fingers
+	 */
+	private float spacing(MotionEvent event) {
+		// ...
+		float x = event.getX(0) - event.getX(1);
+		float y = event.getY(0) - event.getY(1);
+		return FloatMath.sqrt(x * x + y * y);
+	}
+
+	private PointF spacingPoint(MotionEvent event) {
+		PointF f = new PointF();
+		f.x = event.getX(0) - event.getX(1);
+		f.y = event.getY(0) - event.getY(1);
+		return f;
+	}
+
+	/**
+	 * the mid point of the first two fingers
+	 */
+	private void midPoint(PointF point, MotionEvent event) {
+		// ...
+		float x = event.getX(0) + event.getX(1);
+		float y = event.getY(0) + event.getY(1);
+		point.set(x / 2, y / 2);
+	}
 }
+
