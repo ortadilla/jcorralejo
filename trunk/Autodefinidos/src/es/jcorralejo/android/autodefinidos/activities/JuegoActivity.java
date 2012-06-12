@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +23,7 @@ public class JuegoActivity extends Activity {
 	private Integer dificultad;
 	private Integer tamanio;
 	private Tablero tablero;
-	private TableLayout tabla;
+	private LinearLayout tabla;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,7 @@ public class JuegoActivity extends Activity {
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		app = (AutodefinidosApplication) getApplication();
-		tabla = (TableLayout) findViewById(R.id.tablero);
+		tabla = (LinearLayout) findViewById(R.id.tablero);
 
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
@@ -56,8 +55,8 @@ public class JuegoActivity extends Activity {
 				error = false;
 				int counter = 0;
 				for(int i=0; i<tablero.getAlto(); i++){
-					TableRow fila = new TableRow(this);
-					fila.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1));
+					LinearLayout fila = new LinearLayout(this);
+					fila.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1));
 					fila.setWeightSum(tablero.getAncho());
 					for(int j=0; j<tablero.getAncho(); j++){
 						counter++;
@@ -106,7 +105,7 @@ public class JuegoActivity extends Activity {
 							boolean flechaAbajo = i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajo(); 
 							boolean flechaAbajoDerecha = i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajoDerecha(); 
 							TextView t = new TextViewFlechas(this, flechaDerecha, flechaDerechaAbajo, flechaAbajo, flechaAbajoDerecha);
-							TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
+							LinearLayout.LayoutParams layoutParam = new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
 							layoutParam.setMargins(1, 1, 1, 1);
 							t.setLayoutParams(layoutParam);
 							t.setText("C " + counter);
