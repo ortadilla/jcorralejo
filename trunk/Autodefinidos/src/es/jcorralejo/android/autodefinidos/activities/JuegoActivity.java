@@ -228,5 +228,9 @@ public class JuegoActivity extends Activity implements OnTouchListener{
 		float y = event.getY(0) + event.getY(1);
 		point.set(x / 2, y / 2);
 	}
+	
+//	
+//	http://android-er.blogspot.com.es/2011/11/detect-pinch-zoom-using.html
+//	http://myandroidnote.blogspot.com.es/2011/03/pinch-zoom-to-view-completely.html
 }
 
