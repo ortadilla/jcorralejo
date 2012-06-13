@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.FloatMath;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
+import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
@@ -24,20 +26,21 @@ import es.jcorralejo.android.autodefinidos.utilities.TablerosHelper;
 import es.jcorralejo.android.autodefinidos.views.TextViewFlechas;
 
 public class JuegoActivity extends Activity implements OnTouchListener{
-	
+
 	// Remember some things for zooming
-	 PointF start = new PointF();
-	 PointF mid = new PointF();
+	PointF start = new PointF();
+	PointF mid = new PointF();
+	float oldDist = 1f;
+	PointF oldDistPoint = new PointF();
+	public static String TAG = "ZOOM";
+	static final int NONE = 0;
+	static final int DRAG = 1;
+	static final int ZOOM = 2;
+	int mode = NONE;
 
-	 float oldDist = 1f;
-	 PointF oldDistPoint = new PointF();
-
-	 public static String TAG = "ZOOM";
-
-	 static final int NONE = 0;
-	 static final int DRAG = 1;
-	 static final int ZOOM = 2;
-	 int mode = NONE;
+	ScaleGestureDetector scaleGestureDetector;
+	float xIni, yIni, xFin, yFin;
+	float spanIni, spanFin;
 
 	private AutodefinidosApplication app;
 	private Integer dificultad;
@@ -54,7 +57,8 @@ public class JuegoActivity extends Activity implements OnTouchListener{
 
 		app = (AutodefinidosApplication) getApplication();
 		tabla = (LinearLayout) findViewById(R.id.tablero);
-		tabla.setOnTouchListener(this);
+//		tabla.setOnTouchListener(this);
+		scaleGestureDetector = new ScaleGestureDetector(this, new simpleOnScaleGestureListener());
 
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
@@ -152,6 +156,14 @@ public class JuegoActivity extends Activity implements OnTouchListener{
 			finish();
 		}
 	}
+	
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		if(scaleGestureDetector.onTouchEvent(event))
+	         return true;
+
+	    return super.onTouchEvent(event);
+	}
 
 
 
@@ -229,8 +241,57 @@ public class JuegoActivity extends Activity implements OnTouchListener{
 		point.set(x / 2, y / 2);
 	}
 	
+	public class simpleOnScaleGestureListener extends SimpleOnScaleGestureListener {
+		
+		public float zoom;
+		private static final float MAX_ZOOM = 5.0f;
+		private static final float MIN_ZOOM = 0.25f;
+
+		@Override
+		public boolean onScale(ScaleGestureDetector detector) {
+			return super.onScale(detector);
+		}
+
+		@Override
+		public boolean onScaleBegin(ScaleGestureDetector detector) {
+//			System.out.println("INICIO");
+//			System.out.println("Scale factor: "+String.valueOf(detector.getScaleFactor()));
+//			System.out.println("Current Span: "+String.valueOf(detector.getCurrentSpan()));
+//			System.out.println("X: "+String.valueOf(detector.getFocusX())+", Y: "+String.valueOf(detector.getFocusY()));
+//			System.out.println();
+			
+			xIni = detector.getFocusX();
+			yIni = detector.getFocusY();
+			spanIni = detector.getCurrentSpan();
+			
+			return true;
+		}
+
+		@Override
+		public void onScaleEnd(ScaleGestureDetector detector) {
+//			System.out.println("FIN");
+//			System.out.println("Scale factor: "+String.valueOf(detector.getScaleFactor()));
+//			System.out.println("Current Span: "+String.valueOf(detector.getCurrentSpan()));
+//			System.out.println("X: "+String.valueOf(detector.getFocusX())+", Y: "+String.valueOf(detector.getFocusY()));
+//			System.out.println();
+
+			xFin = detector.getFocusX();
+			yFin = detector.getFocusY();
+			spanFin = detector.getCurrentSpan();
+
+			//Zoom in
+			if(spanFin>spanIni){
+//				tabla.
+			}
+		}
+		
+		
+
+	}
+	
 //	
 //	http://android-er.blogspot.com.es/2011/11/detect-pinch-zoom-using.html
 //	http://myandroidnote.blogspot.com.es/2011/03/pinch-zoom-to-view-completely.html
+//  http://code.google.com/p/android-touchexample/source/browse/trunk/src/com/example/android/touchexample/TouchExampleView.java
 }
 
