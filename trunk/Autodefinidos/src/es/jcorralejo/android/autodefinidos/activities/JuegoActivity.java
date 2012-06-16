@@ -4,13 +4,11 @@ import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.graphics.PointF;
 import android.os.Bundle;
-import android.util.FloatMath;
-import android.util.Log;
+import android.view.GestureDetector;
+import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener;
-import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.widget.LinearLayout;
@@ -25,22 +23,10 @@ import es.jcorralejo.android.autodefinidos.utilities.Constantes;
 import es.jcorralejo.android.autodefinidos.utilities.TablerosHelper;
 import es.jcorralejo.android.autodefinidos.views.TextViewFlechas;
 
-public class JuegoActivity extends Activity implements OnTouchListener{
-
-	// Remember some things for zooming
-	PointF start = new PointF();
-	PointF mid = new PointF();
-	float oldDist = 1f;
-	PointF oldDistPoint = new PointF();
-	public static String TAG = "ZOOM";
-	static final int NONE = 0;
-	static final int DRAG = 1;
-	static final int ZOOM = 2;
-	int mode = NONE;
+public class JuegoActivity extends Activity{
 
 	ScaleGestureDetector scaleGestureDetector;
-	float xIni, yIni, xFin, yFin;
-	float spanIni, spanFin;
+	GestureDetector gestureDetector;
 
 	private AutodefinidosApplication app;
 	private Integer dificultad;
@@ -57,8 +43,8 @@ public class JuegoActivity extends Activity implements OnTouchListener{
 
 		app = (AutodefinidosApplication) getApplication();
 		tabla = (LinearLayout) findViewById(R.id.tablero);
-//		tabla.setOnTouchListener(this);
-		scaleGestureDetector = new ScaleGestureDetector(this, new simpleOnScaleGestureListener());
+		scaleGestureDetector = new ScaleGestureDetector(this, new MySimpleOnScaleGestureListener());
+		gestureDetector = new GestureDetector(this, new MySimpleOnGestureListener());
 
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
@@ -159,93 +145,37 @@ public class JuegoActivity extends Activity implements OnTouchListener{
 	
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		if(scaleGestureDetector.onTouchEvent(event))
-	         return true;
-
-	    return super.onTouchEvent(event);
+		gestureDetector.onTouchEvent(event);
+		scaleGestureDetector.onTouchEvent(event);
+		return super.onTouchEvent(event);
 	}
 
-
-
-	@Override
-	public boolean onTouch(View v, MotionEvent event) {
-		switch (event.getAction() & MotionEvent.ACTION_MASK) {
-		case MotionEvent.ACTION_DOWN:
-			start.set(event.getX(), event.getY());
-			mode = DRAG;
-			break;
-		case MotionEvent.ACTION_POINTER_DOWN:
-			oldDist = spacing(event);
-			oldDistPoint = spacingPoint(event);
-			if (oldDist > 10f) {
-				midPoint(mid, event);
-				mode = ZOOM;
-			}
-			break;
-		case MotionEvent.ACTION_UP:
-		case MotionEvent.ACTION_POINTER_UP:
-			mode = NONE;
-			break;
-		case MotionEvent.ACTION_MOVE:
-			if (mode == DRAG) {
-
-			} else if (mode == ZOOM) {
-				PointF newDist = spacingPoint(event);
-				float newD = spacing(event);
-				int scale = (int)(newD / oldDist);
-				Log.e(TAG, "distancia = " + newD);
-				Log.e(TAG, "zoom = " + scale);
-				if(scale>0){
-					zoom(scale, scale, start);
-				}
-			}
-			break;
-		}
-		return true;
-	}
 	
-	/** 
-	 * zooming is done from here 
-	 */
-	public void zoom(int scaleX, int scaleY, PointF pivot) {
-		tabla.setPivotX(pivot.x);
-		tabla.setPivotY(pivot.y);
+	private void zoom(int scaleX, int scaleY, float x, float y) {
+		tabla.setPivotX(x);
+		tabla.setPivotY(y);
 		tabla.setScaleX(scaleX);
 		tabla.setScaleY(scaleY);
 	}
-
-	/**
-	 * space between the first two fingers
-	 */
-	private float spacing(MotionEvent event) {
-		// ...
-		float x = event.getX(0) - event.getX(1);
-		float y = event.getY(0) - event.getY(1);
-		return FloatMath.sqrt(x * x + y * y);
-	}
-
-	private PointF spacingPoint(MotionEvent event) {
-		PointF f = new PointF();
-		f.x = event.getX(0) - event.getX(1);
-		f.y = event.getY(0) - event.getY(1);
-		return f;
-	}
-
-	/**
-	 * the mid point of the first two fingers
-	 */
-	private void midPoint(PointF point, MotionEvent event) {
-		// ...
-		float x = event.getX(0) + event.getX(1);
-		float y = event.getY(0) + event.getY(1);
-		point.set(x / 2, y / 2);
-	}
 	
-	public class simpleOnScaleGestureListener extends SimpleOnScaleGestureListener {
+	private void mover(float x, float y) {
+		tabla.setPivotX(x);
+		tabla.setPivotY(y);
+	}
+
+	public class MySimpleOnScaleGestureListener extends SimpleOnScaleGestureListener {
 		
-		public float zoom;
-		private static final float MAX_ZOOM = 5.0f;
-		private static final float MIN_ZOOM = 0.25f;
+		float xIni, yIni, xFin, yFin;
+		float spanIni, spanFin;
+
+		public int zoom;
+		private static final int DISTANCIA_MINIMA_DEDOS = 100;
+		private static final int MAX_ZOOM = 3;
+		private static final int MIN_ZOOM = 1;
+		
+		public MySimpleOnScaleGestureListener() {
+			zoom = MIN_ZOOM;
+		}
 
 		@Override
 		public boolean onScale(ScaleGestureDetector detector) {
@@ -254,12 +184,6 @@ public class JuegoActivity extends Activity implements OnTouchListener{
 
 		@Override
 		public boolean onScaleBegin(ScaleGestureDetector detector) {
-//			System.out.println("INICIO");
-//			System.out.println("Scale factor: "+String.valueOf(detector.getScaleFactor()));
-//			System.out.println("Current Span: "+String.valueOf(detector.getCurrentSpan()));
-//			System.out.println("X: "+String.valueOf(detector.getFocusX())+", Y: "+String.valueOf(detector.getFocusY()));
-//			System.out.println();
-			
 			xIni = detector.getFocusX();
 			yIni = detector.getFocusY();
 			spanIni = detector.getCurrentSpan();
@@ -269,24 +193,57 @@ public class JuegoActivity extends Activity implements OnTouchListener{
 
 		@Override
 		public void onScaleEnd(ScaleGestureDetector detector) {
-//			System.out.println("FIN");
-//			System.out.println("Scale factor: "+String.valueOf(detector.getScaleFactor()));
-//			System.out.println("Current Span: "+String.valueOf(detector.getCurrentSpan()));
-//			System.out.println("X: "+String.valueOf(detector.getFocusX())+", Y: "+String.valueOf(detector.getFocusY()));
-//			System.out.println();
-
 			xFin = detector.getFocusX();
 			yFin = detector.getFocusY();
 			spanFin = detector.getCurrentSpan();
 
 			//Zoom in
-			if(spanFin>spanIni){
-//				tabla.
+			if(spanFin>spanIni && spanFin-spanIni>DISTANCIA_MINIMA_DEDOS && zoom<MAX_ZOOM){
+				zoom++;
+				zoom(zoom, zoom, xIni, yIni);
+			}
+			//Zoom out
+			else if (spanFin<spanIni && spanIni-spanFin>DISTANCIA_MINIMA_DEDOS && zoom>MIN_ZOOM){
+				zoom--;
+				zoom(zoom, zoom, xIni, yIni);
 			}
 		}
+	}
+	
+	public class MySimpleOnGestureListener extends SimpleOnGestureListener{
+		private static final int DISTANCIA_MINIMA_DEDOS = 100;
 		
-		
-
+		@Override
+		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+			int deltaX = (int)(e1.getRawX()-e2.getRawX());
+			int deltaY = (int)(e1.getRawY()-e2.getRawY());
+			float x, y;
+			
+			int absDeltaX = Math.abs(deltaX);
+			int absDeltaY = Math.abs(deltaY);
+			if(absDeltaX>DISTANCIA_MINIMA_DEDOS || absDeltaY>DISTANCIA_MINIMA_DEDOS){
+				if(absDeltaX > absDeltaY){
+					if(velocityX>0){
+						//Izquierda
+						System.out.println("IZQUIERDA");
+					}else{
+						System.out.println("DERECHA");
+						//Derecha
+					}
+				}else{
+					if(velocityY>0){
+						System.out.println("ARRIBA");
+						//Arriba
+					}else{
+						System.out.println("ABAJO");
+						//Abajo
+					}
+				}
+			}
+			
+			
+			return true;
+		}
 	}
 	
 //	
