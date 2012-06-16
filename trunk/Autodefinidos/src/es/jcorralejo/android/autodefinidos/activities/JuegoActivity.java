@@ -2,7 +2,6 @@ package es.jcorralejo.android.autodefinidos.activities;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
-import android.graphics.PointF;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
@@ -24,7 +23,8 @@ import es.jcorralejo.android.autodefinidos.utilities.TablerosHelper;
 import es.jcorralejo.android.autodefinidos.views.TextViewFlechas;
 
 public class JuegoActivity extends Activity{
-
+	
+	public int zoom;
 	ScaleGestureDetector scaleGestureDetector;
 	GestureDetector gestureDetector;
 
@@ -53,6 +53,7 @@ public class JuegoActivity extends Activity{
 		}
 
 		crearTablero();
+		
 		
 	}
 	
@@ -143,12 +144,12 @@ public class JuegoActivity extends Activity{
 		}
 	}
 	
-	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		gestureDetector.onTouchEvent(event);
-		scaleGestureDetector.onTouchEvent(event);
-		return super.onTouchEvent(event);
-	}
+//	@Override
+//	public boolean onTouchEvent(MotionEvent event) {
+//		gestureDetector.onTouchEvent(event);
+//		scaleGestureDetector.onTouchEvent(event);
+//		return super.onTouchEvent(event);
+//	}
 
 	
 	private void zoom(int scaleX, int scaleY, float x, float y) {
@@ -168,7 +169,6 @@ public class JuegoActivity extends Activity{
 		float xIni, yIni, xFin, yFin;
 		float spanIni, spanFin;
 
-		public int zoom;
 		private static final int DISTANCIA_MINIMA_DEDOS = 100;
 		private static final int MAX_ZOOM = 3;
 		private static final int MIN_ZOOM = 1;
@@ -208,6 +208,7 @@ public class JuegoActivity extends Activity{
 				zoom(zoom, zoom, xIni, yIni);
 			}
 		}
+
 	}
 	
 	public class MySimpleOnGestureListener extends SimpleOnGestureListener{
@@ -218,6 +219,10 @@ public class JuegoActivity extends Activity{
 			int deltaX = (int)(e1.getRawX()-e2.getRawX());
 			int deltaY = (int)(e1.getRawY()-e2.getRawY());
 			float x, y;
+
+			tabla.getWidth();
+			tabla.getHeight();
+			
 			
 			int absDeltaX = Math.abs(deltaX);
 			int absDeltaY = Math.abs(deltaY);
@@ -242,10 +247,56 @@ public class JuegoActivity extends Activity{
 			}
 			
 			
+			
 			return true;
 		}
 	}
 	
+
+	int prevX;  
+    int prevY; 
+    int mTouchSlop = 25;
+	public boolean onTouchEvent(MotionEvent event)
+	{
+		scaleGestureDetector.onTouchEvent(event);
+		
+		
+		int mScreenHeight = tabla.getHeight();   
+		int mScreenWidth = tabla.getWidth();  
+		int positionX = (int)event.getRawX();
+		int positionY = (int)event.getRawY();
+
+		switch(event.getAction())
+		{
+		case MotionEvent.ACTION_DOWN: {
+			if(zoom>1)
+			{
+				prevX = positionX;
+				prevY = positionY;
+			}
+		}
+		break;
+
+		case MotionEvent.ACTION_MOVE: 
+		{
+			if(zoom>1)
+			{
+				final int distY = positionY - prevY;  
+				final int distX = positionX - prevX; 
+
+				tabla.setPivotX(tabla.getPivotX() - distX);
+				tabla.setPivotY(tabla.getPivotY() - distY);
+
+				prevX = positionX;
+				prevY = positionY;
+			} 
+		}   
+		break;
+		case MotionEvent.ACTION_UP: 
+			break; 
+		}
+		return true;
+	}
 //	
 //	http://android-er.blogspot.com.es/2011/11/detect-pinch-zoom-using.html
 //	http://myandroidnote.blogspot.com.es/2011/03/pinch-zoom-to-view-completely.html
