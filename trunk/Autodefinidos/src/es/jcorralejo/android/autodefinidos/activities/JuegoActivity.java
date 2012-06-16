@@ -2,7 +2,9 @@ package es.jcorralejo.android.autodefinidos.activities;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
@@ -27,6 +29,13 @@ public class JuegoActivity extends Activity{
 	public int zoom;
 	ScaleGestureDetector scaleGestureDetector;
 	GestureDetector gestureDetector;
+	
+	int prevX;  
+    int prevY; 
+    int topeMinX;
+    int topeMinY;
+    int topeMaxX;
+    int topeMaxY;
 
 	private AutodefinidosApplication app;
 	private Integer dificultad;
@@ -53,8 +62,21 @@ public class JuegoActivity extends Activity{
 		}
 
 		crearTablero();
+		obtenerTopesPermitidos();
 		
+	}
+	
+	private void obtenerTopesPermitidos(){
+		Display display = getWindowManager().getDefaultDisplay();
+		Point size = new Point();
+		display.getSize(size);
+		int width = size.x;
+		int height = size.y;
 		
+		topeMinX = 0 - width/20;   
+		topeMinY = 0 - height/20;   
+		topeMaxX = width + width/20;   
+		topeMaxY = height + height/20;   
 	}
 	
 	
@@ -252,17 +274,10 @@ public class JuegoActivity extends Activity{
 		}
 	}
 	
-
-	int prevX;  
-    int prevY; 
-    int mTouchSlop = 25;
 	public boolean onTouchEvent(MotionEvent event)
 	{
 		scaleGestureDetector.onTouchEvent(event);
 		
-		
-		int mScreenHeight = tabla.getHeight();   
-		int mScreenWidth = tabla.getWidth();  
 		int positionX = (int)event.getRawX();
 		int positionY = (int)event.getRawY();
 
@@ -284,8 +299,14 @@ public class JuegoActivity extends Activity{
 				final int distY = positionY - prevY;  
 				final int distX = positionX - prevX; 
 
-				tabla.setPivotX(tabla.getPivotX() - distX);
-				tabla.setPivotY(tabla.getPivotY() - distY);
+				float nuevoX = tabla.getPivotX() - distX;
+				float nuevoY = tabla.getPivotY() - distY;
+				nuevoX = nuevoX<topeMinX ? topeMinX : nuevoX > topeMaxX ? topeMaxX : nuevoX;    
+				nuevoY = nuevoY<topeMinY ? topeMinY : nuevoY > topeMaxY ? topeMaxY : nuevoY;    
+//				if(nuevoX>topeMinX && nuevoX<topeMaxX && nuevoY>topeMinY && nuevoY<topeMaxY){
+					tabla.setPivotX(nuevoX);
+					tabla.setPivotY(nuevoY);
+//				}
 
 				prevX = positionX;
 				prevY = positionY;
