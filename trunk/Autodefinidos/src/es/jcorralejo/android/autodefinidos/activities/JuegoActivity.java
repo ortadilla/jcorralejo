@@ -5,8 +5,6 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
-import android.view.GestureDetector;
-import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener;
@@ -28,7 +26,6 @@ public class JuegoActivity extends Activity{
 	
 	public int zoom;
 	ScaleGestureDetector scaleGestureDetector;
-	GestureDetector gestureDetector;
 	
 	int prevX;  
     int prevY; 
@@ -53,7 +50,6 @@ public class JuegoActivity extends Activity{
 		app = (AutodefinidosApplication) getApplication();
 		tabla = (LinearLayout) findViewById(R.id.tablero);
 		scaleGestureDetector = new ScaleGestureDetector(this, new MySimpleOnScaleGestureListener());
-		gestureDetector = new GestureDetector(this, new MySimpleOnGestureListener());
 
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
@@ -79,85 +75,87 @@ public class JuegoActivity extends Activity{
 		topeMaxY = height + height/20;   
 	}
 	
+	private void obtenerTablero(){
+		if(tamanio!=null && dificultad!=null) {
+			tablero = TablerosHelper.crearTablero(tamanio);
+		}
+	}
+	
 	
 
 	private void crearTablero(){
 		
 		boolean error = true;
-		
-		if(tamanio!=null && dificultad!=null && tabla!=null){
-			tablero = TablerosHelper.crearTablero(tamanio);
-			if(tablero!=null){
-				error = false;
-				int counter = 0;
-				for(int i=0; i<tablero.getAlto(); i++){
-					LinearLayout fila = new LinearLayout(this);
-					fila.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1));
-					fila.setWeightSum(tablero.getAncho());
-					for(int j=0; j<tablero.getAncho(); j++){
-						counter++;
-						Casilla casilla = tablero.getCasilla(i,j);
-						
-						if(casilla.isPregunta()){
-							if(casilla.getNumPalabras()==1){
-								TextView t = new TextViewFlechas(this, false, false, false, false);
-								TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
-								layoutParam.setMargins(1, 1, 1, 1);
-								t.setLayoutParams(layoutParam);
-								t.setText("P 1");
-								t.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
-								fila.addView(t);
-							}else if (casilla.getNumPalabras()==2){
-								
-								LinearLayout ll = new LinearLayout(this);
-								ll.setWeightSum(2);
-								ll.setOrientation(LinearLayout.VERTICAL);
-								TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
-								layoutParam.setMargins(1, 1, 1, 1);
-								ll.setLayoutParams(layoutParam);
-								
-								TextView t = new TextViewFlechas(this, false, false, false, false);
-								LinearLayout.LayoutParams layoutParam2 = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1);
-								layoutParam2.setMargins(1, 1, 1, 1);
-								t.setLayoutParams(layoutParam2);
-								t.setText("P 1");
-								t.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
-								ll.addView(t);
-								
-								TextView t2 = new TextViewFlechas(this, false, false, false, false);
-								LinearLayout.LayoutParams layoutParam3 = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1);
-								layoutParam3.setMargins(1, 1, 1, 1);
-								t2.setLayoutParams(layoutParam3);
-								t2.setText("P 2");
-								t2.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
-								ll.addView(t2);
-								
-								fila.addView(ll);
-							}
-							
-						}else{
-							boolean flechaDerecha = j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerecha(); 
-							boolean flechaDerechaAbajo = j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerechaAbajo(); 
-							boolean flechaAbajo = i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajo(); 
-							boolean flechaAbajoDerecha = i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajoDerecha(); 
-							TextView t = new TextViewFlechas(this, flechaDerecha, flechaDerechaAbajo, flechaAbajo, flechaAbajoDerecha);
-							LinearLayout.LayoutParams layoutParam = new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
+		obtenerTablero();
+		if(tabla!=null && tablero!=null){
+			error = false;
+			int counter = 0;
+			for(int i=0; i<tablero.getAlto(); i++){
+				LinearLayout fila = new LinearLayout(this);
+				fila.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1));
+				fila.setWeightSum(tablero.getAncho());
+				for(int j=0; j<tablero.getAncho(); j++){
+					counter++;
+					Casilla casilla = tablero.getCasilla(i,j);
+					
+					if(casilla.isPregunta()){
+						if(casilla.getNumPalabras()==1){
+							TextView t = new TextViewFlechas(this, false, false, false, false);
+							TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
 							layoutParam.setMargins(1, 1, 1, 1);
 							t.setLayoutParams(layoutParam);
-							t.setText("C " + counter);
-							t.setBackgroundResource(R.drawable.fondo_casilla_libre);
+							t.setText("P 1");
+							t.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
 							fila.addView(t);
+						}else if (casilla.getNumPalabras()==2){
+							
+							LinearLayout ll = new LinearLayout(this);
+							ll.setWeightSum(2);
+							ll.setOrientation(LinearLayout.VERTICAL);
+							TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
+							layoutParam.setMargins(1, 1, 1, 1);
+							ll.setLayoutParams(layoutParam);
+							
+							TextView t = new TextViewFlechas(this, false, false, false, false);
+							LinearLayout.LayoutParams layoutParam2 = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1);
+							layoutParam2.setMargins(1, 1, 1, 1);
+							t.setLayoutParams(layoutParam2);
+							t.setText("P 1");
+							t.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
+							ll.addView(t);
+							
+							TextView t2 = new TextViewFlechas(this, false, false, false, false);
+							LinearLayout.LayoutParams layoutParam3 = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1);
+							layoutParam3.setMargins(1, 1, 1, 1);
+							t2.setLayoutParams(layoutParam3);
+							t2.setText("P 2");
+							t2.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
+							ll.addView(t2);
+							
+							fila.addView(ll);
 						}
 						
-						
-						
-						
+					}else{
+						boolean flechaDerecha = j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerecha(); 
+						boolean flechaDerechaAbajo = j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerechaAbajo(); 
+						boolean flechaAbajo = i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajo(); 
+						boolean flechaAbajoDerecha = i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajoDerecha(); 
+						TextView t = new TextViewFlechas(this, flechaDerecha, flechaDerechaAbajo, flechaAbajo, flechaAbajoDerecha);
+						LinearLayout.LayoutParams layoutParam = new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
+						layoutParam.setMargins(1, 1, 1, 1);
+						t.setLayoutParams(layoutParam);
+						t.setText("C " + counter);
+						t.setBackgroundResource(R.drawable.fondo_casilla_libre);
+						fila.addView(t);
 					}
-			        tabla.addView(fila);
+					
+					
+					
+					
 				}
-				tabla.setWeightSum(tablero.getAlto());
-				
+		        tabla.addView(fila);
 			}
+			tabla.setWeightSum(tablero.getAlto());
 		}
 		
 		if(error){
@@ -181,11 +179,6 @@ public class JuegoActivity extends Activity{
 		tabla.setScaleY(scaleY);
 	}
 	
-	private void mover(float x, float y) {
-		tabla.setPivotX(x);
-		tabla.setPivotY(y);
-	}
-
 	public class MySimpleOnScaleGestureListener extends SimpleOnScaleGestureListener {
 		
 		float xIni, yIni, xFin, yFin;
@@ -233,46 +226,6 @@ public class JuegoActivity extends Activity{
 
 	}
 	
-	public class MySimpleOnGestureListener extends SimpleOnGestureListener{
-		private static final int DISTANCIA_MINIMA_DEDOS = 100;
-		
-		@Override
-		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-			int deltaX = (int)(e1.getRawX()-e2.getRawX());
-			int deltaY = (int)(e1.getRawY()-e2.getRawY());
-			float x, y;
-
-			tabla.getWidth();
-			tabla.getHeight();
-			
-			
-			int absDeltaX = Math.abs(deltaX);
-			int absDeltaY = Math.abs(deltaY);
-			if(absDeltaX>DISTANCIA_MINIMA_DEDOS || absDeltaY>DISTANCIA_MINIMA_DEDOS){
-				if(absDeltaX > absDeltaY){
-					if(velocityX>0){
-						//Izquierda
-						System.out.println("IZQUIERDA");
-					}else{
-						System.out.println("DERECHA");
-						//Derecha
-					}
-				}else{
-					if(velocityY>0){
-						System.out.println("ARRIBA");
-						//Arriba
-					}else{
-						System.out.println("ABAJO");
-						//Abajo
-					}
-				}
-			}
-			
-			
-			
-			return true;
-		}
-	}
 	
 	public boolean onTouchEvent(MotionEvent event)
 	{
@@ -294,6 +247,7 @@ public class JuegoActivity extends Activity{
 
 		case MotionEvent.ACTION_MOVE: 
 		{
+			//Sólo se mueve si estamos con zoom aplicado
 			if(zoom>1)
 			{
 				final int distY = positionY - prevY;  
@@ -301,12 +255,11 @@ public class JuegoActivity extends Activity{
 
 				float nuevoX = tabla.getPivotX() - distX;
 				float nuevoY = tabla.getPivotY() - distY;
+				//No nos podemos salir de los límites
 				nuevoX = nuevoX<topeMinX ? topeMinX : nuevoX > topeMaxX ? topeMaxX : nuevoX;    
 				nuevoY = nuevoY<topeMinY ? topeMinY : nuevoY > topeMaxY ? topeMaxY : nuevoY;    
-//				if(nuevoX>topeMinX && nuevoX<topeMaxX && nuevoY>topeMinY && nuevoY<topeMaxY){
-					tabla.setPivotX(nuevoX);
-					tabla.setPivotY(nuevoY);
-//				}
+				tabla.setPivotX(nuevoX);
+				tabla.setPivotY(nuevoY);
 
 				prevX = positionX;
 				prevY = positionY;
@@ -318,9 +271,5 @@ public class JuegoActivity extends Activity{
 		}
 		return true;
 	}
-//	
-//	http://android-er.blogspot.com.es/2011/11/detect-pinch-zoom-using.html
-//	http://myandroidnote.blogspot.com.es/2011/03/pinch-zoom-to-view-completely.html
-//  http://code.google.com/p/android-touchexample/source/browse/trunk/src/com/example/android/touchexample/TouchExampleView.java
 }
 
