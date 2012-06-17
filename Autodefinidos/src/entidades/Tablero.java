@@ -1,5 +1,7 @@
 package entidades;
 
+import es.jcorralejo.android.autodefinidos.utilities.Constantes;
+
 
 public class Tablero {
 	
@@ -19,10 +21,28 @@ public class Tablero {
 			tablero[i][j] = casilla;
 	}
 	
-	public Tablero(int alto, int ancho) {
+	public Tablero(int tamanio){
+		int alto, ancho;
+		if(Constantes.TAMANIO_PEQUENIO == tamanio){
+			alto = Constantes.TAMANIO_PEQUENIO_ALTO;
+			ancho = Constantes.TAMANIO_PEQUENIO_ANCHO;
+		}
+		else if (Constantes.TAMANIO_MEDIANO == tamanio){
+			alto = Constantes.TAMANIO_MEDIANO_ALTO;
+			ancho = Constantes.TAMANIO_MEDIANO_ANCHO;
+		}
+		else if (Constantes.TAMANIO_GRANDE == tamanio){
+			alto = Constantes.TAMANIO_GRANDE_ALTO;
+			ancho = Constantes.TAMANIO_GRANDE_ANCHO;
+		}
+		else
+			throw new IllegalArgumentException("Tamaño de tablero no disponible");
+		
 		tablero = new Casilla[alto][ancho];
 		this.alto = alto;
 		this.ancho = ancho;
+		
+		
 	}
 	
 	public int getAlto(){

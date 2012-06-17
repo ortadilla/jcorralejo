@@ -14,7 +14,7 @@ public class TablerosHelper {
 	public static final List<Tablero> tablerosGrandes = null; //Arrays.asList(null);
 	
 	private static Tablero crearTableroPequenioUno(){
-		Tablero tablero = new Tablero(Constantes.TAMANIO_PEQUENIO_ALTO, Constantes.TAMANIO_PEQUENIO_ANCHO);
+		Tablero tablero = new Tablero(Constantes.TAMANIO_PEQUENIO);
 		for(int i=0; i<Constantes.TAMANIO_PEQUENIO_ALTO; i++){
 			for(int j=0; j<Constantes.TAMANIO_PEQUENIO_ANCHO; j++){
 				if(i==0 && j==0)
