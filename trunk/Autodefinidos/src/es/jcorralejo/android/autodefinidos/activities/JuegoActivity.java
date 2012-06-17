@@ -100,7 +100,7 @@ public class JuegoActivity extends Activity{
 					
 					if(casilla.isPregunta()){
 						if(casilla.getNumPalabras()==1){
-							TextView t = new TextViewFlechas(this, false, false, false, false);
+							TextView t = new TextViewFlechas(this, false, false, false, false, true);
 							TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
 							layoutParam.setMargins(1, 1, 1, 1);
 							t.setLayoutParams(layoutParam);
@@ -116,7 +116,7 @@ public class JuegoActivity extends Activity{
 							layoutParam.setMargins(1, 1, 1, 1);
 							ll.setLayoutParams(layoutParam);
 							
-							TextView t = new TextViewFlechas(this, false, false, false, false);
+							TextView t = new TextViewFlechas(this, false, false, false, false, true);
 							LinearLayout.LayoutParams layoutParam2 = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1);
 							layoutParam2.setMargins(1, 1, 1, 1);
 							t.setLayoutParams(layoutParam2);
@@ -124,7 +124,7 @@ public class JuegoActivity extends Activity{
 							t.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
 							ll.addView(t);
 							
-							TextView t2 = new TextViewFlechas(this, false, false, false, false);
+							TextView t2 = new TextViewFlechas(this, false, false, false, false, true);
 							LinearLayout.LayoutParams layoutParam3 = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1);
 							layoutParam3.setMargins(1, 1, 1, 1);
 							t2.setLayoutParams(layoutParam3);
@@ -139,8 +139,10 @@ public class JuegoActivity extends Activity{
 						boolean flechaDerecha = j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerecha(); 
 						boolean flechaDerechaAbajo = j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerechaAbajo(); 
 						boolean flechaAbajo = i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajo(); 
-						boolean flechaAbajoDerecha = i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajoDerecha(); 
-						TextView t = new TextViewFlechas(this, flechaDerecha, flechaDerechaAbajo, flechaAbajo, flechaAbajoDerecha);
+						boolean flechaAbajoDerecha = i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajoDerecha();
+						boolean centrado = j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).getNumPalabras()==1
+										|| i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).getNumPalabras()>0;
+						TextView t = new TextViewFlechas(this, flechaDerecha, flechaDerechaAbajo, flechaAbajo, flechaAbajoDerecha, centrado);
 						LinearLayout.LayoutParams layoutParam = new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
 						layoutParam.setMargins(1, 1, 1, 1);
 						t.setLayoutParams(layoutParam);
