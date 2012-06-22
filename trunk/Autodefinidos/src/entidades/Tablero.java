@@ -8,6 +8,8 @@ public class Tablero {
 	private Casilla[][] tablero;
 	private int alto;
 	private int ancho;
+	private int tamanio;
+	private int numero; // Indica, dentro de los tableros del mismo tamaño, cuál de ellos es
 	
 	public Casilla getCasilla(int i, int j){
 		Casilla casilla = null;
@@ -21,7 +23,10 @@ public class Tablero {
 			tablero[i][j] = casilla;
 	}
 	
-	public Tablero(int tamanio){
+	public Tablero(int tamanio, int numero){
+		this.tamanio = tamanio;
+		this.numero = numero;
+		
 		int alto, ancho;
 		if(Constantes.TAMANIO_PEQUENIO == tamanio){
 			alto = Constantes.TAMANIO_PEQUENIO_ALTO;
@@ -41,8 +46,6 @@ public class Tablero {
 		tablero = new Casilla[alto][ancho];
 		this.alto = alto;
 		this.ancho = ancho;
-		
-		
 	}
 	
 	public int getAlto(){
@@ -78,6 +81,5 @@ public class Tablero {
 			System.out.println("");
 		}
 	}
-
 
 }
