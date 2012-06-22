@@ -1,30 +1,23 @@
 package es.jcorralejo.android.autodefinidos.views;
 
+import java.util.List;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.widget.TextView;
+import entidades.Flecha;
 import es.jcorralejo.android.autodefinidos.utilities.Constantes;
 
 public class TextViewFlechas extends TextView{
+
+	private List<Flecha> flechas;
 	
-	boolean derecha; 
-	boolean derechaAbajo; 
-	boolean abajo; 
-	boolean abajoDerecha;
-	boolean centrado;
-	
-	public TextViewFlechas(Context context, boolean derecha, boolean derechaAbajo, boolean abajo, boolean abajoDerecha, boolean centrado) {
+	public TextViewFlechas(Context context, List<Flecha> flechas){
 		super(context);
-		
-		this.derecha = derecha;
-		this.derechaAbajo = derechaAbajo;
-		this.abajo = abajo;
-		this.abajoDerecha = abajoDerecha;
-		this.centrado = centrado;
-		
+		this.flechas = flechas;
 	}
 
 	@Override
@@ -92,16 +85,6 @@ public class TextViewFlechas extends TextView{
 	
 	private void pintarFlechas(Canvas canvas){
 		
-		int numFlechas = 0;
-		if(derecha)
-			numFlechas++;
-		if(derechaAbajo)
-			numFlechas++;
-		if(abajo)
-			numFlechas++;
-		if(abajoDerecha)
-			numFlechas++;
-		
 		int alto = getHeight();
 		int ancho = getWidth();
 		int anchoFlecha = (int) ((float)ancho * Constantes.PORCENTAJE_TAMANIO_FLECHA)/100;
@@ -111,26 +94,55 @@ public class TextViewFlechas extends TextView{
         paint.setColor(Color.BLACK);
         Path path = new Path();
         
-        int coefCentrado = centrado ? 1 : 2;
-        
-        if(numFlechas>0){
-        	int[][] puntosDerecha = {{0, alto/(coefCentrado+1) - anchoFlecha}, {anchoFlecha, alto/(coefCentrado+1)}, {0, alto/(coefCentrado+1) + anchoFlecha}};
-        	int[][] puntosDerechaAbajo = {{0, coefCentrado*alto/(coefCentrado+1)}, {2*anchoFlecha, coefCentrado*alto/(coefCentrado+1)}, {anchoFlecha, coefCentrado*alto/(coefCentrado+1) + 2*anchoFlecha}};
-        	int[][] puntosAbajo = {{ancho/(coefCentrado+1) - anchoFlecha, 0}, {ancho/(coefCentrado+1), anchoFlecha}, {ancho/(coefCentrado+1) + anchoFlecha, 0}};
-        	int[][] puntosAbajoDerecha = {{coefCentrado*ancho/(coefCentrado+1), 0}, {coefCentrado*ancho/(coefCentrado+1), 2*anchoFlecha}, {coefCentrado*ancho/(coefCentrado+1) + 2*anchoFlecha, anchoFlecha}};
+        if(flechas!=null && flechas.size()>0){
 
-        	if(derecha){
-        		pintarFlecha(canvas, path, paint, puntosDerecha);
+        	int[][] puntos = new int[3][2];
+        	for(Flecha flecha : flechas){
+        		if(flecha.isDerecha()){
+        			puntos[0][0] = 0; 
+        			puntos[0][1] = flecha.isPosicionArriba() ? alto/4 - anchoFlecha : flecha.isPosicionCentro() ? alto/2 - anchoFlecha : flecha.isPosicionAbajo() ? 3*alto/4 - anchoFlecha :0;
+        			
+        			puntos[1][0] = anchoFlecha; 
+        			puntos[1][1] = flecha.isPosicionArriba() ? alto/4 : flecha.isPosicionCentro() ? alto/2 : flecha.isPosicionAbajo() ? 3*alto/4 : 0;
+        			
+        			puntos[2][0] = 0; 
+        			puntos[2][1] = flecha.isPosicionArriba() ? alto/4 + anchoFlecha : flecha.isPosicionCentro() ? alto/2 + anchoFlecha : flecha.isPosicionAbajo() ? 3*alto/4 + anchoFlecha : 0; 
+        		}
+        		if(flecha.isDerechaAbajo()){
+        			puntos[0][0] = 0; 
+        			puntos[0][1] = flecha.isPosicionArriba() ? alto/4 : flecha.isPosicionCentro() ? alto/2 : flecha.isPosicionAbajo() ? 3*alto/4 : 0;
+        			
+        			puntos[1][0] = 2*anchoFlecha; 
+        			puntos[1][1] = flecha.isPosicionArriba() ? alto/4 : flecha.isPosicionCentro() ? alto/2 : flecha.isPosicionAbajo() ? 3*alto/4 : 0;
+        			
+        			puntos[2][0] = anchoFlecha; 
+        			puntos[2][1] = flecha.isPosicionArriba() ? alto/4 + 2*anchoFlecha : flecha.isPosicionCentro() ? alto/2 + 2*anchoFlecha : flecha.isPosicionAbajo() ? 3*alto/4 + 2*anchoFlecha : 0; 
+        		}
+        		if(flecha.isAbajo()){
+        			puntos[0][0] = ancho/2 - anchoFlecha; 
+        			puntos[0][1] = 0;
+        			
+        			puntos[1][0] = ancho/2 + anchoFlecha; 
+        			puntos[1][1] = 0;
+        			
+        			puntos[2][0] = ancho/2; 
+        			puntos[2][1] = anchoFlecha; 
+        		}
+        		if(flecha.isAbajoDerecha()){
+        			puntos[0][0] = ancho/2; 
+        			puntos[0][1] = 0;
+        			
+        			puntos[1][0] = ancho/2; 
+        			puntos[1][1] = 2*anchoFlecha;
+        			
+        			puntos[2][0] = ancho/2 + anchoFlecha; 
+        			puntos[2][1] = anchoFlecha; 
+
+        		}
+        		
+        		pintarFlecha(canvas, path, paint, puntos);
         	}
-        	if(derechaAbajo){
-        		pintarFlecha(canvas, path, paint, puntosDerechaAbajo);
-        	}
-        	if(abajo){
-    			pintarFlecha(canvas, path, paint, puntosAbajo);
-    		}
-        	if(abajoDerecha){
-    			pintarFlecha(canvas, path, paint, puntosAbajoDerecha);
-    		}
+        	
         }
         
         canvas.drawPath(path, paint);

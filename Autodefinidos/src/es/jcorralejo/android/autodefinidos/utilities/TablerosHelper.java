@@ -13,8 +13,27 @@ public class TablerosHelper {
 	public static final List<Tablero> tablerosMedianos = null; //Arrays.asList(null);
 	public static final List<Tablero> tablerosGrandes = null; //Arrays.asList(null);
 	
+	public static Tablero crearTablero(int tamanio){
+		Tablero tablero = null;
+
+		Random r = new Random(System.currentTimeMillis());
+		if(Constantes.TAMANIO_PEQUENIO == tamanio){
+			tablero = tablerosPequenios.get(r.nextInt(tablerosPequenios.size()));			
+		}else if (Constantes.TAMANIO_MEDIANO == tamanio){
+			tablero = tablerosMedianos.get(r.nextInt(tablerosMedianos.size()));			
+		}else if (Constantes.TAMANIO_GRANDE == tamanio){
+			tablero = tablerosGrandes.get(r.nextInt(tablerosGrandes.size()));			
+		}
+		
+		return tablero;
+	}
+	
+	public static void rellenarTablero(Tablero tablero){
+		
+	}
+	
 	private static Tablero crearTableroPequenioUno(){
-		Tablero tablero = new Tablero(Constantes.TAMANIO_PEQUENIO);
+		Tablero tablero = new Tablero(Constantes.TAMANIO_PEQUENIO, 1);
 		for(int i=0; i<Constantes.TAMANIO_PEQUENIO_ALTO; i++){
 			for(int j=0; j<Constantes.TAMANIO_PEQUENIO_ANCHO; j++){
 				if(i==0 && j==0)
@@ -31,19 +50,6 @@ public class TablerosHelper {
 		return tablero;
 	}
 	
-	public static Tablero crearTablero(int tamanio){
-		Tablero tablero = null;
-
-		Random r = new Random(System.currentTimeMillis());
-		if(Constantes.TAMANIO_PEQUENIO == tamanio){
-			tablero = tablerosPequenios.get(r.nextInt(tablerosPequenios.size()));			
-		}else if (Constantes.TAMANIO_MEDIANO == tamanio){
-			tablero = tablerosMedianos.get(r.nextInt(tablerosMedianos.size()));			
-		}else if (Constantes.TAMANIO_GRANDE == tamanio){
-			tablero = tablerosGrandes.get(r.nextInt(tablerosGrandes.size()));			
-		}
-		
-		return tablero;
-	}
+	
 
 }
