@@ -115,6 +115,8 @@ public class JuegoActivity extends Activity{
 							t.setLayoutParams(layoutParam);
 							t.setText(casilla.getPalabras().get(0).getDefinicion());
 							t.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
+							t.setVerticalScrollBarEnabled(true);
+							t.setEllipsize(TruncateAt.END);
 							t.setGravity(Gravity.CENTER);
 							fila.addView(t);
 						}else if (casilla.getNumPalabras()==2){
@@ -133,6 +135,8 @@ public class JuegoActivity extends Activity{
 							t.setText(casilla.getPalabras().get(0).getDefinicion());
 							t.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
 							t.setGravity(Gravity.CENTER);
+							t.setVerticalScrollBarEnabled(true);
+							t.setEllipsize(TruncateAt.END);
 							ll.addView(t);
 							
 							TextView t2 = new TextViewFlechas(this, flechas, false);
@@ -142,6 +146,8 @@ public class JuegoActivity extends Activity{
 							t2.setText(casilla.getPalabras().get(1).getDefinicion());
 							t2.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
 							t2.setGravity(Gravity.CENTER);
+							t2.setVerticalScrollBarEnabled(true);
+							t2.setEllipsize(TruncateAt.END);
 							ll.addView(t2);
 							
 							fila.addView(ll);
