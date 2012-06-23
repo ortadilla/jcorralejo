@@ -1,10 +1,13 @@
 package es.jcorralejo.android.autodefinidos.utilities;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 import entidades.Casilla;
+import entidades.Palabra;
+import entidades.PalabrasTablero;
 import entidades.Tablero;
 
 public class TablerosHelper {
@@ -28,10 +31,6 @@ public class TablerosHelper {
 		return tablero;
 	}
 	
-	public static void rellenarTablero(Tablero tablero){
-		
-	}
-	
 	private static Tablero crearTableroPequenioUno(){
 		Tablero tablero = new Tablero(Constantes.TAMANIO_PEQUENIO, 1);
 		for(int i=0; i<Constantes.TAMANIO_PEQUENIO_ALTO; i++){
@@ -50,6 +49,25 @@ public class TablerosHelper {
 		return tablero;
 	}
 	
-	
+
+	public static void rellenarTablero(Tablero tablero){
+		if(tablero!=null){
+			List<PalabrasTablero> pts = PalabrasTableroHelper.getPalabraTablero(tablero.getTamanio()+"-"+tablero.getPlantilla());
+			//Deberemos pillar o el que haya que cargar guardado o uno que no se haya jugado todavía
+			PalabrasTablero pt = pts.get(0);
+			for(int i=0; i<pt.getAlto(); i++){
+				for(int j=0; j<pt.getAncho(); j++){
+					Casilla palabras = pt.getPalabras(i, j);
+					if(palabras!=null && palabras.getPalabras().size()>0){
+						Casilla casilla = tablero.getCasilla(i, j);
+						casilla.setPalabras(new ArrayList<Palabra>());
+						for(int k=0; k<palabras.getPalabras().size(); k++){
+							casilla.getPalabras().add(palabras.getPalabras().get(k));
+						}
+					}
+				}
+			}
+		}
+	}
 
 }

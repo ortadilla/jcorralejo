@@ -8,6 +8,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener;
@@ -107,12 +108,13 @@ public class JuegoActivity extends Activity{
 					List<Flecha> flechas = new ArrayList<Flecha>();
 					if(casilla.isPregunta()){
 						if(casilla.getNumPalabras()==1){
-							TextView t = new TextViewFlechas(this, flechas);
+							TextView t = new TextViewFlechas(this, flechas, false);
 							TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
 							layoutParam.setMargins(1, 1, 1, 1);
 							t.setLayoutParams(layoutParam);
-							t.setText("P 1");
+							t.setText(casilla.getPalabras().get(0).getDefinicion());
 							t.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
+							t.setGravity(Gravity.CENTER);
 							fila.addView(t);
 						}else if (casilla.getNumPalabras()==2){
 							
@@ -123,20 +125,22 @@ public class JuegoActivity extends Activity{
 							layoutParam.setMargins(1, 1, 1, 1);
 							ll.setLayoutParams(layoutParam);
 							
-							TextView t = new TextViewFlechas(this, flechas);
+							TextView t = new TextViewFlechas(this, flechas, true);
 							LinearLayout.LayoutParams layoutParam2 = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1);
 							layoutParam2.setMargins(1, 1, 1, 1);
 							t.setLayoutParams(layoutParam2);
-							t.setText("P 1");
+							t.setText(casilla.getPalabras().get(0).getDefinicion());
 							t.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
+							t.setGravity(Gravity.CENTER);
 							ll.addView(t);
 							
-							TextView t2 = new TextViewFlechas(this, flechas);
+							TextView t2 = new TextViewFlechas(this, flechas, false);
 							LinearLayout.LayoutParams layoutParam3 = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1);
 							layoutParam3.setMargins(1, 1, 1, 1);
 							t2.setLayoutParams(layoutParam3);
-							t2.setText("P 2");
+							t2.setText(casilla.getPalabras().get(1).getDefinicion());
 							t2.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
+							t2.setGravity(Gravity.CENTER);
 							ll.addView(t2);
 							
 							fila.addView(ll);
@@ -164,7 +168,7 @@ public class JuegoActivity extends Activity{
 										  ? Flecha.POSICION_ARRIBA : Flecha.POSICION_ABAJO));
 						}
 										
-						TextView t = new TextViewFlechas(this, flechas);
+						TextView t = new TextViewFlechas(this, flechas, false);
 						LinearLayout.LayoutParams layoutParam = new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
 						layoutParam.setMargins(1, 1, 1, 1);
 						t.setLayoutParams(layoutParam);

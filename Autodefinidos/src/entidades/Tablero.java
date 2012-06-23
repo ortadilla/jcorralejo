@@ -9,7 +9,7 @@ public class Tablero {
 	private int alto;
 	private int ancho;
 	private int tamanio;
-	private int numero; // Indica, dentro de los tableros del mismo tamaño, cuál de ellos es
+	private int plantilla; // Indica la plantilla dentro de los tableros del mismo tamaño
 	
 	public Casilla getCasilla(int i, int j){
 		Casilla casilla = null;
@@ -23,9 +23,9 @@ public class Tablero {
 			tablero[i][j] = casilla;
 	}
 	
-	public Tablero(int tamanio, int numero){
+	public Tablero(int tamanio, int plantilla){
 		this.tamanio = tamanio;
-		this.numero = numero;
+		this.plantilla = plantilla;
 		
 		int alto, ancho;
 		if(Constantes.TAMANIO_PEQUENIO == tamanio){
@@ -80,6 +80,22 @@ public class Tablero {
 			}
 			System.out.println("");
 		}
+	}
+
+	public int getTamanio() {
+		return tamanio;
+	}
+
+	public void setTamanio(int tamanio) {
+		this.tamanio = tamanio;
+	}
+
+	public int getPlantilla() {
+		return plantilla;
+	}
+
+	public void setPlantilla(int plantilla) {
+		this.plantilla = plantilla;
 	}
 
 }

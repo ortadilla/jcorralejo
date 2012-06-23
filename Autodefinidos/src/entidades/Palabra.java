@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public class Palabra implements Serializable{
 	
+	public static final String DIFICULTAD_FACIL = "FACIL";
+	public static final String DIFICULTAD_NORMAL = "NORMAL";
+	public static final String DIFICULTAD_DIFICIL = "DIFICIL";
+	
 	private static final long serialVersionUID = -3165576754401688970L;
 	
 	private Integer id;
