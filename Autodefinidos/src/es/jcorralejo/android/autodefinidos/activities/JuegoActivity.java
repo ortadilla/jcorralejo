@@ -143,18 +143,25 @@ public class JuegoActivity extends Activity{
 						}
 						
 					}else{
-						boolean flechaDerecha = j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerecha(); 
-						boolean flechaDerechaAbajo = j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerechaAbajo(); 
-										
 						if(i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajo())
 							flechas.add(new Flecha(Casilla.DIRECCION_ABAJO, Flecha.POSICION_CENTRO));
 						if(i>0 && tablero.getCasilla(i-1,j).isPregunta() && tablero.getCasilla(i-1,j).isAbajoDerecha())
 							flechas.add(new Flecha(Casilla.DIRECCION_ABAJO_DERECHA, Flecha.POSICION_CENTRO));
 						if(j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerecha()){
-							tablero.getCasilla(i,j-1).getDirecciones()
+							if(tablero.getCasilla(i,j-1).getDirecciones().size()==1)
+								flechas.add(new Flecha(Casilla.DIRECCION_DERECHA, Flecha.POSICION_CENTRO));
+							else
+								flechas.add(new Flecha(Casilla.DIRECCION_DERECHA, 
+											tablero.getCasilla(i,j-1).getDirecciones().get(0)==Casilla.DIRECCION_DERECHA 
+										  ? Flecha.POSICION_ARRIBA : Flecha.POSICION_ABAJO));
 						}
 						if(j>0 && tablero.getCasilla(i,j-1).isPregunta() && tablero.getCasilla(i,j-1).isDerechaAbajo()){
-							
+							if(tablero.getCasilla(i,j-1).getDirecciones().size()==1)
+								flechas.add(new Flecha(Casilla.DIRECCION_DERECHA_ABAJO, Flecha.POSICION_CENTRO));
+							else
+								flechas.add(new Flecha(Casilla.DIRECCION_DERECHA_ABAJO, 
+											tablero.getCasilla(i,j-1).getDirecciones().get(0)==Casilla.DIRECCION_DERECHA_ABAJO 
+										  ? Flecha.POSICION_ARRIBA : Flecha.POSICION_ABAJO));
 						}
 										
 						TextView t = new TextViewFlechas(this, flechas);

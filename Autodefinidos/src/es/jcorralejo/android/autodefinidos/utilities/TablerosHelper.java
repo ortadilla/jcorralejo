@@ -37,11 +37,11 @@ public class TablerosHelper {
 		for(int i=0; i<Constantes.TAMANIO_PEQUENIO_ALTO; i++){
 			for(int j=0; j<Constantes.TAMANIO_PEQUENIO_ANCHO; j++){
 				if(i==0 && j==0)
-					tablero.setCasilla(i, j, new Casilla(null, null, null, 2, Arrays.asList(Casilla.DIRECCION_ABAJO_DERECHA, Casilla.DIRECCION_DERECHA_ABAJO), true));
+					tablero.setCasilla(i, j, new Casilla(null, null, null, 2, Arrays.asList(Casilla.DIRECCION_DERECHA_ABAJO, Casilla.DIRECCION_ABAJO_DERECHA), true));
 				else if((i==2 && j==0) || (i==4 && j==0) || (i==6 && j==0))
 					tablero.setCasilla(i, j, new Casilla(null, null, null, 2, Arrays.asList(Casilla.DIRECCION_DERECHA, Casilla.DIRECCION_ABAJO_DERECHA), true));
 				else if((i==0 && j==2) || (i==0 && j==4))
-					tablero.setCasilla(i, j, new Casilla(null, null, null, 2, Arrays.asList(Casilla.DIRECCION_ABAJO, Casilla.DIRECCION_DERECHA_ABAJO), true));
+					tablero.setCasilla(i, j, new Casilla(null, null, null, 2, Arrays.asList(Casilla.DIRECCION_DERECHA_ABAJO, Casilla.DIRECCION_ABAJO), true));
 				else
 					tablero.setCasilla(i, j, new Casilla(null, null, null, 0, null, false));
 			}
