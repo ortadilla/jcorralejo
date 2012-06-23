@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.text.TextUtils.TruncateAt;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.MotionEvent;
