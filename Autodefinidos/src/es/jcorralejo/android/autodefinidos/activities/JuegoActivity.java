@@ -8,6 +8,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.text.TextUtils.TruncateAt;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -96,28 +97,29 @@ public class JuegoActivity extends Activity{
 		obtenerTablero();
 		if(tabla!=null && tablero!=null){
 			error = false;
-			int counter = 0;
+//			int counter = 0;
 			for(int i=0; i<tablero.getAlto(); i++){
 				LinearLayout fila = new LinearLayout(this);
 				fila.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1));
 				fila.setWeightSum(tablero.getAncho());
 				for(int j=0; j<tablero.getAncho(); j++){
-					counter++;
+//					counter++;
 					Casilla casilla = tablero.getCasilla(i,j);
 					
 					
 					List<Flecha> flechas = new ArrayList<Flecha>();
 					if(casilla.isPregunta()){
 						if(casilla.getNumPalabras()==1){
-							TextView t = new TextViewFlechas(this, flechas, false);
+							TextView t = new TextViewFlechas(this, flechas, false, true);
 							TableRow.LayoutParams layoutParam = new TableRow.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
 							layoutParam.setMargins(1, 1, 1, 1);
 							t.setLayoutParams(layoutParam);
 							t.setText(casilla.getPalabras().get(0).getDefinicion());
 							t.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
-							t.setVerticalScrollBarEnabled(true);
-							t.setEllipsize(TruncateAt.END);
 							t.setGravity(Gravity.CENTER);
+							t.setEllipsize(TruncateAt.END);
+							t.setMaxLines(2);
+//							t.setTextSize(TypedValue.COMPLEX_UNIT_PX, 17);
 							fila.addView(t);
 						}else if (casilla.getNumPalabras()==2){
 							
@@ -128,26 +130,28 @@ public class JuegoActivity extends Activity{
 							layoutParam.setMargins(1, 1, 1, 1);
 							ll.setLayoutParams(layoutParam);
 							
-							TextView t = new TextViewFlechas(this, flechas, true);
+							TextView t = new TextViewFlechas(this, flechas, true, true);
 							LinearLayout.LayoutParams layoutParam2 = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1);
 							layoutParam2.setMargins(1, 1, 1, 1);
 							t.setLayoutParams(layoutParam2);
 							t.setText(casilla.getPalabras().get(0).getDefinicion());
 							t.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
 							t.setGravity(Gravity.CENTER);
-							t.setVerticalScrollBarEnabled(true);
+							t.setMaxLines(2);
 							t.setEllipsize(TruncateAt.END);
+//							t.setTextSize(TypedValue.COMPLEX_UNIT_PX, 17);
 							ll.addView(t);
 							
-							TextView t2 = new TextViewFlechas(this, flechas, false);
+							TextView t2 = new TextViewFlechas(this, flechas, false, true);
 							LinearLayout.LayoutParams layoutParam3 = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1);
 							layoutParam3.setMargins(1, 1, 1, 1);
 							t2.setLayoutParams(layoutParam3);
 							t2.setText(casilla.getPalabras().get(1).getDefinicion());
 							t2.setBackgroundResource(R.drawable.fondo_casilla_ocupada);
 							t2.setGravity(Gravity.CENTER);
-							t2.setVerticalScrollBarEnabled(true);
 							t2.setEllipsize(TruncateAt.END);
+							t2.setMaxLines(2);
+//							t2.setTextSize(TypedValue.COMPLEX_UNIT_PX, 17);
 							ll.addView(t2);
 							
 							fila.addView(ll);
@@ -175,11 +179,10 @@ public class JuegoActivity extends Activity{
 										  ? Flecha.POSICION_ARRIBA : Flecha.POSICION_ABAJO));
 						}
 										
-						TextView t = new TextViewFlechas(this, flechas, false);
+						TextView t = new TextViewFlechas(this, flechas, false, false);
 						LinearLayout.LayoutParams layoutParam = new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
 						layoutParam.setMargins(1, 1, 1, 1);
 						t.setLayoutParams(layoutParam);
-						t.setText("C " + counter);
 						t.setBackgroundResource(R.drawable.fondo_casilla_libre);
 						fila.addView(t);
 					}

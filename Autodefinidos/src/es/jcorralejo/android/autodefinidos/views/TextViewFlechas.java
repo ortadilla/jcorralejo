@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.util.TypedValue;
 import android.widget.TextView;
 import entidades.Flecha;
 import es.jcorralejo.android.autodefinidos.utilities.Constantes;
@@ -14,12 +15,25 @@ import es.jcorralejo.android.autodefinidos.utilities.Constantes;
 public class TextViewFlechas extends TextView{
 
 	private List<Flecha> flechas;
-	private boolean dividir;
+	private boolean lineaIntermedia;
+	private boolean pregunta;
 	
-	public TextViewFlechas(Context context, List<Flecha> flechas, boolean dividir){
+	public TextViewFlechas(Context context, List<Flecha> flechas, boolean lineaIntermedia, boolean pregunta){
 		super(context);
 		this.flechas = flechas;
-		this.dividir = dividir;
+		this.lineaIntermedia = lineaIntermedia;
+		this.pregunta = pregunta;
+	}
+	
+	private void adaptarTamanioTexto(){
+		//Por un lado las casillas con pregunta
+		if(pregunta){
+			float tamanio = lineaIntermedia ? getWidth()/4 : getWidth()/8; 
+			setTextSize(TypedValue.COMPLEX_UNIT_PX, tamanio);
+			System.out.println("tamaño: "+tamanio);
+		}else{
+			
+		}
 	}
 
 	@Override
@@ -27,6 +41,7 @@ public class TextViewFlechas extends TextView{
 		super.onDraw(canvas);
 
 		pintarFlechas(canvas);
+		adaptarTamanioTexto();
 	}
 
 	private void pintarFlechas(Canvas canvas){
@@ -90,13 +105,13 @@ public class TextViewFlechas extends TextView{
         	}
         }
         
-        if(dividir)
-        	dividir(canvas, paint, alto, ancho);
+        if(lineaIntermedia)
+        	pintarLineaIntermedia(canvas, paint, alto, ancho);
         
         canvas.drawPath(path, paint);
 	}
 	
-	private void dividir(Canvas canvas, Paint paint, int alto, int ancho){
+	private void pintarLineaIntermedia(Canvas canvas, Paint paint, int alto, int ancho){
     	paint.setStrokeWidth(1);
     	paint.setColor(Color.WHITE);
     	canvas.drawLine(0, alto-1, ancho, alto-1, paint);
