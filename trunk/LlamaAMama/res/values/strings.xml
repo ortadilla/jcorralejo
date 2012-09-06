@@ -2,6 +2,10 @@
 <resources>
 
     <string name="hello">Hello World, LlamaAMamaActivity!</string>
-    <string name="app_name">LlamaAMama</string>
+    <string name="app_name">¡Llama a Mamá!</string>
+    <string name="contacto">Contacto</string>
+    <string name="descripcion_configuracion">Selecciona cuál de tus contactos es el de tu madre:</string>
+    <string name="descripcion_configuracion_2">O si lo prefiere escriba su teléfono a continuación:</string>
+    
 
 </resources>

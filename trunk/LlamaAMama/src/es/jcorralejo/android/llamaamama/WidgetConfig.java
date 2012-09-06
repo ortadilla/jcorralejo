@@ -21,23 +21,19 @@ public class WidgetConfig extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.widget_config);
 
-        //Obtenemos el Intent que ha lanzado esta ventana
-        //y recuperamos sus parámetros
+        //Obtenemos el Intent que ha lanzado esta ventana y recuperamos sus parámetros
         Intent intentOrigen = getIntent();
         Bundle params = intentOrigen.getExtras();
         
         //Obtenemos el ID del widget que se está configurando
-		widgetId = params.getInt(
-			      		AppWidgetManager.EXTRA_APPWIDGET_ID,
-			      		AppWidgetManager.INVALID_APPWIDGET_ID);
+		widgetId = params.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
         
 		//Obtenemos la referencia a los controles de la pantalla
         final Button btnAceptar = (Button)findViewById(R.id.BtnAceptar);
         final Button btnCancelar = (Button)findViewById(R.id.BtnCancelar);
         final EditText txtMensaje = (EditText)findViewById(R.id.TxtMensaje);
         
-        //Establecemos el resultado por defecto (si se pulsa el botón 'Atrás'
-        //del teléfono será éste el resultado devuelto).
+        //Establecemos el resultado por defecto (si se pulsa el botón 'Atrás' del teléfono será éste el resultado devuelto).
         setResult(RESULT_CANCELED);
         
         //Implementación del botón "Cancelar"
@@ -54,8 +50,7 @@ public class WidgetConfig extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				//Guardamos el mensaje personalizado en las preferencias
-				SharedPreferences prefs = 
-					getSharedPreferences("WidgetPrefs", Context.MODE_PRIVATE);
+				SharedPreferences prefs = getSharedPreferences("WidgetPrefs", Context.MODE_PRIVATE);
 				SharedPreferences.Editor editor = prefs.edit();
 				editor.putString("msg_" + widgetId, txtMensaje.getText().toString());
 				editor.commit();
