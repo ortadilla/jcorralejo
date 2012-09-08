@@ -3,7 +3,7 @@
 	android:initialLayout="@layout/miwidget"
 	android:minWidth="146dip"
 	android:minHeight="146dip"
-	android:label="Mi Primer Widget"
+	android:label="@string/app_name"
 	android:updatePeriodMillis="60000" 
 	android:configure="es.jcorralejo.android.llamaamama.WidgetConfig"
 />
