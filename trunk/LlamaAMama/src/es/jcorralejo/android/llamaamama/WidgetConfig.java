@@ -111,8 +111,10 @@ public class WidgetConfig extends Activity {
 							tfns[i] = cursorTfns.getString(0);
 							cursorTfns.moveToNext();
 						}
-						
-						lanzarPopUpTfns(tfns);
+						if(tfns.length>1)
+							lanzarPopUpTfns(tfns);
+						else
+							txtTfno.setText(tfns[0]);
 						
 					}else{
 						Toast.makeText(getApplicationContext(), R.string.error_no_tfn, Toast.LENGTH_LONG).show();

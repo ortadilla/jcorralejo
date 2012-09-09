@@ -7,6 +7,7 @@
     <string name="descripcion_configuracion">Selecciona cuál de tus contactos es el de tu madre:</string>
     <string name="descripcion_configuracion_2">O si lo prefiere escriba su teléfono a continuación:</string>
     <string name="error_no_tfn">El contacto seleccionado no dispone de Número de Teléfono</string>
+    <string name="icono">Icono</string>
     <string name="seleccion_tfn">Selecciona el teléfono al que se llamará:</string>
     
 
