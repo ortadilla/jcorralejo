@@ -68,23 +68,46 @@ public class WidgetConfig extends Activity {
 		btnAceptar.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				//Guardamos el mensaje personalizado en las preferencias
-				SharedPreferences prefs = getSharedPreferences("WidgetPrefs", Context.MODE_PRIVATE);
-				SharedPreferences.Editor editor = prefs.edit();
-				editor.putString("msg_" + widgetId, txtTfno.getText().toString());
-				editor.commit();
+				String telefono = txtTfno.getText().toString();
+				if(telefonoCorrecto(telefono)){
+					//Guardamos el mensaje personalizado en las preferencias
+					SharedPreferences prefs = getSharedPreferences("WidgetPrefs", Context.MODE_PRIVATE);
+					SharedPreferences.Editor editor = prefs.edit();
+					editor.putString("msg_" + widgetId, telefono);
+					editor.commit();
 
-				//Actualizamos el widget tras la configuración
-				AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(WidgetConfig.this);
-				MiWidget.actualizarWidget(WidgetConfig.this, appWidgetManager, widgetId);
+					//Actualizamos el widget tras la configuración
+					AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(WidgetConfig.this);
+					MiWidget.actualizarWidget(WidgetConfig.this, appWidgetManager, widgetId);
 
-				//Devolvemos como resultado: ACEPTAR (RESULT_OK)
-				Intent resultado = new Intent();
-				resultado.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);
-				setResult(RESULT_OK, resultado);
-				finish();
+					//Devolvemos como resultado: ACEPTAR (RESULT_OK)
+					Intent resultado = new Intent();
+					resultado.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);
+					setResult(RESULT_OK, resultado);
+					finish();
+				}
 			}
 		});
+	}
+	
+	private boolean telefonoCorrecto(String telefono){
+		boolean correcto = true;
+		
+		// Comprobamos que se haya rellenado el teléfono
+		if(telefono==null || "".equals(telefono)){
+			Toast.makeText(getApplicationContext(), R.string.error_no_tfn, Toast.LENGTH_LONG).show();
+			correcto = false;
+		}else{
+			// Comprobamos que el teléfono sea un número
+			try{
+				Integer.parseInt(telefono);
+			}catch(Exception e){
+				Toast.makeText(getApplicationContext(), R.string.error_tfn_incorrecto, Toast.LENGTH_LONG).show();
+				correcto = false;
+			}
+		}
+		
+		return correcto;
 	}
 
 	@Override
@@ -117,7 +140,7 @@ public class WidgetConfig extends Activity {
 							txtTfno.setText(tfns[0]);
 						
 					}else{
-						Toast.makeText(getApplicationContext(), R.string.error_no_tfn, Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), R.string.error_no_tfn_contacto, Toast.LENGTH_LONG).show();
 					}
 				}
 			}
