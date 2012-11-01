@@ -105,25 +105,16 @@ public class MiWidget extends AppWidgetProvider {
 		int imagen;
 		switch (dias) {
 			case 0: 
-				imagen = R.drawable.cero;
+				imagen = R.drawable.bn1;
 				break;
 			case 1:
-				imagen = R.drawable.uno;
+				imagen = R.drawable.bn2;
 				break;
 			case 2:
-				imagen = R.drawable.dos;
-				break;
-			case 3:
-				imagen = R.drawable.tres;
-				break;
-			case 4:
-				imagen = R.drawable.cuatro;
-				break;
-			case 5:
-				imagen = R.drawable.cinco;
+				imagen = R.drawable.bn3;
 				break;
 			default:
-				imagen = R.drawable.seis;
+				imagen = R.drawable.bn4;
 				break;
 		}
 		return imagen;
