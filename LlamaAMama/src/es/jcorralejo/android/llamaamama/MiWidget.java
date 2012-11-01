@@ -70,6 +70,25 @@ public class MiWidget extends AppWidgetProvider {
 				actualizarWidget(context, widgetManager, widgetId);
 			}
 		}
+		
+		else if(intent.getAction().equals("es.jcorralejo.android.llamaamama.LLAMA")) {
+			//Recuperamos el telefono para el widget actual
+			int widgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
+			SharedPreferences prefs = context.getSharedPreferences("WidgetPrefs", Context.MODE_PRIVATE);
+			String tfn = prefs.getString("msg_" + widgetId, "----------");
+			
+			//Llamamos
+			Intent intentLlamada = new Intent(Intent.ACTION_CALL);
+			intentLlamada.setData(Uri.parse("tel:"+tfn));
+			intentLlamada.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			context.startActivity(intentLlamada);
+			
+			//Modificamos la imagen
+			RemoteViews controles = new RemoteViews(context.getPackageName(), R.layout.miwidget);
+			controles.setImageViewResource(R.id.imagen, obtenerImagen(0));
+			AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+			appWidgetManager.updateAppWidget(widgetId, controles);
+		}
 
 		super.onReceive(context, intent);
 	}
@@ -86,9 +105,8 @@ public class MiWidget extends AppWidgetProvider {
 		RemoteViews controles = new RemoteViews(context.getPackageName(), R.layout.miwidget);
 
 		//Asociamos los 'eventos' al widget
-		Intent intent = new Intent(Intent.ACTION_CALL);
-		intent.setData(Uri.parse("tel:"+tfn));
-//		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);
+		Intent intent = new Intent("es.jcorralejo.android.llamaamama.LLAMA");
+		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(context, widgetId, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
 		//Configuramos la llamada al tocar la imagen

@@ -101,6 +101,11 @@ public class WidgetConfig extends Activity {
 			// Comprobamos que el teléfono sea un número
 			try{
 				Integer.parseInt(telefono);
+				//De al menos 9 dígitos
+				if(telefono.length()<9){
+					Toast.makeText(getApplicationContext(), R.string.error_tfn_incorrecto, Toast.LENGTH_LONG).show();
+					correcto = false;
+				}
 			}catch(Exception e){
 				Toast.makeText(getApplicationContext(), R.string.error_tfn_incorrecto, Toast.LENGTH_LONG).show();
 				correcto = false;
