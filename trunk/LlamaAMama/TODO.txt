@@ -1,5 +1,7 @@
 Iconos zubiela
 Actualizar sólo cuando se hace la llamada
+Actualizar al recibir una llamada
+Iconos con distintos tamaños
 Indicar el tiempo sin llamar y el contacto
 Estilo de la pantalla de configuración
 Probar si actualiza al pasar el tiempo el icono
