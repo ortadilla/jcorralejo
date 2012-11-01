@@ -1,0 +1,7 @@
+Iconos zubiela
+Actualizar sólo cuando se hace la llamada
+Indicar el tiempo sin llamar y el contacto
+Estilo de la pantalla de configuración
+Probar si actualiza al pasar el tiempo el icono
+Renombrar a llamame
+Diseñar un icono para la aplicación
