@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/buscar"
+        android:icon="@drawable/action_search"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="@string/buscar"/>
+    <item
+        android:id="@+id/actualizar"
+        android:icon="@drawable/navigation_refresh"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="@string/actualizar"/>
+    <item
+        android:id="@+id/info"
+        android:icon="@drawable/action_about"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="@string/info"/>
+    <item
+        android:id="@+id/salir"
+        android:icon="@drawable/navigation_cancel"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="@string/salir"/>
+
+</menu>
