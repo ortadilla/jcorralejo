@@ -26,8 +26,8 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
         actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setDisplayUseLogoEnabled(false);
-//        actionBar.setDisplayShowTitleEnabled(false);
-//        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowHomeEnabled(false);
         
         Tab tabConcurso = actionBar.newTab();
         tabConcurso.setText("Concurso");
@@ -43,6 +43,8 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
         tabMas.setText("Modalidades");
         tabMas.setTabListener(this);
         actionBar.addTab(tabMas);
+        
+        http://developer.android.com/design/patterns/swipe-views.html
     }
 	
     @Override
