@@ -6,6 +6,7 @@
     <string name="app_name">Carnavapp</string>
     <string name="buscar">Buscar</string>
     <string name="info">Información</string>
+    <string name="opciones">Opciones</string>
     <string name="salir">Salir</string>
 
 </resources>
