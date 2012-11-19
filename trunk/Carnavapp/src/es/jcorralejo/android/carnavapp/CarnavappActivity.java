@@ -45,7 +45,8 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
         actionBar.addTab(tabMas);
         
         http://developer.android.com/design/patterns/swipe-views.html
-    	http://www.buzzingandroid.com/2012/11/tab-swipe-between-fragments-using-actionbarsherlock/
+        http://www.buzzingandroid.com/2012/11/tab-swipe-between-fragments-using-actionbarsherlock/
+        https://github.com/jesperborgstrup/buzzingandroid/blob/master/src/com/buzzingandroid/tabswipe/TabSwipeActivity.java
     }
 	
     @Override
