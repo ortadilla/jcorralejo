@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.util.TypedValue;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -16,8 +17,6 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
-
-import es.jcorralejo.android.carnavapp.R.style;
 
 public class CarnavappActivity extends SherlockActivity implements TabListener{
 	
@@ -49,6 +48,7 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
         };
         actionBar.setListNavigationCallbacks(adapter, navigationListener);
         adapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
+        
      }
     
     @Override
@@ -62,9 +62,9 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-//        if (item.getItemId() == R.id.buscar) {
-//            Toast.makeText(this, "Buscando..", Toast.LENGTH_SHORT).show();
-        if (item.getItemId() == R.id.actualizar) {
+        if (item.getItemId() == R.id.buscar) {
+            Toast.makeText(this, "Buscando..", Toast.LENGTH_SHORT).show();
+        } else if (item.getItemId() == R.id.actualizar) {
         	Toast.makeText(this, "Actualizando..", Toast.LENGTH_SHORT).show();
         } else if (item.getItemId() == R.id.info) {
         	Toast.makeText(this, "Info..", Toast.LENGTH_SHORT).show();
@@ -77,7 +77,7 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
     
     @Override
     public void onBackPressed() {
-    	AlertDialog.Builder builder = new AlertDialog.Builder(this, android.R.style.Theme_Holo_Light_Dialog_NoActionBar_MinWidth);
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
     	
     	builder.setMessage(R.string.salir_pregunta)
 	    	.setCancelable(false)
@@ -96,6 +96,10 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
 
     	AlertDialog alert = builder.create();
     	alert.show();
+    	
+        TypedValue outValue = new TypedValue();
+        getBaseContext().getTheme().resolveAttribute(android.R.attr.alertDialogTheme, outValue, true);
+        System.out.println(outValue);
     }
 
     private void cerrarAplicacion() {
