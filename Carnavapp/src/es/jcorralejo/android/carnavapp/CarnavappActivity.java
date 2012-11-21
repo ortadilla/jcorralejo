@@ -1,11 +1,15 @@
 package es.jcorralejo.android.carnavapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.ActionBar.OnNavigationListener;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.ActionBar.TabListener;
 import com.actionbarsherlock.app.SherlockActivity;
@@ -13,10 +17,12 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
+import es.jcorralejo.android.carnavapp.R.style;
+
 public class CarnavappActivity extends SherlockActivity implements TabListener{
 	
 	private ActionBar actionBar;
-	
+	String[] opciones = new String[] {"Concurso","Modalidades","Más Carnaval"};
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,31 +30,27 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
         setContentView(R.layout.main);
         
         actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        actionBar.setDisplayUseLogoEnabled(false);
+//        actionBar.setDisplayUseLogoEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowHomeEnabled(false);
+//        actionBar.setDisplayShowHomeEnabled(false);
         
-        Tab tabConcurso = actionBar.newTab();
-        tabConcurso.setText("Concurso");
-        tabConcurso.setTabListener(this);
-        actionBar.addTab(tabConcurso);
+//        http://developer.android.com/design/patterns/swipe-views.html
+//        http://www.buzzingandroid.com/2012/11/tab-swipe-between-fragments-using-actionbarsherlock/
+//        https://github.com/jesperborgstrup/buzzingandroid/blob/master/src/com/buzzingandroid/tabswipe/TabSwipeActivity.java
         
-        Tab tabModalidades = actionBar.newTab();
-        tabModalidades.setText("Modalidades");
-        tabModalidades.setTabListener(this);
-        actionBar.addTab(tabModalidades);
-
-        Tab tabMas = actionBar.newTab();
-        tabMas.setText("Modalidades");
-        tabMas.setTabListener(this);
-        actionBar.addTab(tabMas);
-        
-        http://developer.android.com/design/patterns/swipe-views.html
-        http://www.buzzingandroid.com/2012/11/tab-swipe-between-fragments-using-actionbarsherlock/
-        https://github.com/jesperborgstrup/buzzingandroid/blob/master/src/com/buzzingandroid/tabswipe/TabSwipeActivity.java
-    }
-	
+        actionBar.setNavigationMode(com.actionbarsherlock.app.ActionBar.NAVIGATION_MODE_LIST);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getBaseContext(), R.layout.sherlock_spinner_item, opciones);
+        ActionBar.OnNavigationListener navigationListener = new OnNavigationListener() {
+            @Override
+            public boolean onNavigationItemSelected(int itemPosition, long itemId) {
+                Toast.makeText(getBaseContext(), "Current Action : " + opciones[itemPosition]  , Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        };
+        actionBar.setListNavigationCallbacks(adapter, navigationListener);
+        adapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
+     }
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
     	 MenuInflater inflater = getSupportMenuInflater();
@@ -60,17 +62,44 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.buscar) {
-            Toast.makeText(this, "Buscando..", Toast.LENGTH_SHORT).show();
-        } else if (item.getItemId() == R.id.actualizar) {
+//        if (item.getItemId() == R.id.buscar) {
+//            Toast.makeText(this, "Buscando..", Toast.LENGTH_SHORT).show();
+        if (item.getItemId() == R.id.actualizar) {
         	Toast.makeText(this, "Actualizando..", Toast.LENGTH_SHORT).show();
         } else if (item.getItemId() == R.id.info) {
         	Toast.makeText(this, "Info..", Toast.LENGTH_SHORT).show();
         } else if (item.getItemId() == R.id.salir) {
-        	Toast.makeText(this, "Saliendo..", Toast.LENGTH_SHORT).show();
+        	onBackPressed();
         }
         
         return true;
+    }
+    
+    @Override
+    public void onBackPressed() {
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this, android.R.style.Theme_Holo_Light_Dialog_NoActionBar_MinWidth);
+    	
+    	builder.setMessage(R.string.salir_pregunta)
+	    	.setCancelable(false)
+	    	.setPositiveButton(R.string.si,
+		    	new DialogInterface.OnClickListener() {
+		    		public void onClick(DialogInterface dialog,int id) {
+		    			cerrarAplicacion();
+		    		}
+		    	})
+	    	.setNegativeButton(R.string.no,
+		    	new DialogInterface.OnClickListener() {
+		    		public void onClick(DialogInterface dialog,int id) {
+		    			dialog.cancel();
+		    		}
+		    	});
+
+    	AlertDialog alert = builder.create();
+    	alert.show();
+    }
+
+    private void cerrarAplicacion() {
+    	android.os.Process.killProcess(android.os.Process.myPid());
     }
 
 	@Override
