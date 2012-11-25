@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.util.TypedValue;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -96,6 +97,7 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
 
     	AlertDialog alert = builder.create();
     	alert.show();
+
     	
         TypedValue outValue = new TypedValue();
         getBaseContext().getTheme().resolveAttribute(android.R.attr.alertDialogTheme, outValue, true);
