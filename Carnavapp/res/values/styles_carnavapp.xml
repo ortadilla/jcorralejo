@@ -25,6 +25,7 @@
         <item name="actionBarTabStyle">@style/carnavapp_ActionBarTabStyle</item>
         <item name="actionDropDownStyle">@style/carnavapp_DropDownNav</item>
         <item name="actionBarStyle">@style/carnavapp_solid_ActionBar</item>
+        <item name="alertDialogTheme">@style/carnavapp_dialog</item>
 
         <item name="android:actionBarItemBackground">@drawable/selectable_background_carnavapp</item>
         <item name="android:popupMenuStyle">@style/carnavapp_PopupMenu</item>
@@ -94,15 +95,7 @@
         <item name="android:dropDownListViewStyle">@style/carnavapp_DropDownListView</item>
     </style>
     
-    <style name="carnavapp_dialog" parent="@android:style/Theme.Holo.Light.Dialog">
-    </style>
-    
-    <style name="Theme.Holo.Light.Dialog.Alert" parent="@android:style/Theme.Holo.Light.Dialog">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="windowContentOverlay">@null</item>
-        <item name="android:windowTitleStyle">@android:style/DialogWindowTitle.Holo.Light</item>
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
+    <style name="carnavapp_dialog" parent="@style/Theme.Sherlock.Light.Dialog">
     </style>
     
 </resources>
