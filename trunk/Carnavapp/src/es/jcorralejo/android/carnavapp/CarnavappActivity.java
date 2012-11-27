@@ -2,12 +2,11 @@ package es.jcorralejo.android.carnavapp;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
-import android.util.TypedValue;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -26,6 +25,7 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	getSherlock().setUiOptions(ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
@@ -98,10 +98,7 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
     	AlertDialog alert = builder.create();
     	alert.show();
 
-    	
-        TypedValue outValue = new TypedValue();
-        getBaseContext().getTheme().resolveAttribute(android.R.attr.alertDialogTheme, outValue, true);
-        System.out.println(outValue);
+    	http://stackoverflow.com/questions/10608539/error-importing-holoeverywhere
     }
 
     private void cerrarAplicacion() {
