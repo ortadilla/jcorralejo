@@ -1,6 +1,7 @@
 package es.jcorralejo.android.carnavapp;
 
-import android.app.AlertDialog;
+import org.holoeverywhere.app.AlertDialog;
+
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -21,13 +22,17 @@ import com.actionbarsherlock.view.MenuItem;
 public class CarnavappActivity extends SherlockActivity implements TabListener{
 	
 	private ActionBar actionBar;
-	String[] opciones = new String[] {"Concurso","Modalidades","Más Carnaval"};
+	String[] opciones;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	getSherlock().setUiOptions(ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        opciones = new String[] {getResources().getString(R.string.concurso),
+							     getResources().getString(R.string.modalidades),
+							     getResources().getString(R.string.mas_carnaval)};
         
         actionBar = getSupportActionBar();
 //        actionBar.setDisplayUseLogoEnabled(false);
@@ -78,7 +83,7 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
     
     @Override
     public void onBackPressed() {
-    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_LIGHT);
     	
     	builder.setMessage(R.string.salir_pregunta)
 	    	.setCancelable(false)
@@ -98,7 +103,7 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
     	AlertDialog alert = builder.create();
     	alert.show();
 
-    	http://stackoverflow.com/questions/10608539/error-importing-holoeverywhere
+//    	http://stackoverflow.com/questions/10608539/error-importing-holoeverywhere
     }
 
     private void cerrarAplicacion() {
