@@ -2,10 +2,12 @@ package es.jcorralejo.android.carnavapp;
 
 import org.holoeverywhere.app.AlertDialog;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -24,6 +26,7 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
 	private ActionBar actionBar;
 	String[] opciones;
 	
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	getSherlock().setUiOptions(ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
@@ -35,7 +38,6 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
 							     getResources().getString(R.string.mas_carnaval)};
         
         actionBar = getSupportActionBar();
-//        actionBar.setDisplayUseLogoEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
 //        actionBar.setDisplayShowHomeEnabled(false);
         
@@ -54,7 +56,6 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
         };
         actionBar.setListNavigationCallbacks(adapter, navigationListener);
         adapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
-        
      }
     
     @Override
@@ -102,8 +103,6 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
 
     	AlertDialog alert = builder.create();
     	alert.show();
-
-//    	http://stackoverflow.com/questions/10608539/error-importing-holoeverywhere
     }
 
     private void cerrarAplicacion() {
