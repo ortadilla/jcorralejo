@@ -83,7 +83,7 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
     
     @Override
     public void onBackPressed() {
-    	AlertDialog.Builder builder = new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_LIGHT);
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
     	
     	builder.setMessage(R.string.salir_pregunta)
 	    	.setCancelable(false)
