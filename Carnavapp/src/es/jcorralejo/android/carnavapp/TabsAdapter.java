@@ -16,11 +16,9 @@ import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.ActionBar.TabListener;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 
-public class TabsAdapter extends FragmentPagerAdapter
-implements OnPageChangeListener, TabListener
+public class TabsAdapter extends FragmentPagerAdapter implements OnPageChangeListener, TabListener
 {
 	//http://davidjkelley.net/?p=34
-
 	private final Context mContext;
 	private final ActionBar mActionBar;
 	private final ViewPager mViewPager;
@@ -43,8 +41,8 @@ implements OnPageChangeListener, TabListener
 		mViewPager = pager;
 		mViewPager.setAdapter(this);
 		mViewPager.setOnPageChangeListener(this);
-	}
-
+	} 
+	
 	public void addTab(ActionBar.Tab tab, Class<?> clss, Bundle args) {
 		TabInfo info = new TabInfo(clss, args);
 		tab.setTag(info);
@@ -55,29 +53,8 @@ implements OnPageChangeListener, TabListener
 	}
 
 
-	public int getCount() {
-		return mTabs.size();
-	}
 
-	public Fragment getItem(int position) {
-		TabInfo info = mTabs.get(position);
-		return Fragment.instantiate(mContext, info.clss.getName(), info.args);
-	}
-
-
-	public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-	}
-
-
-	public void onPageSelected(int position) {
-		mActionBar.setSelectedNavigationItem(position);
-	}
-
-
-	public void onPageScrollStateChanged(int state) {
-	}
-
-
+	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 		mViewPager.setCurrentItem(tab.getPosition());
 		Object tag = tab.getTag();
@@ -88,4 +65,32 @@ implements OnPageChangeListener, TabListener
 		}
 	}
 
+
+	@Override
+	public void onPageSelected(int position) {
+		mActionBar.setSelectedNavigationItem(position);
+	}
+
+	@Override
+	public Fragment getItem(int position) {
+		TabInfo info = mTabs.get(position);
+		return Fragment.instantiate(mContext, info.clss.getName(), info.args);
+	}
+
+	@Override
+	public int getCount() {
+		return mTabs.size();
+	}
+	
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) { }
+	
+	@Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) { }
+	
+	@Override
+	public void onPageScrollStateChanged(int state) { }
+	
+	@Override
+	public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 }
