@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.carnavapp">
         <activity
-            android:name="CarnavappActivity"
+            android:name="CarnavappActivity2"
             android:label="@string/app_name" 
             android:uiOptions="splitActionBarWhenNarrow">
             <intent-filter>
@@ -20,6 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="ConcursoActivity"></activity>
+        <activity android:name="CarnavappActivity"></activity>
     </application>
 
 </manifest>

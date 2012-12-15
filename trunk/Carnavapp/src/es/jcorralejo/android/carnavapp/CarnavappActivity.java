@@ -2,29 +2,26 @@ package es.jcorralejo.android.carnavapp;
 
 import org.holoeverywhere.app.AlertDialog;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.OnNavigationListener;
-import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.ActionBar.TabListener;
-import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
-public class CarnavappActivity extends SherlockActivity implements TabListener{
+public class CarnavappActivity extends SherlockFragmentActivity{
 	
 	private ActionBar actionBar;
 	String[] opciones;
+	private ViewPager mViewPager;
+	private TabsAdapter mTabsAdapter;
 	
 	
     @Override
@@ -33,18 +30,12 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        opciones = new String[] {getResources().getString(R.string.concurso),
-							     getResources().getString(R.string.modalidades),
-							     getResources().getString(R.string.mas_carnaval)};
-        
         actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
-//        actionBar.setDisplayShowHomeEnabled(false);
         
-//        http://developer.android.com/design/patterns/swipe-views.html
-//        http://www.buzzingandroid.com/2012/11/tab-swipe-between-fragments-using-actionbarsherlock/
-//        https://github.com/jesperborgstrup/buzzingandroid/blob/master/src/com/buzzingandroid/tabswipe/TabSwipeActivity.java
-        
+        opciones = new String[] {getResources().getString(R.string.concurso),
+				        		 getResources().getString(R.string.modalidades),
+				        		 getResources().getString(R.string.mas_carnaval)};
         actionBar.setNavigationMode(com.actionbarsherlock.app.ActionBar.NAVIGATION_MODE_LIST);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getBaseContext(), R.layout.sherlock_spinner_item, opciones);
         ActionBar.OnNavigationListener navigationListener = new OnNavigationListener() {
@@ -56,6 +47,15 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
         };
         actionBar.setListNavigationCallbacks(adapter, navigationListener);
         adapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
+        
+        mViewPager = new ViewPager(this);
+//        mViewPager.setId(R.id.viewPager);
+        mTabsAdapter = new TabsAdapter(this, mViewPager);
+        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.preeliminares), ConcursoActivity.class, null);
+        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.cuartos), ConcursoActivity.class, null);
+        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.semifinales), ConcursoActivity.class, null);
+        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.fasefinal), ConcursoActivity.class, null);
+        
      }
     
     @Override
@@ -109,23 +109,4 @@ public class CarnavappActivity extends SherlockActivity implements TabListener{
     	android.os.Process.killProcess(android.os.Process.myPid());
     }
 
-	@Override
-	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		// TODO Auto-generated method stub
-		Log.i("EO", "onTabSelected");
-	}
-
-	@Override
-	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-		// TODO Auto-generated method stub
-		Log.i("EO", "onTabUnselected");
-		
-	}
-
-	@Override
-	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-		// TODO Auto-generated method stub
-		Log.i("EO", "onTabReselected");
-		
-	}
 }
