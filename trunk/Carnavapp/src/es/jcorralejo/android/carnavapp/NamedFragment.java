@@ -10,6 +10,6 @@ public class NamedFragment extends SherlockFragment{
 	}
 	
 	public String getTitulo() {
-		return titulo;
+		return titulo!=null ? titulo.toUpperCase() : "";
 	}
 }

@@ -25,10 +25,8 @@
         <item name="actionBarTabStyle">@style/carnavapp_ActionBarTabStyle</item>
         <item name="actionDropDownStyle">@style/carnavapp_DropDownNav</item>
         <item name="actionBarStyle">@style/carnavapp_solid_ActionBar</item>
-<!--         <item name="selectableItemBackground">@drawable/selectable_background_carnavapp</item> -->
         <item name="alertDialogTheme">@style/carnavapp_alert_dialog</item>
-        <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
-        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/carnavapp_tab_indicator</item>
 
         <item name="android:actionBarItemBackground">@drawable/selectable_background_carnavapp</item>
         <item name="android:popupMenuStyle">@style/carnavapp_PopupMenu</item>
@@ -37,7 +35,6 @@
         <item name="android:actionDropDownStyle">@style/carnavapp_DropDownNav</item>
         <item name="android:actionBarStyle">@style/carnavapp_solid_ActionBar</item>
         <item name="android:panelBackground">@drawable/menu_hardkey_panel_carnavapp</item>
-<!--         <item name="android:selectableItemBackground">@drawable/selectable_background_carnavapp</item> -->
         <item name="android:alertDialogTheme">@style/carnavapp_alert_dialog</item>
         
         
@@ -99,8 +96,13 @@
     </style>
     
     <style name="carnavapp_alert_dialog" parent="@style/Holo.Theme.Dialog.Alert.Light">
-<!--         <item name="borderlessButtonStyle">@style/Holo.Button.Borderless.Light</item> -->
         <item name="selectableItemBackground">@drawable/item_background_carnavapp</item>
+    </style>
+    
+     <style name="carnavapp_tab_indicator" parent="@style/Widget.TabPageIndicator">
+        <item name="background">@drawable/tab_indicator_ab_carnavapp</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:background">@drawable/subtab_indicator_ab_carnavapp</item>
     </style>
     
 </resources>
