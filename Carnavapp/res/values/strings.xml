@@ -7,6 +7,7 @@
     <string name="buscar">Buscar</string>
     <string name="concurso">Concurso</string>
     <string name="cuartos">Cuartos</string>
+    <string name="enlaces">Enlaces</string>
     <string name="fasefinal">Final</string>
     <string name="info">Información</string> 
     <string name="mas_carnaval">Más Carnaval</string>
@@ -14,6 +15,7 @@
     <string name="no">No</string>
     <string name="opciones">Opciones</string>
     <string name="preeliminares">Preeliminaresaasda</string>
+    <string name="puntos_de_interes">Puntos de Interés</string>
     <string name="salir">Salir</string>
     <string name="salir_pregunta">¿Estás seguro que deseas salir?</string>
     <string name="semifinales">Semifinales</string>
