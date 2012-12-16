@@ -27,6 +27,8 @@
         <item name="actionBarStyle">@style/carnavapp_solid_ActionBar</item>
 <!--         <item name="selectableItemBackground">@drawable/selectable_background_carnavapp</item> -->
         <item name="alertDialogTheme">@style/carnavapp_alert_dialog</item>
+        <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
 
         <item name="android:actionBarItemBackground">@drawable/selectable_background_carnavapp</item>
         <item name="android:popupMenuStyle">@style/carnavapp_PopupMenu</item>

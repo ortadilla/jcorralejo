@@ -14,12 +14,20 @@
             android:layout_height="fill_parent"
             android:orientation="vertical" >
 
-            <TabWidget
-                android:id="@android:id/tabs"
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:orientation="horizontal" />
+                android:fillViewport="true"
+                android:scrollbars="none" >
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"

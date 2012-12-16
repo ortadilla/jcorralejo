@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
+import android.widget.HorizontalScrollView;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabContentFactory;
@@ -25,6 +26,7 @@ public class CarnavappActivity2 extends SherlockFragmentActivity implements OnTa
 	private Map<String, TabInfo> mapTabInfo = new HashMap<String, CarnavappActivity2.TabInfo>();
 	private ViewPager mViewPager;
 	private PagerAdapter mPagerAdapter;
+	private HorizontalScrollView horizontalScrollView;
 
 
 	private class TabInfo {
@@ -72,14 +74,21 @@ public class CarnavappActivity2 extends SherlockFragmentActivity implements OnTa
 	
     private void intialiseViewPager() {
 		List<Fragment> fragments = new Vector<Fragment>();
+		List<String> nombres = new Vector<String>();
 		fragments.add(SherlockFragment.instantiate(this, ConcursoActivity.class.getName()));
 		fragments.add(SherlockFragment.instantiate(this, ConcursoActivity.class.getName()));
 		fragments.add(SherlockFragment.instantiate(this, ConcursoActivity.class.getName()));
 		fragments.add(SherlockFragment.instantiate(this, ConcursoActivity.class.getName()));
-		this.mPagerAdapter  = new PagerAdapter(super.getSupportFragmentManager(), fragments);
+		nombres.add("Preeliminares");
+		nombres.add("Cuartos");
+		nombres.add("Semifinales");
+		nombres.add("Final");
+		this.mPagerAdapter  = new PagerAdapter(super.getSupportFragmentManager(), fragments, nombres);
 		this.mViewPager = (ViewPager)super.findViewById(R.id.viewpager);
 		this.mViewPager.setAdapter(this.mPagerAdapter);
 		this.mViewPager.setOnPageChangeListener(this);
+		
+		this.horizontalScrollView = (HorizontalScrollView) super.findViewById(R.id.horizontalScrollView);
     }
 
 	@Override
