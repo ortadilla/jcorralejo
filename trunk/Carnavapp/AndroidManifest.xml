@@ -20,9 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ConcursoActivity"></activity>
+        <activity android:name="es.jcorralejo.android.carnavapp.ConcursoFragment"></activity>
         <activity android:name="CarnavappActivity"></activity>
-        <activity android:name="CarnavappActivity2"></activity>
     </application>
 
 </manifest>

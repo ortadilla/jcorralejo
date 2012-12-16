@@ -51,10 +51,10 @@ public class CarnavappActivity extends SherlockFragmentActivity{
         mViewPager = new ViewPager(this);
 //        mViewPager.setId(R.id.viewPager);
         mTabsAdapter = new TabsAdapter(this, mViewPager);
-        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.preeliminares), ConcursoActivity.class, null);
-        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.cuartos), ConcursoActivity.class, null);
-        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.semifinales), ConcursoActivity.class, null);
-        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.fasefinal), ConcursoActivity.class, null);
+        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.preeliminares), ConcursoFragment.class, null);
+        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.cuartos), ConcursoFragment.class, null);
+        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.semifinales), ConcursoFragment.class, null);
+        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.fasefinal), ConcursoFragment.class, null);
         
      }
     
