@@ -20,8 +20,6 @@ public class CarnavappActivity extends SherlockFragmentActivity{
 	
 	private ActionBar actionBar;
 	String[] opciones;
-	private ViewPager mViewPager;
-	private TabsAdapter mTabsAdapter;
 	
 	
     @Override
@@ -48,13 +46,6 @@ public class CarnavappActivity extends SherlockFragmentActivity{
         actionBar.setListNavigationCallbacks(adapter, navigationListener);
         adapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
         
-        mViewPager = new ViewPager(this);
-//        mViewPager.setId(R.id.viewPager);
-        mTabsAdapter = new TabsAdapter(this, mViewPager);
-        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.preeliminares), ConcursoFragment.class, null);
-        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.cuartos), ConcursoFragment.class, null);
-        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.semifinales), ConcursoFragment.class, null);
-        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.fasefinal), ConcursoFragment.class, null);
         
      }
     

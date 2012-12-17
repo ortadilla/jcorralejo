@@ -1,0 +1,4 @@
+http://davidjkelley.net/?p=34
+http://developer.android.com/design/patterns/swipe-views.html
+http://www.buzzingandroid.com/2012/11/tab-swipe-between-fragments-using-actionbarsherlock/
+https://github.com/jesperborgstrup/buzzingandroid/blob/master/src/com/buzzingandroid/tabswipe/TabSwipeActivity.java

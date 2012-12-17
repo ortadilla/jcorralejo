@@ -30,4 +30,13 @@ public class PagerAdapter extends FragmentPagerAdapter {
 		return  fragments.get(position).getTitulo();
 	}
 	
+	public List<NamedFragment> getFragments() {
+		return fragments;
+	}
+
+	public void setFragments(List<NamedFragment> fragments) {
+		this.fragments = fragments;
+		notifyDataSetChanged();
+	}
+	
 }
