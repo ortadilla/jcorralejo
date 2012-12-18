@@ -1,5 +1,3 @@
-· Implementar el botón "atrás" del menú principal para que vuelva a la opción anterior
-· Mantener el estado al girar el teléfono en el menú principal, para que no vuelva a la primera opción
 · Al salir debe salir de la aplicación, no volver a la pantalla de bienvenida
 · No cabe el texto completo de algunas pestañas
 · Esquema de la pantalla de bienvenida:

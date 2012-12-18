@@ -56,6 +56,25 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		configurarActionBar();
 		configurarOpciones();
 		configurarFragment();
+		recuperarUltimaPila(); //Debe ser lo último
+	}
+	
+	@SuppressWarnings("unchecked")
+	private void recuperarUltimaPila(){
+		//Si guardamos una pila, volvemos a donde nos indique
+		Object ultimaPila = getLastCustomNonConfigurationInstance();
+		if(ultimaPila!=null){
+			pila = (Stack<Integer[]>) ultimaPila;
+			Integer[] volverA = pila.peek();
+			actionBar.setSelectedNavigationItem(volverA[IDX_OPCION]);
+			pager.setCurrentItem(volverA[IDX_SUBMENU]);
+
+		}
+	}
+	
+	@Override
+	public Object onRetainCustomNonConfigurationInstance() {
+		return pila;
 	}
 	
 	private void configurarFragment(){
@@ -218,6 +237,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	    	.setPositiveButton(R.string.si,
 		    	new DialogInterface.OnClickListener() {
 		    		public void onClick(DialogInterface dialog,int id) {
+		    			finish();
 		    			android.os.Process.killProcess(android.os.Process.myPid());
 		    		}
 		    	})
