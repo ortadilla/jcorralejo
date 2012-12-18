@@ -11,6 +11,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.viewpagerindicator.TabPageIndicator;
+import com.viewpagerindicator.TabPageIndicator.OnTabReselectedListener;
 
 public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNavigationListener{
 
@@ -33,7 +35,10 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	private List<NamedFragment> fragmentModalidades;
 	private List<NamedFragment> fragmentMasCarnaval;
 	private List<NamedFragment> fragmentEnlaces;
-	private Stack<Integer> pila = new Stack<Integer>();
+	private Stack<Integer[]> pila = new Stack<Integer[]>();
+	
+	private final int IDX_OPCION = 0;
+	private final int IDX_SUBMENU = 1;
 	
 	private final int OPCION_CONCURSO = 0;
 	private final int OPCION_MODALIDADES = 1;
@@ -84,6 +89,30 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		FragmentPagerAdapter adapter = new PagerAdapter(super.getSupportFragmentManager(), new ArrayList<NamedFragment>());
 		pager.setAdapter(adapter);
 		indicator.setViewPager(pager);
+		indicator.setOnTabReselectedListener(new OnTabReselectedListener() {
+			@Override
+			public void onTabReselected(int position) {
+				Integer[] ultimo = pila.pop();
+				ultimo[IDX_SUBMENU] = position; //Actualizamos la posición
+				pila.push(ultimo);
+			}
+		});
+		
+		indicator.setOnPageChangeListener(new OnPageChangeListener() {
+			
+			@Override
+			public void onPageSelected(int arg0) {
+				Integer[] ultimo = pila.pop();
+				ultimo[IDX_SUBMENU] = arg0; //Actualizamos la posición
+				pila.push(ultimo);
+			}
+			
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {}
+			
+			@Override
+			public void onPageScrollStateChanged(int arg0) {}
+		});
 	}
 	
 	private void configurarActionBar(){
@@ -102,24 +131,39 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		actionBar.setListNavigationCallbacks(arrayAdapter, this);
 		arrayAdapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
 	}
+	
+	private void actualizarPila(int itemPosition){
+		Integer[] nuevaPosición = new Integer[2];
+		nuevaPosición[IDX_OPCION] = itemPosition;
+		nuevaPosición[IDX_SUBMENU] = 0; //Siempre empezamos en la primera pestaña
+		
+		if(!pila.isEmpty()){
+			
+			
+			//Si llegamos al último no hacemos nada
+			Integer[] ultimo = pila.peek();
+			if(ultimo[IDX_OPCION].equals(itemPosition))
+				return;
+			
+			//Si pulsan el anterior donde estuvimos quitamos de la pila el úlimo
+			if(pila.size()>1){
+				Integer[] penultimo = pila.get(pila.size()-2);
+				if(penultimo[IDX_OPCION].equals(itemPosition))
+					pila.pop();
+				else
+					pila.push(nuevaPosición);
+			}else
+				pila.push(nuevaPosición);
+		}else
+			pila.push(nuevaPosición);
+	}
 
 	@Override
 	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
 		Toast.makeText(getBaseContext(), "Current Action : " + opciones[itemPosition]  , Toast.LENGTH_SHORT).show();
 		
 		//Guardamos en la pila hacia donde vamos
-		if(!pila.isEmpty()){
-			//Si pulsan el anterior donde estuvimos eleminamos de la pila en el que estamos
-			if(pila.size()>1){
-				Integer penultimo = pila.get(pila.size()-2);
-				if(penultimo.equals(itemPosition))
-					pila.pop();
-				else
-					pila.push(itemPosition);
-			}else
-				pila.push(itemPosition);
-		}else
-			pila.push(itemPosition);
+		actualizarPila(itemPosition);
 		
 		List<NamedFragment> fragments = null;
 		boolean mostrarOpciones = true;
@@ -142,7 +186,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			PagerAdapter adapter = (PagerAdapter) pager.getAdapter();
 			adapter.setFragments(fragments);
 			indicator.notifyDataSetChanged();
-			indicator.setCurrentItem(0);
+			indicator.setCurrentItem(pila.peek()[IDX_SUBMENU]);
 		}else{
 			pager.setVisibility(View.GONE);
 			indicator.setVisibility(View.GONE);
@@ -151,13 +195,16 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		return false;
 	}
 	
+	
+	
 	@Override
     public void onBackPressed() {
 		if(pila!=null && !pila.isEmpty() && pila.size()>1){
 			//Quitamos el último
 			pila.pop();
-			Integer volverA = pila.peek();
-			onNavigationItemSelected(volverA, volverA);
+			Integer[] volverA = pila.peek();
+			actionBar.setSelectedNavigationItem(volverA[IDX_OPCION]);
+			pager.setCurrentItem(volverA[IDX_SUBMENU]);
 		}else{
 	    	super.onBackPressed();
 		}
