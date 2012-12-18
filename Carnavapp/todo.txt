@@ -1,3 +1,8 @@
+· Implementar el botón "atrás" del menú principal para que vuelva a la opción anterior
+· Mantener el estado al girar el teléfono en el menú principal, para que no vuelva a la primera opción
+· 
+
+
 http://davidjkelley.net/?p=34
 http://developer.android.com/design/patterns/swipe-views.html
 http://www.buzzingandroid.com/2012/11/tab-swipe-between-fragments-using-actionbarsherlock/
