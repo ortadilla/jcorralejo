@@ -29,6 +29,7 @@ public class MenuPrincipalActivity extends SherlockActivity {
 				Intent intent = new Intent();
 				intent.setClass(getApplicationContext(), CarnavappActivity3.class);
 				startActivity(intent);	
+				finish();
 			}
 		});
 	}

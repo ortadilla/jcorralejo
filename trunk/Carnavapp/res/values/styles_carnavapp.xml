@@ -102,7 +102,8 @@
      <style name="carnavapp_tab_indicator" parent="@style/Widget.TabPageIndicator">
         <item name="background">@drawable/tab_indicator_ab_carnavapp</item>
         <item name="android:textColor">#ffffffff</item>
-        <item name="android:ellipsize">end</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:singleLine">true</item>
         <item name="android:background">@drawable/subtab_indicator_ab_carnavapp</item>
     </style>
     
