@@ -32,10 +32,10 @@ public class Constantes {
 //	public static final String PREFERENCE_FAVORITAS = "PREFERENCE_FAVORITAS";
 //	public static final String PREFERENCES = "PREFERENCES";
 //
-//	public static final String FASE_PREELIMINAR = "FASE_PREELIMINAR";
-//	public static final String FASE_CUARTOS = "FASE_CUARTOS";
-//	public static final String FASE_SEMIS = "FASE_SEMIS";
-//	public static final String FASE_FINAL = "FASE_FINAL";
+	public static final String FASE_PREELIMINAR = "FASE_PREELIMINAR";
+	public static final String FASE_CUARTOS = "FASE_CUARTOS";
+	public static final String FASE_SEMIS = "FASE_SEMIS";
+	public static final String FASE_FINAL = "FASE_FINAL";
 //	
 //	public static final String URL_ONDA_CADIZ = "http://www.youtube.com/embed/One2Jbph-Po";
 //	public static final String URL_CANAL_ANDALUCIA = "http://www.canalsuralacarta.es/directo/ver/andalucia-television";
