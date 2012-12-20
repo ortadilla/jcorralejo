@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 import android.app.Application;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -15,6 +16,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.widget.Toast;
+import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
 import es.jcorralejo.android.carnavapp.entidades.Enlace;
 import es.jcorralejo.android.carnavapp.utils.Constantes;
@@ -31,7 +33,7 @@ public class CarnavappApplication extends Application {
 	
 	private ActualizarPostAsyncTask tarea;
 	private boolean error = false;
-	private Boolean actualizando = Boolean.FALSE;
+	private boolean actualizando;
 	
 	@Override
 	public void onCreate() {
@@ -173,7 +175,7 @@ public class CarnavappApplication extends Application {
 				error = false;
 			}
 		}else{
-			Toast.makeText(getApplicationContext(), "COAC2012 necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde", Toast.LENGTH_LONG).show();
+			Toast.makeText(getApplicationContext(), getResources().getString(R.string.no_conexion), Toast.LENGTH_LONG).show();
 			error = true;
 		}
 	}
@@ -242,11 +244,11 @@ public class CarnavappApplication extends Application {
 		this.error = error;
 	}
 
-	public Boolean getActualizando() {
+	public boolean isActualizando() {
 		return actualizando;
 	}
 
-	public void setActualizando(Boolean actualizando) {
+	public void setActualizando(boolean actualizando) {
 		this.actualizando = actualizando;
 	}
 

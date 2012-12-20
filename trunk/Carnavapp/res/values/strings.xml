@@ -5,14 +5,17 @@
     <string name="actualizar">Actualizar</string>
     <string name="app_name">Carnavapp</string>
     <string name="buscar">Buscar</string>
+    <string name="cargando_datos">Cargando datos</string>
     <string name="concurso">Concurso</string>
     <string name="cuartos">Cuartos</string>
     <string name="enlaces">Enlaces</string>
+    <string name="esperar_carga">Por favor, espere mientras actualizamos los datos desde el servidor...</string>
     <string name="fasefinal">Final</string>
     <string name="info">Información</string> 
     <string name="mas_carnaval">Más Carnaval</string>
     <string name="modalidades">Modalildades</string>
     <string name="no">No</string>
+    <string name="no_conexion">Carnavapp necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde</string>
     <string name="opciones">Opciones</string>
     <string name="preeliminares">Preeliminaresaasda</string>
     <string name="puntos_de_interes">Puntos de Interés</string>
@@ -20,5 +23,6 @@
     <string name="salir_pregunta">¿Estás seguro que deseas salir?</string>
     <string name="semifinales">Semifinales</string>
     <string name="si">Sí</string>
+    <string name="ya_actualizando">Actualizando datos...Por favor vuelva a intentarlo pasados unos segundos</string>
 
 </resources>

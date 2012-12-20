@@ -30,7 +30,7 @@ public class Constantes {
 //	public static final String PATH_IMAGENES = "/coac2012/";
 //
 //	public static final String PREFERENCE_FAVORITAS = "PREFERENCE_FAVORITAS";
-//	public static final String PREFERENCES = "PREFERENCES";
+	public static final String PREFERENCES = "PREFERENCES";
 //
 	public static final String FASE_PREELIMINAR = "FASE_PREELIMINAR";
 	public static final String FASE_CUARTOS = "FASE_CUARTOS";
@@ -43,5 +43,7 @@ public class Constantes {
 //	public static final String URL_TUNEIN = "https://market.android.com/details?id=tunein.player&hl=es";
 //	
 	public static final String TEXTO_DESCANSO = "-- DESCANSO --";
+	
+	public static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*1; // recarga cada hora 
 	
 }
