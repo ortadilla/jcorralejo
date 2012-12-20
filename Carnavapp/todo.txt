@@ -1,5 +1,4 @@
-· No cabe el texto completo de algunas pestañas --> ¿?
-· ¡Estilo en veriones antiguas!
+· ¡Estilo en veriones antiguas! --> Ver porqu� le aparece a Manuela otro fondo en la barra de arriba
 · Guardar el estado al desaparecer la actividad --> ¿seperar en distintas activities?
 · Esquema de la pantalla de bienvenida:
   1. "Lo más destacado" --> Imagen con enlace (1/4)

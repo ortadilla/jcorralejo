@@ -1,5 +1,7 @@
-package es.jcorralejo.android.carnavapp;
+package es.jcorralejo.android.carnavapp.activities;
 
+import es.jcorralejo.android.carnavapp.R;
+import es.jcorralejo.android.carnavapp.R.layout;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
