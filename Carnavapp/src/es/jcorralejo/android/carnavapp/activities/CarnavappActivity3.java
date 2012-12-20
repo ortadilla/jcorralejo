@@ -6,7 +6,10 @@ import java.util.Stack;
 
 import org.holoeverywhere.app.AlertDialog;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -26,13 +29,12 @@ import com.viewpagerindicator.TabPageIndicator;
 import com.viewpagerindicator.TabPageIndicator.OnTabReselectedListener;
 
 import es.jcorralejo.android.carnavapp.R;
-import es.jcorralejo.android.carnavapp.R.id;
-import es.jcorralejo.android.carnavapp.R.layout;
-import es.jcorralejo.android.carnavapp.R.menu;
-import es.jcorralejo.android.carnavapp.R.string;
+import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
+import es.jcorralejo.android.carnavapp.utils.Constantes;
 
 public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNavigationListener{
 
+	private CarnavappApplication app;
 	private ViewPager pager;
 	private TabPageIndicator indicator;
 	private ActionBar actionBar;
@@ -57,6 +59,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		getSherlock().setUiOptions(ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main2);
+		app = (CarnavappApplication) getApplication();
 		
 		configurarPageIndicator();
 		configurarActionBar();
@@ -272,7 +275,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
         if (item.getItemId() == R.id.buscar) {
             Toast.makeText(this, "Buscando..", Toast.LENGTH_SHORT).show();
         } else if (item.getItemId() == R.id.actualizar) {
-        	Toast.makeText(this, "Actualizando..", Toast.LENGTH_SHORT).show();
+        	recargar();
         } else if (item.getItemId() == R.id.info) {
         	Toast.makeText(this, "Info..", Toast.LENGTH_SHORT).show();
         } else if (item.getItemId() == R.id.salir) {
@@ -280,6 +283,27 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
         }
         
         return true;
+    }
+    
+    private void recargar(){
+    	if(app!=null && app.isActualizando()){
+    		Toast.makeText(getBaseContext(), getResources().getString(R.string.ya_actualizando), Toast.LENGTH_LONG).show();
+    	}else{
+    		final ProgressDialog pd = new ProgressDialog(this, R.style.carnavapp_alert_dialog);
+    		pd.setTitle(getResources().getString(R.string.cargando_datos));
+    		pd.setMessage(getResources().getString(R.string.esperar_carga));
+    		pd.setIndeterminate(true);
+    		pd.setCancelable(false);
+    		pd.show();
+    		
+//    		final ProgressDialog pd = ProgressDialog.show(this, getResources().getString(R.string.cargando_datos), getResources().getString(R.string.esperar_carga), true, false);
+			app.cargarDatos(pd);
+
+			SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);;
+			Editor editor = prefs.edit();
+			editor.putLong("ultima_actualizacion", System.currentTimeMillis());
+			editor.commit();
+    	}
     }
 
 
