@@ -1,4 +1,4 @@
-package es.jcorralejo.android.carnavapp;
+package es.jcorralejo.android.carnavapp.activities;
 
 import org.holoeverywhere.app.AlertDialog;
 
@@ -11,6 +11,11 @@ import android.view.View.OnClickListener;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
+
+import es.jcorralejo.android.carnavapp.R;
+import es.jcorralejo.android.carnavapp.R.id;
+import es.jcorralejo.android.carnavapp.R.layout;
+import es.jcorralejo.android.carnavapp.R.string;
 
 public class MenuPrincipalActivity extends SherlockActivity {
 	

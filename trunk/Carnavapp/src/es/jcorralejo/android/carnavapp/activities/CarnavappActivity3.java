@@ -1,4 +1,4 @@
-package es.jcorralejo.android.carnavapp;
+package es.jcorralejo.android.carnavapp.activities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +24,12 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.viewpagerindicator.TabPageIndicator;
 import com.viewpagerindicator.TabPageIndicator.OnTabReselectedListener;
+
+import es.jcorralejo.android.carnavapp.R;
+import es.jcorralejo.android.carnavapp.R.id;
+import es.jcorralejo.android.carnavapp.R.layout;
+import es.jcorralejo.android.carnavapp.R.menu;
+import es.jcorralejo.android.carnavapp.R.string;
 
 public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNavigationListener{
 

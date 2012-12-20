@@ -1,4 +1,4 @@
-package es.jcorralejo.android.carnavapp;
+package es.jcorralejo.android.carnavapp.activities;
 
 import com.actionbarsherlock.app.SherlockFragment;
 

@@ -1,4 +1,4 @@
-package es.jcorralejo.android.carnavapp;
+package es.jcorralejo.android.carnavapp.activities;
 
 import org.holoeverywhere.app.AlertDialog;
 
@@ -15,6 +15,12 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+
+import es.jcorralejo.android.carnavapp.R;
+import es.jcorralejo.android.carnavapp.R.id;
+import es.jcorralejo.android.carnavapp.R.layout;
+import es.jcorralejo.android.carnavapp.R.menu;
+import es.jcorralejo.android.carnavapp.R.string;
 
 public class CarnavappActivity extends SherlockFragmentActivity{
 	
