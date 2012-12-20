@@ -16,16 +16,19 @@ import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.R.id;
 import es.jcorralejo.android.carnavapp.R.layout;
 import es.jcorralejo.android.carnavapp.R.string;
+import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 
 public class MenuPrincipalActivity extends SherlockActivity {
 	
 	private ActionBar actionBar;
+	private CarnavappApplication app;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		getSherlock().setUiOptions(ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_principal);
+        app = (CarnavappApplication) getApplication();
         
         View fondo = findViewById(R.id.fondo);
         fondo.setOnClickListener(new OnClickListener() {
