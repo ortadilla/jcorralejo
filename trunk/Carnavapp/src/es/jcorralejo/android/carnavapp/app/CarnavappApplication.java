@@ -175,6 +175,7 @@ public class CarnavappApplication extends Application {
 				error = false;
 			}
 		}else{
+			ocultarPD(pd);
 			Toast.makeText(getApplicationContext(), getResources().getString(R.string.no_conexion), Toast.LENGTH_LONG).show();
 			error = true;
 		}
@@ -211,29 +212,30 @@ public class CarnavappApplication extends Application {
 		
 		@Override
 		protected void onPostExecute(Void result) {
-			ocultarPD();
+			ocultarPD(pd);
 			actualizando = false;
 			super.onPostExecute(result);
 		}
 		
 		@Override
 		protected void onCancelled() {
-			ocultarPD();
+			ocultarPD(pd);
 			actualizando = false;
 			super.onCancelled();
 		}
 		
-		private void ocultarPD(){
-			if(pd!=null && pd.isShowing()){
-				try{
-					pd.dismiss();
-					pd = null;
-				}catch (Exception e) {
-				}
-			}
-		}
 
 		
+	}
+	
+	private void ocultarPD(ProgressDialog pd){
+		if(pd!=null && pd.isShowing()){
+			try{
+				pd.dismiss();
+				pd = null;
+			}catch (Exception e) {
+			}
+		}
 	}
 
 	public boolean isError() {
