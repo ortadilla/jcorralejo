@@ -84,7 +84,6 @@
     
     <style name="carnavapp_ProgressBar" parent="@style/Widget.Sherlock.Light.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/progress_horizontal_carnavapp</item>
-        <item name="android:progressDrawable">@drawable/progress_horizontal_carnavapp</item>
     </style>
     
     <!-- this style is only referenced in a Light.DarkActionBar based theme -->
@@ -103,6 +102,7 @@
 
     <style name="carnavapp_windowstitle" parent="@style/Holo.DialogWindowTitle.Light">
         <item name="android:textColor">#ffb10094</item>
+        <item name="android:progressBarStyle">@style/carnavapp_ProgressBar</item>
     </style>
 
      <style name="carnavapp_tab_indicator" parent="@style/Widget.TabPageIndicator">
