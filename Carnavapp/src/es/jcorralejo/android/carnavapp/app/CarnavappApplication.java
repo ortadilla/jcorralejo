@@ -1,35 +1,33 @@
 package es.jcorralejo.android.carnavapp.app;
 
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import android.app.Application;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.widget.Toast;
 import es.jcorralejo.android.carnavapp.R;
-import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
 import es.jcorralejo.android.carnavapp.entidades.Enlace;
+import es.jcorralejo.android.carnavapp.entidades.InfoAnio;
+import es.jcorralejo.android.carnavapp.entidades.Noticia;
 import es.jcorralejo.android.carnavapp.utils.Constantes;
 import es.jcorralejo.android.carnavapp.utils.RssDownloadHelper;
 
 public class CarnavappApplication extends Application {
 	
-	private List<Agrupacion> agrupaciones = new ArrayList<Agrupacion>();
-	private Map<String, List<Agrupacion>> calendario = new HashMap<String, List<Agrupacion>>();
-	private Map<String,List<Agrupacion>> modalidades = new HashMap<String, List<Agrupacion>>();
 	private List<Integer> favoritas = new ArrayList<Integer>();
-	private Map<String, List<String>> concurso = new HashMap<String, List<String>>();
-	private Map<String,List<Enlace>> enlaces = new HashMap<String, List<Enlace>>();
+	private List<InfoAnio> infoAnios;
+	private List<Noticia> noticias;
+	private Map<String, List<Enlace>> enlaces;
+	private int anioActual;
 	
 	private ActualizarPostAsyncTask tarea;
 	private boolean error = false;
@@ -38,55 +36,10 @@ public class CarnavappApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		infoAnios = new ArrayList<InfoAnio>();
+		noticias = new ArrayList<Noticia>();
+		enlaces = new HashMap<String, List<Enlace>>();
 		
-		agrupaciones = new ArrayList<Agrupacion>();
-		calendario = new HashMap<String, List<Agrupacion>>();
-		modalidades = new HashMap<String, List<Agrupacion>>();
-		modalidades.put(Constantes.MODALIDAD_CHIRIGOTA, new ArrayList<Agrupacion>());
-		modalidades.put(Constantes.MODALIDAD_COMPARSA, new ArrayList<Agrupacion>());
-		modalidades.put(Constantes.MODALIDAD_CORO, new ArrayList<Agrupacion>());
-		modalidades.put(Constantes.MODALIDAD_CUARTETO, new ArrayList<Agrupacion>());
-		modalidades.put(Constantes.MODALIDAD_INFANTIL, new ArrayList<Agrupacion>());
-		modalidades.put(Constantes.MODALIDAD_JUVENIL, new ArrayList<Agrupacion>());
-		modalidades.put(Constantes.MODALIDAD_ROMANCERO, new ArrayList<Agrupacion>());
-		modalidades.put(Constantes.MODALIDAD_CALLEJERA, new ArrayList<Agrupacion>());
-		
-		List<String> preeliminares = new ArrayList<String>();
-		preeliminares.add("21/01/2012");
-		preeliminares.add("22/01/2012");
-		preeliminares.add("23/01/2012");
-		preeliminares.add("24/01/2012");
-		preeliminares.add("25/01/2012");
-		preeliminares.add("26/01/2012");
-		preeliminares.add("27/01/2012");
-		preeliminares.add("28/01/2012");
-		preeliminares.add("29/01/2012");
-		preeliminares.add("30/01/2012");
-		preeliminares.add("31/01/2012");
-		preeliminares.add("01/02/2012");
-		preeliminares.add("02/02/2012");
-		preeliminares.add("03/02/2012");
-		preeliminares.add("04/02/2012");
-		concurso.put(Constantes.FASE_PREELIMINAR, preeliminares);
-
-		List<String> cuartos = new ArrayList<String>();
-		cuartos.add("06/02/2012");
-		cuartos.add("07/02/2012");
-		cuartos.add("08/02/2012");
-		cuartos.add("09/02/2012");
-		cuartos.add("10/02/2012");
-		cuartos.add("11/02/2012");
-		concurso.put(Constantes.FASE_CUARTOS, cuartos);
-
-		List<String> semis = new ArrayList<String>();
-		semis.add("13/02/2012");
-		semis.add("14/02/2012");
-		semis.add("15/02/2012");
-		concurso.put(Constantes.FASE_SEMIS, semis);
-
-		List<String> final2 = new ArrayList<String>();
-		final2.add("17/02/2012");
-		concurso.put(Constantes.FASE_FINAL, final2);
 		
 		cargarDatos(null);
 		System.out.println(" ------ COMENZANDO APPLICATION ------ ");
@@ -96,65 +49,38 @@ public class CarnavappApplication extends Application {
 		return "https://jcorralejo.googlecode.com/svn/trunk/Carnavapp/carnavapp.xml";
 	}
 	
-	public String getTextoDia(String dia){
-		String result = "";
-		if(getConcurso().get(Constantes.FASE_PREELIMINAR).contains(dia))
-			result = "Preliminar "+ (getConcurso().get(Constantes.FASE_PREELIMINAR).indexOf(dia)+1);
-		else if(getConcurso().get(Constantes.FASE_CUARTOS).contains(dia))
-			result = "Cuarto de Final "+ (getConcurso().get(Constantes.FASE_CUARTOS).indexOf(dia)+1);
-		else if(getConcurso().get(Constantes.FASE_SEMIS).contains(dia))
-			result = "Semifinal "+ (getConcurso().get(Constantes.FASE_SEMIS).indexOf(dia)+1);
-		else if(getConcurso().get(Constantes.FASE_FINAL).contains(dia))
-			result = "Final";
-		return result;
-	}
+//	public String getTextoDia(String dia){
+//		String result = "";
+//		if(getConcurso().get(Constantes.FASE_PREELIMINAR).contains(dia))
+//			result = "Preliminar "+ (getConcurso().get(Constantes.FASE_PREELIMINAR).indexOf(dia)+1);
+//		else if(getConcurso().get(Constantes.FASE_CUARTOS).contains(dia))
+//			result = "Cuarto de Final "+ (getConcurso().get(Constantes.FASE_CUARTOS).indexOf(dia)+1);
+//		else if(getConcurso().get(Constantes.FASE_SEMIS).contains(dia))
+//			result = "Semifinal "+ (getConcurso().get(Constantes.FASE_SEMIS).indexOf(dia)+1);
+//		else if(getConcurso().get(Constantes.FASE_FINAL).contains(dia))
+//			result = "Final";
+//		return result;
+//	}
 	
-	public boolean isPreeliminar(){
-		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
-		String dia = sdf.format(new Date());
-		return concurso.get(Constantes.FASE_PREELIMINAR).contains(dia);
-	}
-
-	public boolean isCuartos(){
-		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
-		String dia = sdf.format(new Date());
-		return concurso.get(Constantes.FASE_CUARTOS).contains(dia);
-	}
+//	public boolean isPreeliminar(){
+//		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
+//		String dia = sdf.format(new Date());
+//		return concurso.get(Constantes.FASE_PREELIMINAR).contains(dia);
+//	}
+//
+//	public boolean isCuartos(){
+//		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
+//		String dia = sdf.format(new Date());
+//		return concurso.get(Constantes.FASE_CUARTOS).contains(dia);
+//	}
 	
 	
-	public List<Agrupacion> getAgrupaciones() {
-		return agrupaciones;
-	}
-	public void setAgrupaciones(List<Agrupacion> agrupaciones) {
-		this.agrupaciones = agrupaciones;
-	}
-	public Map<String, List<Agrupacion>> getCalendario() {
-		return calendario;
-	}
-	public void setCalendario(Map<String, List<Agrupacion>> calendario) {
-		this.calendario = calendario;
-	}
-	public Map<String, List<Agrupacion>> getModalidades() {
-		return modalidades;
-	}
-	public void setModalidades(Map<String, List<Agrupacion>> modalidades) {
-		this.modalidades = modalidades;
-	}
-
 	public List<Integer> getFavoritas() {
 		return favoritas;
 	}
 
 	public void setFavoritas(List<Integer> favoritas) {
 		this.favoritas = favoritas;
-	}
-
-	public Map<String, List<String>> getConcurso() {
-		return concurso;
-	}
-
-	public void setConcurso(Map<String, List<String>> concurso) {
-		this.concurso = concurso;
 	}
 
 	public Map<String, List<Enlace>> getEnlaces() {
@@ -170,7 +96,7 @@ public class CarnavappApplication extends Application {
 		//Comprobamos si hay conexión ha internet
 		if(networkAvailable()){
 			if(!actualizando){
-				tarea = new ActualizarPostAsyncTask(pd);
+				tarea = new ActualizarPostAsyncTask(pd, this);
 				tarea.execute();
 				error = false;
 			}
@@ -198,15 +124,17 @@ public class CarnavappApplication extends Application {
 	
 	class ActualizarPostAsyncTask extends AsyncTask<Void, Void, Void> {
 		private ProgressDialog pd;
+		private CarnavappApplication app;
 		
-		public ActualizarPostAsyncTask(ProgressDialog pd) {
+		public ActualizarPostAsyncTask(ProgressDialog pd, CarnavappApplication app) {
 			this.pd = pd;
+			this.app = app;
 		}
 
 		@Override
 		protected Void doInBackground(Void... params) {
 			actualizando = true;
-			RssDownloadHelper.updateRssData(getRssUrl(), getAgrupaciones(), getCalendario(), getModalidades(), getEnlaces());
+			RssDownloadHelper.updateRssData(getRssUrl(), app);
 			return null;
 		}
 		
@@ -223,8 +151,6 @@ public class CarnavappApplication extends Application {
 			actualizando = false;
 			super.onCancelled();
 		}
-		
-
 		
 	}
 	
@@ -252,6 +178,37 @@ public class CarnavappApplication extends Application {
 
 	public void setActualizando(boolean actualizando) {
 		this.actualizando = actualizando;
+	}
+
+	public int getAnioActual() {
+		return anioActual;
+	}
+
+	public void setAnioActual(int anioActual) {
+		//Sólo setearemos el año actual que viene del XML si el usuario
+		//no ha guardado uno
+		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
+		int ultima = prefs.getInt(Constantes.CTE_ANIO_ACTUAL_USUARIO, -1);
+		if(ultima<0)
+			this.anioActual = anioActual;
+		else
+			this.anioActual = ultima;
+	}
+
+	public List<InfoAnio> getInfoAnios() {
+		return infoAnios;
+	}
+
+	public void setInfoAnios(List<InfoAnio> infoAnios) {
+		this.infoAnios = infoAnios;
+	}
+
+	public List<Noticia> getNoticias() {
+		return noticias;
+	}
+
+	public void setNoticias(List<Noticia> noticias) {
+		this.noticias = noticias;
 	}
 
 }
