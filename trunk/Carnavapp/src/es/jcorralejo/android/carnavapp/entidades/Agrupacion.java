@@ -19,11 +19,13 @@ public class Agrupacion implements Serializable{
 	private String url_cc;
 	private String url_foto;
 	private int anio;
+	private String web;
 	private List<Foto> fotos;
 	private List<Video> videos;
 	private List<Componente> componentes;
 	private List<Comentario> comentarios;
 	private List<Agrupacion> otrosAnios;
+	private List<Puntuacion> puntuaciones;
 	
 	public int getId() {
 		return id;
@@ -120,6 +122,18 @@ public class Agrupacion implements Serializable{
 	}
 	public void setOtrosAnios(List<Agrupacion> otrosAnios) {
 		this.otrosAnios = otrosAnios;
+	}
+	public String getWeb() {
+		return web;
+	}
+	public void setWeb(String web) {
+		this.web = web;
+	}
+	public List<Puntuacion> getPuntuaciones() {
+		return puntuaciones;
+	}
+	public void setPuntuaciones(List<Puntuacion> puntuaciones) {
+		this.puntuaciones = puntuaciones;
 	}
 
 }

@@ -1,8 +1,8 @@
 package es.jcorralejo.android.carnavapp.utils;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -10,16 +10,21 @@ import org.xml.sax.ext.LexicalHandler;
 import org.xml.sax.helpers.DefaultHandler;
 
 import android.content.ContentValues;
+import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
 import es.jcorralejo.android.carnavapp.entidades.Comentario;
 import es.jcorralejo.android.carnavapp.entidades.Componente;
+import es.jcorralejo.android.carnavapp.entidades.DiaActuacion;
 import es.jcorralejo.android.carnavapp.entidades.Enlace;
 import es.jcorralejo.android.carnavapp.entidades.Foto;
+import es.jcorralejo.android.carnavapp.entidades.InfoAnio;
+import es.jcorralejo.android.carnavapp.entidades.Noticia;
+import es.jcorralejo.android.carnavapp.entidades.Puntuacion;
 import es.jcorralejo.android.carnavapp.entidades.Video;
 
 public class RssHandler extends DefaultHandler implements LexicalHandler {
 	
-	public static final String COAC2012 = "coac2012";
+	public static final String CARNAVAPP = "carnavapp";
 	public static final String CALENDARIO = "calendario";
 	public static final String AGRUPACION = "agrupacion";
 	public static final String COMENTARIO = "comentario";
@@ -49,26 +54,25 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String ANIO = "anio";
 	public static final String OTROS_ANIOS = "otros_anios";
 	public static final String OTRO_ANIO = "otro_anio";
+	public static final String WEB = "web";
+	public static final String FASE = "fase";
+	public static final String NOTICIA = "noticia";
+	public static final String TITULO = "titulo";
+	public static final String URLIMAGEN = "urlImagen";
+	public static final String URLENLACE = "urlEnlace";
+	public static final String PUNTUACION = "puntuacion";
+	public static final String PUNTOS = "puntos";
+	public static final String ANIOACTUAL = "anioActual";
 
-	
-	public static final String TITLE = "title";
-	public static final String LINK = "link";
-	public static final String COMMENTS = "comments";
-	public static final String PUB_DATE = "pub_date";
-	public static final String CREATOR = "creator";
-	public static final String DESCRIPTION = "description";
-	
-	private List<Agrupacion> agrupaciones;
-	private Map<String, List<Agrupacion>> calendario;
-	private Map<String,List<Agrupacion>> modalidades;
-	private Map<String, List<Enlace>> enlaces;
+	private CarnavappApplication app;
 	
 	// Donde iremos guardando los datos del registro a guardar
 	ContentValues rssItem;
 	
 	Agrupacion agrupacionActual;
 	private List<Agrupacion> agrupacionesDiaActual;
-	private String diaActual;
+	private Date diaActual;
+	private String faseActual;
 	private int anioActual;
 
 	// Flags para saber en que nodo estamos
@@ -79,14 +83,12 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	private boolean in_dia = false;
 	private boolean in_puesto = false;
 	private boolean in_otros_anios = false;
+	private boolean in_noticia = false;
+	private boolean in_puntuacion = false;
 	
 	
-    public RssHandler(List<Agrupacion> agrupaciones, Map<String, List<Agrupacion>> calendario, 
-    				  Map<String,List<Agrupacion>> modalidades, Map<String, List<Enlace>> enlaces) {
-		this.agrupaciones = agrupaciones;
-		this.calendario = calendario;
-		this.modalidades = modalidades;
-		this.enlaces = enlaces;
+    public RssHandler(CarnavappApplication app) {
+		this.app = app;
 	}
 
     /** 
@@ -98,8 +100,11 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      **/
     @Override
     public void startElement(String namespaceURI, String localName, String qName, Attributes atts) throws SAXException {
-    	if(localName.equalsIgnoreCase(ANIO)){
+    	if(localName.equalsIgnoreCase(CARNAVAPP)){
+    		app.setAnioActual(Integer.valueOf(atts.getValue(ANIOACTUAL)));
+    	} else if(localName.equalsIgnoreCase(ANIO)){
     		anioActual = Integer.valueOf(atts.getValue(ANIO));
+    		app.getInfoAnios().add(new InfoAnio(anioActual));
     	}else if(localName.equalsIgnoreCase(AGRUPACION)) {
     		in_agrupacion = true;
     		agrupacionActual = new Agrupacion();
@@ -114,6 +119,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     		agrupacionActual.setUrl_cc(atts.getValue(URL_CC));
     		agrupacionActual.setUrl_foto(atts.getValue(URL_FOTO));
     		agrupacionActual.setAnio(anioActual);
+    		agrupacionActual.setWeb(atts.getValue(WEB));
     	} else if(localName.equalsIgnoreCase(COMPONENTE)) {
     		in_componente = true;
     		Componente componente = new Componente();
@@ -146,9 +152,11 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      	} else if(localName.equalsIgnoreCase(DIA)) {
      		in_dia = true;
      		agrupacionesDiaActual = new ArrayList<Agrupacion>();
-     		diaActual = atts.getValue(FECHA);
-     		if(!calendario.containsKey(diaActual))
-     			calendario.put(diaActual, new ArrayList<Agrupacion>());
+     		diaActual = new Date(atts.getValue(FECHA));
+     		faseActual = atts.getValue(FASE);
+     		InfoAnio infoAnio = app.getInfoAnios().get(app.getInfoAnios().size()-1);
+     		if(!infoAnio.getConcurso().getFases().containsKey(faseActual))
+     			infoAnio.getConcurso().getFases().put(faseActual, new ArrayList<DiaActuacion>());
      	} else if(localName.equalsIgnoreCase(PUESTO)) {
      		in_puesto = true;
      		int index = Integer.parseInt(atts.getValue(NO));
@@ -168,10 +176,34 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 			enlace.setTipo(tipo);
     		enlace.setUrl(atts.getValue(URL));
     		
-    		if(!enlaces.containsKey(tipo))
-    			enlaces.put(tipo, new ArrayList<Enlace>());
-    		enlaces.get(tipo).add(enlace);
-     	}
+    		if(!app.getEnlaces().containsKey(tipo))
+    			app.getEnlaces().put(tipo, new ArrayList<Enlace>());
+    		app.getEnlaces().get(tipo).add(enlace);
+     	}else if(localName.equalsIgnoreCase(NOTICIA)) {
+    		in_agrupacion = true;
+    		Noticia noticia = new Noticia();
+    		noticia.setId(Integer.valueOf(atts.getValue(ID)));
+    		noticia.setDescripcion(atts.getValue(DESCRIPCION));
+    		noticia.setTitulo(atts.getValue(TITULO));
+    		noticia.setFecha(new Date(atts.getValue(FECHA)));
+    		noticia.setUrlEnlace(atts.getValue(URLENLACE));
+    		noticia.setUrlImagen(atts.getValue(URLIMAGEN));
+    		
+    		app.getNoticias().add(noticia);
+    	} else if(localName.equalsIgnoreCase(PUNTUACION)) {
+    		in_agrupacion = true;
+    		Puntuacion puntuacion = new Puntuacion();
+    		Agrupacion agrupacion = getAgrupacionPorId(Integer.valueOf(atts.getValue(AGRUPACION)));
+			puntuacion.setAgrupacion(agrupacion);
+			puntuacion.setFase(atts.getValue(FASE));
+			puntuacion.setPuntos(Float.valueOf(atts.getValue(PUNTOS)));
+			
+			InfoAnio infoAnio = app.getInfoAnios().get(app.getInfoAnios().size()-1);
+			infoAnio.getConcurso().getPuntuaciones().add(puntuacion);
+			if(agrupacion.getPuntuaciones()==null)
+				agrupacion.setPuntuaciones(new ArrayList<Puntuacion>());
+			agrupacion.getPuntuaciones().add(puntuacion);
+    	}
     }
     
     private Agrupacion crearAgrupacionDescanso(){
@@ -184,9 +216,12 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     private Agrupacion getAgrupacionPorId(int id){
     	if(Integer.MIN_VALUE==id)
     		return crearAgrupacionDescanso();
-    	for(Agrupacion a : agrupaciones){
-    		if(a.getId()==id)
-    			return a;
+    	
+    	for(InfoAnio infoAnio : app.getInfoAnios()){
+    		for(Agrupacion a : infoAnio.getConcurso().getAgrupaciones()){
+    			if(a.getId()==id)
+    				return a;
+    		}
     	}
     	return null;
     }
@@ -198,10 +233,11 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     @Override
     public void endElement(String namespaceURI, String localName, String qName) throws SAXException {
     	
+    	InfoAnio infoAnio = app.getInfoAnios().get(app.getInfoAnios().size()-1);
     	if(localName.equalsIgnoreCase(AGRUPACION)) {
     		in_agrupacion = false;
-    		agrupaciones.add(agrupacionActual);
-    		modalidades.get(agrupacionActual.getModalidad()).add(agrupacionActual);
+    		infoAnio.getConcurso().getAgrupaciones().add(agrupacionActual);
+    		infoAnio.getConcurso().getModalidades().get(agrupacionActual.getModalidad()).add(agrupacionActual);
     		agrupacionActual = null;
     	} else if(localName.equalsIgnoreCase(COMPONENTE)) {
     		in_componente = false;
@@ -211,8 +247,9 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      		in_foto = false;
      	} else if(localName.equalsIgnoreCase(DIA)) {
      		in_dia = false;
-     		calendario.get(diaActual).addAll(new ArrayList<Agrupacion>(agrupacionesDiaActual));
+     		infoAnio.getConcurso().getFases().get(faseActual).add(new DiaActuacion(diaActual, agrupacionesDiaActual));
      		diaActual = null;
+     		faseActual = null;
      		agrupacionesDiaActual.clear();
      	} else if(localName.equalsIgnoreCase(PUESTO)) {
      		in_puesto = false;

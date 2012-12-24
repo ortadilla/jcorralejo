@@ -2,8 +2,6 @@ package es.jcorralejo.android.carnavapp.utils;
 
 
 import java.net.URL;
-import java.util.List;
-import java.util.Map;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -11,20 +9,18 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
-import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
-import es.jcorralejo.android.carnavapp.entidades.Enlace;
+import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 
 
 public class RssDownloadHelper {
 
-	public static void updateRssData(String rssUrl, List<Agrupacion> agrupaciones, Map<String, List<Agrupacion>> calendario, 
-									 Map<String,List<Agrupacion>> modalidades, Map<String, List<Enlace>> enlaces) {
+	public static void updateRssData(String rssUrl, CarnavappApplication app) {
 		try {
 			URL url = new URL(rssUrl);
 
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 			SAXParser saxParser = spf.newSAXParser();
-			RssHandler rssHandler = new RssHandler(agrupaciones, calendario, modalidades, enlaces);
+			RssHandler rssHandler = new RssHandler(app);
 			saxParser.setProperty("http://xml.org/sax/properties/lexical-handler", rssHandler);
 			XMLReader xr = saxParser.getXMLReader();			
 			xr.setContentHandler(rssHandler);
@@ -33,17 +29,9 @@ public class RssDownloadHelper {
 			is.setEncoding("utf-8");
 			
 			//Una vez obtenido el archivo y antes de parsear, limpiamos las variables
-			agrupaciones.clear();
-			calendario.clear();
-			modalidades.get(Constantes.MODALIDAD_CHIRIGOTA).clear();
-			modalidades.get(Constantes.MODALIDAD_COMPARSA).clear();
-			modalidades.get(Constantes.MODALIDAD_CUARTETO).clear();
-			modalidades.get(Constantes.MODALIDAD_CORO).clear();
-			modalidades.get(Constantes.MODALIDAD_INFANTIL).clear();
-			modalidades.get(Constantes.MODALIDAD_JUVENIL).clear();
-			modalidades.get(Constantes.MODALIDAD_ROMANCERO).clear();
-			modalidades.get(Constantes.MODALIDAD_CALLEJERA).clear();
-			enlaces.clear();
+			app.getInfoAnios().clear();
+			app.getNoticias().clear();
+			app.getEnlaces().clear();
 			
 			xr.parse(is);
 		} catch (Exception e) {
