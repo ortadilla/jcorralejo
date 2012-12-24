@@ -5617,7 +5617,7 @@
 	</puntosInteres>
 	</anio>
 	
-    <anio anio=2013 >
+    <anio anio="2013" >
 	<agrupaciones>
 		<agrupacion id="500" modalidad="CORO" nombre="Ve lavándote el culito que voy parriba" autor="José Antonio Pérez Fernández / Juan Manuel Braza Benítez / David Pérez Chilla / José Antonio Pérez Fernández" director="José Antonio Pérez Fernández"
 		localidad="Cádiz" cabeza_serie="false" 
