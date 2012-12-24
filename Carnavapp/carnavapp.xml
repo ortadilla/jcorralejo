@@ -5545,7 +5545,66 @@
 			<puesto no="14" agrupacion="48"/>
 		</dia>		
 	</calendario>
+	</anio>
 	
+    <anio anio="2013" >
+	<agrupaciones>
+		<agrupacion id="500" modalidad="CORO" nombre="Ve lavándote el culito que voy parriba" autor="José Antonio Pérez Fernández / Juan Manuel Braza Benítez / David Pérez Chilla / José Antonio Pérez Fernández" director="José Antonio Pérez Fernández"
+		localidad="Cádiz" cabeza_serie="false" 
+		info="Nuevo coro del Sheriff, el Canijo y el Habichuela"
+		url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Ve_lavandote_el_culito_que_voy_parriba.php"
+		url_foto=""
+		web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+				<video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
+				<video descripcion="Cuartos del final - Actuación completa" url="http://www.youtube.com/watch?v=AfXw-hKq8hA"/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
+				<comentario origen="Carnavalitas - Comentario preliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=1"/>
+				<comentario origen="Carnavalitas - Comentario cuartos de final" url="http://coac2012.carnavalistas.com/agrupaciones?act=132"/>
+				<comentario origen="Carnavalitas - Comentario semifinales" url="http://coac2012.carnavalistas.com/agrupaciones?act=186"/>
+				<comentario origen="Andalucía Información - Comentario preliminares" url="http://goo.gl/jRCPg"/>
+				<comentario origen="Andalucía Información - Comentario cuartos de final" url="http://goo.gl/DxkAk"/>
+				<comentario origen="Andalucía Información - Comentario semifinales" url="http://goo.gl/58W7A"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78_comentarios.php"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios preliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15905"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios cuartos de final" url="http://www.diariobahiadecadiz.com/detalle-noticia-16164"/>
+				<comentario origen="Diario Bahía de Cádiz - Comentarios semifinales" url="http://www.diariobahiadecadiz.com/detalle-noticia-16266"/>
+				<comentario origen="Diario de Cádiz - Comentarios preliminares" url="http://www.diariodecadiz.es/article/carnavalcadiz2012/1165743/criacutetica/las/actuaciones/la/primera/noche/coac.html"/>
+				<comentario origen="Diario de Cádiz - Comentarios cuartos de final" url="http://www.diariodecadiz.es/article/carnavalcadiz2012/1178957/coro/los/hijos.html"/>
+				<comentario origen="Diario de Cádiz - Comentarios semifinales" url="www.diariodecadiz.es/article/carnavalcadiz2012/1184857/la/revolucioacuten/continuacutea.html"/>
+				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20hijos%20del%2078/2012"/>
+			</comentarios>
+		</agrupacion>
+	</agrupaciones>	
+
+	<calendario>
+		<dia fecha="13/01/2012" fase="PREELIMINARES">
+			<puesto no="1" agrupacion="500"/>
+			<puesto no="2" agrupacion="501"/>
+			<puesto no="3" agrupacion="502"/>
+			<puesto no="4" agrupacion="503"/>
+			<puesto no="5" agrupacion="DESCANSO" />
+			<puesto no="6" agrupacion="504" />
+			<puesto no="7" agrupacion="505" />
+			<puesto no="8" agrupacion="506" />
+			<puesto no="9" agrupacion="507" />
+		</dia>
+	</calendario>
+	
+	</anio>
+	
+    
 	<enlaces>
 		<enlace tipo="Agrupaciones" descripcion="La Comparsa de Tino" url="http://www.lacomparsadetino.com/" />
 		<enlace tipo="Agrupaciones" descripcion="La Comparsa de J.C.Aragón" url="http://www.lacomparsadejuancarlos.com/" />
@@ -5615,47 +5674,9 @@
 		<punto id="12" long="-6.298020" lat="36.530890" nombre="Plaza de Abastos" descripcion="En el reformado Mercado central de abastos se encuentra el banderín de salida del conocido Carrusel de Coros
 		que recorre el centro de la ciudad el Domingo de Carnaval" foto="http://2.bp.blogspot.com/_E-GB-YmksvI/TP_3ONzBPkI/AAAAAAAAD4Y/ttRAxz31ca8/s1600/mercado+abastos.jpg" /> 
 	</puntosInteres>
-	</anio>
 	
-    <anio anio="2013" >
-	<agrupaciones>
-		<agrupacion id="500" modalidad="CORO" nombre="Ve lavándote el culito que voy parriba" autor="José Antonio Pérez Fernández / Juan Manuel Braza Benítez / David Pérez Chilla / José Antonio Pérez Fernández" director="José Antonio Pérez Fernández"
-		localidad="Cádiz" cabeza_serie="false" 
-		info="Nuevo coro del Sheriff, el Canijo y el Habichuela"
-		url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Ve_lavandote_el_culito_que_voy_parriba.php"
-		url_foto="">
-			<otros_anios>
-			    <otro_anio agrupacion="1" />
-			</otros_anios>
-			<componentes>
-				<componente nombre="" voz=""/>
-			</componentes>
-			<videos>
-				<video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
-				<video descripcion="Cuartos del final - Actuación completa" url="http://www.youtube.com/watch?v=AfXw-hKq8hA"/>
-			</videos>
-			<fotos>
-				<foto descripcion="" url=""/>
-			</fotos>
-			<comentarios>
-				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
-				<comentario origen="Carnavalitas - Comentario preliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=1"/>
-				<comentario origen="Carnavalitas - Comentario cuartos de final" url="http://coac2012.carnavalistas.com/agrupaciones?act=132"/>
-				<comentario origen="Carnavalitas - Comentario semifinales" url="http://coac2012.carnavalistas.com/agrupaciones?act=186"/>
-				<comentario origen="Andalucía Información - Comentario preliminares" url="http://goo.gl/jRCPg"/>
-				<comentario origen="Andalucía Información - Comentario cuartos de final" url="http://goo.gl/DxkAk"/>
-				<comentario origen="Andalucía Información - Comentario semifinales" url="http://goo.gl/58W7A"/>
-				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78_comentarios.php"/>
-				<comentario origen="Diario Bahía de Cádiz - Comentarios preliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15905"/>
-				<comentario origen="Diario Bahía de Cádiz - Comentarios cuartos de final" url="http://www.diariobahiadecadiz.com/detalle-noticia-16164"/>
-				<comentario origen="Diario Bahía de Cádiz - Comentarios semifinales" url="http://www.diariobahiadecadiz.com/detalle-noticia-16266"/>
-				<comentario origen="Diario de Cádiz - Comentarios preliminares" url="http://www.diariodecadiz.es/article/carnavalcadiz2012/1165743/criacutetica/las/actuaciones/la/primera/noche/coac.html"/>
-				<comentario origen="Diario de Cádiz - Comentarios cuartos de final" url="http://www.diariodecadiz.es/article/carnavalcadiz2012/1178957/coro/los/hijos.html"/>
-				<comentario origen="Diario de Cádiz - Comentarios semifinales" url="www.diariodecadiz.es/article/carnavalcadiz2012/1184857/la/revolucioacuten/continuacutea.html"/>
-				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20hijos%20del%2078/2012"/>
-			</comentarios>
-		</agrupacion>
-	</agrupaciones>	
-
-	</anio>
+	<noticias>
+	    <noticia id="1" titulo="Título noticia" descripcion="Descripción de la noticia"
+        fecha="22/12/2012" urlImagen="" urlEnlace="www.jcorralejo.com" /> 
+	</noticias>
 </carnavapp>
