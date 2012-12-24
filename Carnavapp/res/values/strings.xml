@@ -7,7 +7,9 @@
     <string name="buscar">Buscar</string>
     <string name="cargando_datos">Cargando datos</string>
     <string name="concurso">Concurso</string>
+    <string name="contactar">Contactar</string>
     <string name="cuartos">Cuartos</string>
+    <string name="donar">Donar</string>
     <string name="enlaces">Enlaces</string>
     <string name="esperar_carga">Por favor, espere mientras actualizamos los datos desde el servidor...</string>
     <string name="fasefinal">Final</string>
@@ -23,6 +25,24 @@
     <string name="salir_pregunta">¿Estás seguro que deseas salir?</string>
     <string name="semifinales">Semifinales</string>
     <string name="si">Sí</string>
+    <string name="texto_acerca_de">
+        <b>ATENCIÓN: CARNAVAPP aun se encuentra en fase beta, por lo que es probable que contenga 
+        algunos errores. Si encuentra alguno de ellos, ve algún dato incorrecto o quiere  
+    	proponer alguna mejora no dude en contactar con el equipo de desarrollo y en el menor tiempo 
+    	posible intentaremos contestar y solucionar el problema</b>
+    	\n\n
+    	CARNAVAPP pretende ser el punto de información sobre el Carnaval de Cádiz para la plataforma móvil 
+    	Android. Principalmente dispone de información referente al Concurso: Agrupaciones, Actuaciones, 
+    	Clasificación, Calendario, Vídeos y Comentarios, etc. Junto con Noticias, Enlaces a webs, etc. 
+    	Además ofrece la posibilidad de guardar agrupaciones favoritas, ver las retransmisiones 
+    	que se emitan on-line y escuchar todo el concurso desde la radio
+    	\n\n
+    	CARNAVAPP está desarrollada sin ánimo de lucro por Jesús Corralejo Banda, un apasionado de Carnaval 
+    	y de las nuevas tecnologías. Si te gusta la aplicación y/o te parece útil, puedes invitarlo a una 
+    	cerveza comprando la versión de donación de CARNAVAPP o puedes pulsar de vez en cuando en la publicidad, no te cuesta nada
+    	\n\n
+    </string>
+    <string name="volver">Volver</string>
     <string name="ya_actualizando">Actualizando datos...Por favor vuelva a intentarlo pasados unos segundos</string>
 
 </resources>

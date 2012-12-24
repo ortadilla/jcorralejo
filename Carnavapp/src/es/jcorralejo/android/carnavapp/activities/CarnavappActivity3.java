@@ -6,15 +6,19 @@ import java.util.Stack;
 
 import org.holoeverywhere.app.AlertDialog;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -277,12 +281,45 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
         } else if (item.getItemId() == R.id.actualizar) {
         	recargar();
         } else if (item.getItemId() == R.id.info) {
-        	Toast.makeText(this, "Info..", Toast.LENGTH_SHORT).show();
+        	showDialog(Constantes.DIALOG_ACERCA_DE);
+			return true;
         } else if (item.getItemId() == R.id.salir) {
         	cerrarAplicacion();
         }
         
         return true;
+    }
+    
+    @Override
+    protected Dialog onCreateDialog(int id, Bundle args) {
+    	final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		switch (id) {
+			case Constantes.DIALOG_ACERCA_DE:
+				LayoutInflater li = LayoutInflater.from(this);
+				View view = li.inflate(R.layout.acercade, null);
+				builder
+				       .setTitle(getString(R.string.app_name))
+				       .setNegativeButton(R.string.contactar, 
+									    	new DialogInterface.OnClickListener() {
+												public void onClick(DialogInterface dialog, int which) {
+													Intent i = new Intent(android.content.Intent.ACTION_SEND);
+													i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{Constantes.DIRECCION_EMAIL});
+													i.setType("plain/text");
+													startActivity(i);
+										  	}})
+				       .setNeutralButton(R.string.donar, 
+						    				new DialogInterface.OnClickListener() {
+												public void onClick(DialogInterface dialog, int which) {
+													Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(Constantes.URL_VERSION_DONACION));
+													startActivity(i);
+												}})
+				       .setPositiveButton(R.string.volver, null)
+				       .setView(view);
+				return builder.create();
+
+			default:
+				return null;
+		}
     }
     
     private void recargar(){
