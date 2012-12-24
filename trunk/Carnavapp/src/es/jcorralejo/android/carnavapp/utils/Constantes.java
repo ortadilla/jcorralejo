@@ -3,7 +3,7 @@ package es.jcorralejo.android.carnavapp.utils;
 
 public class Constantes {
 
-//	public static final int DIALOG_ACERCA_DE = 0;
+	public static final int DIALOG_ACERCA_DE = 0;
 //	public static final int DIALOG_NO_DATOS = 1;
 //	public static final int DIALOG_INSTALAR_RADIO = 2;
 //	public static final int DIALOG_INSTALAR_VIDEO = 3;
@@ -46,5 +46,7 @@ public class Constantes {
 	
 	public static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*1; // recarga cada hora 
 	public static final String CTE_ANIO_ACTUAL_USUARIO = "anioActualUsuario"; 
+	public static final String DIRECCION_EMAIL = "carnavapp_android@gmail.com"; 
+	public static final String URL_VERSION_DONACION = "https://market.android.com/details?id=es.jcorralejo.android.coac2012"; 
 	
 }
