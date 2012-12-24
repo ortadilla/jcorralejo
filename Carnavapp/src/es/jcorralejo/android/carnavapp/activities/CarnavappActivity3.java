@@ -7,21 +7,16 @@ import java.util.Stack;
 import org.holoeverywhere.app.AlertDialog;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.content.DialogInterface.OnCancelListener;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -36,7 +31,6 @@ import com.viewpagerindicator.TabPageIndicator.OnTabReselectedListener;
 import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 import es.jcorralejo.android.carnavapp.utils.Constantes;
-import es.jcorralejo.android.carnavapp.utils.MyProgress;
 
 public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNavigationListener{
 
@@ -295,7 +289,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     	if(app!=null && app.isActualizando()){
     		Toast.makeText(getBaseContext(), getResources().getString(R.string.ya_actualizando), Toast.LENGTH_LONG).show();
     	}else{
-    		final MyProgress pd = MyProgress.show(this, getResources().getString(R.string.cargando_datos), getResources().getString(R.string.esperar_carga), true, false, null);
+    		final ProgressDialog pd = ProgressDialog.show(this, getResources().getString(R.string.cargando_datos), getResources().getString(R.string.esperar_carga), true, false, null);
 			app.cargarDatos(pd);
 
 			SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
