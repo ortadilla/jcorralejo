@@ -20,7 +20,6 @@ import es.jcorralejo.android.carnavapp.entidades.Video;
 public class RssHandler extends DefaultHandler implements LexicalHandler {
 	
 	public static final String COAC2012 = "coac2012";
-	public static final String AGRUPACIONES = "agrupaciones";
 	public static final String CALENDARIO = "calendario";
 	public static final String AGRUPACION = "agrupacion";
 	public static final String COMENTARIO = "comentario";
@@ -30,12 +29,10 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String AUTOR = "autor";
 	public static final String DIRECTOR = "director";
 	public static final String LOCALIDAD = "localidad";
-	public static final String COAC2011 = "coac2011";
 	public static final String CABEZA_SERIE = "cabeza_serie";
 	public static final String URL_CC = "url_cc";
 	public static final String INFO = "info";
 	public static final String URL_FOTO = "url_foto";
-	public static final String URL_VIDEOS = "url_videos";
 	public static final String COMPONENTE = "componente";
 	public static final String VOZ = "voz";
 	public static final String VIDEO = "video";
@@ -47,10 +44,13 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	public static final String NO = "no";
 	public static final String DESCRIPCION = "descripcion";
 	public static final String ORIGEN = "origen";
-	public static final String PUNTOS = "puntos";
 	public static final String ENLACE = "enlace";
 	public static final String TIPO = "tipo";
+	public static final String ANIO = "anio";
+	public static final String OTROS_ANIOS = "otros_anios";
+	public static final String OTRO_ANIO = "otro_anio";
 
+	
 	public static final String TITLE = "title";
 	public static final String LINK = "link";
 	public static final String COMMENTS = "comments";
@@ -69,6 +69,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	Agrupacion agrupacionActual;
 	private List<Agrupacion> agrupacionesDiaActual;
 	private String diaActual;
+	private int anioActual;
 
 	// Flags para saber en que nodo estamos
 	private boolean in_agrupacion = false;
@@ -77,6 +78,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	private boolean in_foto = false;
 	private boolean in_dia = false;
 	private boolean in_puesto = false;
+	private boolean in_otros_anios = false;
 	
 	
     public RssHandler(List<Agrupacion> agrupaciones, Map<String, List<Agrupacion>> calendario, 
@@ -96,7 +98,9 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      **/
     @Override
     public void startElement(String namespaceURI, String localName, String qName, Attributes atts) throws SAXException {
-    	if(localName.equalsIgnoreCase(AGRUPACION)) {
+    	if(localName.equalsIgnoreCase(ANIO)){
+    		anioActual = Integer.valueOf(atts.getValue(ANIO));
+    	}else if(localName.equalsIgnoreCase(AGRUPACION)) {
     		in_agrupacion = true;
     		agrupacionActual = new Agrupacion();
     		agrupacionActual.setId(Integer.valueOf(atts.getValue(ID)));
@@ -105,13 +109,11 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     		agrupacionActual.setAutor(atts.getValue(AUTOR));
     		agrupacionActual.setDirector(atts.getValue(DIRECTOR));
     		agrupacionActual.setLocalidad(atts.getValue(LOCALIDAD));
-    		agrupacionActual.setCoac2011(atts.getValue(COAC2011));
     		agrupacionActual.setCabezaSerie(Boolean.TRUE.toString().equals(atts.getValue(CABEZA_SERIE)));
     		agrupacionActual.setInfo(atts.getValue(INFO));
     		agrupacionActual.setUrl_cc(atts.getValue(URL_CC));
     		agrupacionActual.setUrl_foto(atts.getValue(URL_FOTO));
-    		agrupacionActual.setUrl_videos(atts.getValue(URL_VIDEOS));
-    		agrupacionActual.setPuntos(atts.getValue(PUNTOS));
+    		agrupacionActual.setAnio(anioActual);
     	} else if(localName.equalsIgnoreCase(COMPONENTE)) {
     		in_componente = true;
     		Componente componente = new Componente();
@@ -125,6 +127,13 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     		if(agrupacionActual.getVideos()==null)
     			agrupacionActual.setVideos(new ArrayList<Video>());
     		agrupacionActual.getVideos().add(new Video(atts.getValue(DESCRIPCION), atts.getValue(URL)));
+    	} else if(localName.equalsIgnoreCase(OTRO_ANIO)) {
+    		in_otros_anios = true;
+    		if(agrupacionActual.getOtrosAnios()==null)
+    			agrupacionActual.setOtrosAnios(new ArrayList<Agrupacion>());
+    		Agrupacion otroAnio = getAgrupacionPorId(Integer.valueOf(atts.getValue(AGRUPACION)));
+    		if(otroAnio!=null)
+    			agrupacionActual.getOtrosAnios().add(otroAnio);
     	} else if(localName.equalsIgnoreCase(COMENTARIO)) {
     		if(agrupacionActual.getComentarios()==null)
     			agrupacionActual.setComentarios(new ArrayList<Comentario>());

@@ -14,17 +14,16 @@ public class Agrupacion implements Serializable{
 	private String autor;
 	private String director;
 	private String localidad;
-	private String coac2011;
 	private boolean cabezaSerie;
 	private String info;
 	private String url_cc;
 	private String url_foto;
-	private String url_videos;
-	private String puntos;
+	private int anio;
 	private List<Foto> fotos;
 	private List<Video> videos;
 	private List<Componente> componentes;
 	private List<Comentario> comentarios;
+	private List<Agrupacion> otrosAnios;
 	
 	public int getId() {
 		return id;
@@ -62,12 +61,6 @@ public class Agrupacion implements Serializable{
 	public void setLocalidad(String localidad) {
 		this.localidad = localidad;
 	}
-	public String getCoac2011() {
-		return coac2011;
-	}
-	public void setCoac2011(String coac2011) {
-		this.coac2011 = coac2011;
-	}
 	public boolean isCabezaSerie() {
 		return cabezaSerie;
 	}
@@ -85,12 +78,6 @@ public class Agrupacion implements Serializable{
 	}
 	public void setUrl_foto(String url_foto) {
 		this.url_foto = url_foto;
-	}
-	public String getUrl_videos() {
-		return url_videos;
-	}
-	public void setUrl_videos(String url_videos) {
-		this.url_videos = url_videos;
 	}
 	public List<Foto> getFotos() {
 		return fotos;
@@ -122,11 +109,17 @@ public class Agrupacion implements Serializable{
 	public void setComentarios(List<Comentario> comentarios) {
 		this.comentarios = comentarios;
 	}
-	public String getPuntos() {
-		return puntos;
+	public int getAnio() {
+		return anio;
 	}
-	public void setPuntos(String puntos) {
-		this.puntos = puntos;
+	public void setAnio(int anio) {
+		this.anio = anio;
+	}
+	public List<Agrupacion> getOtrosAnios() {
+		return otrosAnios;
+	}
+	public void setOtrosAnios(List<Agrupacion> otrosAnios) {
+		this.otrosAnios = otrosAnios;
 	}
 
 }

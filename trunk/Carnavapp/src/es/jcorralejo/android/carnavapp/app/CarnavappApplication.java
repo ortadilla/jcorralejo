@@ -93,7 +93,7 @@ public class CarnavappApplication extends Application {
 	}
 	
 	public String getRssUrl(){
-		return "http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml";
+		return "https://jcorralejo.googlecode.com/svn/trunk/Carnavapp/carnavapp.xml";
 	}
 	
 	public String getTextoDia(String dia){
