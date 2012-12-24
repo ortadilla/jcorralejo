@@ -5602,6 +5602,11 @@
 		</dia>
 	</calendario>
 	
+	<puntuaciones>
+	    <puntuacion agrupacion="1" fase="PREELIMINARES" puntos="23" />
+	    <puntuacion agrupacion="1" fase="CUARTOS" puntos="31" />
+	</puntuaciones>
+	
 	</anio>
 	
     
