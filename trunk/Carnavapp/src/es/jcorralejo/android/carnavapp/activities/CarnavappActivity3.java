@@ -34,6 +34,7 @@ import com.viewpagerindicator.TabPageIndicator.OnTabReselectedListener;
 
 import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
+import es.jcorralejo.android.carnavapp.entidades.InfoAnio;
 import es.jcorralejo.android.carnavapp.utils.Constantes;
 
 public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNavigationListener{
@@ -289,6 +290,24 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
         
         return true;
     }
+    
+    private void configurar(){
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle(R.string.configuracion).setMessage(R.string.seleccionar_anio);
+		final String[] anios = new String[app.getInfoAnios().size()];
+		for(int i=0; i<app.getInfoAnios(); i++){
+			InfoAnio infoAnio = app.getInfoAnios().get(i);
+			anios[i] = infoAnio.getAnio();
+		}
+		builder.setItems(anios, new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int item) {
+				String anio = anios[item];
+			}
+		});
+		AlertDialog alert = builder.create();
+		alert.setOwnerActivity(this);
+		alert.show();
+	}
     
     @Override
     protected Dialog onCreateDialog(int id, Bundle args) {

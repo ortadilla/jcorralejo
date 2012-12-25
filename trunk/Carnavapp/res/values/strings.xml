@@ -7,6 +7,7 @@
     <string name="buscar">Buscar</string>
     <string name="cargando_datos">Cargando datos</string>
     <string name="concurso">Concurso</string>
+    <string name="configuracion">Configuración</string>
     <string name="contactar">Contactar</string>
     <string name="cuartos">Cuartos</string>
     <string name="donar">Donar</string>
@@ -24,6 +25,7 @@
     <string name="salir">Salir</string>
     <string name="salir_pregunta">¿Estás seguro que deseas salir?</string>
     <string name="semifinales">Semifinales</string>
+    <string name="seleccionar_anio">Por favor, selecciona el año con el que configurar CARNAVAPP</string>
     <string name="si">Sí</string>
     <string name="texto_acerca_de">
         <b>ATENCIÓN: CARNAVAPP aun se encuentra en fase beta, por lo que es probable que contenga 
