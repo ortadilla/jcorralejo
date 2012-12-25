@@ -5589,7 +5589,7 @@
 	</agrupaciones>	
 
 	<calendario>
-		<dia fecha="13/01/2012" fase="PREELIMINARES">
+		<dia fecha="13/01/2012" fase="PREELIMINAR">
 			<puesto no="1" agrupacion="500"/>
 			<puesto no="2" agrupacion="501"/>
 			<puesto no="3" agrupacion="502"/>
@@ -5603,7 +5603,7 @@
 	</calendario>
 	
 	<puntuaciones>
-	    <puntuacion agrupacion="1" fase="PREELIMINARES" puntos="23" />
+	    <puntuacion agrupacion="1" fase="PREELIMINAR" puntos="23" />
 	    <puntuacion agrupacion="1" fase="CUARTOS" puntos="31" />
 	</puntuaciones>
 	
