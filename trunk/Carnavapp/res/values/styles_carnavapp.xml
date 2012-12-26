@@ -97,6 +97,9 @@
     
     <style name="carnavapp_alert_dialog" parent="@style/Holo.Theme.Dialog.Alert.Light">
         <item name="selectableItemBackground">@drawable/item_background_carnavapp</item>
+<!--         <item name="android:detailsElementBackground">@drawable/item_background_carnavapp</item> -->
+<!--         <item name="android:listViewWhiteStyle">@drawable/item_background_carnavapp</item> -->
+        <item name="android:listChoiceBackgroundIndicator">@drawable/item_background_carnavapp</item>
         <item name="android:windowTitleStyle">@style/carnavapp_windowstitle</item>
     </style>
 
