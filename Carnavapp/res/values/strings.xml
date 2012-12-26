@@ -16,8 +16,9 @@
     <string name="fasefinal">Final</string>
     <string name="info">Información</string> 
     <string name="mas_carnaval">Más Carnaval</string>
-    <string name="modalidades">Modalildades</string>
+    <string name="modalidades">Modalidades</string>
     <string name="no">No</string>
+    <string name="no_agrupaciones">No se han encontrado Agrupaciones</string>
     <string name="no_conexion">Carnavapp necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde</string>
     <string name="opciones">Opciones</string>
     <string name="preeliminares">Preeliminaresaasda</string>
@@ -27,6 +28,7 @@
     <string name="semifinales">Semifinales</string>
     <string name="seleccionar_anio">Selecciona la edición del COAC</string>
     <string name="si">Sí</string>
+    <string name="sin_datos_otras_ediciones">Sin datos de otras ediciones</string>
     <string name="texto_acerca_de">
         <b>ATENCIÓN: CARNAVAPP aun se encuentra en fase beta, por lo que es probable que contenga 
         algunos errores. Si encuentra alguno de ellos, ve algún dato incorrecto o quiere  

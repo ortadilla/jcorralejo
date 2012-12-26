@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class ConcursoFragment extends NamedFragment {
@@ -14,7 +15,10 @@ public class ConcursoFragment extends NamedFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		if(container==null)
 			return null;
-		return (LinearLayout)inflater.inflate(R.layout.concurso, container, false);
+		LinearLayout v = (LinearLayout)inflater.inflate(R.layout.concurso, container, false);
+		Button buton = (Button) v.findViewById(R.id.button1);
+		buton.setText(titulo);
+		return v;
 	}
 	
 	public static ConcursoFragment newInstance(String titulo) {

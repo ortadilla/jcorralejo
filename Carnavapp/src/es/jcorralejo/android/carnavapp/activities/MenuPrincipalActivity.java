@@ -2,6 +2,7 @@ package es.jcorralejo.android.carnavapp.activities;
 
 import org.holoeverywhere.app.AlertDialog;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -30,6 +31,10 @@ public class MenuPrincipalActivity extends SherlockActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_principal);
         app = (CarnavappApplication) getApplication();
+        
+        ProgressDialog pd = ProgressDialog.show(this, getResources().getString(R.string.cargando_datos), getResources().getString(R.string.esperar_carga), true, false, null);
+        app.cargarDatos(pd);
+        
         actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         
