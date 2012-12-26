@@ -44,8 +44,9 @@ public class Constantes {
 //	
 	public static final String TEXTO_DESCANSO = "-- DESCANSO --";
 	
-	public static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*1; // recarga cada hora 
 	public static final String CTE_ANIO_ACTUAL_USUARIO = "anioActualUsuario"; 
+
+	public static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*1; // recarga cada hora 
 	public static final String DIRECCION_EMAIL = "carnavapp_android@gmail.com"; 
 	public static final String URL_VERSION_DONACION = "https://market.android.com/details?id=es.jcorralejo.android.coac2012"; 
 	

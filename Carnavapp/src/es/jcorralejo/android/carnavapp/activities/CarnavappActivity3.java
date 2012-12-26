@@ -277,13 +277,12 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.buscar) {
-            Toast.makeText(this, "Buscando..", Toast.LENGTH_SHORT).show();
+        if (item.getItemId() == R.id.configurar) {
+            configurar();
         } else if (item.getItemId() == R.id.actualizar) {
         	recargar();
         } else if (item.getItemId() == R.id.info) {
         	showDialog(Constantes.DIALOG_ACERCA_DE);
-			return true;
         } else if (item.getItemId() == R.id.salir) {
         	cerrarAplicacion();
         }
@@ -293,15 +292,19 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     
     private void configurar(){
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(R.string.configuracion).setMessage(R.string.seleccionar_anio);
-		final String[] anios = new String[app.getInfoAnios().size()];
-		for(int i=0; i<app.getInfoAnios(); i++){
-			InfoAnio infoAnio = app.getInfoAnios().get(i);
-			anios[i] = infoAnio.getAnio();
+		builder.setTitle(R.string.seleccionar_anio);
+		final CharSequence[] anios = new CharSequence[app.getInfoAnios().size()];
+		for(int i=0; i<app.getInfoAnios().size(); i++){
+			anios[i] = String.valueOf(app.getInfoAnios().get(i).getAnio());
 		}
 		builder.setItems(anios, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int item) {
-				String anio = anios[item];
+				String anio = (String) anios[item];
+				
+				SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);;
+				Editor editor = prefs.edit();
+				editor.putInt(Constantes.CTE_ANIO_ACTUAL_USUARIO, Integer.valueOf(anio));
+				editor.commit();
 			}
 		});
 		AlertDialog alert = builder.create();
