@@ -8,7 +8,7 @@ public class Constantes {
 //	public static final int DIALOG_INSTALAR_RADIO = 2;
 //	public static final int DIALOG_INSTALAR_VIDEO = 3;
 //
-//	public static final String PARAMETRO_AGRUPACIONES = "PARAMETRO_AGRUPACIONES";
+	public static final String PARAMETRO_AGRUPACIONES = "PARAMETRO_AGRUPACIONES";
 //	public static final String PARAMETRO_ENLACES = "PARAMETRO_ENLACES";
 //	public static final String PARAMETRO_AGRUPACION = "PARAMETRO_AGRUPACION";
 //	public static final String PARAMETRO_VIDEOS = "PARAMETRO_VIDEOS";

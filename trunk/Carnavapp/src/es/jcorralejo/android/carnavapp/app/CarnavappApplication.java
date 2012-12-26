@@ -9,8 +9,8 @@ import java.util.Map;
 import android.app.Application;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -41,8 +41,7 @@ public class CarnavappApplication extends Application {
 		noticias = new ArrayList<Noticia>();
 		enlaces = new HashMap<String, List<Enlace>>();
 		
-		
-		cargarDatos(null);
+//		cargarDatos(null);
 		System.out.println(" ------ COMENZANDO APPLICATION ------ ");
 	}
 	
@@ -99,6 +98,9 @@ public class CarnavappApplication extends Application {
 			if(!actualizando){
 				tarea = new ActualizarPostAsyncTask(pd, this);
 				tarea.execute();
+				error = false;
+			}else{
+				ocultarPD(pd);
 				error = false;
 			}
 		}else{
@@ -194,6 +196,18 @@ public class CarnavappApplication extends Application {
 			this.anioActual = anioActual;
 		else
 			this.anioActual = ultima;
+	}
+	
+	public InfoAnio getInfoAnioActual(){
+		InfoAnio infoAnioActual = null;
+		int anioAtual = getAnioActual();
+		for(InfoAnio infoAnio : getInfoAnios()){
+			if(infoAnio.getAnio() == anioAtual){
+				infoAnioActual = infoAnio;
+				break;
+			}
+		}
+		return infoAnioActual;
 	}
 
 	public List<InfoAnio> getInfoAnios() {
