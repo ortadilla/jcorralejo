@@ -16,9 +16,7 @@ import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
@@ -47,9 +45,13 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	private ActionBar actionBar;
 	private String[] opciones;
 	private List<Fragment> fragmentConcurso;
+	private List<String> titulosConcurso;
 	private List<Fragment> fragmentModalidades;
+	private List<String> titulosModalidades;
 	private List<Fragment> fragmentMasCarnaval;
+	private List<String> titulosMasCarnaval;
 	private List<Fragment> fragmentEnlaces;
+	private List<String> titulosEnlaces;
 	private Stack<Integer[]> pila = new Stack<Integer[]>();
 	
 	private final int IDX_OPCION = 0;
@@ -98,30 +100,48 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		fragmentConcurso.add(ConcursoFragment.newInstance("Hoy"));
 		fragmentConcurso.add(ConcursoFragment.newInstance("Calendario"));
 		fragmentConcurso.add(ConcursoFragment.newInstance("Clasificación"));
+		titulosConcurso = new ArrayList<String>();
+		titulosConcurso.add(getString(R.string.hoy));
+		titulosConcurso.add(getString(R.string.calendario));
+		titulosConcurso.add(getString(R.string.clasificacion));
 
 		fragmentEnlaces = new ArrayList<Fragment>();
 		fragmentEnlaces.add(ConcursoFragment.newInstance("Blogs"));
 		fragmentEnlaces.add(ConcursoFragment.newInstance("Diarios"));
 		fragmentEnlaces.add(ConcursoFragment.newInstance("Otros"));
+		titulosEnlaces = new ArrayList<String>();
+		titulosEnlaces.add(getString(R.string.blogs));
+		titulosEnlaces.add(getString(R.string.diarios));
+		titulosEnlaces.add(getString(R.string.otros));
 
 		fragmentModalidades = new ArrayList<Fragment>();
 		fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_COMPARSA)));
 		fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CHIRIGOTA)));
 		fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CORO)));
 		fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CUARTETO)));
+		titulosModalidades = new ArrayList<String>();
+		titulosModalidades.add(getString(R.string.comparsas));
+		titulosModalidades.add(getString(R.string.chirigotas));
+		titulosModalidades.add(getString(R.string.coros));
+		titulosModalidades.add(getString(R.string.cuartetos));
 
 		fragmentMasCarnaval = new ArrayList<Fragment>();
 		fragmentMasCarnaval.add(ConcursoFragment.newInstance("Juveniles"));
 		fragmentMasCarnaval.add(ConcursoFragment.newInstance("Infantiles"));
 		fragmentMasCarnaval.add(ConcursoFragment.newInstance("Romanceros"));
 		fragmentMasCarnaval.add(ConcursoFragment.newInstance("Callejeras"));
+		titulosMasCarnaval = new ArrayList<String>();
+		titulosMasCarnaval.add(getString(R.string.juveniles));
+		titulosMasCarnaval.add(getString(R.string.infantiles));
+		titulosMasCarnaval.add(getString(R.string.romanceros));
+		titulosMasCarnaval.add(getString(R.string.callejeras));
 	}
 	
 	private void configurarPageIndicator(){
 		pager = (ViewPager)findViewById(R.id.pager);
 		indicator = (TabPageIndicator)findViewById(R.id.indicator);
 		
-		FragmentPagerAdapter adapter = new PagerAdapter(super.getSupportFragmentManager(), new ArrayList<Fragment>());
+		FragmentPagerAdapter adapter = new PagerAdapter(super.getSupportFragmentManager(), null, null);
 		pager.setAdapter(adapter);
 		pager.setId(1);
 		indicator.setViewPager(pager);
@@ -200,16 +220,20 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		actualizarPila(itemPosition);
 		
 		List<Fragment> fragments = null;
+		List<String> titulos = null;
 		boolean mostrarOpciones = true;
 		if(OPCION_CONCURSO == itemPosition){
-//			fragments = fragmentConcurso;
-			fragments = fragmentModalidades;
+			fragments = fragmentConcurso;
+			titulos = titulosConcurso;
 		}else if(OPCION_MODALIDADES == itemPosition){
 			fragments = fragmentModalidades;
+			titulos = titulosModalidades;
 		}else if(OPCION_MAS_CARNAVAL == itemPosition){
 			fragments = fragmentMasCarnaval;
+			titulos = titulosMasCarnaval;
 		}else if(OPCION_ENLACES == itemPosition){
 			fragments = fragmentEnlaces;
+			titulos = titulosEnlaces;
 		}else if(OPCION_PUNTOS_INTERES == itemPosition){
 			mostrarOpciones = false;
 		}
@@ -220,8 +244,10 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			
 			PagerAdapter adapter = (PagerAdapter) pager.getAdapter();
 			adapter.setFragments(fragments);
+			adapter.setTitulos(titulos);
 			indicator.notifyDataSetChanged();
 			indicator.setCurrentItem(pila.peek()[IDX_SUBMENU]);
+			adapter.notifyDataSetChanged();
 		}else{
 			pager.setVisibility(View.GONE);
 			indicator.setVisibility(View.GONE);
@@ -351,12 +377,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     		Toast.makeText(getBaseContext(), getResources().getString(R.string.ya_actualizando), Toast.LENGTH_LONG).show();
     	}else{
     		final ProgressDialog pd = ProgressDialog.show(this, getResources().getString(R.string.cargando_datos), getResources().getString(R.string.esperar_carga), true, false, null);
-			app.cargarDatos(pd);
-
-			SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
-			Editor editor = prefs.edit();
-			editor.putLong("ultima_actualizacion", System.currentTimeMillis());
-			editor.commit();
+			app.actualizarDatos(pd, true);
     	}
     }
 

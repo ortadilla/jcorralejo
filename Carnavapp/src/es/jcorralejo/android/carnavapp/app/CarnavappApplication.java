@@ -11,6 +11,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -91,8 +92,21 @@ public class CarnavappApplication extends Application {
 		this.enlaces = enlaces;
 	}
 	
+	public void actualizarDatos(ProgressDialog pd, boolean ignorarTiempo){
+		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);;
+		long ultima = prefs.getLong(Constantes.CTE_ULTIMA_ACTUALIZACION, 0);
+		if (ignorarTiempo || infoAnios==null || infoAnios.isEmpty() 
+		|| ((System.currentTimeMillis() - ultima) > Constantes.FRECUENCIA_ACTUALIZACION)){ 
+			cargarDatos(pd);
+			Editor editor = prefs.edit();
+			editor.putLong(Constantes.CTE_ULTIMA_ACTUALIZACION, System.currentTimeMillis());
+			editor.commit();
+		}else{
+			ocultarPD(pd);
+		}
+	}
 	
-	public void cargarDatos(ProgressDialog pd){
+	private void cargarDatos(ProgressDialog pd){
 		//Comprobamos si hay conexión ha internet
 		if(networkAvailable()){
 			if(!actualizando){

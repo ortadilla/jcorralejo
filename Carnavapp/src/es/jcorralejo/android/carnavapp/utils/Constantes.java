@@ -45,6 +45,7 @@ public class Constantes {
 	public static final String TEXTO_DESCANSO = "-- DESCANSO --";
 	
 	public static final String CTE_ANIO_ACTUAL_USUARIO = "anioActualUsuario"; 
+	public static final String CTE_ULTIMA_ACTUALIZACION = "ultimaActualizacion"; 
 
 	public static final long FRECUENCIA_ACTUALIZACION = 60*60*1000*1; // recarga cada hora 
 	public static final String DIRECCION_EMAIL = "carnavapp_android@gmail.com"; 
