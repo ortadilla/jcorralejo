@@ -5586,7 +5586,180 @@
 				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20hijos%20del%2078/2012"/>
 			</comentarios>
 		</agrupacion>
-	</agrupaciones>	
+        
+        
+        <agrupacion id="501" modalidad="CHIRIGOTA" nombre="Hay quien dise que Cádiz" autor="Luís María Rondán" director="Antonio Beiro Baro"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="502" modalidad="COMPARSA" nombre="El mundo el nuestro" autor="Guillermo Caballero Jiménez, Pascual González Moreno" director="Ismaél Márquez Migal"
+            localidad="Sevilla" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="503" modalidad="CUARTETO" nombre="Los polivalentes" autor="Guillermo Caballero Jiménez, Pascual González Moreno" director="Ismaél Márquez Migal"
+            localidad="Sevilla" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="504" modalidad="COMPARSA" nombre="Los viajes de Amelia" autor="Guillermo Caballero Jiménez, Pascual González Moreno" director="Ismaél Márquez Migal"
+            localidad="Sevilla" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        
+        <agrupacion id="505" modalidad="CORO" nombre="La guaracha" autor="Guillermo Caballero Jiménez, Pascual González Moreno" director="Ismaél Márquez Migal"
+            localidad="Sevilla" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="506" modalidad="CHIRIGOTA" nombre="Las verdades del banquero" autor="Guillermo Caballero Jiménez, Pascual González Moreno" director="Ismaél Márquez Migal"
+            localidad="Sevilla" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="507" modalidad="COMPARSA" nombre="El pelotón de mariamoco" autor="Guillermo Caballero Jiménez, Pascual González Moreno" director="Ismaél Márquez Migal"
+            localidad="Sevilla" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="508" modalidad="CHIRIGOTA" nombre="La verdadera historia de Jesulín después de Belén" autor="Guillermo Caballero Jiménez, Pascual González Moreno" director="Ismaél Márquez Migal"
+            localidad="Sevilla" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+
+        
+	</agrupaciones>
 
 	<calendario>
 		<dia fecha="13/01/2013" fase="PREELIMINAR">
