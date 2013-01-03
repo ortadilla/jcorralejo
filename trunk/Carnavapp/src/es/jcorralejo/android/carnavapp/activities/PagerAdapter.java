@@ -9,26 +9,27 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class PagerAdapter extends FragmentPagerAdapter {
 
 	private List<Fragment> fragments;
+	private List<String> titulos;
 	
-	public PagerAdapter(FragmentManager fm, List<Fragment> fragments) {
+	public PagerAdapter(FragmentManager fm, List<Fragment> fragments, List<String> titulos) {
 		super(fm);
 		this.fragments = fragments;
+		this.titulos = titulos;
 	}
 	
 	@Override
 	public Fragment getItem(int position) {
-		return fragments.get(position);
+		return fragments!=null ? fragments.get(position) : null;
 	}
 
 	@Override
 	public int getCount() {
-		return fragments.size();
+		return fragments!=null ? fragments.size() : 0;
 	}
 	
 	@Override
 	public CharSequence getPageTitle(int position) {
-		Fragment fragment = fragments.get(position);
-		return  fragment instanceof NamedFragment ? ((NamedFragment)fragment).getTitulo() : "asd";
+		return titulos!=null ? titulos.get(position).toUpperCase() : "";
 	}
 	
 	public List<Fragment> getFragments() {
@@ -38,6 +39,14 @@ public class PagerAdapter extends FragmentPagerAdapter {
 	public void setFragments(List<Fragment> fragments) {
 		this.fragments = fragments;
 		notifyDataSetChanged();
+	}
+
+	public List<String> getTitulos() {
+		return titulos;
+	}
+
+	public void setTitulos(List<String> titulos) {
+		this.titulos = titulos;
 	}
 	
 }

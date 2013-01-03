@@ -25,6 +25,9 @@ public class AgrupacionesFragment extends ListFragment {
 	private LayoutInflater miInflater;
 	private CarnavappApplication app;
 	
+	public AgrupacionesFragment() {
+	}
+	
 	public static AgrupacionesFragment newInstance(List<Agrupacion> agrupaciones) {
 		AgrupacionesFragment agrupacionesFragment = new AgrupacionesFragment(agrupaciones);
 	    return agrupacionesFragment;

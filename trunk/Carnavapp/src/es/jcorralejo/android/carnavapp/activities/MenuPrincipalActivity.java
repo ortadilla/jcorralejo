@@ -5,8 +5,6 @@ import org.holoeverywhere.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +16,6 @@ import com.actionbarsherlock.app.SherlockActivity;
 import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 import es.jcorralejo.android.carnavapp.utils.AnunciosUtils;
-import es.jcorralejo.android.carnavapp.utils.Constantes;
 
 public class MenuPrincipalActivity extends SherlockActivity {
 	
@@ -33,7 +30,7 @@ public class MenuPrincipalActivity extends SherlockActivity {
         app = (CarnavappApplication) getApplication();
         
         ProgressDialog pd = ProgressDialog.show(this, getResources().getString(R.string.cargando_datos), getResources().getString(R.string.esperar_carga), true, false, null);
-        app.cargarDatos(pd);
+        app.actualizarDatos(pd, false);
         
         actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
@@ -80,23 +77,5 @@ public class MenuPrincipalActivity extends SherlockActivity {
 		android.os.Process.killProcess(android.os.Process.myPid());
 	}
 	
-	@Override
-	public void onResume() {
-		super.onResume();
-		
-		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);;
-		long ultima = prefs.getLong("ultima_actualizacion", 0);
-		if ((System.currentTimeMillis() - ultima) > Constantes.FRECUENCIA_ACTUALIZACION){ 
-			app.cargarDatos(null);
-			Editor editor = prefs.edit();
-			editor.putLong("ultima_actualizacion", System.currentTimeMillis());
-			editor.commit();
-		}
-		
-		AnunciosUtils.cargarAnuncios(this);
-	}
-	
-
-
 
 }
