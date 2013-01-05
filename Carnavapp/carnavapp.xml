@@ -6954,6 +6954,197 @@
 			<comentarios>
 			</comentarios>
 		</agrupacion>
+        
+        <agrupacion id="565" modalidad="CORO" nombre="Guas, plais, mais" autor="José Antonio Vera Luque, Amaro Portillo Portillo" director="Leonardo Calle Alba"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="566" modalidad="COMPARSA" nombre="Yo por ti cambio" autor="David Ruíz Fuentes, Juan Carlos Martín Benítez" director="David Ruíz Fuentes"
+            localidad="Lebrija (Sevilla)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        
+        <agrupacion id="567" modalidad="COMPARSA" nombre="La fanfarria" autor="Juan Carlos Moreno García" director="Juan Cádiz Vaca"
+            localidad="Tarifa (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="568" modalidad="CUARTETO" nombre="Los tontacos" autor="Javier Jiménez Cuadrados" director="La agrupación"
+            localidad="Granada" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="569" modalidad="COMPARSA" nombre="El rey burlón" autor="Juan Fernández Domínguez" director="Manuel Sánchez Monreal"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        
+        <agrupacion id="570" modalidad="COMPARSA" nombre="La ola" autor="Rafael María Pastrana Lorenzo" director="María del Carmen Jiménez Barea"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="571" modalidad="CHIRIGOTA" nombre="Contigo aprendí" autor="Antonio Pedro Serrano Alvarez 'El Canijo'" director="Ruben Navarro Márquez"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="572" modalidad="COMPARSA" nombre="Los válidos" autor="Jose Manuel Cardoso Romero, Enrique García Rosado 'Kike Remolino'" director="Agustín Correa Rodríguez"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="573" modalidad="CHIRIGOTA" nombre="Este año llegamos a lo más alto" autor="Nasser Mohamed Abu, Miguel Ángel Díaz Pavón" director="Miguel Ángel Díaz Pavón"
+            localidad="Herencia (Ciudad Real)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
 	</agrupaciones>
 
 	<calendario>
@@ -7052,6 +7243,15 @@
 		</dia>
         
         <dia fecha="20/01/2013" fase="PREELIMINAR">
+            <puesto no="1" agrupacion="565"/>
+			<puesto no="2" agrupacion="566"/>
+			<puesto no="3" agrupacion="567"/>
+			<puesto no="4" agrupacion="568"/>
+			<puesto no="5" agrupacion="DESCANSO" />
+			<puesto no="6" agrupacion="569" />
+			<puesto no="7" agrupacion="571" />
+			<puesto no="8" agrupacion="572" />
+			<puesto no="9" agrupacion="573" />
 		</dia>
 
         <dia fecha="21/01/2013" fase="PREELIMINAR">
