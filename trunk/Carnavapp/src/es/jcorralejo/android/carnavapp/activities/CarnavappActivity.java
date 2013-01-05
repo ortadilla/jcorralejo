@@ -1,6 +1,7 @@
 package es.jcorralejo.android.carnavapp.activities;
 
 import java.util.List;
+import java.util.Stack;
 
 import org.holoeverywhere.app.AlertDialog;
 
@@ -16,6 +17,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -28,6 +30,7 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.viewpagerindicator.TabPageIndicator;
+import com.viewpagerindicator.TabPageIndicator.OnTabReselectedListener;
 
 import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
@@ -42,6 +45,10 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 	protected String[] opciones;
 	protected List<Fragment> fragment;
 	protected List<String> titulos;
+	static private Stack<Integer[]> pila = new Stack<Integer[]>();
+	
+	private final int IDX_OPCION = 0;
+	private final int IDX_SUBMENU = 1;
 	
 	private boolean navegar;
 	
@@ -67,6 +74,29 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 		navegar = false;
 	}
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
+	
+	@Override
+	public Object onRetainCustomNonConfigurationInstance() {
+		return pila;
+	}
+	
+	@SuppressWarnings("unchecked")
+	private void recuperarUltimaPila(){
+		//Si guardamos una pila, volvemos a donde nos indique
+		Object ultimaPila = getLastCustomNonConfigurationInstance();
+		if(ultimaPila!=null){
+			pila = (Stack<Integer[]>) ultimaPila;
+			Integer[] volverA = pila.peek();
+			actionBar.setSelectedNavigationItem(volverA[IDX_OPCION]);
+			pager.setCurrentItem(volverA[IDX_SUBMENU]);
+
+		}
+	}
+	
 	private void configurarActionBar(){
 		if(actionBar==null){
 			actionBar = getSupportActionBar();
@@ -83,6 +113,30 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 		pager.setAdapter(adapter);
 		pager.setId(R.id.pager);
 		indicator.setViewPager(pager);
+		indicator.setOnTabReselectedListener(new OnTabReselectedListener() {
+			@Override
+			public void onTabReselected(int position) {
+				Integer[] ultimo = pila.pop();
+				ultimo[IDX_SUBMENU] = position; //Actualizamos la posición
+				pila.push(ultimo);
+			}
+		});
+		
+		indicator.setOnPageChangeListener(new OnPageChangeListener() {
+			
+			@Override
+			public void onPageSelected(int arg0) {
+				Integer[] ultimo = pila.pop();
+				ultimo[IDX_SUBMENU] = arg0; //Actualizamos la posición
+				pila.push(ultimo);
+			}
+			
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {}
+			
+			@Override
+			public void onPageScrollStateChanged(int arg0) {}
+		});
 	}
 	
 	private void configurarOpciones(){
@@ -216,6 +270,8 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 	@Override
 	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
 		
+		actualizarPila(itemPosition);
+		
 		if(navegar){
 			Class clase = null;
 			if(OPCION_CONCURSO == itemPosition){
@@ -235,6 +291,43 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 
 		return true;
 	}
+	
+	private void actualizarPila(int itemPosition){
+		Integer[] nuevaPosición = new Integer[2];
+		nuevaPosición[IDX_OPCION] = itemPosition;
+		nuevaPosición[IDX_SUBMENU] = 0; //Siempre empezamos en la primera pestaña
+		
+		if(!pila.isEmpty()){
+			
+			//Si llegamos al último no hacemos nada
+			Integer[] ultimo = pila.peek();
+			if(ultimo[IDX_OPCION].equals(itemPosition))
+				return;
+			
+			//Si pulsan el anterior donde estuvimos quitamos de la pila el úlimo
+			if(pila.size()>1){
+				Integer[] penultimo = pila.get(pila.size()-2);
+				if(penultimo[IDX_OPCION].equals(itemPosition))
+					pila.pop();
+				else
+					pila.push(nuevaPosición);
+			}else
+				pila.push(nuevaPosición);
+		}else
+			pila.push(nuevaPosición);
+	}
+	
+	@Override
+    public void onBackPressed() {
+		super.onBackPressed();
+//		if(pila!=null && !pila.isEmpty() && pila.size()>1){
+//			//Quitamos el último
+//			pila.pop();
+//			Integer[] volverA = pila.peek();
+//			actionBar.setSelectedNavigationItem(volverA[IDX_OPCION]);
+//		}
+    }
+
 	
 	protected abstract void configurarFragment();
 	protected abstract int getOpcionSeleccionada();
