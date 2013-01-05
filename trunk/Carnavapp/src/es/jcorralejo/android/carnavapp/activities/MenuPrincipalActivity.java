@@ -40,7 +40,7 @@ public class MenuPrincipalActivity extends SherlockActivity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
-				intent.setClass(getApplicationContext(), CarnavappActivity3.class);
+				intent.setClass(getApplicationContext(), ConcursoActivity.class);
 				startActivity(intent);	
 				finish();
 			}
