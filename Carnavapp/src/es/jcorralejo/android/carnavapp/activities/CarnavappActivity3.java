@@ -96,45 +96,53 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	}
 	
 	private void configurarFragment(){
-		fragmentConcurso = new ArrayList<Fragment>();
-		fragmentConcurso.add(ConcursoFragment.newInstance("Hoy"));
-		fragmentConcurso.add(ConcursoFragment.newInstance("Calendario"));
-		fragmentConcurso.add(ConcursoFragment.newInstance("Clasificación"));
-		titulosConcurso = new ArrayList<String>();
-		titulosConcurso.add(getString(R.string.hoy));
-		titulosConcurso.add(getString(R.string.calendario));
-		titulosConcurso.add(getString(R.string.clasificacion));
+		if(fragmentConcurso==null || fragmentConcurso.isEmpty()){
+			fragmentConcurso = new ArrayList<Fragment>();
+			fragmentConcurso.add(ConcursoFragment.newInstance("Hoy"));
+			fragmentConcurso.add(ConcursoFragment.newInstance("Calendario"));
+			fragmentConcurso.add(ConcursoFragment.newInstance("Clasificación"));
+			titulosConcurso = new ArrayList<String>();
+			titulosConcurso.add(getString(R.string.hoy));
+			titulosConcurso.add(getString(R.string.calendario));
+			titulosConcurso.add(getString(R.string.clasificacion));
+		}
 
-		fragmentEnlaces = new ArrayList<Fragment>();
-		fragmentEnlaces.add(ConcursoFragment.newInstance("Blogs"));
-		fragmentEnlaces.add(ConcursoFragment.newInstance("Diarios"));
-		fragmentEnlaces.add(ConcursoFragment.newInstance("Otros"));
-		titulosEnlaces = new ArrayList<String>();
-		titulosEnlaces.add(getString(R.string.blogs));
-		titulosEnlaces.add(getString(R.string.diarios));
-		titulosEnlaces.add(getString(R.string.otros));
+		if(fragmentEnlaces==null || fragmentEnlaces.isEmpty()){
+			fragmentEnlaces = new ArrayList<Fragment>();
+			fragmentEnlaces.add(ConcursoFragment.newInstance("Blogs"));
+			fragmentEnlaces.add(ConcursoFragment.newInstance("Diarios"));
+			fragmentEnlaces.add(ConcursoFragment.newInstance("Otros"));
+			titulosEnlaces = new ArrayList<String>();
+			titulosEnlaces.add(getString(R.string.blogs));
+			titulosEnlaces.add(getString(R.string.diarios));
+			titulosEnlaces.add(getString(R.string.otros));
+		}
 
-		fragmentModalidades = new ArrayList<Fragment>();
-		fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_COMPARSA)));
-		fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CHIRIGOTA)));
-		fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CORO)));
-		fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CUARTETO)));
-		titulosModalidades = new ArrayList<String>();
-		titulosModalidades.add(getString(R.string.comparsas));
-		titulosModalidades.add(getString(R.string.chirigotas));
-		titulosModalidades.add(getString(R.string.coros));
-		titulosModalidades.add(getString(R.string.cuartetos));
-
-		fragmentMasCarnaval = new ArrayList<Fragment>();
-		fragmentMasCarnaval.add(ConcursoFragment.newInstance("Juveniles"));
-		fragmentMasCarnaval.add(ConcursoFragment.newInstance("Infantiles"));
-		fragmentMasCarnaval.add(ConcursoFragment.newInstance("Romanceros"));
-		fragmentMasCarnaval.add(ConcursoFragment.newInstance("Callejeras"));
-		titulosMasCarnaval = new ArrayList<String>();
-		titulosMasCarnaval.add(getString(R.string.juveniles));
-		titulosMasCarnaval.add(getString(R.string.infantiles));
-		titulosMasCarnaval.add(getString(R.string.romanceros));
-		titulosMasCarnaval.add(getString(R.string.callejeras));
+		if(fragmentModalidades==null || fragmentModalidades.isEmpty()){
+			fragmentModalidades = new ArrayList<Fragment>();
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_COMPARSA)));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CHIRIGOTA)));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CORO)));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CUARTETO)));
+			titulosModalidades = new ArrayList<String>();
+			titulosModalidades.add(getString(R.string.comparsas));
+			titulosModalidades.add(getString(R.string.chirigotas));
+			titulosModalidades.add(getString(R.string.coros));
+			titulosModalidades.add(getString(R.string.cuartetos));
+		}
+		
+		if(fragmentMasCarnaval==null || fragmentMasCarnaval.isEmpty()){
+			fragmentMasCarnaval = new ArrayList<Fragment>();
+			fragmentMasCarnaval.add(ConcursoFragment.newInstance("Juveniles"));
+			fragmentMasCarnaval.add(ConcursoFragment.newInstance("Infantiles"));
+			fragmentMasCarnaval.add(ConcursoFragment.newInstance("Romanceros"));
+			fragmentMasCarnaval.add(ConcursoFragment.newInstance("Callejeras"));
+			titulosMasCarnaval = new ArrayList<String>();
+			titulosMasCarnaval.add(getString(R.string.juveniles));
+			titulosMasCarnaval.add(getString(R.string.infantiles));
+			titulosMasCarnaval.add(getString(R.string.romanceros));
+			titulosMasCarnaval.add(getString(R.string.callejeras));
+		}
 	}
 	
 	private void configurarPageIndicator(){
@@ -143,7 +151,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		
 		FragmentPagerAdapter adapter = new PagerAdapter(super.getSupportFragmentManager(), null, null);
 		pager.setAdapter(adapter);
-		pager.setId(1);
+//		pager.setId(1);
 		indicator.setViewPager(pager);
 		indicator.setOnTabReselectedListener(new OnTabReselectedListener() {
 			@Override
@@ -172,20 +180,24 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	}
 	
 	private void configurarActionBar(){
-		actionBar = getSupportActionBar();
-		actionBar.setDisplayShowTitleEnabled(false);
-		actionBar.setNavigationMode(com.actionbarsherlock.app.ActionBar.NAVIGATION_MODE_LIST);
+		if(actionBar==null){
+			actionBar = getSupportActionBar();
+			actionBar.setDisplayShowTitleEnabled(false);
+			actionBar.setNavigationMode(com.actionbarsherlock.app.ActionBar.NAVIGATION_MODE_LIST);
+		}
 	}
 
 	private void configurarOpciones(){
-		opciones = new String[] {getResources().getString(R.string.concurso),
-								 getResources().getString(R.string.modalidades),
-								 getResources().getString(R.string.mas_carnaval),
-								 getResources().getString(R.string.enlaces),
-								 getResources().getString(R.string.puntos_de_interes)};
-		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getBaseContext(), R.layout.sherlock_spinner_item, opciones);
-		actionBar.setListNavigationCallbacks(arrayAdapter, this);
-		arrayAdapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
+		if(opciones==null || opciones.length==0){
+			opciones = new String[] {getResources().getString(R.string.concurso),
+									 getResources().getString(R.string.modalidades),
+									 getResources().getString(R.string.mas_carnaval),
+									 getResources().getString(R.string.enlaces),
+									 getResources().getString(R.string.puntos_de_interes)};
+			ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getBaseContext(), R.layout.sherlock_spinner_item, opciones);
+			actionBar.setListNavigationCallbacks(arrayAdapter, this);
+			arrayAdapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
+		}
 	}
 	
 	private void actualizarPila(int itemPosition){
@@ -194,7 +206,6 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		nuevaPosición[IDX_SUBMENU] = 0; //Siempre empezamos en la primera pestaña
 		
 		if(!pila.isEmpty()){
-			
 			
 			//Si llegamos al último no hacemos nada
 			Integer[] ultimo = pila.peek();
@@ -248,12 +259,13 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			indicator.notifyDataSetChanged();
 			indicator.setCurrentItem(pila.peek()[IDX_SUBMENU]);
 			adapter.notifyDataSetChanged();
+			
 		}else{
 			pager.setVisibility(View.GONE);
 			indicator.setVisibility(View.GONE);
 		}
 		
-		return false;
+		return true;
 	}
 	
 	

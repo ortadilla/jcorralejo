@@ -1,17 +1,15 @@
 package es.jcorralejo.android.carnavapp.activities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import es.jcorralejo.android.carnavapp.R;
@@ -21,7 +19,7 @@ import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
 public class AgrupacionesFragment extends ListFragment {
 	
 	private ListView listaAgrupaciones;
-	private List<Agrupacion> agrupaciones;
+	private List<Agrupacion> agrupaciones = new ArrayList<Agrupacion>();
 	private LayoutInflater miInflater;
 	private CarnavappApplication app;
 	
@@ -38,7 +36,6 @@ public class AgrupacionesFragment extends ListFragment {
 	}
 
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,17 +50,27 @@ public class AgrupacionesFragment extends ListFragment {
 		// Registramos la lista de lugares para definir su menú contextual
 	    listaAgrupaciones = (ListView)view.findViewById(android.R.id.list);
 		registerForContextMenu(listaAgrupaciones);
+
+		configurarAdapter();
 	    
 	    return view;
 	}
 	
 	@Override
+	public void onResume() {
+		super.onResume();
+		
+//		configurarAdapter();
+	}
+	
+	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		configurarAdapter();
+//		configurarAdapter();
 	}
 	
 	public void configurarAdapter() {
+		if(listaAgrupaciones!=null){
 		listaAgrupaciones.setAdapter(new ArrayAdapter<Agrupacion>(getActivity(), R.layout.agrupaciones_item, agrupaciones) {
 			
 			@Override
@@ -102,6 +109,7 @@ public class AgrupacionesFragment extends ListFragment {
 			}
 			
 		});
+		}
 	}
 
 	
