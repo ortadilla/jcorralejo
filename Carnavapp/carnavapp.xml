@@ -5543,8 +5543,27 @@
 			<puesto no="12" agrupacion="92"/>
 			<puesto no="13" agrupacion="73"/>
 			<puesto no="14" agrupacion="48"/>
-		</dia>		
+		</dia>
 	</calendario>
+        
+    <puntuaciones>
+        <puntuacion agrupacion="79" fase="FINAL" puntos="1000" />
+        <puntuacion agrupacion="61" fase="FINAL" puntos="500" />
+        <puntuacion agrupacion="9" fase="FINAL" puntos="0" />
+
+        <puntuacion agrupacion="48" fase="FINAL" puntos="1000" />
+        <puntuacion agrupacion="101" fase="FINAL" puntos="500" />
+        <puntuacion agrupacion="83" fase="FINAL" puntos="0" />
+
+        <puntuacion agrupacion="103" fase="FINAL" puntos="1000" />
+        <puntuacion agrupacion="132" fase="FINAL" puntos="500" />
+        <puntuacion agrupacion="92" fase="FINAL" puntos="0" />
+
+        <puntuacion agrupacion="38" fase="FINAL" puntos="1000" />
+        <puntuacion agrupacion="109" fase="FINAL" puntos="500" />
+        <puntuacion agrupacion="73" fase="FINAL" puntos="0" />
+    </puntuaciones>
+        
 	</anio>
 	
     <anio anio="2013" >
@@ -5980,284 +5999,78 @@
 		</dia>
         
         <dia fecha="15/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="16/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="17/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="18/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="19/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
         
         <dia fecha="20/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="21/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="22/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="23/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="24/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="25/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="26/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="27/01/2013" fase="PREELIMINAR">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="29/01/2013" fase="CUARTOS">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="30/01/2013" fase="CUARTOS">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="31/01/2013" fase="CUARTOS">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="01/02/2013" fase="CUARTOS">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="02/02/2013" fase="CUARTOS">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="03/02/2013" fase="CUARTOS">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="04/02/2013" fase="SEMIFINAL">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
+
         <dia fecha="05/02/2013" fase="SEMIFINAL">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
+
         <dia fecha="06/02/2013" fase="SEMIFINAL">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
         <dia fecha="08/02/2013" fase="FINAL">
-			<puesto no="1" agrupacion="500"/>
-			<puesto no="2" agrupacion="501"/>
-			<puesto no="3" agrupacion="502"/>
-			<puesto no="4" agrupacion="503"/>
-			<puesto no="5" agrupacion="DESCANSO" />
-			<puesto no="6" agrupacion="504" />
-			<puesto no="7" agrupacion="505" />
-			<puesto no="8" agrupacion="506" />
-			<puesto no="9" agrupacion="507" />
 		</dia>
 
 	</calendario>
 	
 	<puntuaciones>
-	    <puntuacion agrupacion="1" fase="PREELIMINAR" puntos="23" />
-	    <puntuacion agrupacion="1" fase="CUARTOS" puntos="31" />
+
 	</puntuaciones>
 	
 	</anio>
