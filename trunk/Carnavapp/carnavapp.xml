@@ -5581,8 +5581,7 @@
 				<componente nombre="" voz=""/>
 			</componentes>
 			<videos>
-				<video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
-				<video descripcion="Cuartos del final - Actuación completa" url="http://www.youtube.com/watch?v=AfXw-hKq8hA"/>
+
 			</videos>
 			<fotos>
 				<foto descripcion="" url=""/>
@@ -6343,6 +6342,216 @@
 			<comentarios>
 			</comentarios>
 		</agrupacion>
+
+        <agrupacion id="536" modalidad="CORO" nombre="El teatro de verano" autor="Alejandro Ariza Bruzon" director="Alejandro Ariza Bruzon"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="537" modalidad="CHIRIGOTA" nombre="Dame una mama" autor="Rubén Berea Ruíz" director="Francisco Manuel Prieto García"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="538" modalidad="COMPARSA" nombre="Ropita tendía" autor="José Antonio Valdivia Bosch" director="Daniel López Romero"
+            localidad="Los Barrios (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="539" modalidad="CUARTETO" nombre="Aquellos maravillosos años luz" autor="Manuel Pereira González" director="José Francisco Butrón Prida"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="540" modalidad="CUARTETO" nombre="Los recortaos" autor="Enrique García Rosado, David Cornejo Prada" director="Julio Álvarez García"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="541" modalidad="COMPARSA" nombre="Los trapecistas" autor="Victor García Salgado, Juan Manuel Moreno Gandul" director="Francisco Peralta Godoy"
+            localidad="Alcalá de Guadaíra (Sevilla)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="542" modalidad="CHIRIGOTA" nombre="Por culpa de los recortes nos vemos con este porte" autor="Antonio Pozo González" director="Joaquín Pozo Vela"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="543" modalidad="COMPARSA" nombre="Tu reflejo" autor="Manuel Muñoz Lores" director="Rafael Morales González"
+            localidad="Sanlucar de Barrameda (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="544" modalidad="CHIRIGOTA" nombre="Los de gris" autor="Moises Camacho Ortega, Jose María Barranco Cabrera" director="La agrupación"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="545" modalidad="COMPARSA" nombre="Los asaltacunas" autor="José Luis Zampaña Quintero" director="Antonio Vega López"
+            localidad="Puerto de Santa María (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+            url_foto=""
+            web="http://www.lacomparsadetino.com/">
+			<otros_anios>
+			    <otro_anio agrupacion="1" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
         
         
 	</agrupaciones>
@@ -6402,6 +6611,17 @@
 		</dia>
 
         <dia fecha="17/01/2013" fase="PREELIMINAR">
+            <puesto no="1" agrupacion="536"/>
+			<puesto no="2" agrupacion="537"/>
+			<puesto no="3" agrupacion="538"/>
+			<puesto no="4" agrupacion="539"/>
+			<puesto no="5" agrupacion="DESCANSO" />
+			<puesto no="6" agrupacion="540" />
+			<puesto no="7" agrupacion="541" />
+			<puesto no="8" agrupacion="542" />
+			<puesto no="9" agrupacion="543" />
+            <puesto no="10" agrupacion="544" />
+            <puesto no="10" agrupacion="545" />
 		</dia>
 
         <dia fecha="18/01/2013" fase="PREELIMINAR">
