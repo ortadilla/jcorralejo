@@ -7424,7 +7424,7 @@
 			<puesto no="8" agrupacion="542" />
 			<puesto no="9" agrupacion="543" />
             <puesto no="10" agrupacion="544" />
-            <puesto no="10" agrupacion="545" />
+            <puesto no="11" agrupacion="545" />
 		</dia>
 
         <dia fecha="18/01/2013" fase="PREELIMINAR">
@@ -7438,7 +7438,7 @@
 			<puesto no="8" agrupacion="552" />
 			<puesto no="9" agrupacion="553" />
             <puesto no="10" agrupacion="554" />
-            <puesto no="10" agrupacion="555" />
+            <puesto no="11" agrupacion="555" />
 		</dia>
 
         <dia fecha="19/01/2013" fase="PREELIMINAR">
@@ -7467,6 +7467,17 @@
 		</dia>
 
         <dia fecha="21/01/2013" fase="PREELIMINAR">
+            <puesto no="1" agrupacion="574"/>
+			<puesto no="2" agrupacion="575"/>
+			<puesto no="3" agrupacion="576"/>
+			<puesto no="4" agrupacion="577"/>
+			<puesto no="5" agrupacion="DESCANSO" />
+			<puesto no="6" agrupacion="578" />
+			<puesto no="7" agrupacion="579" />
+			<puesto no="8" agrupacion="580" />
+			<puesto no="9" agrupacion="581" />
+            <puesto no="10" agrupacion="582" />
+
 		</dia>
 
         <dia fecha="22/01/2013" fase="PREELIMINAR">
