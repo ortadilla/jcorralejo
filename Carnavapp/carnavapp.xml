@@ -8032,133 +8032,132 @@
         </comentarios>
     </agrupacion>
 
-        <agrupacion id="614" modalidad="COMPARSA" nombre="La comparsa del genio" autor="-" director="-"
-            localidad="Cádiz" cabeza_serie="false"
-            info=""
-            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
-            url_foto=""
-            web="http://www.lacomparsadetino.com/">
-            <otros_anios>
-                <otro_anio agrupacion="1" />
-            </otros_anios>
-            <componentes>
-                <componente nombre="" voz=""/>
-            </componentes>
-            <videos>
-            </videos>
-            <fotos>
-                <foto descripcion="" url=""/>
-            </fotos>
-            <comentarios>
-            </comentarios>
-        </agrupacion>
+    <agrupacion id="614" modalidad="COMPARSA" nombre="La comparsa del genio" autor="-" director="-"
+        localidad="Cádiz" cabeza_serie="false"
+        info=""
+        url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+        url_foto=""
+        web="http://www.lacomparsadetino.com/">
+        <otros_anios>
+            <otro_anio agrupacion="1" />
+        </otros_anios>
+        <componentes>
+            <componente nombre="" voz=""/>
+        </componentes>
+        <videos>
+        </videos>
+        <fotos>
+            <foto descripcion="" url=""/>
+        </fotos>
+        <comentarios>
+        </comentarios>
+    </agrupacion>
 
-        <agrupacion id="615" modalidad="CHIRIGOTA" nombre="Ya que estamos nos quedamos" autor="-" director="-"
-            localidad="Cádiz" cabeza_serie="false"
-            info=""
-            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
-            url_foto=""
-            web="http://www.lacomparsadetino.com/">
-            <otros_anios>
-                <otro_anio agrupacion="1" />
-            </otros_anios>
-            <componentes>
-                <componente nombre="" voz=""/>
-            </componentes>
-            <videos>
-            </videos>
-            <fotos>
-                <foto descripcion="" url=""/>
-            </fotos>
-            <comentarios>
-            </comentarios>
-        </agrupacion>
+    <agrupacion id="615" modalidad="CHIRIGOTA" nombre="Ya que estamos nos quedamos" autor="-" director="-"
+        localidad="Cádiz" cabeza_serie="false"
+        info=""
+        url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+        url_foto=""
+        web="http://www.lacomparsadetino.com/">
+        <otros_anios>
+            <otro_anio agrupacion="1" />
+        </otros_anios>
+        <componentes>
+            <componente nombre="" voz=""/>
+        </componentes>
+        <videos>
+        </videos>
+        <fotos>
+            <foto descripcion="" url=""/>
+        </fotos>
+        <comentarios>
+        </comentarios>
+    </agrupacion>
 
-        <agrupacion id="616" modalidad="COMPARSA" nombre="Los botones del Hotel Cádiz" autor="-" director="-"
-            localidad="Cádiz" cabeza_serie="false"
-            info=""
-            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
-            url_foto=""
-            web="http://www.lacomparsadetino.com/">
-            <otros_anios>
-                <otro_anio agrupacion="1" />
-            </otros_anios>
-            <componentes>
-                <componente nombre="" voz=""/>
-            </componentes>
-            <videos>
-            </videos>
-            <fotos>
-                <foto descripcion="" url=""/>
-            </fotos>
-            <comentarios>
-            </comentarios>
-        </agrupacion>
+    <agrupacion id="616" modalidad="COMPARSA" nombre="Los botones del Hotel Cádiz" autor="-" director="-"
+        localidad="Cádiz" cabeza_serie="false"
+        info=""
+        url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+        url_foto=""
+        web="http://www.lacomparsadetino.com/">
+        <otros_anios>
+            <otro_anio agrupacion="1" />
+        </otros_anios>
+        <componentes>
+            <componente nombre="" voz=""/>
+        </componentes>
+        <videos>
+        </videos>
+        <fotos>
+            <foto descripcion="" url=""/>
+        </fotos>
+        <comentarios>
+        </comentarios>
+    </agrupacion>
 
-        <agrupacion id="617" modalidad="CHIRIGOTA" nombre="Una chirigota de matrículas" autor="-" director="-"
-            localidad="Cádiz" cabeza_serie="false"
-            info=""
-            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
-            url_foto=""
-            web="http://www.lacomparsadetino.com/">
-            <otros_anios>
-                <otro_anio agrupacion="1" />
-            </otros_anios>
-            <componentes>
-                <componente nombre="" voz=""/>
-            </componentes>
-            <videos>
-            </videos>
-            <fotos>
-                <foto descripcion="" url=""/>
-            </fotos>
-            <comentarios>
-            </comentarios>
-        </agrupacion>
+    <agrupacion id="617" modalidad="CHIRIGOTA" nombre="Una chirigota de matrículas" autor="-" director="-"
+        localidad="Cádiz" cabeza_serie="false"
+        info=""
+        url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+        url_foto=""
+        web="http://www.lacomparsadetino.com/">
+        <otros_anios>
+            <otro_anio agrupacion="1" />
+        </otros_anios>
+        <componentes>
+            <componente nombre="" voz=""/>
+        </componentes>
+        <videos>
+        </videos>
+        <fotos>
+            <foto descripcion="" url=""/>
+        </fotos>
+        <comentarios>
+        </comentarios>
+    </agrupacion>
 
-        <agrupacion id="618" modalidad="COMPARSA" nombre="Mariquilla la cantaora" autor="-" director="-"
-            localidad="Cádiz" cabeza_serie="false"
-            info=""
-            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
-            url_foto=""
-            web="http://www.lacomparsadetino.com/">
-            <otros_anios>
-                <otro_anio agrupacion="1" />
-            </otros_anios>
-            <componentes>
-                <componente nombre="" voz=""/>
-            </componentes>
-            <videos>
-            </videos>
-            <fotos>
-                <foto descripcion="" url=""/>
-            </fotos>
-            <comentarios>
-            </comentarios>
-        </agrupacion>
+    <agrupacion id="618" modalidad="COMPARSA" nombre="Mariquilla la cantaora" autor="-" director="-"
+        localidad="Cádiz" cabeza_serie="false"
+        info=""
+        url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+        url_foto=""
+        web="http://www.lacomparsadetino.com/">
+        <otros_anios>
+            <otro_anio agrupacion="1" />
+        </otros_anios>
+        <componentes>
+            <componente nombre="" voz=""/>
+        </componentes>
+        <videos>
+        </videos>
+        <fotos>
+            <foto descripcion="" url=""/>
+        </fotos>
+        <comentarios>
+        </comentarios>
+    </agrupacion>
 
-        
-        <agrupacion id="619" modalidad="CORO" nombre="Los alcaldes de la caleta" autor="-" director="-"
-            localidad="Cádiz" cabeza_serie="false"
-            info=""
-            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
-            url_foto=""
-            web="http://www.lacomparsadetino.com/">
-			<otros_anios>
-			    <otro_anio agrupacion="1" />
-			</otros_anios>
-			<componentes>
-				<componente nombre="" voz=""/>
-			</componentes>
-			<videos>
-			</videos>
-			<fotos>
-				<foto descripcion="" url=""/>
-			</fotos>
-			<comentarios>
-			</comentarios>
-		</agrupacion>
-	</agrupaciones>
+    
+    <agrupacion id="619" modalidad="CORO" nombre="Los alcaldes de la caleta" autor="-" director="-"
+        localidad="Cádiz" cabeza_serie="false"
+        info=""
+        url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
+        url_foto=""
+        web="http://www.lacomparsadetino.com/">
+        <otros_anios>
+            <otro_anio agrupacion="1" />
+        </otros_anios>
+        <componentes>
+            <componente nombre="" voz=""/>
+        </componentes>
+        <videos>
+        </videos>
+        <fotos>
+            <foto descripcion="" url=""/>
+        </fotos>
+        <comentarios>
+        </comentarios>
+    </agrupacion>
     
     <agrupacion id="620" modalidad="CHIRIGOTA" nombre="Los del espacio" autor="-" director="-"
         localidad="Cádiz" cabeza_serie="false"
