@@ -39,13 +39,16 @@ import es.jcorralejo.android.carnavapp.utils.Constantes;
 public abstract class CarnavappActivity extends SherlockFragmentActivity implements OnNavigationListener{
 	
 	protected CarnavappApplication app;
-	protected ViewPager pager;
-	protected TabPageIndicator indicator;
+	protected ViewPager pagerConcurso;
+	protected TabPageIndicator indicatorConcurso;
+	protected ViewPager pagerModalidades;
+	protected TabPageIndicator indicatorModalidades;
 	protected ActionBar actionBar;
 	protected String[] opciones;
 	protected List<Fragment> fragment;
 	protected List<String> titulos;
 	static private Stack<Integer[]> pila = new Stack<Integer[]>();
+	static private Stack<CarnavappActivity> pilaCarnavapp = new Stack<CarnavappActivity>();  
 	
 	private final int IDX_OPCION = 0;
 	private final int IDX_SUBMENU = 1;
@@ -69,14 +72,10 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 		configurarActionBar();
 		configurarOpciones();
 		configurarPageIndicator();
-		actionBar.setSelectedNavigationItem(getOpcionSeleccionada());
+		
+		pilaCarnavapp.push(this);
 		
 		navegar = false;
-	}
-	
-	@Override
-	protected void onResume() {
-		super.onResume();
 	}
 	
 	@Override
@@ -92,8 +91,7 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 			pila = (Stack<Integer[]>) ultimaPila;
 			Integer[] volverA = pila.peek();
 			actionBar.setSelectedNavigationItem(volverA[IDX_OPCION]);
-			pager.setCurrentItem(volverA[IDX_SUBMENU]);
-
+			pagerConcurso.setCurrentItem(volverA[IDX_SUBMENU]);
 		}
 	}
 	
@@ -106,14 +104,14 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 	}
 	
 	private void configurarPageIndicator(){
-		pager = (ViewPager)findViewById(R.id.pager);
-		indicator = (TabPageIndicator)findViewById(R.id.indicator);
+		pagerConcurso = (ViewPager)findViewById(R.id.pagerConcurso);
+		indicatorConcurso = (TabPageIndicator)findViewById(R.id.indicatorConcurso);
 		
 		FragmentPagerAdapter adapter = new PagerAdapter(super.getSupportFragmentManager(), fragment, titulos);
-		pager.setAdapter(adapter);
-		pager.setId(R.id.pager);
-		indicator.setViewPager(pager);
-		indicator.setOnTabReselectedListener(new OnTabReselectedListener() {
+		pagerConcurso.setAdapter(adapter);
+		pagerConcurso.setId(R.id.pagerConcurso);
+		indicatorConcurso.setViewPager(pagerConcurso);
+		indicatorConcurso.setOnTabReselectedListener(new OnTabReselectedListener() {
 			@Override
 			public void onTabReselected(int position) {
 				Integer[] ultimo = pila.pop();
@@ -122,7 +120,7 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 			}
 		});
 		
-		indicator.setOnPageChangeListener(new OnPageChangeListener() {
+		indicatorConcurso.setOnPageChangeListener(new OnPageChangeListener() {
 			
 			@Override
 			public void onPageSelected(int arg0) {
@@ -148,6 +146,7 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 									 getResources().getString(R.string.puntos_de_interes)};
 			ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getBaseContext(), R.layout.sherlock_spinner_item, opciones);
 			actionBar.setListNavigationCallbacks(arrayAdapter, this);
+//			actionBar.setSelectedNavigationItem(getOpcionSeleccionada());
 			arrayAdapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
 		}
 	}
@@ -318,16 +317,11 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 	}
 	
 	@Override
-    public void onBackPressed() {
+	public void onBackPressed() {
+		pilaCarnavapp.pop();
 		super.onBackPressed();
-//		if(pila!=null && !pila.isEmpty() && pila.size()>1){
-//			//Quitamos el último
-//			pila.pop();
-//			Integer[] volverA = pila.peek();
-//			actionBar.setSelectedNavigationItem(volverA[IDX_OPCION]);
-//		}
-    }
 
+	}
 	
 	protected abstract void configurarFragment();
 	protected abstract int getOpcionSeleccionada();
