@@ -40,8 +40,13 @@ import es.jcorralejo.android.carnavapp.utils.Constantes;
 public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNavigationListener{
 
 	private CarnavappApplication app;
-	private ViewPager pager;
-	private TabPageIndicator indicator;
+	protected ViewPager pagerActivo;
+	protected TabPageIndicator indicatorActivo;
+	
+	protected ViewPager pagerConcurso;
+	protected TabPageIndicator indicatorConcurso;
+	protected ViewPager pagerModalidades;
+	protected TabPageIndicator indicatorModalidades;
 	private ActionBar actionBar;
 	private String[] opciones;
 	private List<Fragment> fragmentConcurso;
@@ -70,10 +75,10 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		setContentView(R.layout.main2);
 		app = (CarnavappApplication) getApplication();
 		
+		configurarFragment();
 		configurarPageIndicator();
 		configurarActionBar();
 		configurarOpciones();
-		configurarFragment();
 		recuperarUltimaPila(); //Debe ser lo último
 	}
 	
@@ -85,7 +90,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			pila = (Stack<Integer[]>) ultimaPila;
 			Integer[] volverA = pila.peek();
 			actionBar.setSelectedNavigationItem(volverA[IDX_OPCION]);
-			pager.setCurrentItem(volverA[IDX_SUBMENU]);
+			pagerActivo.setCurrentItem(volverA[IDX_SUBMENU]);
 
 		}
 	}
@@ -145,38 +150,59 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		}
 	}
 	
+	private class TabReselectedListener implements OnTabReselectedListener{
+		@Override
+		public void onTabReselected(int position) {
+			Integer[] ultimo = pila.pop();
+			ultimo[IDX_SUBMENU] = position; //Actualizamos la posición
+			pila.push(ultimo);
+		}
+	}
+	
+	private class PageChangeListener implements OnPageChangeListener{
+
+		@Override
+		public void onPageScrollStateChanged(int arg0) {}
+
+		@Override
+		public void onPageScrolled(int arg0, float arg1, int arg2) { }
+
+		@Override
+		public void onPageSelected(int arg0) {
+			Integer[] ultimo = pila.pop();
+			ultimo[IDX_SUBMENU] = arg0; //Actualizamos la posición
+			pila.push(ultimo);
+		}
+		
+	}
+	
 	private void configurarPageIndicator(){
-		pager = (ViewPager)findViewById(R.id.pager);
-		indicator = (TabPageIndicator)findViewById(R.id.indicator);
 		
-		FragmentPagerAdapter adapter = new PagerAdapter(super.getSupportFragmentManager(), null, null);
-		pager.setAdapter(adapter);
-//		pager.setId(1);
-		indicator.setViewPager(pager);
-		indicator.setOnTabReselectedListener(new OnTabReselectedListener() {
-			@Override
-			public void onTabReselected(int position) {
-				Integer[] ultimo = pila.pop();
-				ultimo[IDX_SUBMENU] = position; //Actualizamos la posición
-				pila.push(ultimo);
-			}
-		});
+		TabReselectedListener tabReselectedListener = new TabReselectedListener();
+		PageChangeListener pageChangeListener = new PageChangeListener();
 		
-		indicator.setOnPageChangeListener(new OnPageChangeListener() {
-			
-			@Override
-			public void onPageSelected(int arg0) {
-				Integer[] ultimo = pila.pop();
-				ultimo[IDX_SUBMENU] = arg0; //Actualizamos la posición
-				pila.push(ultimo);
-			}
-			
-			@Override
-			public void onPageScrolled(int arg0, float arg1, int arg2) {}
-			
-			@Override
-			public void onPageScrollStateChanged(int arg0) {}
-		});
+		pagerConcurso = (ViewPager)findViewById(R.id.pagerConcurso);
+		pagerConcurso.setId(R.id.pagerConcurso);
+		indicatorConcurso = (TabPageIndicator)findViewById(R.id.indicatorConcurso);
+		FragmentPagerAdapter adapterConcurso = new PagerAdapter(super.getSupportFragmentManager(), fragmentConcurso, titulosConcurso);
+		pagerConcurso.setAdapter(adapterConcurso);
+		indicatorConcurso.setViewPager(pagerConcurso);
+		indicatorConcurso.setOnTabReselectedListener(tabReselectedListener);
+		indicatorConcurso.setOnPageChangeListener(pageChangeListener);
+
+		pagerModalidades = (ViewPager)findViewById(R.id.pagerModalidades);
+		pagerModalidades.setId(R.id.pagerModalidades);
+		indicatorModalidades = (TabPageIndicator)findViewById(R.id.indicatorModalidades);
+		FragmentPagerAdapter adapterModalidades = new PagerAdapter(super.getSupportFragmentManager(), fragmentModalidades, titulosModalidades);
+		pagerModalidades.setAdapter(adapterModalidades);
+		indicatorModalidades.setViewPager(pagerModalidades);
+		indicatorModalidades.setOnTabReselectedListener(tabReselectedListener);
+		indicatorModalidades.setOnPageChangeListener(pageChangeListener);
+		pagerModalidades.setVisibility(View.GONE);
+		indicatorModalidades.setVisibility(View.GONE);
+		
+		pagerActivo = pagerConcurso;
+		indicatorActivo = indicatorConcurso;
 	}
 	
 	private void configurarActionBar(){
@@ -230,40 +256,55 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		//Guardamos en la pila hacia donde vamos
 		actualizarPila(itemPosition);
 		
-		List<Fragment> fragments = null;
-		List<String> titulos = null;
-		boolean mostrarOpciones = true;
 		if(OPCION_CONCURSO == itemPosition){
-			fragments = fragmentConcurso;
-			titulos = titulosConcurso;
+			pagerActivo = pagerConcurso;
+			indicatorActivo = indicatorConcurso;
+			pagerModalidades.setVisibility(View.GONE);
+			indicatorModalidades.setVisibility(View.GONE);
 		}else if(OPCION_MODALIDADES == itemPosition){
-			fragments = fragmentModalidades;
-			titulos = titulosModalidades;
-		}else if(OPCION_MAS_CARNAVAL == itemPosition){
-			fragments = fragmentMasCarnaval;
-			titulos = titulosMasCarnaval;
-		}else if(OPCION_ENLACES == itemPosition){
-			fragments = fragmentEnlaces;
-			titulos = titulosEnlaces;
-		}else if(OPCION_PUNTOS_INTERES == itemPosition){
-			mostrarOpciones = false;
+			pagerActivo = pagerModalidades;
+			indicatorActivo = indicatorModalidades;
+			pagerConcurso.setVisibility(View.GONE);
+			indicatorConcurso.setVisibility(View.GONE);
 		}
-
-		if(mostrarOpciones){
-			pager.setVisibility(View.VISIBLE);
-			indicator.setVisibility(View.VISIBLE);
-			
-			PagerAdapter adapter = (PagerAdapter) pager.getAdapter();
-			adapter.setFragments(fragments);
-			adapter.setTitulos(titulos);
-			indicator.notifyDataSetChanged();
-			indicator.setCurrentItem(pila.peek()[IDX_SUBMENU]);
-			adapter.notifyDataSetChanged();
-			
-		}else{
-			pager.setVisibility(View.GONE);
-			indicator.setVisibility(View.GONE);
-		}
+		
+		
+		pagerActivo.setVisibility(View.VISIBLE);
+		indicatorActivo.setVisibility(View.VISIBLE);
+//		List<Fragment> fragments = null;
+//		List<String> titulos = null;
+//		boolean mostrarOpciones = true;
+//		if(OPCION_CONCURSO == itemPosition){
+//			fragments = fragmentConcurso;
+//			titulos = titulosConcurso;
+//		}else if(OPCION_MODALIDADES == itemPosition){
+//			fragments = fragmentModalidades;
+//			titulos = titulosModalidades;
+//		}else if(OPCION_MAS_CARNAVAL == itemPosition){
+//			fragments = fragmentMasCarnaval;
+//			titulos = titulosMasCarnaval;
+//		}else if(OPCION_ENLACES == itemPosition){
+//			fragments = fragmentEnlaces;
+//			titulos = titulosEnlaces;
+//		}else if(OPCION_PUNTOS_INTERES == itemPosition){
+//			mostrarOpciones = false;
+//		}
+//
+//		if(mostrarOpciones){
+//			pagerConcurso.setVisibility(View.VISIBLE);
+//			indicatorConcurso.setVisibility(View.VISIBLE);
+//			
+//			PagerAdapter adapter = (PagerAdapter) pagerConcurso.getAdapter();
+//			adapter.setFragments(fragments);
+//			adapter.setTitulos(titulos);
+//			indicatorConcurso.notifyDataSetChanged();
+//			indicatorConcurso.setCurrentItem(pila.peek()[IDX_SUBMENU]);
+//			adapter.notifyDataSetChanged();
+//			
+//		}else{
+//			pagerConcurso.setVisibility(View.GONE);
+//			indicatorConcurso.setVisibility(View.GONE);
+//		}
 		
 		return true;
 	}
@@ -277,7 +318,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			pila.pop();
 			Integer[] volverA = pila.peek();
 			actionBar.setSelectedNavigationItem(volverA[IDX_OPCION]);
-			pager.setCurrentItem(volverA[IDX_SUBMENU]);
+			pagerActivo.setCurrentItem(volverA[IDX_SUBMENU]);
 		}else{
 	    	super.onBackPressed();
 		}
