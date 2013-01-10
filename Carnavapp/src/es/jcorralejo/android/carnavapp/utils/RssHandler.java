@@ -71,7 +71,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
 	
 	Agrupacion agrupacionActual;
 	private List<Agrupacion> agrupacionesDiaActual;
-	private Date diaActual;
+	private String diaActual;
 	private String faseActual;
 	private int anioActual;
 
@@ -152,7 +152,7 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      	} else if(localName.equalsIgnoreCase(DIA)) {
      		in_dia = true;
      		agrupacionesDiaActual = new ArrayList<Agrupacion>();
-     		diaActual = new Date(atts.getValue(FECHA));
+     		diaActual = atts.getValue(FECHA);
      		faseActual = atts.getValue(FASE);
      		InfoAnio infoAnio = app.getInfoAnios().get(app.getInfoAnios().size()-1);
      		if(!infoAnio.getConcurso().getFases().containsKey(faseActual))

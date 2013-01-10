@@ -1,22 +1,21 @@
 package es.jcorralejo.android.carnavapp.entidades;
 
-import java.util.Date;
 import java.util.List;
 
 public class DiaActuacion {
 	
-	private Date dia;
+	private String dia;
 	private List<Agrupacion> agrupaciones;
 	
-	public DiaActuacion(Date dia, List<Agrupacion> agrupaciones) {
+	public DiaActuacion(String dia, List<Agrupacion> agrupaciones) {
 		this.dia = dia;
 		this.agrupaciones = agrupaciones;
 	}
 	
-	public Date getDia() {
+	public String getDia() {
 		return dia;
 	}
-	public void setDia(Date dia) {
+	public void setDia(String dia) {
 		this.dia = dia;
 	}
 
