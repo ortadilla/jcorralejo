@@ -1,6 +1,8 @@
 package es.jcorralejo.android.carnavapp.activities;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Stack;
 
@@ -110,7 +112,11 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			fragmentConcurso = new ArrayList<Fragment>();
 			titulosConcurso = new ArrayList<String>();
 			if(app.hoyHayConcurso()){
-				fragmentConcurso.add(ConcursoFragment.newInstance("Hoy"));
+				SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
+		        String hoy = "16/01/2013";
+//		        String hoy = sdf.format(new Date());
+
+				fragmentConcurso.add(ActuacionesFragment.newInstance(app.obtenerAgrupacionesDia(hoy), "Hoy"));
 				titulosConcurso.add(getString(R.string.hoy));
 			}
 			fragmentConcurso.add(ConcursoFragment.newInstance("Calendario"));

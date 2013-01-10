@@ -10,9 +10,17 @@ import es.jcorralejo.android.carnavapp.utils.Constantes;
 public class Concurso {
 	
 	private List<Agrupacion> agrupaciones;
+	public Map<String, List<Agrupacion>> getDias() {
+		return dias;
+	}
+
+	public void setDias(Map<String, List<Agrupacion>> dias) {
+		this.dias = dias;
+	}
 	private Map<String, List<Agrupacion>> modalidades;
 	private List<Puntuacion> puntuaciones;
 	private Map<String, List<DiaActuacion>> fases;
+	private Map<String, List<Agrupacion>> dias;
 	
 	public Concurso() {
 		agrupaciones = new ArrayList<Agrupacion>();
@@ -29,6 +37,7 @@ public class Concurso {
 		
 		puntuaciones = new ArrayList<Puntuacion>();
 		fases = new HashMap<String, List<DiaActuacion>>();
+		dias = new HashMap<String, List<Agrupacion>>();
 	}
 	
 	public List<Agrupacion> getAgrupaciones() {

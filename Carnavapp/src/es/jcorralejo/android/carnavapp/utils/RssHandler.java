@@ -247,7 +247,8 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
      		in_foto = false;
      	} else if(localName.equalsIgnoreCase(DIA)) {
      		in_dia = false;
-     		infoAnio.getConcurso().getFases().get(faseActual).add(new DiaActuacion(diaActual, agrupacionesDiaActual));
+     		infoAnio.getConcurso().getFases().get(faseActual).add(new DiaActuacion(diaActual, new ArrayList<Agrupacion>(agrupacionesDiaActual)));
+     		infoAnio.getConcurso().getDias().put(diaActual, new ArrayList<Agrupacion>(agrupacionesDiaActual));
      		diaActual = null;
      		faseActual = null;
      		agrupacionesDiaActual.clear();

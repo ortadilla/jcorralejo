@@ -56,19 +56,6 @@ public class AgrupacionesFragment extends ListFragment {
 	    return view;
 	}
 	
-	@Override
-	public void onResume() {
-		super.onResume();
-		
-//		configurarAdapter();
-	}
-	
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-//		configurarAdapter();
-	}
-	
 	public void configurarAdapter() {
 		if(listaAgrupaciones!=null){
 		listaAgrupaciones.setAdapter(new ArrayAdapter<Agrupacion>(getActivity(), R.layout.agrupaciones_item, agrupaciones) {
@@ -86,7 +73,7 @@ public class AgrupacionesFragment extends ListFragment {
 				fav.setImageResource(R.drawable.ic_fav);
 				fav.setVisibility(agrupacion.isCabezaSerie() || app.getFavoritas().contains(agrupacion.getId()) ? View.VISIBLE : View.GONE);
 				
-				TextView datosExtras = (TextView) row.findViewById(R.id.agrDatosExtras);
+				TextView datosExtras = (TextView) row.findViewById(R.id.agrDatosExtra);
 				if(agrupacion.getInfo()!=null && !agrupacion.getInfo().equals("")){
 					datosExtras.setText(agrupacion.getInfo());
 					datosExtras.setVisibility(View.VISIBLE);
@@ -103,10 +90,16 @@ public class AgrupacionesFragment extends ListFragment {
 				}
 				if(otrosAnios.equals(""))
 					otrosAnios = getString(R.string.sin_datos_otras_ediciones);
-				coac2011.setText(otrosAnios);
+				coac2011.setText(otrosAnios.substring(2));
 		 
 				return row;
 			}
+			
+			@Override
+			public int getCount() {
+				return agrupaciones!=null ? agrupaciones.size() : 0;
+			}
+
 			
 		});
 		}
