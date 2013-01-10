@@ -1,15 +1,21 @@
 package es.jcorralejo.android.carnavapp.app;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import android.app.Application;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.net.ConnectivityManager;
@@ -17,6 +23,8 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.widget.Toast;
 import es.jcorralejo.android.carnavapp.R;
+import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
+import es.jcorralejo.android.carnavapp.entidades.DiaActuacion;
 import es.jcorralejo.android.carnavapp.entidades.Enlace;
 import es.jcorralejo.android.carnavapp.entidades.InfoAnio;
 import es.jcorralejo.android.carnavapp.entidades.Noticia;
@@ -222,6 +230,38 @@ public class CarnavappApplication extends Application {
 			}
 		}
 		return infoAnioActual;
+	}
+	
+	public boolean hoyHayConcurso(){
+		
+		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
+//        String hoy = "16/01/2013";
+        String hoy = sdf.format(new Date());
+        
+        Set<Entry<String, List<DiaActuacion>>> entrySet = getInfoAnioActual().getConcurso().getFases().entrySet();
+        for(Entry<String, List<DiaActuacion>> entry : entrySet){
+        	for(DiaActuacion diaActuacion : entry.getValue()){
+        		if(diaActuacion.getDia().equals(hoy))
+        			return true;
+        	}
+        }
+		
+		
+		return false;
+	}
+	
+	public List<Agrupacion> obtenerAgrupacionesOrdenadasAlfabeticamente(String modalidad){
+		List<Agrupacion>agrupaciones = getInfoAnioActual().getConcurso().getModalidades().get(modalidad);
+		Collections.sort(agrupaciones, new ComparatorAggrupacionesAlfabetico());
+		return agrupaciones;
+	}
+	
+	private class ComparatorAggrupacionesAlfabetico implements Comparator<Agrupacion>{
+		@Override
+		public int compare(Agrupacion lhs, Agrupacion rhs) {
+			return lhs.getNombre().compareTo(rhs.getNombre());
+		}
+		
 	}
 
 	public List<InfoAnio> getInfoAnios() {

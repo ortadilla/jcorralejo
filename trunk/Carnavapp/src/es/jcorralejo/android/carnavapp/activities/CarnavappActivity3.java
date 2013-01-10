@@ -47,6 +47,11 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	protected TabPageIndicator indicatorConcurso;
 	protected ViewPager pagerModalidades;
 	protected TabPageIndicator indicatorModalidades;
+	protected ViewPager pagerMas;
+	protected TabPageIndicator indicatorMas;
+	protected ViewPager pagerEnlaces;
+	protected TabPageIndicator indicatorEnlaces;
+	
 	private ActionBar actionBar;
 	private String[] opciones;
 	private List<Fragment> fragmentConcurso;
@@ -103,11 +108,13 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	private void configurarFragment(){
 		if(fragmentConcurso==null || fragmentConcurso.isEmpty()){
 			fragmentConcurso = new ArrayList<Fragment>();
-			fragmentConcurso.add(ConcursoFragment.newInstance("Hoy"));
+			titulosConcurso = new ArrayList<String>();
+			if(app.hoyHayConcurso()){
+				fragmentConcurso.add(ConcursoFragment.newInstance("Hoy"));
+				titulosConcurso.add(getString(R.string.hoy));
+			}
 			fragmentConcurso.add(ConcursoFragment.newInstance("Calendario"));
 			fragmentConcurso.add(ConcursoFragment.newInstance("Clasificación"));
-			titulosConcurso = new ArrayList<String>();
-			titulosConcurso.add(getString(R.string.hoy));
 			titulosConcurso.add(getString(R.string.calendario));
 			titulosConcurso.add(getString(R.string.clasificacion));
 		}
@@ -125,10 +132,10 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 
 		if(fragmentModalidades==null || fragmentModalidades.isEmpty()){
 			fragmentModalidades = new ArrayList<Fragment>();
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_COMPARSA)));
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CHIRIGOTA)));
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CORO)));
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.getInfoAnioActual().getConcurso().getModalidades().get(Constantes.MODALIDAD_CUARTETO)));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_COMPARSA)));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CHIRIGOTA)));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CORO)));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CUARTETO)));
 			titulosModalidades = new ArrayList<String>();
 			titulosModalidades.add(getString(R.string.comparsas));
 			titulosModalidades.add(getString(R.string.chirigotas));
@@ -201,6 +208,28 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		pagerModalidades.setVisibility(View.GONE);
 		indicatorModalidades.setVisibility(View.GONE);
 		
+		pagerMas = (ViewPager)findViewById(R.id.pagerMas);
+		pagerMas.setId(R.id.pagerMas);
+		indicatorMas = (TabPageIndicator)findViewById(R.id.indicatorMas);
+		FragmentPagerAdapter adapterMas = new PagerAdapter(super.getSupportFragmentManager(), fragmentMasCarnaval, titulosMasCarnaval);
+		pagerMas.setAdapter(adapterMas);
+		indicatorMas.setViewPager(pagerMas);
+		indicatorMas.setOnTabReselectedListener(tabReselectedListener);
+		indicatorModalidades.setOnPageChangeListener(pageChangeListener);
+		pagerMas.setVisibility(View.GONE);
+		indicatorMas.setVisibility(View.GONE);
+		
+		pagerEnlaces = (ViewPager)findViewById(R.id.pagerEnlaces);
+		pagerEnlaces.setId(R.id.pagerEnlaces);
+		indicatorEnlaces = (TabPageIndicator)findViewById(R.id.indicatorEnlaces);
+		FragmentPagerAdapter adapterEnlaces = new PagerAdapter(super.getSupportFragmentManager(), fragmentEnlaces, titulosEnlaces);
+		pagerEnlaces.setAdapter(adapterEnlaces);
+		indicatorEnlaces.setViewPager(pagerEnlaces);
+		indicatorEnlaces.setOnTabReselectedListener(tabReselectedListener);
+		indicatorEnlaces.setOnPageChangeListener(pageChangeListener);
+		pagerEnlaces.setVisibility(View.GONE);
+		indicatorEnlaces.setVisibility(View.GONE);
+		
 		pagerActivo = pagerConcurso;
 		indicatorActivo = indicatorConcurso;
 	}
@@ -256,55 +285,26 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		//Guardamos en la pila hacia donde vamos
 		actualizarPila(itemPosition);
 		
+		pagerActivo.setVisibility(View.GONE);
+		indicatorActivo.setVisibility(View.GONE);
 		if(OPCION_CONCURSO == itemPosition){
 			pagerActivo = pagerConcurso;
 			indicatorActivo = indicatorConcurso;
-			pagerModalidades.setVisibility(View.GONE);
-			indicatorModalidades.setVisibility(View.GONE);
 		}else if(OPCION_MODALIDADES == itemPosition){
 			pagerActivo = pagerModalidades;
 			indicatorActivo = indicatorModalidades;
-			pagerConcurso.setVisibility(View.GONE);
-			indicatorConcurso.setVisibility(View.GONE);
+		}else if(OPCION_MAS_CARNAVAL == itemPosition){
+			pagerActivo = pagerMas;
+			indicatorActivo = indicatorMas;
+		}else if(OPCION_ENLACES == itemPosition){
+			pagerActivo = pagerEnlaces;
+			indicatorActivo = indicatorEnlaces;
+		}else if(OPCION_PUNTOS_INTERES == itemPosition){
+			//TODO
 		}
-		
 		
 		pagerActivo.setVisibility(View.VISIBLE);
 		indicatorActivo.setVisibility(View.VISIBLE);
-//		List<Fragment> fragments = null;
-//		List<String> titulos = null;
-//		boolean mostrarOpciones = true;
-//		if(OPCION_CONCURSO == itemPosition){
-//			fragments = fragmentConcurso;
-//			titulos = titulosConcurso;
-//		}else if(OPCION_MODALIDADES == itemPosition){
-//			fragments = fragmentModalidades;
-//			titulos = titulosModalidades;
-//		}else if(OPCION_MAS_CARNAVAL == itemPosition){
-//			fragments = fragmentMasCarnaval;
-//			titulos = titulosMasCarnaval;
-//		}else if(OPCION_ENLACES == itemPosition){
-//			fragments = fragmentEnlaces;
-//			titulos = titulosEnlaces;
-//		}else if(OPCION_PUNTOS_INTERES == itemPosition){
-//			mostrarOpciones = false;
-//		}
-//
-//		if(mostrarOpciones){
-//			pagerConcurso.setVisibility(View.VISIBLE);
-//			indicatorConcurso.setVisibility(View.VISIBLE);
-//			
-//			PagerAdapter adapter = (PagerAdapter) pagerConcurso.getAdapter();
-//			adapter.setFragments(fragments);
-//			adapter.setTitulos(titulos);
-//			indicatorConcurso.notifyDataSetChanged();
-//			indicatorConcurso.setCurrentItem(pila.peek()[IDX_SUBMENU]);
-//			adapter.notifyDataSetChanged();
-//			
-//		}else{
-//			pagerConcurso.setVisibility(View.GONE);
-//			indicatorConcurso.setVisibility(View.GONE);
-//		}
 		
 		return true;
 	}
