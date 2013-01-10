@@ -31,14 +31,14 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/agrDatosExtra"
+        android:id="@+id/agrModalidadLocalidad"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/agrOtrosAnios"
+        android:id="@+id/agrDatosExtra"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="left"

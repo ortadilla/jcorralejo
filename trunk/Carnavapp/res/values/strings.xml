@@ -31,6 +31,7 @@
     <string name="modalidades">Modalidades</string>
     <string name="no">No</string>
     <string name="no_agrupaciones">No se han encontrado Agrupaciones</string>
+    <string name="no_elementos">No se han encontrado Elementos</string>
     <string name="no_conexion">Carnavapp necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde</string>
     <string name="opciones">Opciones</string>
     <string name="otros">Otros</string>

@@ -70,7 +70,7 @@ public class AgrupacionesActivity extends ListActivity{
 				fav.setImageResource(R.drawable.ic_fav);
 				fav.setVisibility(agrupacion.isCabezaSerie() || app.getFavoritas().contains(agrupacion.getId()) ? View.VISIBLE : View.GONE);
 				
-				TextView datosExtras = (TextView) row.findViewById(R.id.agrDatosExtras);
+				TextView datosExtras = (TextView) row.findViewById(R.id.agrDatosExtra);
 				if(agrupacion.getInfo()!=null && !agrupacion.getInfo().equals("")){
 					datosExtras.setText(agrupacion.getInfo());
 					datosExtras.setVisibility(View.VISIBLE);

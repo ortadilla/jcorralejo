@@ -3,7 +3,6 @@ package es.jcorralejo.android.carnavapp.app;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -235,8 +234,8 @@ public class CarnavappApplication extends Application {
 	public boolean hoyHayConcurso(){
 		
 		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
-//        String hoy = "16/01/2013";
-        String hoy = sdf.format(new Date());
+        String hoy = "16/01/2013";
+//        String hoy = sdf.format(new Date());
         
         Set<Entry<String, List<DiaActuacion>>> entrySet = getInfoAnioActual().getConcurso().getFases().entrySet();
         for(Entry<String, List<DiaActuacion>> entry : entrySet){
@@ -246,8 +245,11 @@ public class CarnavappApplication extends Application {
         	}
         }
 		
-		
 		return false;
+	}
+	
+	public List<Agrupacion> obtenerAgrupacionesDia(String dia){
+		return getInfoAnioActual().getConcurso().getDias().get(dia);
 	}
 	
 	public List<Agrupacion> obtenerAgrupacionesOrdenadasAlfabeticamente(String modalidad){
