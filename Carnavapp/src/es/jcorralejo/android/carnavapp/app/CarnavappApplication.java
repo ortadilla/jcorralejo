@@ -233,7 +233,7 @@ public class CarnavappApplication extends Application {
 	
 	public boolean hoyHayConcurso(){
 		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
-        String hoy = "16/01/2013";
+        String hoy = "08/02/2013";
 //        String hoy = sdf.format(new Date());
         
 		return getInfoAnioActual().getConcurso().getDias().keySet().contains(hoy);
@@ -244,20 +244,16 @@ public class CarnavappApplication extends Application {
 	}
 	
 	public String obtenerTituloActuacion(String dia){
-		
-		String titulo = null;
-		
-        Set<Entry<String, List<DiaActuacion>>> entrySet = getInfoAnioActual().getConcurso().getFases().entrySet();
-        
-        for(Entry<String, List<DiaActuacion>> entry : entrySet){
-        	for(DiaActuacion diaActuacion : entry.getValue()){
-        		if(diaActuacion.getDia().equals(dia)){
-        			titulo = entry.getKey();
-        		}
-        	}
-        }
-
-        return titulo;
+		for(String fase : getInfoAnioActual().getConcurso().getFases().keySet()) {
+			List<DiaActuacion> agrupacionesDia = getInfoAnioActual().getConcurso().getFases().get(fase);
+			for(int i=0; i<agrupacionesDia.size(); i++){
+				DiaActuacion diaActuacion = agrupacionesDia.get(i);
+				if(diaActuacion.getDia().equals(dia)){
+					return  Constantes.FASE_FINAL.equals(fase) ? fase : (fase + " " + (i+1));
+				}
+			}
+		}
+		return null;
 	}
 	
 	public List<Agrupacion> obtenerAgrupacionesOrdenadasAlfabeticamente(String modalidad){

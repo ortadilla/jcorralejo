@@ -113,7 +113,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			titulosConcurso = new ArrayList<String>();
 			if(app.hoyHayConcurso()){
 				SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
-		        String hoy = "16/01/2013";
+		        String hoy = "06/02/2013";
 //		        String hoy = sdf.format(new Date());
 
 				fragmentConcurso.add(ActuacionesFragment.newInstance(app.obtenerAgrupacionesDia(hoy), app.obtenerTituloActuacion(hoy)));
