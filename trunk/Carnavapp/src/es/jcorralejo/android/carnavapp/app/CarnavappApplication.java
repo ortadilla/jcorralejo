@@ -9,8 +9,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
 import android.app.Application;
 import android.app.ProgressDialog;
@@ -41,6 +39,8 @@ public class CarnavappApplication extends Application {
 	private ActualizarPostAsyncTask tarea;
 	private boolean error = false;
 	private boolean actualizando;
+	
+	private SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
 	
 	@Override
 	public void onCreate() {
@@ -231,24 +231,21 @@ public class CarnavappApplication extends Application {
 		return infoAnioActual;
 	}
 	
-	public boolean hoyHayConcurso(){
-		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
-        String hoy = "08/02/2013";
-//        String hoy = sdf.format(new Date());
-        
-		return getInfoAnioActual().getConcurso().getDias().keySet().contains(hoy);
+	public boolean hoyHayConcurso(Date dia){
+		return getInfoAnioActual().getConcurso().getDias().keySet().contains(sdf.format(dia));
 	}
 	
-	public List<Agrupacion> obtenerAgrupacionesDia(String dia){
-		return getInfoAnioActual().getConcurso().getDias().get(dia);
+	public List<Agrupacion> obtenerAgrupacionesDia(Date dia){
+		return getInfoAnioActual().getConcurso().getDias().get(sdf.format(dia));
 	}
 	
-	public String obtenerTituloActuacion(String dia){
+	public String obtenerTituloActuacion(Date dia){
+		String diaTexto = sdf.format(dia);
 		for(String fase : getInfoAnioActual().getConcurso().getFases().keySet()) {
 			List<DiaActuacion> agrupacionesDia = getInfoAnioActual().getConcurso().getFases().get(fase);
 			for(int i=0; i<agrupacionesDia.size(); i++){
 				DiaActuacion diaActuacion = agrupacionesDia.get(i);
-				if(diaActuacion.getDia().equals(dia)){
+				if(diaActuacion.getDia().equals(diaTexto)){
 					return  Constantes.FASE_FINAL.equals(fase) ? fase : (fase + " " + (i+1));
 				}
 			}
