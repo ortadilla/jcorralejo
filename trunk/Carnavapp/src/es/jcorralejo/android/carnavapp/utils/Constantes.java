@@ -26,9 +26,9 @@ public class Constantes {
 	public static final String MODALIDAD_JUVENIL = "JUVENIL";
 	public static final String MODALIDAD_CALLEJERA = "CALLEJERA";
 	public static final String MODALIDAD_ROMANCERO = "ROMANCERO";
-//
-//	public static final String PATH_IMAGENES = "/coac2012/";
-//
+
+	public static final String PATH_IMAGENES = "/carnavapp/";
+
 //	public static final String PREFERENCE_FAVORITAS = "PREFERENCE_FAVORITAS";
 	public static final String PREFERENCES = "PREFERENCES";
 //

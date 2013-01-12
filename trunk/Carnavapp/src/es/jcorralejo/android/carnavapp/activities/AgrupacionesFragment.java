@@ -22,17 +22,19 @@ public class AgrupacionesFragment extends ListFragment {
 	private List<Agrupacion> agrupaciones = new ArrayList<Agrupacion>();
 	private LayoutInflater miInflater;
 	private CarnavappApplication app;
+	private CarnavappActivity3 carnavappActivity3;
 	
 	public AgrupacionesFragment() {
 	}
 	
-	public static AgrupacionesFragment newInstance(List<Agrupacion> agrupaciones) {
-		AgrupacionesFragment agrupacionesFragment = new AgrupacionesFragment(agrupaciones);
+	public static AgrupacionesFragment newInstance(List<Agrupacion> agrupaciones, CarnavappActivity3 carnavappActivity3) {
+		AgrupacionesFragment agrupacionesFragment = new AgrupacionesFragment(agrupaciones, carnavappActivity3);
 	    return agrupacionesFragment;
 	}
 	
-	public AgrupacionesFragment(List<Agrupacion> agrupaciones) {
+	public AgrupacionesFragment(List<Agrupacion> agrupaciones, CarnavappActivity3 carnavappActivity3) {
 		this.agrupaciones = agrupaciones;
+		this.carnavappActivity3 = carnavappActivity3;
 	}
 
 	
@@ -103,6 +105,12 @@ public class AgrupacionesFragment extends ListFragment {
 			
 		});
 		}
+	}
+	
+	@Override
+	public void onListItemClick(ListView l, View v, int position, long id) {
+		Agrupacion agrupacion = (Agrupacion) l.getItemAtPosition(position);
+		((CarnavappActivity3)getActivity()).mostrarAgrupacion(agrupacion);
 	}
 
 	

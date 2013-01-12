@@ -17,7 +17,9 @@ import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
@@ -36,6 +38,7 @@ import com.viewpagerindicator.TabPageIndicator.OnTabReselectedListener;
 
 import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
+import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
 import es.jcorralejo.android.carnavapp.utils.Constantes;
 
 public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNavigationListener{
@@ -52,6 +55,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	protected TabPageIndicator indicatorMas;
 	protected ViewPager pagerEnlaces;
 	protected TabPageIndicator indicatorEnlaces;
+	protected AgrupacionFragment agrupacionFragment;
 	
 	private ActionBar actionBar;
 	private String[] opciones;
@@ -134,10 +138,10 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 
 		if(fragmentModalidades==null || fragmentModalidades.isEmpty()){
 			fragmentModalidades = new ArrayList<Fragment>();
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_COMPARSA)));
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CHIRIGOTA)));
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CORO)));
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CUARTETO)));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_COMPARSA), this));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CHIRIGOTA), this));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CORO), this));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CUARTETO), this));
 			titulosModalidades = new ArrayList<String>();
 			titulosModalidades.add(getString(R.string.comparsas));
 			titulosModalidades.add(getString(R.string.chirigotas));
@@ -193,7 +197,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		pagerConcurso = (ViewPager)findViewById(R.id.pagerConcurso);
 		pagerConcurso.setId(R.id.pagerConcurso);
 		indicatorConcurso = (TabPageIndicator)findViewById(R.id.indicatorConcurso);
-		FragmentPagerAdapter adapterConcurso = new PagerAdapter(super.getSupportFragmentManager(), fragmentConcurso, titulosConcurso);
+		FragmentPagerAdapter adapterConcurso = new PagerAdapter(pagerConcurso, super.getSupportFragmentManager(), fragmentConcurso, titulosConcurso);
 		pagerConcurso.setAdapter(adapterConcurso);
 		indicatorConcurso.setViewPager(pagerConcurso);
 		indicatorConcurso.setOnTabReselectedListener(tabReselectedListener);
@@ -202,7 +206,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		pagerModalidades = (ViewPager)findViewById(R.id.pagerModalidades);
 		pagerModalidades.setId(R.id.pagerModalidades);
 		indicatorModalidades = (TabPageIndicator)findViewById(R.id.indicatorModalidades);
-		FragmentPagerAdapter adapterModalidades = new PagerAdapter(super.getSupportFragmentManager(), fragmentModalidades, titulosModalidades);
+		FragmentPagerAdapter adapterModalidades = new PagerAdapter(pagerModalidades, super.getSupportFragmentManager(), fragmentModalidades, titulosModalidades);
 		pagerModalidades.setAdapter(adapterModalidades);
 		indicatorModalidades.setViewPager(pagerModalidades);
 		indicatorModalidades.setOnTabReselectedListener(tabReselectedListener);
@@ -213,7 +217,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		pagerMas = (ViewPager)findViewById(R.id.pagerMas);
 		pagerMas.setId(R.id.pagerMas);
 		indicatorMas = (TabPageIndicator)findViewById(R.id.indicatorMas);
-		FragmentPagerAdapter adapterMas = new PagerAdapter(super.getSupportFragmentManager(), fragmentMasCarnaval, titulosMasCarnaval);
+		FragmentPagerAdapter adapterMas = new PagerAdapter(pagerMas, super.getSupportFragmentManager(), fragmentMasCarnaval, titulosMasCarnaval);
 		pagerMas.setAdapter(adapterMas);
 		indicatorMas.setViewPager(pagerMas);
 		indicatorMas.setOnTabReselectedListener(tabReselectedListener);
@@ -224,7 +228,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		pagerEnlaces = (ViewPager)findViewById(R.id.pagerEnlaces);
 		pagerEnlaces.setId(R.id.pagerEnlaces);
 		indicatorEnlaces = (TabPageIndicator)findViewById(R.id.indicatorEnlaces);
-		FragmentPagerAdapter adapterEnlaces = new PagerAdapter(super.getSupportFragmentManager(), fragmentEnlaces, titulosEnlaces);
+		FragmentPagerAdapter adapterEnlaces = new PagerAdapter(pagerEnlaces, super.getSupportFragmentManager(), fragmentEnlaces, titulosEnlaces);
 		pagerEnlaces.setAdapter(adapterEnlaces);
 		indicatorEnlaces.setViewPager(pagerEnlaces);
 		indicatorEnlaces.setOnTabReselectedListener(tabReselectedListener);
@@ -434,6 +438,31 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     		final ProgressDialog pd = ProgressDialog.show(this, getResources().getString(R.string.cargando_datos), getResources().getString(R.string.esperar_carga), true, false, null);
 			app.actualizarDatos(pd, true);
     	}
+    }
+    
+    public void mostrarAgrupacion(Agrupacion agrupacion){
+//    	android.support.v4.app.FragmentManager manager = super.getSupportFragmentManager();
+//    	if(agrupacionFragment!=null){
+//    		android.support.v4.app.FragmentTransaction trans = manager.beginTransaction();
+//    		trans.remove((Fragment)agrupacionFragment);
+//    		trans.commit();
+//    	}
+//    	
+//    	agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
+//    	android.support.v4.app.FragmentTransaction trans = manager.beginTransaction();
+//    	trans.add(android.R.id.content, agrupacionFragment);
+//    	trans.commit();
+
+        FragmentManager fragManager = getSupportFragmentManager();
+        FragmentTransaction fragTransaction = fragManager.beginTransaction();
+        fragTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+    	agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
+        fragTransaction.replace(pagerActivo.getId(), agrupacionFragment);
+        fragTransaction.addToBackStack(null);
+        fragTransaction.commit();
+
+//        agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
+//    	((PagerAdapter)pagerActivo.getAdapter()).replace(pila.peek()[IDX_SUBMENU], agrupacionFragment);
     }
 
 
