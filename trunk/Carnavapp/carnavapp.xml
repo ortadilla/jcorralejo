@@ -5568,14 +5568,15 @@
 	
     <anio anio="2013" >
 	<agrupaciones>
-		<agrupacion id="500" modalidad="CORO" nombre="Ve lavándote el culito que voy parriba" autor="José Antonio Pérez Fernández / Juan Manuel Braza Benítez / David Pérez Chilla / José Antonio Pérez Fernández" director="José Antonio Pérez Fernández"
+
+	    <agrupacion id="500" modalidad="CORO" nombre="Ve lavándote el culito que voy parriba" autor="José Antonio Pérez Fernández / Juan Manuel Braza Benítez / David Pérez Chilla / José Antonio Pérez Fernández" director="José Antonio Pérez Fernández"
 		localidad="Cádiz" cabeza_serie="false" 
 		info="Nuevo coro del Sheriff, el Canijo y el Habichuela"
 		url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Ve_lavandote_el_culito_que_voy_parriba.php"
 		url_foto=""
-		web="http://www.lacomparsadetino.com/">
+		web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			  
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5587,21 +5588,6 @@
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
-				<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
-				<comentario origen="Carnavalitas - Comentario preliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=1"/>
-				<comentario origen="Carnavalitas - Comentario cuartos de final" url="http://coac2012.carnavalistas.com/agrupaciones?act=132"/>
-				<comentario origen="Carnavalitas - Comentario semifinales" url="http://coac2012.carnavalistas.com/agrupaciones?act=186"/>
-				<comentario origen="Andalucía Información - Comentario preliminares" url="http://goo.gl/jRCPg"/>
-				<comentario origen="Andalucía Información - Comentario cuartos de final" url="http://goo.gl/DxkAk"/>
-				<comentario origen="Andalucía Información - Comentario semifinales" url="http://goo.gl/58W7A"/>
-				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78_comentarios.php"/>
-				<comentario origen="Diario Bahía de Cádiz - Comentarios preliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15905"/>
-				<comentario origen="Diario Bahía de Cádiz - Comentarios cuartos de final" url="http://www.diariobahiadecadiz.com/detalle-noticia-16164"/>
-				<comentario origen="Diario Bahía de Cádiz - Comentarios semifinales" url="http://www.diariobahiadecadiz.com/detalle-noticia-16266"/>
-				<comentario origen="Diario de Cádiz - Comentarios preliminares" url="http://www.diariodecadiz.es/article/carnavalcadiz2012/1165743/criacutetica/las/actuaciones/la/primera/noche/coac.html"/>
-				<comentario origen="Diario de Cádiz - Comentarios cuartos de final" url="http://www.diariodecadiz.es/article/carnavalcadiz2012/1178957/coro/los/hijos.html"/>
-				<comentario origen="Diario de Cádiz - Comentarios semifinales" url="www.diariodecadiz.es/article/carnavalcadiz2012/1184857/la/revolucioacuten/continuacutea.html"/>
-				<comentario origen="Carnavalbook - Ficha" url="http://www.cadizbook.es/carnavalbook/ficha/Los%20hijos%20del%2078/2012"/>
 			</comentarios>
 		</agrupacion>
         
@@ -5611,9 +5597,9 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="14" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5632,9 +5618,9 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="20" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5649,13 +5635,13 @@
 		</agrupacion>
 
         <agrupacion id="503" modalidad="CUARTETO" nombre="Los polivalentes" autor="Ángel Piulestán Guillén, Francisco Javier Aguilera Ceballos" director="Francisco Javier Aguilera Ceballos"
-            localidad="Cádiz" cabeza_serie="false"
-            info=""
+            localidad="Cádiz" cabeza_serie="true"
+            info="Cuarteto de Heidi"
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="73" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5674,9 +5660,9 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="5" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5696,9 +5682,9 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="18" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5713,13 +5699,13 @@
 		</agrupacion>
 
         <agrupacion id="506" modalidad="CHIRIGOTA" nombre="Las verdades del banquero" autor="José Luis García Cossio" director="José Luis García Cossio"
-            localidad="Cádiz" cabeza_serie="false"
-            info=""
+            localidad="Cádiz" cabeza_serie="true"
+            info="Chirigota del Selu"
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="32" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5738,9 +5724,8 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5759,9 +5744,8 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5776,13 +5760,13 @@
 		</agrupacion>
 
         <agrupacion id="509" modalidad="CORO" nombre="Khumbayá" autor="Luis Manuel Rivero Ramos" director="Laura Rivero Ramos"
-            localidad="Cádiz" cabeza_serie="false"
-            info=""
+            localidad="Cádiz" cabeza_serie="true"
+            info="Coro de Luis Rivero"
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="19" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5801,9 +5785,8 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5822,9 +5805,8 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5843,9 +5825,9 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="49" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5859,14 +5841,14 @@
 			</comentarios>
 		</agrupacion>
 
-        <agrupacion id="513" modalidad="COMPARSA" nombre="Los Peleles del XXI" autor="Joaquín Quiñones Madera" director="Rafael Mosquera Muñoz"
-            localidad="Cádiz" cabeza_serie="false"
-            info=""
+        <agrupacion id="513" modalidad="COMPARSA" nombre="Los Peleles del XXI" autor="Joaquín Quiñones Madera, José Luis Bustelo" director="Rafael Mosquera Muñoz"
+            localidad="Cádiz" cabeza_serie="true"
+            info="Comparsa de Quiñones y Bustelo"
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="13" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5885,9 +5867,8 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5901,14 +5882,14 @@
 			</comentarios>
 		</agrupacion>
 
-        <agrupacion id="515" modalidad="COMPARSA" nombre="Misión Imposible?" autor="Antonio Díaz Parrado, José Antonio Alvarado Ramírez" director="Miguel Ángel Fernández Corredera"
+        <agrupacion id="515" modalidad="COMPARSA" nombre="La Misión... Imposible?" autor="Antonio Díaz Parrado, José Antonio Alvarado Ramírez" director="Miguel Ángel Fernández Corredera"
             localidad="Sevilla" cabeza_serie="false"
-            info=""
+            info="Comparsa de Alvarado"
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="93" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5922,14 +5903,14 @@
 			</comentarios>
 		</agrupacion>
 
-        <agrupacion id="516" modalidad="CHIRIGOTA" nombre="Los gordillos" autor="Miguel Ángel Resuelo Mateos, Juan Luis Vargas Ruíz" director="Juan Luis Soto Velázquez (El Cascana)"
+        <agrupacion id="516" modalidad="CHIRIGOTA" nombre="Los Gordillos" autor="Miguel Ángel Resuelo Mateos, Juan Luis Vargas Ruíz" director="Juan Luis Soto Velázquez (El Cascana)"
             localidad="Cádiz" cabeza_serie="false"
-            info=""
+            info="Chirigota del Cascana"
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="127" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5948,9 +5929,9 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="69" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5970,9 +5951,9 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
+			    <otro_anio agrupacion="53" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -5986,14 +5967,13 @@
 			</comentarios>
 		</agrupacion>
 
-        <agrupacion id="519" modalidad="CHIRIGOTA" nombre="La verdad de mi locura" autor="José David Batalla Faz" director="Antonio Pascual Jiménez"
+        <agrupacion id="519" modalidad="COMPARSA" nombre="La verdad de mi locura" autor="José David Batalla Faz" director="Antonio Pascual Jiménez"
             localidad="Cádiz" cabeza_serie="false"
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -6012,9 +5992,8 @@
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hay_quien_dise_que_Cadi.php"
             url_foto=""
-            web="http://www.lacomparsadetino.com/">
+            web="">
 			<otros_anios>
-			    <otro_anio agrupacion="1" />
 			</otros_anios>
 			<componentes>
 				<componente nombre="" voz=""/>
@@ -6027,7 +6006,9 @@
 			<comentarios>
 			</comentarios>
 		</agrupacion>
-
+	    
+	    
+	    
         <agrupacion id="521" modalidad="COMPARSA" nombre="El batallón multiusos" autor="Antonio de la Cruz Almagro" director="Antonio de la Cruz Almagro"
             localidad="Salar (Granada)" cabeza_serie="false"
             info=""
