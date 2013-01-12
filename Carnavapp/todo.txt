@@ -1,6 +1,7 @@
-· ¡Estilo en veriones antiguas! --> Ver porqu� le aparece a Manuela otro fondo en la barra de arriba
-· Guardar el estado al desaparecer la actividad --> ¿seperar en distintas activities?
-· Esquema de la pantalla de bienvenida:
+� Girar
+� ¡Estilo en veriones antiguas! --> Ver porqu� le aparece a Manuela otro fondo en la barra de arriba
+� Guardar el estado al desaparecer la actividad --> ¿seperar en distintas activities?
+� Esquema de la pantalla de bienvenida:
   1. "Lo más destacado" --> Imagen con enlace (1/4)
   2. "La sesión de hoy" (sólo si hay sesión), "Concurso", "Modalidades" --> Texto (2/4)
   3. "Anunciate aquí" --> Imagen con enlace (1/4)

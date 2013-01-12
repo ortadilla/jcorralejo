@@ -107,7 +107,7 @@ public abstract class CarnavappActivity extends SherlockFragmentActivity impleme
 		pagerConcurso = (ViewPager)findViewById(R.id.pagerConcurso);
 		indicatorConcurso = (TabPageIndicator)findViewById(R.id.indicatorConcurso);
 		
-		FragmentPagerAdapter adapter = new PagerAdapter(super.getSupportFragmentManager(), fragment, titulos);
+		FragmentPagerAdapter adapter = new PagerAdapter(pagerConcurso, super.getSupportFragmentManager(), fragment, titulos);
 		pagerConcurso.setAdapter(adapter);
 		pagerConcurso.setId(R.id.pagerConcurso);
 		indicatorConcurso.setViewPager(pagerConcurso);
