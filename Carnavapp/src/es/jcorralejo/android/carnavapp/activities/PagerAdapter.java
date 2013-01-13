@@ -50,7 +50,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
 		this.fragments = fragments;
 		notifyDataSetChanged();
 	}
-
+	
 	public List<String> getTitulos() {
 		return titulos;
 	}
@@ -68,11 +68,11 @@ public class PagerAdapter extends FragmentPagerAdapter {
         }
         // Replace the fragment using transaction and in underlaying array list.
         startUpdate(container);
-        fm.beginTransaction().hide(old_fragment).add(fragment, fragment.getTag()).commit();
+//        fm.beginTransaction().hide(old_fragment).add(fragment, fragment.getTag()).commit();
         
-//        fm.beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-//				             .remove(old_fragment).add(0, fragment)
-//				             .commit();
+        fm.beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+				             .remove(old_fragment).add(container.getId(), fragment)
+				             .commit();
         fragments.set(position, fragment);
         notifyDataSetChanged();
         finishUpdate(container);
