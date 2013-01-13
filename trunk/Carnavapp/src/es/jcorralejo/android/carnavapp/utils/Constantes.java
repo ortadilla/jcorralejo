@@ -10,7 +10,7 @@ public class Constantes {
 //
 	public static final String PARAMETRO_AGRUPACIONES = "PARAMETRO_AGRUPACIONES";
 //	public static final String PARAMETRO_ENLACES = "PARAMETRO_ENLACES";
-//	public static final String PARAMETRO_AGRUPACION = "PARAMETRO_AGRUPACION";
+	public static final String PARAMETRO_AGRUPACION = "PARAMETRO_AGRUPACION";
 //	public static final String PARAMETRO_VIDEOS = "PARAMETRO_VIDEOS";
 //	public static final String PARAMETRO_COMENTARIOS = "PARAMETRO_COMENTARIOS";
 //	public static final String PARAMETRO_DIA_ACTUACION = "PARAMETRO_DIA_ACTUACION";
@@ -29,7 +29,7 @@ public class Constantes {
 
 	public static final String PATH_IMAGENES = "/carnavapp/";
 
-//	public static final String PREFERENCE_FAVORITAS = "PREFERENCE_FAVORITAS";
+	public static final String PREFERENCE_FAVORITAS = "PREFERENCE_FAVORITAS";
 	public static final String PREFERENCES = "PREFERENCES";
 //
 	public static final String FASE_PREELIMINAR = "PREELIMINAR";

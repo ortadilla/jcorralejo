@@ -453,16 +453,20 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 //    	trans.add(android.R.id.content, agrupacionFragment);
 //    	trans.commit();
 
-        FragmentManager fragManager = getSupportFragmentManager();
-        FragmentTransaction fragTransaction = fragManager.beginTransaction();
-        fragTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-    	agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
-        fragTransaction.replace(pagerActivo.getId(), agrupacionFragment);
-        fragTransaction.addToBackStack(null);
-        fragTransaction.commit();
+//    	agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
+//        FragmentTransaction fragTransaction = getSupportFragmentManager().beginTransaction();
+//    	fragTransaction.remove(((PagerAdapter)pagerActivo.getAdapter()).getFragments().get(pila.peek()[IDX_SUBMENU]));
+//        fragTransaction.add(pagerActivo.getId(), agrupacionFragment);
+//        fragTransaction.commit();
 
+        
 //        agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
 //    	((PagerAdapter)pagerActivo.getAdapter()).replace(pila.peek()[IDX_SUBMENU], agrupacionFragment);
+    	
+    	Intent i = new Intent();
+		i.setClass(getApplicationContext(), AgrupacionActivity.class);
+		i.putExtra(Constantes.PARAMETRO_AGRUPACION, agrupacion);
+		startActivity(i);
     }
 
 
