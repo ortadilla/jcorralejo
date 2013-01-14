@@ -1,5 +1,8 @@
+· Controlar cuando no haya conexión
+· Crear página inicial
 · Actualizar --> Que recargue todos los fragments
-· Girar
+· Añadir Calendario, Enlaces
+· Ocultar por ahora el resto del menú
 · Enlace a otros años
 · Recargar al seleccionar año
 · Donar
