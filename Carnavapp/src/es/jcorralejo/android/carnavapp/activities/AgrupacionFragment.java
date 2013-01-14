@@ -47,6 +47,7 @@ public class AgrupacionFragment extends Fragment{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		app = (CarnavappApplication) getActivity().getApplication();
+		setRetainInstance(true);
 	}
 	
 	@Override
