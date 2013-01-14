@@ -1,4 +1,11 @@
+· Actualizar --> Que recargue todos los fragments
 · Girar
+· Enlace a otros años
+· Recargar al seleccionar año
+· Donar
+· Anuncios
+
+
 · Â¡Estilo en veriones antiguas! --> Ver porqué le aparece a Manuela otro fondo en la barra de arriba
 · Guardar el estado al desaparecer la actividad --> Â¿seperar en distintas activities?
 · Esquema de la pantalla de bienvenida:
