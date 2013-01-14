@@ -14,8 +14,8 @@
             android:id="@+id/layoutNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="10dp"
+            android:gravity="center"
             android:orientation="horizontal" >
 
             <TextView
@@ -72,8 +72,7 @@
                 android:layout_gravity="left"
                 android:gravity="left"
                 android:text="Comparsa"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                />
+                android:textAppearance="?android:attr/textAppearanceSmall" />
         </LinearLayout>
 
         <LinearLayout
@@ -98,8 +97,7 @@
                 android:layout_gravity="left"
                 android:gravity="left"
                 android:text="Juán Velazquez"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                />
+                android:textAppearance="?android:attr/textAppearanceSmall" />
         </LinearLayout>
 
         <LinearLayout
@@ -124,8 +122,7 @@
                 android:layout_gravity="left"
                 android:gravity="left"
                 android:text="Juán Velazquez"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                />
+                android:textAppearance="?android:attr/textAppearanceSmall" />
         </LinearLayout>
 
         <LinearLayout
@@ -150,8 +147,7 @@
                 android:layout_gravity="left"
                 android:gravity="left"
                 android:text="Cádiz"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                />
+                android:textAppearance="?android:attr/textAppearanceSmall" />
         </LinearLayout>
 
         <LinearLayout
@@ -177,8 +173,7 @@
                 android:layout_marginLeft="25dip"
                 android:gravity="left"
                 android:text="Pepe Rodríguez (Bombo)"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                />
+                android:textAppearance="?android:attr/textAppearanceSmall" />
         </LinearLayout>
 
         <LinearLayout
@@ -186,6 +181,7 @@
             android:layout_height="wrap_content"
             android:gravity="left"
             android:orientation="horizontal" >
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -194,13 +190,24 @@
                 android:text="@string/otros_anios"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/agrOtrosAnios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:text="La Pepi"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="left"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:visibility="gone" >
+
             <ListView
                 android:id="@+id/otrosAnios"
                 android:layout_width="match_parent"
@@ -211,6 +218,7 @@
                 android:cacheColorHint="@android:color/transparent"
                 android:divider="#88b10094"
                 android:dividerHeight="1dip" />
+
             <TextView
                 android:id="@android:id/empty"
                 android:layout_width="fill_parent"

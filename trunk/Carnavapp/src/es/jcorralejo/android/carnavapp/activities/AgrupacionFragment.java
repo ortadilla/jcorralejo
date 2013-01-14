@@ -96,6 +96,17 @@ public class AgrupacionFragment extends Fragment{
 				componentes.setVisibility(View.GONE);
 				componentes.setText(null);
 			}
+			
+			TextView otrosAniosText = (TextView) view.findViewById(R.id.agrOtrosAnios);
+			String otrosAnios = "";
+			if(agrupacion.getOtrosAnios()!=null){
+				for(Agrupacion agrAnterior : agrupacion.getOtrosAnios())
+					otrosAnios += "\n "+agrAnterior.getAnio()+" - "+agrAnterior.getNombre();
+				otrosAnios = otrosAnios.substring(1);
+			}
+			if(otrosAnios.equals(""))
+				otrosAnios = getString(R.string.sin_datos_otras_ediciones);
+			otrosAniosText.setText(otrosAnios);
 		}
 		
 		return view;
