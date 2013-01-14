@@ -92,6 +92,11 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		recuperarUltimaPila(); //Debe ser lo último
 	}
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
+	
 	@SuppressWarnings("unchecked")
 	private void recuperarUltimaPila(){
 		//Si guardamos una pila, volvemos a donde nos indique
@@ -297,6 +302,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		//Guardamos en la pila hacia donde vamos
 		actualizarPila(itemPosition);
 		
+		ocultarAgrupacion();
 		pagerActivo.setVisibility(View.GONE);
 		indicatorActivo.setVisibility(View.GONE);
 		if(OPCION_CONCURSO == itemPosition){
@@ -326,10 +332,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	@Override
     public void onBackPressed() {
 		if(agrupacionFragment!=null && frameAgrupacion!=null && frameAgrupacion.getVisibility()==View.VISIBLE){
-			android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
-			trans.remove(agrupacionFragment).commit();
-			agrupacionFragment = null;
-			frameAgrupacion.setVisibility(View.GONE);
+			ocultarAgrupacion();
 
 			pagerActivo.setVisibility(View.VISIBLE);
 			indicatorActivo.setVisibility(View.VISIBLE);
@@ -346,6 +349,15 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			}
 		}
     }
+	
+	private void ocultarAgrupacion(){
+		if(agrupacionFragment!=null && frameAgrupacion!=null && frameAgrupacion.getVisibility()==View.VISIBLE){
+			android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
+			trans.remove(agrupacionFragment).commit();
+			agrupacionFragment = null;
+			frameAgrupacion.setVisibility(View.GONE);
+		}		
+	}
 	
 	private void cerrarAplicacion() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);

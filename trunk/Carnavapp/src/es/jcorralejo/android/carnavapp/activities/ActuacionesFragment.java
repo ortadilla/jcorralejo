@@ -44,6 +44,7 @@ public class ActuacionesFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 		app = (CarnavappApplication) getActivity().getApplication();
 		miInflater = LayoutInflater.from(getActivity());
+		setRetainInstance(true);
 	}
 	
 	@Override
