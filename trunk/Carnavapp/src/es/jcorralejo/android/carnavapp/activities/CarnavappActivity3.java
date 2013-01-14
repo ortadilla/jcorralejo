@@ -17,14 +17,13 @@ import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -56,6 +55,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	protected ViewPager pagerEnlaces;
 	protected TabPageIndicator indicatorEnlaces;
 	protected AgrupacionFragment agrupacionFragment;
+	protected FrameLayout frameAgrupacion;
 	
 	private ActionBar actionBar;
 	private String[] opciones;
@@ -161,6 +161,12 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			titulosMasCarnaval.add(getString(R.string.romanceros));
 			titulosMasCarnaval.add(getString(R.string.callejeras));
 		}
+		
+		if(frameAgrupacion==null){
+			frameAgrupacion = (FrameLayout) findViewById(R.id.fragmentAgrupacion);
+			frameAgrupacion.setVisibility(View.GONE);
+		}
+		
 	}
 	
 	private class TabReselectedListener implements OnTabReselectedListener{
@@ -319,14 +325,25 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	
 	@Override
     public void onBackPressed() {
-		if(pila!=null && !pila.isEmpty() && pila.size()>1){
-			//Quitamos el último
-			pila.pop();
-			Integer[] volverA = pila.peek();
-			actionBar.setSelectedNavigationItem(volverA[IDX_OPCION]);
-			pagerActivo.setCurrentItem(volverA[IDX_SUBMENU]);
+		if(agrupacionFragment!=null && frameAgrupacion!=null && frameAgrupacion.getVisibility()==View.VISIBLE){
+			android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
+			trans.remove(agrupacionFragment).commit();
+			agrupacionFragment = null;
+			frameAgrupacion.setVisibility(View.GONE);
+
+			pagerActivo.setVisibility(View.VISIBLE);
+			indicatorActivo.setVisibility(View.VISIBLE);
 		}else{
-	    	super.onBackPressed();
+
+			if(pila!=null && !pila.isEmpty() && pila.size()>1){
+				//Quitamos el último
+				pila.pop();
+				Integer[] volverA = pila.peek();
+				actionBar.setSelectedNavigationItem(volverA[IDX_OPCION]);
+				pagerActivo.setCurrentItem(volverA[IDX_SUBMENU]);
+			}else{
+				super.onBackPressed();
+			}
 		}
     }
 	
@@ -463,10 +480,18 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 //        agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
 //    	((PagerAdapter)pagerActivo.getAdapter()).replace(pila.peek()[IDX_SUBMENU], agrupacionFragment);
     	
-    	Intent i = new Intent();
-		i.setClass(getApplicationContext(), AgrupacionActivity.class);
-		i.putExtra(Constantes.PARAMETRO_AGRUPACION, agrupacion);
-		startActivity(i);
+//    	Intent i = new Intent();
+//		i.setClass(getApplicationContext(), AgrupacionActivity.class);
+//		i.putExtra(Constantes.PARAMETRO_AGRUPACION, agrupacion);
+//		startActivity(i);
+    	
+    	indicatorActivo.setVisibility(View.GONE);
+    	pagerActivo.setVisibility(View.GONE);
+    	frameAgrupacion.setVisibility(View.VISIBLE);
+    	agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
+    	android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
+    	trans.add(android.R.id.content, agrupacionFragment);
+    	trans.commit();
     }
 
 

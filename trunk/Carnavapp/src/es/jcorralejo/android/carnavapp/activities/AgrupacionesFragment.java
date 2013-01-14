@@ -89,10 +89,11 @@ public class AgrupacionesFragment extends ListFragment {
 				if(agrupacion.getOtrosAnios()!=null){
 					for(Agrupacion agrAnterior : agrupacion.getOtrosAnios())
 						otrosAnios += "\n"+agrAnterior.getAnio()+": "+agrAnterior.getNombre();
+					otrosAnios = otrosAnios.substring(1);
 				}
 				if(otrosAnios.equals(""))
 					otrosAnios = getString(R.string.sin_datos_otras_ediciones);
-				coac2011.setText(otrosAnios.substring(2));
+				coac2011.setText(otrosAnios);
 		 
 				return row;
 			}
