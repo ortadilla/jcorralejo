@@ -7080,7 +7080,6 @@
 				<comentarios>
 				    <comentario origen="Diario de Cádiz - Ficha"
 						url="http://www.diariodecadiz.es/article/carnavalcadiz2013/1437851/chirigota/las/verdades/banquero/caacutediz.html" />
-				    
 				</comentarios>
 			</agrupacion>
 
@@ -7941,641 +7940,603 @@
 			</agrupacion>
 
 
-			<agrupacion id="550" modalidad="COMPARSA" nombre="Al mal tiempo buena cara"
-				autor="Antonio Rivas Cabañas" director="Antonio Rico Segura"
-				localidad="Puerto de Santa María (Cádiz)" cabeza_serie="false"
-				info="Comparsa del Puerto"
-				url_cc=""
-				url_foto="" web="">
-				<otros_anios>
-					<otro_anio agrupacion="65" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
+			<agrupacion id="550" modalidad="COMPARSA" nombre="Al mal tiempo buena cara" autor="Antonio Rivas Cabañas" director="Antonio Rico Segura"
+            localidad="Puerto de Santa María (Cádiz)" cabeza_serie="true"
+            info="Comparsa del Puerto"
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="65" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="551" modalidad="CHIRIGOTA" nombre="Teófila nos tienes abandonaito" autor="Francisco Abeijón Ramos" director="Juan Fernández Romero"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="128" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        
+        <agrupacion id="553" modalidad="COMPARSA" nombre="La plazuela" autor="Antonio Busto Pavón" director="Manuel Otero Sánchez"
+            localidad="Jerez de la Frontera (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="3" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="554" modalidad="CHIRIGOTA" nombre="Los protegidos" autor="Luis Pérez Rosso" director="Luis Pérez Rosso"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="555" modalidad="COMPARSA" nombre="Los desarmaos" autor="Francisco Alcantara Pedemonte" director="José Ramón Moure Salado"
+            localidad="Jerez de la Frontera (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        
+        <agrupacion id="556" modalidad="CORO" nombre="Los que viven como reyes" autor="Rafael María Pastrana Lorenzo" director="Antonio Ventura Barla"
+            localidad="Sevilla" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="557" modalidad="CHIRIGOTA" nombre="Los follaitos" autor="Ricardo Rivera Mora" director="Jesús Freire Fernández"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="558" modalidad="COMPARSA" nombre="Son del mar" autor="Rafael Pardal Fernández" director="David Saban Calvente"
+            localidad="La Línea (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="559" modalidad="CHIRIGOTA" nombre="Los prodigio" autor="José Antonio Díaz Palacios, Agustín González Galiano" director="Juan Manuel Delgado Foncubierta"
+            localidad="Algeciras (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="560" modalidad="COMPARSA" nombre="Los xpulsaos" autor="Adrian Cordero López" director="Marco Antonio Romero García"
+            localidad="Sanlúcar de Barrameda (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="561" modalidad="CHIRIGOTA" nombre="Los especialistas" autor="Miguel Choza Camacho" director="Manuel Antonio García Girondona"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="110" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="562" modalidad="COMPARSA" nombre="El gavilán" autor="Rafael Pastrana Guillén" director="Juan Manuel Rodríguez Vergara"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="563" modalidad="CHIRIGOTA" nombre="Los recortables" autor="Julian Balbón Fernández" director="Antonio Puerto Jerez"
+            localidad="Carmona (Sevilla)" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="564" modalidad="COMPARSA" nombre="Los tipos" autor="José Manuel Viejo Jiménez, José Guerrero Roldán 'Yuyu'" director="José Francisco Narros Egea"
+            localidad="Camas (Sevilla)" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="104" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="565" modalidad="CORO" nombre="Guais, plais, mais" autor="José Antonio Vera Luque, Amaro Portillo Portillo" director="Leonardo Calle Alba"
+            localidad="Cádiz" cabeza_serie="false"
+            info="Antiguo Coro de Lamas"
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="97" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="566" modalidad="COMPARSA" nombre="Por ti yo cambio" autor="David Ruíz Fuentes, Juan Carlos Martín Benítez" director="David Ruíz Fuentes"
+            localidad="Lebrija (Sevilla)" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        
+        <agrupacion id="567" modalidad="COMPARSA" nombre="La fanfarria" autor="Juan Carlos Moreno García" director="Juan Cádiz Vaca"
+            localidad="Tarifa (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="126" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="568" modalidad="CUARTETO" nombre="Los tontacos" autor="Javier Jiménez Cuadrados" director="La agrupación"
+            localidad="Granada" cabeza_serie="false"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="569" modalidad="COMPARSA" nombre="El rey burlón" autor="Juan Fernández Domínguez" director="Manuel Sánchez Monreal"
+            localidad="Cádiz" cabeza_serie="true"
+            info="La comparsa de Juan Fernández"
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="11" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+		
+			 <agrupacion id="570" modalidad="COMPARSA" nombre="La Ola" autor="Rafael María Pastrana Lorenzo" director="María del Carmen Jiménez Barea"
+            localidad="Cádiz" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_ola.htm"
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="63" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="571" modalidad="CHIRIGOTA" nombre="Contigo aprendí" autor="Antonio Pedro Serrano Alvarez 'El Canijo'" director="Ruben Navarro Márquez"
+            localidad="Cádiz" cabeza_serie="true"
+            info=""
+            url_cc=""
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="6" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="572" modalidad="COMPARSA" nombre="Los Válidos" autor="Jose Manuel Cardoso Romero, Enrique García Rosado 'Kike Remolino'" director="Agustín Correa Rodríguez"
+            localidad="Cádiz" cabeza_serie="false"
+            info="Comparsa de Kike Remolino"
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_validos.php"
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="573" modalidad="CHIRIGOTA" nombre="Este año llegamos a lo más alto" autor="Nasser Mohamed Abu, Miguel Ángel Díaz Pavón" director="Miguel Ángel Díaz Pavón"
+            localidad="Herencia (Ciudad Real)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Este_anno_llegamos_a_lo_mas_alto.php"
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+        
+        <agrupacion id="574" modalidad="CORO" nombre="Los cabrones" autor="Antonio Rivas Cabañas, Julio Pardo Melero" director="Juan Lucena Morant"
+            localidad="Cádiz" cabeza_serie="true"
+            info="Coro de Julio Pardo"
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_cabrones.php"
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="61" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
+
+        <agrupacion id="575" modalidad="CHIRIGOTA" nombre="Los que no se jartan de choppe" autor="Francisco Fuentes Romero" director="José Luis Gómez Pérez"
+            localidad="Chipiona (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_que_no_se_jartan_de_choppe.php"
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="36" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
 
 
-			<agrupacion id="551" modalidad="CHIRIGOTA"
-				nombre="Teófila nos tienes abandonaito" autor="Francisco Abeijón Ramos"
-				director="Juan Fernández Romero" localidad="Cádiz" cabeza_serie="false"
-				info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
+        <agrupacion id="576" modalidad="COMPARSA" nombre="Los elementales" autor="Manuel Antonio Calderón Guillen" director="Jose María Durán Monroy"
+            localidad="Algeciras (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_elementales.php"
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="67" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
 
-			<agrupacion id="552" modalidad="CHIRIGOTA"
-				nombre="Teófila nos tienes abandonaito" autor="Francisco Abeijón Ramos"
-				director="Juan Fernández Romero" localidad="Cádiz" cabeza_serie="false"
-				info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
+        <agrupacion id="577" modalidad="CHIRIGOTA" nombre="Los que salieron huyendo por la que está cayendo" autor="Juan Carlos Vegara León, Jose Antonio Alvarado Ramírez" director="Juan Carlos Vegara León"
+            localidad="Sevilla" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_que_salieron_huyendo_por_la_que_esta_cayendo.php"
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
 
-			<agrupacion id="553" modalidad="COMPARSA" nombre="La plazuela"
-				autor="Antonio Busto Pavón" director="Manuel Otero Sánchez"
-				localidad="Jerez de la Frontera (Cádiz)" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
+        <agrupacion id="578" modalidad="COMPARSA" nombre="El que con-trola" autor="Francisco Jesús Amoros Martínez, Antonio Javier Camacho Sánchez" director="Antonio Javier Camacho Sánchez"
+            localidad="Puerto de Santa María (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/El_que_con-trola.php"
+            url_foto=""
+            web="">
+			<otros_anios>
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
 
-			<agrupacion id="554" modalidad="CHIRIGOTA" nombre="Los protegidos"
-				autor="Luis Pérez Rosso" director="Luis Pérez Rosso" localidad="Cádiz"
-				cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="555" modalidad="COMPARSA" nombre="Los desarmaos"
-				autor="Francisco Alcantara Pedemonte" director="José Ramón Moure Salado"
-				localidad="Jerez de la Frontera (Cádiz)" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-
-			<agrupacion id="556" modalidad="CORO" nombre="Los que viven como reyes"
-				autor="Rafael María Pastrana Lorenzo" director="Antonio Ventura Barla"
-				localidad="Sevilla" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="557" modalidad="CHIRIGOTA" nombre="Los follaitos"
-				autor="Ricardo Rivera Mora" director="Jesús Freire Fernández"
-				localidad="Cádiz" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="558" modalidad="COMPARSA" nombre="Son del mar"
-				autor="Rafael Pardal Fernández" director="David Saban Calvente"
-				localidad="La Línea (Cádiz)" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="559" modalidad="CHIRIGOTA" nombre="Los prodigio"
-				autor="José Antonio Díaz Palacios, Agustín González Galiano"
-				director="Juan Manuel Delgado Foncubierta" localidad="Algeciras (Cádiz)"
-				cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="560" modalidad="COMPARSA" nombre="Los xpulsaos"
-				autor="Adrian Cordero López" director="Marco Antonio Romero García"
-				localidad="Sanlúcar de Barrameda (Cádiz)" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="561" modalidad="CHIRIGOTA" nombre="Los especialistas"
-				autor="Miguel Choza Camacho" director="Manuel Antonio García Girondona"
-				localidad="Cádiz" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="562" modalidad="COMPARSA" nombre="El gavilán"
-				autor="Rafael Pastrana Guillén" director="Juan Manuel Rodríguez Vergara"
-				localidad="Cádiz" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="563" modalidad="CHIRIGOTA" nombre="Los recortables"
-				autor="Julian Balbón Fernández" director="Antonio Puerto Jerez"
-				localidad="Carmona (Sevilla)" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="564" modalidad="COMPARSA" nombre="Los tipos"
-				autor="José Manuel Viejo Jiménez, José Guerrero Roldán 'Yuyu'"
-				director="José Francisco Narros Egea" localidad="Camas (Sevilla)"
-				cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="565" modalidad="CORO" nombre="Guas, plais, mais"
-				autor="José Antonio Vera Luque, Amaro Portillo Portillo" director="Leonardo Calle Alba"
-				localidad="Cádiz" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="566" modalidad="COMPARSA" nombre="Yo por ti cambio"
-				autor="David Ruíz Fuentes, Juan Carlos Martín Benítez" director="David Ruíz Fuentes"
-				localidad="Lebrija (Sevilla)" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-
-			<agrupacion id="567" modalidad="COMPARSA" nombre="La fanfarria"
-				autor="Juan Carlos Moreno García" director="Juan Cádiz Vaca"
-				localidad="Tarifa (Cádiz)" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="568" modalidad="CUARTETO" nombre="Los tontacos"
-				autor="Javier Jiménez Cuadrados" director="La agrupación" localidad="Granada"
-				cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="569" modalidad="COMPARSA" nombre="El rey burlón"
-				autor="Juan Fernández Domínguez" director="Manuel Sánchez Monreal"
-				localidad="Cádiz" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-
-			<agrupacion id="570" modalidad="COMPARSA" nombre="La ola"
-				autor="Rafael María Pastrana Lorenzo" director="María del Carmen Jiménez Barea"
-				localidad="Cádiz" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="571" modalidad="CHIRIGOTA" nombre="Contigo aprendí"
-				autor="Antonio Pedro Serrano Alvarez 'El Canijo'" director="Ruben Navarro Márquez"
-				localidad="Cádiz" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="572" modalidad="COMPARSA" nombre="Los válidos"
-				autor="Jose Manuel Cardoso Romero, Enrique García Rosado 'Kike Remolino'"
-				director="Agustín Correa Rodríguez" localidad="Cádiz" cabeza_serie="false"
-				info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="573" modalidad="CHIRIGOTA"
-				nombre="Este año llegamos a lo más alto" autor="Nasser Mohamed Abu, Miguel Ángel Díaz Pavón"
-				director="Miguel Ángel Díaz Pavón" localidad="Herencia (Ciudad Real)"
-				cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="574" modalidad="CORO" nombre="Los cabrones"
-				autor="Antonio Rivas Cabañas, Julio Pardo Melero" director="Juan Lucena Morant"
-				localidad="Cádiz" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="575" modalidad="CHIRIGOTA"
-				nombre="Los que no se jartan de choppe" autor="Francisco Fuentes Romero"
-				director="José Luis Gómez Pérez" localidad="Chipiona (Cádiz)"
-				cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="575" modalidad="CHIRIGOTA"
-				nombre="Los que no se jartan de choppe" autor="Francisco Fuentes Romero"
-				director="José Luis Gómez Pérez" localidad="Chipiona (Cádiz)"
-				cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="576" modalidad="COMPARSA" nombre="Los elementales"
-				autor="Manuel Antonio Calderón Guillen" director="Jose María Durán Monroy"
-				localidad="Algeciras (Cádiz)" cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="577" modalidad="CHIRIGOTA"
-				nombre="Los que salieron huyendo por la que está cayendo" autor="Juan Carlos Vegara León, Jose Antonio Alvarado Ramírez"
-				director="Juan Carlos Vegara León" localidad="Sevilla" cabeza_serie="false"
-				info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="578" modalidad="COMPARSA" nombre="El que con-trola"
-				autor="Francisco Jesús Amoros Martínez, Antonio Javier Camacho Sánchez"
-				director="Antonio Javier Camacho Sánchez" localidad="Puerto de Santa María (Cádiz)"
-				cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="579" modalidad="CHIRIGOTA"
-				nombre="Los cachorros del hombre bobo" autor="Jaime Fernández de la Puente Alcántara"
-				director="Jorge Guisado Telles" localidad="Sanlúcar de Barrameda (Cádiz)"
-				cabeza_serie="false" info=""
-				url_cc=""
-				url_foto="" web="http://www.lacomparsadetino.com/">
-				<otros_anios>
-					<otro_anio agrupacion="1" />
-				</otros_anios>
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
+        <agrupacion id="579" modalidad="CHIRIGOTA" nombre="Los cachorros del hombre bobo" autor="Jaime Fernández de la Puente Alcántara" director="Jorge Guisado Telles"
+            localidad="Sanlúcar de Barrameda (Cádiz)" cabeza_serie="false"
+            info=""
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_cachorros_del_hombre_lobo.php"
+            url_foto=""
+            web="">
+			<otros_anios>
+			    <otro_anio agrupacion="23" />
+			</otros_anios>
+			<componentes>
+				<componente nombre="" voz=""/>
+			</componentes>
+			<videos>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+			</comentarios>
+		</agrupacion>
 
 			<agrupacion id="580" modalidad="COMPARSA" nombre="La helada"
 				autor="Alejandro Fernández Martín" director="Alejandro Forja Albéniz"
