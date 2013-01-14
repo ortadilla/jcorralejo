@@ -16,13 +16,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
+import es.jcorralejo.android.carnavapp.entidades.Comentario;
 import es.jcorralejo.android.carnavapp.entidades.Componente;
 import es.jcorralejo.android.carnavapp.utils.Constantes;
 
@@ -108,6 +111,16 @@ public class AgrupacionFragment extends Fragment{
 			if(otrosAnios.equals(""))
 				otrosAnios = getString(R.string.sin_datos_otras_ediciones);
 			otrosAniosText.setText(otrosAnios);
+			
+			
+			ListView comentarios = (ListView) view.findViewById(R.id.comentarios);
+			if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
+				Object[] comentariosArray = agrupacion.getComentarios().toArray();
+				ArrayAdapter<String> adapterComentarios = new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1, android.R.id.text1, comentariosArray);
+				comentarios.setAdapter(adapterComentarios);
+			}else{
+				comentarios.setVisibility(View.GONE);
+			}
 		}
 		
 		return view;

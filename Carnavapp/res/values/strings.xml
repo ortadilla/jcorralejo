@@ -11,6 +11,7 @@
     <string name="cargando_datos">Cargando datos</string>
     <string name="clasificacion">Clasificación</string>
     <string name="chirigotas">Chirigotas</string>
+    <string name="comentarios">Comentarios: </string>
     <string name="comparsas">Comparsas</string>
     <string name="concurso">Concurso</string>
     <string name="configuracion">Configuración</string>
@@ -23,6 +24,7 @@
     <string name="enlaces">Enlaces</string>
     <string name="esperar_carga">Por favor, espere mientras actualizamos los datos desde el servidor...</string>
     <string name="fasefinal">Final</string>
+    <string name="fotos">Fotos</string>
     <string name="hoy">Hoy</string> 
     <string name="infantiles">Infantiles</string> 
     <string name="info">Información</string> 
@@ -62,6 +64,7 @@
     	cerveza comprando la versión de donación de CARNAVAPP o puedes pulsar de vez en cuando en la publicidad, no te cuesta nada
     	\n\n
     </string>
+    <string name="videos">Vídeos</string>
     <string name="volver">Volver</string>
     <string name="ya_actualizando">Actualizando datos...Por favor vuelva a intentarlo pasados unos segundos</string>
 

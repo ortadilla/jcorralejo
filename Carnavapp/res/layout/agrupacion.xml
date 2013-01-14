@@ -34,7 +34,7 @@
                 android:id="@+id/agrFav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="top"
                 android:contentDescription="IC_FAV"
                 android:src="@drawable/ic_fav" />
         </LinearLayout>
@@ -225,6 +225,40 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="@string/no_agrupaciones" />
+        </LinearLayout>
+        
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:gravity="left"
+                android:text="@string/comentarios"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/comentarios"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:layout_weight="6"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="#88b10094"
+                android:dividerHeight="1dip" />
         </LinearLayout>
     </LinearLayout>
 
