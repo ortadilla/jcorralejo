@@ -497,13 +497,15 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 //		i.putExtra(Constantes.PARAMETRO_AGRUPACION, agrupacion);
 //		startActivity(i);
     	
-    	indicatorActivo.setVisibility(View.GONE);
-    	pagerActivo.setVisibility(View.GONE);
-    	frameAgrupacion.setVisibility(View.VISIBLE);
-    	agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
-    	android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
-    	trans.add(android.R.id.content, agrupacionFragment);
-    	trans.commit();
+    	if(Integer.MIN_VALUE != agrupacion.getId()){
+    		indicatorActivo.setVisibility(View.GONE);
+    		pagerActivo.setVisibility(View.GONE);
+    		frameAgrupacion.setVisibility(View.VISIBLE);
+    		agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
+    		android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
+    		trans.add(android.R.id.content, agrupacionFragment);
+    		trans.commit();
+    	}
     }
 
 
