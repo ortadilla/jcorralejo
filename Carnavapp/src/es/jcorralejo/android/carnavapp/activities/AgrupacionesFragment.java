@@ -84,7 +84,7 @@ public class AgrupacionesFragment extends ListFragment {
 					datosExtras.setVisibility(View.GONE);
 				}
 				
-				TextView coac2011 = (TextView) row.findViewById(R.id.agrOtrosAnios);
+				TextView otrosAniosText = (TextView) row.findViewById(R.id.agrOtrosAnios);
 				String otrosAnios = "";
 				if(agrupacion.getOtrosAnios()!=null){
 					for(Agrupacion agrAnterior : agrupacion.getOtrosAnios())
@@ -93,7 +93,7 @@ public class AgrupacionesFragment extends ListFragment {
 				}
 				if(otrosAnios.equals(""))
 					otrosAnios = getString(R.string.sin_datos_otras_ediciones);
-				coac2011.setText(otrosAnios);
+				otrosAniosText.setText(otrosAnios);
 		 
 				return row;
 			}
