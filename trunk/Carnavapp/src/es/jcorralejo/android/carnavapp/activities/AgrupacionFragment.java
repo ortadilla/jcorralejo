@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.List;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -21,7 +20,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +28,7 @@ import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
 import es.jcorralejo.android.carnavapp.entidades.Comentario;
 import es.jcorralejo.android.carnavapp.entidades.Componente;
+import es.jcorralejo.android.carnavapp.entidades.Entidad;
 import es.jcorralejo.android.carnavapp.entidades.Video;
 import es.jcorralejo.android.carnavapp.utils.Constantes;
 
@@ -118,15 +117,24 @@ public class AgrupacionFragment extends Fragment{
 				otrosAnios = getString(R.string.sin_datos_otras_ediciones);
 			otrosAniosText.setText(otrosAnios);
 			
+//			http://trivedihardik.wordpress.com/2011/09/19/scrollview-inside-scrollview-scrolling-problem/
 			
 			ListView comentarios = (ListView) view.findViewById(R.id.comentarios);
 			if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
 				Comentario[] comentariosArray = agrupacion.getComentarios().toArray(new Comentario[agrupacion.getComentarios().size()]);
-//				ArrayAdapter<String> adapterComentarios = new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1, android.R.id.text1, comentariosArray);
 				ElementoAgrupacionAdapter adapter = new ElementoAgrupacionAdapter(getActivity(), R.layout.elemento_agrupacion, comentariosArray);
 				comentarios.setAdapter(adapter);
 			}else{
 				comentarios.setVisibility(View.GONE);
+			}
+			
+			ListView videos = (ListView) view.findViewById(R.id.videos);
+			if(agrupacion.getVideos()!=null && !agrupacion.getVideos().isEmpty()){
+				Video[] videosArray = agrupacion.getVideos().toArray(new Video[agrupacion.getVideos().size()]);
+				ElementoAgrupacionAdapter adapter = new ElementoAgrupacionAdapter(getActivity(), R.layout.elemento_agrupacion, videosArray);
+				videos.setAdapter(adapter);
+			}else{
+				videos.setVisibility(View.GONE);
 			}
 		}
 		
@@ -176,12 +184,12 @@ public class AgrupacionFragment extends Fragment{
 
 
 
-    private class ElementoAgrupacionAdapter extends ArrayAdapter<Comentario>{
+    private class ElementoAgrupacionAdapter extends ArrayAdapter<Entidad>{
     	
-    	Comentario[] elementos ;
+    	Entidad[] elementos ;
     	Context context;
     	
-		public ElementoAgrupacionAdapter(Context context, int textViewResourceId, Comentario[] elementos) {
+		public ElementoAgrupacionAdapter(Context context, int textViewResourceId, Entidad[] elementos) {
 			super(context, textViewResourceId, elementos);
 			this.context = context;
 			this.elementos = elementos;

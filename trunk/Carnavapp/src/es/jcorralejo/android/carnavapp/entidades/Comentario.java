@@ -2,7 +2,7 @@ package es.jcorralejo.android.carnavapp.entidades;
 
 import java.io.Serializable;
 
-public class Comentario implements Serializable{
+public class Comentario extends Entidad implements Serializable {
 	
 	private static final long serialVersionUID = -4812512377695460270L;
 	private String origen;
