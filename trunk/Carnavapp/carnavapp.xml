@@ -6947,7 +6947,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
-
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=tTaXIdS_PSw" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -6977,7 +6977,7 @@
 				</comentarios>
 			</agrupacion>
 
-			<agrupacion id="502" modalidad="COMPARSA" nombre="El mundo el nuestro"
+			<agrupacion id="502" modalidad="COMPARSA" nombre="El mundo es nuestro"
 				autor="Guillermo Caballero Jiménez, Pascual González Moreno"
 				director="Ismaél Márquez Migal" localidad="Sevilla" cabeza_serie="false"
 				info=""
@@ -6990,6 +6990,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Popurri" url="http://www.youtube.com/watch?v=hnNf7XRrPhM" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -7011,6 +7012,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=IdKRLhLQ0rA" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -7031,6 +7033,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=fxQrgrGB62I" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -7053,6 +7056,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=YNXIezmHS-A" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -7073,6 +7077,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=BNaKYG6iCOg" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -7114,6 +7119,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=yRssX76xvis" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
