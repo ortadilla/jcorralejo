@@ -7140,6 +7140,9 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Presentación" url="http://www.youtube.com/watch?v=t9BknDkBoAc" />
+                    <video descripcion="Preliminar - Cuplé" url="http://www.youtube.com/watch?v=3qo8dbvM8pM" />
+                    <video descripcion="Preliminar - Tango" url="http://www.youtube.com/watch?v=nBPGYVudpIE" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -7159,7 +7162,8 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
-				</videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=5xxLZpIb1F8" />
+                </videos>
 				<fotos>
 					<foto descripcion="" url="" />
 				</fotos>
@@ -7178,6 +7182,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=MmmkXt4dxSs" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -7198,6 +7203,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=5F2DzkPA1zc" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -7218,6 +7224,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=ADIv-DLFkac" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -7238,6 +7245,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=pJcFZOzwqcE" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -7259,6 +7267,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=C55rizBSJpw" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -7279,6 +7288,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+                    <video descripcion="Preliminar - Actuación completa" url="http://www.youtube.com/watch?v=HxBoS-2Uh1Q" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
