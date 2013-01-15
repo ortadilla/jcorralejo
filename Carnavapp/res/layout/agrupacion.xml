@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/scrollAgrupacion"
     android:fillViewport="true" >
 
     <LinearLayout
@@ -226,8 +227,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:text="@string/no_agrupaciones" />
         </LinearLayout>
-        
-          <LinearLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
@@ -247,15 +248,47 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="left"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <ListView
                 android:id="@+id/comentarios"
                 android:layout_width="match_parent"
-                android:layout_height="0dip"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="25dip"
                 android:layout_marginRight="25dip"
-                android:layout_weight="6"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="#88b10094"
+                android:dividerHeight="1dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:gravity="left"
+                android:text="@string/videos"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/videos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
                 android:cacheColorHint="@android:color/transparent"
                 android:divider="#88b10094"
                 android:dividerHeight="1dip" />

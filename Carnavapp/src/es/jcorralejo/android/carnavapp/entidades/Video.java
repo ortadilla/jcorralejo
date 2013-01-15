@@ -3,7 +3,7 @@ package es.jcorralejo.android.carnavapp.entidades;
 
 import java.io.Serializable;
 
-public class Video implements Serializable{
+public class Video extends Entidad implements Serializable{
 	private static final long serialVersionUID = -8533270663571629186L;
 	private String descripcion;
 	private String url;
