@@ -7,7 +7,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -19,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,12 +30,14 @@ import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
 import es.jcorralejo.android.carnavapp.entidades.Comentario;
 import es.jcorralejo.android.carnavapp.entidades.Componente;
+import es.jcorralejo.android.carnavapp.entidades.Video;
 import es.jcorralejo.android.carnavapp.utils.Constantes;
 
 public class AgrupacionFragment extends Fragment{
 	
 	CarnavappApplication app;
 	private Agrupacion agrupacion;
+	private LayoutInflater miInflater;
 	
 	public AgrupacionFragment() {
 	}
@@ -50,6 +55,7 @@ public class AgrupacionFragment extends Fragment{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		app = (CarnavappApplication) getActivity().getApplication();
+		miInflater = LayoutInflater.from(getActivity());
 		setRetainInstance(true);
 	}
 	
@@ -115,9 +121,10 @@ public class AgrupacionFragment extends Fragment{
 			
 			ListView comentarios = (ListView) view.findViewById(R.id.comentarios);
 			if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
-				Object[] comentariosArray = agrupacion.getComentarios().toArray();
-				ArrayAdapter<String> adapterComentarios = new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1, android.R.id.text1, comentariosArray);
-				comentarios.setAdapter(adapterComentarios);
+				Comentario[] comentariosArray = agrupacion.getComentarios().toArray(new Comentario[agrupacion.getComentarios().size()]);
+//				ArrayAdapter<String> adapterComentarios = new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1, android.R.id.text1, comentariosArray);
+				ElementoAgrupacionAdapter adapter = new ElementoAgrupacionAdapter(getActivity(), R.layout.elemento_agrupacion, comentariosArray);
+				comentarios.setAdapter(adapter);
 			}else{
 				comentarios.setVisibility(View.GONE);
 			}
@@ -169,4 +176,38 @@ public class AgrupacionFragment extends Fragment{
 
 
 
+    private class ElementoAgrupacionAdapter extends ArrayAdapter<Comentario>{
+    	
+    	Comentario[] elementos ;
+    	Context context;
+    	
+		public ElementoAgrupacionAdapter(Context context, int textViewResourceId, Comentario[] elementos) {
+			super(context, textViewResourceId, elementos);
+			this.context = context;
+			this.elementos = elementos;
+		}
+		
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			View view = null == convertView ? miInflater.inflate(R.layout.elemento_agrupacion, null) : convertView;
+			
+			String text = null;
+			Object elemento = elementos[position];
+			if(elemento!=null){
+				if(elemento instanceof Comentario)
+					text = ((Comentario)elemento).getOrigen();
+					else if(elemento instanceof Video)
+						text = ((Video)elemento).getDescripcion();
+			}
+			
+			TextView textView = (TextView) view.findViewById(R.id.elementoAgrupacion);
+			if(text!=null)
+				textView.setText(text);
+			else
+				view.setVisibility(View.GONE);
+			
+			return view;
+		}
+    	
+    }
 }
