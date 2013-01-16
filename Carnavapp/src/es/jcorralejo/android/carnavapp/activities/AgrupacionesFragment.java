@@ -112,7 +112,7 @@ public class AgrupacionesFragment extends ListFragment {
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		Agrupacion agrupacion = (Agrupacion) l.getItemAtPosition(position);
-		((CarnavappActivity3)getActivity()).mostrarAgrupacion(agrupacion);
+		((CarnavappActivity3)getActivity()).verAgrupacion(agrupacion);
 	}
 
 	
