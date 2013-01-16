@@ -16,10 +16,12 @@ import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -119,23 +121,48 @@ public class AgrupacionFragment extends Fragment{
 			
 //			http://trivedihardik.wordpress.com/2011/09/19/scrollview-inside-scrollview-scrolling-problem/
 			
-			ListView comentarios = (ListView) view.findViewById(R.id.comentarios);
+//			ListView comentarios = (ListView) view.findViewById(R.id.comentarios);
+//			if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
+//				Comentario[] comentariosArray = agrupacion.getComentarios().toArray(new Comentario[agrupacion.getComentarios().size()]);
+//				ElementoAgrupacionAdapter adapter = new ElementoAgrupacionAdapter(getActivity(), R.layout.elemento_agrupacion, comentariosArray);
+//				comentarios.setAdapter(adapter);
+//			}else{
+//				comentarios.setVisibility(View.GONE);
+//			}
+			
+			LinearLayout comentarios = (LinearLayout) view.findViewById(R.id.comentarios);
 			if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
-				Comentario[] comentariosArray = agrupacion.getComentarios().toArray(new Comentario[agrupacion.getComentarios().size()]);
-				ElementoAgrupacionAdapter adapter = new ElementoAgrupacionAdapter(getActivity(), R.layout.elemento_agrupacion, comentariosArray);
-				comentarios.setAdapter(adapter);
+				for(Comentario comentario : agrupacion.getComentarios()){
+					View elemento = miInflater.inflate(R.layout.elemento_agrupacion, null);
+					TextView textView = (TextView) elemento.findViewById(R.id.elementoAgrupacion);
+					textView.setText(comentario.getOrigen());
+					comentarios.addView(elemento);
+				}
+				
 			}else{
 				comentarios.setVisibility(View.GONE);
 			}
-			
-			ListView videos = (ListView) view.findViewById(R.id.videos);
+
+			LinearLayout videos = (LinearLayout) view.findViewById(R.id.videos);
 			if(agrupacion.getVideos()!=null && !agrupacion.getVideos().isEmpty()){
-				Video[] videosArray = agrupacion.getVideos().toArray(new Video[agrupacion.getVideos().size()]);
-				ElementoAgrupacionAdapter adapter = new ElementoAgrupacionAdapter(getActivity(), R.layout.elemento_agrupacion, videosArray);
-				videos.setAdapter(adapter);
+				for(Video video : agrupacion.getVideos()){
+					View elemento = miInflater.inflate(R.layout.elemento_agrupacion, null);
+					TextView textView = (TextView) elemento.findViewById(R.id.elementoAgrupacion);
+					textView.setText(video.getDescripcion());
+					textView.setOnClickListener(new OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							// TODO Auto-generated method stub
+							
+						}
+					});
+					videos.addView(elemento);
+				}
+				
 			}else{
 				videos.setVisibility(View.GONE);
 			}
+			
 		}
 		
 		return view;
