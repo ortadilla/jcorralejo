@@ -10,7 +10,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        android:gravity="center_horizontal"
+        android:background="@drawable/item_background_carnavapp"
+        android:gravity="left"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="35dip"
         android:text="Enlace"
         android:textAppearance="?android:attr/textAppearanceSmall"
         />
