@@ -309,7 +309,8 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
 		//Guardamos en la pila hacia donde vamos
 		actualizarPila(itemPosition);
-		
+
+		ocultarWeb();
 		ocultarAgrupacion();
 		pagerActivo.setVisibility(View.GONE);
 		indicatorActivo.setVisibility(View.GONE);
@@ -339,12 +340,22 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	
 	@Override
     public void onBackPressed() {
-		if(agrupacionFragment!=null && frameAgrupacion!=null && frameAgrupacion.getVisibility()==View.VISIBLE){
+		
+		if(webFragment!=null && frameWeb!=null && frameWeb.getVisibility()==View.VISIBLE){
+			ocultarWeb();
+
+			pagerActivo.setVisibility(View.VISIBLE);
+			indicatorActivo.setVisibility(View.VISIBLE);
+			if(agrupacionFragment!=null)
+				frameAgrupacion.setVisibility(View.VISIBLE);
+		}else if(agrupacionFragment!=null && frameAgrupacion!=null && frameAgrupacion.getVisibility()==View.VISIBLE){
 			ocultarAgrupacion();
 
 			pagerActivo.setVisibility(View.VISIBLE);
 			indicatorActivo.setVisibility(View.VISIBLE);
-		}else{
+		}
+		
+		else{
 
 			if(pila!=null && !pila.isEmpty() && pila.size()>1){
 				//Quitamos el último
@@ -364,6 +375,15 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			trans.remove(agrupacionFragment).commit();
 			agrupacionFragment = null;
 			frameAgrupacion.setVisibility(View.GONE);
+		}		
+	}
+	
+	private void ocultarWeb(){
+		if(webFragment!=null && frameWeb!=null && frameWeb.getVisibility()==View.VISIBLE){
+			android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
+			trans.remove(webFragment).commit();
+			webFragment = null;
+			frameWeb.setVisibility(View.GONE);
 		}		
 	}
 	
@@ -481,6 +501,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     	if(Integer.MIN_VALUE != agrupacion.getId()){
     		indicatorActivo.setVisibility(View.GONE);
     		pagerActivo.setVisibility(View.GONE);
+
     		frameAgrupacion.setVisibility(View.VISIBLE);
     		agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
     		android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
@@ -499,9 +520,12 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     
     public void verURL(String url){
     	if(url!=null && !url.equals("")){
-    		indicatorActivo.setVisibility(View.GONE);
-    		pagerActivo.setVisibility(View.GONE);
-    		frameAgrupacion.setVisibility(View.GONE);
+    		if(indicatorActivo!=null)
+    			indicatorActivo.setVisibility(View.GONE);
+    		if(pagerActivo!=null)
+    			pagerActivo.setVisibility(View.GONE);
+//    		if(agrupacionFragment!=null)
+//    			frameAgrupacion.setVisibility(View.GONE);
     		
     		frameWeb.setVisibility(View.VISIBLE);
     		webFragment = WebFragment.newInstance(url);

@@ -59,8 +59,10 @@ public class WebFragment extends Fragment{
 				
 				@Override
 				public void onPageFinished(WebView view, String url) {
-					pd.dismiss();
-					pd = null;
+					if(pd!=null){
+						pd.dismiss();
+						pd = null;
+					}
 					super.onPageFinished(view, url);
 				}
 			});
