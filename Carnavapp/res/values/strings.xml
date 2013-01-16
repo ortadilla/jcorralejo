@@ -4,6 +4,7 @@
     <string name="hello">Hello World, CarnavappActivity!</string>
     <string name="actualizar">Actualizar</string>
     <string name="app_name">Carnavapp</string>
+    <string name="autor">Autor</string>
     <string name="blogs">Blogs</string>
     <string name="buscar">Buscar</string>
     <string name="calendario">Calendario</string>
@@ -11,8 +12,9 @@
     <string name="cargando_datos">Cargando datos</string>
     <string name="clasificacion">Clasificación</string>
     <string name="chirigotas">Chirigotas</string>
-    <string name="comentarios">Comentarios: </string>
+    <string name="comentarios">Comentarios</string>
     <string name="comparsas">Comparsas</string>
+    <string name="componentes">Componentes</string>
     <string name="concurso">Concurso</string>
     <string name="configuracion">Configuración</string>
     <string name="contactar">Contactar</string>
@@ -20,6 +22,7 @@
     <string name="cuartos">Cuartos</string>
     <string name="cuartetos">Cuartetos</string>
     <string name="diarios">Diarios</string>
+    <string name="director">Director</string>
     <string name="donar">Donar</string>
     <string name="enlaces">Enlaces</string>
     <string name="esperar_carga">Por favor, espere mientras actualizamos los datos desde el servidor...</string>
@@ -29,7 +32,9 @@
     <string name="infantiles">Infantiles</string> 
     <string name="info">Información</string> 
     <string name="juveniles">Juveniles</string> 
+    <string name="localidad">Localidad</string> 
     <string name="mas_carnaval">Más Carnaval</string>
+    <string name="modalidad">Modalidad</string>
     <string name="modalidades">Modalidades</string>
     <string name="no">No</string>
     <string name="no_agrupaciones">No se han encontrado Agrupaciones</string>
@@ -37,7 +42,7 @@
     <string name="no_conexion">Carnavapp necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde</string>
     <string name="opciones">Opciones</string>
     <string name="otros">Otros</string>
-    <string name="otros_anios">Otros años: </string>
+    <string name="otros_anios">Otros años</string>
     <string name="preeliminares">Preeliminaresaasda</string>
     <string name="puntos_de_interes">Puntos de Interés</string>
     <string name="romanceros">Romanceros</string>

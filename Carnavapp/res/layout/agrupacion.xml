@@ -25,6 +25,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dip"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="Nombre Agrupación"
@@ -35,6 +37,7 @@
                 android:id="@+id/agrFav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
                 android:layout_gravity="top"
                 android:contentDescription="IC_FAV"
                 android:src="@drawable/ic_fav" />
@@ -62,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dip"
                 android:gravity="left"
-                android:text="Modalidad: "
+                android:text="@string/modalidad"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textStyle="bold" />
 
@@ -71,6 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
                 android:gravity="left"
                 android:text="Comparsa"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -87,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dip"
                 android:gravity="left"
-                android:text="Autor: "
+                android:text="@string/autor"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textStyle="bold" />
 
@@ -97,6 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:gravity="left"
+                android:layout_marginLeft="5dp"
                 android:text="Juán Velazquez"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
         </LinearLayout>
@@ -112,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dip"
                 android:gravity="left"
-                android:text="Director: "
+                android:text="@string/director"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textStyle="bold" />
 
@@ -121,6 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
                 android:gravity="left"
                 android:text="Juán Velazquez"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -137,13 +143,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dip"
                 android:gravity="left"
-                android:text="Localidad: "
+                android:text="@string/localidad"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/agrLocalidad"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:gravity="left"
@@ -162,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dip"
                 android:gravity="left"
-                android:text="Componentes: "
+                android:text="@string/componentes"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textStyle="bold" />
 
@@ -196,6 +203,7 @@
                 android:id="@+id/agrOtrosAnios"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_gravity="left"
                 android:gravity="left"
                 android:text="La Pepi"
