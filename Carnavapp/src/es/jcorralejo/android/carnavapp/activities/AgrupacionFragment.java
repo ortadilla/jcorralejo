@@ -119,23 +119,19 @@ public class AgrupacionFragment extends Fragment{
 				otrosAnios = getString(R.string.sin_datos_otras_ediciones);
 			otrosAniosText.setText(otrosAnios);
 			
-//			http://trivedihardik.wordpress.com/2011/09/19/scrollview-inside-scrollview-scrolling-problem/
-			
-//			ListView comentarios = (ListView) view.findViewById(R.id.comentarios);
-//			if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
-//				Comentario[] comentariosArray = agrupacion.getComentarios().toArray(new Comentario[agrupacion.getComentarios().size()]);
-//				ElementoAgrupacionAdapter adapter = new ElementoAgrupacionAdapter(getActivity(), R.layout.elemento_agrupacion, comentariosArray);
-//				comentarios.setAdapter(adapter);
-//			}else{
-//				comentarios.setVisibility(View.GONE);
-//			}
-			
 			LinearLayout comentarios = (LinearLayout) view.findViewById(R.id.comentarios);
 			if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
 				for(Comentario comentario : agrupacion.getComentarios()){
 					View elemento = miInflater.inflate(R.layout.elemento_agrupacion, null);
 					TextView textView = (TextView) elemento.findViewById(R.id.elementoAgrupacion);
 					textView.setText(comentario.getOrigen());
+					textView.setOnClickListener(new OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							// TODO Auto-generated method stub
+							
+						}
+					});
 					comentarios.addView(elemento);
 				}
 				
