@@ -119,7 +119,7 @@ public class AgrupacionFragment extends Fragment{
 				otrosAnios = getString(R.string.sin_datos_otras_ediciones);
 			otrosAniosText.setText(otrosAnios);
 			
-			LinearLayout comentarios = (LinearLayout) view.findViewById(R.id.comentarios);
+			final LinearLayout comentarios = (LinearLayout) view.findViewById(R.id.comentarios);
 			if(agrupacion.getComentarios()!=null && !agrupacion.getComentarios().isEmpty()){
 				for(Comentario comentario : agrupacion.getComentarios()){
 					View elemento = miInflater.inflate(R.layout.elemento_agrupacion, null);
@@ -128,8 +128,7 @@ public class AgrupacionFragment extends Fragment{
 					textView.setOnClickListener(new OnClickListener() {
 						@Override
 						public void onClick(View v) {
-							// TODO Auto-generated method stub
-							
+							((CarnavappActivity3)getActivity()).verURL(agrupacion.getComentarios().get(comentarios.indexOfChild((View) v.getParent())).getUrl());
 						}
 					});
 					comentarios.addView(elemento);
@@ -139,7 +138,7 @@ public class AgrupacionFragment extends Fragment{
 				comentarios.setVisibility(View.GONE);
 			}
 
-			LinearLayout videos = (LinearLayout) view.findViewById(R.id.videos);
+			final LinearLayout videos = (LinearLayout) view.findViewById(R.id.videos);
 			if(agrupacion.getVideos()!=null && !agrupacion.getVideos().isEmpty()){
 				for(Video video : agrupacion.getVideos()){
 					View elemento = miInflater.inflate(R.layout.elemento_agrupacion, null);
@@ -148,8 +147,7 @@ public class AgrupacionFragment extends Fragment{
 					textView.setOnClickListener(new OnClickListener() {
 						@Override
 						public void onClick(View v) {
-							// TODO Auto-generated method stub
-							
+							((CarnavappActivity3)getActivity()).verVideo(agrupacion.getVideos().get(videos.indexOfChild((View) v.getParent())));
 						}
 					});
 					videos.addView(elemento);

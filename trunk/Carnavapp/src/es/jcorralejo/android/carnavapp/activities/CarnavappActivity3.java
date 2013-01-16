@@ -38,6 +38,7 @@ import com.viewpagerindicator.TabPageIndicator.OnTabReselectedListener;
 import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
+import es.jcorralejo.android.carnavapp.entidades.Video;
 import es.jcorralejo.android.carnavapp.utils.Constantes;
 
 public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNavigationListener{
@@ -56,6 +57,8 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	protected TabPageIndicator indicatorEnlaces;
 	protected AgrupacionFragment agrupacionFragment;
 	protected FrameLayout frameAgrupacion;
+	protected WebFragment webFragment;
+	protected FrameLayout frameWeb;
 	
 	private ActionBar actionBar;
 	private String[] opciones;
@@ -170,6 +173,11 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		if(frameAgrupacion==null){
 			frameAgrupacion = (FrameLayout) findViewById(R.id.fragmentAgrupacion);
 			frameAgrupacion.setVisibility(View.GONE);
+		}
+		
+		if(frameWeb==null){
+			frameWeb = (FrameLayout) findViewById(R.id.fragmentWeb);
+			frameWeb.setVisibility(View.GONE);
 		}
 		
 	}
@@ -469,34 +477,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     	}
     }
     
-    public void mostrarAgrupacion(Agrupacion agrupacion){
-//    	android.support.v4.app.FragmentManager manager = super.getSupportFragmentManager();
-//    	if(agrupacionFragment!=null){
-//    		android.support.v4.app.FragmentTransaction trans = manager.beginTransaction();
-//    		trans.remove((Fragment)agrupacionFragment);
-//    		trans.commit();
-//    	}
-//    	
-//    	agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
-//    	android.support.v4.app.FragmentTransaction trans = manager.beginTransaction();
-//    	trans.add(android.R.id.content, agrupacionFragment);
-//    	trans.commit();
-
-//    	agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
-//        FragmentTransaction fragTransaction = getSupportFragmentManager().beginTransaction();
-//    	fragTransaction.remove(((PagerAdapter)pagerActivo.getAdapter()).getFragments().get(pila.peek()[IDX_SUBMENU]));
-//        fragTransaction.add(pagerActivo.getId(), agrupacionFragment);
-//        fragTransaction.commit();
-
-        
-//        agrupacionFragment = AgrupacionFragment.newInstance(agrupacion);
-//    	((PagerAdapter)pagerActivo.getAdapter()).replace(pila.peek()[IDX_SUBMENU], agrupacionFragment);
-    	
-//    	Intent i = new Intent();
-//		i.setClass(getApplicationContext(), AgrupacionActivity.class);
-//		i.putExtra(Constantes.PARAMETRO_AGRUPACION, agrupacion);
-//		startActivity(i);
-    	
+    public void verAgrupacion(Agrupacion agrupacion){
     	if(Integer.MIN_VALUE != agrupacion.getId()){
     		indicatorActivo.setVisibility(View.GONE);
     		pagerActivo.setVisibility(View.GONE);
@@ -507,6 +488,29 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     		trans.commit();
     	}
     }
+    
+    public void verVideo(Video video){
+    	String url = video.getUrl();
+    	if(url!=null && !url.equals("")){
+    		Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(video.getUrl()));
+    		startActivity(i);
+    	}
+    }
+    
+    public void verURL(String url){
+    	if(url!=null && !url.equals("")){
+    		indicatorActivo.setVisibility(View.GONE);
+    		pagerActivo.setVisibility(View.GONE);
+    		frameAgrupacion.setVisibility(View.GONE);
+    		
+    		frameWeb.setVisibility(View.VISIBLE);
+    		webFragment = WebFragment.newInstance(url);
+    		android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
+    		trans.add(android.R.id.content, webFragment);
+    		trans.commit();
+    	}
+    }
+    
 
 
 }
