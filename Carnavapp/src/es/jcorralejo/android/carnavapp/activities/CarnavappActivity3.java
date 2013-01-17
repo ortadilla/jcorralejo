@@ -135,7 +135,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 				fragmentConcurso.add(ActuacionesFragment.newInstance(app.obtenerAgrupacionesDia(hoy), app.obtenerTituloActuacion(hoy)));
 				titulosConcurso.add(getString(R.string.hoy));
 			}
-			fragmentConcurso.add(ConcursoFragment.newInstance("Calendario"));
+			fragmentConcurso.add(CalendarioFragment.newInstance());
 			fragmentConcurso.add(ConcursoFragment.newInstance("Clasificación"));
 			titulosConcurso.add(getString(R.string.calendario));
 			titulosConcurso.add(getString(R.string.clasificacion));
