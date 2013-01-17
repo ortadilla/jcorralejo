@@ -36,6 +36,9 @@
         <item name="android:actionBarStyle">@style/carnavapp_solid_ActionBar</item>
         <item name="android:panelBackground">@drawable/menu_hardkey_panel_carnavapp</item>
         <item name="android:alertDialogTheme">@style/carnavapp_alert_dialog</item>
+        <item name="android:calendarViewStyle">@style/Holo.CalendarView.Light</item>
+        <item name="calendarViewStyle">@style/Holo.CalendarView.Light</item>
+        
         
         
     </style>
