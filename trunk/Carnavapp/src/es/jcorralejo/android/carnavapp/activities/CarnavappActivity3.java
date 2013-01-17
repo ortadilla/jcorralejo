@@ -88,6 +88,8 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		setContentView(R.layout.main2);
 		app = (CarnavappApplication) getApplication();
 		
+		comprobarApp();
+		
 		configurarFragment();
 		configurarPageIndicator();
 		configurarActionBar();
@@ -95,9 +97,15 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		recuperarUltimaPila(); //Debe ser lo último
 	}
 	
-	@Override
-	protected void onResume() {
-		super.onResume();
+
+	private void comprobarApp(){
+		//Si volvemos a la app y se ha perdido toda la info, volvemos al principio
+		if(app==null || app.getInfoAnios()==null || app.getInfoAnios().isEmpty()){
+			Intent intent = new Intent();
+			intent.setClass(getApplicationContext(), MenuPrincipalActivity.class);
+			startActivity(intent);	
+			finish();
+		}
 	}
 	
 	@SuppressWarnings("unchecked")
