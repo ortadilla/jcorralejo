@@ -1,4 +1,4 @@
-· Agregar/quitar favoritos
+· Agregar/quitar favoritos --> Actualizar listados donde aparezca
 · Enlaces a agrupaciones
 · Notificaciones cuando actúen
 · Controlar cuando no haya conexión
