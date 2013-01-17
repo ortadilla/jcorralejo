@@ -42,6 +42,7 @@ public class AgrupacionFragment extends Fragment{
 	CarnavappApplication app;
 	private Agrupacion agrupacion;
 	private LayoutInflater miInflater;
+	private ImageView agrFav;
 	
 	public AgrupacionFragment() {
 	}
@@ -80,7 +81,7 @@ public class AgrupacionFragment extends Fragment{
 			TextView localidad = (TextView) view.findViewById(R.id.agrLocalidad);
 			localidad.setText(agrupacion.getLocalidad());
 
-			ImageView agrFav = (ImageView) view.findViewById(R.id.agrFav);
+			agrFav = (ImageView) view.findViewById(R.id.agrFav);
 			agrFav.setVisibility(agrupacion.isCabezaSerie() || app.getFavoritas().contains(agrupacion.getId()) ? View.VISIBLE : View.GONE);
 			
 			ImageView imagen = (ImageView) view.findViewById(R.id.agrImagen);
@@ -186,7 +187,6 @@ public class AgrupacionFragment extends Fragment{
 	}
 	
 	private void accionFav(View view){
-		ImageView agrFav = (ImageView) getActivity().findViewById(R.id.agrFav);
 		if(app.getFavoritas().contains(agrupacion.getId())){
 			if(!agrupacion.isCabezaSerie()){
 				Toast.makeText(getActivity(), "'"+agrupacion.getNombre()+"' ha dejado de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
@@ -202,6 +202,7 @@ public class AgrupacionFragment extends Fragment{
 				app.getFavoritas().add(agrupacion.getId());
 				guardarFav();
 				agrFav.setVisibility(View.VISIBLE);
+				
 			}else{
 				Toast.makeText(getActivity(), "'"+agrupacion.getNombre()+"' es cabeza de serie y ya es una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
 			}
