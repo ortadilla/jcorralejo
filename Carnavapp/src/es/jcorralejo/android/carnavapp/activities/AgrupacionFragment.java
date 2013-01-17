@@ -8,7 +8,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -21,11 +20,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import es.jcorralejo.android.carnavapp.R;
@@ -33,7 +30,6 @@ import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
 import es.jcorralejo.android.carnavapp.entidades.Comentario;
 import es.jcorralejo.android.carnavapp.entidades.Componente;
-import es.jcorralejo.android.carnavapp.entidades.Entidad;
 import es.jcorralejo.android.carnavapp.entidades.Video;
 import es.jcorralejo.android.carnavapp.utils.Constantes;
 
@@ -185,6 +181,8 @@ public class AgrupacionFragment extends Fragment{
 
 		return view;
 	}
+
+	
 	
 	private void accionFav(View view){
 		if(app.getFavoritas().contains(agrupacion.getId())){
@@ -265,38 +263,5 @@ public class AgrupacionFragment extends Fragment{
 
 
 
-    private class ElementoAgrupacionAdapter extends ArrayAdapter<Entidad>{
-    	
-    	Entidad[] elementos ;
-    	Context context;
-    	
-		public ElementoAgrupacionAdapter(Context context, int textViewResourceId, Entidad[] elementos) {
-			super(context, textViewResourceId, elementos);
-			this.context = context;
-			this.elementos = elementos;
-		}
-		
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			View view = null == convertView ? miInflater.inflate(R.layout.elemento_agrupacion, null) : convertView;
-			
-			String text = null;
-			Object elemento = elementos[position];
-			if(elemento!=null){
-				if(elemento instanceof Comentario)
-					text = ((Comentario)elemento).getOrigen();
-					else if(elemento instanceof Video)
-						text = ((Video)elemento).getDescripcion();
-			}
-			
-			TextView textView = (TextView) view.findViewById(R.id.elementoAgrupacion);
-			if(text!=null)
-				textView.setText(text);
-			else
-				view.setVisibility(View.GONE);
-			
-			return view;
-		}
-    	
-    }
+    
 }
