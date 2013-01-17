@@ -57,32 +57,6 @@ public class CarnavappApplication extends Application {
 		return "https://jcorralejo.googlecode.com/svn/trunk/Carnavapp/carnavapp.xml";
 	}
 	
-//	public String getTextoDia(String dia){
-//		String result = "";
-//		if(getConcurso().get(Constantes.FASE_PREELIMINAR).contains(dia))
-//			result = "Preliminar "+ (getConcurso().get(Constantes.FASE_PREELIMINAR).indexOf(dia)+1);
-//		else if(getConcurso().get(Constantes.FASE_CUARTOS).contains(dia))
-//			result = "Cuarto de Final "+ (getConcurso().get(Constantes.FASE_CUARTOS).indexOf(dia)+1);
-//		else if(getConcurso().get(Constantes.FASE_SEMIS).contains(dia))
-//			result = "Semifinal "+ (getConcurso().get(Constantes.FASE_SEMIS).indexOf(dia)+1);
-//		else if(getConcurso().get(Constantes.FASE_FINAL).contains(dia))
-//			result = "Final";
-//		return result;
-//	}
-	
-//	public boolean isPreeliminar(){
-//		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
-//		String dia = sdf.format(new Date());
-//		return concurso.get(Constantes.FASE_PREELIMINAR).contains(dia);
-//	}
-//
-//	public boolean isCuartos(){
-//		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy"); 
-//		String dia = sdf.format(new Date());
-//		return concurso.get(Constantes.FASE_CUARTOS).contains(dia);
-//	}
-	
-	
 	public List<Integer> getFavoritas() {
 		return favoritas;
 	}

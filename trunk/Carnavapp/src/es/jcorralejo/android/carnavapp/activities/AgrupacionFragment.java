@@ -8,7 +8,10 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -157,10 +160,66 @@ public class AgrupacionFragment extends Fragment{
 				videos.setVisibility(View.GONE);
 			}
 			
+			ImageView favorito = (ImageView) view.findViewById(R.id.accionFav);
+			favorito.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					accionFav((View)v.getParent());					
+				}
+			});
+
+			ImageView enlace = (ImageView) view.findViewById(R.id.accionWeb);
+			enlace.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					if(agrupacion.getWeb()!=null && !agrupacion.getWeb().equals(""))
+						((CarnavappActivity3)getActivity()).verURL(agrupacion.getWeb());
+					else
+						Toast.makeText(getActivity(), "'"+agrupacion.getNombre()+"' no posee Web", Toast.LENGTH_LONG).show();
+				}
+			});
+				
+			
 		}
-		
+
 		return view;
 	}
+	
+	private void accionFav(View view){
+		ImageView agrFav = (ImageView) getActivity().findViewById(R.id.agrFav);
+		if(app.getFavoritas().contains(agrupacion.getId())){
+			if(!agrupacion.isCabezaSerie()){
+				Toast.makeText(getActivity(), "'"+agrupacion.getNombre()+"' ha dejado de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+				app.getFavoritas().remove((Object)agrupacion.getId());
+				guardarFav();
+				agrFav.setVisibility(View.GONE);
+			}else{
+				Toast.makeText(getActivity(), "'"+agrupacion.getNombre()+"' es cabeza de serie y no puede dejar de ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+			}
+		}else{
+			if(!agrupacion.isCabezaSerie()){
+				Toast.makeText(getActivity(), "'"+agrupacion.getNombre()+"' ha pasado a ser una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+				app.getFavoritas().add(agrupacion.getId());
+				guardarFav();
+				agrFav.setVisibility(View.VISIBLE);
+			}else{
+				Toast.makeText(getActivity(), "'"+agrupacion.getNombre()+"' es cabeza de serie y ya es una de las agrupaciones favoritas", Toast.LENGTH_LONG).show();
+			}
+		}
+	}
+	
+	private void guardarFav(){
+        String favoritas = "";
+        for(Integer fav : app.getFavoritas())
+                favoritas += fav+"|";
+       
+        SharedPreferences prefs = getActivity().getSharedPreferences(Constantes.PREFERENCES, Context.MODE_PRIVATE);
+        Editor editor = prefs.edit();
+        editor.putString(Constantes.PREFERENCE_FAVORITAS, favoritas);
+        editor.commit();
+}
+
+
 	
     private Bitmap downloadFile(String imageHttpAddress) {
     	Bitmap loadedImage = null;

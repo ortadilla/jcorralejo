@@ -5,6 +5,7 @@ import org.holoeverywhere.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.actionbarsherlock.app.SherlockActivity;
 import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 import es.jcorralejo.android.carnavapp.utils.AnunciosUtils;
+import es.jcorralejo.android.carnavapp.utils.Constantes;
 
 public class MenuPrincipalActivity extends SherlockActivity {
 	
@@ -46,8 +48,21 @@ public class MenuPrincipalActivity extends SherlockActivity {
 			}
 		});
         
+        cargarFavoritas();
         AnunciosUtils.cargarAnuncios(this);
 	}
+	
+	private void cargarFavoritas(){
+        SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
+        String favString = prefs.getString(Constantes.PREFERENCE_FAVORITAS, "");
+        if(favString!=null && !favString.equals("")){
+                String[] split = favString.split("\\|");
+                for(String fav : split)
+                        if(fav!=null && !fav.equals(""))
+                                app.getFavoritas().add(Integer.parseInt(fav));
+        }
+
+}
 	
 	@Override
     public void onBackPressed() {
