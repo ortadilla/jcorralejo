@@ -72,6 +72,8 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	private List<String> titulosEnlaces;
 	private Stack<Integer[]> pila = new Stack<Integer[]>();
 	
+	boolean finalizar = false;
+	
 	private final int IDX_OPCION = 0;
 	private final int IDX_SUBMENU = 1;
 	
@@ -90,17 +92,22 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		
 		comprobarApp();
 		
-		configurarFragment();
-		configurarPageIndicator();
-		configurarActionBar();
-		configurarOpciones();
-		recuperarUltimaPila(); //Debe ser lo último
+		if(!finalizar){
+			configurarFragment();
+			configurarPageIndicator();
+			configurarActionBar();
+			configurarOpciones();
+			recuperarUltimaPila(); //Debe ser lo último
+		}else
+			finalizar = false;
 	}
 	
 
 	private void comprobarApp(){
 		//Si volvemos a la app y se ha perdido toda la info, volvemos al principio
 		if(app==null || app.getInfoAnios()==null || app.getInfoAnios().isEmpty()){
+			finalizar = true;
+			
 			Intent intent = new Intent();
 			intent.setClass(getApplicationContext(), MenuPrincipalActivity.class);
 			startActivity(intent);	

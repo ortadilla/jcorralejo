@@ -36,13 +36,19 @@
         <item name="android:actionBarStyle">@style/carnavapp_solid_ActionBar</item>
         <item name="android:panelBackground">@drawable/menu_hardkey_panel_carnavapp</item>
         <item name="android:alertDialogTheme">@style/carnavapp_alert_dialog</item>
-        <item name="android:calendarViewStyle">@style/Holo.CalendarView.Light</item>
-        <item name="calendarViewStyle">@style/Holo.CalendarView.Light</item>
+        <item name="android:calendarViewStyle">@style/carnavapp_calendar</item>
+        <item name="calendarViewStyle">@style/carnavapp_calendar</item>
         
         
         
     </style>
 
+    <style name="carnavapp_calendar" parent="@style/Holo.CalendarView.Light">
+        <item name="selectedWeekBackgroundColor">#33b10094</item>
+        <item name="selectedDateVerticalBar">@drawable/day_picker_week_view_dayline_carnavapp</item>
+    </style>
+    
+    
     <style name="carnavapp_solid_ActionBar" parent="@style/Widget.Sherlock.Light.ActionBar.Solid">
         <item name="background">@drawable/ab_solid_carnavapp</item>
         <item name="backgroundStacked">@drawable/ab_stacked_solid_carnavapp</item>

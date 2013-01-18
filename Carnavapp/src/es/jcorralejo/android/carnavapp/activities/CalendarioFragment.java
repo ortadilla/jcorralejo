@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 
@@ -39,8 +40,14 @@ public class CalendarioFragment extends Fragment{
 		View view = inflater.inflate(R.layout.calendario, container, false);
 		
 		CalendarView calendar = (CalendarView) view.findViewById(R.id.calendar);
-		calendar.setFirstDayOfWeek(Calendar.MONDAY);
 		
+		calendar.setFirstDayOfWeek(Calendar.MONDAY);
+		calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+			 
+	        public void onSelectedDayChange(CalendarView view, int year, int monthOfYear, int dayOfMonth) {
+	            Toast.makeText(getActivity(), year+" "+(monthOfYear+1)+" "+dayOfMonth, Toast.LENGTH_LONG).show();
+	            
+	        }});		
 
 		return view;
 	}
