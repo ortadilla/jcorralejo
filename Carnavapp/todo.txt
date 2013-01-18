@@ -26,3 +26,17 @@ http://davidjkelley.net/?p=34
 http://developer.android.com/design/patterns/swipe-views.html
 http://www.buzzingandroid.com/2012/11/tab-swipe-between-fragments-using-actionbarsherlock/
 https://github.com/jesperborgstrup/buzzingandroid/blob/master/src/com/buzzingandroid/tabswipe/TabSwipeActivity.java
+
+
+
+Comentar para el calendario (CalendarView):
+· setMonthDisplayed:
+	 mAdapter.setFocusMonth(mCurrentMonthDisplayed);
+
+· setSelectedDay:
+//            if (selectedDay.get(Calendar.DAY_OF_YEAR) == mSelectedDate
+//                    .get(Calendar.DAY_OF_YEAR)
+//                    && selectedDay.get(Calendar.YEAR) == mSelectedDate
+//                            .get(Calendar.YEAR)) {
+//                return;
+//            } 
