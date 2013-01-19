@@ -25,7 +25,7 @@
     <string name="director">Director</string>
     <string name="donar">Donar</string>
     <string name="enlaces">Enlaces</string>
-    <string name="esperar_carga">Por favor, espere mientras actualizamos los datos desde el servidor...</string>
+    <string name="esperar_carga">Por favor, espere mientras actualizamos los datos desde el servidor</string>
     <string name="fasefinal">Final</string>
     <string name="fotos">Fotos</string>
     <string name="hoy">Hoy</string> 
@@ -39,6 +39,7 @@
     <string name="no">No</string>
     <string name="no_agrupaciones">No se han encontrado Agrupaciones</string>
     <string name="no_elementos">No se han encontrado Elementos</string>
+    <string name="no_evento_dia">Lo sentimos, pero ese día no hay eventos</string>
     <string name="no_conexion">Carnavapp necesita una conexión a Internet para funcionar. Por favor, vuelva a intentarlo más tarde</string>
     <string name="opciones">Opciones</string>
     <string name="otros">Otros</string>

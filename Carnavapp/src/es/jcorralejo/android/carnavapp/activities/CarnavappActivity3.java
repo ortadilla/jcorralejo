@@ -59,6 +59,8 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	protected FrameLayout frameAgrupacion;
 	protected WebFragment webFragment;
 	protected FrameLayout frameWeb;
+	protected ActuacionesFragment actuacionFragment;
+	protected FrameLayout frameActuacion;
 	
 	private ActionBar actionBar;
 	private String[] opciones;
@@ -195,6 +197,11 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			frameWeb.setVisibility(View.GONE);
 		}
 		
+		if(frameActuacion==null){
+			frameActuacion = (FrameLayout) findViewById(R.id.fragmentActuacion);
+			frameActuacion.setVisibility(View.GONE);
+		}
+		
 	}
 	
 	private class TabReselectedListener implements OnTabReselectedListener{
@@ -327,6 +334,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 
 		ocultarWeb();
 		ocultarAgrupacion();
+		ocultarActuacion();
 		pagerActivo.setVisibility(View.GONE);
 		indicatorActivo.setVisibility(View.GONE);
 		if(OPCION_CONCURSO == itemPosition){
@@ -363,13 +371,21 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			indicatorActivo.setVisibility(View.VISIBLE);
 			if(agrupacionFragment!=null)
 				frameAgrupacion.setVisibility(View.VISIBLE);
-		}else if(agrupacionFragment!=null && frameAgrupacion!=null && frameAgrupacion.getVisibility()==View.VISIBLE){
-			ocultarAgrupacion();
+			
+		}else if(actuacionFragment!=null && frameActuacion!=null && frameActuacion.getVisibility()==View.VISIBLE){
+			ocultarActuacion();
 
 			pagerActivo.setVisibility(View.VISIBLE);
 			indicatorActivo.setVisibility(View.VISIBLE);
 		}
 		
+		else if(agrupacionFragment!=null && frameAgrupacion!=null && frameAgrupacion.getVisibility()==View.VISIBLE){
+			ocultarAgrupacion();
+
+			pagerActivo.setVisibility(View.VISIBLE);
+			indicatorActivo.setVisibility(View.VISIBLE);
+		}
+
 		else{
 
 			if(pila!=null && !pila.isEmpty() && pila.size()>1){
@@ -399,6 +415,15 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			trans.remove(webFragment).commit();
 			webFragment = null;
 			frameWeb.setVisibility(View.GONE);
+		}		
+	}
+	
+	private void ocultarActuacion(){
+		if(actuacionFragment!=null && frameActuacion!=null && frameActuacion.getVisibility()==View.VISIBLE){
+			android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
+			trans.remove(actuacionFragment).commit();
+			actuacionFragment = null;
+			frameActuacion.setVisibility(View.GONE);
 		}		
 	}
 	
@@ -546,6 +571,19 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     		webFragment = WebFragment.newInstance(url);
     		android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
     		trans.add(android.R.id.content, webFragment);
+    		trans.commit();
+    	}
+    }
+    
+    public void verActuacionesDia(Date dia){
+    	if(app.hoyHayConcurso(dia)){
+    		indicatorActivo.setVisibility(View.GONE);
+    		pagerActivo.setVisibility(View.GONE);
+
+    		frameActuacion.setVisibility(View.VISIBLE);
+    		actuacionFragment =	ActuacionesFragment.newInstance(app.obtenerAgrupacionesDia(dia), app.obtenerTituloActuacion(dia));
+    		android.support.v4.app.FragmentTransaction trans = super.getSupportFragmentManager().beginTransaction();
+    		trans.add(android.R.id.content, actuacionFragment);
     		trans.commit();
     	}
     }
