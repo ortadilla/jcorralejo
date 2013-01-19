@@ -483,9 +483,9 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.configurar) {
-            configurar();
-        } else if (item.getItemId() == R.id.actualizar) {
+//        if (item.getItemId() == R.id.configurar) {
+//            configurar();
+        if (item.getItemId() == R.id.actualizar) {
         	recargar();
         } else if (item.getItemId() == R.id.info) {
         	showDialog(Constantes.DIALOG_ACERCA_DE);
@@ -554,8 +554,15 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
     	if(app!=null && app.isActualizando()){
     		Toast.makeText(getBaseContext(), getResources().getString(R.string.ya_actualizando), Toast.LENGTH_LONG).show();
     	}else{
-    		final ProgressDialog pd = ProgressDialog.show(this, getResources().getString(R.string.cargando_datos), getResources().getString(R.string.esperar_carga), true, false, null);
-			app.actualizarDatos(pd, true);
+//    		final ProgressDialog pd = ProgressDialog.show(this, getResources().getString(R.string.cargando_datos), getResources().getString(R.string.esperar_carga), true, false, null);
+//			app.actualizarDatos(pd, true);
+			
+			Intent intent = new Intent();
+			intent.setClass(getApplicationContext(), MenuPrincipalActivity.class);
+			intent.putExtra(Constantes.ACTUALIZAR, true);
+			startActivity(intent);
+			finish();
+
     	}
     }
     
