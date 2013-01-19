@@ -51,8 +51,10 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	protected TabPageIndicator indicatorConcurso;
 	protected ViewPager pagerModalidades;
 	protected TabPageIndicator indicatorModalidades;
-	protected ViewPager pagerMas;
-	protected TabPageIndicator indicatorMas;
+	protected ViewPager pagerCantera;
+	protected TabPageIndicator indicatorCantera;
+	protected ViewPager pagerCalle;
+	protected TabPageIndicator indicatorCalle;
 	protected ViewPager pagerEnlaces;
 	protected TabPageIndicator indicatorEnlaces;
 	protected AgrupacionFragment agrupacionFragment;
@@ -68,8 +70,10 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	private List<String> titulosConcurso;
 	private List<Fragment> fragmentModalidades;
 	private List<String> titulosModalidades;
-	private List<Fragment> fragmentMasCarnaval;
-	private List<String> titulosMasCarnaval;
+	private List<Fragment> fragmentCantera;
+	private List<String> titulosCantera;
+	private List<Fragment> fragmentCalle;
+	private List<String> titulosCalle;
 	private List<Fragment> fragmentEnlaces;
 	private List<String> titulosEnlaces;
 	private Stack<Integer[]> pila = new Stack<Integer[]>();
@@ -81,9 +85,9 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	
 	private final int OPCION_CONCURSO = 0;
 	private final int OPCION_MODALIDADES = 1;
-	private final int OPCION_MAS_CARNAVAL = 2;
-	private final int OPCION_ENLACES = 3;
-	private final int OPCION_PUNTOS_INTERES = 4;
+	private final int OPCION_CANTERA = 2;
+	private final int OPCION_CALLE = 3;
+	private final int OPCION_ENLACES = 4;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -174,17 +178,22 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			titulosModalidades.add(getString(R.string.cuartetos));
 		}
 		
-		if(fragmentMasCarnaval==null || fragmentMasCarnaval.isEmpty()){
-			fragmentMasCarnaval = new ArrayList<Fragment>();
-			fragmentMasCarnaval.add(ConcursoFragment.newInstance("Juveniles"));
-			fragmentMasCarnaval.add(ConcursoFragment.newInstance("Infantiles"));
-			fragmentMasCarnaval.add(ConcursoFragment.newInstance("Romanceros"));
-			fragmentMasCarnaval.add(ConcursoFragment.newInstance("Callejeras"));
-			titulosMasCarnaval = new ArrayList<String>();
-			titulosMasCarnaval.add(getString(R.string.juveniles));
-			titulosMasCarnaval.add(getString(R.string.infantiles));
-			titulosMasCarnaval.add(getString(R.string.romanceros));
-			titulosMasCarnaval.add(getString(R.string.callejeras));
+		if(fragmentCantera==null || fragmentCantera.isEmpty()){
+			fragmentCantera = new ArrayList<Fragment>();
+			fragmentCantera.add(ConcursoFragment.newInstance("Juveniles"));
+			fragmentCantera.add(ConcursoFragment.newInstance("Infantiles"));
+			titulosCantera = new ArrayList<String>();
+			titulosCantera.add(getString(R.string.juveniles));
+			titulosCantera.add(getString(R.string.infantiles));
+		}
+		
+		if(fragmentCalle==null || fragmentCalle.isEmpty()){
+			fragmentCalle = new ArrayList<Fragment>();
+			fragmentCalle.add(ConcursoFragment.newInstance("Romanceros"));
+			fragmentCalle.add(ConcursoFragment.newInstance("Callejeras"));
+			titulosCalle = new ArrayList<String>();
+			titulosCalle.add(getString(R.string.romanceros));
+			titulosCalle.add(getString(R.string.callejeras));
 		}
 		
 		if(frameAgrupacion==null){
@@ -255,16 +264,27 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		pagerModalidades.setVisibility(View.GONE);
 		indicatorModalidades.setVisibility(View.GONE);
 		
-		pagerMas = (ViewPager)findViewById(R.id.pagerMas);
-		pagerMas.setId(R.id.pagerMas);
-		indicatorMas = (TabPageIndicator)findViewById(R.id.indicatorMas);
-		FragmentPagerAdapter adapterMas = new PagerAdapter(pagerMas, super.getSupportFragmentManager(), fragmentMasCarnaval, titulosMasCarnaval);
-		pagerMas.setAdapter(adapterMas);
-		indicatorMas.setViewPager(pagerMas);
-		indicatorMas.setOnTabReselectedListener(tabReselectedListener);
-		indicatorModalidades.setOnPageChangeListener(pageChangeListener);
-		pagerMas.setVisibility(View.GONE);
-		indicatorMas.setVisibility(View.GONE);
+		pagerCantera = (ViewPager)findViewById(R.id.pagerCantera);
+		pagerCantera.setId(R.id.pagerCantera);
+		indicatorCantera = (TabPageIndicator)findViewById(R.id.indicatorCantera);
+		FragmentPagerAdapter adapterCantera = new PagerAdapter(pagerCantera, super.getSupportFragmentManager(), fragmentCantera, titulosCantera);
+		pagerCantera.setAdapter(adapterCantera);
+		indicatorCantera.setViewPager(pagerCantera);
+		indicatorCantera.setOnTabReselectedListener(tabReselectedListener);
+		indicatorCantera.setOnPageChangeListener(pageChangeListener);
+		pagerCantera.setVisibility(View.GONE);
+		indicatorCantera.setVisibility(View.GONE);
+		
+		pagerCalle = (ViewPager)findViewById(R.id.pagerCalle);
+		pagerCalle.setId(R.id.pagerCalle);
+		indicatorCalle = (TabPageIndicator)findViewById(R.id.indicatorCalle);
+		FragmentPagerAdapter adapterCalle = new PagerAdapter(pagerCalle, super.getSupportFragmentManager(), fragmentCalle, titulosCalle);
+		pagerCalle.setAdapter(adapterCalle);
+		indicatorCalle.setViewPager(pagerCalle);
+		indicatorCalle.setOnTabReselectedListener(tabReselectedListener);
+		indicatorCalle.setOnPageChangeListener(pageChangeListener);
+		pagerCalle.setVisibility(View.GONE);
+		indicatorCalle.setVisibility(View.GONE);
 		
 		pagerEnlaces = (ViewPager)findViewById(R.id.pagerEnlaces);
 		pagerEnlaces.setId(R.id.pagerEnlaces);
@@ -293,9 +313,9 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		if(opciones==null || opciones.length==0){
 			opciones = new String[] {getResources().getString(R.string.concurso),
 									 getResources().getString(R.string.modalidades),
-									 getResources().getString(R.string.mas_carnaval),
-									 getResources().getString(R.string.enlaces),
-									 getResources().getString(R.string.puntos_de_interes)};
+									 getResources().getString(R.string.cantera),
+									 getResources().getString(R.string.calle),
+									 getResources().getString(R.string.enlaces)};
 			ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getBaseContext(), R.layout.sherlock_spinner_item, opciones);
 			actionBar.setListNavigationCallbacks(arrayAdapter, this);
 			arrayAdapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
@@ -343,14 +363,15 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		}else if(OPCION_MODALIDADES == itemPosition){
 			pagerActivo = pagerModalidades;
 			indicatorActivo = indicatorModalidades;
-		}else if(OPCION_MAS_CARNAVAL == itemPosition){
-			pagerActivo = pagerMas;
-			indicatorActivo = indicatorMas;
+		}else if(OPCION_CANTERA == itemPosition){
+			pagerActivo = pagerCantera;
+			indicatorActivo = indicatorCantera;
+		}else if(OPCION_CALLE == itemPosition){
+			pagerActivo = pagerCalle;
+			indicatorActivo = indicatorCalle;
 		}else if(OPCION_ENLACES == itemPosition){
 			pagerActivo = pagerEnlaces;
 			indicatorActivo = indicatorEnlaces;
-		}else if(OPCION_PUNTOS_INTERES == itemPosition){
-			//TODO
 		}
 		
 		pagerActivo.setVisibility(View.VISIBLE);
