@@ -6910,23 +6910,23 @@
 			</dia>
 		</calendario>
 
-		<puntuaciones>
-			<puntuacion agrupacion="79" fase="FINAL" puntos="1000" />
-			<puntuacion agrupacion="61" fase="FINAL" puntos="500" />
-			<puntuacion agrupacion="9" fase="FINAL" puntos="0" />
+<!-- 		<puntuaciones> -->
+<!-- 			<puntuacion agrupacion="79" fase="FINAL" puntos="1000" /> -->
+<!-- 			<puntuacion agrupacion="61" fase="FINAL" puntos="500" /> -->
+<!-- 			<puntuacion agrupacion="9" fase="FINAL" puntos="0" /> -->
 
-			<puntuacion agrupacion="48" fase="FINAL" puntos="1000" />
-			<puntuacion agrupacion="101" fase="FINAL" puntos="500" />
-			<puntuacion agrupacion="83" fase="FINAL" puntos="0" />
+<!-- 			<puntuacion agrupacion="48" fase="FINAL" puntos="1000" /> -->
+<!-- 			<puntuacion agrupacion="101" fase="FINAL" puntos="500" /> -->
+<!-- 			<puntuacion agrupacion="83" fase="FINAL" puntos="0" /> -->
 
-			<puntuacion agrupacion="103" fase="FINAL" puntos="1000" />
-			<puntuacion agrupacion="32" fase="FINAL" puntos="500" />
-			<puntuacion agrupacion="92" fase="FINAL" puntos="0" />
+<!-- 			<puntuacion agrupacion="103" fase="FINAL" puntos="1000" /> -->
+<!-- 			<puntuacion agrupacion="32" fase="FINAL" puntos="500" /> -->
+<!-- 			<puntuacion agrupacion="92" fase="FINAL" puntos="0" /> -->
 
-			<puntuacion agrupacion="38" fase="FINAL" puntos="1000" />
-			<puntuacion agrupacion="109" fase="FINAL" puntos="500" />
-			<puntuacion agrupacion="73" fase="FINAL" puntos="0" />
-		</puntuaciones>
+<!-- 			<puntuacion agrupacion="38" fase="FINAL" puntos="1000" /> -->
+<!-- 			<puntuacion agrupacion="109" fase="FINAL" puntos="500" /> -->
+<!-- 			<puntuacion agrupacion="73" fase="FINAL" puntos="0" /> -->
+<!-- 		</puntuaciones> -->
 
 	</anio>
 
@@ -9952,9 +9952,6 @@
 
 		</calendario>
 
-		<puntuaciones>
-
-		</puntuaciones>
 
 	</anio>
 
