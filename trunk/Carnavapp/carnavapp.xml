@@ -8558,13 +8558,12 @@
 			</comentarios>
 		</agrupacion>
 
-			<agrupacion id="580" modalidad="COMPARSA" nombre="La helada"
+		<agrupacion id="580" modalidad="COMPARSA" nombre="La helada"
 				autor="Alejandro Fernández Martín" director="Alejandro Forja Albéniz"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc=""
 				url_foto="" web="">
 				<otros_anios>
-					
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -8586,7 +8585,7 @@
 				url_cc=""
 				url_foto="" web="">
 				<otros_anios>
-					
+					<otro_anio agrupacion="107" />
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -8606,7 +8605,7 @@
 				url_cc=""
 				url_foto="" web="">
 				<otros_anios>
-					
+					<otro_anio agrupacion="78" />
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -8624,10 +8623,10 @@
 				autor="Antonio Galán Obregón, Jose María Barranco Cabrera 'El lacio'"
 				director="Sebastian García Lucas" localidad="Cádiz" cabeza_serie="false"
 				info=""
-				url_cc=""
+				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/El_coro_de_Julio.php"
 				url_foto="" web="">
 				<otros_anios>
-					
+					<otro_anio agrupacion="35" />
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -8645,10 +8644,9 @@
 				autor="Gonzálo Madrid Garrote" director="Fernando Jurado Marabot"
 				localidad="Chiclana de la Frontera (Cádiz)" cabeza_serie="false"
 				info=""
-				url_cc=""
+				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_YouTube.php"
 				url_foto="" web="">
 				<otros_anios>
-					
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -8665,10 +8663,10 @@
 			<agrupacion id="585" modalidad="COMPARSA" nombre="Los visionarios"
 				autor="Jesús Manuel Monje López" director="Francisco José Oliveros Vega"
 				localidad="Sanlúcar de Barrameda (Cádiz)" cabeza_serie="false" info=""
-				url_cc=""
+				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_visionarios.htm"
 				url_foto="" web="">
 				<otros_anios>
-					
+					<otro_anio agrupacion="24" />
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -8685,10 +8683,9 @@
 			<agrupacion id="586" modalidad="CHIRIGOTA" nombre="Los indiseables"
 				autor="José María Fernández Vento" director="José Luis Magallanes de Tapia"
 				localidad="Cádiz" cabeza_serie="false" info=""
-				url_cc=""
+				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_indeseables.php"
 				url_foto="" web="">
 				<otros_anios>
-					
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -8704,12 +8701,12 @@
 
 			<agrupacion id="587" modalidad="COMPARSA" nombre="Los gatos callejeros"
 				autor="Francisco Javier Márquez Mateos, David Márquez Mateos"
-				director="Pedro Campos Quintana" localidad="Cádiz" cabeza_serie="false"
-				info=""
-				url_cc=""
+				director="Pedro Campos Quintana" localidad="Cádiz" cabeza_serie="true"
+				info="Comparsa de Los Carapapas"
+				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_gatos_callejeros.php"
 				url_foto="" web="">
 				<otros_anios>
-					
+					<otro_anio agrupacion="48" />
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -8726,10 +8723,9 @@
 			<agrupacion id="588" modalidad="CHIRIGOTA" nombre="Los barriguitas"
 				autor="Manuel Díaz Márquez, Sergio Gómez Ramos" director="Jesús María Gómez Vargas"
 				localidad="Écija (Sevilla)" cabeza_serie="false" info=""
-				url_cc=""
+				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_barriguitas.php"
 				url_foto="" web="">
 				<otros_anios>
-					
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -8746,10 +8742,10 @@
 			<agrupacion id="589" modalidad="COMPARSA" nombre="El patio de los canallas"
 				autor="Juan Antonio Pozo Acuña" director="Guillermo Corbacho Roa"
 				localidad="Algeciras (Cádiz)" cabeza_serie="false" info=""
-				url_cc=""
+				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/El_patio_de_los_canallas.php"
 				url_foto="" web="">
 				<otros_anios>
-					
+					<otro_anio agrupacion="85" />
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
