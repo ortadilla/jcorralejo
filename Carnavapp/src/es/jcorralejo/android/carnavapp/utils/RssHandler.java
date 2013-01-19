@@ -191,18 +191,18 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     		
     		app.getNoticias().add(noticia);
     	} else if(localName.equalsIgnoreCase(PUNTUACION)) {
-    		in_agrupacion = true;
+    		Agrupacion agr = getAgrupacionPorId(Integer.valueOf(atts.getValue(AGRUPACION)));
+    		
     		Puntuacion puntuacion = new Puntuacion();
-    		Agrupacion agrupacion = getAgrupacionPorId(Integer.valueOf(atts.getValue(AGRUPACION)));
-			puntuacion.setAgrupacion(agrupacion);
+			puntuacion.setAgrupacion(agr);
 			puntuacion.setFase(atts.getValue(FASE));
 			puntuacion.setPuntos(Float.valueOf(atts.getValue(PUNTOS)));
 			
 			InfoAnio infoAnio = app.getInfoAnios().get(app.getInfoAnios().size()-1);
 			infoAnio.getConcurso().getPuntuaciones().add(puntuacion);
-			if(agrupacion.getPuntuaciones()==null)
-				agrupacion.setPuntuaciones(new ArrayList<Puntuacion>());
-			agrupacion.getPuntuaciones().add(puntuacion);
+			if(agr.getPuntuaciones()==null)
+				agr.setPuntuaciones(new ArrayList<Puntuacion>());
+			agr.getPuntuaciones().add(puntuacion);
     	}
     }
     
