@@ -7090,6 +7090,12 @@
 				    <comentario origen="Carnavaleros.com - Ficha"
 						url="http://coac2013.carnavaleros.es/agrupaciones?act=7" />
 				</comentarios>
+				<puntuaciones>
+					<puntuacion fase='PRELIMINAR' puntos='123'/>
+					<puntuacion fase='CUARTOS' puntos='122'/>
+					<puntuacion fase='SEMIFINAL' puntos='120'/>
+					<puntuacion fase='FINAL' puntos='99'/>
+				</puntuaciones>
 			</agrupacion>
 
 			<agrupacion id="507" modalidad="COMPARSA" nombre="El pelotón de mariamoco"
