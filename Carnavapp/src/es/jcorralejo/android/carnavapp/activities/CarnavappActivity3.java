@@ -152,9 +152,9 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 
 		if(fragmentEnlaces==null || fragmentEnlaces.isEmpty()){
 			fragmentEnlaces = new ArrayList<Fragment>();
-			fragmentEnlaces.add(ConcursoFragment.newInstance("Blogs"));
-			fragmentEnlaces.add(ConcursoFragment.newInstance("Diarios"));
-			fragmentEnlaces.add(ConcursoFragment.newInstance("Otros"));
+			fragmentEnlaces.add(EnlacesFragment.newInstance(app.getEnlaces().get(Constantes.ENLACE_TIPO_BLOG)));
+			fragmentEnlaces.add(EnlacesFragment.newInstance(app.getEnlaces().get(Constantes.ENLACE_TIPO_DIARIOS)));
+			fragmentEnlaces.add(EnlacesFragment.newInstance(app.getEnlaces().get(Constantes.ENLACE_TIPO_OTROS)));
 			titulosEnlaces = new ArrayList<String>();
 			titulosEnlaces.add(getString(R.string.blogs));
 			titulosEnlaces.add(getString(R.string.diarios));
