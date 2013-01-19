@@ -36,6 +36,10 @@ public class Constantes {
 	public static final String FASE_CUARTOS = "CUARTOS";
 	public static final String FASE_SEMIS = "SEMIFINAL";
 	public static final String FASE_FINAL = "FINAL";
+
+	public static final String ENLACE_TIPO_BLOG = "Blogs";
+	public static final String ENLACE_TIPO_DIARIOS = "Diarios";
+	public static final String ENLACE_TIPO_OTROS = "Otros";
 //	
 //	public static final String URL_ONDA_CADIZ = "http://www.youtube.com/embed/One2Jbph-Po";
 //	public static final String URL_CANAL_ANDALUCIA = "http://www.canalsuralacarta.es/directo/ver/andalucia-television";
