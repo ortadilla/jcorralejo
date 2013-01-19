@@ -31,8 +31,12 @@ public class MenuPrincipalActivity extends SherlockActivity {
         setContentView(R.layout.menu_principal);
         app = (CarnavappApplication) getApplication();
         
+        boolean actualizar = false;
+        Intent intent = getIntent();
+        if(intent!=null && intent.getExtras()!=null && intent.getExtras().containsKey(Constantes.ACTUALIZAR))
+        	actualizar = intent.getExtras().getBoolean(Constantes.ACTUALIZAR); 
         ProgressDialog pd = ProgressDialog.show(this, getResources().getString(R.string.cargando_datos), getResources().getString(R.string.esperar_carga), true, false, null);
-        app.actualizarDatos(pd, false);
+        app.actualizarDatos(pd, actualizar);
         
         actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);

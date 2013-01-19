@@ -74,7 +74,7 @@ public class CarnavappApplication extends Application {
 	}
 	
 	public void actualizarDatos(ProgressDialog pd, boolean ignorarTiempo){
-		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);;
+		SharedPreferences prefs = getSharedPreferences(Constantes.PREFERENCES, MODE_PRIVATE);
 		long ultima = prefs.getLong(Constantes.CTE_ULTIMA_ACTUALIZACION, 0);
 		if (ignorarTiempo || infoAnios==null || infoAnios.isEmpty() 
 		|| ((System.currentTimeMillis() - ultima) > Constantes.FRECUENCIA_ACTUALIZACION)){ 
