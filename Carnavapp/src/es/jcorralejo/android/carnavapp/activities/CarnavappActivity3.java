@@ -18,6 +18,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
@@ -167,10 +168,10 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 
 		if(fragmentModalidades==null || fragmentModalidades.isEmpty()){
 			fragmentModalidades = new ArrayList<Fragment>();
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_COMPARSA), this));
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CHIRIGOTA), this));
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CORO), this));
-			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CUARTETO), this));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_COMPARSA)));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CHIRIGOTA)));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CORO)));
+			fragmentModalidades.add(AgrupacionesFragment.newInstance(app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CUARTETO)));
 			titulosModalidades = new ArrayList<String>();
 			titulosModalidades.add(getString(R.string.comparsas));
 			titulosModalidades.add(getString(R.string.chirigotas));
@@ -180,8 +181,8 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		
 		if(fragmentCantera==null || fragmentCantera.isEmpty()){
 			fragmentCantera = new ArrayList<Fragment>();
-			fragmentCantera.add(ConcursoFragment.newInstance("Juveniles"));
-			fragmentCantera.add(ConcursoFragment.newInstance("Infantiles"));
+			fragmentCantera.add(ConcursoFragment.newInstance());
+			fragmentCantera.add(ConcursoFragment.newInstance());
 			titulosCantera = new ArrayList<String>();
 			titulosCantera.add(getString(R.string.juveniles));
 			titulosCantera.add(getString(R.string.infantiles));
@@ -189,8 +190,8 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		
 		if(fragmentCalle==null || fragmentCalle.isEmpty()){
 			fragmentCalle = new ArrayList<Fragment>();
-			fragmentCalle.add(ConcursoFragment.newInstance("Romanceros"));
-			fragmentCalle.add(ConcursoFragment.newInstance("Callejeras"));
+			fragmentCalle.add(ConcursoFragment.newInstance());
+			fragmentCalle.add(ConcursoFragment.newInstance());
 			titulosCalle = new ArrayList<String>();
 			titulosCalle.add(getString(R.string.romanceros));
 			titulosCalle.add(getString(R.string.callejeras));
@@ -247,7 +248,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		pagerConcurso = (ViewPager)findViewById(R.id.pagerConcurso);
 		pagerConcurso.setId(R.id.pagerConcurso);
 		indicatorConcurso = (TabPageIndicator)findViewById(R.id.indicatorConcurso);
-		FragmentPagerAdapter adapterConcurso = new PagerAdapter(pagerConcurso, super.getSupportFragmentManager(), fragmentConcurso, titulosConcurso);
+		FragmentStatePagerAdapter adapterConcurso = new PagerAdapter(pagerConcurso, super.getSupportFragmentManager(), fragmentConcurso, titulosConcurso);
 		pagerConcurso.setAdapter(adapterConcurso);
 		indicatorConcurso.setViewPager(pagerConcurso);
 		indicatorConcurso.setOnTabReselectedListener(tabReselectedListener);
@@ -256,7 +257,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		pagerModalidades = (ViewPager)findViewById(R.id.pagerModalidades);
 		pagerModalidades.setId(R.id.pagerModalidades);
 		indicatorModalidades = (TabPageIndicator)findViewById(R.id.indicatorModalidades);
-		FragmentPagerAdapter adapterModalidades = new PagerAdapter(pagerModalidades, super.getSupportFragmentManager(), fragmentModalidades, titulosModalidades);
+		FragmentStatePagerAdapter adapterModalidades = new PagerAdapter(pagerModalidades, super.getSupportFragmentManager(), fragmentModalidades, titulosModalidades);
 		pagerModalidades.setAdapter(adapterModalidades);
 		indicatorModalidades.setViewPager(pagerModalidades);
 		indicatorModalidades.setOnTabReselectedListener(tabReselectedListener);
@@ -267,7 +268,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		pagerCantera = (ViewPager)findViewById(R.id.pagerCantera);
 		pagerCantera.setId(R.id.pagerCantera);
 		indicatorCantera = (TabPageIndicator)findViewById(R.id.indicatorCantera);
-		FragmentPagerAdapter adapterCantera = new PagerAdapter(pagerCantera, super.getSupportFragmentManager(), fragmentCantera, titulosCantera);
+		FragmentStatePagerAdapter adapterCantera = new PagerAdapter(pagerCantera, super.getSupportFragmentManager(), fragmentCantera, titulosCantera);
 		pagerCantera.setAdapter(adapterCantera);
 		indicatorCantera.setViewPager(pagerCantera);
 		indicatorCantera.setOnTabReselectedListener(tabReselectedListener);
@@ -278,7 +279,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		pagerCalle = (ViewPager)findViewById(R.id.pagerCalle);
 		pagerCalle.setId(R.id.pagerCalle);
 		indicatorCalle = (TabPageIndicator)findViewById(R.id.indicatorCalle);
-		FragmentPagerAdapter adapterCalle = new PagerAdapter(pagerCalle, super.getSupportFragmentManager(), fragmentCalle, titulosCalle);
+		FragmentStatePagerAdapter adapterCalle = new PagerAdapter(pagerCalle, super.getSupportFragmentManager(), fragmentCalle, titulosCalle);
 		pagerCalle.setAdapter(adapterCalle);
 		indicatorCalle.setViewPager(pagerCalle);
 		indicatorCalle.setOnTabReselectedListener(tabReselectedListener);
@@ -289,7 +290,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		pagerEnlaces = (ViewPager)findViewById(R.id.pagerEnlaces);
 		pagerEnlaces.setId(R.id.pagerEnlaces);
 		indicatorEnlaces = (TabPageIndicator)findViewById(R.id.indicatorEnlaces);
-		FragmentPagerAdapter adapterEnlaces = new PagerAdapter(pagerEnlaces, super.getSupportFragmentManager(), fragmentEnlaces, titulosEnlaces);
+		FragmentStatePagerAdapter adapterEnlaces = new PagerAdapter(pagerEnlaces, super.getSupportFragmentManager(), fragmentEnlaces, titulosEnlaces);
 		pagerEnlaces.setAdapter(adapterEnlaces);
 		indicatorEnlaces.setViewPager(pagerEnlaces);
 		indicatorEnlaces.setOnTabReselectedListener(tabReselectedListener);
