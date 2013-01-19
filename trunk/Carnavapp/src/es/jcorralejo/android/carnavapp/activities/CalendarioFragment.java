@@ -1,6 +1,8 @@
 package es.jcorralejo.android.carnavapp.activities;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.holoeverywhere.widget.CalendarView;
 
@@ -45,7 +47,13 @@ public class CalendarioFragment extends Fragment{
 		calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 			 
 	        public void onSelectedDayChange(CalendarView view, int year, int monthOfYear, int dayOfMonth) {
-	            Toast.makeText(getActivity(), year+" "+(monthOfYear+1)+" "+dayOfMonth, Toast.LENGTH_LONG).show();
+	            
+	        	GregorianCalendar calendar = new GregorianCalendar(year, monthOfYear, dayOfMonth);
+	        	Date dia = calendar.getTime();
+				if(app.hoyHayConcurso(dia)){
+					((CarnavappActivity3)getActivity()).verActuacionesDia(dia);
+				}else
+					Toast.makeText(getActivity(), getString(R.string.no_evento_dia), Toast.LENGTH_SHORT).show();
 	            
 	        }});		
 
