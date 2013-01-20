@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import es.jcorralejo.android.carnavapp.R;
 import es.jcorralejo.android.carnavapp.app.CarnavappApplication;
 import es.jcorralejo.android.carnavapp.entidades.Agrupacion;
+import es.jcorralejo.android.carnavapp.entidades.Video;
 import es.jcorralejo.android.carnavapp.utils.Constantes;
 
 public class ActuacionesFragment extends ListFragment {
@@ -60,7 +62,24 @@ public class ActuacionesFragment extends ListFragment {
 			tituloActuacion.setText(titulo);
 		else 
 			tituloActuacion.setVisibility(View.GONE);
+		
+		ImageView canalSur = (ImageView) view.findViewById(R.id.directoCanalSur);
+		canalSur.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				((CarnavappActivity3)getActivity()).verURL(Constantes.URL_CANAL_ANDALUCIA);
+			}
+		});
 
+		ImageView ondaCadiz = (ImageView) view.findViewById(R.id.directoOndaCadiz);
+		ondaCadiz.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Video video = new Video(null, Constantes.URL_ONDA_CADIZ);
+				((CarnavappActivity3)getActivity()).verVideo(video);
+			}
+		});
+		
 		configurarAdapter();
 	    
 	    return view;

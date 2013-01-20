@@ -41,8 +41,8 @@ public class Constantes {
 	public static final String ENLACE_TIPO_DIARIOS = "Diarios";
 	public static final String ENLACE_TIPO_OTROS = "Otros";
 //	
-//	public static final String URL_ONDA_CADIZ = "http://www.youtube.com/embed/One2Jbph-Po";
-//	public static final String URL_CANAL_ANDALUCIA = "http://www.canalsuralacarta.es/directo/ver/andalucia-television";
+	public static final String URL_ONDA_CADIZ = "http://www.youtube.com/watch?v=m9wT72BVCFQ";
+	public static final String URL_CANAL_ANDALUCIA = "http://www.canalsuralacarta.es/directo/ver/andalucia-television";
 //	public static final String URL_OPERA = "https://market.android.com/details?id=com.opera.browser&hl=es";
 //	public static final String URL_TUNEIN = "https://market.android.com/details?id=tunein.player&hl=es";
 //	

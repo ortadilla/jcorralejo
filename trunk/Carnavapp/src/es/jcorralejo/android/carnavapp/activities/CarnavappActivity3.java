@@ -388,6 +388,8 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 		
 		if(webFragment!=null && frameWeb!=null && frameWeb.getVisibility()==View.VISIBLE){
 			ocultarWeb();
+			
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 
 			pagerActivo.setVisibility(View.VISIBLE);
 			indicatorActivo.setVisibility(View.VISIBLE);
