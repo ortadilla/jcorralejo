@@ -3,6 +3,8 @@
 
     <string name="hello">Hello World, CarnavappActivity!</string>
     <string name="actualizar">Actualizar</string>
+    <string name="anunciate">- ¡ANUNCIATE AQUÍ! -</string>
+    <string name="anunciate_text">Texto de Anunciate...</string>
     <string name="app_name">Carnavapp</string>
     <string name="autor">Autor</string>
     <string name="blogs">Blogs</string>
