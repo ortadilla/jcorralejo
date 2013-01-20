@@ -9954,10 +9954,6 @@
 		</calendario>
 		
 		<puntuaciones>
-            <puntuacion agrupacion="506" fase="PRELIMINAR" puntos="123" />
-            <puntuacion agrupacion="506" fase="CUARTOS" puntos="122" />
-            <puntuacion agrupacion="506" fase="SEMIFINAL" puntos="120" />
-            <puntuacion agrupacion="506" fase="FINAL" puntos="99" />
         </puntuaciones>
 </anio>
 
