@@ -10,6 +10,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
@@ -49,6 +50,33 @@ public class MenuPrincipalActivity extends SherlockActivity {
 				intent.setClass(getApplicationContext(), CarnavappActivity3.class);
 				startActivity(intent);	
 				finish();
+			}
+		});
+        
+        TextView anunciate = (TextView) findViewById(R.id.anunciate);
+        anunciate.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+		    	
+		    	builder.setMessage(R.string.salir_pregunta)
+			    	.setCancelable(false)
+			    	.setPositiveButton(R.string.si,
+				    	new DialogInterface.OnClickListener() {
+				    		public void onClick(DialogInterface dialog,int id) {
+				    			finish();
+				    			android.os.Process.killProcess(android.os.Process.myPid());
+				    		}
+				    	})
+			    	.setNegativeButton(R.string.no,
+				    	new DialogInterface.OnClickListener() {
+				    		public void onClick(DialogInterface dialog,int id) {
+				    			dialog.cancel();
+				    		}
+				    	});
+
+		    	AlertDialog alert = builder.create();
+		    	alert.show();
 			}
 		});
         

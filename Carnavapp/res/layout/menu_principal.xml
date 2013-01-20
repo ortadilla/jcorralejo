@@ -20,17 +20,24 @@
             android:layout_weight="1"
             android:orientation="horizontal" >
 
-            <TextView
+            <!-- <TextView -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="match_parent" -->
+            <!-- android:layout_gravity="center" -->
+            <!-- android:layout_margin="5dp" -->
+            <!-- android:ellipsize="marquee" -->
+            <!-- android:text="@string/destacado_vertical" /> -->
+
+            <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                android:ellipsize="marquee"
-                android:text="@string/destacado_vertical" />
+                android:src="@drawable/destacado" />
 
             <FrameLayout
-                android:layout_height="match_parent"
                 android:layout_width="1dp"
+                android:layout_height="match_parent"
                 android:background="#b10094" />
 
             <LinearLayout
@@ -81,10 +88,18 @@
         android:background="#b10094" />
 
     <LinearLayout
-        android:id="@+id/anunciate"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.2" >
+
+        <TextView
+	        android:id="@+id/anunciate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/anunciate"
+            android:textColor="#b10094"/>
     </LinearLayout>
 
 </LinearLayout>
