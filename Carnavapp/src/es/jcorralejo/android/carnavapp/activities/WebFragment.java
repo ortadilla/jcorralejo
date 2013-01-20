@@ -1,6 +1,7 @@
 package es.jcorralejo.android.carnavapp.activities;
 
 import android.app.ProgressDialog;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -37,6 +38,9 @@ public class WebFragment extends Fragment{
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		
+		getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		
 		View view = inflater.inflate(R.layout.web, container, false);
 		
 		if(url!=null && !url.equals("")){
