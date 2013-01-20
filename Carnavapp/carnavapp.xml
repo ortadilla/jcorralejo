@@ -6941,7 +6941,6 @@
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Ve_lavandote_el_culito_que_voy_parriba.php"
 				url_foto="" web="">
 				<otros_anios>
-
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -6953,6 +6952,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/ve-lavandote-el-culito-que-voy-parriba.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -7152,6 +7152,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/khumbaya.html" />
 				</comentarios>
 			</agrupacion>
 
