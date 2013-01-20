@@ -10094,4 +10094,9 @@
 		<noticia id="1" titulo="Título noticia" descripcion="Descripción de la noticia"
 			fecha="22/12/2012" urlImagen="" urlEnlace="www.jcorralejo.com" />
 	</noticias>
+	
+	<destacados>
+		<destacado id="1" titulo="Destacado" urlImagen="" tipo="NOTICIA" objeto="1"/>
+		<destacado id="2" titulo="Destacado" urlImagen="" tipo="AGRUPACION" objeto="500"/>
+	</destacados>
 </carnavapp>
