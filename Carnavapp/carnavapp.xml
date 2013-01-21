@@ -6999,12 +6999,12 @@
 				</comentarios>
 			</agrupacion>
 
-			<agrupacion id="503" modalidad="CUARTETO" nombre="Los polivalentes"
+			<agrupacion id="503" modalidad="CUARTETO" nombre="Los polivalientes"
 				autor="Ángel Piulestán Guillén, Francisco Javier Aguilera Ceballos"
 				director="Francisco Javier Aguilera Ceballos" localidad="Cádiz"
 				cabeza_serie="true" info="Cuarteto de Heidi"
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vl_lospolivalentes05.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="73" />
 				</otros_anios>
@@ -7018,6 +7018,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-polivalentes-un-cuerpo-inteligente-pero-con-mu-malas-eshuras.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -7372,7 +7373,7 @@
 				director="Pedro José Tamayo Salazar" localidad="Cádiz" cabeza_serie="false"
 				info=""
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/canoooo.jpg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -7385,6 +7386,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-que-estan-al-pie-del-canon.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -7583,7 +7585,7 @@
 				director="David Ruíz Medina" localidad="Cádiz" cabeza_serie="false"
 				info=""
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_SUPERCUARTETO04.jpg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -7596,6 +7598,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/un-supercuarteto-por-to-el-careto-y-como-te-agaches.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -7772,7 +7775,7 @@
 				director="José Francisco Butrón Prida" localidad="Cádiz"
 				cabeza_serie="false" info=""
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_AQUELLOSA%D1OS02.jpeg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -7785,6 +7788,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/aquellos-maravillosos-anos-luz.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -7979,7 +7983,7 @@
 				director="Miguel Ángel Real Prado" localidad="Cádiz" cabeza_serie="false"
 				info=""
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/adiosrogandooo.jpg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -7992,6 +7996,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/a-dios-rogando-y-con-el-mazo-dando.html" />
 				</comentarios>
 			</agrupacion>
 
