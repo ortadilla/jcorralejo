@@ -7231,7 +7231,7 @@
 				autor="Joaquín Quiñones Madera, José Luis Bustelo" director="Rafael Mosquera Muñoz"
 				localidad="Cádiz" cabeza_serie="true" info="Comparsa de Quiñones y Bustelo"
 				url_cc=""
-				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1358238286-VL_LOSPEPELES06.jpg" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1358238286-VL_LOSPEPELES06.jpg" web="http://www.joaquinquinones.com/">
 				<otros_anios>
 					<otro_anio agrupacion="13" />
 				</otros_anios>
@@ -7626,7 +7626,7 @@
 				autor="Juan Carlos Aragón Becerra" director="Vicente Lázaro Lali"
 				localidad="Cádiz" cabeza_serie="true" info="Comparsa de J.C Aragón"
 				url_cc=""
-				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_CATASTROPHIC04.jpg" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_CATASTROPHIC04.jpg" web="http://www.lacomparsadejuancarlos.com/">
 				<otros_anios>
 					<otro_anio agrupacion="101" />
 				</otros_anios>
@@ -7823,7 +7823,7 @@
 				autor="Enrique García Rosado, David Cornejo Prada" director="Julio Álvarez García"
 				localidad="Cádiz" cabeza_serie="true" info="Chirigota Kike Remolino"
 				url_cc=""
-				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSRECORTAOS03.jpeg" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSRECORTAOS03.jpeg" web="http://www.lachirigotadelremolino.com/">
 				<otros_anios>
 					<otro_anio agrupacion="92" />
 				</otros_anios>
@@ -8042,7 +8042,7 @@
             info="Comparsa del Puerto"
             url_cc=""
             url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/amaltiempooo.jpg"
-            web="">
+            web="http://losmajaras.tk/">
 			<otros_anios>
 			    <otro_anio agrupacion="65" />
 			</otros_anios>
@@ -8478,7 +8478,7 @@
             info="Chirigota del Canijo de Carmona"
             url_cc=""
             url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_CONTIGOAPRENDI06.jpg"
-            web="">
+            web="http://www.elcanijo.es/">
 			<otros_anios>
 			    <otro_anio agrupacion="6" />
 			</otros_anios>
@@ -8808,7 +8808,7 @@
 				director="Pedro Campos Quintana" localidad="Cádiz" cabeza_serie="true"
 				info="Comparsa de Los Carapapas"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_gatos_callejeros.php"
-				url_foto="" web="">
+				url_foto="" web="http://www.lawebdeloscarapapas.com/">
 				<otros_anios>
 					<otro_anio agrupacion="48" />
 				</otros_anios>
@@ -8969,7 +8969,7 @@
 				autor="Juan Manuel Braza Benítez, 'El Sheriff'" director="Juan Carlos Moreno García"
 				localidad="Cádiz" cabeza_serie="true" info="Chirigota de 'El Sheriff'"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_secretos.php"
-				url_foto="" web="">
+				url_foto="" web="http://www.lachirigotadelsheriff.com/"">
 				<otros_anios>
 					<otro_anio agrupacion="122" />
 				</otros_anios>
@@ -9216,7 +9216,7 @@
 				director="Jose Luis Otero Trechera" localidad="Cádiz" cabeza_serie="true"
 				info="Comparsa de Tino Tovar"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Lo_siento_pisha_no_to_er_mundo_puede_ser_de_Cai.php"
-				url_foto="" web="">
+				url_foto="" web="http://www.lacomparsadetino.com/">
 				<otros_anios>
 					<otro_anio agrupacion="83" />
 				</otros_anios>
@@ -9257,7 +9257,7 @@
 				autor="Miguel Ángel García Argüez" director=" Jose Antonio Cheza Martínez"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Las_Cigarras.php"
-				url_foto="" web="">
+				url_foto="" web="http://www.lacomparsadenenecheza.tk/">
 				<otros_anios>
 					<otro_anio agrupacion="95" />
 				</otros_anios>
@@ -9352,7 +9352,7 @@
 			<agrupacion id="614" modalidad="COMPARSA" nombre="La comparsa del genio"
 				autor="-" director="-" localidad="Cádiz" cabeza_serie="true" info="Comparsa de Antonio Martin"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_Comparsa_del_Genio.php"
-				url_foto="" web="">
+				url_foto="" web="http://elblogdeantoniomartin.blogspot.com/">
 				<otros_anios>
 					<otro_anio agrupacion="30" />
 				</otros_anios>
@@ -9698,7 +9698,7 @@
 			<agrupacion id="632" modalidad="COMPARSA" nombre="El señor del mar"
 				autor="-" director="-" localidad="Córdoba" cabeza_serie="true" info="La comparsa de Córdoba"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/El_Sennor_del_Mar.php"
-				url_foto="" web="">
+				url_foto="" web="http://www.lacomparsadecordoba.com/">
 				<otros_anios>
 					<otro_anio agrupacion="91" />
 				</otros_anios>
@@ -9718,7 +9718,7 @@
 				nombre="La chirigota de la historia" autor="Rubén Vargas Lanillo, José Luis Bustelo Sánchez, José Antonio Vélez Fernández" director="José Antonio Vélez Fernández"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_chirigota_de_la_historia.php"
-				url_foto="" web="">
+				url_foto="" web="http://www.chirigotalapasma.com/">
 				<otros_anios>
 					<otro_anio agrupacion="21" />
 				</otros_anios>
