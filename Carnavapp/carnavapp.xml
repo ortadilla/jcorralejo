@@ -6939,7 +6939,7 @@
 				director="José Antonio Pérez Fernández" localidad="Cádiz"
 				cabeza_serie="false" info="Nuevo coro del Sheriff, el Canijo y el Habichuela"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Ve_lavandote_el_culito_que_voy_parriba.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1358150396-vl_culitoaire07.jpg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -7048,7 +7048,7 @@
 				director="Antonio Procopio Baizan" localidad="Cádiz" cabeza_serie="false"
 				info=""
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vl_laguaracha05.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="18" />
 				</otros_anios>
@@ -7062,6 +7062,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/la-guaracha.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -7136,7 +7137,8 @@
 				autor="Luis Manuel Rivero Ramos" director="Laura Rivero Ramos"
 				localidad="Cádiz" cabeza_serie="true" info="Coro de Luis Rivero"
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/khumbaya07.jpg"
+				web="">
 				<otros_anios>
 					<otro_anio agrupacion="9" />
 				</otros_anios>
@@ -7327,7 +7329,7 @@
 				autor="Francisco Martínez Mora" director="José Luis Peña" localidad="Cádiz"
 				cabeza_serie="false" info=""
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_CAIMILENARIA06.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="53" />
 				</otros_anios>
@@ -7341,6 +7343,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/cai-milenaria.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -7516,7 +7519,7 @@
 				autor="Manuel Jesús Morera Rioja, José Oliveras Castillo" director="Jacobo Lucena Borrel"
 				localidad="Cádiz" cabeza_serie="false" info="Coro de Manuel Morera"
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vl_ustedetaisfatal05.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="44" />
 				</otros_anios>
@@ -7529,6 +7532,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La Voz de Cádiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/ustedes-estais-fata.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -7707,7 +7711,7 @@
 				localidad="Cádiz" cabeza_serie="false"
 				info="El año pasado concursaron en Juveniles"
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_TEATROVERANO01.jpeg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="119" />
 				</otros_anios>
@@ -7720,6 +7724,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/el-teatro-de-verano.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -7911,7 +7916,7 @@
 				autor="Rafael Pastrana Guillen" director="Francisco Manuel Olmedo Losey"
 				localidad="Cádiz" cabeza_serie="true" info="Coro de Faly Pastrana"
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/canonera.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="79" />
 				</otros_anios>
@@ -7925,6 +7930,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/la-canonera.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8103,7 +8109,7 @@
             localidad="Sevilla" cabeza_serie="false"
             info=""
             url_cc=""
-            url_foto=""
+            url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vivencomoreyes.jpg"
             web="">
 			<otros_anios>
 			</otros_anios>
@@ -8116,6 +8122,7 @@
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
+				<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-que-viven-como-reyes.html" />
 			</comentarios>
 		</agrupacion>
 
@@ -8285,7 +8292,7 @@
             localidad="Cádiz" cabeza_serie="false"
             info="Antiguo Coro de Lamas"
             url_cc=""
-            url_foto=""
+            url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1358755210-vl_guaisplaismais08.jpg"
             web="">
 			<otros_anios>
 			    <otro_anio agrupacion="97" />
@@ -8299,6 +8306,7 @@
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
+				<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/guais-plais-mais.html" />
 			</comentarios>
 		</agrupacion>
         
@@ -10091,7 +10099,10 @@
 	</noticias>
 	
 	<destacados>
-		<destacado id="1" titulo="Destacado" urlImagen="" tipo="NOTICIA" objeto="1"/>
-		<destacado id="2" titulo="Destacado" urlImagen="" tipo="AGRUPACION" objeto="500"/>
+		<destacado id="1" titulo="Los coloretes de la vergüenza" urlImagen="http://blogs.lavozdigital.es/labrujapiti/files/2013/01/cuarteto1-500x333.jpg" 
+		 texto="Dos coloretes nos pusimos muchos gaditanos cuando cayó el telón. La gracia, la simpatía, la ironía y la sencillez que encumbran a nuestro Carnaval se transformaron en bochorno, asco y vergüenza, simbolizada en dos grandes manchas rojas que aparecieron en la cara de quienes sentimos que nuestra fiesta no es eso en lo que se ha convertido. De la guasa pasamos a la malaje, y ahora, hemos dado el salto mortal, a la antipatía más absoluta. No sé si había más gente de Cádiz que de fuera, no sé si la calidad del cuarteto era aceptable porque no me dejaron escucharlo y no sé si fueron los seguidores de Juan Carlos Aragón los que protagonizaron esa masacre carnavalesca. Lo que sé es que yo sentí vergüenza, de los que hacían el boicot contra unos cuarteteros indefensos en tierra hostil y de quienes les reían la gracia. Ninguno de los argumentos que intentan justificar la actitud del público han llegado a convencerme. Desde luego, los culpables no son esos humildes cuarteteros que salieron a escena después de haber ensayado durante cuatro meses con la única intención de luchar por un puesto en cuartos de final. Pero ni siquiera tuvieron la oportunidad de pelear por su modesto objetivo, algo que se hubiera podido evitar si se aplicara el reglamento a rajatabla, que recoge la posibilidad de que se desaloje al público para que una agrupación interprete su repertorio si no se le permite. Pero, claro, se trataba de un cuarteto desconocido, sin nombre. Y no nos olvidemos que esto también le puede ocurre a uno de los grandes. Entonces, ¿qué pasaría?. Seguro que alguien tomaría medidas. Al final, todo es cuestión de clases.\n\nFuente: El blog de la bruja Piti"
+		 enlace="http://blogs.lavozdigital.es/labrujapiti/2013/01/18/los-coloretes-de-la-verguenza/"/>
+		
+
 	</destacados>
 </carnavapp>
