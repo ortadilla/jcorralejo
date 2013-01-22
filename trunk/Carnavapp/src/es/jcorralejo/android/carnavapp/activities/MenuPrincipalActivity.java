@@ -59,13 +59,17 @@ public class MenuPrincipalActivity extends SherlockActivity {
 			public void onClick(View v) {
 				AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
 		    	
-		    	builder.setMessage(R.string.salir_pregunta)
+		    	builder.setMessage(R.string.anunciate_text)
 			    	.setCancelable(false)
 			    	.setPositiveButton(R.string.si,
 				    	new DialogInterface.OnClickListener() {
 				    		public void onClick(DialogInterface dialog,int id) {
-				    			finish();
-				    			android.os.Process.killProcess(android.os.Process.myPid());
+				    			Intent i = new Intent(android.content.Intent.ACTION_SEND);
+								i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{Constantes.DIRECCION_EMAIL});
+								i.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.anunciate_email_subject));
+								i.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.anunciate_email_text));
+								i.setType("plain/text");
+								startActivity(i);
 				    		}
 				    	})
 			    	.setNegativeButton(R.string.no,

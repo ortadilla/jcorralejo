@@ -4,7 +4,13 @@
     <string name="hello">Hello World, CarnavappActivity!</string>
     <string name="actualizar">Actualizar</string>
     <string name="anunciate">- ¡ANUNCIATE AQUÍ! -</string>
-    <string name="anunciate_text">Texto de Anunciate...</string>
+    <string name="anunciate_text">Con la llegada de las nuevas tecnologías, el carnaval ha experimentado un aumento del interés por parte de los aficionados. La aparición de la app <b>COAC2012</b> (creada por el mismo autor de Carnavapp) fue todo un hito en el mundo tecnológico, ya que fue la primera aplicación móvil enfocada en el Carnaval de Cádiz y todo lo que rodea. Ahora, <b>Carnavapp</b> viene a completar y mejorar su antecesora, con un nuevo diseño más atractivo, más secciones, y sobre todo, más carnaval durante todo el año.
+\n\n
+Miles son los usuarios que ya tienen en sus dispositivos <b>Carnavapp</b>, accediendo a la aplicación varias veces al día, lo que la convierte en un escaparate perfecto para tu negocio. 
+\n\n
+Si está interesado en publicitarse en <b>Carnavapp</b> o tiene alguna duda no dude en contactar con el equipo de desarrollo sin ningún tipo de compromiso</string>
+    <string name="anunciate_email_subject">Solicitud Información publicitaria en Carnavapp</string>
+    <string name="anunciate_email_text">Hola, quisiera informarme sobre la publiidad disponible en la app Carnavapp para dispositivos Android</string>
     <string name="app_name">Carnavapp</string>
     <string name="autor">Autor</string>
     <string name="blogs">Blogs</string>
@@ -49,6 +55,7 @@
     <string name="opciones">Opciones</string>
     <string name="otros">Otros</string>
     <string name="otros_anios">Otros años</string>
+    <string name="pedir_info">Pedir información</string>
     <string name="preeliminares">Preeliminaresaasda</string>
     <string name="puntos_de_interes">Puntos de Interés</string>
     <string name="romanceros">Romanceros</string>

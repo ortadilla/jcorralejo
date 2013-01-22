@@ -79,7 +79,49 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_weight="1" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="COMPARSAS"
+            android:textColor="#b10094"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="left"
+            android:gravity="center_vertical"
+            android:text="CHIRIGOTAS"
+            android:textColor="#b10094"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="left"
+            android:gravity="center_vertical"
+            android:text="CUARTETOS"
+            android:textColor="#b10094"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="left"
+            android:gravity="center_vertical"
+            android:text="COROS"
+            android:textColor="#b10094"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <FrameLayout
@@ -88,18 +130,18 @@
         android:background="#b10094" />
 
     <LinearLayout
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.2" >
+        android:layout_weight="1.2"
+        android:gravity="center" >
 
         <TextView
-	        android:id="@+id/anunciate"
+            android:id="@+id/anunciate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/anunciate"
-            android:textColor="#b10094"/>
+            android:textColor="#b10094" />
     </LinearLayout>
 
 </LinearLayout>
