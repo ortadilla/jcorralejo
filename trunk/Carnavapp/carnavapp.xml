@@ -8541,7 +8541,7 @@
             localidad="Cádiz" cabeza_serie="true"
             info="Coro de Julio Pardo"
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_cabrones.php"
-            url_foto=""
+            url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSCABRONES05.jpg"
             web="">
 			<otros_anios>
 			    <otro_anio agrupacion="61" />
@@ -8555,6 +8555,7 @@
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
+				<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-cabrones.html" />
 			</comentarios>
 		</agrupacion>
 
@@ -8562,7 +8563,7 @@
             localidad="Chipiona (Cádiz)" cabeza_serie="false"
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_que_no_se_jartan_de_choppe.php"
-            url_foto=""
+            url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vl_loschopper02.jpg"
             web="">
 			<otros_anios>
 			    <otro_anio agrupacion="36" />
@@ -8576,6 +8577,7 @@
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
+				<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-que-no-se-jartan-de-choppe.html" />
 			</comentarios>
 		</agrupacion>
 
@@ -8584,7 +8586,7 @@
             localidad="Algeciras (Cádiz)" cabeza_serie="false"
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_elementales.php"
-            url_foto=""
+            url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSELEMENTAKES08.jpg"
             web="">
 			<otros_anios>
 			    <otro_anio agrupacion="67" />
@@ -8598,6 +8600,7 @@
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
+				<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-elementales.html" />
 			</comentarios>
 		</agrupacion>
 
@@ -8605,7 +8608,7 @@
             localidad="Sevilla" cabeza_serie="false"
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_que_salieron_huyendo_por_la_que_esta_cayendo.php"
-            url_foto=""
+            url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSQUESALIERONHUYENDO01.jpg"
             web="">
 			<otros_anios>
 			</otros_anios>
@@ -8618,6 +8621,7 @@
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
+				<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-que-salieron-huyendo-por-la-que-esta-cayendo.html" />
 			</comentarios>
 		</agrupacion>
 
@@ -8625,7 +8629,7 @@
             localidad="Puerto de Santa María (Cádiz)" cabeza_serie="false"
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/El_que_con-trola.php"
-            url_foto=""
+            url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSQUECONTROLA03.jpg"
             web="">
 			<otros_anios>
 			</otros_anios>
@@ -8638,6 +8642,7 @@
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
+				<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/el-que-con-trola.html" />
 			</comentarios>
 		</agrupacion>
 
@@ -8645,7 +8650,7 @@
             localidad="Sanlúcar de Barrameda (Cádiz)" cabeza_serie="false"
             info=""
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_cachorros_del_hombre_lobo.php"
-            url_foto=""
+            url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSCACHORROSDELHOMBRELOBO01.jpg"
             web="">
 			<otros_anios>
 			    <otro_anio agrupacion="23" />
@@ -8659,14 +8664,15 @@
 				<foto descripcion="" url=""/>
 			</fotos>
 			<comentarios>
+				<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-cachorros-del-hombre-lobo.html" />
 			</comentarios>
 		</agrupacion>
 
 		<agrupacion id="580" modalidad="COMPARSA" nombre="La helada"
-				autor="Alejandro Fernández Martín" director="Alejandro Forja Albéniz"
-				localidad="Cádiz" cabeza_serie="false" info=""
+				autor="Alejandro Fernández Martín - Jesús Manuel Monje López" director="Alejandro Forja Albéniz"
+				localidad="Cádiz" cabeza_serie="false" info="Comparsa de Jesús Monje"
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/LAHELADA03.jpg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -8678,6 +8684,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/la-helada.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8687,7 +8694,7 @@
 				director="Ernesto Urmentea Montiel" localidad="San José de la Rinconada (Sevilla)"
 				cabeza_serie="false" info=""
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSPROMETIOS07.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="107" />
 				</otros_anios>
@@ -8700,6 +8707,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-prometios.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8707,7 +8715,7 @@
 				autor="Raúl Villanueva García" director="Ramón Jesús Herrera Vaca"
 				localidad="Puerto de Santa María (Cádiz)" cabeza_serie="false" info=""
 				url_cc=""
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_DESANGREAZUL05.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="78" />
 				</otros_anios>
@@ -8720,6 +8728,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/de-sangre-azul.html" />
 				</comentarios>
 			</agrupacion>
 
