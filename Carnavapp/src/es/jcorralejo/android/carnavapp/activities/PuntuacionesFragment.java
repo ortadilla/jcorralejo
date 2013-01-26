@@ -50,6 +50,8 @@ public class PuntuacionesFragment extends ListFragment {
 		miInflater = LayoutInflater.from(getActivity());
 		setRetainInstance(true);
 		
+		((CarnavappActivity3)getActivity()).comprobarApp();
+		
 		agrupacionesComparsas = app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_COMPARSA);
 		agrupacionesChirigotas = app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CHIRIGOTA);
 		agrupacionesCoros = app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CORO);

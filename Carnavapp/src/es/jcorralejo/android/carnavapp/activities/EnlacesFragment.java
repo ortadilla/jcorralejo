@@ -51,6 +51,11 @@ public class EnlacesFragment extends ListFragment {
 	    listaEnlces = (ListView)view.findViewById(android.R.id.list);
 		registerForContextMenu(listaEnlces);
 		
+		View directoCanalSur = view.findViewById(R.id.directoCanalSur);
+		directoCanalSur.setVisibility(View.GONE);
+		View directoOndaCadiz = view.findViewById(R.id.directoOndaCadiz);
+		directoOndaCadiz.setVisibility(View.GONE);
+		
 		configurarAdapter();
 	    
 	    return view;

@@ -228,8 +228,12 @@ public class CarnavappApplication extends Application {
 	}
 	
 	public List<Agrupacion> obtenerAgrupacionesOrdenadasAlfabeticamente(String modalidad){
-		List<Agrupacion>agrupaciones = getInfoAnioActual().getConcurso().getModalidades().get(modalidad);
-		Collections.sort(agrupaciones, new ComparatorAggrupacionesAlfabetico());
+		List<Agrupacion>agrupaciones = null;
+		if(getInfoAnioActual()!=null && getInfoAnioActual().getConcurso()!=null 
+		&& getInfoAnioActual().getConcurso().getModalidades()!=null){
+			agrupaciones = getInfoAnioActual().getConcurso().getModalidades().get(modalidad);
+			Collections.sort(agrupaciones, new ComparatorAggrupacionesAlfabetico());
+		}
 		return agrupaciones;
 	}
 	
