@@ -51,10 +51,10 @@ public class PuntuacionesFragment extends ListFragment {
 		
 		((CarnavappActivity3)getActivity()).comprobarApp();
 		
-		agrupacionesComparsas = app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_COMPARSA);
-		agrupacionesChirigotas = app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CHIRIGOTA);
-		agrupacionesCoros = app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CORO);
-		agrupacionesCuartetos = app.obtenerAgrupacionesOrdenadasAlfabeticamente(Constantes.MODALIDAD_CUARTETO);
+		agrupacionesComparsas = app.obtenerAgrupacionesOrdenadasPorPuntos(Constantes.MODALIDAD_COMPARSA);
+		agrupacionesChirigotas = app.obtenerAgrupacionesOrdenadasPorPuntos(Constantes.MODALIDAD_CHIRIGOTA);
+		agrupacionesCoros = app.obtenerAgrupacionesOrdenadasPorPuntos(Constantes.MODALIDAD_CORO);
+		agrupacionesCuartetos = app.obtenerAgrupacionesOrdenadasPorPuntos(Constantes.MODALIDAD_CUARTETO);
 		
 		agrupaciones = agrupacionesComparsas;
 	}

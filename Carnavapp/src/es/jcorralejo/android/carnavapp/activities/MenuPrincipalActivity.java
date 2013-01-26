@@ -41,6 +41,10 @@ public class MenuPrincipalActivity extends SherlockActivity {
         
         actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+		actionBar.setDisplayUseLogoEnabled(false);
+		actionBar.setDisplayHomeAsUpEnabled(false);
+		actionBar.setDisplayShowHomeEnabled(false);
+
         
         View fondo = findViewById(R.id.fondo);
         fondo.setOnClickListener(new OnClickListener() {
