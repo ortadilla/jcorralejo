@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import es.jcorralejo.android.carnavapp.R;
@@ -75,6 +74,9 @@ public class PuntuacionesFragment extends ListFragment {
 				modalidadActiva.setTypeface(null, Typeface.NORMAL);
 				comparsas.setTypeface(null, Typeface.BOLD);
 				modalidadActiva = comparsas;
+				agrupaciones = agrupacionesComparsas;
+				
+				configurarAdapter();
 			}
 		});
 		comparsas.setTypeface(null, Typeface.BOLD);
@@ -87,6 +89,9 @@ public class PuntuacionesFragment extends ListFragment {
 				modalidadActiva.setTypeface(null, Typeface.NORMAL);
 				chirigotas.setTypeface(null, Typeface.BOLD);
 				modalidadActiva = chirigotas;
+				agrupaciones = agrupacionesChirigotas;
+				
+				configurarAdapter();
 			}
 		});
 		coros = (TextView) view.findViewById(R.id.puntuacionCoros);
@@ -96,6 +101,9 @@ public class PuntuacionesFragment extends ListFragment {
 				modalidadActiva.setTypeface(null, Typeface.NORMAL);
 				coros.setTypeface(null, Typeface.BOLD);
 				modalidadActiva = coros;
+				agrupaciones = agrupacionesCoros;
+				
+				configurarAdapter();
 			}
 		});
 		cuartetos = (TextView) view.findViewById(R.id.puntuacionCuartetos);
@@ -105,51 +113,36 @@ public class PuntuacionesFragment extends ListFragment {
 				modalidadActiva.setTypeface(null, Typeface.NORMAL);
 				cuartetos.setTypeface(null, Typeface.BOLD);
 				modalidadActiva = cuartetos;
+				agrupaciones = agrupacionesCuartetos;
+				
+				configurarAdapter();
 			}
 		});
 
-//		configurarAdapter();
+		configurarAdapter();
 	    
 	    return view;
 	}
 	
 	public void configurarAdapter() {
 		if(listaAgrupaciones!=null){
-		listaAgrupaciones.setAdapter(new ArrayAdapter<Agrupacion>(getActivity(), R.layout.actuaciones_item, agrupaciones) {
+		listaAgrupaciones.setAdapter(new ArrayAdapter<Agrupacion>(getActivity(), R.layout.puntuaciones_list, agrupaciones) {
 			
 			@Override
 			public View getView(int position, View convertView, ViewGroup parent) {
 				View row;
-                if (null == convertView) {
-                        row = miInflater.inflate(R.layout.actuaciones_item, null);
-                } else {
-                        row = convertView;
-                }
+				if (null == convertView) {
+					row = miInflater.inflate(R.layout.puntuacion_item, null);
+				} else {
+					row = convertView;
+				}
  
                 Agrupacion item = getItem(position);
                 TextView nombre = (TextView) row.findViewById(R.id.agrNombre);
                 nombre.setText(item.getNombre());
-                
-                ImageView fav = (ImageView) row.findViewById(R.id.agrFav);
-                fav.setImageResource(R.drawable.ic_fav);
-                fav.setVisibility(item.isCabezaSerie() || app.getFavoritas().contains(item.getId()) ? View.VISIBLE : View.GONE);
-                TextView modLoc = (TextView) row.findViewById(R.id.agrModalidadLocalidad);
-                if(item.getModalidad()!=null && !item.getModalidad().equals("")
-                && item.getLocalidad()!=null && !item.getLocalidad().equals("")){
-                        modLoc.setText(item.getModalidad()+" ("+item.getLocalidad()+")");
-                        modLoc.setVisibility(View.VISIBLE);
-                }else{
-                        modLoc.setText(null);
-                        modLoc.setVisibility(View.GONE);
-                }
-                TextView infoExtra = (TextView) row.findViewById(R.id.agrDatosExtra);
-                if(item.getInfo()!=null && !item.getInfo().equals("")){
-                        infoExtra.setText(item.getInfo());
-                        infoExtra.setVisibility(View.VISIBLE);
-                }else{
-                        infoExtra.setText(null);
-                        infoExtra.setVisibility(View.GONE);
-                }
+
+                TextView puntuacion = (TextView) row.findViewById(R.id.agrPuntuacion);
+                puntuacion.setText(item.getPuntos()!=null ? item.getPuntos() : "-");
  
                 return row;
 			}

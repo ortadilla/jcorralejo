@@ -120,6 +120,14 @@ public class RssHandler extends DefaultHandler implements LexicalHandler {
     		agrupacionActual.setUrl_foto(atts.getValue(URL_FOTO));
     		agrupacionActual.setAnio(anioActual);
     		agrupacionActual.setWeb(atts.getValue(WEB));
+    		String puntos = atts.getValue(PUNTOS);
+    		if(puntos!=null && !puntos.equals("")){
+    			try{
+    				agrupacionActual.setPuntos(puntos);
+    			}catch(Exception e){
+    				agrupacionActual.setPuntos("");
+    			}
+    		}
     	} else if(localName.equalsIgnoreCase(COMPONENTE)) {
     		in_componente = true;
     		Componente componente = new Componente();
