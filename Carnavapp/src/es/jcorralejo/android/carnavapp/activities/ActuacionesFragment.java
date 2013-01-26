@@ -123,21 +123,25 @@ public class ActuacionesFragment extends ListFragment {
                 fav.setImageResource(R.drawable.ic_fav);
                 fav.setVisibility(item.isCabezaSerie() || app.getFavoritas().contains(item.getId()) ? View.VISIBLE : View.GONE);
                 TextView modLoc = (TextView) row.findViewById(R.id.agrModalidadLocalidad);
-                if(item.getModalidad()!=null && !item.getModalidad().equals("")
-                && item.getLocalidad()!=null && !item.getLocalidad().equals("")){
-                        modLoc.setText(item.getModalidad()+" ("+item.getLocalidad()+")");
-                        modLoc.setVisibility(View.VISIBLE);
+                String textModLoc = "";
+                if(item.getModalidad()!=null && !item.getModalidad().equals(""))
+                	textModLoc += item.getModalidad();
+                if(item.getLocalidad()!=null && !item.getLocalidad().equals(""))
+                	textModLoc += " ("+item.getLocalidad()+")";
+                if(!textModLoc.equals("")){
+                	modLoc.setText(textModLoc);
+                	modLoc.setVisibility(View.VISIBLE);
                 }else{
-                        modLoc.setText(null);
-                        modLoc.setVisibility(View.GONE);
+                	modLoc.setText(null);
+                	modLoc.setVisibility(View.GONE);
                 }
                 TextView infoExtra = (TextView) row.findViewById(R.id.agrDatosExtra);
                 if(item.getInfo()!=null && !item.getInfo().equals("")){
-                        infoExtra.setText(item.getInfo());
-                        infoExtra.setVisibility(View.VISIBLE);
+                	infoExtra.setText(item.getInfo());
+                	infoExtra.setVisibility(View.VISIBLE);
                 }else{
-                        infoExtra.setText(null);
-                        infoExtra.setVisibility(View.GONE);
+                	infoExtra.setText(null);
+                	infoExtra.setVisibility(View.GONE);
                 }
  
                 return row;
