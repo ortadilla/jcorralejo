@@ -53,36 +53,36 @@ public class MenuPrincipalActivity extends SherlockActivity {
 			}
 		});
         
-        TextView anunciate = (TextView) findViewById(R.id.anunciate);
-        anunciate.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-		    	
-		    	builder.setMessage(R.string.anunciate_text)
-			    	.setCancelable(false)
-			    	.setPositiveButton(R.string.si,
-				    	new DialogInterface.OnClickListener() {
-				    		public void onClick(DialogInterface dialog,int id) {
-				    			Intent i = new Intent(android.content.Intent.ACTION_SEND);
-								i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{Constantes.DIRECCION_EMAIL});
-								i.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.anunciate_email_subject));
-								i.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.anunciate_email_text));
-								i.setType("plain/text");
-								startActivity(i);
-				    		}
-				    	})
-			    	.setNegativeButton(R.string.no,
-				    	new DialogInterface.OnClickListener() {
-				    		public void onClick(DialogInterface dialog,int id) {
-				    			dialog.cancel();
-				    		}
-				    	});
-
-		    	AlertDialog alert = builder.create();
-		    	alert.show();
-			}
-		});
+//        TextView anunciate = (TextView) findViewById(R.id.anunciate);
+//        anunciate.setOnClickListener(new OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+//		    	
+//		    	builder.setMessage(R.string.anunciate_text)
+//			    	.setCancelable(false)
+//			    	.setPositiveButton(R.string.si,
+//				    	new DialogInterface.OnClickListener() {
+//				    		public void onClick(DialogInterface dialog,int id) {
+//				    			Intent i = new Intent(android.content.Intent.ACTION_SEND);
+//								i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{Constantes.DIRECCION_EMAIL});
+//								i.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.anunciate_email_subject));
+//								i.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.anunciate_email_text));
+//								i.setType("plain/text");
+//								startActivity(i);
+//				    		}
+//				    	})
+//			    	.setNegativeButton(R.string.no,
+//				    	new DialogInterface.OnClickListener() {
+//				    		public void onClick(DialogInterface dialog,int id) {
+//				    			dialog.cancel();
+//				    		}
+//				    	});
+//
+//		    	AlertDialog alert = builder.create();
+//		    	alert.show();
+//			}
+//		});
         
         cargarFavoritas();
         AnunciosUtils.cargarAnuncios(this);

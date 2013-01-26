@@ -307,6 +307,8 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			actionBar = getSupportActionBar();
 			actionBar.setDisplayShowTitleEnabled(false);
 			actionBar.setNavigationMode(com.actionbarsherlock.app.ActionBar.NAVIGATION_MODE_LIST);
+			actionBar.setDisplayUseLogoEnabled(false);
+			actionBar.setDisplayHomeAsUpEnabled(false);
 		}
 	}
 
@@ -537,12 +539,12 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 													i.setType("plain/text");
 													startActivity(i);
 										  	}})
-				       .setNeutralButton(R.string.donar, 
-						    				new DialogInterface.OnClickListener() {
-												public void onClick(DialogInterface dialog, int which) {
-													Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(Constantes.URL_VERSION_DONACION));
-													startActivity(i);
-												}})
+//				       .setNeutralButton(R.string.donar, 
+//						    				new DialogInterface.OnClickListener() {
+//												public void onClick(DialogInterface dialog, int which) {
+//													Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(Constantes.URL_VERSION_DONACION));
+//													startActivity(i);
+//												}})
 				       .setPositiveButton(R.string.volver, null)
 				       .setView(view);
 				return builder.create();

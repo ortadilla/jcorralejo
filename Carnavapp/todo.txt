@@ -40,3 +40,145 @@ Comentar para el calendario (CalendarView):
 //                            .get(Calendar.YEAR)) {
 //                return;
 //            } 
+
+  <!-- <LinearLayout -->
+    <!-- android:id="@+id/destacado" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:orientation="vertical" > -->
+
+
+    <!-- <LinearLayout -->
+    <!-- android:id="@+id/destacado" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:orientation="horizontal" > -->
+
+
+    <!-- <ImageView -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_gravity="center" -->
+    <!-- android:layout_margin="5dp" -->
+    <!-- android:src="@drawable/destacado" /> -->
+
+
+    <!-- <FrameLayout -->
+    <!-- android:layout_width="1dp" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:background="#b10094" /> -->
+
+
+    <!-- <LinearLayout -->
+    <!-- android:id="@+id/destacado" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:orientation="vertical" > -->
+
+
+    <!-- <ImageView -->
+    <!-- android:id="@+id/agrImagen" -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_gravity="center_horizontal" -->
+    <!-- android:layout_margin="5dp" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:contentDescription="IMAGEN_AGRUPACION" -->
+    <!-- android:gravity="center_horizontal" -->
+    <!-- android:src="@drawable/cuarteto" /> -->
+
+
+    <!-- <TextView -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_gravity="center_horizontal|bottom" -->
+    <!-- android:layout_marginBottom="10dp" -->
+    <!-- android:layout_weight="0" -->
+    <!-- android:text="Los Colores de la Vergüenza" -->
+    <!-- android:textColor="#b10094" -->
+    <!-- android:textStyle="bold" /> -->
+    <!-- </LinearLayout> -->
+    <!-- </LinearLayout> -->
+    <!-- </LinearLayout> -->
+
+
+    <!-- <FrameLayout -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="1dp" -->
+    <!-- android:background="#ccb10094" /> -->
+
+
+    <!-- <LinearLayout -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:orientation="vertical" -->
+    <!-- android:layout_weight="1" > -->
+
+
+    <!-- <TextView -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_gravity="left" -->
+    <!-- android:layout_marginLeft="20dp" -->
+    <!-- android:gravity="center_vertical" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:text="COMPARSAS" -->
+    <!-- android:textColor="#b10094" -->
+    <!-- android:textStyle="bold" /> -->
+    <!-- <TextView -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:layout_marginLeft="20dp" -->
+    <!-- android:layout_gravity="left" -->
+    <!-- android:gravity="center_vertical" -->
+    <!-- android:text="CHIRIGOTAS" -->
+    <!-- android:textColor="#b10094" -->
+    <!-- android:textStyle="bold" /> -->
+    <!-- <TextView -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:layout_marginLeft="20dp" -->
+    <!-- android:layout_gravity="left" -->
+    <!-- android:gravity="center_vertical" -->
+    <!-- android:text="CUARTETOS" -->
+    <!-- android:textColor="#b10094" -->
+    <!-- android:textStyle="bold" /> -->
+    <!-- <TextView -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:layout_marginLeft="20dp" -->
+    <!-- android:layout_gravity="left" -->
+    <!-- android:gravity="center_vertical" -->
+    <!-- android:text="COROS" -->
+    <!-- android:textColor="#b10094" -->
+    <!-- android:textStyle="bold" /> -->
+    <!-- </LinearLayout> -->
+
+
+    <!-- <FrameLayout -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="1dp" -->
+    <!-- android:background="#b10094" /> -->
+
+
+    <!-- <LinearLayout -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:layout_weight="1.2" -->
+    <!-- android:gravity="center" > -->
+
+
+    <!-- <TextView -->
+    <!-- android:id="@+id/anunciate" -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_gravity="center" -->
+    <!-- android:text="@string/anunciate" -->
+    <!-- android:textColor="#b10094" /> -->
+    <!-- </LinearLayout> -->
