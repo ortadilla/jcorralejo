@@ -110,7 +110,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 	}
 	
 
-	private void comprobarApp(){
+	public void comprobarApp(){
 		//Si volvemos a la app y se ha perdido toda la info, volvemos al principio
 		if(app==null || app.getInfoAnios()==null || app.getInfoAnios().isEmpty()){
 			finalizar = true;
@@ -309,6 +309,7 @@ public class CarnavappActivity3 extends SherlockFragmentActivity implements OnNa
 			actionBar.setNavigationMode(com.actionbarsherlock.app.ActionBar.NAVIGATION_MODE_LIST);
 			actionBar.setDisplayUseLogoEnabled(false);
 			actionBar.setDisplayHomeAsUpEnabled(false);
+			actionBar.setDisplayShowHomeEnabled(false);
 		}
 	}
 
