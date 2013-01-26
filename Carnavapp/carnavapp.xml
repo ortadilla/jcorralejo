@@ -6960,7 +6960,7 @@
 			<agrupacion id="501" modalidad="CHIRIGOTA" nombre="Hay quien dise que Cádiz"
 				autor="Luís María Rondán" director="Antonio Beiro Baro" localidad="Cádiz"
 				cabeza_serie="false" info=""
-				url_cc=""
+				url_cc="" puntos="231"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vl_hayquiendisse04.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="14" />
@@ -7074,6 +7074,7 @@
 				autor="José Luis García Cossio" director="José Luis García Cossio"
 				localidad="Cádiz" cabeza_serie="true" info="Chirigota del Selu"
 				url_cc=""
+				puntos="212"
 				url_foto="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Imagenes/Las_verdades_del_banquero_1.jpg" web="http://www.lachirigotadelselu.com/">
 				<otros_anios>
 					<otro_anio agrupacion="32" />
