@@ -242,8 +242,34 @@ public class CarnavappApplication extends Application {
 		public int compare(Agrupacion lhs, Agrupacion rhs) {
 			return lhs.getNombre().compareTo(rhs.getNombre());
 		}
-		
 	}
+	
+	public List<Agrupacion> obtenerAgrupacionesOrdenadasPorPuntos(String modalidad){
+		List<Agrupacion>agrupaciones = null;
+		if(getInfoAnioActual()!=null && getInfoAnioActual().getConcurso()!=null 
+		&& getInfoAnioActual().getConcurso().getModalidades()!=null){
+			agrupaciones = getInfoAnioActual().getConcurso().getModalidades().get(modalidad);
+			Collections.sort(agrupaciones, new ComparatorAgrupacionesPuntos());
+		}
+		return agrupaciones;
+	}
+	
+	private static final class ComparatorAgrupacionesPuntos implements Comparator<Agrupacion>{
+    	public int compare(Agrupacion obj1, Agrupacion obj2) {
+    		String puntos1 = ((Agrupacion)obj1).getPuntos();
+			String puntos2 = ((Agrupacion)obj2).getPuntos();
+			if(puntos1!=null && !puntos1.equals("") && (puntos2==null || puntos2.equals("")))
+				return 1;
+			else if (puntos2!=null && !puntos2.equals("") && (puntos1==null || puntos1.equals("")))
+				return -1;
+			else if((puntos2==null || puntos2.equals("")) && (puntos1==null || puntos1.equals(""))) {
+				String n1 = ((Agrupacion)obj1).getNombre();
+				String n2 = ((Agrupacion)obj2).getNombre();
+				return n1.compareTo(n2);
+			}else
+				return -puntos1.compareTo(puntos2);
+    	}
+    }; 
 
 	public List<InfoAnio> getInfoAnios() {
 		return infoAnios;
