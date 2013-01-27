@@ -8764,7 +8764,7 @@
 				director="Sebastian García Lucas" localidad="Cádiz" cabeza_serie="false"
 				info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/El_coro_de_Julio.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_ELCORODEJULIO01.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="35" />
 				</otros_anios>
@@ -8778,6 +8778,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/el-coro-de-julio.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8786,7 +8787,7 @@
 				localidad="Chiclana de la Frontera (Cádiz)" cabeza_serie="false"
 				info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_YouTube.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSYOUTUBE02.jpg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -8798,6 +8799,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-youtube.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8805,7 +8807,7 @@
 				autor="Jesús Manuel Monje López" director="Francisco José Oliveros Vega"
 				localidad="Sanlúcar de Barrameda (Cádiz)" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_visionarios.htm"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSVISIONARIOS02.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="24" />
 				</otros_anios>
@@ -8819,14 +8821,15 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-visionarios.html" />
 				</comentarios>
 			</agrupacion>
 
-			<agrupacion id="586" modalidad="CHIRIGOTA" nombre="Los indiseables"
+			<agrupacion id="586" modalidad="CHIRIGOTA" nombre="Los indeseables"
 				autor="José María Fernández Vento" director="José Luis Magallanes de Tapia"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_indeseables.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSINDESEABLES02.jpg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -8839,6 +8842,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-indeseables.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8847,7 +8851,7 @@
 				director="Pedro Campos Quintana" localidad="Cádiz" cabeza_serie="true"
 				info="Comparsa de Los Carapapas"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_gatos_callejeros.php"
-				url_foto="" web="http://www.lawebdeloscarapapas.com/">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_GATOSCALLEJEROS01.jpg" web="http://www.lawebdeloscarapapas.com/">
 				<otros_anios>
 					<otro_anio agrupacion="48" />
 				</otros_anios>
@@ -8861,6 +8865,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-gatos-callejeros.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8868,7 +8873,7 @@
 				autor="Manuel Díaz Márquez, Sergio Gómez Ramos" director="Jesús María Gómez Vargas"
 				localidad="Écija (Sevilla)" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_barriguitas.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vl_losbarriguitas05.jpg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -8881,6 +8886,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-barriguitas.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8888,7 +8894,7 @@
 				autor="Juan Antonio Pozo Acuña" director="Guillermo Corbacho Roa"
 				localidad="Algeciras (Cádiz)" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/El_patio_de_los_canallas.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1358948546-VL_ELPATIODELOSCANALLAS05.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="85" />
 				</otros_anios>
@@ -8902,6 +8908,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/el-patio-de-los-canallas.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8910,7 +8917,7 @@
 				director="Manuel Santillana Tirado" localidad="Cádiz" cabeza_serie="false"
 				info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_Messenger_Z.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSMESSENGUERZ04.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="12" />
 				</otros_anios>
@@ -8924,6 +8931,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-messenger-z.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8931,7 +8939,7 @@
 				autor="Rafael Garzón Ruíz" director="Juan Antonio Cano Ruíz"
 				localidad="Úbeda (Jaén)" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_voz_de_la_conciencia.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/Imagen%20VL_LAVOZDELACONCIENCIA06.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="40" />
 				</otros_anios>
@@ -8945,6 +8953,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/la-voz-de-la-conciencia.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8954,7 +8963,7 @@
 				director="Antonio García González 'Antonio Alemania'" localidad="Chiclana de la Frontera (Cádiz)"
 				cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_pluma.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LAPLUMA06.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="124" />
 				</otros_anios>
@@ -8968,6 +8977,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/la-pluma.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8975,7 +8985,7 @@
 				autor="Ismael Campos Aragón" director="Gustavo Cordones González"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Ya_estoy_yo_acostao.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_YAESTOYOACOSTAO07.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="68" />
 				</otros_anios>
@@ -8989,6 +8999,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/ya-estoy-yo-acostao.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -8996,7 +9007,7 @@
 				autor="Luis Gómez Luca, Enrique Parodi Palacios" director="Guillermo García Lebrero"
 				localidad="San Fernando (Cádiz)" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_que_te_comen_el_coco.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSQUETECOMENELCOCO02.jpg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -9009,6 +9020,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-que-te-comen-el-coco.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9016,7 +9028,7 @@
 				autor="Juan Manuel Braza Benítez, 'El Sheriff'" director="Juan Carlos Moreno García"
 				localidad="Cádiz" cabeza_serie="true" info="Chirigota de 'El Sheriff'"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_secretos.php"
-				url_foto="" web="http://www.lachirigotadelsheriff.com/">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSECRETOS07.jpg" web="http://www.lachirigotadelsheriff.com/">
 				<otros_anios>
 					<otro_anio agrupacion="122" />
 				</otros_anios>
@@ -9030,13 +9042,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-secretos.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="596" modalidad="COMPARSA" nombre="Las que dan el golpe"
 				autor="-" director="-" localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Las_que_dan_el_golpe.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LASQUEDANELGOLPE05.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="42" />
 				</otros_anios>
@@ -9050,6 +9063,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/las-que-dan-el-golpe.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9057,7 +9071,7 @@
 				autor="Fernando Villegas Mejias" director="José Miguel Blanca Alcántara"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hombres_bobo.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_HOMBREBOBO04.jpg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -9070,6 +9084,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/hombres-bobo.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9078,7 +9093,7 @@
 				localidad="Morón de la Frontera (Sevilla)" cabeza_serie="false"
 				info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Pan_de_Azucar.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_PANDEAZUCAR04.jpg" web="">
 				<otros_anios>
 					
 				</otros_anios>
@@ -9092,6 +9107,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/pan-de-azucar.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9101,7 +9117,7 @@
 				director="Daniel Gómez Herrera" localidad="Cádiz" cabeza_serie="false"
 				info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_de_la_tacita.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSDELATACITA02.jpg" web="">
 				<otros_anios>
 					
 				</otros_anios>
@@ -9115,6 +9131,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-de-la-tacita.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9123,7 +9140,7 @@
 				localidad="Chiclana de la Frontera (Cádiz)" cabeza_serie="false"
 				info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_reyes.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSREYES05.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="37" />
 				</otros_anios>
@@ -9137,6 +9154,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-reyes.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9144,7 +9162,7 @@
 				autor="Lucía Pardo Carrillo" director="María Jose Ortega Braza"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Cantina_Las_Manitas.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_CANTINALASMANITAS02.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="88" />
 				</otros_anios>
@@ -9157,6 +9175,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/cantina-las-manitas.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9165,7 +9184,7 @@
 				localidad="Chiclana de la Frontera (Cádiz)" cabeza_serie="false"
 				info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Enemigos_intimos.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_ENEMIGOSINTIMOS04.jpg" web="">
 				<otros_anios>
 					
 				</otros_anios>
@@ -9178,6 +9197,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/enemigos-intimos.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9185,7 +9205,7 @@
 				autor=" Antonio Galán Obregón" director="Jesús García Rincón"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_knalla.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LACANALLA01.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="131" />
 				</otros_anios>
@@ -9198,6 +9218,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/la-knalla-27-dias.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9206,7 +9227,7 @@
 				director="Ángel Gago Cubelo" localidad="Cádiz" cabeza_serie="true"
 				info="Cuarteto de 'El Gago'"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Robin_del_Bosque_y_los_demas_de_Ubrique.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_ROBINDELBOSQUE08.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="109" />
 				</otros_anios>
@@ -9220,6 +9241,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/robin-del-bosque-y-los-demas-de-ubrique.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9227,9 +9249,8 @@
 				autor="Jesús Bienvenido Saucedo" director="Daniel Obregón Guillen"
 				localidad="Cádiz" cabeza_serie="true" info="Comparsa de Jesús Bienvenido"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_del_piso_de_abajo.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSDELPISODEABAJO02.jpg" web="">
 				<otros_anios>
-					
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -9241,6 +9262,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-del-piso-de-abajo.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9250,7 +9272,7 @@
 				director="Manuel Roca Vallejo" localidad="Cádiz" cabeza_serie="false"
 				info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Ni_Mourinho_endereza_a_este_ninno.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/mou.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="47" />
 				</otros_anios>
@@ -9263,6 +9285,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/ni-mourinho-endereza-a-este-nino.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9271,7 +9294,7 @@
 				director="Jose Luis Otero Trechera" localidad="Cádiz" cabeza_serie="true"
 				info="Comparsa de Tino Tovar"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Lo_siento_pisha_no_to_er_mundo_puede_ser_de_Cai.php"
-				url_foto="" web="http://www.lacomparsadetino.com/">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_TOERMUNDONOPUEDESERDECAI07.jpg" web="http://www.lacomparsadetino.com/">
 				<otros_anios>
 					<otro_anio agrupacion="83" />
 				</otros_anios>
@@ -9285,15 +9308,16 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/lo-siento-pisha-no-to-er-mundo-puede-ser-de-cai.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="608" modalidad="CHIRIGOTA"
-				nombre="Haciendo el camino de Santiago" autor="Ivan Romero Castellón, Yerai Romero Castellón"
+				nombre="Haciendo el camino con Santiago" autor="Ivan Romero Castellón, Yerai Romero Castellón"
 				director="Pedro José Tamayo Salazar" localidad="Cádiz" cabeza_serie="false"
 				info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Haciendo_el_camino_con_Santiago.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_HACIENDOCAMINOCONSANTIAGO01.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="116" />
 				</otros_anios>
@@ -9306,6 +9330,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/haciendo-el-camino-con-santiago.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9313,7 +9338,7 @@
 				autor="Miguel Ángel García Argüez" director=" Jose Antonio Cheza Martínez"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Las_Cigarras.php"
-				url_foto="" web="http://www.lacomparsadenenecheza.tk/">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LASCIGARRAS07.jpg" web="http://www.lacomparsadenenecheza.tk/">
 				<otros_anios>
 					<otro_anio agrupacion="95" />
 				</otros_anios>
@@ -9326,14 +9351,15 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/las-cigarras.html" />
 				</comentarios>
 			</agrupacion>
 			
 			
-<agrupacion id="610" modalidad="CORO" nombre="El flautista"
+			<agrupacion id="610" modalidad="CORO" nombre="El flautista"
 				autor="Francisco Javier Sevilla Pecci" director="Antonio Cuesta Pino" localidad="Cádiz" cabeza_serie="true" info="El coro a pie"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/El_flautista.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vl_losflautistas01.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="1" />
 				</otros_anios>
@@ -9347,13 +9373,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/el-flautista.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="611" modalidad="CHIRIGOTA" nombre="Los chicos yo yó"
 				autor="Fermín Coto Raposo, Manuel Antonio García Grondona" director="José Enrique Gallardo Rodríguez" localidad="Puerto Real (Cádiz)" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_chicos_yoyo.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSCHICOSYOYO03.jpg" web="">
 				<otros_anios>
 					
 				</otros_anios>
@@ -9366,13 +9393,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-chicos-yo-yo.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="612" modalidad="COMPARSA" nombre="La fuga"
 				autor="Jose Manuel Ramírez Rodríguez" director="José Manuel Sánchez Ariza" localidad="Conil de la Frontera (Cádiz)" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_fuga.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LAFUGA03.jpg" web="">
 				<otros_anios>
 				</otros_anios>
 				<componentes>
@@ -9384,15 +9412,15 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/la-fuga.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="613" modalidad="CHIRIGOTA" nombre="Los cargaores"
 				autor="José Manuel Segura Muñoz" director="Manuel Sánchez Gamito" localidad="Sevilla" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_cargaores.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSCARGADORES04.jpg" web="">
 				<otros_anios>
-					
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -9403,13 +9431,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-cargaores.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="614" modalidad="COMPARSA" nombre="La comparsa del genio"
 				autor="Antonio Martín García" director="Ángel Subiela Gómez" localidad="Cádiz" cabeza_serie="true" info="Comparsa de Antonio Martin"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_Comparsa_del_Genio.php"
-				url_foto="" web="http://elblogdeantoniomartin.blogspot.com/">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LA%20COMPARSA%20DEL%20GENIO06.jpg" web="http://elblogdeantoniomartin.blogspot.com/">
 				<otros_anios>
 					<otro_anio agrupacion="30" />
 				</otros_anios>
@@ -9423,6 +9452,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/la-comparsa-del-genio.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9430,7 +9460,7 @@
 				nombre="Ya que estamos nos quedamos" autor=" Francisco Javier Belizón Quesada, Javier Vázquez Chacón" director="José Juan Pinedo Benítez"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Ya_que_estamos_nos_quedamos.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_YAQUEESTAMOSNOSQUEDAMOS01.jpg" web="">
 				<otros_anios>
 					
 				</otros_anios>
@@ -9443,6 +9473,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/ya-que-estamos-nos-quedamos.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9450,7 +9481,7 @@
 				nombre="Los botones del Hotel Cádiz" autor="José Ramón Peñalver Hoyos, Francisco Manuel Cárdenas Ruso" director="José Ramón de Castro González 'Ramoni'"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_botones_del_Hotel_Cadiz.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSBOTONESDELHOTELCADIZ04.jpg" web="">
 				<otros_anios>
 					
 				</otros_anios>
@@ -9463,6 +9494,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-botones-del-hotel-cadiz.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9471,7 +9503,7 @@
                 Juan Manuel Braza Benítez 'El Sheriff'" director="Eduardo Arjona Cubero"
 				localidad="Aguilar de la Frontera (Cádiz)" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Una_chirigota_de_matriculas.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_UNACHIRIGOTAMATRICULA01.jpg" web="">
 				<otros_anios>
 					
 				</otros_anios>
@@ -9484,15 +9516,15 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/una-chirigota-de-matriculas.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="618" modalidad="COMPARSA" nombre="Mariquilla la cantaora"
 				autor="Ezequiel Benítez Domínguez" director="La agrupación" localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Mariquilla_la_cantaora.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_MARIQUILLA%20LA%20CANTAORA03.jpg" web="">
 				<otros_anios>
-					
 				</otros_anios>
 				<componentes>
 					<componente nombre="" voz="" />
@@ -9503,6 +9535,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/mariquilla-la-cantaora.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9510,7 +9543,7 @@
 			<agrupacion id="619" modalidad="CORO" nombre="Los alcaldes de la caleta"
 				autor="Antonio Bayón Gutiérrez" director="José Carlos Arjona García" localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_alcaldes_de_La_Caleta.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSALCALDESDELACALETA04.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="70" />
 				</otros_anios>
@@ -9523,13 +9556,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-alcaldes-de-la-caleta.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="620" modalidad="CHIRIGOTA" nombre="Los del espacio"
 				autor="Roberto José Leal Guillén" director="Jaime Peña Gómez" localidad="Alcalá de guadaira (Sevilla)" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_del_espacio.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSDELESPACIO01.jpg" web="">
 				<otros_anios>
 					
 				</otros_anios>
@@ -9542,13 +9576,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				     <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-del-espacio.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="621" modalidad="COMPARSA" nombre="Los herederos del levante"
 				autor="-" director="-" localidad="" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_herederos_del_levante.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOS%20HEREDEROSDELEVANTE02.jpg" web="">
 				<otros_anios>
 					
 				</otros_anios>
@@ -9561,13 +9596,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-herederos-del-levante.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="622" modalidad="CHIRIGOTA" nombre="Los optimistas"
 				autor="Manuel Álvarez Seda, José Manuel Cornejo Benítez" director="Manuel Cornejo Aragón" localidad="Cádiz" cabeza_serie="true" info="Chirigota de 'El Love'"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_optimistas_chirigota_callejera.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSOPTIMISTAS03.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="103" />
 				</otros_anios>
@@ -9581,13 +9617,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-optimistas-chirigota-callejera.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="623" modalidad="COMPARSA" nombre="Los embaucadores"
 				autor="-" director="-" localidad="" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_embaucadores.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSEMBAUCADORES03.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="113" />
 				</otros_anios>
@@ -9600,13 +9637,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-embaucadores.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="624" modalidad="CHIRIGOTA" nombre="Este año estamos arriba"
 				autor="-" director="-" localidad="" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Este_anno_estamos_arriba.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/anooo.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="34" />
 				</otros_anios>
@@ -9619,13 +9657,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/este-ano-estamos-arriba.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="625" modalidad="COMPARSA" nombre="La plateada"
 				autor="Francisco Javier Trujillo Jiménez" director="Francisco Javier Trujillo Jiménez" localidad="Cádiz" cabeza_serie="false" info="Comparsa de Paco 'El catalán'"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_Plateada.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LAPLATEA03.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="22" />
 				</otros_anios>
@@ -9638,13 +9677,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/la-plateada.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="626" modalidad="CHIRIGOTA" nombre="Las Dolores"
 				autor="-" director="-" localidad="" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Las_Dolores.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSDOLORES05.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="16" />
 				</otros_anios>
@@ -9657,13 +9697,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/las-dolores.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="627" modalidad="COMPARSA" nombre="Los dueños de la plata"
 				autor="Alfonso Seco Ruiza, Juan José Sánchez Gálvez" director="Juan José Sánchez Gálvez" localidad="Valverde del Camino" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_duennos_de_la_plata.php"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/duenos.jpg" web="">
 				<otros_anios>
 					
 				</otros_anios>
@@ -9676,6 +9717,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+				    <comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-duenos-de-la-plata.html" />
 				</comentarios>
 			</agrupacion>
 
