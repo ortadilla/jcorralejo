@@ -267,7 +267,7 @@ public class CarnavappApplication extends Application {
 				String n2 = ((Agrupacion)obj2).getNombre();
 				return n1.compareTo(n2);
 			}else
-				return -puntos1.compareTo(puntos2);
+				return -Integer.valueOf(puntos1).compareTo(Integer.valueOf(puntos2));
     	}
     }; 
 
