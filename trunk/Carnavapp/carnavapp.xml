@@ -8679,7 +8679,7 @@
 			</comentarios>
 		</agrupacion>
 
-        <agrupacion id="579" modalidad="CHIRIGOTA" nombre="Los cachorros del hombre bobo" autor="Jaime Fernández de la Puente Alcántara" director="Jorge Guisado Telles"
+        <agrupacion id="579" modalidad="CHIRIGOTA" nombre="Los cachorros del hombre lobo" autor="Jaime Fernández de la Puente Alcántara" director="Jorge Guisado Telles"
             localidad="Sanlúcar de Barrameda (Cádiz)" cabeza_serie="false"
             info="" puntos="75"
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_cachorros_del_hombre_lobo.php"
@@ -10193,14 +10193,14 @@
 			<dia fecha="02/02/2013" fase="CUARTOS">
 				<puesto no="1" agrupacion="592" />
 				<puesto no="2" agrupacion="593" />
-				<puesto no="3" agrupacion="595" />
-				<puesto no="4" agrupacion="603" />
-				<puesto no="5" agrupacion="601" />
+				<puesto no="3" agrupacion="587" />
+				<puesto no="4" agrupacion="595" />
+				<puesto no="5" agrupacion="603" />
 				<puesto no="6" agrupacion="DESCANSO" />
 				<puesto no="7" agrupacion="601" />
 				<puesto no="8" agrupacion="605" />
 				<puesto no="9" agrupacion="599" />
-				<puesto no="10" agrupacion="607" />									
+				<puesto no="10" agrupacion="607" />										
 			</dia>
 
 			<dia fecha="03/02/2013" fase="CUARTOS">
