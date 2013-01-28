@@ -10125,20 +10125,7 @@
 				<puesto no="10" agrupacion="636" />
 			</dia>
 
-			<dia fecha="29/01/2013" fase="CUARTOS">
-				<puesto no="1" agrupacion="628" />
-				<puesto no="2" agrupacion="629" />
-				<puesto no="3" agrupacion="630" />
-				<puesto no="4" agrupacion="631" />
-				<puesto no="5" agrupacion="632" />
-				<puesto no="6" agrupacion="DESCANSO" />
-				<puesto no="7" agrupacion="633" />
-				<puesto no="8" agrupacion="634" />
-				<puesto no="9" agrupacion="635" />
-				<puesto no="10" agrupacion="636" />
-			</dia>
-
-					<dia fecha="29/01/2013" fase="CUARTOS">
+            <dia fecha="29/01/2013" fase="CUARTOS">
 				<puesto no="1" agrupacion="500" />
 				<puesto no="2" agrupacion="506" />
 				<puesto no="3" agrupacion="513" />
@@ -10164,7 +10151,7 @@
 				<puesto no="10" agrupacion="540" />			
 			</dia>
 
-			<dia fecha="31/01/2013" fase="CUARTOS">
+			<dia fecha="31/02/2013" fase="CUARTOS">
 				<puesto no="1" agrupacion="527" />
 				<puesto no="2" agrupacion="544" />
 				<puesto no="3" agrupacion="548" />
