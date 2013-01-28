@@ -3809,7 +3809,7 @@
 
 			<agrupacion id="92" modalidad="CHIRIGOTA" nombre="Los protagonistas"
 				autor="Francisco Javier Rodríguez/Enrique García Rosado" director=""
-				localidad="Cádiz" puntos="96"
+				localidad="Cádiz" 
 				coac2011="Los Joaquín pamplina, cantautor de la plaza mina (2º Premio)"
 				cabeza_serie="true" info="Chirigota de Kike Remolino"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_protagonistas.php"
