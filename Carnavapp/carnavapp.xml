@@ -9627,7 +9627,7 @@
 				</comentarios>
 			</agrupacion>
 
-			<agrupacion id="622" modalidad="CHIRIGOTA" nombre="Los optimistas"
+			<agrupacion id="622" modalidad="CHIRIGOTA" nombre="Los optimistas (Chirigota callejera)"
 				autor="Manuel Álvarez Seda, José Manuel Cornejo Benítez" director="Manuel Cornejo Aragón" localidad="Cádiz" cabeza_serie="true" info="Chirigota de 'El Love'"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_optimistas_chirigota_callejera.php"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSOPTIMISTAS03.jpg" web="">
@@ -10126,22 +10126,96 @@
 			</dia>
 
 			<dia fecha="29/01/2013" fase="CUARTOS">
+				<puesto no="1" agrupacion="628" />
+				<puesto no="2" agrupacion="629" />
+				<puesto no="3" agrupacion="630" />
+				<puesto no="4" agrupacion="631" />
+				<puesto no="5" agrupacion="632" />
+				<puesto no="6" agrupacion="DESCANSO" />
+				<puesto no="7" agrupacion="633" />
+				<puesto no="8" agrupacion="634" />
+				<puesto no="9" agrupacion="635" />
+				<puesto no="10" agrupacion="636" />
+			</dia>
+
+					<dia fecha="29/01/2013" fase="CUARTOS">
+				<puesto no="1" agrupacion="500" />
+				<puesto no="2" agrupacion="506" />
+				<puesto no="3" agrupacion="513" />
+				<puesto no="4" agrupacion="503" />
+				<puesto no="5" agrupacion="515" />
+				<puesto no="6" agrupacion="DESCANSO" />
+				<puesto no="7" agrupacion="505" />
+				<puesto no="8" agrupacion="516" />
+				<puesto no="9" agrupacion="517" />
+				<puesto no="10" agrupacion="522" />
 			</dia>
 
 			<dia fecha="30/01/2013" fase="CUARTOS">
+				<puesto no="1" agrupacion="509" />
+				<puesto no="2" agrupacion="526" />
+				<puesto no="3" agrupacion="531" />
+				<puesto no="4" agrupacion="520" />
+				<puesto no="5" agrupacion="533" />
+				<puesto no="6" agrupacion="DESCANSO" />
+				<puesto no="7" agrupacion="518" />
+				<puesto no="8" agrupacion="528" />
+				<puesto no="9" agrupacion="538" />
+				<puesto no="10" agrupacion="540" />			
 			</dia>
 
 			<dia fecha="31/01/2013" fase="CUARTOS">
+				<puesto no="1" agrupacion="527" />
+				<puesto no="2" agrupacion="544" />
+				<puesto no="3" agrupacion="548" />
+				<puesto no="4" agrupacion="539" />
+				<puesto no="5" agrupacion="550" />
+				<puesto no="6" agrupacion="DESCANSO" />
+				<puesto no="7" agrupacion="546" />
+				<puesto no="8" agrupacion="561" />
+				<puesto no="9" agrupacion="562" />
+				<puesto no="10" agrupacion="571" />						
 			</dia>
 
 			<dia fecha="01/02/2013" fase="CUARTOS">
+				<puesto no="1" agrupacion="565" />
+				<puesto no="2" agrupacion="575" />
+				<puesto no="3" agrupacion="569" />
+				<puesto no="4" agrupacion="549" />
+				<puesto no="5" agrupacion="570" />
+				<puesto no="6" agrupacion="DESCANSO" />
+				<puesto no="7" agrupacion="574" />
+				<puesto no="8" agrupacion="577" />
+				<puesto no="9" agrupacion="572" />
+				<puesto no="10" agrupacion="590" />						
 			</dia>
 
 			<dia fecha="02/02/2013" fase="CUARTOS">
+				<puesto no="1" agrupacion="592" />
+				<puesto no="2" agrupacion="593" />
+				<puesto no="3" agrupacion="595" />
+				<puesto no="4" agrupacion="603" />
+				<puesto no="5" agrupacion="601" />
+				<puesto no="6" agrupacion="DESCANSO" />
+				<puesto no="7" agrupacion="601" />
+				<puesto no="8" agrupacion="605" />
+				<puesto no="9" agrupacion="599" />
+				<puesto no="10" agrupacion="607" />									
 			</dia>
 
 			<dia fecha="03/02/2013" fase="CUARTOS">
+				<puesto no="1" agrupacion="610" />
+				<puesto no="2" agrupacion="608" />
+				<puesto no="3" agrupacion="609" />
+				<puesto no="4" agrupacion="604" />
+				<puesto no="5" agrupacion="614" />
+				<puesto no="6" agrupacion="DESCANSO" />
+				<puesto no="7" agrupacion="620" />
+				<puesto no="8" agrupacion="623" />
+				<puesto no="9" agrupacion="622" />
+				<puesto no="10" agrupacion="625" />												
 			</dia>
+		
 
 			<dia fecha="04/02/2013" fase="SEMIFINAL">
 			</dia>
