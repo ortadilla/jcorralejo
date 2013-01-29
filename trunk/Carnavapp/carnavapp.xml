@@ -10127,7 +10127,310 @@
 				<comentarios>
 				</comentarios>
 			</agrupacion>
+			
+			<agrupacion id="647" modalidad="JUVENIL"
+				nombre="Con nueva ilusión" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
 
+			<agrupacion id="648" modalidad="JUVENIL"
+				nombre="El club de los quince" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="649" modalidad="JUVENIL"
+				nombre="El ministerio de la alegría" autor="" director=""
+				localidad="San Fernando (Cádiz)" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="650" modalidad="JUVENIL"
+				nombre="El rosario" autor="Sebastian Pina - Domingo Pina" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+			
+			<agrupacion id="651" modalidad="JUVENIL"
+				nombre="El tropel" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+			
+			<agrupacion id="652" modalidad="JUVENIL"
+				nombre="La caletera" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+			
+			<agrupacion id="653" modalidad="JUVENIL"
+				nombre="La gloria" autor="" director=""
+				localidad="Barbate (Cádiz)" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="654" modalidad="JUVENIL"
+				nombre="La musa" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>			
+			
+			<agrupacion id="655" modalidad="JUVENIL"
+				nombre="La primavera árabe" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>	
+
+			<agrupacion id="656" modalidad="JUVENIL"
+				nombre="Los comerciantes" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>		
+
+			<agrupacion id="657" modalidad="JUVENIL"
+				nombre="Los del quinto pino" autor="" director=""
+				localidad="San Fernando (Cádiz)" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>			
+
+			<agrupacion id="658" modalidad="JUVENIL"
+				nombre="Los herederos de la calle" autor="" director=""
+				localidad="San Fernando (Cádiz)" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>				
+			
+			<agrupacion id="659" modalidad="JUVENIL"
+				nombre="Las Jennifer María de la Esperanza (esteticienes de confianza)" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Chirigota"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>				
+			
+			<agrupacion id="660" modalidad="JUVENIL"
+				nombre="La presentación" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Chirigota"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>		
+
+			<agrupacion id="661" modalidad="JUVENIL"
+				nombre="¡Uno pa el primero!" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Chirigota"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>		
+			
+			<agrupacion id="662" modalidad="JUVENIL"
+				nombre="Desde el paraiso" autor="La agrupación" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Coro"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>		
+
+			<agrupacion id="663" modalidad="JUVENIL"
+				nombre="El batallón de Theodora" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Coro"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>		
+
+			<agrupacion id="664" modalidad="JUVENIL"
+				nombre="La pandilla del ayer" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Coro"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>		
+
+			<agrupacion id="665" modalidad="JUVENIL"
+				nombre="Los auténticos de Cai" autor="" director=""
+				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Cuarteto"
+				url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>		
 			
 		</agrupaciones>
 		
