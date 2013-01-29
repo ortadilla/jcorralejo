@@ -9940,6 +9940,195 @@
 					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/el-viejo-escaparate.html" />
 				</comentarios>
 			</agrupacion>
+			
+			<agrupacion id="637" modalidad="INFANTIL"
+				nombre="La chanca"
+				autor="" director="Diego "
+				localidad="Barbate (Cádiz)" cabeza_serie="false" info="Comparsa"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="638" modalidad="INFANTIL"
+				nombre="El balcón de Cádiz"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Comparsa"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="639" modalidad="INFANTIL"
+				nombre="La hortelada Cádiz"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Comparsa"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="640" modalidad="INFANTIL"
+				nombre="Los inspiraos"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Comparsa"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+			
+			<agrupacion id="641" modalidad="INFANTIL"
+				nombre="Los últimos exploradores"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Comparsa"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="642" modalidad="INFANTIL"
+				nombre="Comida rápida"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Chirigota"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="642" modalidad="INFANTIL"
+				nombre="Los malos del cuento"
+				autor="" director=""
+				localidad="Chiclana de la Frontera (Cádiz)" cabeza_serie="false" info="Chirigota"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="643" modalidad="INFANTIL"
+				nombre="Los nietos de la bruja Piti"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Chirigota"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+			
+			<agrupacion id="644" modalidad="INFANTIL"
+				nombre="Los primos de riesgo"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Chirigota"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="645" modalidad="INFANTIL"
+				nombre="Los caca-fantasmas"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Cuarteto"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="646" modalidad="INFANTIL"
+				nombre="Los monos coloraos"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Cuarteto"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			
 		</agrupaciones>
 		
 		<calendario>
