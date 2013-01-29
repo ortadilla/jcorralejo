@@ -9756,7 +9756,7 @@
 			<agrupacion id="628" modalidad="CORO" nombre="Las auténticas"
 				autor="-" director="-" localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Las_autenticas.php"
-				url_foto="" web="" puntos="175">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LASAUTENTICAS01.jpeg" web="" puntos="175">
 				<otros_anios>
 					<otro_anio agrupacion="26" />
 				</otros_anios>
@@ -9769,13 +9769,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/las-autenticas.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="629" modalidad="CHIRIGOTA" nombre="El lunes me pongo"
 				autor="-" director="-" localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/El_lunes_me_pongo.php"
-				url_foto="" web="" puntos="180">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_ELLUNESMEPONGO01.jpeg" web="" puntos="180">
 				<otros_anios>
 					<otro_anio agrupacion="86" />
 				</otros_anios>
@@ -9788,13 +9789,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/el-lunes-me-pongo.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="630" modalidad="COMPARSA" nombre="Los sintonía"
 				autor="-" director="-" localidad="Barbate, Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_Sintonia.php" puntos="181"
-				url_foto="" web="">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LASINTONIA03.jpeg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="17" />
 				</otros_anios>
@@ -9807,11 +9809,12 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-sintonia.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="631" modalidad="CUARTETO" nombre="Comunicando"
-				autor="-" director="-" localidad="Córdoba" cabeza_serie="false" info=""
+				autor="-" director="-" localidad="Córdoba" cabeza_serie="false" info="- Retirada -"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Comunicando.php"
 				url_foto="" web="" puntos="0">
 				<otros_anios>
@@ -9832,7 +9835,7 @@
 			<agrupacion id="632" modalidad="COMPARSA" nombre="El señor del mar"
 				autor="José Manuel Aranda Perales, Miguel Amate Escudero" director=" Rafael Aranda Perales" localidad="Cádiz" cabeza_serie="true" info="La comparsa de Córdoba"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/El_Sennor_del_Mar.php"
-				url_foto="" web="http://www.lacomparsadecordoba.com/" puntos="188">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_ELSE%D1ORDELMAR03.jpeg" web="http://www.lacomparsadecordoba.com/" puntos="188">
 				<otros_anios>
 					<otro_anio agrupacion="91" />
 				</otros_anios>
@@ -9845,6 +9848,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/el-senor-del-mar.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9852,7 +9856,7 @@
 				nombre="La chirigota de la historia" autor="Rubén Vargas Lanillo, José Luis Bustelo Sánchez, José Antonio Vélez Fernández" director="José Antonio Vélez Fernández"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_chirigota_de_la_historia.php"
-				url_foto="" web="http://www.chirigotalapasma.com/" puntos="188">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LACHIRIGOTADELAHISTORIA01.jpeg" web="http://www.chirigotalapasma.com/" puntos="188">
 				<otros_anios>
 					<otro_anio agrupacion="21" />
 				</otros_anios>
@@ -9865,13 +9869,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/la-chirigota-de-la-historia.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="634" modalidad="COMPARSA" nombre="Encantado de la vida"
 				autor="-" director="-" localidad="Chipiona, Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Encantado_de_la_vida.php"
-				url_foto="" web="" puntos="182">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_ENCANTADODELAVIDA04.jpeg" web="" puntos="182">
 				<otros_anios>
 					<otro_anio agrupacion="33" />
 				</otros_anios>
@@ -9884,6 +9889,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/encantado-de-la-vida.html" />
 				</comentarios>
 			</agrupacion>
 
@@ -9891,7 +9897,7 @@
 				nombre="Cualquier parecido con la realidad es pura coincidencia" autor="-" director="-"
 				localidad="Cádiz" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Cualquier_parecido_con_la_realidad.php"
-				url_foto="" web="" puntos="134">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_CUALQUIERCOSAREALES01.jpeg" web="" puntos="134">
 				<otros_anios>
 					
 				</otros_anios>
@@ -9904,13 +9910,14 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/cualquier-parecido-con-la-realidad-es-pura-coincidencia.html" />
 				</comentarios>
 			</agrupacion>
 
 			<agrupacion id="636" modalidad="COMPARSA" nombre="El viejo escaparate"
 				autor="-" director="-" localidad="Ronda, Málaga" cabeza_serie="false" info=""
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/El_escaparate.php"
-				url_foto="" web="" puntos="187">
+				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/escaparateeei.jpg" web="" puntos="187">
 				<otros_anios>
 					<otro_anio agrupacion="57" />
 				</otros_anios>
@@ -9923,6 +9930,7 @@
 					<foto descripcion="" url="" />
 				</fotos>
 				<comentarios>
+					<comentario origen="La voz digital - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/el-viejo-escaparate.html" />
 				</comentarios>
 			</agrupacion>
 		</agrupaciones>
