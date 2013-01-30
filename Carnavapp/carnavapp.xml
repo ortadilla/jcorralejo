@@ -9977,6 +9977,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+					<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=NzFWAGA-rPI" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -9994,6 +9995,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+					<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=xNgL-Y1i5U8" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -10011,6 +10013,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+					<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=pAnp6UnKQ6E" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -10028,6 +10031,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+					<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=Kb85NewmtcA" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -10045,6 +10049,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
+					<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=MwvC0-oB22A" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -10052,8 +10057,26 @@
 				<comentarios>
 				</comentarios>
 			</agrupacion>
-
+			
 			<agrupacion id="642" modalidad="INFANTIL"
+				nombre="Los últimos exploradores"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Comparsa"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+					<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=sJcQbDPqhcg" />
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+			
+			<agrupacion id="643" modalidad="INFANTIL"
 				nombre="Comida rápida"
 				autor="" director=""
 				localidad="Cádiz" cabeza_serie="false" info="Chirigota"
@@ -10070,7 +10093,7 @@
 				</comentarios>
 			</agrupacion>
 
-			<agrupacion id="642" modalidad="INFANTIL"
+			<agrupacion id="644" modalidad="INFANTIL"
 				nombre="Los malos del cuento"
 				autor="" director=""
 				localidad="Chiclana de la Frontera (Cádiz)" cabeza_serie="false" info="Chirigota"
@@ -10079,40 +10102,7 @@
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="643" modalidad="INFANTIL"
-				nombre="Los nietos de la bruja Piti"
-				autor="" director=""
-				localidad="Cádiz" cabeza_serie="false" info="Chirigota"
-				url_cc="" url_foto="" url_videos="" puntos="">
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-			
-			<agrupacion id="644" modalidad="INFANTIL"
-				nombre="Los primos de riesgo"
-				autor="" director=""
-				localidad="Cádiz" cabeza_serie="false" info="Chirigota"
-				url_cc="" url_foto="" url_videos="" puntos="">
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
+					<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=PJ6CkoVJMUQ" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -10122,31 +10112,15 @@
 			</agrupacion>
 
 			<agrupacion id="645" modalidad="INFANTIL"
-				nombre="Los caca-fantasmas"
+				nombre="Los nietos de la bruja Piti"
 				autor="" director=""
-				localidad="Cádiz" cabeza_serie="false" info="Cuarteto"
+				localidad="Cádiz" cabeza_serie="false" info="Chirigota"
 				url_cc="" url_foto="" url_videos="" puntos="">
 				<componentes>
 					<componente nombre="" voz="" />
 				</componentes>
 				<videos>
-				</videos>
-				<fotos>
-					<foto descripcion="" url="" />
-				</fotos>
-				<comentarios>
-				</comentarios>
-			</agrupacion>
-
-			<agrupacion id="646" modalidad="INFANTIL"
-				nombre="Los monos coloraos"
-				autor="" director=""
-				localidad="Cádiz" cabeza_serie="false" info="Cuarteto"
-				url_cc="" url_foto="" url_videos="" puntos="">
-				<componentes>
-					<componente nombre="" voz="" />
-				</componentes>
-				<videos>
+					<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=VcMpUjxdG1k" />
 				</videos>
 				<fotos>
 					<foto descripcion="" url="" />
@@ -10155,7 +10129,61 @@
 				</comentarios>
 			</agrupacion>
 			
-			<agrupacion id="647" modalidad="JUVENIL"
+			<agrupacion id="646" modalidad="INFANTIL"
+				nombre="Los primos de riesgo"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Chirigota"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+					<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=IhLN46jVUKE" />
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="647" modalidad="INFANTIL"
+				nombre="Los caca-fantasmas"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Cuarteto"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+					<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=0bbRbzmjWl0" />
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+
+			<agrupacion id="648" modalidad="INFANTIL"
+				nombre="Los monos coloraos"
+				autor="" director=""
+				localidad="Cádiz" cabeza_serie="false" info="Cuarteto"
+				url_cc="" url_foto="" url_videos="" puntos="">
+				<componentes>
+					<componente nombre="" voz="" />
+				</componentes>
+				<videos>
+					<video descripcion="Semifinal - Actuación completa" url="http://www.youtube.com/watch?v=imCgSVb9iOo" />
+				</videos>
+				<fotos>
+					<foto descripcion="" url="" />
+				</fotos>
+				<comentarios>
+				</comentarios>
+			</agrupacion>
+			
+			<agrupacion id="649" modalidad="JUVENIL"
 				nombre="Con nueva ilusión" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10171,7 +10199,7 @@
 				</comentarios>
 			</agrupacion>
 
-			<agrupacion id="648" modalidad="JUVENIL"
+			<agrupacion id="650" modalidad="JUVENIL"
 				nombre="El club de los quince" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10187,7 +10215,7 @@
 				</comentarios>
 			</agrupacion>
 
-			<agrupacion id="649" modalidad="JUVENIL"
+			<agrupacion id="651" modalidad="JUVENIL"
 				nombre="El ministerio de la alegría" autor="" director=""
 				localidad="San Fernando (Cádiz)" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10203,7 +10231,7 @@
 				</comentarios>
 			</agrupacion>
 
-			<agrupacion id="650" modalidad="JUVENIL"
+			<agrupacion id="652" modalidad="JUVENIL"
 				nombre="El rosario" autor="Sebastian Pina - Domingo Pina" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10219,7 +10247,7 @@
 				</comentarios>
 			</agrupacion>
 			
-			<agrupacion id="651" modalidad="JUVENIL"
+			<agrupacion id="653" modalidad="JUVENIL"
 				nombre="El tropel" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10235,7 +10263,7 @@
 				</comentarios>
 			</agrupacion>
 			
-			<agrupacion id="652" modalidad="JUVENIL"
+			<agrupacion id="654" modalidad="JUVENIL"
 				nombre="La caletera" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10251,7 +10279,7 @@
 				</comentarios>
 			</agrupacion>
 			
-			<agrupacion id="653" modalidad="JUVENIL"
+			<agrupacion id="655" modalidad="JUVENIL"
 				nombre="La gloria" autor="" director=""
 				localidad="Barbate (Cádiz)" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10267,7 +10295,7 @@
 				</comentarios>
 			</agrupacion>
 
-			<agrupacion id="654" modalidad="JUVENIL"
+			<agrupacion id="656" modalidad="JUVENIL"
 				nombre="La musa" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10283,7 +10311,7 @@
 				</comentarios>
 			</agrupacion>			
 			
-			<agrupacion id="655" modalidad="JUVENIL"
+			<agrupacion id="657" modalidad="JUVENIL"
 				nombre="La primavera árabe" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10299,7 +10327,7 @@
 				</comentarios>
 			</agrupacion>	
 
-			<agrupacion id="656" modalidad="JUVENIL"
+			<agrupacion id="658" modalidad="JUVENIL"
 				nombre="Los comerciantes" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10315,7 +10343,7 @@
 				</comentarios>
 			</agrupacion>		
 
-			<agrupacion id="657" modalidad="JUVENIL"
+			<agrupacion id="659" modalidad="JUVENIL"
 				nombre="Los del quinto pino" autor="" director=""
 				localidad="San Fernando (Cádiz)" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10331,7 +10359,7 @@
 				</comentarios>
 			</agrupacion>			
 
-			<agrupacion id="658" modalidad="JUVENIL"
+			<agrupacion id="660" modalidad="JUVENIL"
 				nombre="Los herederos de la calle" autor="" director=""
 				localidad="San Fernando (Cádiz)" coac2011="" cabeza_serie="false" info="" url_cc="Comparsa"
 				url_foto="" url_videos="" puntos="">
@@ -10347,7 +10375,7 @@
 				</comentarios>
 			</agrupacion>				
 			
-			<agrupacion id="659" modalidad="JUVENIL"
+			<agrupacion id="661" modalidad="JUVENIL"
 				nombre="Las Jennifer María de la Esperanza (esteticienes de confianza)" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Chirigota"
 				url_foto="" url_videos="" puntos="">
@@ -10363,7 +10391,7 @@
 				</comentarios>
 			</agrupacion>				
 			
-			<agrupacion id="660" modalidad="JUVENIL"
+			<agrupacion id="662" modalidad="JUVENIL"
 				nombre="La presentación" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Chirigota"
 				url_foto="" url_videos="" puntos="">
@@ -10379,7 +10407,7 @@
 				</comentarios>
 			</agrupacion>		
 
-			<agrupacion id="661" modalidad="JUVENIL"
+			<agrupacion id="663" modalidad="JUVENIL"
 				nombre="¡Uno pa el primero!" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Chirigota"
 				url_foto="" url_videos="" puntos="">
@@ -10395,7 +10423,7 @@
 				</comentarios>
 			</agrupacion>		
 			
-			<agrupacion id="662" modalidad="JUVENIL"
+			<agrupacion id="664" modalidad="JUVENIL"
 				nombre="Desde el paraiso" autor="La agrupación" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Coro"
 				url_foto="" url_videos="" puntos="">
@@ -10411,7 +10439,7 @@
 				</comentarios>
 			</agrupacion>		
 
-			<agrupacion id="663" modalidad="JUVENIL"
+			<agrupacion id="665" modalidad="JUVENIL"
 				nombre="El batallón de Theodora" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Coro"
 				url_foto="" url_videos="" puntos="">
@@ -10427,7 +10455,7 @@
 				</comentarios>
 			</agrupacion>		
 
-			<agrupacion id="664" modalidad="JUVENIL"
+			<agrupacion id="666" modalidad="JUVENIL"
 				nombre="La pandilla del ayer" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Coro"
 				url_foto="" url_videos="" puntos="">
@@ -10443,7 +10471,7 @@
 				</comentarios>
 			</agrupacion>		
 
-			<agrupacion id="665" modalidad="JUVENIL"
+			<agrupacion id="667" modalidad="JUVENIL"
 				nombre="Los auténticos de Cai" autor="" director=""
 				localidad="Cádiz" coac2011="" cabeza_serie="false" info="" url_cc="Cuarteto"
 				url_foto="" url_videos="" puntos="">
