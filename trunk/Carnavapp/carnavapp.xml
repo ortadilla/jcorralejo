@@ -10818,12 +10818,42 @@
 		
 
 			<dia fecha="04/02/2013" fase="SEMIFINAL">
+			    <puesto no="1" agrupacion="509" />
+				<puesto no="2" agrupacion="506" />
+				<puesto no="3" agrupacion="513" />
+				<puesto no="4" agrupacion="503" />
+				<puesto no="5" agrupacion="531" />
+				<puesto no="6" agrupacion="DESCANSO" />
+				<puesto no="7" agrupacion="518" />
+				<puesto no="8" agrupacion="550" />
+				<puesto no="9" agrupacion="522" />
+				<puesto no="10" agrupacion="569" />												
 			</dia>
 
 			<dia fecha="05/02/2013" fase="SEMIFINAL">
+			    <puesto no="1" agrupacion="527" />
+				<puesto no="2" agrupacion="526" />
+				<puesto no="3" agrupacion="572" />
+				<puesto no="4" agrupacion="520" />
+				<puesto no="5" agrupacion="587" />
+				<puesto no="6" agrupacion="DESCANSO" />
+				<puesto no="7" agrupacion="546" />
+				<puesto no="8" agrupacion="540" />
+				<puesto no="9" agrupacion="605" />
+				<puesto no="10" agrupacion="544" />			    
 			</dia>
 
 			<dia fecha="06/02/2013" fase="SEMIFINAL">
+   			    <puesto no="1" agrupacion="574" />
+				<puesto no="2" agrupacion="571" />
+				<puesto no="3" agrupacion="607" />
+				<puesto no="4" agrupacion="604" />
+				<puesto no="5" agrupacion="609" />
+				<puesto no="6" agrupacion="DESCANSO" />
+				<puesto no="7" agrupacion="595" />
+				<puesto no="8" agrupacion="614" />
+				<puesto no="9" agrupacion="622" />
+				<puesto no="10" agrupacion="623" />
 			</dia>
 
 			<dia fecha="08/02/2013" fase="FINAL">
