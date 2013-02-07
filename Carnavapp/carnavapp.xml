@@ -10902,6 +10902,19 @@
 			</dia>
 
 			<dia fecha="08/02/2013" fase="FINAL">
+   			    <puesto no="1" agrupacion="527" />
+				<puesto no="2" agrupacion="506" />
+				<puesto no="3" agrupacion="614" />
+				<puesto no="4" agrupacion="604" />
+				<puesto no="5" agrupacion="DESCANSO" />
+				<puesto no="6" agrupacion="574" />
+				<puesto no="7" agrupacion="544" />
+				<puesto no="8" agrupacion="569" />
+				<puesto no="9" agrupacion="520" />
+				<puesto no="10" agrupacion="DESCANSO" />
+				<puesto no="11" agrupacion="546" />
+				<puesto no="12" agrupacion="522" />
+				<puesto no="13" agrupacion="572" />
 			</dia>
 
 		</calendario>
