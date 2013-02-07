@@ -7010,7 +7010,7 @@
 				autor="Ángel Piulestán Guillén, Francisco Javier Aguilera Ceballos"
 				director="Francisco Javier Aguilera Ceballos" localidad="Cádiz"
 				cabeza_serie="true" info="Cuarteto de Heidi"
-				url_cc=""
+				url_cc="" puntos="118"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vl_lospolivalentes05.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="73" />
@@ -7160,7 +7160,7 @@
 			<agrupacion id="509" modalidad="CORO" nombre="Khumbayá"
 				autor="Luis Manuel Rivero Ramos" director="Laura Rivero Ramos"
 				localidad="Cádiz" cabeza_serie="true" info="Coro de Luis Rivero"
-				url_cc=""
+				url_cc="" puntos="686"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/khumbaya07.jpg"
 				web="">
 				<otros_anios>
@@ -7254,7 +7254,7 @@
 			<agrupacion id="513" modalidad="COMPARSA" nombre="Los Peleles del XXI"
 				autor="Joaquín Quiñones Madera, José Luis Bustelo" director="Rafael Mosquera Muñoz"
 				localidad="Cádiz" cabeza_serie="true" info="Comparsa de Quiñones y Bustelo"
-				url_cc=""
+				url_cc="" puntos="699"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/1358238286-VL_LOSPEPELES06.jpg" web="http://www.joaquinquinones.com/">
 				<otros_anios>
 					<otro_anio agrupacion="13" />
@@ -7380,7 +7380,7 @@
 			<agrupacion id="518" modalidad="CORO" nombre="Cai milenaria"
 				autor="Francisco Martínez Mora" director="José Luis Peña" localidad="Cádiz"
 				cabeza_serie="false" info=""
-				url_cc=""
+				url_cc="" puntos="690"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_CAIMILENARIA06.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="53" />
@@ -7565,7 +7565,7 @@
 				nombre="Los auténticos Tíos de la Tiza" autor="Marco Antonio Romero de la Cruz, Francisco Javier Rodríguez"
 				director="Juan Antonio Canet Villanueva" localidad="Cádiz"
 				cabeza_serie="false" info=""
-				url_cc=""
+				url_cc="" puntos="682"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_TIOTIZA04.jpg" web="">
 				<otros_anios>
 					
@@ -7680,7 +7680,7 @@
 			<agrupacion id="531" modalidad="COMPARSA" nombre="Catastrophic Magic Band"
 				autor="Juan Carlos Aragón Becerra" director="Vicente Lázaro Lali"
 				localidad="Cádiz" cabeza_serie="true" info="Comparsa de J.C Aragón"
-				url_cc=""
+				url_cc="" puntos="657"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_CATASTROPHIC04.jpg" web="http://www.lacomparsadejuancarlos.com/">
 				<otros_anios>
 					<otro_anio agrupacion="101" />
@@ -7886,7 +7886,7 @@
 			<agrupacion id="540" modalidad="CHIRIGOTA" nombre="Los recortaos"
 				autor="Enrique García Rosado, David Cornejo Prada" director="Julio Álvarez García"
 				localidad="Cádiz" cabeza_serie="true" info="Chirigota Kike Remolino"
-				url_cc=""
+				url_cc="" puntos="681"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSRECORTAOS03.jpeg" web="http://www.lachirigotadelremolino.com/">
 				<otros_anios>
 					<otro_anio agrupacion="92" />
@@ -8117,7 +8117,7 @@
 			<agrupacion id="550" modalidad="COMPARSA" nombre="Al mal tiempo buena cara" autor="Antonio Rivas Cabañas" director="Antonio Rico Segura"
             localidad="Puerto de Santa María (Cádiz)" cabeza_serie="true"
             info="Comparsa del Puerto"
-            url_cc=""
+            url_cc="" puntos="701"
             url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/amaltiempooo.jpg"
             web="http://losmajaras.tk/">
 			<otros_anios>
@@ -8579,7 +8579,7 @@
         <agrupacion id="571" modalidad="CHIRIGOTA" nombre="Contigo aprendí" autor="Antonio Pedro Serrano Alvarez 'El Canijo'" director="Ruben Navarro Márquez"
             localidad="Cádiz" cabeza_serie="true"
             info="Chirigota del Canijo de Carmona"
-            url_cc=""
+            url_cc="" puntos="684"
             url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_CONTIGOAPRENDI06.jpg"
             web="http://www.elcanijo.es/">
 			<otros_anios>
@@ -8945,7 +8945,7 @@
 			<agrupacion id="587" modalidad="COMPARSA" nombre="Los gatos callejeros"
 				autor="Francisco Javier Márquez Mateos, David Márquez Mateos"
 				director="Pedro Campos Quintana" localidad="Cádiz" cabeza_serie="true"
-				info="Comparsa de Los Carapapas"
+				info="Comparsa de Los Carapapas" puntos="703"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_gatos_callejeros.php"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_GATOSCALLEJEROS01.jpg" web="http://www.lawebdeloscarapapas.com/">
 				<otros_anios>
@@ -9132,7 +9132,7 @@
 			<agrupacion id="595" modalidad="CHIRIGOTA" nombre="Los secretos"
 				autor="Juan Manuel Braza Benítez, 'El Sheriff'" director="Juan Carlos Moreno García"
 				localidad="Cádiz" cabeza_serie="true" info="Chirigota de 'El Sheriff'"
-				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_secretos.php"
+				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_secretos.php" puntos="659"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSECRETOS07.jpg" web="http://www.lachirigotadelsheriff.com/">
 				<otros_anios>
 					<otro_anio agrupacion="122" />
@@ -9364,7 +9364,7 @@
 
 			<agrupacion id="605" modalidad="COMPARSA" nombre="Los del piso de abajo"
 				autor="Jesús Bienvenido Saucedo" director="Daniel Obregón Guillen"
-				localidad="Cádiz" cabeza_serie="true" info="Comparsa de Jesús Bienvenido"
+				localidad="Cádiz" cabeza_serie="true" info="Comparsa de Jesús Bienvenido" puntos="702"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_del_piso_de_abajo.php"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSDELPISODEABAJO02.jpg" web="">
 				<otros_anios>
@@ -9414,7 +9414,7 @@
 			<agrupacion id="607" modalidad="COMPARSA"
 				nombre="Lo siento pisha, no to er mundo puede ser de Cai" autor="Constantino Tovar Verdejo"
 				director="Jose Luis Otero Trechera" localidad="Cádiz" cabeza_serie="true"
-				info="Comparsa de Tino Tovar"
+				info="Comparsa de Tino Tovar" puntos="691"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Lo_siento_pisha_no_to_er_mundo_puede_ser_de_Cai.php"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_TOERMUNDONOPUEDESERDECAI07.jpg" web="http://www.lacomparsadetino.com/">
 				<otros_anios>
@@ -9462,7 +9462,7 @@
 
 			<agrupacion id="609" modalidad="COMPARSA" nombre="Las cigarras"
 				autor="Miguel Ángel García Argüez" director=" Jose Antonio Cheza Martínez"
-				localidad="Cádiz" cabeza_serie="false" info=""
+				localidad="Cádiz" cabeza_serie="false" info="" puntos="700"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Las_Cigarras.php"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LASCIGARRAS07.jpg" web="http://www.lacomparsadenenecheza.tk/">
 				<otros_anios>
@@ -9743,7 +9743,7 @@
 
 			<agrupacion id="622" modalidad="CHIRIGOTA" nombre="Los optimistas (Chirigota callejera)"
 				autor="Manuel Álvarez Seda, José Manuel Cornejo Benítez" director="Manuel Cornejo Aragón" localidad="Cádiz" cabeza_serie="true" info="Chirigota de 'El Love'"
-				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_optimistas_chirigota_callejera.php"
+				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_optimistas_chirigota_callejera.php" puntos="679"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSOPTIMISTAS03.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="103" />
@@ -9765,7 +9765,7 @@
 
 			<agrupacion id="623" modalidad="COMPARSA" nombre="Los embaucadores"
 				autor="-" director="-" localidad="" cabeza_serie="false" info=""
-				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_embaucadores.php"
+				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_embaucadores.php" puntos="690"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSEMBAUCADORES03.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="113" />
