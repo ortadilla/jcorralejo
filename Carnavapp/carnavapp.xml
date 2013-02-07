@@ -7119,7 +7119,7 @@
 			<agrupacion id="507" modalidad="COMPARSA" nombre="El pelotón de mariamoco"
 				autor="Isaac Sabajanes Lunar" director="-" localidad="Cádiz"
 				cabeza_serie="false" info=""
-				url_cc=""
+				url_cc="" puntos="0"
 				url_foto="" web="">
 				<otros_anios>
 				</otros_anios>
@@ -9176,7 +9176,7 @@
 
 			<agrupacion id="597" modalidad="CHIRIGOTA" nombre="Hombres bobo"
 				autor="Fernando Villegas Mejias" director="José Miguel Blanca Alcántara"
-				localidad="Cádiz" cabeza_serie="false" info=""
+				localidad="Cádiz" cabeza_serie="false" info="" puntos="75"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Hombres_bobo.php"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_HOMBREBOBO04.jpg" web="">
 				<otros_anios>
