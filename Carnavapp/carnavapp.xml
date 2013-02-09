@@ -10929,6 +10929,21 @@
 		</calendario>
 		
 		<puntuaciones>
+            <puntuacion agrupacion="574" fase="FINAL" puntos="962" />
+			<puntuacion agrupacion="527" fase="FINAL" puntos="957" />
+			<puntuacion agrupacion="546" fase="FINAL" puntos="948" />
+            
+			<puntuacion agrupacion="544" fase="FINAL" puntos="953" />
+			<puntuacion agrupacion="506" fase="FINAL" puntos="946" />
+			<puntuacion agrupacion="522" fase="FINAL" puntos="945" />
+            
+			<puntuacion agrupacion="614" fase="FINAL" puntos="976" />
+			<puntuacion agrupacion="572" fase="FINAL" puntos="968" />
+			<puntuacion agrupacion="569" fase="FINAL" puntos="964" />
+            
+			<puntuacion agrupacion="520" fase="FINAL" puntos="204" />
+			<puntuacion agrupacion="604" fase="FINAL" puntos="187" />
+			<puntuacion agrupacion="503" fase="FINAL" puntos="118" />
         </puntuaciones>
 </anio>
 
