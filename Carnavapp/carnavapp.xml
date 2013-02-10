@@ -7086,7 +7086,7 @@
 			<agrupacion id="506" modalidad="CHIRIGOTA" nombre="Las verdades del banquero"
 				autor="José Luis García Cossio" director="José Luis García Cossio"
 				localidad="Cádiz" cabeza_serie="true" info="Chirigota del Selu"
-				url_cc=""
+				url_cc="" puntos="946"
 				puntos=""
 				url_foto="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Imagenes/Las_verdades_del_banquero_1.jpg" web="http://www.lachirigotadelselu.com/">
 				<otros_anios>
@@ -7427,7 +7427,7 @@
 				nombre="Los que están al pie del cañón" autor="Ivan Romero Castellón"
 				director="Pedro José Tamayo Salazar" localidad="Cádiz" cabeza_serie="false"
 				info=""
-				url_cc=""
+				url_cc="" puntos="204"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/canoooo.jpg" web="">
 				<otros_anios>
 				</otros_anios>
@@ -7473,7 +7473,7 @@
 				nombre="Los Erasmus pocos y parió la abuela" autor="José Antonio Vera Luque"
 				director="José Antonio Vera Luque" localidad="Cádiz" cabeza_serie="true"
 				info="Chirigota de Vera Luque"
-				url_cc=""
+				url_cc="" puntos="945"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/veraaa.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="45" />
@@ -7589,7 +7589,7 @@
 			<agrupacion id="527" modalidad="CORO" nombre="Ustedes estáis fatá"
 				autor="Manuel Jesús Morera Rioja, José Oliveras Castillo" director="Jacobo Lucena Borrel"
 				localidad="Cádiz" cabeza_serie="false" info="Coro de Manuel Morera"
-				url_cc=""
+				url_cc="" puntos="957"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vl_ustedetaisfatal05.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="44" />
@@ -7976,7 +7976,7 @@
 			<agrupacion id="544" modalidad="CHIRIGOTA" nombre="Los de gris"
 				autor="Moises Camacho Ortega, Jose María Barranco Cabrera" director="La agrupación"
 				localidad="Cádiz" cabeza_serie="false" info="Chirigota del Lupo"
-				url_cc=""
+				url_cc="" puntos="953"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSDEGRIS03.jpeg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="74" />
@@ -8023,7 +8023,7 @@
 			<agrupacion id="546" modalidad="CORO" nombre="La cañonera"
 				autor="Rafael Pastrana Guillen" director="Francisco Manuel Olmedo Losey"
 				localidad="Cádiz" cabeza_serie="true" info="Coro de Faly Pastrana"
-				url_cc=""
+				url_cc="" puntos="948"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/canonera.jpg" web="">
 				<otros_anios>
 					<otro_anio agrupacion="79" />
@@ -8529,7 +8529,7 @@
         <agrupacion id="569" modalidad="COMPARSA" nombre="El rey burlón" autor="Juan Fernández Domínguez" director="Manuel Sánchez Monreal"
             localidad="Cádiz" cabeza_serie="true"
             info="La comparsa de Juan Fernández"
-            url_cc=""
+            url_cc="" puntos="964"
             url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vl_elreyburlon04.jpg"
             web="">
 			<otros_anios>
@@ -8603,7 +8603,7 @@
         
         <agrupacion id="572" modalidad="COMPARSA" nombre="Los Válidos" autor="Jose Manuel Cardoso Romero, Enrique García Rosado 'Kike Remolino'" director="Agustín Correa Rodríguez"
             localidad="Cádiz" cabeza_serie="false"
-            info="Comparsa de Kike Remolino"
+            info="Comparsa de Kike Remolino" puntos="968"
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_validos.php"
             url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/vl_losvalidos08.jpg"
             web="">
@@ -8650,7 +8650,7 @@
         
         <agrupacion id="574" modalidad="CORO" nombre="Los cabrones" autor="Antonio Rivas Cabañas, Julio Pardo Melero" director="Juan Lucena Morant"
             localidad="Cádiz" cabeza_serie="true"
-            info="Coro de Julio Pardo"
+            info="Coro de Julio Pardo" puntos="962"
             url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_cabrones.php"
             url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LOSCABRONES05.jpg"
             web="">
@@ -9344,7 +9344,7 @@
 			<agrupacion id="604" modalidad="CUARTETO"
 				nombre="Robin del Bosque y los demás de Ubrique" autor="Miguel Ángel Moreno Gómez, Jose Manuel Cossi González"
 				director="Ángel Gago Cubelo" localidad="Cádiz" cabeza_serie="true"
-				info="Cuarteto de 'El Gago'"
+				info="Cuarteto de 'El Gago'" puntos="187"
 				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Robin_del_Bosque_y_los_demas_de_Ubrique.php"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_ROBINDELBOSQUE08.jpg" web="">
 				<otros_anios>
@@ -9575,7 +9575,7 @@
 
 			<agrupacion id="614" modalidad="COMPARSA" nombre="La comparsa del genio"
 				autor="Antonio Martín García" director="Ángel Subiela Gómez" localidad="Cádiz" cabeza_serie="true" info="Comparsa de Antonio Martin"
-				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_Comparsa_del_Genio.php"
+				url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/La_Comparsa_del_Genio.php" puntos="976"
 				url_foto="http://carnaval.lavozdigital.es/fotos/agrupaciones/VL_LA%20COMPARSA%20DEL%20GENIO06.jpg" web="http://elblogdeantoniomartin.blogspot.com/">
 				<otros_anios>
 					<otro_anio agrupacion="30" />
